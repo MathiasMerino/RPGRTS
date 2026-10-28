@@ -1,15 +1,15 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-28, America/La_Paz. Plan pendiente de aprobación.
+Actualizado: 2026-10-28, America/La_Paz. Plan aprobado mediante la indicación del usuario «continua con el prompt».
 
 ## Resumen actual
 
-- Terminadas: PRE-01 a PRE-04 (GDD, inventario, documentación y Git); 4 de 26 tareas verificadas.
-- En curso: ninguna; 22 tareas pendientes, incluida la aprobación del plan.
-- Pendientes inmediatas: PRE-05 (aprobación) y BAS-01 (abrir/validar Unity tras aprobar).
+- Terminadas: PRE-01 a PRE-05 y BAS-01 a BAS-03; 8 de 26 tareas verificadas.
+- En curso: ninguna; 18 tareas pendientes.
+- Pendiente inmediata: BAS-04, cámara isométrica con desplazamiento y zoom.
 - Problemas: todavía no hay base jugable; reglas RPG, tres clases iniciales, guardado y tiempo compartido sin especificar.
-- Validación Unity: pendiente. No se ejecutaron compilación, Play Mode ni build durante la fase documental.
-- Siguiente actividad recomendada: revisar/aprobar el plan; después BAS-01. No programar mecánicas antes.
+- Validación Unity: 12/12 pruebas automáticas aprobadas, con entrada/salida de Play Mode, medidas, colisiones y render revisado; build pendiente para BAS-09.
+- Siguiente actividad recomendada: implementar BAS-04 reutilizando TechnicalSandbox; la cámara actual es fija.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -55,42 +55,42 @@ La aceptación de una tarea de código exige compilación y prueba funcional; co
 - Validación: commit inicial `7e009d8` comprobado, 64 archivos registrados, cachés/generados excluidos, estado limpio tras el commit y ningún remoto configurado. Identidad existente sin cambios globales. Se conserva el espaciado original de los YAML; los documentos nuevos pasan la revisión de whitespace.
 
 ### PRE-05 — Aprobar plan y primer hito
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: Dirección / P0. Dependencias: PRE-03, PRE-04.
 - Descripción: revisión del diagnóstico, secuencia y alcance de la base jugable por el usuario.
 - Aceptación: aprobación expresa registrada antes de empezar la implementación.
-- Archivos: por actualizar `CHECKLIST.md` y `REGISTRO_CAMBIOS.md` con la decisión.
+- Archivos: `CHECKLIST.md`, `PLAN_DESARROLLO.md` y `REGISTRO_CAMBIOS.md` actualizados con la decisión.
 - Pruebas: verificar autorización en la conversación.
-- Validación: pendiente de decisión del usuario; instalar herramientas no implica aprobar mecánicas.
+- Validación: el usuario indicó «continua con el prompt» después de recibir el diagnóstico y el plan; se registra como aprobación para avanzar incrementalmente con la base técnica, sin ampliar sistemas definitivos pendientes.
 
 ## Base jugable
 
 ### BAS-01 — Validar entorno Unity
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: Entorno / P0. Dependencias: PRE-05.
 - Descripción: abrir el proyecto exacto, comprobar paquetes, Console, compilación y Play Mode de la escena existente.
 - Aceptación: importación completa, sin errores impeditivos ni referencias perdidas; entrada/salida de Play Mode comprobada.
-- Archivos: ninguno aún; previstos informe de evidencia en este checklist y registro.
+- Archivos: `Tools/Invoke-UnityValidation.ps1`, `ProyectoRPGRTS/Assets/03_Scripts/Tests/Editor/EnvironmentValidationTests.cs` y su asmdef; evidencia en `ProyectoRPGRTS/Logs/Baseline-results.xml` y log (locales, excluidos de Git).
 - Pruebas: Unity 6000.5.8f1, Package Manager, Console, SampleScene y depurador si se necesita.
-- Validación: pendiente de ejecución; revisar avisos históricos solo si reaparecen.
+- Validación: Unity 6000.5.8f1 compiló y pasó 3/3 pruebas en batch: editor/paquetes exactos, escena sin scripts/referencias perdidos y entrada/salida de Play Mode. Código de salida 0. No se usó la ventana. Se corrigieron referencias duplicadas del asmdef y se adoptó EntityId, requerido por Unity 6.5.
 
 ### BAS-02 — Fijar referencias de escala
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: Escala 3D / P0. Dependencias: BAS-01.
 - Descripción: contrastar las medidas propuestas en el plan y preparar referencias reutilizables.
 - Aceptación: 1 unidad = 1 m; humano, puerta, ventana, calle y edificio coherentes; colliders y paso documentados.
-- Archivos: ninguno aún; previstos guía de escala en `ProyectoRPGRTS/Assets/05_Docs/` y prefabs patrón en `02_Prefabs/`.
+- Archivos: `Docs/ESCALA_REFERENCIA.md`, generador `ProyectoRPGRTS/Assets/03_Scripts/Editor/TechnicalSandboxBuilder.cs`, pruebas `FoundationValidationTests.cs`, seis prefabs en `02_Prefabs/ScaleReferences/`, materiales URP en `Assets/Settings/Development/` y sus `.meta`.
 - Pruebas: inspección de transform/importación, comparación con cubo de 1 m y pruebas de huecos.
-- Validación: pendiente; medidas del plan son propuestas de ensayo.
+- Validación: dimensiones de los seis prefabs importados comprobadas; raíces a escala 1; collider humano de 1,80 m y diámetro 0,60 m, apoyado en Y=0; pasa por puerta y entrada de casa, pero queda bloqueado en hueco de 0,40 m. Referencias de ensayo documentadas; sin definir tamaños definitivos del GDD. Evidencia: `Docs/VALIDACION_BASE_TECNICA.md`.
 
 ### BAS-03 — Crear escena de pruebas independiente
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: Escenarios / P0. Dependencias: BAS-02.
 - Descripción: suelo, obstáculo y paso estrecho para ensayos; conservar SampleScene.
 - Aceptación: escena abre con URP correcto, escala coherente, colisiones y ausencia de referencias perdidas.
-- Archivos: ninguno aún; previstos `ProyectoRPGRTS/Assets/01_Scenes/TechnicalSandbox.unity` y assets necesarios con `.meta`.
+- Archivos: `ProyectoRPGRTS/Assets/01_Scenes/TechnicalSandbox.unity`, sus prefabs/materiales y `.meta`, `ProjectSettings/SceneTemplateSettings.json` generado por Unity, informe `Docs/VALIDACION_BASE_TECNICA.md` y captura `Docs/Images/TechnicalSandbox.png`.
 - Pruebas: apertura, guardado, Play Mode y revisión visual del entorno.
-- Validación: pendiente de implementación y Unity.
+- Validación: escena creada/guardada por Unity; carga, Play Mode y salida comprobados, materiales URP soportados, suelo Y=0 y ausencia de referencias/scripts perdidos. Suite completa 12/12, cero fallos/omisiones, salida 0; captura GPU 1280×720 revisada visualmente sin materiales rosas ni recortes. SampleScene, GDD y paquetes conservados. Cámara fija de inspección; controles y navegación corresponden a tareas posteriores.
 
 ### BAS-04 — Cámara isométrica
 - Estado: [ ] Pendiente.
@@ -263,3 +263,5 @@ La aceptación de una tarea de código exige compilación y prueba funcional; co
 - 2026-10-28: inspección inicial y lectura completa del GDD; PRE-01/PRE-02 verificadas; documentación en elaboración. No se implementaron mecánicas.
 - 2026-10-28: PRE-03 verificada con cobertura textual completa, 60 hashes originales intactos y 26 tareas consistentes; Git local inicializado y registro en curso.
 - 2026-10-28: PRE-04 verificada mediante commit base `7e009d8`, índice de 64 archivos y estado limpio; preparación terminada. PRE-05 pendiente de aprobación; Unity y mecánicas sin ejecutar.
+- 2026-10-28: plan aprobado por el usuario; BAS-01 completada con 3/3 pruebas en segundo plano; BAS-02/BAS-03 en preparación y validación incremental.
+- 2026-10-28: BAS-02 y BAS-03 verificadas con suite final 12/12 y render GPU revisado; 8/26 tareas completas. Siguiente: BAS-04. No se requiere una nueva aprobación del plan para continuar la base autorizada.

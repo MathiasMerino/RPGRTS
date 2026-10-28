@@ -1,9 +1,13 @@
 # Plan de desarrollo de Crónicas de Aethernia
 
-Fecha: 2026-10-28, America/La_Paz. Estado: propuesta pendiente de aprobación.
-La autorización actual cubre inspección, documentación y preparación local. Las mecánicas requieren la aprobación del plan solicitada en el prompt.
+Fecha: 2026-10-28, America/La_Paz. Estado: plan aprobado para avanzar incrementalmente.
+El usuario indicó «continua con el prompt» después de recibir este plan. Se continúa con la base técnica y sus verificaciones; las reglas y sistemas todavía pendientes de diseño mantienen sus decisiones abiertas.
 
-## Diagnóstico
+## Avance verificado
+
+Al 2026-10-28 están completadas PRE-01–PRE-05 y BAS-01–BAS-03. Se añadieron seis prefabs métricos, siete materiales URP, la escena TechnicalSandbox y validación automática por comandos. La ejecución final pasó 12/12 pruebas e incluye Play Mode, medidas, colisiones y una captura GPU revisada. Detalles en `Docs/VALIDACION_BASE_TECNICA.md`. El siguiente paso es BAS-04; la cámara actual es fija y todavía no existen movimiento, interacción ni UI de juego.
+
+## Diagnóstico inicial
 
 El proyecto está en `ProyectoRPGRTS/`. Su nombre técnico real es `ProyectoRPGRTS`, no `PROYECTO`; no se renombra. La visión jugable está documentada, pero el contenido corresponde todavía a una plantilla URP organizada.
 
@@ -134,6 +138,6 @@ Referencias oficiales consultadas el 2026-10-28: [AGENTS.md](https://learn.chatg
 2. Confirmar hardware, resolución y presupuesto de rendimiento antes de fijar métricas. PC es referencia de controles, no plataformas comerciales definitivas.
 3. Elegir tres clases y reglas antes de VER-03/VER-05. Definir tiempo, persistencia y límites de región en VER-01.
 4. Mantener contenido pequeño hasta demostrar un recorrido completo; el GDD combina muchos sistemas.
-5. Unity está instalado, pero compilación/Play Mode siguen pendientes. Las validaciones documentales no los sustituyen.
+5. Compilación y Play Mode ya se comprobaron para BAS-01–BAS-03. Cada nueva mecánica necesita sus propias pruebas; la build de integración sigue pendiente en BAS-09.
 
 Tras aprobar: abrir `ProyectoRPGRTS/` con Unity 6000.5.8f1, esperar importación, revisar Console y Package Manager, abrir SampleScene y entrar/salir de Play Mode. Crear después una escena de pruebas independiente y aplicar los criterios del checklist.
