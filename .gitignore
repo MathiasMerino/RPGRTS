@@ -1,0 +1,36 @@
+# Unity caches and local state; applies also to the nested Unity project.
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+[Bb]uild/
+[Bb]uilds/
+.vs/
+.idea/
+.plastic/
+# Generated IDE files; retain .vsconfig, source assets and their .meta.
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.opendb
+*.VC.db
+*.csproj.meta
+*.sln.meta
+*.slnx.meta
+# Local secrets and OS files.
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+Thumbs.db
+.DS_Store
+~$*

@@ -1,0 +1,11 @@
+# Search exclusions only; files remain available for targeted diagnostics.
+Library/
+Temp/
+Logs/
+obj/
+UserSettings/
+.vs/
+.git/
+*.csproj
+*.sln
+*.slnx
