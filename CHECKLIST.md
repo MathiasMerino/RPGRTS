@@ -4,8 +4,8 @@ Actualizado: 2026-10-28, America/La_Paz. Plan pendiente de aprobación.
 
 ## Resumen actual
 
-- Terminadas: PRE-01 (GDD), PRE-02 (inventario) y PRE-03 (documentación).
-- En curso: PRE-04 (registro Git).
+- Terminadas: PRE-01 a PRE-04 (GDD, inventario, documentación y Git); 4 de 26 tareas verificadas.
+- En curso: ninguna; 22 tareas pendientes, incluida la aprobación del plan.
 - Pendientes inmediatas: PRE-05 (aprobación) y BAS-01 (abrir/validar Unity tras aprobar).
 - Problemas: todavía no hay base jugable; reglas RPG, tres clases iniciales, guardado y tiempo compartido sin especificar.
 - Validación Unity: pendiente. No se ejecutaron compilación, Play Mode ni build durante la fase documental.
@@ -46,13 +46,13 @@ La aceptación de una tarea de código exige compilación y prueba funcional; co
 - Validación: documentos UTF-8 y 26 tareas con campos/estados/dependencias válidos; cobertura de 303 párrafos con texto y dos tablas del GDD; 60 hashes originales idénticos. Los filtros excluyen cachés y generados. Unity no aplica a estos cambios documentales.
 
 ### PRE-04 — Crear historial Git inicial
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: Control de versiones / P0. Dependencias: PRE-03.
 - Descripción: iniciar Git local en esta carpeta, incluir fuentes y `.meta`, excluir cachés y guardar el estado inicial.
 - Aceptación: commit local verificable, sin Library/Logs/generados ni publicación remota.
 - Archivos: metadatos Git locales; `.gitignore`; fuentes existentes y documentos registrados.
 - Pruebas: git status, check-ignore, listado de archivos registrados y log.
-- Validación: repositorio inicializado; exclusiones comprobadas; pendiente commit y comprobación de estado final. Identidad Git existente disponible; no se modifica configuración global.
+- Validación: commit inicial `7e009d8` comprobado, 64 archivos registrados, cachés/generados excluidos, estado limpio tras el commit y ningún remoto configurado. Identidad existente sin cambios globales. Se conserva el espaciado original de los YAML; los documentos nuevos pasan la revisión de whitespace.
 
 ### PRE-05 — Aprobar plan y primer hito
 - Estado: [ ] Pendiente.
@@ -262,3 +262,4 @@ La aceptación de una tarea de código exige compilación y prueba funcional; co
 
 - 2026-10-28: inspección inicial y lectura completa del GDD; PRE-01/PRE-02 verificadas; documentación en elaboración. No se implementaron mecánicas.
 - 2026-10-28: PRE-03 verificada con cobertura textual completa, 60 hashes originales intactos y 26 tareas consistentes; Git local inicializado y registro en curso.
+- 2026-10-28: PRE-04 verificada mediante commit base `7e009d8`, índice de 64 archivos y estado limpio; preparación terminada. PRE-05 pendiente de aprobación; Unity y mecánicas sin ejecutar.
