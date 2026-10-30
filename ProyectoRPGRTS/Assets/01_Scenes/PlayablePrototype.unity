@@ -5741,13 +5741,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5278371696336936253, guid: e7fb5acdc6888b0459f103bffb4d92e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1182047702}
   m_SourcePrefab: {fileID: 100100000, guid: e7fb5acdc6888b0459f103bffb4d92e1, type: 3}
 --- !u!4 &1182047697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4863359215734264620, guid: e7fb5acdc6888b0459f103bffb4d92e1, type: 3}
   m_PrefabInstance: {fileID: 1182047696}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &1182047698 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3475205613495169670, guid: e7fb5acdc6888b0459f103bffb4d92e1, type: 3}
+  m_PrefabInstance: {fileID: 1182047696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1182047699 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8589939692676828087, guid: e7fb5acdc6888b0459f103bffb4d92e1, type: 3}
+  m_PrefabInstance: {fileID: 1182047696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1182047700 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1205952075223882016, guid: e7fb5acdc6888b0459f103bffb4d92e1, type: 3}
+  m_PrefabInstance: {fileID: 1182047696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1182047701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5278371696336936253, guid: e7fb5acdc6888b0459f103bffb4d92e1, type: 3}
+  m_PrefabInstance: {fileID: 1182047696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1182047702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182047701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e263a9f7e0b3934ea6e530ff03d9291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.RoofCutaway
+  view: {fileID: 473023502}
+  target: {fileID: 4400504113842201706}
+  roof:
+  - {fileID: 1182047700}
+  - {fileID: 1182047699}
+  - {fileID: 1182047698}
+  targetHeight: 1.55
 --- !u!1001 &1194445277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10592,6 +10634,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4289917413527760123, guid: 3eb232b861df43c449e038af8eeee72e, type: 3}
   m_PrefabInstance: {fileID: 2003927405}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2010277867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2010277868}
+  m_Layer: 0
+  m_Name: VisualRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2010277868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010277867}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4400504113842201706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2030640346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11500,20 +11573,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4342753244603574805, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2010277868}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8137802751456085368, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4400504113842201709}
   m_SourcePrefab: {fileID: 100100000, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
 --- !u!114 &4400504113842201705 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5888614349902041709, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
   m_PrefabInstance: {fileID: 4400504113842201704}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4400504113842201708}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25967ae69e299714388f3fc9c5eec490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ExplorationUnit
+--- !u!4 &4400504113842201706 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4342753244603574805, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
+  m_PrefabInstance: {fileID: 4400504113842201704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4400504113842201707 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4863748798910082664, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
+  m_PrefabInstance: {fileID: 4400504113842201704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4400504113842201708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8137802751456085368, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
+  m_PrefabInstance: {fileID: 4400504113842201704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4400504113842201709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400504113842201708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c80cb54dc54dc4297898d2199f22ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.CharacterVisualPresenter
+  session: {fileID: 1013268299}
+  catalog: {fileID: 11400000, guid: 3f655ee8b38750c4aa175027c6d209c7, type: 2}
+  visualRoot: {fileID: 2010277868}
+  legacyBody: {fileID: 4400504113842201707}
 --- !u!1001 &6537101244742408880
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,17 +1,19 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1 y alcance D01 específico.
+Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01 y E01 específicos.
 
 ## Resumen actual
 
 - Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
 - Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07 (sesión humana) pendiente de realización.
 - Evidencia de fase 2: 34/34 aprobadas, cero fallos/omisiones y salida 0; cinco capturas revisadas, incluidas dos resoluciones.
-- Fase 3, A/B/C1 y D01: **6 de 8 tareas completadas y verificadas** (A/B/C1/D/F/G), **39/39 pruebas** y dos recorridos de la nueva build con salida 0. E/C2 pendientes; no es el cierre de toda la fase 3.
+- Fase 3, A/B/C1/D01/E01: **7 de 8 tareas completadas y verificadas** (A/B/C1/D/E/F/G), **42/42 pruebas** y dos recorridos de la nueva build con salida 0. C2 pendiente; no es el cierre de toda la fase 3.
 - Build Windows de fase 2: compilada, recorridos independientes sin gráficos y con GPU aprobados, salida 0 y sin aviso de agente inválido/excepciones; ZIP portable verificado.
 - Reglas, clases y hoja de ruta fueron aprobadas por el usuario como prototipo. El juego comercial, continente, narrativa y arte finales no se declaran terminados.
 - Pendiente: evaluación humana de controles/diversión/balance (F2-07). Expansión compleja y siguiente iteración de arte/UX sujetas a propuesta.
-- Entrega actual D01: COMO_JUGAR.md, Docs/D01_ESCENARIO_MEDIEVAL.md, medidas y dirección artística; once prefabs, ocho materiales, ocho capturas reales y ZIP Windows D01. Informes y entregas anteriores conservados.
+- Entrega previa D01: COMO_JUGAR.md, Docs/D01_ESCENARIO_MEDIEVAL.md, medidas y dirección artística; once prefabs, ocho materiales, ocho capturas reales y ZIP Windows D01. Informes y entregas anteriores conservados.
+
+- Entrega actual E01: Docs/E01_PERSONAJES.md (tres fichas, importación y resultados), cinco prefabs, catálogo/ocho materiales compartidos, siete capturas y ZIP Windows E01. F2-07 sigue pendiente.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -391,13 +393,13 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Resultado / problemas: once prefabs, ocho materiales y dieciséis mapas propios, sin descargas. Corregido zoom involuntario con rueda cero tras reproducción fallida; juntas/camino refinados. Checkpoint codex/d01-base-8197b5f; cero bloques originales de escena eliminados. Biblioteca visual sin física propia, techo opaco sin corte contextual; límites documentados. E/C2 y sesión humana F2-07 permanecen pendientes.
 
 ### F3-E01 — Apariencias provisionales de tres clases
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Objetivo / descripción: siluetas proporcionadas de Guerrero/Mago/Monje sustituibles por hijo visual; Pícaro conserva concepto documental.
 - Sistema / prioridad: Personajes/presentación / P1. Dependencias: F3-B01, F3-D01.
 - Aceptación: identidad por forma/material, lógica/collider/agente intactos, configuración compartida y reemplazo de malla sin editar daño/turnos.
-- Archivos: previstos prefabs visuales, configuración de apariencia y presentador; pruebas de escala/clases.
-- Pruebas: dimensiones, selección, paso/navegación y regresión de clases/combate.
-- Resultado / problemas: pendiente; no se prometen rigs ni modelos definitivos.
+- Archivos: cinco prefabs Characters/Visuals; Assets/07_Characters/Provisional (catálogo, ocho materiales y veintiuna mallas); Runtime/Presentation (Catalog/Presenter/Model/RoofCutaway), CharacterVisualBuilder/Tests, escena y lanzador; Docs/E01_PERSONAJES.md, siete capturas, medidas/dirección/arquitectura/guías.
+- Pruebas: tres casos dirigidos aprobados; regresión final 42/42, cero fallos/omisiones, salida 0; dimensiones y fallback/reversibilidad, equipo real, clase/carga, paso/selección/colliders/combate y sistemas anteriores. Build 178.001.257 bytes/45,46 s, salida 0; player sin gráficos 7,50 s y con GPU 7,33 s, ambos PASS/salida 0.
+- Resultado / problemas: tres figuras métricas genéricas y reemplazables, sin reglas/guardado/controlador nuevos. Oclusión D01 reproducida y recorte de cubierta reversible; física/NavMesh y biblioteca D01 preservados. Siete capturas reales revisadas; fichas/importación documentadas. Checkpoint codex/e01-base-ca5ba35. No son modelos/animaciones finales; paredes/interiores no resueltos de forma general. F2-07 y C02 siguen pendientes.
 
 ### F3-F01 — Integración de la iteración UI C1
 - Estado: [x] Completado y verificado.

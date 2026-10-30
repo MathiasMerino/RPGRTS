@@ -2,6 +2,10 @@
 
 La primera tabla conserva el inventario de la primera etapa. Al final se registra la segunda etapa. Cada asset nuevo incluye su `.meta`, aunque la tabla omite esos acompañantes para facilitar la lectura. Los binarios y registros quedan fuera de Git.
 
+## Adición E01
+
+`Docs/E01_PERSONAJES.md` y siete capturas `Docs/Images/E01-*`; cinco prefabs en `Assets/02_Prefabs/Characters/Visuals/`, catálogo/ocho materiales/veintiuna mallas en `Assets/07_Characters/Provisional/`, cuatro componentes en `Runtime/Presentation/`, CharacterVisualBuilder, CharacterVisualTests y cambios acotados en escena/lanzador/consolidación de autoría. Guías, arquitectura, medidas, checklist y registro actualizados. La biblioteca D01 y el prefab técnico del héroe se preservan. Build/paquete y resultados exactos en el informe E01.
+
 ## Adición D01
 
 - Escena modificada: `ProyectoRPGRTS/Assets/01_Scenes/PlayablePrototype.unity`; conserva los bloques originales, colliders y NavMesh.

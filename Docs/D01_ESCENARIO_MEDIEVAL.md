@@ -2,6 +2,8 @@
 
 Fecha: 2026-10-30. Alcance autorizado: una sección pequeña de PlayablePrototype, sin personajes definitivos ni mecánicas nuevas. Fuente: GDD v0.2 y Documentacion/DIRECCION_ARTISTICA.md. Original Word preservado; SHA-256 `dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661`.
 
+Actualización posterior E01: la oclusión aquí registrada se reprodujo técnicamente y se añadió un recorte contextual reversible de cubierta; véase [E01_PERSONAJES](E01_PERSONAJES.md). Las capturas y resultados D01 siguientes conservan el estado histórico de esa entrega. La evaluación humana sigue pendiente.
+
 ## Resultado
 
 Casa de entramado de madera, zócalo de piedra, yeso, cubierta inclinada de pizarra, chimenea, ventanas y entrada abierta. Suelo con variación natural, camino de tierra, barril, cajas arriostradas, cofre y vegetación baja. Luz principal cálida con sombras suaves y relleno ambiental frío en URP. Es una muestra inicial, con geometría sencilla y proporciones métricas; no arte comercial definitivo.

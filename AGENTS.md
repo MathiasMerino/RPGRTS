@@ -6,7 +6,7 @@
 - Unity 6.5 exige APIs `EntityId`; evitar `GetInstanceID` y `objectReferenceInstanceIDValue` obsoletas. Usar la API actual y comprobar compilación con el editor exacto.
 - Fuente de diseño: `ProyectoRPGRTS/Assets/05_Docs/GDD_GAMERPGTS.docx`, versión 0.2. Preservar el original.
 - Prototipo aprobado: `Docs/ESPECIFICACION_PROTOTIPO.md`; clases Guerrero/Mago/Monje y reglas provisionales autorizadas. Hoja de ruta posterior aprobada en `Docs/PLAN_EXPANSION.md`, sin iniciar producción futura automáticamente.
-- Fase 3, iteración A/B/C1: UI contextual uGUI y dirección en `Documentacion/DIRECCION_ARTISTICA.md`; evidencia en `Docs/FASE3_ITERACION_1.md`. Escenario D, apariencias E y ampliación C2 pendientes; F2-07 humana sigue pendiente.
+- Fase 3: A/B/C1, D01 y base visual E01 verificadas; dirección en `Documentacion/DIRECCION_ARTISTICA.md`, fichas/importación en `Docs/E01_PERSONAJES.md`. C02 y evaluación humana F2-07 siguen pendientes.
 - Lectura consultable: `Docs/GDD_LECTURA.md`; comprobar su SHA-256 contra el Word si cambia el GDD.
 - Leer primero el resumen de `CHECKLIST.md`; consultar el plan y las secciones del GDD relacionadas con la tarea.
 - El GDD es conceptual: distinguir confirmado, propuesto y pendiente. No convertir ejemplos en requisitos.
@@ -37,7 +37,8 @@
 - Abrir `ProyectoRPGRTS/` con el editor exacto. Revisar Console, referencias, Play Mode y pruebas pertinentes.
 - Preferencia del usuario: validar en segundo plano mediante `Tools/Invoke-UnityValidation.ps1`; usar la ventana solo si una comprobación visual lo requiere. No iniciar dos instancias sobre el mismo proyecto.
 - Escena jugable: `Assets/01_Scenes/PlayablePrototype.unity`. Validación completa: modo `Vertical`; build: modo `Build`; ejecutar la build sin ventana con `Tools/Invoke-PrototypeSmoke.ps1`. No repetir los generadores sobre assets existentes.
-- D01: grupo visual `D01 Medieval Quarter`, once prefabs en `Assets/02_Prefabs/Environment/Medieval/`; física original conservada. Evidencia/límites en `Docs/D01_ESCENARIO_MEDIEVAL.md`. E01/C02 siguen pendientes.
+- D01: grupo visual `D01 Medieval Quarter`, once prefabs en `Assets/02_Prefabs/Environment/Medieval/`; física original conservada. Evidencia/límites en `Docs/D01_ESCENARIO_MEDIEVAL.md`. E01 añade recorte reversible de cubierta; C02 sigue pendiente.
+- E01: VisualRoot conserva controlador/collider; catálogo `Assets/07_Characters/Provisional/ClassVisuals.asset`. Prefabs con CharacterVisualModel, sin agentes/colliders/Animator. Desactivar presentador recupera cápsula; RoofCutaway recupera techo al desactivarse.
 - Antes de cada tarea: revisar `git status`, dependencias y criterios. Revisar el diff y registrar cambios importantes.
 - No sobrescribir cambios ajenos, publicar remotos ni modificar configuración global como parte de tareas locales.
 - Visual Studio Community 2026 y Tools for Unity ya instalados; paquete IDE Unity `2.0.26` presente.

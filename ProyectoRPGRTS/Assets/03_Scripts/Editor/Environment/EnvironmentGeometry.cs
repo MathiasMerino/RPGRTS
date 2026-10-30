@@ -82,7 +82,7 @@ namespace Aethernia.Editor.Environment
             }
             return Save(name,vertices.ToArray(),tris.ToArray(),uv.ToArray());
         }
-        public static void Consolidate(GameObject root, string name)
+        public static void Consolidate(GameObject root, string name, string assetRoot = EnvironmentMaterials.Root)
         {
             var groups = new Dictionary<Material,List<CombineInstance>>();
             var children = root.GetComponentsInChildren<MeshFilter>();
@@ -95,7 +95,7 @@ namespace Aethernia.Editor.Environment
             foreach (var group in groups)
             {
                 var mesh = new Mesh { name = name+"_"+group.Key.name }; mesh.CombineMeshes(group.Value.ToArray());
-                AssetDatabase.CreateAsset(mesh,EnvironmentMaterials.Root+"/Meshes/"+mesh.name+".asset");
+                AssetDatabase.CreateAsset(mesh,assetRoot+"/Meshes/"+mesh.name+".asset");
                 var node = new GameObject(group.Key.name,typeof(MeshFilter),typeof(MeshRenderer)); node.transform.SetParent(root.transform,false);
                 node.GetComponent<MeshFilter>().sharedMesh=mesh; node.GetComponent<MeshRenderer>().sharedMaterial=group.Key;
             }

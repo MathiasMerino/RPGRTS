@@ -14,9 +14,9 @@ En Unity: esperar a que termine la importación y compilación, revisar Console,
 
 El NavMeshAgent del héroe de la escena está desactivado deliberadamente en edición y se activa al iniciar Play, después de cargar el NavMesh. Mantener ese ajuste; evita un aviso nativo de agente sin superficie durante el arranque de la build.
 
-Entrega D01: `ProyectoRPGRTS/Builds/Aethernia-Fase3-D01-Windows.zip`: descomprimir todo y abrir Aethernia.exe. Los ZIP anteriores conservan las entregas históricas. Al iniciar se crea una partida de ensayo nueva; cargar una partida previa requiere F9 o Partida → Cargar. No hay guardado automático.
+Entrega E01: `ProyectoRPGRTS/Builds/Aethernia-Fase3-E01-Windows.zip`: descomprimir todo y abrir Aethernia.exe. Los ZIP anteriores conservan las entregas históricas. Al iniciar se crea una partida de ensayo nueva; cargar una partida previa requiere F9 o Partida → Cargar. No hay guardado automático.
 
-La casa medieval, el camino y los decorados se encuentran en la misma escena jugable, bajo `D01 Medieval Quarter`. La biblioteca reutilizable está en `Assets/02_Prefabs/Environment/Medieval`; medidas, capturas antes/después y límites en [informe D01](Docs/D01_ESCENARIO_MEDIEVAL.md). El héroe conserva la cápsula provisional. La rueda quieta ya no debe provocar acercamiento automático.
+La casa medieval, el camino y los decorados se encuentran en la misma escena jugable, bajo `D01 Medieval Quarter`. La biblioteca reutilizable está en `Assets/02_Prefabs/Environment/Medieval`; medidas, capturas antes/después y límites en [informe D01](Docs/D01_ESCENARIO_MEDIEVAL.md). El héroe muestra la clase seleccionada mediante figuras geométricas provisionales; conserva la cápsula como física. Fichas e importación futura en [informe E01](Docs/E01_PERSONAJES.md). La cubierta se recorta al interponerse ante el héroe y se restaura al alejarse. La rueda quieta ya no debe provocar acercamiento automático.
 
 ## Controles
 
@@ -33,7 +33,7 @@ Los paneles y la escritura del nombre bloquean los controles del mundo. Abrir Pe
 
 ## Recorrido recomendado
 
-1. Abrir Personaje, elegir Guerrero, Mago o Monje y escribir un nombre. Seleccionar el personaje azul y caminar con clic derecho.
+1. Abrir Personaje, elegir Guerrero, Mago o Monje y escribir un nombre. Seleccionar el personaje y caminar con clic derecho.
 2. Seleccionar el cofre marrón cercano, acercarse y pulsar E. Entrega equipo y recursos una sola vez. Abrir Inventario para equipar espada/túnica o usar ración.
 3. En Inventario, probar Comercio: 5 oro por 2 madera. El mercado de la Facción A también permite esa operación al interactuar cerca.
 4. Entrar en Construir y hacer clic derecho en terreno despejado. Cada taller cuesta 10 oro y 5 madera; su huella es 3 × 3 m. No se permite solapar objetos ni colocar sobre el héroe. Consume alimento y produce madera cada 10 segundos simulados.
@@ -58,9 +58,9 @@ Con Unity cerrado sobre este proyecto, ejecutar desde PowerShell en esta carpeta
 .\Tools\Invoke-PrototypeSmoke.ps1 -WithGraphics
 ```
 
-El primer comando ejecuta 39 pruebas de editor, geometría, UI, navegación, persistencia y sistemas integrados; incluye catorce layouts de la UI contextual, cuatro casos D01 y capturas con GPU en modo batch. El segundo compila la build de Windows. El tercero inicia esa build sin gráficos, recorre los sistemas automáticamente y escribe un comprobante en Logs. El cuarto repite con dispositivo gráfico en segundo plano. Los lanzadores rechazan fallos de agente o excepciones del log aunque el recorrido devuelva 0. Las pruebas no utilizan la partida guardada del jugador ni sustituyen una sesión humana.
+El primer comando ejecuta 42 pruebas de editor, geometría, UI, navegación, persistencia y sistemas integrados; incluye catorce layouts de la UI contextual, cuatro casos D01, tres casos E01 y capturas con GPU en modo batch. El segundo compila la build de Windows. El tercero inicia esa build sin gráficos, recorre los sistemas automáticamente y escribe un comprobante en Logs. El cuarto repite con dispositivo gráfico en segundo plano. Los lanzadores rechazan fallos de agente o excepciones del log aunque el recorrido devuelva 0. Las pruebas no utilizan la partida guardada del jugador ni sustituyen una sesión humana.
 
-No repetir GenerateSandbox, GeneratePlayable, UpgradeVertical, ContextUi o MedievalQuarter sobre assets ya preparados: las herramientas rechazan sobrescrituras/duplicados. MedievalRefine es una herramienta de autoría, no un paso necesario para abrir o probar la entrega. Las escenas de muestra y referencia se conservan como evidencia de las etapas anteriores.
+No repetir GenerateSandbox, GeneratePlayable, UpgradeVertical, ContextUi, MedievalQuarter o CharacterVisuals sobre assets ya preparados: las herramientas rechazan sobrescrituras/duplicados. MedievalRefine es una herramienta de autoría, no un paso necesario para abrir o probar la entrega. Las escenas de muestra y referencia se conservan como evidencia de las etapas anteriores.
 
 ## Alcance y siguientes fases
 

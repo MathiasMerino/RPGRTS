@@ -6,7 +6,7 @@ Fecha: 2026-10-30. Bloque B de fase 3. Fuente: GDD v0.2, §§12.1, 12.4 y 12.5, 
 
 **Confirmado:** fantasía medieval con proporciones realistas y elementos oscuros; regiones con contraste de atmósfera; lectura isométrica; interfaces originales de identidad medieval; 1 unidad Unity = 1 metro; Guerrero, Mago y Monje jugables. Pícaro solo conceptual en esta entrega. No trasladar personajes, interfaces, símbolos o recursos protegidos de las referencias funcionales.
 
-**Provisional y reversible:** las paletas, materiales, siluetas, familias arquitectónicas, vestuario, tamaños de accesorios, iluminación y distribución de UI siguientes. No fijan culturas, historia, razas, reglas RPG ni arte comercial final. A/B/C1 aportaron auditoría, dirección y UI; D01 añade una muestra medieval acotada sobre la escena técnica. Los modelos E siguen pendientes.
+**Provisional y reversible:** las paletas, materiales, siluetas, familias arquitectónicas, vestuario, tamaños de accesorios, iluminación y distribución de UI siguientes. No fijan culturas, historia, razas, reglas RPG ni arte comercial final. A/B/C1 aportaron auditoría, dirección y UI; D01 añade una muestra medieval acotada y E01 prepara tres figuras geométricas de clase sustituibles. Los modelos/rigs definitivos siguen pendientes.
 
 ## Paletas y materiales
 
@@ -54,6 +54,8 @@ Base dimensional vigente: altura 1,80 m, diámetro de cápsula 0,60 m, agente ra
 | Pícaro (conceptual) | Cuero flexible sobre tejidos oscuros, capa corta asimétrica, cinturón y daga; accesorios acotados para no saturar vista | Capucha, bolsillos, paleta y rostro/cabello | Locomoción, agacharse/sigilo, ataque corto y reacción; habilidades y clase no implementadas |
 
 **Contrato visual para E:** mantener ExplorationUnit/NavMeshAgent, collider y selección como base funcional; crear un hijo VisualRoot sin lógica de combate ni colisiones nuevas. Un presentador de apariencia podrá observar ClassId y elegir configuración/prefab de clase. Sustituir solo ese hijo por una malla/rig futuro. Configuración compartida en ScriptableObjects; estado de salud/equipo permanece en PrototypeState. El presentador no calcula daño ni altera velocidades.
+
+E01 aplica este contrato mediante CharacterVisualCatalog/Presenter/Model, tres prefabs visuales y equipo compartido ligado a Weapon/Armour. Fichas completas, procedencia, importación de modelos finales y evidencia en [E01_PERSONAJES](../Docs/E01_PERSONAJES.md). Son figuras estáticas de proporción humana; no se declaran modelos realistas finales ni animaciones. Escudo/bastón guardados son accesorios de diseño sin estadísticas. La cápsula técnica se conserva como física y presentación reversible; el prefab técnico utilizado por RTS/oponentes no cambia. D01 recibe un recorte contextual reversible de cubierta, sin tocar su física ni los controles de cámara; límites y pruebas en el informe E01.
 
 No forzar Animator, retargeting o un controlador de habilidades antes de disponer de un rig/animaciones comprobados. El prototipo seguirá usando geometría provisional hasta el bloque E. El equipo visual futuro deberá reflejar el equipo real o identificarse como muestra, sin sugerir bonificaciones inexistentes.
 

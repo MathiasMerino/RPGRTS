@@ -161,3 +161,7 @@ Iteración A/B/C1 verificada: 35/35 pruebas, catorce layouts automatizados y och
 ## Fase 3 — D01 autorizado
 
 El usuario autoriza una pequeña muestra medieval y biblioteca reutilizable, conservando todos los sistemas. Orden aplicado: checkpoint `codex/d01-base-8197b5f`, recorrido/captura previos, materiales y módulos propios, presentación sobre la física anterior, revisión comparativa, regresión y build. Alcance/resultados en Docs/D01_ESCENARIO_MEDIEVAL.md; medidas en Docs/ESCALA_REFERENCIA.md. La corrección del zoom involuntario es un ajuste pequeño verificado por una prueba de reproducción, sin nuevos controles. No se inicia E01, C02, ciudad extensa ni sistemas nuevos. F2-07 permanece pendiente; se recomienda probar la muestra antes de ampliarla.
+
+## Fase 3 — E01 autorizado
+
+La solicitud posterior autoriza tres apariencias de clase, contrato modular de modelos y solución reversible a la oclusión si se reproduce. Se conserva D01 y se parte de `codex/e01-base-ca5ba35`. Orden: ensayo de oclusión con triángulos reales, recorte de renderers validado, figuras métricas/configuración compartida, equipo visual conectado al estado, importación futura documentada y regresión/build. No se alteran clases/habilidades, guardado o navegación; no se inicia C02, razas/subclases ni animaciones definitivas. Fichas/estado real en Docs/E01_PERSONAJES.md. F2-07 permanece pendiente.

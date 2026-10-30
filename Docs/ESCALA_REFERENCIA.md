@@ -63,3 +63,11 @@ Fecha: 2026-10-30. Biblioteca visual sin colliders, con raíces de escala uno; l
 | Camino de tierra D01 | Ancho aproximado 2,65–2,95; superficie Y=0,018 | Malla continua sin collider sobre suelo técnico; la marca de calle 4 × 12 anterior queda oculta |
 
 El humano y los talleres mantienen las medidas de las tablas anteriores. Recorrido de puerta y bloqueo del almacén se comprueban en Play Mode; las firmas de todos los colliders estáticos y el SHA-256 del NavMesh se comparan con el estado anterior. Un prefab visual trasladado a otro mapa requiere física y validación propias.
+
+## E01 — base visual de personajes
+
+Las tres figuras tienen pies en Y=0, altura anatómica 1,80 m y cabeza de 0,24 m; raíz de prefab y VisualRoot con escala uno. Y arriba y frente +Z. El cuerpo geométrico usa una rotación interna de autoría para entregar ese frente; no se debe trasladar esa corrección a la raíz del controlador al importar un modelo final.
+
+El controlador conserva cápsula/agente de 0,60 × 1,80 m (radio 0,30 m). Hombreras del Guerrero: ancho aproximado 0,61 m. La espada compartida mide 0,96 m de largo; bastón de diseño 1,65 m y remate de 0,08 m. Escudo de muestra 0,48 × 0,60 m; faldón del Mago hasta 0,56 m de diámetro y bajo a Y=0,18. Los accesorios no tienen colliders ni amplían alcance/huella funcional. Medidas de bounds totales y geometría comprobadas en Logs/E01-geometry.txt; no equivalen a dimensiones físicas de ataque.
+
+Bounds de presentación con todo el equipo incluido: Guerrero 0,670 × 1,808 × 0,395 m; Mago 0,685 × 1,808 × 0,560; Monje 0,665 × 1,808 × 0,285. La coronilla del pelo añade 0,008 m a la talla anatómica. Las raíces funcionales y el hueco de puerta no cambian.
