@@ -6,7 +6,7 @@ Fecha: 2026-10-30. Bloque B de fase 3. Fuente: GDD v0.2, §§12.1, 12.4 y 12.5, 
 
 **Confirmado:** fantasía medieval con proporciones realistas y elementos oscuros; regiones con contraste de atmósfera; lectura isométrica; interfaces originales de identidad medieval; 1 unidad Unity = 1 metro; Guerrero, Mago y Monje jugables. Pícaro solo conceptual en esta entrega. No trasladar personajes, interfaces, símbolos o recursos protegidos de las referencias funcionales.
 
-**Provisional y reversible:** las paletas, materiales, siluetas, familias arquitectónicas, vestuario, tamaños de accesorios, iluminación y distribución de UI siguientes. No fijan culturas, historia, razas, reglas RPG ni arte comercial final. El escenario aún usa geometría técnica: esta primera iteración realiza auditoría, dirección y UI C1; escenario D y modelos E permanecen en el checklist.
+**Provisional y reversible:** las paletas, materiales, siluetas, familias arquitectónicas, vestuario, tamaños de accesorios, iluminación y distribución de UI siguientes. No fijan culturas, historia, razas, reglas RPG ni arte comercial final. A/B/C1 aportaron auditoría, dirección y UI; D01 añade una muestra medieval acotada sobre la escena técnica. Los modelos E siguen pendientes.
 
 ## Paletas y materiales
 
@@ -27,6 +27,8 @@ Para la muestra D usar materiales URP Lit compartidos, albedo sin sombras pintad
 La iluminación debe describir volúmenes; los metales se leen por reflejo y valor, no por convertir todas las superficies en brillantes. Proponer primero una superficie propia pequeña y revisar repetición a distancia isométrica antes de extender texturas.
 
 ## Iluminación y cámara
+
+D01 aplica una primera muestra propia: entramado de roble/yeso con zócalo de piedra, cubierta de pizarra, camino de tierra, plantas bajas y accesorios. Ocho materiales URP Lit compartidos con albedo/normal procedurales propios; luz principal cálida con sombras suaves y ambiente Trilight frío/neutro. No se añaden postprocesos o luces por accesorio. Medidas aplicadas en ESCALA_REFERENCIA.md y comparación real en [D01_ESCENARIO_MEDIEVAL](../Docs/D01_ESCENARIO_MEDIEVAL.md). La cámara conserva inclinación/controles/límites; se corrige el zoom involuntario con rueda quieta y se ajusta el encuadre inicial. El resto de las propuestas siguientes continúa provisional.
 
 - Conservar cámara ortográfica, encuadre/control y límites actuales durante C1. Evaluar oclusiones con el zoom mínimo y máximo antes de modificar escenario.
 - Aldea: luz principal natural cálida y relleno ambiental neutro/frío; sombras suficientes para separar pies/suelo. Mantener puerta y camino legibles bajo UI.

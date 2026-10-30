@@ -38,7 +38,8 @@ namespace Aethernia
             }
             if (mouse != null && mouse.middleButton.isPressed) pan -= mouse.delta.ReadValue() * 0.04f;
             var blocked = UiInputGuard.BlocksWorldInput;
-            ApplyInput(pan, mouse == null ? 0 : Mathf.Sign(mouse.scroll.ReadValue().y), Time.unscaledDeltaTime, blocked);
+            var wheel = mouse == null ? 0 : mouse.scroll.ReadValue().y;
+            ApplyInput(pan, wheel == 0 ? 0 : Mathf.Sign(wheel), Time.unscaledDeltaTime, blocked);
         }
 
         public void ApplyInput(Vector2 pan, float zoom, float deltaTime, bool blockedByUi)

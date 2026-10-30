@@ -1,17 +1,17 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; iteración A/B/C1.
+Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1 y alcance D01 específico.
 
 ## Resumen actual
 
 - Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
 - Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07 (sesión humana) pendiente de realización.
 - Evidencia de fase 2: 34/34 aprobadas, cero fallos/omisiones y salida 0; cinco capturas revisadas, incluidas dos resoluciones.
-- Fase 3, primera iteración: **5 de 8 tareas completadas y verificadas** (A/B/C1/F/G), 35/35 pruebas y dos recorridos de build con salida 0. D/E/C2 pendientes; no es el cierre de toda la fase 3.
+- Fase 3, A/B/C1 y D01: **6 de 8 tareas completadas y verificadas** (A/B/C1/D/F/G), **39/39 pruebas** y dos recorridos de la nueva build con salida 0. E/C2 pendientes; no es el cierre de toda la fase 3.
 - Build Windows de fase 2: compilada, recorridos independientes sin gráficos y con GPU aprobados, salida 0 y sin aviso de agente inválido/excepciones; ZIP portable verificado.
 - Reglas, clases y hoja de ruta fueron aprobadas por el usuario como prototipo. El juego comercial, continente, narrativa y arte finales no se declaran terminados.
 - Pendiente: evaluación humana de controles/diversión/balance (F2-07). Expansión compleja y siguiente iteración de arte/UX sujetas a propuesta.
-- Entrega actual: COMO_JUGAR.md, Docs/FASE3_ITERACION_1.md y Documentacion/DIRECCION_ARTISTICA.md. Informes de fase 1/2 y guion humano se conservan en Docs.
+- Entrega actual D01: COMO_JUGAR.md, Docs/D01_ESCENARIO_MEDIEVAL.md, medidas y dirección artística; once prefabs, ocho materiales, ocho capturas reales y ZIP Windows D01. Informes y entregas anteriores conservados.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -382,13 +382,13 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Resultado / problemas: pendiente; no incluido en la primera entrega C1 solicitada.
 
 ### F3-D01 — Muestra de escenario medieval
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Objetivo / descripción: mejorar suelo/camino, fachada y decorados reutilizables en una zona pequeña de la escena existente.
 - Sistema / prioridad: Entorno/arte / P1. Dependencias: F3-B01, F3-C01.
-- Aceptación: lenguaje material coherente, iluminación legible, huellas/escala conservadas, acceso a interacción y RTS; medidas de render antes de optimizar.
-- Archivos: previstos materiales/prefabs propios de muestra y cambios acotados en escena; registro de procedencia/licencia.
-- Pruebas: pasos/colisiones/rutas, visibilidad y render comparativo; build si cambia contenido.
-- Resultado / problemas: pendiente; sin transformar masivamente la escena.
+- Aceptación: lenguaje material coherente, iluminación legible, huellas/escala conservadas, acceso a interacción y RTS; recuentos de geometría y revisión de render, sin afirmar FPS ni optimizar sin perfilado.
+- Archivos: PlayablePrototype.unity; once prefabs en Assets/02_Prefabs/Environment/Medieval; materiales/mapas/mallas en Assets/06_Environment/Medieval; autoría Editor/Environment; MedievalEnvironmentTests.cs, IsometricCameraRig.cs y lanzador; informe Docs/D01_ESCENARIO_MEDIEVAL.md, medidas/dirección artística, ocho capturas Docs/Images/D01-*.
+- Pruebas: biblioteca métrica y materiales URP; firmas físicas y hash NavMesh idénticos; recorrido de puerta/cofre/obstáculo; cámara quieta; regresión 39/39, salida 0 y ocho capturas comparativas revisadas. Build Windows 175.686.522 bytes, salida 0; smoke sin gráficos y con GPU aprobados (9,02 s / 7,16 s), sin excepciones ni agentes inválidos.
+- Resultado / problemas: once prefabs, ocho materiales y dieciséis mapas propios, sin descargas. Corregido zoom involuntario con rueda cero tras reproducción fallida; juntas/camino refinados. Checkpoint codex/d01-base-8197b5f; cero bloques originales de escena eliminados. Biblioteca visual sin física propia, techo opaco sin corte contextual; límites documentados. E/C2 y sesión humana F2-07 permanecen pendientes.
 
 ### F3-E01 — Apariencias provisionales de tres clases
 - Estado: [ ] Pendiente.

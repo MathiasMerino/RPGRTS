@@ -2,6 +2,17 @@
 
 La primera tabla conserva el inventario de la primera etapa. Al final se registra la segunda etapa. Cada asset nuevo incluye su `.meta`, aunque la tabla omite esos acompañantes para facilitar la lectura. Los binarios y registros quedan fuera de Git.
 
+## Adición D01
+
+- Escena modificada: `ProyectoRPGRTS/Assets/01_Scenes/PlayablePrototype.unity`; conserva los bloques originales, colliders y NavMesh.
+- Once prefabs nuevos: `ProyectoRPGRTS/Assets/02_Prefabs/Environment/Medieval/`.
+- Ocho materiales, dieciséis texturas, veintitrés mallas y dos firmas de referencia: `ProyectoRPGRTS/Assets/06_Environment/Medieval/`.
+- Autoría de editor: `ProyectoRPGRTS/Assets/03_Scripts/Editor/Environment/` (cinco scripts y assembly exclusiva de editor).
+- Pruebas nuevas: `MedievalEnvironmentTests.cs`; referencia de assembly de pruebas actualizada. Corrección pequeña en `Runtime/Camera/IsometricCameraRig.cs`.
+- Lanzador actualizado: `Tools/Invoke-UnityValidation.ps1`, modos de autoría D01 sin regenerar el resto del prototipo.
+- Evidencia/instrucciones: `Docs/D01_ESCENARIO_MEDIEVAL.md`, medidas, dirección artística, checklist, registro, plan y `Docs/Images/D01-*.png`.
+- Artefacto local nuevo: `ProyectoRPGRTS/Builds/Aethernia-Fase3-D01-Windows.zip`; los ZIP históricos se conservan. Resultados exactos en el informe D01.
+
 | Estado | Archivo |
 | --- | --- |
 | Modificado | `AGENTS.md` |

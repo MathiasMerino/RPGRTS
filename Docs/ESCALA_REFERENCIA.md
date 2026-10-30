@@ -43,3 +43,23 @@ Para inspección manual opcional, abrir `Assets/01_Scenes/TechnicalSandbox.unity
 | Mazmorra técnica | Suelo 10 × 10 m; muros traseros 3 m y parapetos delanteros 0,80 m | Conservar huella/paso/visibilidad antes de modelar |
 
 Las dimensiones de accesorios/decorados todavía no aplicadas se proponen en Documentacion/DIRECCION_ARTISTICA.md. No duplicar esta tabla en un segundo catálogo de medidas ni escalar raíces existentes para cambiar apariencia. La iteración C1 no modifica estas medidas.
+
+## Muestra medieval D01 — medidas aplicadas
+
+Fecha: 2026-10-30. Biblioteca visual sin colliders, con raíces de escala uno; la escena mantiene los colliders/NavMesh anteriores. Bounds medidos después de instanciar los prefabs en Unity. Las pequeñas salientes de herrajes/aleros no redefinen la huella física.
+
+| Prefab / elemento | Dimensiones visuales X × Y × Z, metros | Compatibilidad física |
+| --- | --- | --- |
+| TimberHouse_6x8m | 6,760 × 5,595 × 8,780, incluidos aleros/chimenea | Huella original 6 × 8; muros 3 m; techo técnico físico anterior a 3,15 m conservado |
+| GableRoof_660x860cm | 6,760 × 2,220 × 8,780, incluidos remates | Paneles base 6,60 × 8,60, subida 2 m; colocado a Y=3,10; no es plataforma transitable |
+| WallBay_2m | 2 × 3 × 0,260 | Módulo visual de muro con zócalo, postes y diagonal |
+| OpenDoor_120x220cm | 1,610 × 2,400 × 0,268 con herrajes | Hueco libre 1,20 × 2,20; conserva entrada para agente 0,60 × 1,80 |
+| Window_100x120cm | 1,400 × 1,600 × 0,200 | Hueco visual 1 × 1,20; marco desde Y=0,80 en fachada; soporte en muestra independiente |
+| Barrel_100cm | 0,970 × 1,020 × 0,970 | Proxy cúbico existente 1 × 1 × 1; margen conservador junto al contorno curvo |
+| Crate_80cm | 0,800 × 0,800 × 0,800 | Presentación del mercado, con su proxy anterior |
+| CrateStack_3x2x2m | 3 × 2 × 2 | Coincide con el obstáculo existente; impide tránsito |
+| Chest_80x80x60cm | 0,800 × 0,813 × 0,645 con herrajes | Volumen base 0,80 × 0,80 × 0,60; interacción y collider originales |
+| GrassClump / GroundFern | 0,400 × 0,230 × 0,392 / 0,853 × 0,260 × 0,844 | Plantas blandas sin colisión; instancias con escala uniforme 0,70–1,40 |
+| Camino de tierra D01 | Ancho aproximado 2,65–2,95; superficie Y=0,018 | Malla continua sin collider sobre suelo técnico; la marca de calle 4 × 12 anterior queda oculta |
+
+El humano y los talleres mantienen las medidas de las tablas anteriores. Recorrido de puerta y bloqueo del almacén se comprueban en Play Mode; las firmas de todos los colliders estáticos y el SHA-256 del NavMesh se comparan con el estado anterior. Un prefab visual trasladado a otro mapa requiere física y validación propias.

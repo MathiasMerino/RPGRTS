@@ -1,0 +1,6 @@
+{
+  "name": "Aethernia.Environment.Editor",
+  "references": ["Aethernia.Runtime"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}
