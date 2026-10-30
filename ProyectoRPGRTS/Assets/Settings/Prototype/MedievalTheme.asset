@@ -17,3 +17,9 @@ MonoBehaviour:
   Gold: {r: 0.85, g: 0.67, b: 0.34, a: 1}
   Text: {r: 0.94, g: 0.89, b: 0.76, a: 1}
   Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  BodyFontSize: 16
+  ButtonFontSize: 16
+  HeadingFontSize: 20
+  Spacing: 8
+  Padding: 16
+  ActionButtonSize: {x: 116, y: 34}

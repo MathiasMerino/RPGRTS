@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('Baseline', 'GenerateSandbox', 'Foundation', 'GeneratePlayable', 'Playable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'Vertical', 'Build')]
+    [ValidateSet('Baseline', 'GenerateSandbox', 'Foundation', 'GeneratePlayable', 'Playable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'Vertical', 'Build')]
     [string]$Mode = 'Baseline',
     [string]$TestFilter = ''
 )
@@ -27,13 +27,14 @@ New-Item -ItemType Directory -Path $taskLogs -Force | Out-Null
 $taskLog = Join-Path $taskLogs "$Mode.log"
 $taskResult = Join-Path $taskLogs "$Mode-results.xml"
 $taskArguments = @('-batchmode', '-projectPath', ('"' + $taskProject + '"'), '-logFile', ('"' + $taskLog + '"'))
-if ($Mode -in @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'Build')) {
+if ($Mode -in @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'Build')) {
     $taskMethod = switch ($Mode) {
         GenerateSandbox { 'Aethernia.Editor.TechnicalSandboxBuilder.Create' }
         GeneratePlayable { 'Aethernia.Editor.PlayablePrototypeBuilder.Create' }
         UpgradeVertical { 'Aethernia.Editor.VerticalSliceBuilder.Upgrade' }
         Presentation { 'Aethernia.Editor.VerticalSliceBuilder.FinalisePresentation' }
         AgentStartup { 'Aethernia.Editor.VerticalSliceBuilder.RepairNavigationStartup' }
+        ContextUi { 'Aethernia.Editor.ContextUiBuilder.Upgrade' }
         Build { 'Aethernia.Editor.PlayablePrototypeBuilder.Build' }
     }
     $taskArguments += @('-nographics', '-quit', '-executeMethod', $taskMethod)
@@ -56,7 +57,7 @@ if (-not $taskProcess.WaitForExit(600000)) {
 }
 $taskProcess.Refresh()
 if ($taskProcess.ExitCode -ne 0) { throw "Unity termino con codigo $($taskProcess.ExitCode). Revisa $taskLog." }
-if ($Mode -notin @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'Build')) {
+if ($Mode -notin @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'Build')) {
     if (-not (Test-Path -LiteralPath $taskResult)) { throw 'Unity no genero resultados; no se considera una prueba correcta.' }
     if ((Get-Item -LiteralPath $taskResult).LastWriteTimeUtc -lt $taskStarted) { throw 'El XML de resultados es anterior a esta ejecucion.' }
     [xml]$taskXml = Get-Content -LiteralPath $taskResult -Raw

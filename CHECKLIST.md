@@ -1,12 +1,13 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Fase 2 autorizada mediante la solicitud «VALIDACIÓN, INTEGRACIÓN Y MEJORA DE LA EXPERIENCIA JUGABLE».
+Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; iteración A/B/C1.
 
 ## Resumen actual
 
 - Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
 - Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07 (sesión humana) pendiente de realización.
-- Pruebas actuales: 34/34 aprobadas, cero fallos/omisiones y salida 0; cinco capturas revisadas, incluidas dos resoluciones.
+- Evidencia de fase 2: 34/34 aprobadas, cero fallos/omisiones y salida 0; cinco capturas revisadas, incluidas dos resoluciones.
+- Fase 3: A/B/C1 e integración verificadas; 35/35 en regresión final, cero omisiones y salida 0. Build y entrega en curso. D/E/C2 pendientes.
 - Build Windows de fase 2: compilada, recorridos independientes sin gráficos y con GPU aprobados, salida 0 y sin aviso de agente inválido/excepciones; ZIP portable verificado.
 - Reglas, clases y hoja de ruta fueron aprobadas por el usuario como prototipo. El juego comercial, continente, narrativa y arte finales no se declaran terminados.
 - Pendiente: evaluación humana de controles/diversión/balance (F2-07). Expansión compleja y siguiente iteración de arte/UX sujetas a propuesta.
@@ -363,13 +364,13 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Resultado / problemas: propuestas reversibles documentadas; no son modelos/materiales finales implementados ni aprobación de arte final.
 
 ### F3-C01 — Primera UI contextual reutilizable
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Objetivo / descripción: distribuir acciones existentes por secciones de exploración, ocultar nombre fuera de Personaje y cambiar ayuda/acciones por modo.
 - Sistema / prioridad: UI/UX / P0. Dependencias: F3-B01.
 - Aceptación: Resumen/Personaje/Inventario/Partida accesibles sin duplicar acciones; RPG/construcción/RTS coherentes; estilo compartido y sin reglas nuevas.
-- Archivos: previstos VerticalSliceHud.cs, MedievalUiTheme.cs, ContextUiBuilder.cs, PlayablePrototype.unity, MedievalTheme.asset, pruebas UI.
-- Pruebas: clics reales de botones vía uGUI, modo/página, suscripciones, entrada y layout 720p/1080p; compilación exacta.
-- Resultado / problemas: implementación pendiente de validar; mapa/diario/retratos se secuencian en C02.
+- Archivos: Runtime/UI/VerticalSliceHud.cs, ExplorationHud.cs y MedievalUiTheme.cs; Editor/ContextUiBuilder.cs; Tests/Editor/ContextUiValidationTests.cs, PlayableValidationTests.cs y SceneCapture.cs (bajo Assets/03_Scripts); PlayablePrototype.unity, MedievalTheme.asset y Tools/Invoke-UnityValidation.ps1.
+- Pruebas: invocación programática de botones uGUI en Play Mode, modo/página, suscripciones, entrada y layout 720p/1080p; compilación exacta. No sustituye ratón/teclado humanos.
+- Resultado / problemas: 35/35 en suite final, salida 0; catorce layouts comprobados y ocho capturas representativas inspeccionadas. Se corrigió Interactuar visible fuera de exploración. Nueve acciones simultáneas pasan a 0/3/4/2 por sección; mapa/diario/retratos en C02. Fuente provisional, evaluación humana pendiente.
 
 ### F3-C02 — Ampliación de información contextual
 - Estado: [ ] Pendiente.
@@ -399,16 +400,16 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Resultado / problemas: pendiente; no se prometen rigs ni modelos definitivos.
 
 ### F3-F01 — Integración de la iteración UI C1
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Objetivo / descripción: comprobar compatibilidad de C1 con movimiento, interacción, clase, guardado, construcción y encuentros.
 - Sistema / prioridad: Integración / P0. Dependencias: F3-C01.
 - Aceptación: suite anterior conservada/adaptada al acceso contextual y nuevas pruebas funcionales; ausencia de referencias perdidas y estado guardado compatible.
-- Archivos: previstos pruebas de editor/Play Mode y Docs/FASE3_ITERACION_1.md.
+- Archivos: pruebas de editor/Play Mode y Docs/FASE3_ITERACION_1.md; evidencia Phase3-final-results.xml/log (local, excluida de Git).
 - Pruebas: suite completa con Unity 6000.5.8f1; snapshot de layout en cuatro modos y dos resoluciones.
-- Resultado / problemas: pendiente; D/E requerirán repetir integración al implementarse.
+- Resultado / problemas: repetición final 35/35, cero fallos/omisiones y salida 0 (8,33 s de casos, sin arranque/importación). Conserva 34 casos anteriores, con acceso a Personaje adaptado en la prueba de nombre. Mundo/reglas/guardado sin cambios; D/E requerirán integración propia.
 
 ### F3-G01 — Validación y entrega de esta iteración
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Objetivo / descripción: revisar capturas reales, ejecutar build y recorrido independiente, registrar commits y guía.
 - Sistema / prioridad: QA/entrega / P0. Dependencias: F3-F01.
 - Aceptación: resultados nuevos con salida 0, imágenes inspeccionadas, build/ZIP verificables y documentación con pendientes reales.

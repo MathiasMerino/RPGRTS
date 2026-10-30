@@ -10,5 +10,11 @@ namespace Aethernia
         public Color Gold = new Color(0.85f, 0.67f, 0.34f);
         public Color Text = new Color(0.94f, 0.89f, 0.76f);
         public Font Font;
+        public int BodyFontSize = 16;
+        public int ButtonFontSize = 16;
+        public int HeadingFontSize = 20;
+        public float Spacing = 8;
+        public float Padding = 16;
+        public Vector2 ActionButtonSize = new Vector2(116, 34);
     }
 }

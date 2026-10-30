@@ -69,6 +69,8 @@ C1 reutiliza el panel contextual y sus acciones: exploración abre Resumen, Pers
 
 Centralizar fuente, tamaños, colores y separación en MedievalTheme. Propuesta inicial C1 a referencia 1280×720: cuerpo/botón 16 px, encabezados 20 px, separación 8 px y margen 16 px; botones de acción 116×34. Validar el tamaño proyectado también en 1920×1080. No comunicar selección únicamente por color; añadir negrita y texto de sección. Evitar abreviar reglas hasta ocultar costes/resultado.
 
+La fuente actual LegacyRuntime.ttf es provisional y procede de Unity. Una futura tipografía con identidad medieval deberá tener licencia comprobada y conservar la lectura; reservar ornamentación para títulos, con cuerpo sobrio. C1 no declara finalizada la tipografía por haber centralizado sus tamaños.
+
 C2 pendiente: retrato del único héroe (sin simular compañeros), mapa de la región técnica y diario de los hechos existentes; habilidades/estados y categorías/formaciones solo cuando tengan soporte de datos real. No añadir botones vacíos ni presentar nuevas mecánicas como implementadas.
 
 ## Validación y recursos

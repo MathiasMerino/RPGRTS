@@ -32,7 +32,11 @@ namespace Aethernia
         private void Refresh()
         {
             if (log != null) log.text = session.LastMessage;
-            if (interact != null) interact.interactable = session.Mode == PrototypeMode.Exploration;
+            if (interact != null)
+            {
+                var exploring = session.Mode == PrototypeMode.Exploration;
+                interact.gameObject.SetActive(exploring); interact.interactable = exploring;
+            }
         }
     }
 }

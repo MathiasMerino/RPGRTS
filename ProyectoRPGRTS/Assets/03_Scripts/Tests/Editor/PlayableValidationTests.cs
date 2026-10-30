@@ -89,6 +89,7 @@ namespace Aethernia.Tests.Editor
             AssertNoDuplicateListeners(hud, session);
             Canvas.ForceUpdateCanvases();
             Assert.That(UiInputGuard.HasUiAt(RectTransformUtility.WorldToScreenPoint(null, hud.ActionButton.transform.position)), Is.True);
+            Object.FindAnyObjectByType<VerticalSliceHud>().SelectPage(ExplorationPage.Character);
             var nameInput = Object.FindAnyObjectByType<InputField>();
             nameInput.ActivateInputField(); yield return null; yield return null;
             Assert.That(UiInputGuard.BlocksWorldInput, Is.True, "Typing must not pan the world camera or interact.");

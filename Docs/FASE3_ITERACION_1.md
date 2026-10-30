@@ -21,3 +21,39 @@ Herramientas comprobadas: ejecutable Unity 6000.5.8f1 instalado, manifest con UR
 - Pruebas funcionales de UI, suite previa, capturas inspeccionadas y nueva build. Resultados pendientes hasta ejecutar.
 
 Dirección y conceptos de las cuatro clases: [DIRECCION_ARTISTICA](../Documentacion/DIRECCION_ARTISTICA.md). Los valores artísticos no confirmados se identifican como propuestas reversibles.
+
+## UI C1 implementada y validación en curso
+
+ContextUiBuilder amplió una sola vez la escena existente, reutilizando el prefab de botón y todos los comandos anteriores. VerticalSliceHud contiene únicamente estado de presentación (página/modo), mantiene referencias y libera listeners. MedievalTheme centraliza fuente, tamaños, separaciones y botón; no hay nuevos paquetes ni cambios de reglas/guardado. El nombre se oculta fuera de Personaje. El generador ContextUi rechaza una segunda aplicación para evitar duplicados.
+
+La prueba dirigida PagesPreserveActionsAndModesHaveReadableSeparateLayouts aprobó 1/1 con salida 0. Comprueba las cuatro secciones, cambio real a Mago, equipo/comercio mediante botones, una sola emisión tras cinco reactivaciones, transición RPG/RTS y catorce layouts renderizados (siete contextos × dos resoluciones). No pulsa guardar/cargar del slot normal del usuario; su lógica se cubre con archivos de Logs en la suite previa.
+
+Se revisaron visualmente las siete vistas a 720p y Resumen a 1080p: contenido cabe, pestaña actual resaltada por color/negrita y acciones separadas. Algunas etiquetas del primer Resumen se ven suavizadas; no se declara tipografía final ni accesibilidad humana verificada. La revisión detectó Interactuar todavía visible/deshabilitado fuera de exploración; se corregirá antes de cerrar C1. La regresión completa está en ejecución.
+
+Comparación del YAML con cc9691d: 76 bloques de transform/cámara/renderer/físicas del mundo idénticos; prefab y NavMesh de mundo no se modifican. Las líneas nuevas de escena pertenecen al layout, estilos y cuatro botones de navegación reutilizados.
+
+## Cómo probar C1 manualmente (pendiente)
+
+Abrir ProyectoRPGRTS con Unity 6000.5.8f1, cargar Assets/01_Scenes/PlayablePrototype.unity y entrar en Play. En Resumen comprobar que no aparecen las nueve acciones antiguas. Abrir Personaje: cambiar clase y escribir nombre; comprobar que WASD mientras se escribe no desplaza cámara. Abrir Inventario, recoger cofre cercano y probar equipamiento/comercio. Abrir Partida para usar el guardado/carga normal, o F5/F9 fuera de encuentro.
+
+Cambiar a Construir y revisar coste/huella e instrucciones, después volver a Explorar. En combate RPG observar iniciativa/objetivo/acción/movimiento; la ayuda y los controles son propios del modo. Tras una victoria, escalar a RTS y comprobar órdenes/selección, con Interactuar oculto. Repetir la lectura en Game a 1280×720 y 1920×1080, valorar nitidez/contraste real y anotar dificultades. Este guion no se registra como sesión realizada y no completa F2-07.
+
+Siguiente bloque de producción propuesto: F3-D01, muestra pequeña de suelo/camino/fachada/decoración sobre el escenario existente según la dirección documentada; después E01 para apariencias y C02 para mapa/diario/retrato. No se afirma que C1 incluya esos recursos.
+
+## Cierre técnico de C1/F
+
+Suite final con Unity 6000.5.8f1: 35/35 aprobadas, cero fallos/omisiones, salida 0; 8,33 s de casos excluyendo importación/arranque y recargas del editor. Evidencia en ProyectoRPGRTS/Logs/Phase3-final-results.xml y Phase3-final.log. Mantiene las 34 pruebas previas; la prueba del campo de nombre abre ahora Personaje antes de enfocar. La nueva prueba funcional cubre secciones, comandos reales invocados programáticamente, bloqueo de entrada, listeners, catorce layouts y transición de modos. No equivale a ratón/teclado físicos.
+
+Interactuar se oculta en construcción/RPG/RTS; se revisaron otra vez sus tres capturas finales. Las capturas de los siete contextos a 720p y Resumen a 1080p se conservan en Docs/Images/Fase3-*. No se afirma revisión visual de las seis variantes 1080p restantes; sí pasaron las comprobaciones de geometría/texto del test.
+
+| Contexto | Acciones del panel |
+| --- | --- |
+| Resumen | 0, más cuatro entradas de sección |
+| Personaje | 3 clases, con campo de nombre visible |
+| Inventario | 4: espada, túnica, ración, comercio |
+| Partida | 2: guardar/cargar |
+| Construcción | Colocación mediante clic derecho; coste/huella/producción visibles |
+| RPG | Cinco acciones existentes y escalada opcional condicionada |
+| RTS | Dos órdenes existentes; cantidades de unidades e instrucciones |
+
+No se ha medido una mejora de FPS. La lectura batch del tramo RTS fue 6,16 s, 4.099 frames y 701.737.780 bytes asignados en una muestra del editor; no es rendimiento comercial ni comparación controlada con otro equipo. No se introdujeron pooling o dependencias.
