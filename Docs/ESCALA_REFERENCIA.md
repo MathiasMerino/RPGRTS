@@ -31,3 +31,15 @@ Las dimensiones militares, equipamiento y edificios definitivos se validarán co
 3. Revisar el XML y la imagen en `ProyectoRPGRTS/Logs/`. El informe de validación resume el resultado real; un prefab generado no implica aceptación sin comprobarlo.
 
 Para inspección manual opcional, abrir `Assets/01_Scenes/TechnicalSandbox.unity`. Localizar los grupos por nombre en Hierarchy y comprobar colliders y medidas en Inspector. La cámara de inspección es fija; todavía no incorpora controles isométricos del juego.
+
+## Medidas aplicadas adicionales (fase 3, consulta central)
+
+| Elemento vigente | Medida comprobada en la autoría existente | Alcance |
+| --- | --- | --- |
+| Héroe/agente | Cápsula 0,60 × 1,80 m; agente radio 0,30 m/altura 1,80 m | Mantener base funcional al sustituir el hijo visual |
+| Taller | Huella 3 × 3 m; cuerpo 2 m alto y cubierta hasta 2,20 m | Obstacle box 3 × 2,20 × 3 m con carving |
+| Cofre técnico | 0,80 × 0,80 × 0,60 m; centro Y=0,40 m | Radio de interacción 2,20 m; presentación provisional |
+| Hitos/portales técnicos | Cubos de 0,80 m | No representan puertas físicas ni NPC finales |
+| Mazmorra técnica | Suelo 10 × 10 m; muros traseros 3 m y parapetos delanteros 0,80 m | Conservar huella/paso/visibilidad antes de modelar |
+
+Las dimensiones de accesorios/decorados todavía no aplicadas se proponen en Documentacion/DIRECCION_ARTISTICA.md. No duplicar esta tabla en un segundo catálogo de medidas ni escalar raíces existentes para cambiar apariencia. La iteración C1 no modifica estas medidas.

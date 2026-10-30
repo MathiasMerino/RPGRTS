@@ -339,3 +339,79 @@ Las 26 tareas anteriores son historial de la primera etapa y conservan sus resul
 - Archivos: Docs/PRUEBA_MANUAL_FASE_2.md creado como guion; registro real de sesión pendiente.
 - Pruebas: sesión humana interactiva de los doce sistemas, sin sustituir por capturas o llamadas a métodos.
 - Resultado: no realizada; no se marca como completada.
+
+## FASE 3 — DIRECCIÓN ARTÍSTICA, UI Y VERTICAL SLICE
+
+Iteración actual: bloques A, B y primera mejora C1, con integración/validación propias. D/E y ampliación C2 permanecen secuenciados; no se declara completa toda la fase 3 al entregar esta iteración. F2-07 sigue pendiente.
+
+### F3-A01 — Auditoría visual y punto de control
+- Estado: [x] Completado y verificado.
+- Objetivo / descripción: contrastar fuentes, evidencia, herramientas y problemas visuales de la base.
+- Sistema / prioridad: Dirección/QA / P0. Dependencias: F2-06.
+- Aceptación: Git/evidencia conocidos, GDD intacto, captura real revisada y herramientas comprobadas.
+- Archivos: Docs/FASE3_ITERACION_1.md, CHECKLIST.md; tag local codex/fase3-base-cc9691d.
+- Pruebas: git status/log, hash GDD, XML 34/34, build/smokes de cc9691d, manifest/editor y catálogo de herramientas; inspección de captura.
+- Resultado / problemas: base limpia; CLI disponible y ninguna herramienta Unity/MCP expuesta en esta sesión. Ruido de acciones y ayuda estática identificados. No equivale a una evaluación humana.
+
+### F3-B01 — Dirección artística y dimensionamiento
+- Estado: [x] Completado y verificado.
+- Objetivo / descripción: documentar dirección, materiales, paletas, iluminación, arquitectura, cuatro conceptos de clase y sustitución visual.
+- Sistema / prioridad: Arte/arquitectura / P0. Dependencias: F3-A01.
+- Aceptación: confirmado/propuesto separados; Pícaro solo conceptual; medidas centralizadas y contrato VisualRoot sin alterar combate.
+- Archivos: Documentacion/DIRECCION_ARTISTICA.md, Docs/ESCALA_REFERENCIA.md, PLAN_DESARROLLO.md, REGISTRO_CAMBIOS.md.
+- Pruebas: cotejo con GDD §§12.1–12.6, medidas de autoría existente y revisión documental; no aplica compilación a conceptos.
+- Resultado / problemas: propuestas reversibles documentadas; no son modelos/materiales finales implementados ni aprobación de arte final.
+
+### F3-C01 — Primera UI contextual reutilizable
+- Estado: [ ] En desarrollo.
+- Objetivo / descripción: distribuir acciones existentes por secciones de exploración, ocultar nombre fuera de Personaje y cambiar ayuda/acciones por modo.
+- Sistema / prioridad: UI/UX / P0. Dependencias: F3-B01.
+- Aceptación: Resumen/Personaje/Inventario/Partida accesibles sin duplicar acciones; RPG/construcción/RTS coherentes; estilo compartido y sin reglas nuevas.
+- Archivos: previstos VerticalSliceHud.cs, MedievalUiTheme.cs, ContextUiBuilder.cs, PlayablePrototype.unity, MedievalTheme.asset, pruebas UI.
+- Pruebas: clics reales de botones vía uGUI, modo/página, suscripciones, entrada y layout 720p/1080p; compilación exacta.
+- Resultado / problemas: implementación pendiente de validar; mapa/diario/retratos se secuencian en C02.
+
+### F3-C02 — Ampliación de información contextual
+- Estado: [ ] Pendiente.
+- Objetivo / descripción: preparar retrato del único héroe, mapa de región técnica y diario de hechos existentes; habilidades/categorías/formaciones solo con soporte real.
+- Sistema / prioridad: UI/UX / P1. Dependencias: F3-C01, F3-E01.
+- Aceptación: contenido procedente del estado real, sin compañeros o mecánicas simuladas por botones vacíos; criterios del siguiente bloque concretados antes de editar.
+- Archivos: previstos presentadores/prefabs de mapa, diario y retrato; plan y pruebas específicas.
+- Pruebas: pendientes de descomponer antes de implementar.
+- Resultado / problemas: pendiente; no incluido en la primera entrega C1 solicitada.
+
+### F3-D01 — Muestra de escenario medieval
+- Estado: [ ] Pendiente.
+- Objetivo / descripción: mejorar suelo/camino, fachada y decorados reutilizables en una zona pequeña de la escena existente.
+- Sistema / prioridad: Entorno/arte / P1. Dependencias: F3-B01, F3-C01.
+- Aceptación: lenguaje material coherente, iluminación legible, huellas/escala conservadas, acceso a interacción y RTS; medidas de render antes de optimizar.
+- Archivos: previstos materiales/prefabs propios de muestra y cambios acotados en escena; registro de procedencia/licencia.
+- Pruebas: pasos/colisiones/rutas, visibilidad y render comparativo; build si cambia contenido.
+- Resultado / problemas: pendiente; sin transformar masivamente la escena.
+
+### F3-E01 — Apariencias provisionales de tres clases
+- Estado: [ ] Pendiente.
+- Objetivo / descripción: siluetas proporcionadas de Guerrero/Mago/Monje sustituibles por hijo visual; Pícaro conserva concepto documental.
+- Sistema / prioridad: Personajes/presentación / P1. Dependencias: F3-B01, F3-D01.
+- Aceptación: identidad por forma/material, lógica/collider/agente intactos, configuración compartida y reemplazo de malla sin editar daño/turnos.
+- Archivos: previstos prefabs visuales, configuración de apariencia y presentador; pruebas de escala/clases.
+- Pruebas: dimensiones, selección, paso/navegación y regresión de clases/combate.
+- Resultado / problemas: pendiente; no se prometen rigs ni modelos definitivos.
+
+### F3-F01 — Integración de la iteración UI C1
+- Estado: [ ] Pendiente.
+- Objetivo / descripción: comprobar compatibilidad de C1 con movimiento, interacción, clase, guardado, construcción y encuentros.
+- Sistema / prioridad: Integración / P0. Dependencias: F3-C01.
+- Aceptación: suite anterior conservada/adaptada al acceso contextual y nuevas pruebas funcionales; ausencia de referencias perdidas y estado guardado compatible.
+- Archivos: previstos pruebas de editor/Play Mode y Docs/FASE3_ITERACION_1.md.
+- Pruebas: suite completa con Unity 6000.5.8f1; snapshot de layout en cuatro modos y dos resoluciones.
+- Resultado / problemas: pendiente; D/E requerirán repetir integración al implementarse.
+
+### F3-G01 — Validación y entrega de esta iteración
+- Estado: [ ] Pendiente.
+- Objetivo / descripción: revisar capturas reales, ejecutar build y recorrido independiente, registrar commits y guía.
+- Sistema / prioridad: QA/entrega / P0. Dependencias: F3-F01.
+- Aceptación: resultados nuevos con salida 0, imágenes inspeccionadas, build/ZIP verificables y documentación con pendientes reales.
+- Archivos: previstos Docs/Images/Fase3*, informe, COMO_JUGAR.md, CHECKLIST.md, REGISTRO_CAMBIOS.md; Builds/Logs excluidos.
+- Pruebas: render, Build, smoke, metadatos/GUID, diff/Git e integridad del paquete.
+- Resultado / problemas: pendiente; F2-07 permanece pendiente aunque pase la automatización.
