@@ -1,11 +1,13 @@
 # Plan de desarrollo de Crónicas de Aethernia
 
-Fecha: 2026-10-28, America/La_Paz. Estado: plan aprobado para avanzar incrementalmente.
+Actualizado: 2026-10-29, America/La_Paz. Estado: alcance del prototipo técnico aprobado completado y verificado.
 El usuario indicó «continua con el prompt» después de recibir este plan. Se continúa con la base técnica y sus verificaciones; las reglas y sistemas todavía pendientes de diseño mantienen sus decisiones abiertas.
 
 ## Avance verificado
 
-Al 2026-10-28 están completadas PRE-01–PRE-05 y BAS-01–BAS-03. Se añadieron seis prefabs métricos, siete materiales URP, la escena TechnicalSandbox y validación automática por comandos. La ejecución final pasó 12/12 pruebas e incluye Play Mode, medidas, colisiones y una captura GPU revisada. Detalles en `Docs/VALIDACION_BASE_TECNICA.md`. El siguiente paso es BAS-04; la cámara actual es fija y todavía no existen movimiento, interacción ni UI de juego.
+Al 2026-10-29 están cerradas las 26 tareas del checklist dentro del alcance de prototipo y planificación aprobado. La base jugable y el prototipo vertical incluyen cámara, personaje, selección/movimiento, interacción, UI reutilizable, tres clases, guardado, equipo, región/mazmorra, facciones/consecuencias, turnos, economía, construcción y una batalla RTS con escalada experimental opcional. La suite final pasó 23/23 y la build de Windows completó su recorrido automático independiente con salida 0.
+
+Consultar `COMO_JUGAR.md` y `Docs/VALIDACION_PROTOTIPO.md` para ejecutar, repetir las pruebas y conocer los límites. `Docs/ESPECIFICACION_PROTOTIPO.md` y `Docs/PLAN_EXPANSION.md` fueron aprobados por el usuario. Este cierre no significa que el continente, contenido narrativo, arte ni sistemas avanzados del videojuego comercial estén terminados: pertenecen a la expansión planificada.
 
 ## Diagnóstico inicial
 
@@ -138,6 +140,6 @@ Referencias oficiales consultadas el 2026-10-28: [AGENTS.md](https://learn.chatg
 2. Confirmar hardware, resolución y presupuesto de rendimiento antes de fijar métricas. PC es referencia de controles, no plataformas comerciales definitivas.
 3. Elegir tres clases y reglas antes de VER-03/VER-05. Definir tiempo, persistencia y límites de región en VER-01.
 4. Mantener contenido pequeño hasta demostrar un recorrido completo; el GDD combina muchos sistemas.
-5. Compilación y Play Mode ya se comprobaron para BAS-01–BAS-03. Cada nueva mecánica necesita sus propias pruebas; la build de integración sigue pendiente en BAS-09.
+5. Compilación, Play Mode, render y build independiente se comprobaron para el prototipo aprobado. Las nuevas mecánicas o el contenido futuro necesitan sus propias pruebas; no heredan automáticamente esta validación.
 
 Tras aprobar: abrir `ProyectoRPGRTS/` con Unity 6000.5.8f1, esperar importación, revisar Console y Package Manager, abrir SampleScene y entrar/salir de Play Mode. Crear después una escena de pruebas independiente y aplicar los criterios del checklist.

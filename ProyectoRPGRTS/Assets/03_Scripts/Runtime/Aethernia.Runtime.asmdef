@@ -1,0 +1,5 @@
+{
+  "name": "Aethernia.Runtime",
+  "references": ["Unity.InputSystem", "Unity.AI.Navigation", "Unity.ugui"],
+  "autoReferenced": true
+}

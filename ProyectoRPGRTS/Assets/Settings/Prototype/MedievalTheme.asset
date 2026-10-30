@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e134d5a2062fc4b88344c610726d79, type: 3}
+  m_Name: MedievalTheme
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.MedievalUiTheme
+  Panel: {r: 0.12, g: 0.1, b: 0.085, a: 0.96}
+  Button: {r: 0.28, g: 0.22, b: 0.14, a: 1}
+  Gold: {r: 0.85, g: 0.67, b: 0.34, a: 1}
+  Text: {r: 0.94, g: 0.89, b: 0.76, a: 1}
+  Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}

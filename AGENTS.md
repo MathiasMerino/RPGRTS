@@ -5,6 +5,7 @@
 - Motor observado: Unity `6000.5.8f1`, C#, URP `17.5.0`; conservar versiones salvo necesidad demostrada.
 - Unity 6.5 exige APIs `EntityId`; evitar `GetInstanceID` y `objectReferenceInstanceIDValue` obsoletas. Usar la API actual y comprobar compilación con el editor exacto.
 - Fuente de diseño: `ProyectoRPGRTS/Assets/05_Docs/GDD_GAMERPGTS.docx`, versión 0.2. Preservar el original.
+- Prototipo aprobado: `Docs/ESPECIFICACION_PROTOTIPO.md`; clases Guerrero/Mago/Monje y reglas provisionales autorizadas. Hoja de ruta posterior aprobada en `Docs/PLAN_EXPANSION.md`, sin iniciar producción futura automáticamente.
 - Lectura consultable: `Docs/GDD_LECTURA.md`; comprobar su SHA-256 contra el Word si cambia el GDD.
 - Leer primero el resumen de `CHECKLIST.md`; consultar el plan y las secciones del GDD relacionadas con la tarea.
 - El GDD es conceptual: distinguir confirmado, propuesto y pendiente. No convertir ejemplos en requisitos.
@@ -34,6 +35,7 @@
 ## Validación y herramientas
 - Abrir `ProyectoRPGRTS/` con el editor exacto. Revisar Console, referencias, Play Mode y pruebas pertinentes.
 - Preferencia del usuario: validar en segundo plano mediante `Tools/Invoke-UnityValidation.ps1`; usar la ventana solo si una comprobación visual lo requiere. No iniciar dos instancias sobre el mismo proyecto.
+- Escena jugable: `Assets/01_Scenes/PlayablePrototype.unity`. Validación completa: modo `Vertical`; build: modo `Build`; ejecutar la build sin ventana con `Tools/Invoke-PrototypeSmoke.ps1`. No repetir los generadores sobre assets existentes.
 - Antes de cada tarea: revisar `git status`, dependencias y criterios. Revisar el diff y registrar cambios importantes.
 - No sobrescribir cambios ajenos, publicar remotos ni modificar configuración global como parte de tareas locales.
 - Visual Studio Community 2026 y Tools for Unity ya instalados; paquete IDE Unity `2.0.26` presente.
