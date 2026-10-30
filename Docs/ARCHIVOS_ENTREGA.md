@@ -84,3 +84,9 @@ Los archivos originales de diseño y las escenas de referencia se preservan.
 | Arranque de navegación | Instancia del héroe en PlayablePrototype.unity: agente desactivado en edición y activado en Start por ExplorationUnit; método puntual RepairNavigationStartup en Editor/VerticalSliceBuilder.cs; modo AgentStartup y rechazo de avisos/excepciones en Tools/Invoke-PrototypeSmoke.ps1 |
 
 Las rutas Runtime/Tests de la tabla parten de `ProyectoRPGRTS/Assets/03_Scripts/`. No se regeneraron escenas/prefabs ni se actualizaron paquetes. La build Windows local se reemplaza al compilar; el ZIP original sigue siendo la entrega histórica. La segunda entrega utiliza `ProyectoRPGRTS/Builds/Aethernia-Fase2-Windows.zip`. Resultados y checksum en AUDITORIA_FASE_2.md.
+
+## Fase 3 — iteración A/B/C1
+
+Dirección artística en Documentacion/DIRECCION_ARTISTICA.md; auditoría/validación y ocho capturas en Docs/FASE3_ITERACION_1.md e Images/Fase3*. Escena PlayablePrototype y MedievalTheme actualizados para navegación contextual, reutilizando cuatro instancias del botón compartido y acciones originales. Tres scripts UI modificados, editor ContextUiBuilder nuevo, prueba ContextUiValidationTests nueva con .meta, captura parametrizada y acceso de prueba al nombre adaptado. Tools/Invoke-UnityValidation.ps1 añade ContextUi (aplicación única); arquitectura, instrucciones, plan/checklist/registro y AGENTS actualizados.
+
+Build actual en Windows/Aethernia.exe y paquete Aethernia-Fase3-UI-C1-Windows.zip; anteriores ZIP conservados. D/E/C2 son trabajo pendiente, no archivos artísticos implementados. No se modificó el GDD ni se descargaron recursos externos.

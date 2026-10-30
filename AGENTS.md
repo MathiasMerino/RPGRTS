@@ -6,6 +6,7 @@
 - Unity 6.5 exige APIs `EntityId`; evitar `GetInstanceID` y `objectReferenceInstanceIDValue` obsoletas. Usar la API actual y comprobar compilación con el editor exacto.
 - Fuente de diseño: `ProyectoRPGRTS/Assets/05_Docs/GDD_GAMERPGTS.docx`, versión 0.2. Preservar el original.
 - Prototipo aprobado: `Docs/ESPECIFICACION_PROTOTIPO.md`; clases Guerrero/Mago/Monje y reglas provisionales autorizadas. Hoja de ruta posterior aprobada en `Docs/PLAN_EXPANSION.md`, sin iniciar producción futura automáticamente.
+- Fase 3, iteración A/B/C1: UI contextual uGUI y dirección en `Documentacion/DIRECCION_ARTISTICA.md`; evidencia en `Docs/FASE3_ITERACION_1.md`. Escenario D, apariencias E y ampliación C2 pendientes; F2-07 humana sigue pendiente.
 - Lectura consultable: `Docs/GDD_LECTURA.md`; comprobar su SHA-256 contra el Word si cambia el GDD.
 - Leer primero el resumen de `CHECKLIST.md`; consultar el plan y las secciones del GDD relacionadas con la tarea.
 - El GDD es conceptual: distinguir confirmado, propuesto y pendiente. No convertir ejemplos en requisitos.
@@ -27,7 +28,7 @@
 - Usar interfaces y eventos donde aporten utilidad; liberar suscripciones y referencias.
 - Evitar gestores monolíticos, búsquedas repetidas, duplicación y capas preventivas sin necesidad.
 - Escala inicial: 1 unidad = 1 metro. Medidas provisionales y pruebas de paso/navegación en el plan.
-- UI propuesta para el primer hito: uGUI con prefabs y estilos compartidos; confirmar en el prototipo.
+- UI actual: uGUI con prefabs/MedievalTheme compartidos y secciones Resumen/Personaje/Inventario/Partida; mantener separación por modo y justificar una migración.
 - Perfilado antes de optimización compleja. Pooling para creaciones frecuentes que lo justifiquen.
 - Conservar `.meta` y GUID; mover assets desde Unity o manteniendo su `.meta`.
 - No editar cachés ni proyectos C# generados. No copiar recursos o interfaces protegidos.

@@ -7,11 +7,11 @@ Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «
 - Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
 - Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07 (sesión humana) pendiente de realización.
 - Evidencia de fase 2: 34/34 aprobadas, cero fallos/omisiones y salida 0; cinco capturas revisadas, incluidas dos resoluciones.
-- Fase 3: A/B/C1 e integración verificadas; 35/35 en regresión final, cero omisiones y salida 0. Build y entrega en curso. D/E/C2 pendientes.
+- Fase 3, primera iteración: **5 de 8 tareas completadas y verificadas** (A/B/C1/F/G), 35/35 pruebas y dos recorridos de build con salida 0. D/E/C2 pendientes; no es el cierre de toda la fase 3.
 - Build Windows de fase 2: compilada, recorridos independientes sin gráficos y con GPU aprobados, salida 0 y sin aviso de agente inválido/excepciones; ZIP portable verificado.
 - Reglas, clases y hoja de ruta fueron aprobadas por el usuario como prototipo. El juego comercial, continente, narrativa y arte finales no se declaran terminados.
 - Pendiente: evaluación humana de controles/diversión/balance (F2-07). Expansión compleja y siguiente iteración de arte/UX sujetas a propuesta.
-- Entrega y límites actuales: COMO_JUGAR.md, Docs/AUDITORIA_FASE_2.md y Docs/PRUEBA_MANUAL_FASE_2.md. Docs/VALIDACION_PROTOTIPO.md conserva la primera etapa.
+- Entrega actual: COMO_JUGAR.md, Docs/FASE3_ITERACION_1.md y Documentacion/DIRECCION_ARTISTICA.md. Informes de fase 1/2 y guion humano se conservan en Docs.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -409,10 +409,10 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Resultado / problemas: repetición final 35/35, cero fallos/omisiones y salida 0 (8,33 s de casos, sin arranque/importación). Conserva 34 casos anteriores, con acceso a Personaje adaptado en la prueba de nombre. Mundo/reglas/guardado sin cambios; D/E requerirán integración propia.
 
 ### F3-G01 — Validación y entrega de esta iteración
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Objetivo / descripción: revisar capturas reales, ejecutar build y recorrido independiente, registrar commits y guía.
 - Sistema / prioridad: QA/entrega / P0. Dependencias: F3-F01.
 - Aceptación: resultados nuevos con salida 0, imágenes inspeccionadas, build/ZIP verificables y documentación con pendientes reales.
-- Archivos: previstos Docs/Images/Fase3*, informe, COMO_JUGAR.md, CHECKLIST.md, REGISTRO_CAMBIOS.md; Builds/Logs excluidos.
+- Archivos: ocho Docs/Images/Fase3*, informe, COMO_JUGAR.md, AGENTS.md, inventario/arquitectura, CHECKLIST.md, REGISTRO_CAMBIOS.md; Builds/Logs excluidos de Git.
 - Pruebas: render, Build, smoke, metadatos/GUID, diff/Git e integridad del paquete.
-- Resultado / problemas: pendiente; F2-07 permanece pendiente aunque pase la automatización.
+- Resultado / problemas: 35/35, build Windows de 170.931.692 bytes, salida 0; player sin gráficos y con GPU aprobados sin fallos NavMesh/excepciones. ZIP 69.570.489 bytes/305 entradas, CRC correcto y SHA-256 en informe. Capturas antes/después y commits locales revisados. F2-07, D/E/C2 siguen pendientes; no se afirma arte final ni evaluación humana.

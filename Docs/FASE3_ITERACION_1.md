@@ -1,5 +1,7 @@
 # Fase 3 — iteración A/B/C1
 
+Estado técnico: A/B/C1 e integración/entrega verificadas; suite final 35/35 y dos recorridos de la build con salida 0. Cinco de ocho tareas de fase 3 cerradas en esta iteración. D/E/C2 y evaluación humana F2-07 pendientes. La dirección artística es un documento de trabajo, no una afirmación de modelos o escenario finales.
+
 Fecha: 2026-10-30. Alcance autorizado por el prompt adjunto: auditoría visual, dirección artística y primera mejora funcional de UI. El escenario D, personajes E y ampliación de interfaz C2 se secuencian después. F2-07 conserva estado pendiente.
 
 ## Auditoría A
@@ -57,3 +59,38 @@ Interactuar se oculta en construcción/RPG/RTS; se revisaron otra vez sus tres c
 | RTS | Dos órdenes existentes; cantidades de unidades e instrucciones |
 
 No se ha medido una mejora de FPS. La lectura batch del tramo RTS fue 6,16 s, 4.099 frames y 701.737.780 bytes asignados en una muestra del editor; no es rendimiento comercial ni comparación controlada con otro equipo. No se introdujeron pooling o dependencias.
+
+## Antes y después del render real
+
+Capturas de Play Mode con GPU en batch, desde la cámara del juego. No son bocetos generados ni una sesión humana del Editor.
+
+Antes, fase 2:
+
+![Antes: acciones simultáneas](Images/Fase2-Exploracion-1280.png)
+
+Después, Resumen de C1:
+
+![Después: navegación por secciones](Images/Fase3-Overview-1280.png)
+
+Inventario y acciones reunidas:
+
+![Inventario contextual](Images/Fase3-Inventory-1280.png)
+
+También se conservan Personaje, Partida, Construcción, RPG, RTS y Resumen a 1080p en los archivos Fase3-*.png de esta carpeta Images. Fuente y geometría del mundo siguen siendo provisionales; la diferencia de esta entrega es de UI.
+
+## Build y paquete
+
+Build Windows compilada con Unity 6000.5.8f1: **170.931.692 bytes**, **55,46 s** de compilación incremental y salida 0. Evidencia: `ProyectoRPGRTS/Logs/Phase3-build-summary.txt` y `Phase3-build.log`.
+
+| Recorrido independiente | Resultado | Evidencia en Logs |
+| --- | --- | --- |
+| Sin gráficos | PASS, salida 0, 7,37 s; sin excepción/agente inválido | Phase3-final-player-smoke.txt y Phase3-final-player.log |
+| Con GPU en segundo plano | PASS, salida 0, 7,24 s; NVIDIA RTX 3050 Laptop/DX12; sin excepción/agente inválido | Phase3-graphics-smoke.txt y Phase3-graphics-player.log |
+
+Ambos recorridos verifican movimiento/cofre, clase/equipo, comercio/taller, mazmorra/reputación, restauración de estado, RPG/escalada/RTS, pausa del reloj, retirada de participantes y guardado final. La navegación de páginas y layout se comprueba en la suite Play Mode; el smoke del player invoca comandos del juego y no constituye una evaluación humana. Se usan archivos en Logs, sin sobrescribir el slot del jugador.
+
+Paquete: `ProyectoRPGRTS/Builds/Aethernia-Fase3-UI-C1-Windows.zip`, **69.570.489 bytes**, **305 entradas**, CRC sin errores. SHA-256: `db2d6a04acb149d24635e05e85cd656d4875a4b2627f93a5ee1e0a693a800d48`. Ejecutable, ensamblado Aethernia.Runtime y escena level0 comprobados contra los de la build. Excluye Burst DoNotShip; incluye LEEME. ZIP anteriores conservados. Binarios/registros/cachés fuera de Git.
+
+Punto de control previo cc9691d/tag codex/fase3-base-cc9691d; A/B en commit 9f5f409 y C1 funcional en 2316506. El cierre de documentación/capturas se registra en un commit adicional. No hubo instalaciones, recursos descargados, modificación de GDD, reglas, prefabs 3D, NavMesh o versiones de paquetes.
+
+Para repetir, con editor cerrado: `Tools/Invoke-UnityValidation.ps1 -Mode Vertical`, luego `-Mode Build` y `Tools/Invoke-PrototypeSmoke.ps1` (opcional `-WithGraphics`). ContextUi ya está aplicado y no debe repetirse; rechaza duplicar la interfaz.

@@ -1,6 +1,6 @@
 # Plan de desarrollo de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Estado: primera etapa cerrada; segunda etapa técnica entregada, evaluación humana F2-07 pendiente.
+Actualizado: 2026-10-30, America/La_Paz. Estado: fase 3, primera iteración A/B/C1 entregada; D/E/C2 y evaluación humana F2-07 pendientes.
 El usuario indicó «continua con el prompt» después de recibir este plan. Se continúa con la base técnica y sus verificaciones; las reglas y sistemas todavía pendientes de diseño mantienen sus decisiones abiertas.
 
 ## Avance verificado
@@ -155,3 +155,5 @@ Se mantiene el estado compartido PrototypeState, los módulos existentes, la esc
 ## Fase 3 — primera iteración A/B/C1
 
 Solicitud autorizada el 2026-10-30: comenzar auditoría visual/dirección artística y una primera UI funcional. Fuente/decisiones en Documentacion/DIRECCION_ARTISTICA.md; auditoría/resultados en Docs/FASE3_ITERACION_1.md. Se mantiene uGUI por compatibilidad y reutilización demostradas. Primera mejora: secciones de exploración y ayuda por modo con los botones existentes. Escenario D, apariencias E y ampliación C2 quedan como tareas posteriores; sin producción masiva ni reglas nuevas. F2-07 continúa pendiente. Punto de control previo: tag codex/fase3-base-cc9691d.
+
+Iteración A/B/C1 verificada: 35/35 pruebas, catorce layouts automatizados y ocho capturas representativas inspeccionadas; nueva build y dos recorridos independientes con salida 0. Entrega Aethernia-Fase3-UI-C1-Windows.zip. Siguiente tarea secuenciada: F3-D01 (muestra acotada de entorno); después E01 y C02, con validación propia. El resultado actual mejora acceso/contexto de UI y documenta la dirección; todavía no sustituye el escenario o los personajes provisionales.
