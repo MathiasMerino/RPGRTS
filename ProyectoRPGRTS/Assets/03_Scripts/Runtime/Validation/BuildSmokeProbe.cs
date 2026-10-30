@@ -39,15 +39,19 @@ namespace Aethernia
             var chest = GameObject.Find("Interaction Chest").GetComponent<InteractionPoint>();
             if (chest == null || !chest.TryInteract(actor, session) || !session.HasFact(chest.FactId)) throw new Exception("Interaction failed");
             var director = FindAnyObjectByType<PrototypeDirector>();
-            if (director == null) yield break;
-            director.Execute("class-mage"); director.Execute("sword"); director.Execute("armour");
+            if (director == null) throw new Exception("Prototype director missing");
+            director.Execute("class-mage");
+            if (!director.Execute("sword") || !director.Execute("armour")) throw new Exception("Equipment commands failed");
             if (!director.Execute("trade") || !director.Construction.Place(new Vector3(12, 0, -10))) throw new Exception("Economy/construction failed");
             if (!director.Travel("portal-dungeon") || !actor.Warp(new Vector3(50.5f, 0, 1))) throw new Exception("Dungeon travel failed");
             yield return null;
             if (!GameObject.Find("Dungeon Objective").GetComponent<InteractionPoint>().TryInteract(actor, session)) throw new Exception("Quest consequence failed");
-            if (!director.Save(output + ".save.json") || !director.Load(output + ".save.json") || !session.HasFact("dungeon-objective")) throw new Exception("Save roundtrip failed");
+            if (!director.Save(output + ".save.json")) throw new Exception("Save failed");
+            var gold = session.State.Gold; session.State.Gold = 999;
+            if (!director.Load(output + ".save.json") || !session.HasFact("dungeon-objective") || session.State.Gold != gold || session.State.Buildings.Count != 1 || session.State.Weapon != "training-sword" || session.State.Armour != "cloth") throw new Exception("Save roundtrip failed");
             director.Travel("portal-surface");
             if (!director.Encounter.Begin(42)) throw new Exception("RPG could not start");
+            var battleClock = session.State.WorldSeconds;
             actor.Warp(director.Encounter.EnemyPosition + Vector3.right * 1.3f);
             for (var turn = 0; turn < 20 && !director.Encounter.Battle.Finished; turn++)
             { director.Encounter.Attack(); if (!director.Encounter.Battle.Finished) director.Encounter.EndTurn(); yield return null; }
@@ -57,7 +61,9 @@ namespace Aethernia
             deadline = Time.realtimeSinceStartup + 60;
             while (director.Rts.Active && Time.realtimeSinceStartup < deadline) yield return null;
             if (!director.Rts.Won || !session.HasFact("rts-victory")) throw new Exception("RTS did not conclude with a persistent victory");
+            if (Mathf.Abs(session.State.WorldSeconds - battleClock) > 0.001f) throw new Exception("Combat advanced the shared economic clock");
             director.Execute("explore");
+            if (FindObjectsByType<ExplorationUnit>().Length != 1 || director.Encounter.Battle != null) throw new Exception("Combat participants leaked into exploration");
             if (!director.Save(output + ".save.json")) throw new Exception("Final victory could not be saved");
         }
     }

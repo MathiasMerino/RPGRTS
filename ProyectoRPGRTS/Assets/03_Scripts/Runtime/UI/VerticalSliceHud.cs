@@ -49,18 +49,21 @@ namespace Aethernia
             var s = session.State; var profile = session.Rules.Find(s.ClassId);
             if (nameInput != null && !nameInput.isFocused && nameInput.text != s.Name) nameInput.SetTextWithoutNotify(s.Name);
             stats.text = s.Name + " · " + profile.Title + "  |  Salud " + s.Health + "/" + profile.Health + "  |  Oro " + s.Gold + "  Madera " + s.Wood + "  Alimentos " + s.Food + "  |  Tiempo " + (int)s.WorldSeconds + " s";
-            detail.text = "MODO: " + session.ModeTitle + "\nFacción A: " + s.ReputationA + " · B: " + s.ReputationB + "\nInventario: " + string.Join(", ", s.Items.ConvertAll(i => WorldOperations.ItemTitle(i.Id) + " ×" + i.Count)) + "\nTalleres: " + s.Buildings.Count;
+            detail.text = session.ModeTitle + " · Talleres " + s.Buildings.Count + "\nFacción A: " + s.ReputationA + " · B: " + s.ReputationB + "\nInventario: " + string.Join(", ", s.Items.ConvertAll(i => WorldOperations.ItemTitle(i.Id) + " ×" + i.Count)) +
+                "\nEquipo: " + (s.Weapon == "" ? "sin arma" : "espada") + " / " + (s.Armour == "" ? "sin armadura" : "túnica");
             if (session.Mode == PrototypeMode.TurnCombat && director.Encounter.Battle != null)
-                detail.text = "COMBATE POR TURNOS\nEnemigo: " + director.Encounter.Battle.EnemyHealth + "\nMovimiento: " + director.Encounter.Battle.MovementRemaining.ToString("0.0") + " m\nAcción: " + (director.Encounter.Battle.ActionAvailable ? "disponible" : "usada");
+                detail.text = "COMBATE POR TURNOS\nEnemigo: " + director.Encounter.Battle.EnemyHealth + "\nMovimiento: " + director.Encounter.Battle.MovementRemaining.ToString("0.0") + " m\nAcción: " + (director.Encounter.Battle.Finished ? "encuentro finalizado" : director.Encounter.Battle.ActionAvailable ? "disponible" : "usada");
             if (session.Mode == PrototypeMode.Rts) detail.text = "GUERRA RTS\nAliados: " + director.Rts.Allies + " · Rivales: " + director.Rts.Enemies + "\nClic izquierdo: selección\nClic derecho: orden de grupo";
             foreach (var binding in bindings)
             {
-                if (binding.Id.StartsWith("mode-")) continue;
+                if (binding.Id.StartsWith("mode-")) { binding.Button.interactable = !director.IsBusy; continue; }
                 var combatAction = binding.Id == "attack" || binding.Id == "guard" || binding.Id == "recover" || binding.Id == "end" || binding.Id == "approach";
                 var warAction = binding.Id == "select-all" || binding.Id == "charge";
                 var visible = session.Mode == PrototypeMode.TurnCombat ? combatAction || binding.Id == "escalate" :
                     session.Mode == PrototypeMode.Rts ? warAction : !combatAction && !warAction && binding.Id != "escalate";
                 binding.Button.gameObject.SetActive(visible);
+                binding.Button.interactable = combatAction ? director.Encounter.Battle != null && !director.Encounter.Battle.Finished && !director.Hero.IsMoving :
+                    warAction ? director.Rts.Active : binding.Id == "escalate" ? !director.IsBusy && session.HasFact("rpg-victory") : !director.IsBusy;
             }
         }
     }

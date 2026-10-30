@@ -24,7 +24,11 @@ namespace Aethernia
             if (session != null) session.Changed -= Refresh;
             if (interact != null) interact.onClick.RemoveListener(Interact);
         }
-        private void Interact() { if (!commands.Interact()) session.Say("Selecciona un objeto cercano del escenario."); }
+        private void Interact()
+        {
+            if (commands.Target == null) session.Say("Selecciona un objeto cercano del escenario.");
+            else commands.Interact();
+        }
         private void Refresh()
         {
             if (log != null) log.text = session.LastMessage;

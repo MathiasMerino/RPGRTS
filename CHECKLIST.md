@@ -1,15 +1,16 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-29, America/La_Paz. Plan aprobado mediante la indicación del usuario «continua con el prompt».
+Actualizado: 2026-10-30, America/La_Paz. Fase 2 autorizada mediante la solicitud «VALIDACIÓN, INTEGRACIÓN Y MEJORA DE LA EXPERIENCIA JUGABLE».
 
 ## Resumen actual
 
-- Completadas y verificadas: **26 de 26 tareas del alcance de prototipo y planificación aprobado**.
-- Pruebas: 23/23 aprobadas, cero fallos/omisiones; render revisado en dos resoluciones y en los modos de juego.
-- Build Windows: compilada y recorrido integrado independiente completado sin ventana, salida 0; ZIP portable entregado.
+- Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
+- Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07 (sesión humana) pendiente de realización.
+- Pruebas actuales: 34/34 aprobadas, cero fallos/omisiones y salida 0; cinco capturas revisadas, incluidas dos resoluciones.
+- Build Windows de fase 2: compilada, recorridos independientes sin gráficos y con GPU aprobados, salida 0 y sin aviso de agente inválido/excepciones; ZIP portable verificado.
 - Reglas, clases y hoja de ruta fueron aprobadas por el usuario como prototipo. El juego comercial, continente, narrativa y arte finales no se declaran terminados.
-- Pendiente fuera de este alcance: evaluación humana de diversión/balance y fases de expansión de Docs/PLAN_EXPANSION.md; sin inicio automático de producción.
-- Entrega y límites: COMO_JUGAR.md y Docs/VALIDACION_PROTOTIPO.md.
+- Pendiente: evaluación humana de controles/diversión/balance (F2-07). Expansión compleja y siguiente iteración de arte/UX sujetas a propuesta.
+- Entrega y límites actuales: COMO_JUGAR.md, Docs/AUDITORIA_FASE_2.md y Docs/PRUEBA_MANUAL_FASE_2.md. Docs/VALIDACION_PROTOTIPO.md conserva la primera etapa.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -271,3 +272,70 @@ La aceptación de una tarea de código exige compilación y prueba funcional; co
 - 2026-10-29: especificación y hoja de ruta aprobadas. Suite final 23/23; base jugable y módulos verticales verificados. VER-09/VER-10 pendientes únicamente del cierre del player. FUT-01 se acota expresamente al plan aprobado, con presupuesto/calendario comercial por definir antes de producción.
 
 - 2026-10-29: cierre final 26/26 dentro del alcance aprobado. La build independiente verificó también órdenes de grupo y victoria RTS, guardado final y cuatro hechos persistentes. Paquete portable y guía de uso entregados; la expansión comercial continúa únicamente como hoja de ruta aprobada.
+
+## FASE 2 — VALIDACIÓN E INTEGRACIÓN
+
+Las 26 tareas anteriores son historial de la primera etapa y conservan sus resultados. Las siguientes pertenecen exclusivamente a la solicitud del 2026-10-30.
+
+### F2-01 — Auditoría de la base existente
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Dirección y QA / P0. Dependencias: VER-10, FUT-01.
+- Descripción: releer GDD, inspeccionar los doce sistemas, código, documentación y evidencia; repetir la suite base.
+- Aceptación: hash original intacto; estado Git conocido; matriz distingue automatización, inspección y comprobación humana pendiente.
+- Archivos: CHECKLIST.md, Docs/AUDITORIA_FASE_2.md, PLAN_DESARROLLO.md, REGISTRO_CAMBIOS.md.
+- Pruebas: hash, Git y Unity Vertical con 23 casos previos.
+- Resultado: fuentes/código revisados, hash y Git inicial comprobados. Base 23/23 Passed; cierre nativo -1073741819 registrado sin ocultarlo. Reproducción ampliada 23/32 con fallos esperados y un fallo del test identificado; evidencia y límites en AUDITORIA_FASE_2.md. La validación final con salida correcta corresponde a F2-05/F2-06.
+
+### F2-02 — Cierre consistente de encuentros y navegación del héroe
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Integración RPG/RTS/mundo / P0. Dependencias: F2-01.
+- Descripción: detener órdenes pendientes al entrar en gestión/RTS y retirar participantes transitorios al salir de sus encuentros o cargar.
+- Aceptación: batalla finalizada detiene supervivientes; salir/cargar no deja soldados ni estado de combate anterior; victoria persistente intacta; encuentros activos no permiten cambiar/guardar/cargar; despliegue bloqueado se rechaza sin iniciar una batalla atascada.
+- Archivos: Runtime/Exploration/ExplorationUnit.cs, Runtime/World/PrototypeDirector.cs, Runtime/Combat/TurnEncounter.cs, Runtime/Rts/RtsBattleController.cs y Tests/Editor/PhaseTwoValidationTests.cs, bajo ProyectoRPGRTS/Assets/03_Scripts/.
+- Pruebas: reproducción antes de corregir; Play Mode, regresión vertical y smoke de build.
+- Resultado: reproducción dirigida RTS 0/2 antes de corregir; aceptación posterior 3/3 con salida 0, evidencia Phase2-lifecycle-results.xml/log. Conserva victoria guardable y rechaza despliegue ocupado sin modificar edificios/modo. Regresión global/build en F2-05/F2-06.
+
+### F2-03 — Obstáculos y movimiento táctico
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Combate RPG y navegación / P0. Dependencias: F2-02.
+- Descripción: validar ruta y presupuesto del desplazamiento enemigo; impedir ataques a través de geometría y finalizar turno con el héroe aún en tránsito.
+- Aceptación: recorrido enemigo máximo 3 m por turno, sin cruzar paredes; ataque bloqueado no consume acción; fin de turno en tránsito no repone movimiento; combate abierto conserva resultados.
+- Archivos: Runtime/Exploration/ExplorationUnit.cs, Runtime/Combat/TurnBattle.cs y TurnEncounter.cs; Tests/Editor/PhaseTwoValidationTests.cs, bajo ProyectoRPGRTS/Assets/03_Scripts/.
+- Pruebas: barrera controlada, recorrido con obstáculo, acción/movimiento y regresión RPG/RTS.
+- Resultado: 8/8 pruebas dirigidas aprobadas, salida 0 (Phase2-tactical-results.xml/log); incluye dos casos de geometría/tránsito, cinco de reglas y victoria RPG/escalada/RTS. El rival avanza por ruta y no salta la barrera; pendiente valoración humana de ritmo/presentación.
+
+### F2-04 — Persistencia e información de errores
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Guardado/UI/interacción / P1. Dependencias: F2-03.
+- Descripción: reforzar rechazo seguro de datos y comunicar fallos/estado real sin ocultar mensajes útiles.
+- Aceptación: carga inválida mantiene estado y posición; no desborda cantidades; reloj y ciclo no duplican producción; UI conserva motivo de interacción fallida y muestra equipo; interacciones fuera de exploración no mutan estado.
+- Archivos: PrototypeSaveStore.cs, PrototypeDirector.cs, GameSession.cs, WorldOperations.cs, ExplorationHud.cs y VerticalSliceHud.cs en sus carpetas Runtime; Tests/Editor/PhaseTwoValidationTests.cs, bajo ProyectoRPGRTS/Assets/03_Scripts/.
+- Pruebas: datos corruptos/extremos, carga válida previa compatible, mensajes y barreras de modo.
+- Resultado: 8/8 dirigidas aprobadas, salida 0 (Phase2-persistence-ui-results.xml/log); rechazo de corrupción/reloj sin mutación, ida/vuelta válida, interacciones por modo/ID, mensajes de alcance y equipo en panel; render en dos resoluciones y bloqueo UI comprobados automáticamente. Revisión visual en F2-05.
+
+### F2-05 — Integración, escala y evaluación visual
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: QA/arquitectura/arte / P1. Dependencias: F2-04.
+- Descripción: verificar consecuencias, pausa, equipo, construcción, producción y guardado; revisar proporciones, URP y capturas; evaluar transiciones ocasionales sin ampliarlas.
+- Aceptación: matriz de los doce sistemas con evidencia y límites; escenas conservadas, escala métrica; propuestas mayores separadas; capturas revisadas en dos resoluciones.
+- Archivos: Docs/AUDITORIA_FASE_2.md, Docs/Images/Fase2*, pruebas de fase 2, CHECKLIST.md.
+- Pruebas: suite ampliada, inspección arquitectónica/geométrica, render GPU batch.
+- Resultado: regresión final 34/34, cero fallos/omisiones y salida 0 (Phase2-final-results.xml/log), incluido el ajuste de arranque. Cinco capturas revisadas; las tres que cambiaron tras repetir fueron inspeccionadas otra vez. Matriz de doce sistemas, escala/URP/referencias y propuestas verificadas dentro del alcance automático/visual. Sin sesión humana interactiva. Build/player corregidos se aceptan en F2-06.
+
+### F2-06 — Build y entrega reproducible
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Entrega / P1. Dependencias: F2-05.
+- Descripción: compilar y ejecutar el recorrido independiente; empaquetar e informar el estado real con instrucciones Unity y commit local.
+- Aceptación: suite aprobada, nueva build y smoke salida 0 sin aviso de agente inválido/excepciones; archivo portable íntegro, documentos coherentes y Git revisado; pendientes humanos explícitos.
+- Archivos: COMO_JUGAR.md, PLAN_DESARROLLO.md, REGISTRO_CAMBIOS.md, CHECKLIST.md, informe/inventario de entrega; Tools/Invoke-UnityValidation.ps1 e Invoke-PrototypeSmoke.ps1; BuildSmokeProbe.cs, VerticalSliceBuilder.cs y override de arranque en PlayablePrototype.unity. Builds/Logs locales excluidos de Git.
+- Pruebas: Build, smoke, integridad/hash ZIP, diff, metadatos/GUID y estado Git.
+- Resultado: build de 170.919.383 bytes, 53,99 s, salida 0; smoke sin gráficos y con GPU aprobado, sin aviso NavMesh/excepciones. ZIP 69.566.729 bytes, 305 entradas, CRC correcto, SHA-256 en informe. Diff/metadatos y documentación revisados; commit local de entrega, sin publicación remota. F2-07 sigue pendiente.
+
+### F2-07 — Evaluación manual con jugadores
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: Experiencia jugable / P1. Dependencias: F2-06.
+- Descripción: probar ratón/teclado reales y valorar comprensión, ritmo, accesibilidad, balance y diversión.
+- Aceptación: registrar participante, hardware/resolución, recorrido, observaciones/fallos y decisión sobre siguiente iteración y escalada RPG/RTS.
+- Archivos: Docs/PRUEBA_MANUAL_FASE_2.md creado como guion; registro real de sesión pendiente.
+- Pruebas: sesión humana interactiva de los doce sistemas, sin sustituir por capturas o llamadas a métodos.
+- Resultado: no realizada; no se marca como completada.

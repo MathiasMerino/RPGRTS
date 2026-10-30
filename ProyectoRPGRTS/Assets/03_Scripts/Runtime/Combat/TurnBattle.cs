@@ -19,12 +19,12 @@ namespace Aethernia
         public bool Finished => HeroHealth <= 0 || EnemyHealth <= 0;
         public bool Won => EnemyHealth <= 0 && HeroHealth > 0;
         public string Message { get; private set; } = "Tu turno: moverte, atacar o defender; después Finalizar turno.";
-        public TurnBattle(ClassProfile hero, int health, int weapon, int armour, int seed)
+        public TurnBattle(ClassProfile hero, int health, int weapon, int armour, int seed, bool enemyOpeningInReach = true)
         {
             profile = hero; HeroHealth = health; weaponBonus = weapon; armourBonus = armour; random = new Random(seed);
             HeroInitiative = random.Next(1, 21) + (hero.Id == "monk" ? 2 : 0);
             EnemyInitiative = random.Next(1, 21);
-            if (EnemyInitiative > HeroInitiative && random.Next(1, 21) + 2 >= 12 + armourBonus) HeroHealth = Math.Max(0, HeroHealth - 3);
+            if (EnemyInitiative > HeroInitiative && enemyOpeningInReach && random.Next(1, 21) + 2 >= 12 + armourBonus) HeroHealth = Math.Max(0, HeroHealth - 3);
             Message = "Iniciativa " + HeroInitiative + " / " + EnemyInitiative + ". " + (EnemyInitiative > HeroInitiative ? "El rival actúa primero; ahora es tu turno." : "Actúas primero.");
         }
         public bool Attack(float distance)

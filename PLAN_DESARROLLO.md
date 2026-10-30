@@ -1,6 +1,6 @@
 # Plan de desarrollo de Crónicas de Aethernia
 
-Actualizado: 2026-10-29, America/La_Paz. Estado: alcance del prototipo técnico aprobado completado y verificado.
+Actualizado: 2026-10-30, America/La_Paz. Estado: primera etapa cerrada; segunda etapa técnica entregada, evaluación humana F2-07 pendiente.
 El usuario indicó «continua con el prompt» después de recibir este plan. Se continúa con la base técnica y sus verificaciones; las reglas y sistemas todavía pendientes de diseño mantienen sus decisiones abiertas.
 
 ## Avance verificado
@@ -143,3 +143,11 @@ Referencias oficiales consultadas el 2026-10-28: [AGENTS.md](https://learn.chatg
 5. Compilación, Play Mode, render y build independiente se comprobaron para el prototipo aprobado. Las nuevas mecánicas o el contenido futuro necesitan sus propias pruebas; no heredan automáticamente esta validación.
 
 Tras aprobar: abrir `ProyectoRPGRTS/` con Unity 6000.5.8f1, esperar importación, revisar Console y Package Manager, abrir SampleScene y entrar/salir de Play Mode. Crear después una escena de pruebas independiente y aplicar los criterios del checklist.
+
+## Segunda etapa autorizada: validación e integración
+
+La solicitud del 2026-10-30 autoriza auditar los doce sistemas, integrar lo existente y corregir fallos pequeños verificables. El orden operativo es F2-01 auditoría, F2-02 ciclo de vida de encuentros, F2-03 geometría táctica, F2-04 persistencia/mensajes, F2-05 regresión/revisión visual, F2-06 entrega y F2-07 evaluación humana. Véanse criterios y estados en CHECKLIST.md y resultados en Docs/AUDITORIA_FASE_2.md.
+
+Resultado técnico al 2026-10-30: F2-01 a F2-06 verificadas, 34/34 pruebas y dos recorridos de la nueva build (sin gráficos/con GPU), todos con salida 0. Se corrigieron participantes residuales, órdenes entre modos, despliegue bloqueado, geometría/tránsito RPG, coherencia del guardado, mensajes/UI y activación del agente al arrancar. ZIP nuevo Aethernia-Fase2-Windows.zip, sin sustituir el ZIP histórico. Las capturas y la automatización no completan F2-07; el siguiente paso es una sesión humana y la selección de una mejora pequeña de UX, antes de aprobar expansión o reemplazo artístico amplio.
+
+Se mantiene el estado compartido PrototypeState, los módulos existentes, la escala métrica y las escenas funcionales. No se implementan nuevos sistemas grandes, contenido narrativo ni transiciones complejas. Cambios mayores de arte, experiencia o sincronización requieren primero una propuesta. La evaluación humana es una puerta de salida para decidir la próxima iteración; no se declara superada mediante un smoke automático.

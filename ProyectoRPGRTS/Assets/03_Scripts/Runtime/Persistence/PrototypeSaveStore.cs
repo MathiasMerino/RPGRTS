@@ -12,10 +12,10 @@ namespace Aethernia
             if (s == null || s.Version != 1 || rules.Find(s.ClassId) == null || string.IsNullOrWhiteSpace(s.Name) || s.Name.Length > 32) return false;
             if (s.Gold < 0 || s.Wood < 0 || s.Food < 0 || s.Gold > 1000000 || s.Wood > 1000000 || s.Food > 1000000 || s.Health < 0 || s.Health > rules.Find(s.ClassId).Health) return false;
             if (!Finite(s.HeroPosition.x) || !Finite(s.HeroPosition.y) || !Finite(s.HeroPosition.z) || s.HeroPosition.sqrMagnitude > 1000000) return false;
-            if (!Finite(s.WorldSeconds) || s.WorldSeconds < 0 || s.ProductionCycle < 0 || s.ProductionCycle > s.WorldSeconds / 10 + 1) return false;
+            if (!Finite(s.WorldSeconds) || s.WorldSeconds < 0 || s.WorldSeconds / 10 >= int.MaxValue || s.ProductionCycle != Mathf.FloorToInt(s.WorldSeconds / 10)) return false;
             if (s.Facts == null || s.Items == null || s.Buildings == null || s.Facts.Count != s.Facts.Distinct().Count()) return false;
             if (s.Facts.Any(f => string.IsNullOrWhiteSpace(f) || f.Length > 128)) return false;
-            if (s.Items.Any(i => i == null || !WorldOperations.KnownItem(i.Id) || i.Count <= 0) || s.Items.Sum(i => i.Count) > 8) return false;
+            if (s.Items.Any(i => i == null || !WorldOperations.KnownItem(i.Id) || i.Count <= 0 || i.Count > 8) || s.Items.Sum(i => (long)i.Count) > 8) return false;
             if (s.Items.Select(i => i.Id).Distinct().Count() != s.Items.Count) return false;
             if (s.Weapon != "" && (s.Weapon != "training-sword" || !s.Items.Any(i => i.Id == s.Weapon))) return false;
             if (s.Armour != "" && (s.Armour != "cloth" || !s.Items.Any(i => i.Id == s.Armour))) return false;

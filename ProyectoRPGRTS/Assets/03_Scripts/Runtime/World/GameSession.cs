@@ -43,11 +43,13 @@ namespace Aethernia
         public void Say(string message) { LastMessage = message; Message?.Invoke(message); Changed?.Invoke(); }
         public bool CompleteInteraction(string id, string title)
         {
-            if (id.StartsWith("portal-")) return TravelRequested != null && TravelRequested(id);
+            if (Mode != PrototypeMode.Exploration) { Say("Vuelve a Explorar para interactuar con objetos del mundo."); return false; }
+            if (id == "portal-dungeon" || id == "portal-surface") return TravelRequested != null && TravelRequested(id);
             if (id == "faction-b") { Say("Facción B: relación " + State.ReputationB + ". Las consecuencias se conservan en la partida."); return true; }
             if (id == "market") { var traded = WorldOperations.Trade(State); Say(traded ? "Comercio: 5 oro por 2 madera." : "Oro insuficiente."); return traded; }
             if (State.Facts.Contains(id)) { Say("Ya has activado " + title + "."); return false; }
             if (id == "dungeon-objective") { WorldOperations.CompleteQuest(State); Say("Objetivo completado. Facción A +10; Facción B -5. Consecuencia persistente."); return true; }
+            if (id != "reference-chest") { Say("Este objeto no tiene una interacción de prototipo configurada."); return false; }
             if (!WorldOperations.CanAdd(State, 2)) { Say("Inventario lleno: libera dos espacios antes de recoger."); return false; }
             WorldOperations.AddItem(State, "training-sword", 1); WorldOperations.AddItem(State, "cloth", 1);
             State.Facts.Add(id); State.Gold += 10; State.Wood += 4;

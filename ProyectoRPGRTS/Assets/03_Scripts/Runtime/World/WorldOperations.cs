@@ -8,10 +8,10 @@ namespace Aethernia
     {
         public static bool KnownItem(string id) => id == "training-sword" || id == "cloth" || id == "ration";
         public static string ItemTitle(string id) => id == "training-sword" ? "espada" : id == "cloth" ? "túnica" : "ración";
-        public static bool CanAdd(PrototypeState state, int count) => count > 0 && state.Items.Sum(i => i.Count) + count <= 8;
+        public static bool CanAdd(PrototypeState state, int count) => count > 0 && count <= 8 && state.Items.Sum(i => (long)i.Count) + count <= 8;
         public static bool AddItem(PrototypeState state, string id, int count)
         {
-            if (!KnownItem(id) || count <= 0 || state.Items.Sum(i => i.Count) + count > 8) return false;
+            if (!KnownItem(id) || !CanAdd(state, count)) return false;
             var item = state.Items.Find(i => i.Id == id);
             if (item == null) state.Items.Add(new ItemStack(id, count)); else item.Count += count;
             return true;

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Aethernia
 {
@@ -25,14 +26,32 @@ namespace Aethernia
         public int Enemies => soldiers.Count(s => s.Team == 1 && s.Health > 0);
         public bool Won => !Active && Allies > 0 && Enemies == 0 && soldiers.Count > 0;
         public void Configure(GameSession game, GameObject pawn, Material material) { session = game; template = pawn; hostile = material; }
-        public void Begin(bool escalated = false)
+        public void Clear()
         {
-            StartingAllyHealth = escalated ? 14 : 10;
-            foreach (var soldier in soldiers) if (soldier.Unit != null) Destroy(soldier.Unit.gameObject);
-            soldiers.Clear();
+            foreach (var soldier in soldiers)
+                if (soldier.Unit != null) { soldier.Unit.gameObject.SetActive(false); Destroy(soldier.Unit.gameObject); }
+            soldiers.Clear(); Active = false;
+        }
+        public bool Begin(bool escalated = false)
+        {
+            if (Active) return false;
+            // Validate the existing world before creating any participant or changing mode.
+            var positions = new Vector3[12];
+            var path = new NavMeshPath();
             for (var team = 0; team < 2; team++) for (var i = 0; i < 6; i++)
             {
-                var unit = Instantiate(template, new Vector3(team == 0 ? -12 : -6, 0, 11 + i * 0.9f), Quaternion.identity).GetComponent<ExplorationUnit>();
+                var requested = new Vector3(team == 0 ? -12 : -6, 0, 11 + i * 0.9f);
+                if (!NavMesh.SamplePosition(requested, out var hit, 0.35f, NavMesh.AllAreas)) return RejectDeployment();
+                positions[team * 6 + i] = hit.position;
+                foreach (var blocker in Physics.OverlapCapsule(hit.position + Vector3.up * 0.35f, hit.position + Vector3.up * 1.45f, 0.29f, ~0, QueryTriggerInteraction.Ignore))
+                    if (blocker.GetComponentInParent<ExplorationUnit>() == null) return RejectDeployment();
+                if (!NavMesh.CalculatePath(positions[0], hit.position, NavMesh.AllAreas, path) || path.status != NavMeshPathStatus.PathComplete) return RejectDeployment();
+            }
+            Clear();
+            StartingAllyHealth = escalated ? 14 : 10; nextTick = 0;
+            for (var team = 0; team < 2; team++) for (var i = 0; i < 6; i++)
+            {
+                var unit = Instantiate(template, positions[team * 6 + i], Quaternion.identity).GetComponent<ExplorationUnit>();
                 unit.name = (team == 0 ? "A" : "B") + " Soldier " + i;
                 unit.Agent.speed = 2.5f;
                 unit.Select(team == 0);
@@ -41,7 +60,10 @@ namespace Aethernia
             }
             Active = true; session.SetMode(PrototypeMode.Rts);
             session.Say(escalated ? "Escalada experimental: la victoria RPG da +4 salud a cada aliado." : "RTS 6 contra 6. Clic derecho para ordenar; las unidades atacan al acercarse.");
+            return true;
         }
+        private bool RejectDeployment()
+        { session.Say("Zona de despliegue RTS bloqueada. Se conserva el mundo; prueba en una partida con esa zona libre."); return false; }
         public void SelectAll() { foreach (var s in soldiers) if (s.Unit != null && s.Team == 0 && s.Health > 0) s.Unit.Select(true); }
         public bool Command(Vector3 point, Collider collider, bool primary)
         {
@@ -80,8 +102,9 @@ namespace Aethernia
             if (Allies == 0 || Enemies == 0)
             {
                 Active = false;
+                foreach (var soldier in soldiers) if (soldier.Unit != null && soldier.Health > 0) soldier.Unit.Stop();
                 if (Allies > 0 && !session.HasFact("rts-victory")) session.State.Facts.Add("rts-victory");
-                session.Say(Allies > 0 ? "Victoria RTS; consecuencia territorial registrada." : "Derrota RTS; puedes reiniciar la prueba.");
+                session.Say(Allies > 0 ? "Victoria RTS registrada en la partida." : "Derrota RTS; puedes reiniciar la prueba.");
             }
         }
     }

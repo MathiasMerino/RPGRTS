@@ -16,6 +16,14 @@ namespace Aethernia.Editor
         private static MedievalUiTheme theme;
         private static GameObject buttonPrefab;
         private static GameObject panelPrefab;
+        public static void RepairNavigationStartup()
+        {
+            var scene = EditorSceneManager.OpenScene(PlayablePrototypeBuilder.ScenePath);
+            var hero = Object.FindAnyObjectByType<PlayerCommands>().Hero;
+            hero.Agent.enabled = false;
+            PrefabUtility.RecordPrefabInstancePropertyModifications(hero.Agent);
+            EditorSceneManager.SaveScene(scene);
+        }
         public static void FinalisePresentation()
         {
             var scene = EditorSceneManager.OpenScene(PlayablePrototypeBuilder.ScenePath);

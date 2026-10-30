@@ -1,5 +1,7 @@
 # Validación del prototipo jugable
 
+Informe histórico de la primera etapa (2026-10-29). La auditoría posterior, evidencia vigente y pendientes humanos se registran en `AUDITORIA_FASE_2.md`; las 23 pruebas y métricas de este documento describen la entrega anterior. La carpeta Windows se actualiza al recompilar; el ZIP original conserva aquella entrega.
+
 Fecha de seguimiento: 2026-10-29, America/La_Paz. Editor exacto: Unity 6000.5.8f1; URP 17.5.0. Alcance aprobado en ESPECIFICACION_PROTOTIPO.md: prototipo técnico con reglas ajustables, sin producción comercial ni contenido narrativo definitivo.
 
 ## Resultado de pruebas
