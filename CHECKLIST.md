@@ -584,3 +584,13 @@ El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C
 - Archivos: Documentacion/Personajes/Conceptos/GUERRERO_HOJA_PROPUESTA_v01.png y prompt exacto; registro actualizado.
 - Pruebas: PNG 1536×1024 inspeccionado, seis figuras, cinco grupos de detalle y paleta; manos/espada, silueta, materiales y encuadre revisados; hash verificado. No se ejecuta Unity para una entrega raster/documental.
 - Resultado / problemas: concepto propuesto para revisión, no turnaround calibrado o FBX/rig/animación. Escudo/capa opcionales omitidos para priorizar armadura y espada. Talla del prompt orientativa sin cambiar medidas E01 o controlador; F2-07 y aprobación artística final pendientes.
+
+
+### F3-ARTE-MAG-01 — Hoja conceptual del Mago
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: nueva propuesta 2D original de Mago medieval sobrio y coherente con Monje/Guerrero; personajes/arte.
+- Prioridad / dependencias: P1; dirección artística y solicitud del usuario del 2026-10-31.
+- Aceptación: frente/perfil/espalda/3/4, pose neutral y conjuración, detalles de bastón/grimorio/cinturones/telas/accesorios; silueta vertical, rostro/manos/pies visibles y efectos discretos.
+- Archivos: Documentacion/Personajes/Conceptos/MAGO_HOJA_PROPUESTA_v01.png y prompt exacto; registro actualizado.
+- Pruebas: PNG 1536×1024 inspeccionado: seis figuras, cinco recuadros y paleta; continuidad general de túnicas/equipo, silueta, encuadre y materiales revisados; hash verificado. No se ejecuta Unity para una entrega raster/documental.
+- Resultado / problemas: hoja conceptual propuesta para revisión, no turnaround calibrado o modelo/rig/animación. Arte y medidas actuales E01 siguen intactos; aprobación artística final y F2-07 pendientes.
