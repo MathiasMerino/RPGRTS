@@ -169,3 +169,5 @@ La solicitud posterior autoriza tres apariencias de clase, contrato modular de m
 ## E02 — Infraestructura y piloto humanoide
 
 Autorizado preparar importación nativa FBX/Humanoid, Animator y equipo visual con Monje como piloto. Inventario sin modelo ni clips reales: construir candidato vacío, validación y fallback E01; no fabricar arte final o clips. F3-E02 registra infraestructura, F3-E02-M recurso/Avatar real y F3-E02-A clips/retargeting pendientes. Guía única y manifiesto exacto en Docs/E02_IMPORTACION_HUMANOID.md, reutilizando fichas E01/medidas. No cambiar movimiento, combate o esquema de guardado ni iniciar la fase siguiente. F2-07 permanece pendiente.
+
+El encargo posterior «E02-A — Diseño artístico del Monje basado en referencias» autoriza únicamente una propuesta revisable. Ficha en Documentacion/Personajes/MONJE_DISENO_BASE.md y hoja conceptual 2D; seguimiento F3-E02-ARTE-01 y aprobación F3-E02-ARTE-AP para evitar colisión con el ID de animaciones. Talla propuesta 1,78 m sin aplicar al controlador de 1,80. No se modela, exporta, integra o anima el personaje en esta entrega; los recursos reales y F2-07 siguen pendientes.

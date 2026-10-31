@@ -1,6 +1,6 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01 e infraestructura E02.
+Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02 y propuesta artística E02-A.
 
 ## Resumen actual
 
@@ -16,6 +16,8 @@ Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «
 - Entrega previa E01: Docs/E01_PERSONAJES.md (tres fichas, importación y resultados), cinco prefabs, catálogo/ocho materiales compartidos, siete capturas y ZIP Windows E01. F2-07 sigue pendiente.
 
 - E02: **infraestructura F3-E02 completada y verificada**, 46/46 pruebas y build/recorridos sin gráficos y con GPU aprobados. F3-E02-M (modelo/rig real) y F3-E02-A (clips/retargeting) pendientes. Guía/manifiesto: Docs/E02_IMPORTACION_HUMANOID.md. La alternativa E01 continúa activa.
+
+- E02-A artístico: ficha/hoja conceptual entregadas y revisadas en Documentacion/Personajes/MONJE_DISENO_BASE.md; diseño **PROPUESTO, sin aprobación artística**. F3-E02-ARTE-01 cerrada como documentación; F3-E02-ARTE-AP pendiente. No modelo/rig/animaciones nuevos ni cambios al juego.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -448,3 +450,22 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Archivos: pendientes; estados/perfil preparados por E02 no son animaciones terminadas.
 - Pruebas: pendientes con clips; no se declara animación funcional sin ejecución real.
 - Resultado / problemas: faltan siete clips; F2-07 permanece independiente y pendiente.
+
+
+### F3-E02-ARTE-01 — E02-A artístico: diseño propuesto del Monje
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: ficha artística y técnica basada en dos referencias del usuario, especificación de hoja de personaje y propuesta visual 2D. Personajes/arte.
+- Prioridad / dependencias: P1; infraestructura E02 y nuevo brief artístico E02-A.
+- Aceptación: doce apartados de diseño, visible/inferido distinguido, medidas propuestas de 1,78 m, modularidad/rig/importación compatibles con E02 y estado PROPUESTO sin modificar gameplay/modelo actual.
+- Archivos: Documentacion/Personajes/MONJE_DISENO_BASE.md; Referencias/MONJE_REFERENCIAS_USUARIO.png; Conceptos/MONJE_HOJA_PROPUESTA_v01.png y prompt exacto. Enlaces en dirección artística, escala, guía E02, plan/inventario; registro actualizado.
+- Pruebas: doce secciones y tabla visible/brief/interpretado revisadas; lámina raster 1536x1024 con seis vistas/poses, detalles y paleta inspeccionada; enlaces/hashes y diff comprobados. Proyecto Unity sin cambios: no se repiten pruebas/build; 46/46 E02 es evidencia histórica, no una ejecución nueva.
+- Resultado / problemas: entrega documental/2D completa, diseño PROPUESTO y aprobación pendiente. Talla artística 1,78 m sin aplicar al controlador de 1,80; dorso/cierres/rostro propuestos. Imagen generada no equivale a plano calibrado, FBX, UV/rig/texturas PBR o animación. F3-E02-A técnico continúa pendiente; no se modela ni integra el personaje.
+
+### F3-E02-ARTE-AP — Aprobación artística de la propuesta del Monje
+- Estado: [ ] Pendiente.
+- Descripción / sistema: revisión del usuario de proporciones, vestido, paleta, variantes y zonas interpretadas. Arte/dirección.
+- Prioridad / dependencias: P1; F3-E02-ARTE-01 entregada.
+- Aceptación: aprobación explícita del usuario o correcciones registradas; no equivale a aprobación del rig/animaciones ni a F2-07.
+- Archivos: ficha base y decisiones.
+- Pruebas: revisión artística por el usuario pendiente.
+- Resultado / problemas: no iniciar modelado definitivo, reemplazo del Monje ni animaciones finales.

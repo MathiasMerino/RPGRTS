@@ -4,6 +4,8 @@ La primera tabla conserva el inventario de la primera etapa. Al final se registr
 
 ## Adición E02
 
+Entrega artística posterior E02-A: `Documentacion/Personajes/MONJE_DISENO_BASE.md`, captura de referencia del usuario en Referencias y hoja PNG/prompt en Conceptos. Documentación fuera de Assets, estado PROPUESTO. No son modelos, texturas PBR o animaciones del juego; se conserva el historial técnico E02 y sus pendientes. Cambios de seguimiento en checklist, registro, dirección artística y enlaces de escala/importación; sin cambios al proyecto Unity.
+
 - Guía única: `Docs/E02_IMPORTACION_HUMANOID.md` (uso, contrato, manifiesto exacto de recursos faltantes, pruebas y límites).
 - Plantilla vacía: `Assets/02_Prefabs/Characters/Humanoid/Monk_ImportTemplate.prefab`; perfil/controller y carpetas en `Assets/07_Characters/Humanoid/`. Carpetas sin recursos se preservan con .gitkeep ignorados por Unity.
 - Runtime: HumanoidVisualRig/AnimationProfile/AnimationDriver; extensiones pequeñas de Catalog/Model/Presenter. Editor: `Assets/03_Scripts/Editor/Characters/`, assembly propia y ventana nativa.

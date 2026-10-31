@@ -34,6 +34,8 @@ Conservar el concepto E01: atleta de anatomía humana, ropa monástica medieval 
 
 Objetivo anatómico 1,80 m; raíz de prefab/VisualRoot a escala uno, pies en Y=0, Y arriba, frente +Z. El auditor usa margen técnico de talla 1,70–1,90 m y pivote a ±5 cm del suelo para detectar errores de unidades; ese margen no aprueba una nueva talla de juego. La cápsula sigue en 0,60 × 1,80 m. Una variación real requiere validar puertas y colisiones y actualizar las referencias centrales.
 
+Propuesta artística posterior E02-A: [MONJE_DISENO_BASE](../Documentacion/Personajes/MONJE_DISENO_BASE.md) adopta una talla objetivo provisional de **1,78 m**, pendiente de aprobación. El dato 1,80 m anterior registra la referencia técnica existente; no se modifica el controlador ni el auditor en esta etapa documental. La talla propuesta entra en la tolerancia, pero requiere verificar el modelo real y sus poses.
+
 Exportar FBX desde la herramienta de creación con unidades documentadas, transformaciones aplicadas y pose T/A consistente. Mantener esqueleto y skins de cuerpo/ropa compatibles. Evitar escalas negativas y rig optimizado que oculte sockets durante esta primera validación. No instalar un importador para `.blend` u otro formato fuente: Unity recibirá FBX.
 
 ## Usar el flujo dentro de Unity

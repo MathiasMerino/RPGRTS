@@ -61,6 +61,8 @@ No forzar Animator, retargeting o un controlador de habilidades antes de dispone
 
 E02 prepara explícitamente la infraestructura solicitada: candidato Monje vacío y grafo de siete estados sin clips, sin activar Animator sobre la geometría E01. Concepto del Monje se conserva; importación/especificación de manos/ropa, recursos faltantes y límites en [E02_IMPORTACION_HUMANOID](../Docs/E02_IMPORTACION_HUMANOID.md). El modelo y las animaciones reales requieren recursos aprobados y su propia validación; esta preparación no los declara implementados.
 
+E02-A artístico: nueva [ficha base del Monje](Personajes/MONJE_DISENO_BASE.md), **PROPUESTA, pendiente de aprobación**. Brief: piloto humano masculino de 1,78 m, naranja quemado/ocre/oscuros, túnica asimétrica, cabeza rapada y anatomía atlética. La ficha distingue captura visible, directrices del usuario e interpretaciones de dorso/cierres/rostro; incluye una hoja conceptual 2D generada y requisitos de modelado. La paleta/figura E01 anterior continúa aplicada al prototipo; no se cambian materiales, controlador o talla en Unity. El ID histórico F3-E02-A sigue reservado a clips; arte se sigue como F3-E02-ARTE-01/AP.
+
 ## Dimensionamiento
 
 La tabla de medidas aplicadas vive en [Docs/ESCALA_REFERENCIA.md](../Docs/ESCALA_REFERENCIA.md), ampliada con taller/objetos. Las medidas siguientes son **propuestas no aplicadas**: espada 0,9–1 m, bastón 1,6–1,8 m, daga 0,3–0,4 m; barril 0,6 m diámetro/0,9 m alto. Pivotes de edificio/decoración al suelo, accesorios en punto de agarre y escala de importación comprobada en metros.
