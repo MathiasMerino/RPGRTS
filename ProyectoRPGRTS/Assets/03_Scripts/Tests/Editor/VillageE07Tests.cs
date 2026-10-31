@@ -35,6 +35,25 @@ namespace Aethernia.Tests.Editor
                 Assert.That(go.GetComponentsInChildren<Collider>().Length,Is.EqualTo(name=="TimberHouse_6x8m"?0:1));
             }
         }
+        [Test]public void TerrainAndVegetationKeepFlatPlayableGroundAndAppropriatePhysics()
+        {
+            foreach(var name in new[]{"Broadleaf_7m","SlenderTree_8m"})
+            {
+                var t=VillageE07Geometry.Load("Vegetation",name);Assert.That(t,Is.Not.Null);Assert.That(t.GetComponent<CapsuleCollider>(),Is.Not.Null);
+                Assert.That(t.GetComponent<UnityEngine.AI.NavMeshObstacle>().carving,Is.True);Assert.That(t.GetComponentsInChildren<Renderer>().Length,Is.LessThanOrEqualTo(3));
+            }
+            foreach(var name in new[]{"Shrub_90cm","Understory_35cm"})Assert.That(VillageE07Geometry.Load("Vegetation",name).GetComponentsInChildren<Collider>().Length,Is.Zero);
+            var ground=VillageE07Geometry.Load("Ground","Backdrop_80m");Assert.That(ground.GetComponentsInChildren<Collider>().Length,Is.Zero);
+            foreach(var v in ground.GetComponentInChildren<MeshFilter>().sharedMesh.vertices)if(Mathf.Abs(v.x)<=20&&Mathf.Abs(v.z)<=20)Assert.That(v.y,Is.EqualTo(0).Within(.0001f));
+            var report=new StringBuilder("E07 reusable library; dimensions in meters; includes inactive geometry. Not a frame-time benchmark.\n");
+            foreach(var guid in AssetDatabase.FindAssets("t:Prefab",new[]{VillageE07Materials.Prefabs}))
+            {
+                var go=AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(guid));var rs=go.GetComponentsInChildren<Renderer>();var bounds=rs[0].bounds;var tris=0;
+                foreach(var r in rs)bounds.Encapsulate(r.bounds);foreach(var f in go.GetComponentsInChildren<MeshFilter>()){Assert.That(f.sharedMesh.vertexCount,Is.LessThan(32000));tris+=f.sharedMesh.triangles.Length/3;}
+                report.AppendLine(go.name+" | "+bounds.size.ToString("F3")+" | tris="+tris+" | renderers="+rs.Length+" | colliders="+go.GetComponentsInChildren<Collider>().Length);
+            }
+            File.WriteAllText("Logs/E07-library-geometry.txt",report.ToString());
+        }
         [UnityTest]public IEnumerator ComparableViewsAndMissionUseRealGameCamera()
         {
             EditorSceneManager.OpenScene(LostCargoTests.Demo);

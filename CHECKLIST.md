@@ -654,11 +654,11 @@ Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada Aethern
 - Pruebas / resultado: generación/compilación Unity salida 0 y dirigida 1/1 aprobada; raíz métrica, mallas/materiales soportados/compartidos, referencias, texturas/mipmaps y cuerpos con colisión diferenciada. Recursos D01 preservados. Revisión visual en escena y humana pendientes de P3/P4.
 
 ### E07-P2 — Terreno, vegetación y utilería
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P1.
 - Aceptación: Caminos/plaza/entrada/bosque legibles y decorados coherentes, sin bloquear ruta ni zonas RTS/construcción.
-- Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.
-- Pruebas / resultado: pendientes. Aprobación artística y sesión humana no automáticas.
+- Archivos: VillageE07Nature/Props, 21 prefabs adicionales (6 naturales, 3 de suelo y 12 de utilería), mallas propias y pruebas/lanzador.
+- Pruebas / resultado: generación/compilación salida 0, 2/2 dirigidas; mallas/materiales compartidos, troncos sólidos, vegetación blanda sin colisión y suelo transitable plano. Distribución de escena y ruta se validan en P3/P4; revisión humana pendiente.
 
 ### E07-P3 — Integración e iluminación
 - Estado: [ ] Pendiente.

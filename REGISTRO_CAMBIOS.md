@@ -341,3 +341,8 @@ Línea base capturada con cámara real: doce vistas 1080p (tres clases, arquitec
 ## 2026-10-31 — E07-P1: arquitectura y superficies
 
 Biblioteca de siete módulos y cinco conjuntos métricos, cubiertas inclinadas/aleros/cumbreras/chimeneas, colisión de edificios cerrados y grupos de recorte contextual separados. Trece materiales URP nuevos, cinco albedos originales importados a 1024/mips; mapas/recursos D01 y cuero/lino/hierro reutilizados, sin modificar originales. Generación salida 0 y dirigida de integridad/métrica/materiales/referencias 1/1 aprobada. Integración/revisión visual pendientes de P3/P4.
+
+
+## 2026-10-31 — E07-P2: terreno y biblioteca de ambientación
+
+Añadidos 21 prefabs propios de suelo/vegetación/utilería (total E07 33), con superficies compartidas, troncos sólidos y plantas blandas. Terreno mantiene Y=0 en el área jugable y limita relieve al fondo exterior; no se cambia NavMesh. Generación/compilación salida 0 y 2/2 dirigidas aprobadas. Detectadas coordenadas fijas de despliegue RTS y enemigo de misión, reservadas para la integración.
