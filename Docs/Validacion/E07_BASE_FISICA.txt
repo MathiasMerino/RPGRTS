@@ -1,0 +1,36 @@
+Dungeon Entrance|BoxCollider|True|True|False|-10.0000,0.4000,5.0000|0.8000,0.8000,0.8000
+Dungeon Exit|BoxCollider|True|True|False|46.5000,0.4000,-3.0000|0.8000,0.8000,0.8000
+Dungeon Objective|BoxCollider|True|True|False|52.0000,0.5000,1.0000|0.8000,0.8000,0.8000
+Dungeon Test Region/Dungeon Floor|BoxCollider|True|True|False|50.0000,-0.1000,0.0000|10.0000,0.2000,10.0000
+Dungeon Test Region/East Wall|BoxCollider|True|True|False|54.9000,1.5000,0.0000|0.2000,3.0000,9.6000
+Dungeon Test Region/North Wall|BoxCollider|True|True|False|50.0000,1.5000,4.9000|10.0000,3.0000,0.2000
+Dungeon Test Region/South Wall|BoxCollider|True|True|False|50.0000,0.4000,-4.9000|10.0000,0.8000,0.2000
+Dungeon Test Region/West Wall|BoxCollider|True|True|False|45.1000,0.4000,0.0000|0.2000,0.8000,9.6000
+E05 Lost Cargo Demo/Lost Cargo|BoxCollider|True|True|False|-10.0000,0.4000,3.0000|0.8000,0.8000,0.6500
+E05 Lost Cargo Demo/VillageResident|CapsuleCollider|True|True|False|-7.5000,0.9000,-3.0000|0.5000,1.8000,0.5000
+Faction A Market|BoxCollider|True|True|False|1.0000,0.5000,-8.0000|0.8000,0.8000,0.8000
+Faction B Marker|BoxCollider|True|True|False|-15.0000,0.5000,5.0000|0.8000,0.8000,0.8000
+Interaction Chest|BoxCollider|True|True|False|-2.0000,0.4000,-5.0000|0.8000,0.8000,0.6000
+Navigation Test Geometry/Narrow Gate - 0.40m clearance/Left post|BoxCollider|True|True|False|-6.3000,1.2000,-9.0000|0.2000,2.4000,0.2500
+Navigation Test Geometry/Narrow Gate - 0.40m clearance/Right post|BoxCollider|True|True|False|-5.7000,1.2000,-9.0000|0.2000,2.4000,0.2500
+Navigation Test Geometry/Obstacle 3x2x2m|BoxCollider|True|True|False|-2.0000,1.0000,5.0000|3.0000,2.0000,2.0000
+ReferenceGround_40m/Surface at Y=0|BoxCollider|True|True|False|0.0000,-0.1000,0.0000|40.0000,0.2000,40.0000
+Scale References/ReferenceCube_1m/One metre|BoxCollider|True|True|False|-8.0000,0.5000,-4.0000|1.0000,1.0000,1.0000
+Scale References/ReferenceDoor_120x220cm/Header - clearance 2.20m|BoxCollider|True|True|False|-2.0000,2.3000,-3.0000|1.2000,0.2000,0.2500
+Scale References/ReferenceDoor_120x220cm/Left post|BoxCollider|True|True|False|-2.7000,1.2000,-3.0000|0.2000,2.4000,0.2500
+Scale References/ReferenceDoor_120x220cm/Right post|BoxCollider|True|True|False|-1.3000,1.2000,-3.0000|0.2000,2.4000,0.2500
+Scale References/ReferenceHouse_6x8m/Back wall|BoxCollider|True|True|False|6.0000,1.5000,9.9000|6.0000,3.0000,0.2000
+Scale References/ReferenceHouse_6x8m/Front left|BoxCollider|True|True|False|4.1000,1.5000,2.1000|2.2000,3.0000,0.2000
+Scale References/ReferenceHouse_6x8m/Front lintel|BoxCollider|True|True|False|6.0000,2.7000,2.1000|1.6000,0.6000,0.2000
+Scale References/ReferenceHouse_6x8m/Front right|BoxCollider|True|True|False|7.9000,1.5000,2.1000|2.2000,3.0000,0.2000
+Scale References/ReferenceHouse_6x8m/Left wall|BoxCollider|True|True|False|3.1000,1.5000,6.0000|0.2000,3.0000,7.6000
+Scale References/ReferenceHouse_6x8m/ReferenceDoor_120x220cm/Header - clearance 2.20m|BoxCollider|True|True|False|6.0000,2.3000,2.1250|1.2000,0.2000,0.2500
+Scale References/ReferenceHouse_6x8m/ReferenceDoor_120x220cm/Left post|BoxCollider|True|True|False|5.3000,1.2000,2.1250|0.2000,2.4000,0.2500
+Scale References/ReferenceHouse_6x8m/ReferenceDoor_120x220cm/Right post|BoxCollider|True|True|False|6.7000,1.2000,2.1250|0.2000,2.4000,0.2500
+Scale References/ReferenceHouse_6x8m/Right wall|BoxCollider|True|True|False|8.9000,1.5000,6.0000|0.2000,3.0000,7.6000
+Scale References/ReferenceHouse_6x8m/Roof|BoxCollider|True|True|False|6.0000,3.0750,6.0000|6.0000,0.1500,8.0000
+Scale References/ReferenceHuman_180cm/Height 1.80m - diameter 0.60m|CapsuleCollider|True|False|False|-6.0000,0.9000,-4.0000|0.0000,0.0000,0.0000
+Scale References/ReferenceWindow_100x120cm/Header|BoxCollider|True|True|False|-8.0000,2.3000,3.0000|1.0000,0.2000,0.2500
+Scale References/ReferenceWindow_100x120cm/Left jamb|BoxCollider|True|True|False|-8.6000,1.6000,3.0000|0.2000,1.6000,0.2500
+Scale References/ReferenceWindow_100x120cm/Right jamb|BoxCollider|True|True|False|-7.4000,1.6000,3.0000|0.2000,1.6000,0.2500
+Scale References/ReferenceWindow_100x120cm/Sill - clearance starts at 1m|BoxCollider|True|True|False|-8.0000,0.9000,3.0000|1.0000,0.2000,0.2500

@@ -326,3 +326,13 @@ HUD difiere refrescos reentrantes, Rename omite eventos idénticos y ESC usa Inp
 ## 2026-10-31 — Publicación E03–E06
 
 Commits 136fb87/50e860b/e7bc6f4/0f86fa9 por etapa, rama feature/e03-e06-personajes-vertical-slice publicada y PR #1 en borrador hacia dev: https://github.com/MathiasMerino/RPGRTS/pull/1. Checklist técnico E06 cerrado con evidencia; confirmación humana F2-07 y arte final permanecen pendientes. No merge a main/dev, release, force push o nueva fase. Cierre documental posterior sin cambios al código validado.
+
+
+## 2026-10-31 — Inicio E07
+
+PR #1 consultado: abierto, borrador y sin fusionar; rama feature/e07-aldea-medieval creada desde dab39c2. Revisión dirigida de GDD/arte/checklist/escena/biblioteca/misión/versiones; plan secuencial registrado. Cuatro fuentes de textura originales generadas con imagegen para piedra/madera/tierra/pizarra; todavía no se atribuye integración o aprobación visual. main y dev conservadas.
+
+
+## 2026-10-31 — E07-P0 verificado
+
+Línea base capturada con cámara real: doce vistas 1080p (tres clases, arquitectura, plaza, bosque, NPC, misión y RPG), física original y NavMesh registrados. Prueba nueva 1/1 y compilación salida 0; arnés respeta fin de combate real. Fuente/historial anteriores preservados; cinco albedos originales disponibles, sin assets externos.

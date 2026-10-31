@@ -179,3 +179,8 @@ Nuevo encargo acotado: aplicar concepto del Monje mediante prefab estático de 1
 ## C02 — Rediseño medieval autorizado
 
 Nuevo brief concreta seis bloques F3-C02.1..6: auditoría, sistema visual, HUD compacto, ficha/inventario, contextos por modalidad y validación. Se conserva F3-C02 histórico (mapa/registro/retrato) como historial; el alcance actual no inventa minimapa/compañeros/habilidades ausentes. Se implementa registro de hechos existentes, retratos de tres clases y ventanas cerrables con comandos actuales. Checkpoint codex/c02-base-25c1a10; rama codex/c02-medieval-ui. Informe único Docs/C02_INTERFAZ_MEDIEVAL.md. Orden aplicado: inspección/atlas original, autoría acotada, pruebas de aceptación/capturas, correcciones de serialización/lectura/orden UI, regresión y build. F2-07 y recursos de personaje definitivos siguen pendientes; no iniciar otra fase automáticamente.
+
+
+## E07 — Aldea medieval autorizada
+
+Iteración de entorno integrada en AetherniaVillageDemo, desde dab39c2/E03–E06 porque PR #1 no está fusionado. Se conserva ruta/estado de misión, gameplay y personajes provisionales. Secuencia E07-P0..P5: línea base, biblioteca modular, suelo/vegetación/utilería, iluminación/oclusión, evidencia/regresión, build/PR apilado. Informe único Docs/E07_ALDEA_MEDIEVAL.md. No iniciar E08 ni fusionar PR #1 o main.

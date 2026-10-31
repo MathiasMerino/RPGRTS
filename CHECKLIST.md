@@ -633,3 +633,50 @@ Diseños autorizados para uso provisional. F2-07: usuario informa 7/8, cierre X/
 - Archivos: VerticalSliceHud, GameSession.Rename, BuildSmokeProbe/CargoQuestSmoke, ProductionInputTests/MonkIdentityTests, lanzador smoke RequireCargo, documentación y capturas E06; Docs/Validacion/E03_E06_RESULTADOS.json.
 - Pruebas: dirigida de entrada 1/1, regresión completa 62/62, build Windows x64 salida 0; recorridos headless/GPU con sistemas previos y misión con tres clases PASS; ZIP CRC/binarios/históricos verificados.
 - Resultado / problemas: validación técnica aprobada y PR #1 abierto en borrador hacia dev (https://github.com/MathiasMerino/RPGRTS/pull/1). Rama publicada; main intacta. Fallo inicial 61/62 por nombre esperado de prefab corregido y toda la batería repetida. Humanos 7/8 informado, X/ESC pendiente; sin modelos/rig/clips finales.
+
+
+## E07 — TRANSFORMACIÓN DE LA ALDEA (2026-10-31)
+
+Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada AetherniaVillageDemo. Plan y evidencia en Docs/E07_ALDEA_MEDIEVAL.md.
+
+### E07-P0 — Preparación y línea base
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E03–E06.
+- Aceptación: PR revisado, GDD/versiones verificadas, encuadres comparables y snapshot físico/nav conservados.
+- Archivos: plan E07, VillageE07Tests, Docs/Images/E07/Before (12 PNG), Docs/Validacion/E07_BASE_FISICA.txt y procedencia de texturas.
+- Pruebas / resultado: 1/1 dirigida aprobada, compilación Unity salida 0, doce capturas reales; misión aceptada/ruta/combate real completados y snapshot físico/nav registrado. Primer intento de captura intentaba salir de combate activo: arnés corregido para vencer con las reglas existentes. Aprobación artística y humana pendientes.
+
+### E07-P1 — Materiales y arquitectura modular
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P0.
+- Aceptación: Materiales URP compartidos, modelos métricos, pendientes/aleros/cumbrera, módulos y variantes sin sobrescribir D01.
+- Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.
+- Pruebas / resultado: pendientes. Aprobación artística y sesión humana no automáticas.
+
+### E07-P2 — Terreno, vegetación y utilería
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P1.
+- Aceptación: Caminos/plaza/entrada/bosque legibles y decorados coherentes, sin bloquear ruta ni zonas RTS/construcción.
+- Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.
+- Pruebas / resultado: pendientes. Aprobación artística y sesión humana no automáticas.
+
+### E07-P3 — Integración e iluminación
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P2.
+- Aceptación: Escena original de demo mejorada, misión y UI intactas, sombras/atmósfera y oclusión reversible comprobadas.
+- Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.
+- Pruebas / resultado: pendientes. Aprobación artística y sesión humana no automáticas.
+
+### E07-P4 — Capturas y regresión
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P3.
+- Aceptación: Antes/después reales, diez vistas mínimas, navegación/cámara y pruebas existentes aprobadas sin falsear expectativas.
+- Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.
+- Pruebas / resultado: pendientes. Aprobación artística y sesión humana no automáticas.
+
+### E07-P5 — Build y publicación
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P4.
+- Aceptación: Player Windows funciona con las tres clases/misión, ZIP verificado y PR apilado publicado sin fusionar #1/main.
+- Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.
+- Pruebas / resultado: pendientes. Aprobación artística y sesión humana no automáticas.
