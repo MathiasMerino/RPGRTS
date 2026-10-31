@@ -1,0 +1,320 @@
+{
+  "date": "2026-10-31",
+  "unity": "6000.5.8f1",
+  "urp": "17.5.0",
+  "branch": "feature/e03-e06-personajes-vertical-slice",
+  "runner_platform": "EditMode",
+  "playmode_note": "Los UnityTest entran en Play Mode; de 10 pruebas nuevas, 3 son Test y 7 UnityTest de integración. No son pruebas humanas.",
+  "test_run": {
+    "id": "2",
+    "testcasecount": "62",
+    "result": "Passed",
+    "total": "62",
+    "passed": "62",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-31 07:30:19Z",
+    "end-time": "2026-10-31 07:30:27Z",
+    "duration": "7.343993"
+  },
+  "cases": [
+    {
+      "name": "Aethernia.Tests.Editor.CharacterVisualTests.CatalogContainsMetricReplaceableModelsAndSharedEquipment",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.CharacterVisualTests.ClassEquipmentLoadMovementAndVisualReplacementStayConsistent",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.CharacterVisualTests.RoofOcclusionIsReproducedAndCutawayRestoresPresentation",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ContextUiValidationTests.PagesPreserveActionsAndModesHaveReadableSeparateLayouts",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.EnvironmentValidationTests.ExactEditorAndDeclaredPackagesAreAvailable",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.EnvironmentValidationTests.OriginalSceneEntersAndExitsPlayMode",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.EnvironmentValidationTests.OriginalSceneHasNoMissingScriptsOrSerializedReferences",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.HumanCapsuleFitsDoorButCannotFitNarrowGate",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceCube_1m\",1,1,1)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceHuman_180cm\",0.6f,1.8f,0.6f)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceDoor_120x220cm\",1.6f,2.4f,0.25f)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceWindow_100x120cm\",1.4f,1.6f,0.25f)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceHouse_6x8m\",6,3.15f,8)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceGround_40m\",40,0.2f,40)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.SandboxHasValidReferencesMaterialsAndGround",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.SandboxRunsAndRendersWithoutErrors",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.EmptyPilotHasSevenUnanimatedStatesAndPreservesFallback",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.FiveVisualSlotsReadExistingEquipmentAndRoundTripSave",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.MissingAssetsLeaveMovementAndMonkFallbackFunctional",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.NativeFbxImportsMetresAndRejectsNonHumanoidCandidate",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.FactsPersistWithoutSchemaChangeAndRewardsCannotRepeat",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.MageCompletesQuest",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.MonkCompletesQuest",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.UnrelatedVictoryAndCargoBeforeAcceptanceCannotCompleteMission",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.WarriorCompletesQuest",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalEnvironmentTests.DressingPreservesOriginalPhysicsAndBakedNavigation",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalEnvironmentTests.IdleCameraDoesNotZoomWithoutWheelInput",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalEnvironmentTests.LibraryHasSharedSupportedMaterialsAndMetricPrefabs",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalEnvironmentTests.QuarterNavigationAndPresentationWorkTogether",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalHudTests.FourResolutionsContextModesAndWorldSpaceRemainReadable",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalHudTests.SkinUsesOneAtlasAndMetricWorldResourcesStaySeparate",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalHudTests.WindowsInventoryClassesAndSaveUseExistingStateAndSingleCommands",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MonkIdentityTests.CharacterPageCropAndMatchedWorldCapturesAreReadable",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MonkIdentityTests.MonkSelectionInteractionEquipmentLoadAndRpgStillWork",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MonkIdentityTests.ProxyIsMetricLightAndKeepsOtherClassesAndOriginalArt",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.EnemyTurnFollowsACompletePathWithinThreeMetres",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.EnteringManagementStopsThePreviousHeroOrder",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.ExplorationActionsAreModeGuardedAndHudKeepsSpecificFeedback",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.FinishedRtsDoesNotLeakParticipantsIntoExplorationOrLoad",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected(\"overflow\")",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected(\"clock-behind\")",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected(\"clock-ahead\")",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidLoadReportsFailureWithoutChangingWorldOrPosition",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.RtsRejectsBlockedDeploymentWithoutEnteringMode",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.SceneHeroDefersNativeAgentUntilSurfaceHasLoaded",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.TacticalAttacksRespectWallsAndTurnCannotResetInTransit",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PlayableValidationTests.CameraSelectionAndUiBlockWork",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PlayableValidationTests.HudRendersAtTwoResolutionsAndDoesNotDuplicateListeners",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PlayableValidationTests.MovementAndInteractionCompleteTheExplorationLoop",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionInputTests.C02ClosesByPointerAndEscapeIncludingFocusedName",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionVisualTests.NewProxiesAreMetricSharedAndKeepRecoveryAssets",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionVisualTests.PortraitsEquipmentAndSaveRestoreAcrossAllClasses",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionVisualTests.PortraitsUseAuthorizedOriginalSheetsAndCatalogMetadata",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionVisualTests.ThreeProxiesLoadAndRenderInPlayableScene",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalIntegrationTests.ClassesConstructionDungeonAndSaveShareOneState",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalIntegrationTests.FinalSceneHasNoMissingSerializedReferences",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalIntegrationTests.RpgVictoryEscalatesToRtsWhileCalendarIsPaused",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.EconomyConservesCostsAndProducesOnlyWithFood",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.InventoryEnforcesCapacityOwnershipAndConsumption",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.SaveRoundtripRejectsCorruptionAndUnknownVersions",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.TurnRulesLimitActionsMovementAndFinishDeterministically",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.WinningInitiativeDoesNotGuaranteeAnEnemyHit",
+      "result": "Passed"
+    }
+  ],
+  "build": "Succeeded; bytes=185241263; seconds=64.8626092",
+  "headless": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=34.56; frames=187946; allocatedBytes=106720803",
+  "headless_quest": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; normal RPG/RTS/economy also checked by base probe.",
+  "gpu": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=33.64; frames=120812; allocatedBytes=117058021",
+  "gpu_quest": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; normal RPG/RTS/economy also checked by base probe.",
+  "gpu_device": "NVIDIA GeForce RTX 3050 Laptop GPU / Direct3D 12",
+  "package": {
+    "path": "ProyectoRPGRTS\\Builds\\Aethernia-E03-E06-Demo-Windows.zip",
+    "bytes": 77833297,
+    "sha256": "b24c5e24eff8d35f938629bc982e9f9970f3afe14a462507205ab3ab801fa668",
+    "entries": 305,
+    "crc": "PASS",
+    "binary_matches": {
+      "Aethernia.exe": true,
+      "UnityPlayer.dll": true,
+      "Aethernia_Data/Managed/Aethernia.Runtime.dll": true,
+      "Aethernia_Data/level0": true
+    },
+    "historical_archives_unchanged": 8
+  },
+  "integrity": {
+    "missing_meta": [],
+    "orphan_meta": [],
+    "duplicate_guids": [],
+    "original_scene_unchanged": true,
+    "packages_settings_rules_unchanged": true,
+    "gdd_sha256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+    "unity_ignored_dotfiles_without_meta": [
+      "ProyectoRPGRTS\\Assets\\07_Characters\\Humanoid\\Equipment\\.gitkeep",
+      "ProyectoRPGRTS\\Assets\\07_Characters\\Humanoid\\Models\\.gitkeep",
+      "ProyectoRPGRTS\\Assets\\07_Characters\\Humanoid\\Textures\\.gitkeep"
+    ],
+    "original_concepts_match_imports": {
+      "GUERRERO_HOJA_PROPUESTA_v01.png": true,
+      "MAGO_HOJA_PROPUESTA_v01.png": true,
+      "MONJE_HOJA_PROPUESTA_v02.png": true
+    }
+  },
+  "geometry": "monk: (0.711, 1.780, 0.368); tris=5252; renderers=9\nwarrior: (0.715, 1.800, 0.365); tris=6704; renderers=9\nmage: (0.733, 1.800, 0.550); tris=6096; renderers=11\n",
+  "human": {
+    "source": "usuario",
+    "reported": "7/8",
+    "pending": "Confirmación X/ESC tras el ajuste, evaluación jugable y arte definitivo",
+    "automatic_completion": false
+  },
+  "first_regression": "61/62: expectativa histórica del nombre monk_E03_Proxy corregida al nombre real monk_Proxy; repetición completa 62/62."
+}

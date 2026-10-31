@@ -40,7 +40,11 @@ namespace Aethernia
             State.ClassId = id; State.Health = profile.Health; Say("Clase provisional: " + profile.Title);
         }
         public void Rename(string name)
-        { if (!string.IsNullOrWhiteSpace(name)) { State.Name = name.Trim().Substring(0, Math.Min(32, name.Trim().Length)); Changed?.Invoke(); } }
+        {
+            if(string.IsNullOrWhiteSpace(name))return;
+            var next=name.Trim().Substring(0,Math.Min(32,name.Trim().Length));
+            if(State.Name==next)return;State.Name=next;Changed?.Invoke();
+        }
         public void Say(string message) { LastMessage = message; Message?.Invoke(message); Changed?.Invoke(); }
         public bool CompleteInteraction(string id, string title)
         {

@@ -4,17 +4,19 @@ Este prototipo implementa el recorrido jugable y los sistemas mínimos acordados
 
 La segunda etapa audita y corrige la integración existente. El estado real por sistema, pruebas automáticas y límites están en `Docs/AUDITORIA_FASE_2.md`. La sesión humana sigue pendiente; usar `Docs/PRUEBA_MANUAL_FASE_2.md` para registrar resultados.
 
-La entrega actual C02 incorpora un HUD medieval compacto sobre D01/E01/E02/E02-B. Arriba aparecen salud/recursos, Ayuda y Menú; abajo, Personaje, Inventario, Registro y acciones contextuales. Las ventanas se cierran con × o ESC. Menú reúne guardado/carga y cambio de actividad; la ayuda es opcional. [Informe C02](Docs/C02_INTERFAZ_MEDIEVAL.md) y dirección artística documentan apariencia y límites.
+La interfaz C02 incorpora un HUD medieval compacto sobre D01/E01/E02/E02-B. Arriba aparecen salud/recursos, Ayuda y Menú; abajo, Personaje, Inventario, Registro y acciones contextuales. Las ventanas se cierran con × o ESC. Menú reúne guardado/carga y cambio de actividad; la ayuda es opcional. [Informe C02](Docs/C02_INTERFAZ_MEDIEVAL.md) y dirección artística documentan apariencia y límites.
 
 ## Abrir el juego
 
-Ejecutar `ProyectoRPGRTS/Builds/Windows/Aethernia.exe`. Mantener junto al ejecutable todos los archivos de la carpeta Windows. Para editarlo, abrir `ProyectoRPGRTS/` en Unity 6000.5.8f1 y cargar `Assets/01_Scenes/PlayablePrototype.unity`.
+Ejecutar `ProyectoRPGRTS/Builds/Windows/Aethernia.exe`. Mantener junto al ejecutable todos los archivos de la carpeta Windows. Para editarlo, abrir `ProyectoRPGRTS/` en Unity 6000.5.8f1 y cargar `Assets/01_Scenes/AetherniaVillageDemo.unity`. La escena anterior `PlayablePrototype.unity` se conserva.
 
 En Unity: esperar a que termine la importación y compilación, revisar Console, seleccionar Game a 1280×720 o 1920×1080 y pulsar Play. Para detener, pulsar Play otra vez. Revisar cualquier error nuevo en Console y anotarlo con los pasos realizados. Cerrar ese editor antes de usar los lanzadores de validación en segundo plano.
 
 El NavMeshAgent del héroe de la escena está desactivado deliberadamente en edición y se activa al iniciar Play, después de cargar el NavMesh. Mantener ese ajuste; evita un aviso nativo de agente sin superficie durante el arranque de la build.
 
-Entrega C02: `ProyectoRPGRTS/Builds/Aethernia-Fase3-C02-Windows.zip`: descomprimir todo y abrir Aethernia.exe. Los ZIP anteriores conservan las entregas históricas. Al iniciar se crea una partida de ensayo nueva; cargar una partida previa requiere F9 o Menú → Cargar. No hay guardado automático.
+Entrega E03–E06: `ProyectoRPGRTS/Builds/Aethernia-E03-E06-Demo-Windows.zip`: descomprimir todo y abrir Aethernia.exe. Los ZIP anteriores, incluido Aethernia-Fase3-C02-Windows.zip, conservan las entregas históricas. Al iniciar se crea una partida de ensayo nueva; cargar una partida previa requiere F9 o Menú → Cargar. No hay guardado automático.
+
+La demo E03–E06 añade tres identidades visuales estáticas, retratos conceptuales y la misión «El cargamento perdido»; seguir el recorrido al final de este documento y consultar Docs/E03_E06_PRODUCCION.md.
 
 La casa medieval, el camino y los decorados se encuentran en la misma escena jugable, bajo `D01 Medieval Quarter`. La biblioteca reutilizable está en `Assets/02_Prefabs/Environment/Medieval`; medidas, capturas antes/después y límites en [informe D01](Docs/D01_ESCENARIO_MEDIEVAL.md). El héroe muestra la clase seleccionada mediante figuras geométricas provisionales; conserva la cápsula como física. Fichas e importación futura en [informe E01](Docs/E01_PERSONAJES.md). La cubierta se recorta al interponerse ante el héroe y se restaura al alejarse. La rueda quieta ya no debe provocar acercamiento automático.
 
@@ -70,3 +72,10 @@ No repetir GenerateSandbox, GeneratePlayable, UpgradeVertical, ContextUi, Mediev
 Una sección del asentamiento tiene la muestra visual medieval D01; el resto, la mazmorra, unidades y talleres conservan geometría de prueba y nombres técnicos. No incluyen el continente completo, narrativa final, todas las clases, compañeros, diplomacia avanzada, asedios, arte final ni una edición comercial terminada. La evaluación humana de diversión, accesibilidad y equilibrio sigue siendo necesaria antes de convertir las hipótesis del prototipo en decisiones finales.
 
 Consultar `CHECKLIST.md`, `Docs/ESPECIFICACION_PROTOTIPO.md`, `Docs/VALIDACION_PROTOTIPO.md` y `REGISTRO_CAMBIOS.md` para alcance aprobado, resultados e historial.
+
+
+## Demo E03–E06 — El cargamento perdido
+
+Abrir `Assets/01_Scenes/AetherniaVillageDemo.unity`. Elegir una clase en Personaje, cerrar la ficha con × o ESC y seleccionar al héroe. Clic derecho para caminar; E para interactuar cerca del objetivo. Acercarse al Habitante de la aldea (−7,5; −3 en X/Z), leer y aceptar su encargo. Seguir el objetivo hasta el arcón (−10; 3), interactuar e iniciar el combate RPG. Usar Acercarse, Atacar y Fin de turno; Recuperar cuando sea necesario. Tras vencer, regresar al habitante para entregar el cargamento: 20 oro y una ración si hay espacio, una sola vez. F5/F9 guardan/cargan fuera de combate y conservan la etapa.
+
+El menú mantiene las actividades anteriores. El bastón del Mago es un accesorio visual, no un objeto equipable; cambiar clase no crea equipo. Las tres figuras son representaciones geométricas provisionales sin rig ni animaciones finales. Guía de prueba detallada: `Docs/E05_CARGAMENTO_PERDIDO.md`.

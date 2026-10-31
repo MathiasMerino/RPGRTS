@@ -1,11 +1,13 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
+Actualizado: 2026-10-31, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
 
 ## Resumen actual
 
+- E03–E06: tres apariencias estáticas/retratos/equipo compartidos y misión integrada en AetherniaVillageDemo. **62/62 pruebas**, build Windows y dos recorridos independientes con las tres clases PASS. Informe Docs/E03_E06_PRODUCCION.md. Arte/rig/clips finales y confirmación humana pendientes.
+
 - Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
-- Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07 (sesión humana) pendiente de realización.
+- Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07: usuario informa 7/8 comprobaciones humanas; X/ESC pendiente de confirmación tras el ajuste.
 - Evidencia de fase 2: 34/34 aprobadas, cero fallos/omisiones y salida 0; cinco capturas revisadas, incluidas dos resoluciones.
 - Fase 3, A/B/C1/D01/E01: **7 de 8 tareas completadas y verificadas** (A/B/C1/D/E/F/G), **42/42 pruebas** y dos recorridos de la nueva build con salida 0. C2 pendiente; no es el cierre de toda la fase 3.
 - Build Windows de fase 2: compilada, recorridos independientes sin gráficos y con GPU aprobados, salida 0 y sin aviso de agente inválido/excepciones; ZIP portable verificado.
@@ -628,6 +630,6 @@ Diseños autorizados para uso provisional. F2-07: usuario informa 7/8, cierre X/
 - Estado: [ ] En desarrollo.
 - Sistema / prioridad: producción integrada / P1. Dependencias: E03/E04/E05.
 - Aceptación: criterios del encargo E06, implementación en Unity y pruebas; validación humana diferenciada.
-- Archivos: previstos en Docs/E03_E06_PRODUCCION.md.
-- Pruebas: pendientes.
-- Resultado / problemas: pendiente; sin modelos/rig/animaciones finales ni cierre humano automático.
+- Archivos: VerticalSliceHud, GameSession.Rename, BuildSmokeProbe/CargoQuestSmoke, ProductionInputTests/MonkIdentityTests, lanzador smoke RequireCargo, documentación y capturas E06; Docs/Validacion/E03_E06_RESULTADOS.json.
+- Pruebas: dirigida de entrada 1/1, regresión completa 62/62, build Windows x64 salida 0; recorridos headless/GPU con sistemas previos y misión con tres clases PASS; ZIP CRC/binarios/históricos verificados.
+- Resultado / problemas: validación técnica aprobada; resta publicar/verificar PR. Fallo inicial 61/62 por nombre esperado de prefab corregido y toda la batería repetida. Humanos 7/8 informado, X/ESC pendiente; sin modelos/rig/clips finales.
