@@ -12,6 +12,7 @@ namespace Aethernia
             var args = Environment.GetCommandLineArgs();
             var index = Array.IndexOf(args, "-aetherniaSmoke");
             if (index < 0 || index + 1 >= args.Length) yield break;
+            Application.runInBackground=true; // Probe only; preserve ordinary player pause settings.
             var output = args[index + 1];
             var started = Time.realtimeSinceStartup;
             var run = Run(output);
@@ -79,10 +80,9 @@ namespace Aethernia
                 File.WriteAllText(output+".village.txt","PASS: E07 authored village loaded in standalone; renderers="+village.GetComponentsInChildren<MeshRenderer>().Length+"; graphics="+SystemInfo.graphicsDeviceName+"; actual quest/classes and prior systems checked above.");
                 if(SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null)
                 {
-                    var capture=output+".village.png";if(File.Exists(capture))File.Delete(capture);ScreenCapture.CaptureScreenshot(capture);
-                    var until=Time.realtimeSinceStartup+5;while(!File.Exists(capture)&&Time.realtimeSinceStartup<until)yield return null;
-                    yield return null;yield return null;
-                    File.WriteAllText(output+".village-image.txt",File.Exists(capture)?"CAPTURED: native standalone framebuffer, no synthetic composition.":"UNAVAILABLE: batch player did not produce screenshot; editor native captures remain separate evidence.");
+                    var capture=output+".village.png";var captureRun=StandaloneGameCapture.Save(capture);
+                    while(captureRun.MoveNext())yield return captureRun.Current;
+                    File.WriteAllText(output+".village-image.txt","CAPTURED: standalone Game camera, temporary offscreen target with existing Canvas, native render without synthetic composition.");
                 }
             }
         }
