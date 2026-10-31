@@ -668,14 +668,14 @@ Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada Aethern
 - Pruebas / resultado: autoría/correcciones salida 0, 5/5 dirigidas y 67/67 regresión final, foto real revisada. Física original/NavMesh/IDs/misión conservados; navegación/recorte probados con triángulos y colisiones intactas. Arte y evaluación humana pendientes.
 
 ### E07-P4 — Capturas y regresión
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P3.
 - Aceptación: Antes/después reales, diez vistas mínimas, navegación/cámara y pruebas existentes aprobadas sin falsear expectativas.
-- Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.
-- Pruebas / resultado: pendientes. Aprobación artística y sesión humana no automáticas.
+- Archivos: VillageE07Tests, Docs/Images/E07/Before/After y recorte, Docs/Validacion/E07_RESULTADOS.json/E07_BIBLIOTECA.txt, dirección artística/escala/informe.
+- Pruebas / resultado: 67/67 regresión, cero fallos/omisiones; 24 comparativas 1080p y dos capturas de oclusión, inspeccionadas. URP/GUID/meta/referencias y originales comprobados; draw calls 1.292→1.079 en muestra equivalente. No FPS ni aprobación humana.
 
 ### E07-P5 — Build y publicación
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P4.
 - Aceptación: Player Windows funciona con las tres clases/misión, ZIP verificado y PR apilado publicado sin fusionar #1/main.
 - Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.

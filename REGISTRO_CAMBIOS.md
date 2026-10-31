@@ -351,3 +351,8 @@ Añadidos 21 prefabs propios de suelo/vegetación/utilería (total E07 33), con 
 ## 2026-10-31 — E07-P3: integración, iluminación y visibilidad
 
 Misma AetherniaVillageDemo transformada con cuatro edificios/cobertizo, plaza, rutas, bosque y utilería. Originales D01/E03, física previa, NavMesh y coordenadas de misión conservados. Volume exclusivo, tarde cálida/relleno frío, SSAO existente y faroles sin sombras. RoofCutaway reutilizado para muros/techos/troncos/copas con restauración; comprobado contra triángulos y en trayectos reales. Agrupado follaje bajo por celdas tras medir 1.292 draw calls; muestra final 1.079 (−16,49 %), sin afirmar FPS. Añadidos bordes vegetales irregulares, fondo sin afectar mazmorra y texto direccional sin recorte por geometría. 5/5 dirigidas y 67/67 regresión aprobadas, cero omisiones. Expectativa nueva de llegada ajustada al contrato NavMesh existente, sin tocar pruebas anteriores/controlador. BuildSmokeProbe amplía únicamente la ruta explícita de validación para comprobar E07 y solicitar una captura del framebuffer GPU; validación en player pendiente.
+
+
+## 2026-10-31 — E07-P4: evidencia y regresión
+
+67/67 pruebas aprobadas con las 62 anteriores intactas y cinco nuevas, cero omisiones. Doce pares antes/después de cámara real, dos capturas de recorte y comprobante resumido versionados; integridad por hash/GUID/meta sin incidencias. Dirección artística y escala actualizadas sin modificar el GDD. Fuente de textura generada diferenciada de render del juego, perfiles originales conservados. Confirmación humana y arte final siguen pendientes.

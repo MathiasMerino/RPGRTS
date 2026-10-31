@@ -98,3 +98,29 @@ Una expectativa nueva de llegada usaba distancia al punto pedido, aun cuando el 
 6. Para Windows, extraer el ZIP completo y ejecutar Aethernia.exe junto a Aethernia_Data y DLL; no necesita herramientas internas. Es build Development de revisión, no release final.
 
 F2-07 sigue con 7/8 informado, sin confirmación humana nueva de X/ESC. Aprobación artística E07 y modelos/rig/clips definitivos pendientes. Siguiente actividad recomendada: revisión humana de esta aldea y sus transiciones de visibilidad; E08 no se inicia automáticamente.
+
+
+## Pruebas y capturas reales
+
+Regresión completa **67/67 aprobadas**, cero fallos/omisiones, Unity salida 0; XML/logs E07-final-* locales. Runner EditMode con UnityTest entrando en Play Mode. Cinco casos nuevos (3 Test y 2 UnityTest) verifican biblioteca, terreno/colliders, física/nav/referencias de escena, vistas reales y ruta/oclusión. Las 62 pruebas anteriores siguen ejecutándose sin modificar sus expectativas para acomodar E07: incluyen tres clases, equipo, misión completa con retorno/recompensa única/persistencia v1 por etapa, inventario lleno/victorias ajenas, cámara, UI/puntero/ESC, RPG, construcción/economía y RTS.
+
+Muestra final del encuadre general: 1.079 draw calls frente a 1.292 iniciales (−16,49 %), SetPass 42 y 1.071.218 triángulos de frame. E07 retiene 305.573 tris y 340 renderers, de los que 271 están activos en esa muestra; 281.993 tris de geometría activa. Los datos retenidos incluyen fuentes de follaje sin render, deliberadamente conservadas para edición/recuperación. Valores editor/offscreen que incluyen pases de render; no son FPS ni presupuesto comercial. [Resultados resumidos y hashes](Validacion/E07_RESULTADOS.json).
+
+Las 24 imágenes de la tabla son renders auténticos de Unity: mismo escenario, Camera.main, ángulo y foco/zoom explícitos, 1920×1080. Las texturas generadas se usan en materiales; no sustituyen estas imágenes. El HUD normal y las otras pruebas también se comprobaron a 1280×720/1920×1080.
+
+| Vista | Antes | Después |
+| --- | --- | --- |
+| Vista general | [Antes](Images/E07/Before/01-Overview.png) | [Después](Images/E07/After/01-Overview.png) |
+| Plaza central | [Antes](Images/E07/Before/02-Plaza.png) | [Después](Images/E07/After/02-Plaza.png) |
+| Arquitectura | [Antes](Images/E07/Before/03-Architecture.png) | [Después](Images/E07/After/03-Architecture.png) |
+| Camino al bosque | [Antes](Images/E07/Before/04-Forest.png) | [Después](Images/E07/After/04-Forest.png) |
+| Monje | [Antes](Images/E07/Before/05-Class-monk.png) | [Después](Images/E07/After/05-Class-monk.png) |
+| Guerrero | [Antes](Images/E07/Before/05-Class-warrior.png) | [Después](Images/E07/After/05-Class-warrior.png) |
+| Mago | [Antes](Images/E07/Before/05-Class-mage.png) | [Después](Images/E07/After/05-Class-mage.png) |
+| NPC y entorno | [Antes](Images/E07/Before/06-Npc-area.png) | [Después](Images/E07/After/06-Npc-area.png) |
+| Diálogo | [Antes](Images/E07/Before/07-Dialogue.png) | [Después](Images/E07/After/07-Dialogue.png) |
+| Objetivo/ruta | [Antes](Images/E07/Before/08-Quest-route.png) | [Después](Images/E07/After/08-Quest-route.png) |
+| Encuentro RPG | [Antes](Images/E07/Before/09-Rpg.png) | [Después](Images/E07/After/09-Rpg.png) |
+| Interfaz medieval | [Antes](Images/E07/Before/10-Hud.png) | [Después](Images/E07/After/10-Hud.png) |
+
+Recorte reproducido: [cubierta activada/obstrucción](Images/E07/E07-cutaway-disabled.png) y [recorte contextual/héroe visible](Images/E07/E07-cutaway-enabled.png), sin cambiar las colisiones. Capturas iniciales anteriores al pulido se conservan localmente en Logs/E07-initial-visual. La inspección visual del agente verificó composición, materiales, carteles, objetivo, UI y figuras; no se etiqueta como sesión humana.

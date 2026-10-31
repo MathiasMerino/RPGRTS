@@ -14,7 +14,7 @@ En Unity: esperar a que termine la importación y compilación, revisar Console,
 
 El NavMeshAgent del héroe de la escena está desactivado deliberadamente en edición y se activa al iniciar Play, después de cargar el NavMesh. Mantener ese ajuste; evita un aviso nativo de agente sin superficie durante el arranque de la build.
 
-Entrega E03–E06: `ProyectoRPGRTS/Builds/Aethernia-E03-E06-Demo-Windows.zip`: descomprimir todo y abrir Aethernia.exe. Los ZIP anteriores, incluido Aethernia-Fase3-C02-Windows.zip, conservan las entregas históricas. Al iniciar se crea una partida de ensayo nueva; cargar una partida previa requiere F9 o Menú → Cargar. No hay guardado automático.
+Entrega E07: `ProyectoRPGRTS/Builds/Aethernia-E07-Aldea-Windows.zip`: descomprimir todo y abrir Aethernia.exe. Los ZIP anteriores, incluido Aethernia-Fase3-C02-Windows.zip, conservan las entregas históricas. Al iniciar se crea una partida de ensayo nueva; cargar una partida previa requiere F9 o Menú → Cargar. No hay guardado automático.
 
 La demo E03–E06 añade tres identidades visuales estáticas, retratos conceptuales y la misión «El cargamento perdido»; seguir el recorrido al final de este documento y consultar Docs/E03_E06_PRODUCCION.md.
 
@@ -79,3 +79,8 @@ Consultar `CHECKLIST.md`, `Docs/ESPECIFICACION_PROTOTIPO.md`, `Docs/VALIDACION_P
 Abrir `Assets/01_Scenes/AetherniaVillageDemo.unity`. Elegir una clase en Personaje, cerrar la ficha con × o ESC y seleccionar al héroe. Clic derecho para caminar; E para interactuar cerca del objetivo. Acercarse al Habitante de la aldea (−7,5; −3 en X/Z), leer y aceptar su encargo. Seguir el objetivo hasta el arcón (−10; 3), interactuar e iniciar el combate RPG. Usar Acercarse, Atacar y Fin de turno; Recuperar cuando sea necesario. Tras vencer, regresar al habitante para entregar el cargamento: 20 oro y una ración si hay espacio, una sola vez. F5/F9 guardan/cargan fuera de combate y conservan la etapa.
 
 El menú mantiene las actividades anteriores. El bastón del Mago es un accesorio visual, no un objeto equipable; cambiar clase no crea equipo. Las tres figuras son representaciones geométricas provisionales sin rig ni animaciones finales. Guía de prueba detallada: `Docs/E05_CARGAMENTO_PERDIDO.md`.
+
+
+## Entorno E07
+
+La misma demo incorpora entrada, plaza con pozo, cuatro edificios/cobertizo, camino al bosque, vegetación y utilería, con iluminación URP de tarde y recorte reversible de estructuras/árboles. El recorrido de misión, clases/equipo e inventario conserva los controles descritos. Para revisar la entrega usar feature/e07-aldea-medieval; es dependiente de E03–E06 mientras PR #1 no se integre. Comparación, medidas, pruebas y protocolo de cámara en Docs/E07_ALDEA_MEDIEVAL.md. La revisión humana de arte y X/ESC sigue pendiente; la geometría de personaje no tiene rigs/clips finales.

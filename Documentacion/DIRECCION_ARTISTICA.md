@@ -90,3 +90,8 @@ Actualización C02 posterior autorizada: HUD de dos franjas compactas y ventanas
 Criterios de C1: acciones incompatibles ocultas, todas las acciones anteriores accesibles en su contexto, sin doble suscripción, ratón/escritura no ordenan al mundo, sin recortes/solapamiento a 720p/1080p y regresión de navegación/guardado/RPG/RTS. Capturas reales antes/después y build con recorrido automatizado. F2-07 continúa pendiente: estas pruebas no evalúan diversión humana.
 
 Para D/E registrar procedencia/licencia, escala, materiales, memoria/draw calls y sustitución reversible de cada recurso. Esta iteración no descarga assets ni instala dependencias. Los presupuestos geométricos/texturas y el objetivo de rendimiento se fijarán tras medir la muestra real; no adoptar cifras comerciales por intuición.
+
+
+## E07 — Aldea integrada para revisión (2026-10-31)
+
+Aplicación provisional de arquitectura europea de piedra/entramado, cubiertas de pizarra inclinadas, plaza/pozo, senderos de tierra, bosque templado y señales de actividad. Trece materiales compartidos nuevos y cinco albedos originales (piedra/madera/tierra/pizarra/hierba), conservando recursos anteriores. Luz cálida de tarde, sombras frías legibles, SSAO existente y postproceso moderado en Volume propio; sin alterar URP global. Recorte reversible de muros altos, cubiertas y árboles con el componente existente. Las figuras de clase siguen estáticas; no se aprueba arte final, narrativa ni sesión humana. Distribución, medidas, procedencia, capturas reales y resultados se centralizan en [E07_ALDEA_MEDIEVAL](../Docs/E07_ALDEA_MEDIEVAL.md).
