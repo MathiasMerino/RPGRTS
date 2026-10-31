@@ -19,9 +19,10 @@ namespace Aethernia.Tests.Editor
         [Test] public void ProxyIsMetricLightAndKeepsOtherClassesAndOriginalArt()
         {
             var catalog=AssetDatabase.LoadAssetAtPath<CharacterVisualCatalog>(CharacterVisualBuilder.CatalogPath);
-            var prefab=AssetDatabase.LoadAssetAtPath<GameObject>(MonkIdentityBuilder.ProxyPath);
+            var prefab=catalog.Find("monk");
+            Assert.That(AssetDatabase.LoadAssetAtPath<GameObject>(MonkIdentityBuilder.ProxyPath),Is.Not.Null);
             Assert.That(catalog.Find("monk"),Is.SameAs(prefab));
-            foreach(var id in new[]{"warrior","mage"}) Assert.That(catalog.Find(id),Is.SameAs(AssetDatabase.LoadAssetAtPath<GameObject>(CharacterVisualBuilder.Prefabs+"/"+id+"_Visual.prefab")));
+            foreach(var id in new[]{"warrior","mage"}) Assert.That(catalog.Find(id),Is.SameAs(AssetDatabase.LoadAssetAtPath<GameObject>(ProductionCharacterBuilder.Prefabs+"/"+id+"_Proxy.prefab")));
             Assert.That(AssetDatabase.LoadAssetAtPath<GameObject>(CharacterVisualBuilder.Prefabs+"/monk_Visual.prefab"),Is.Not.Null);
             Assert.That(catalog.FindEntry("monk").HumanoidPrefab,Is.SameAs(AssetDatabase.LoadAssetAtPath<GameObject>(HumanoidPipelineBuilder.TemplatePath)));
             Assert.That(prefab.GetComponentsInChildren<Collider>(true).Length,Is.Zero);Assert.That(prefab.GetComponentsInChildren<Animator>(true).Length,Is.Zero);
@@ -48,7 +49,7 @@ namespace Aethernia.Tests.Editor
             hud.SelectPage(ExplorationPage.Character);Button(hud,"Monje").onClick.Invoke();yield return null;yield return null;
             Assert.That(d.Session.State.ClassId,Is.EqualTo("monk"));Assert.That(d.Session.State.Health,Is.EqualTo(20));
             var profile=d.Session.Rules.Find("monk");Assert.That(profile.Damage,Is.EqualTo(5));Assert.That(profile.Range,Is.EqualTo(1.8f));Assert.That(profile.Speed,Is.EqualTo(4));
-            var presenter=d.Hero.GetComponent<CharacterVisualPresenter>();Assert.That(presenter.Model.name,Does.StartWith("Monk_ConceptProxy"));
+            var presenter=d.Hero.GetComponent<CharacterVisualPresenter>();Assert.That(presenter.Model.name,Does.StartWith("monk_Proxy"));
             Assert.That(d.Hero.Agent.radius,Is.EqualTo(.3f));Assert.That(d.Hero.Agent.height,Is.EqualTo(1.8f));
             Physics.SyncTransforms();Assert.That(Physics.Raycast(d.Hero.transform.position+Vector3.up*3,Vector3.down,out var hit,4),Is.True);
             Assert.That(hit.collider.GetComponentInParent<ExplorationUnit>(),Is.SameAs(d.Hero));d.Hero.Select(true);Assert.That(d.Hero.IsSelected,Is.True);

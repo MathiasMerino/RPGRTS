@@ -65,6 +65,14 @@ namespace Aethernia
             director.Execute("explore");
             if (FindObjectsByType<ExplorationUnit>().Length != 1 || director.Encounter.Battle != null) throw new Exception("Combat participants leaked into exploration");
             if (!director.Save(output + ".save.json")) throw new Exception("Final victory could not be saved");
+            var cargo=FindAnyObjectByType<LostCargoController>();
+            if(cargo!=null)
+            {
+                // Flatten nested enumerators so the probe's existing exception wrapper catches every step.
+                var stack=new System.Collections.Generic.Stack<IEnumerator>();stack.Push(CargoQuestSmoke.Run(director,cargo,output));
+                while(stack.Count>0)
+                {var next=stack.Peek();if(!next.MoveNext()){stack.Pop();continue;}if(next.Current is IEnumerator nested)stack.Push(nested);else yield return next.Current;}
+            }
         }
     }
 }

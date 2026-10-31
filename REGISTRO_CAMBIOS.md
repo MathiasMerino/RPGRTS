@@ -296,3 +296,33 @@ F3-ARTE-GUE-01 completa como entrega de propuesta 2D, sujeta a revisión artíst
 Skill imagegen/herramienta integrada: hoja 2D original 1536×1024, Mago masculino adulto de silueta vertical y complexión normal/delgada, expresión reservada, túnicas en capas azul grisáceo/púrpura apagado, cuero marrón, lino beige y metal discreto. Bastón fino, grimorio sujeto al cinturón, bolsas/contenedores de componentes y capucha bajada; efecto de conjuración leve sin ocultar cuerpo/mano. Incluye cuatro vistas, pose neutral con bastón separado, conjuración y cinco detalles de bastón, grimorio, cinturón, tejidos y accesorios. Revisadas figura completa, continuidad general del diseño y coherencia de presentación con las hojas Monje/Guerrero. PNG y prompt exacto en Documentacion/Personajes/Conceptos/MAGO_HOJA_PROPUESTA_v01.*; SHA-256 d11938b0d5125f2e11e698469173c3596956b7a8fa4d2a9150c7053b378ecb29.
 
 F3-ARTE-MAG-01 completa como entrega artística propuesta, pendiente de revisión final. No se modifica Unity, clase, UI, catálogo, materiales o controlador vigente; no se produce FBX, rig, animación o turnaround calibrado. No se repiten tests/build por cambios únicamente raster/documentales; F2-07 sigue pendiente. Guardado/commit local, sin publicar esta solicitud en GitHub.
+
+
+## 2026-10-31 — Inicio producción E03–E06
+
+Brief adjunto autoriza provisionalmente las tres hojas originales y misión narrativa de ensayo. Git limpio, dev 742c04f sincronizado preservando tres commits artísticos, rama solicitada feature/e03-e06-personajes-vertical-slice. No hay rama F2-07 detectada; usuario informa 7/8 humanas, cierre X/ESC pendiente. GDD/hash intactos; inspección dirigida sin modelos humanoides ni herramientas de modelado expuestas. Plan/decisiones en Docs/E03_E06_PRODUCCION.md. Preservar recursos/escenas originales, código modular existente, Facts v1 y gestor C02.
+
+
+## 2026-10-31 — E03: tres representaciones provisionales
+
+Nuevos prefabs métricos E03, mallas horneadas por material reutilizando MonkProxyGeometry (Box añadido), armadura/correas/faldón Guerrero, túnica/capucha/libro/bastón de identidad Mago y uniones/hombros/vendas/paño Monje. Equipo actual anidado sin colliders ni runtime primitives; fuentes originales copiadas íntegras. Originales y física preservados. Generación salida 0, prueba métrica inicial 1/1 y aceptación ampliada 2/2 (incluye Play Mode y tres capturas revisadas). Métricas/resultados en informe E03_E06; no se afirman rig, animaciones o escultura final. Paleta Mago oscura, ajuste reversible previsto E04.
+
+
+## 2026-10-31 — E04: presentación y equipo compartidos
+
+Se amplía catálogo existente con metadatos visuales/sprites/fuentes/recuperación/materiales, sin estadísticas duplicadas. Recortes nativos 180×240 desde las hojas originales, importadas Sprite/sRGB/NPOT None; no PNG editados ni nuevas imágenes. Anclajes y bindings v1 reutilizados; paleta del Mago moderadamente aclarada. Configuración salida 0 y 4/4 pruebas dirigidas: tres clases, retratos, equipo repetido sin duplicados, estado sin arma/tela y carga restaurada; seis capturas 720p/1080p con layouts/raycast correctos. Tests históricos adaptan las referencias activas manteniendo la recuperación E01/E02-B. No gestor C02 modificado, nuevos items o reglas.
+
+
+## 2026-10-31 — E05: El cargamento perdido
+
+Demo independiente reutiliza D01 y NavMesh, añade NPC y carga con componentes existentes, diálogo/objetivo C02 independientes y reglas específicas sobre Facts v1. Misión aceptada → combate real → recuperación → regreso/entrega única; 20 oro y ración opcional por espacio. GameSession amplía interacción por hook nullable, TurnEncounter permite punto de spawn y evento final sin cambiar reglas. OnEnable/Disable libera enlaces. Escena principal intacta. Cinco pruebas dirigidas aprobadas dos veces; tres clases completan rutas reales, batalla, recompensa y persistencia por etapa; inventario lleno/partida previa/victoria ajena comprobados. Primera generación falló por ruta D01 sin Props, corregida sin duplicar NPC. Capturas detectaron etiquetas sobre diálogo: sorting ajustado detrás del HUD. Semilla de reproducción solo en pruebas, aleatoriedad normal intacta. Evidencias E05-* e informe de misión; sin canon definitivo o aprobación humana.
+
+
+## 2026-10-31 — E06: regresión y demo Windows
+
+HUD difiere refrescos reentrantes, Rename omite eventos idénticos y ESC usa InputAction con liberación al desactivar. Prueba de puntero/teclado con nombre enfocado e inventario a 720p/1080p aprobada; arnés oculto fuerza update Manual y restaura ajustes. Primer cierre detectó recursión al desactivar InputField; intentos siguientes aislaron foco/editor y no se atribuyen como fallos del player. Primera regresión 61/62 por expectativa errónea del nombre de Monje, corregida: repetición completa 62/62, cero omisiones. BuildVillage Windows x64 185.241.263 bytes/64,86 s. Probe independiente amplía recorrido real con las tres clases y persistencia de misión: headless 34,56 s y GPU RTX3050 33,64 s, ambos PASS/salida 0; RequireCargo exige comprobante nuevo y escena correcta. ZIP 77.833.297 bytes/305 entradas, CRC/binarios verificados y ocho históricos intactos. Capturas finales inspeccionadas, instrucciones y evidencia resumida versionadas. GDD/escena original/paquetes/configuración conservados; humano/artes finales pendientes. Preparado para publicar PR de feature hacia dev, sin main ni release final.
+
+
+## 2026-10-31 — Publicación E03–E06
+
+Commits 136fb87/50e860b/e7bc6f4/0f86fa9 por etapa, rama feature/e03-e06-personajes-vertical-slice publicada y PR #1 en borrador hacia dev: https://github.com/MathiasMerino/RPGRTS/pull/1. Checklist técnico E06 cerrado con evidencia; confirmación humana F2-07 y arte final permanecen pendientes. No merge a main/dev, release, force push o nueva fase. Cierre documental posterior sin cambios al código validado.

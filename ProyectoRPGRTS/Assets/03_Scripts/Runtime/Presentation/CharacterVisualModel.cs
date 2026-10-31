@@ -17,6 +17,9 @@ namespace Aethernia
         [SerializeField] private GameObject trainingSword;
         [SerializeField] private GameObject clothArmour;
         [SerializeField] private EquipmentVisualBinding[] bindings = System.Array.Empty<EquipmentVisualBinding>();
+        [SerializeField] private Transform weaponAnchor;
+        public Transform WeaponAnchor => weaponAnchor;
+        public void ConfigureAnchor(Transform anchor) { weaponAnchor=anchor; }
         private HumanoidAnimationDriver animationDriver;
         public bool SwordVisible => trainingSword != null ? trainingSword.activeSelf : BindingVisible("training-sword");
         public bool ArmourVisible => clothArmour != null ? clothArmour.activeSelf : BindingVisible("cloth");

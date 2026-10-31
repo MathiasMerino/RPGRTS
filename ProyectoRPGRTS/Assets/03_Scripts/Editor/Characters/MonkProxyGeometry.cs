@@ -69,5 +69,11 @@ namespace Aethernia.Editor.Characters
                 go.GetComponent<MeshFilter>().sharedMesh=mesh;go.GetComponent<MeshRenderer>().sharedMaterial=group.Key;
             }
         }
+        public void Box(Material material,Vector3 centre,Vector3 size)
+        {
+            var h=size*.5f;var a=centre+new Vector3(-h.x,-h.y,-h.z);var b=centre+new Vector3(h.x,-h.y,-h.z);
+            var c=centre+new Vector3(h.x,h.y,-h.z);var d=centre+new Vector3(-h.x,h.y,-h.z);var z=Vector3.forward*size.z;
+            Quad(material,a,d,c,b);Quad(material,a+z,b+z,c+z,d+z);Quad(material,a,a+z,d+z,d);Quad(material,b,c,c+z,b+z);Quad(material,d,d+z,c+z,c);Quad(material,a,b,b+z,a+z);
+        }
     }
 }

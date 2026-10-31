@@ -37,3 +37,8 @@ Estado al 2026-10-30: **pendiente de realización**. Este guion no es evidencia 
 Anotar dónde hizo falta explicación, errores de selección, texto ilegible/recortado, fatiga de cámara, esperas sin feedback y obstáculos que ocultaron objetivos. Valorar comprensión de escalada, ritmo, justicia y diversión con ejemplos, sin dar por aprobado un sistema por ausencia de excepciones.
 
 La siguiente iteración debe elegirse después de esta sesión: primero fallos reproducibles; después una propuesta acotada de recorrido guiado/feedback y una muestra artística propia. No comenzar continente, nuevas clases, asedios o transiciones complejas sin revisar alcance.
+
+
+## Actualización del usuario — E03–E06, 2026-10-31
+
+El usuario informa 7/8 comprobaciones humanas confirmadas y cierre X/ESC pendiente. No se identifican las siete comprobaciones con las doce filas históricas de esta tabla. Se conserva su estado para evitar atribuir resultados no comunicados. Las pruebas automáticas de entrada de E06 se documentan por separado; no sustituyen la confirmación humana del cierre, la cámara, las proporciones o la experiencia jugable.

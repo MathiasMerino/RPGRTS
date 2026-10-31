@@ -34,6 +34,8 @@ namespace Aethernia
         private float refreshAt;
         private PrototypeMode lastMode;
         private bool layoutApplied;
+        private bool refreshing,refreshPending;
+        private UnityEngine.InputSystem.InputAction closeAction;
         public ExplorationPage ActivePage { get; private set; }
         public void ConfigureReference(ClassReferenceCard card) { classReference=card; }
         public void Configure(GameSession game, PrototypeDirector control, Text resources, Text info, HudBinding[] actions, InputField input)
@@ -66,6 +68,11 @@ namespace Aethernia
         private void OnEnable()
         {
             if (session == null) return;
+            if(compactView!=null)
+            {
+                closeAction=new UnityEngine.InputSystem.InputAction("CloseWindows",UnityEngine.InputSystem.InputActionType.Button,"<Keyboard>/escape");
+                closeAction.performed+=ClosePerformed;closeAction.Enable();
+            }
             session.Changed += Refresh;
             foreach (var binding in bindings)
             {
@@ -86,6 +93,7 @@ namespace Aethernia
         }
         private void OnDisable()
         {
+            if(closeAction!=null){closeAction.performed-=ClosePerformed;closeAction.Dispose();closeAction=null;}
             if (session == null) return;
             session.Changed -= Refresh;
             foreach (var binding in bindings) if (binding.Button != null && binding.Listener != null) binding.Button.onClick.RemoveListener(binding.Listener);
@@ -93,10 +101,16 @@ namespace Aethernia
         }
         private void Update()
         {
-            if(compactView!=null&&UnityEngine.InputSystem.Keyboard.current!=null&&UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame) ClosePanels();
-            if (Time.unscaledTime > refreshAt) { refreshAt = Time.unscaledTime + 0.5f; Refresh(); }
+            if (refreshPending || Time.unscaledTime > refreshAt) { refreshPending=false;refreshAt = Time.unscaledTime + 0.5f; Refresh(); }
         }
+        private void ClosePerformed(UnityEngine.InputSystem.InputAction.CallbackContext context) { ClosePanels(); }
         private void Refresh()
+        {
+            if(!isActiveAndEnabled)return;
+            if(refreshing){refreshPending=true;return;}
+            refreshing=true;try{RefreshPresentation();}finally{refreshing=false;}
+        }
+        private void RefreshPresentation()
         {
             if (session == null || session.Rules == null) return;
             if(compactView!=null) { RefreshCompact();return; }

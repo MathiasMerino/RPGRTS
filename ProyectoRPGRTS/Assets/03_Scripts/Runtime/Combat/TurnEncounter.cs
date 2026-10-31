@@ -11,6 +11,8 @@ namespace Aethernia
         [SerializeField] private GameObject enemyPrefab;
         [SerializeField] private Material enemyMaterial;
         private ExplorationUnit enemy;
+        private bool resolutionSent;
+        public event Action<bool> Resolved;
         public TurnBattle Battle { get; private set; }
         public Vector3 EnemyPosition => enemy != null ? enemy.transform.position : hero.transform.position;
         public void Configure(GameSession game, ExplorationUnit actor, GameObject template, Material material)
@@ -21,11 +23,13 @@ namespace Aethernia
             enemy = null; Battle = null;
         }
         public bool Begin(int seed = 0)
+        { return BeginAt(hero.transform.position+Vector3.forward*3,seed); }
+        public bool BeginAt(Vector3 requested,int seed=0)
         {
             if (Battle != null && !Battle.Finished) return false;
             if (session.State.Health <= 0) { session.Say("Elige una clase para reiniciar la prueba del personaje."); return false; }
             hero.Stop(); Clear();
-            var requested = hero.transform.position + Vector3.forward * 3;
+            resolutionSent=false;
             if (!NavMesh.SamplePosition(requested, out var hit, 5, NavMesh.AllAreas)) return false;
             enemy = Instantiate(enemyPrefab, hit.position, Quaternion.identity).GetComponent<ExplorationUnit>();
             enemy.name = "RPG Enemy";
@@ -79,6 +83,7 @@ namespace Aethernia
             if (Battle.Won && !session.HasFact("rpg-victory")) session.State.Facts.Add("rpg-victory");
             if (Battle.Finished) { hero.Stop(); if (enemy != null) enemy.gameObject.SetActive(false); }
             session.Say(Battle.Finished ? (Battle.Won ? "Victoria RPG. Resultado registrado; puedes explorar o probar la escalada RTS." : "Derrota RPG. Vuelve a Explorar y elige una clase para reiniciar.") : Battle.Message);
+            if(Battle.Finished&&!resolutionSent){resolutionSent=true;Resolved?.Invoke(Battle.Won);}
         }
     }
 }

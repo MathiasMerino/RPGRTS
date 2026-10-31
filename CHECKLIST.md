@@ -1,11 +1,13 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
+Actualizado: 2026-10-31, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
 
 ## Resumen actual
 
+- E03–E06: tres apariencias estáticas/retratos/equipo compartidos y misión integrada en AetherniaVillageDemo. **62/62 pruebas**, build Windows y dos recorridos independientes con las tres clases PASS. Informe Docs/E03_E06_PRODUCCION.md. Arte/rig/clips finales y confirmación humana pendientes.
+
 - Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
-- Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07 (sesión humana) pendiente de realización.
+- Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07: usuario informa 7/8 comprobaciones humanas; X/ESC pendiente de confirmación tras el ajuste.
 - Evidencia de fase 2: 34/34 aprobadas, cero fallos/omisiones y salida 0; cinco capturas revisadas, incluidas dos resoluciones.
 - Fase 3, A/B/C1/D01/E01: **7 de 8 tareas completadas y verificadas** (A/B/C1/D/E/F/G), **42/42 pruebas** y dos recorridos de la nueva build con salida 0. C2 pendiente; no es el cierre de toda la fase 3.
 - Build Windows de fase 2: compilada, recorridos independientes sin gráficos y con GPU aprobados, salida 0 y sin aviso de agente inválido/excepciones; ZIP portable verificado.
@@ -594,3 +596,40 @@ El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C
 - Archivos: Documentacion/Personajes/Conceptos/MAGO_HOJA_PROPUESTA_v01.png y prompt exacto; registro actualizado.
 - Pruebas: PNG 1536×1024 inspeccionado: seis figuras, cinco recuadros y paleta; continuidad general de túnicas/equipo, silueta, encuadre y materiales revisados; hash verificado. No se ejecuta Unity para una entrega raster/documental.
 - Resultado / problemas: hoja conceptual propuesta para revisión, no turnaround calibrado o modelo/rig/animación. Arte y medidas actuales E01 siguen intactos; aprobación artística final y F2-07 pendientes.
+
+
+## PRODUCCIÓN — E03 a E06 (2026-10-31)
+
+Diseños autorizados para uso provisional. F2-07: usuario informa 7/8, cierre X/ESC pendiente; no equivale a aprobación de arte final.
+
+### PROD-E03 — Integración de tres apariencias
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: producción integrada / P1. Dependencias: hojas originales y base E02-B.
+- Aceptación: criterios del encargo E03, implementación en Unity y pruebas; validación humana diferenciada.
+- Archivos: ProductionCharacterBuilder, MonkProxyGeometry reutilizada con Box, tres prefabs en Characters/E03, mallas/materiales/Source en 07_Characters/ProductionProvisional, catálogo y pruebas ProductionVisualTests; informe y tres capturas.
+- Pruebas: compilación/generación salida 0; 2/2 dirigidas metric/URP/recuperación y Play Mode con tres capturas reales inspeccionadas.
+- Resultado / problemas: completada técnicamente, pendiente de validación humana. Representaciones estáticas 1,78/1,80 m sin colisión, 5.252–6.704 triángulos; originales preservados. No modelos/rig/animaciones finales.
+
+### PROD-E04 — Catálogo, retratos y equipo compartidos
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: producción integrada / P1. Dependencias: E03.
+- Aceptación: criterios del encargo E04, implementación en Unity y pruebas; validación humana diferenciada.
+- Archivos: CharacterVisualCatalog/Model, ProductionPresentationBuilder, catálogo/prefabs E03, sprites Portraits y fuentes importadas, pruebas ProductionVisualTests y adaptación histórica MonkIdentityTests; informe/capturas.
+- Pruebas: configuración/compilación salida 0; 4/4 dirigidas, tres clases/retratos/equipo repetido/retirada por estado/guardado/carga, layouts/raycast 720p/1080p.
+- Resultado / problemas: completada técnicamente; tres retratos conceptuales 3:4 originales, configuración compartida sin estadísticas duplicadas. Bastón accesorio sin item/buff; modelos y validación humana pendientes.
+
+### PROD-E05 — El cargamento perdido: misión integrada
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: producción integrada / P1. Dependencias: E04 y sistemas existentes.
+- Aceptación: criterios del encargo E05, implementación en Unity y pruebas; validación humana diferenciada.
+- Archivos: escena AetherniaVillageDemo, Quests/VillageResident/LostCargo/CargoDialogue, LostCargoQuest/Controller/View, extensión GameSession/TurnEncounter, ProductionVillageBuilder, LostCargoTests, lanzador y documentación/capturas E05.
+- Pruebas: generación/compilación salida 0; 5/5 dirigidas antes y después de pulir etiquetas/semilla de prueba; recorridos reales con tres clases, guardado v1 por etapa, recompensa única/inventario lleno y victorias ajenas rechazadas; capturas 720p/1080p.
+- Resultado / problemas: completada técnicamente; misión y NPC provisionales, diálogo/objetivo desacoplados de C02. Escena original preservada; revisión humana pendiente. No se simula victoria ni se cambia formato de guardado.
+
+### PROD-E06 — Regresión, capturas, build y PR
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: producción integrada / P1. Dependencias: E03/E04/E05.
+- Aceptación: criterios del encargo E06, implementación en Unity y pruebas; validación humana diferenciada.
+- Archivos: VerticalSliceHud, GameSession.Rename, BuildSmokeProbe/CargoQuestSmoke, ProductionInputTests/MonkIdentityTests, lanzador smoke RequireCargo, documentación y capturas E06; Docs/Validacion/E03_E06_RESULTADOS.json.
+- Pruebas: dirigida de entrada 1/1, regresión completa 62/62, build Windows x64 salida 0; recorridos headless/GPU con sistemas previos y misión con tres clases PASS; ZIP CRC/binarios/históricos verificados.
+- Resultado / problemas: validación técnica aprobada y PR #1 abierto en borrador hacia dev (https://github.com/MathiasMerino/RPGRTS/pull/1). Rama publicada; main intacta. Fallo inicial 61/62 por nombre esperado de prefab corregido y toda la batería repetida. Humanos 7/8 informado, X/ESC pendiente; sin modelos/rig/clips finales.

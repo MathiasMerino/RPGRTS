@@ -1,4 +1,4 @@
-param([switch]$WithGraphics)
+param([switch]$WithGraphics, [switch]$RequireCargo)
 
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
@@ -23,3 +23,12 @@ if (Select-String -LiteralPath $taskLog -Pattern 'Failed to create agent|Excepti
     throw "El recorrido termino, pero el player registro un fallo de navegacion o una excepcion. Consulta $taskLog."
 }
 Write-Output $taskText
+if ($RequireCargo) {
+    $taskCargoReceipt = $taskReceipt + '.cargo.txt'
+    if (-not (Test-Path -LiteralPath $taskCargoReceipt) -or (Get-Item -LiteralPath $taskCargoReceipt).LastWriteTimeUtc -lt $taskStarted) {
+        throw 'Falta un comprobante nuevo de la mision con las tres clases. Verifica que compilaste con BuildVillage.'
+    }
+    $taskCargoText = Get-Content -LiteralPath $taskCargoReceipt -Raw
+    if (-not $taskCargoText.StartsWith('PASS:')) { throw $taskCargoText }
+    Write-Output $taskCargoText
+}
