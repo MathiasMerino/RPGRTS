@@ -1,0 +1,1 @@
+UnityStats after native Game render: drawCalls=1079; setPass=42; frameTriangles=1071218; E07 renderers=340; active=271; retained triangles=305573; activeTriangles=281993. Counters are editor batch/offscreen samples, not FPS; retained includes disabled source foliage, zero counters mean unavailable.

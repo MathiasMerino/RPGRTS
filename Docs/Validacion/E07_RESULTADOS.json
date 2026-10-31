@@ -1,0 +1,509 @@
+{
+  "date": "2026-10-31",
+  "unity": "6000.5.8f1",
+  "urp": "17.5.0",
+  "base": "dab39c2",
+  "branch": "feature/e07-aldea-medieval",
+  "dependency": "PR #1 E03–E06 open/draft/not merged at task start",
+  "runner": "EditMode; UnityTest enters Play Mode; five new cases: three Test and two UnityTest",
+  "test_run": {
+    "id": "2",
+    "testcasecount": "67",
+    "result": "Passed",
+    "total": "67",
+    "passed": "67",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-31 15:50:40Z",
+    "end-time": "2026-10-31 15:51:13Z",
+    "duration": "32.6144928"
+  },
+  "cases": [
+    {
+      "name": "Aethernia.Tests.Editor.CharacterVisualTests.CatalogContainsMetricReplaceableModelsAndSharedEquipment",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.CharacterVisualTests.ClassEquipmentLoadMovementAndVisualReplacementStayConsistent",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.CharacterVisualTests.RoofOcclusionIsReproducedAndCutawayRestoresPresentation",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ContextUiValidationTests.PagesPreserveActionsAndModesHaveReadableSeparateLayouts",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.EnvironmentValidationTests.ExactEditorAndDeclaredPackagesAreAvailable",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.EnvironmentValidationTests.OriginalSceneEntersAndExitsPlayMode",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.EnvironmentValidationTests.OriginalSceneHasNoMissingScriptsOrSerializedReferences",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.HumanCapsuleFitsDoorButCannotFitNarrowGate",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceCube_1m\",1,1,1)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceHuman_180cm\",0.6f,1.8f,0.6f)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceDoor_120x220cm\",1.6f,2.4f,0.25f)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceWindow_100x120cm\",1.4f,1.6f,0.25f)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceHouse_6x8m\",6,3.15f,8)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(\"ReferenceGround_40m\",40,0.2f,40)",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.SandboxHasValidReferencesMaterialsAndGround",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.FoundationValidationTests.SandboxRunsAndRendersWithoutErrors",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.EmptyPilotHasSevenUnanimatedStatesAndPreservesFallback",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.FiveVisualSlotsReadExistingEquipmentAndRoundTripSave",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.MissingAssetsLeaveMovementAndMonkFallbackFunctional",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.NativeFbxImportsMetresAndRejectsNonHumanoidCandidate",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.FactsPersistWithoutSchemaChangeAndRewardsCannotRepeat",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.MageCompletesQuest",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.MonkCompletesQuest",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.UnrelatedVictoryAndCargoBeforeAcceptanceCannotCompleteMission",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.LostCargoTests.WarriorCompletesQuest",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalEnvironmentTests.DressingPreservesOriginalPhysicsAndBakedNavigation",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalEnvironmentTests.IdleCameraDoesNotZoomWithoutWheelInput",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalEnvironmentTests.LibraryHasSharedSupportedMaterialsAndMetricPrefabs",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalEnvironmentTests.QuarterNavigationAndPresentationWorkTogether",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalHudTests.FourResolutionsContextModesAndWorldSpaceRemainReadable",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalHudTests.SkinUsesOneAtlasAndMetricWorldResourcesStaySeparate",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalHudTests.WindowsInventoryClassesAndSaveUseExistingStateAndSingleCommands",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MonkIdentityTests.CharacterPageCropAndMatchedWorldCapturesAreReadable",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MonkIdentityTests.MonkSelectionInteractionEquipmentLoadAndRpgStillWork",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MonkIdentityTests.ProxyIsMetricLightAndKeepsOtherClassesAndOriginalArt",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.EnemyTurnFollowsACompletePathWithinThreeMetres",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.EnteringManagementStopsThePreviousHeroOrder",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.ExplorationActionsAreModeGuardedAndHudKeepsSpecificFeedback",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.FinishedRtsDoesNotLeakParticipantsIntoExplorationOrLoad",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected(\"overflow\")",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected(\"clock-behind\")",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected(\"clock-ahead\")",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidLoadReportsFailureWithoutChangingWorldOrPosition",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.RtsRejectsBlockedDeploymentWithoutEnteringMode",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.SceneHeroDefersNativeAgentUntilSurfaceHasLoaded",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PhaseTwoValidationTests.TacticalAttacksRespectWallsAndTurnCannotResetInTransit",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PlayableValidationTests.CameraSelectionAndUiBlockWork",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PlayableValidationTests.HudRendersAtTwoResolutionsAndDoesNotDuplicateListeners",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.PlayableValidationTests.MovementAndInteractionCompleteTheExplorationLoop",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionInputTests.C02ClosesByPointerAndEscapeIncludingFocusedName",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionVisualTests.NewProxiesAreMetricSharedAndKeepRecoveryAssets",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionVisualTests.PortraitsEquipmentAndSaveRestoreAcrossAllClasses",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionVisualTests.PortraitsUseAuthorizedOriginalSheetsAndCatalogMetadata",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.ProductionVisualTests.ThreeProxiesLoadAndRenderInPlayableScene",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalIntegrationTests.ClassesConstructionDungeonAndSaveShareOneState",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalIntegrationTests.FinalSceneHasNoMissingSerializedReferences",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalIntegrationTests.RpgVictoryEscalatesToRtsWhileCalendarIsPaused",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.EconomyConservesCostsAndProducesOnlyWithFood",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.InventoryEnforcesCapacityOwnershipAndConsumption",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.SaveRoundtripRejectsCorruptionAndUnknownVersions",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.TurnRulesLimitActionsMovementAndFinishDeterministically",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VerticalModelTests.WinningInitiativeDoesNotGuaranteeAnEnemyHit",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VillageE07Tests.ComparableViewsAndMissionUseRealGameCamera",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VillageE07Tests.DoorBehindBuildingForestAndReversibleCutawayStayNavigable",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VillageE07Tests.ReusableLibraryHasSharedUrpMaterialsAndMetricArchitecture",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VillageE07Tests.TerrainAndVegetationKeepFlatPlayableGroundAndAppropriatePhysics",
+      "result": "Passed"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.VillageE07Tests.TransformedDemoPreservesOriginalPhysicsNavigationAndQuestReferences",
+      "result": "Passed"
+    }
+  ],
+  "comparison_captures": [
+    {
+      "view": "01-Overview",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\01-Overview.png",
+        "sha256": "31a4558349401c2751ef07413436e0703bf69c5c9a84ca2713d0a6bc395bbb3f"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\01-Overview.png",
+        "sha256": "1ab03ebe21d6b9b74a290d2b58fe9bfab4684dfac183c9ca0b17dc861d4e0b52"
+      }
+    },
+    {
+      "view": "02-Plaza",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\02-Plaza.png",
+        "sha256": "0d27e310a8b24cb4fdbceb785de38900949258eaed014a3862912063734e3ccf"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\02-Plaza.png",
+        "sha256": "6d67ac719d7a16d6da680ceb9f51461a68d1091e09702278a971d23eb063ac5d"
+      }
+    },
+    {
+      "view": "03-Architecture",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\03-Architecture.png",
+        "sha256": "27773157db8f47dbe62b7e0b9e93f852292d5f8f12ae82ba89d7289719dc1c21"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\03-Architecture.png",
+        "sha256": "1a2d62c168dfab0ec3bceb8d34461124ff9e1677d2c9f951718494c9966fda23"
+      }
+    },
+    {
+      "view": "04-Forest",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\04-Forest.png",
+        "sha256": "09a821e0eeed00488649a423aba65e3e91dc4aca81cac99d716cba3e3f925e8b"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\04-Forest.png",
+        "sha256": "eeaf20a2beef8f40ab627281fd90f6282ccc189d3b93f63937578ccce4cb60e4"
+      }
+    },
+    {
+      "view": "05-Class-monk",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\05-Class-monk.png",
+        "sha256": "aa10044b3cdcd91ee47ca7cc69a7de7427763c66adc20e99e801a246a86d8e3e"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\05-Class-monk.png",
+        "sha256": "da09ba4bafef4b6f23177421086030ed77db9983b6ea8bb52d8478b348392443"
+      }
+    },
+    {
+      "view": "05-Class-warrior",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\05-Class-warrior.png",
+        "sha256": "bb9f45fbdd96f0ac4cb49bb707eca45896a7659f02590c729249a2a4c25d9d15"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\05-Class-warrior.png",
+        "sha256": "16aac8e22fdfaac881206dc59ed441d0813de1e6010caea94d87dde7cfdfc0fa"
+      }
+    },
+    {
+      "view": "05-Class-mage",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\05-Class-mage.png",
+        "sha256": "407e02032a3bb2a36bf507272a37fc32a9ceade11ea413eb492967434a3dba9a"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\05-Class-mage.png",
+        "sha256": "09d5cf4e679828c77fe7e3e4d2b1f8983b429012e31c3439353f6f9b81c54b90"
+      }
+    },
+    {
+      "view": "06-Npc-area",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\06-Npc-area.png",
+        "sha256": "cb83075baea204b731d1a319a2e0fbb52ab12137753588259abec43356c8bc60"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\06-Npc-area.png",
+        "sha256": "59ef88fd311ef9d4d0798005d6b7f68320641460f58403e005826cc851df1491"
+      }
+    },
+    {
+      "view": "07-Dialogue",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\07-Dialogue.png",
+        "sha256": "a5c81470b1b75f8f6b2a68654f51ff6706c7b455d0d880de30813a552cc8fd79"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\07-Dialogue.png",
+        "sha256": "cdbae91154d58a03262f4cf584d8f9e68a5fdcf27956651ee403147594b83432"
+      }
+    },
+    {
+      "view": "08-Quest-route",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\08-Quest-route.png",
+        "sha256": "29200456dd135cab7814b62d7966cd20a3dceb8d2464378d7dd18a953dd02b80"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\08-Quest-route.png",
+        "sha256": "1cfe0d0d2c5b152498761e9efe5ec98499fad669fe67662718f363956c320d42"
+      }
+    },
+    {
+      "view": "09-Rpg",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\09-Rpg.png",
+        "sha256": "00174f2d472dea116387e54188916818979ce9730e60a4588f657d4a5c272ca0"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\09-Rpg.png",
+        "sha256": "c706beb42361ae781e168ad1967b2ed215e6c05f8bceed8a1609179733c6ad40"
+      }
+    },
+    {
+      "view": "10-Hud",
+      "Before": {
+        "path": "Docs\\Images\\E07\\Before\\10-Hud.png",
+        "sha256": "d8f12a295a43b4b3acbdcf55044d62a18c09ab3443666abb2300cb02fce99a40"
+      },
+      "After": {
+        "path": "Docs\\Images\\E07\\After\\10-Hud.png",
+        "sha256": "0418d3cf0408e14c41882280ad45ffa12278f49d8a0baa93b13a2240b7502b77"
+      }
+    }
+  ],
+  "initial_integrated_rendering": "UnityStats after native Game render: drawCalls=1292; setPass=42; frameTriangles=1258614; E07 renderers=294; retained E07 triangles=269263. Counters are editor batch/offscreen samples, not FPS; zero counters mean unavailable.",
+  "final_rendering": "UnityStats after native Game render: drawCalls=1079; setPass=42; frameTriangles=1071218; E07 renderers=340; active=271; retained triangles=305573; activeTriangles=281993. Counters are editor batch/offscreen samples, not FPS; retained includes disabled source foliage, zero counters mean unavailable.",
+  "draw_calls_change_percent": -16.49,
+  "navigation_and_visibility": "PASS: real NavMesh movement through retained open door/interior, behind building, woodland and NPC; native geometric occlusion reproduced with cutaway disabled, removed with cutaway enabled, original physics unchanged on toggling. Human review pending.",
+  "integrity": {
+    "date": "2026-10-31",
+    "base": "dab39c2",
+    "gdd_sha256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+    "original_scene_unchanged": true,
+    "packages_and_settings_unchanged": true,
+    "gameplay_logic_unchanged": true,
+    "D01_resources_unchanged": true,
+    "characters_rules_and_quest_unchanged": true,
+    "sources_preserved": {
+      "Stone": true,
+      "Wood": true,
+      "Soil": true,
+      "Slate": true,
+      "Grass": true
+    },
+    "missing_meta": [],
+    "orphan_meta": [],
+    "duplicate_guids": [],
+    "runtime_configuration_change": "References to already-installed URP Core/Universal for validation-only capture; packages/versions/player settings unchanged."
+  },
+  "human_approval": "Pending; F2-07 user reported 7/8, X/ESC confirmation pending; E07 art not human approved",
+  "build_status": "Succeeded; final Windows x64 demo, independent headless/GPU routes PASS",
+  "build": "Succeeded; bytes=195637067; seconds=43.7053743",
+  "headless_smoke": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=36.05; frames=134626; allocatedBytes=114757691",
+  "headless_cargo": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; normal RPG/RTS/economy also checked by base probe.",
+  "headless_village": "PASS: E07 authored village loaded in standalone; renderers=340; graphics=Null Device; actual quest/classes and prior systems checked above.",
+  "graphics_smoke": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=35.59; frames=89173; allocatedBytes=145522552",
+  "graphics_cargo": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; normal RPG/RTS/economy also checked by base probe.",
+  "graphics_village": "PASS: E07 authored village loaded in standalone; renderers=340; graphics=NVIDIA GeForce RTX 3050 Laptop GPU; actual quest/classes and prior systems checked above.",
+  "graphics_capture_status": "CAPTURED: standalone Game camera, temporary offscreen target with existing Canvas, native render without synthetic composition.",
+  "package": {
+    "path": "ProyectoRPGRTS\\Builds\\Aethernia-E07-Aldea-Windows.zip",
+    "bytes": 83358761,
+    "sha256": "967592477432b69635216ec85055892e9b9a5b96814bd3a73a736b073c33698a",
+    "entries": 305,
+    "crc": "PASS",
+    "binary_matches": {
+      "Aethernia.exe": true,
+      "UnityPlayer.dll": true,
+      "Aethernia_Data/Managed/Aethernia.Runtime.dll": true,
+      "Aethernia_Data/level0": true
+    },
+    "historical_archives_unchanged": 9
+  },
+  "standalone_capture": {
+    "path": "Docs\\Images\\E07\\Standalone-1280.png",
+    "pixels": [
+      1280,
+      720
+    ],
+    "sha256": "8b2143b0d892be8f010a363cc68ba3a45753244a508452eeeeddd11845a7de88",
+    "visually_inspected": true,
+    "method": "Standalone Game camera and existing Canvas; explicit URP SingleCameraRequest to offscreen target; no composition."
+  },
+  "validation_scope_note": "67/67 regression on functional scene/core scripts; subsequent change restricted to explicit smoke capture, compiled with exact editor and final binary verified again by complete GPU/headless routes. No second 67-case run claimed after this isolated utility.",
+  "validated_build_code_commit": "cecbed4",
+  "git": {
+    "branch": "feature/e07-aldea-medieval",
+    "base": "feature/e03-e06-personajes-vertical-slice",
+    "pull_request": "https://github.com/MathiasMerino/RPGRTS/pull/2",
+    "draft": true,
+    "pr1_merged": false,
+    "pr1_head": "dab39c2",
+    "goal_commits": [
+      "487febf",
+      "9f42066",
+      "fcf22d7",
+      "1683477",
+      "d45950a",
+      "cecbed4",
+      "18f5bc1"
+    ],
+    "main_merged": false,
+    "release_published": false
+  }
+}

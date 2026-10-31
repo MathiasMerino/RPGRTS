@@ -1,4 +1,4 @@
-param([switch]$WithGraphics, [switch]$RequireCargo)
+param([switch]$WithGraphics, [switch]$RequireCargo, [switch]$RequireVillageE07)
 
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
@@ -31,4 +31,13 @@ if ($RequireCargo) {
     $taskCargoText = Get-Content -LiteralPath $taskCargoReceipt -Raw
     if (-not $taskCargoText.StartsWith('PASS:')) { throw $taskCargoText }
     Write-Output $taskCargoText
+}
+if ($RequireVillageE07) {
+    $taskVillageReceipt = $taskReceipt + '.village.txt'
+    if (-not (Test-Path -LiteralPath $taskVillageReceipt) -or (Get-Item -LiteralPath $taskVillageReceipt).LastWriteTimeUtc -lt $taskStarted) {
+        throw 'Falta un comprobante nuevo de la escena E07. Compila AetherniaVillageDemo con BuildVillage.'
+    }
+    $taskVillageText = Get-Content -LiteralPath $taskVillageReceipt -Raw
+    if (-not $taskVillageText.StartsWith('PASS:')) { throw $taskVillageText }
+    Write-Output $taskVillageText
 }

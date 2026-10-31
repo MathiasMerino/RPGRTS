@@ -326,3 +326,43 @@ HUD difiere refrescos reentrantes, Rename omite eventos idénticos y ESC usa Inp
 ## 2026-10-31 — Publicación E03–E06
 
 Commits 136fb87/50e860b/e7bc6f4/0f86fa9 por etapa, rama feature/e03-e06-personajes-vertical-slice publicada y PR #1 en borrador hacia dev: https://github.com/MathiasMerino/RPGRTS/pull/1. Checklist técnico E06 cerrado con evidencia; confirmación humana F2-07 y arte final permanecen pendientes. No merge a main/dev, release, force push o nueva fase. Cierre documental posterior sin cambios al código validado.
+
+
+## 2026-10-31 — Inicio E07
+
+PR #1 consultado: abierto, borrador y sin fusionar; rama feature/e07-aldea-medieval creada desde dab39c2. Revisión dirigida de GDD/arte/checklist/escena/biblioteca/misión/versiones; plan secuencial registrado. Cuatro fuentes de textura originales generadas con imagegen para piedra/madera/tierra/pizarra; todavía no se atribuye integración o aprobación visual. main y dev conservadas.
+
+
+## 2026-10-31 — E07-P0 verificado
+
+Línea base capturada con cámara real: doce vistas 1080p (tres clases, arquitectura, plaza, bosque, NPC, misión y RPG), física original y NavMesh registrados. Prueba nueva 1/1 y compilación salida 0; arnés respeta fin de combate real. Fuente/historial anteriores preservados; cinco albedos originales disponibles, sin assets externos.
+
+
+## 2026-10-31 — E07-P1: arquitectura y superficies
+
+Biblioteca de siete módulos y cinco conjuntos métricos, cubiertas inclinadas/aleros/cumbreras/chimeneas, colisión de edificios cerrados y grupos de recorte contextual separados. Trece materiales URP nuevos, cinco albedos originales importados a 1024/mips; mapas/recursos D01 y cuero/lino/hierro reutilizados, sin modificar originales. Generación salida 0 y dirigida de integridad/métrica/materiales/referencias 1/1 aprobada. Integración/revisión visual pendientes de P3/P4.
+
+
+## 2026-10-31 — E07-P2: terreno y biblioteca de ambientación
+
+Añadidos 21 prefabs propios de suelo/vegetación/utilería (total E07 33), con superficies compartidas, troncos sólidos y plantas blandas. Terreno mantiene Y=0 en el área jugable y limita relieve al fondo exterior; no se cambia NavMesh. Generación/compilación salida 0 y 2/2 dirigidas aprobadas. Detectadas coordenadas fijas de despliegue RTS y enemigo de misión, reservadas para la integración.
+
+
+## 2026-10-31 — E07-P3: integración, iluminación y visibilidad
+
+Misma AetherniaVillageDemo transformada con cuatro edificios/cobertizo, plaza, rutas, bosque y utilería. Originales D01/E03, física previa, NavMesh y coordenadas de misión conservados. Volume exclusivo, tarde cálida/relleno frío, SSAO existente y faroles sin sombras. RoofCutaway reutilizado para muros/techos/troncos/copas con restauración; comprobado contra triángulos y en trayectos reales. Agrupado follaje bajo por celdas tras medir 1.292 draw calls; muestra final 1.079 (−16,49 %), sin afirmar FPS. Añadidos bordes vegetales irregulares, fondo sin afectar mazmorra y texto direccional sin recorte por geometría. 5/5 dirigidas y 67/67 regresión aprobadas, cero omisiones. Expectativa nueva de llegada ajustada al contrato NavMesh existente, sin tocar pruebas anteriores/controlador. BuildSmokeProbe amplía únicamente la ruta explícita de validación para comprobar E07 y solicitar una captura del framebuffer GPU; validación en player pendiente.
+
+
+## 2026-10-31 — E07-P4: evidencia y regresión
+
+67/67 pruebas aprobadas con las 62 anteriores intactas y cinco nuevas, cero omisiones. Doce pares antes/después de cámara real, dos capturas de recorte y comprobante resumido versionados; integridad por hash/GUID/meta sin incidencias. Dirección artística y escala actualizadas sin modificar el GDD. Fuente de textura generada diferenciada de render del juego, perfiles originales conservados. Confirmación humana y arte final siguen pendientes.
+
+
+## 2026-10-31 — E07-P5: Windows y captura independiente
+
+Build final x64 195.637.067 bytes/43,71 s; headless 36,05 s y GPU RTX3050 35,59 s, ambos PASS/salida 0 con tres clases, misión/persistencia y sistemas anteriores. Captura real de player 1280×720 inspeccionada. Captura estándar/automática oculta no útil: se descarta; SingleCameraRequest URP explícita y comprobación de píxeles resuelven el diagnóstico, sin modificar pausa normal. Regresión 67/67 anterior al ajuste aislado del capturador, no se afirma repetirla; binario final recompilado y recorridos nativos repetidos. ZIP 83.358.761 bytes/305 entradas, CRC/binarios verificados, nueve históricos intactos. PR dependiente pendiente de cierre.
+
+
+## 2026-10-31 — E07 publicado para revisión
+
+Rama feature/e07-aldea-medieval publicada y PR #2 en borrador apilado hacia E03–E06: https://github.com/MathiasMerino/RPGRTS/pull/2. PR #1 reconsultado: abierto/borrador/no fusionado, cabeza dab39c2. E07-P0..P5 cerradas técnicamente con evidencia; revisión humana/artística E07-H y confirmación F2-07 pendientes. No merge, force push, release o inicio de E08. Historial de objetivos en informe E07; este cierre solo actualiza documentación.

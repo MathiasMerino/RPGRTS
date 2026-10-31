@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-31",
+  "entries": [
+    {
+      "id": "Stone",
+      "prompt": "Use case: photorealistic-natural. Asset type: original seamless tileable base-color texture for a Unity URP medieval village game, a single square image. Primary request: flat orthographic photogrammetry-quality texture of aged grey and warm limestone rubble masonry, irregular medium-small rough cut blocks fitted in courses with thin recessed dull lime mortar, believable chips, fine pores, subtle old damp mottling, restrained sparse moss in crevices. Covers about 2 by 2 meters of wall. Color palette: neutral grey, muted warm taupe, soft charcoal mortar, no orange saturation. Lighting: perfectly even diffuse ambient light, unlit albedo appearance, NO directional shadows, NO vignette, NO perspective, NO glossy highlights. Composition: surface completely fills the square, seamless matching edges left/right and top/bottom, repeatable pattern with no unique focal feature. High frequency tactile stone detail and moderate contrast; not a rendered wall in a scene. No windows, objects, people, borders, labels, symbols or text. Realistic dark medieval fantasy material, original, no franchise references.",
+      "source": "C:\\Users\\Mathy\\.codex\\generated_images\\01a18339-8110-7260-9028-3563406e63a0\\exec-07a95424-30e5-471c-ae6a-66b7f2a35669.png",
+      "tool": "image_gen.imagegen",
+      "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
+      "status": "original generated; artistic approval pending",
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Stone_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
+    },
+    {
+      "id": "Wood",
+      "prompt": "Use case: photorealistic-natural. Asset type: original square seamless tileable base color texture for Unity URP medieval environment. A close flat orthographic surface entirely filled with aged dark oak planks running vertically; irregular narrow boards with subtle grooves and timber grain, small knots, lightly splintered dry surfaces, sober warm brown/grey wood, no paint. Covers 1.5 meters square. Fine realistic detail, evenly lit unlit albedo, no baked directional shadows, no bevel lighting, no perspective, no vignette, no objects, no nails, no words or borders. Seamless repeat matching opposite edges. No franchise or commercial asset references.",
+      "source": "C:\\Users\\Mathy\\.codex\\generated_images\\01a18339-8110-7260-9028-3563406e63a0\\exec-aa2bb3a3-c93a-4cee-afa3-6bd96e71084d.png",
+      "tool": "image_gen.imagegen",
+      "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
+      "status": "original generated; artistic approval pending",
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Wood_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
+    },
+    {
+      "id": "Soil",
+      "prompt": "Use case: photorealistic-natural. Asset type: original square seamless tileable albedo texture for Unity URP RPG terrain. Orthographic overhead straight-down scan-like view of a damp worn medieval earth path with mixed fine brown compacted dirt, subtle irregular small gravel and pale pebbles, tiny patches of fine dry straw, subtle footprints worn into soil without distinct recognizable shoe imprint, earthy desaturated taupe and warm brown. Surface covers 2x2 meters, uniform across whole square. Photorealistic, flat diffuse even illumination, NO cast shadows or ambient vignette, NO perspective, NO large stones, NO grass clumps, no focal feature, no text, seamless edges on both axes, no grid.",
+      "source": "C:\\Users\\Mathy\\.codex\\generated_images\\01a18339-8110-7260-9028-3563406e63a0\\exec-dedbcf15-2c20-42fe-b571-a92b03104d40.png",
+      "tool": "image_gen.imagegen",
+      "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
+      "status": "original generated; artistic approval pending",
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Soil_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
+    },
+    {
+      "id": "Slate",
+      "prompt": "Use case: photorealistic-natural. Asset type: original square seamless tileable roof surface base-color texture for Unity URP medieval village. Flat orthographic straight-on view of close fitted overlapping staggered rows of individually uneven old slate shingles, narrow rectangular pieces of weathered blue-grey charcoal and some subtle muted brown grey variations, chipped edges, stone grain and faint old lichen. Repeated orderly medieval hand-laid courses, detailed believable subdued material, about 2x2 meters square. Even diffuse flat albedo illumination, no perspective, NO cast shadows, NO dramatic light, NO vignette, no roof outline, no walls, no border, no text, no objects, seamless tile matching opposite edges, no decorative symbols.",
+      "source": "C:\\Users\\Mathy\\.codex\\generated_images\\01a18339-8110-7260-9028-3563406e63a0\\exec-f806f1ab-0063-4f2c-9e9c-c93491a87dc8.png",
+      "tool": "image_gen.imagegen",
+      "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
+      "status": "original generated; artistic approval pending",
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Slate_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
+    },
+    {
+      "id": "Grass",
+      "prompt": "Use case: photorealistic-natural. Asset type: original square seamless tileable albedo texture for a realistic dark medieval RPG Unity URP landscape. Flat overhead scan-like surface of short uneven temperate meadow ground: dense fine muted olive green grass blades, small clover leaves mixed with subtle dark brown soil showing between patches, a few tiny dead straw flecks. Worn low vegetation rather than a manicured lawn, sober desaturated varied green, no yellow flowers. Covers two by two meters, homogeneous density and detail across square, no obvious large focal patches. Perfectly flat diffuse ambient lighting, no cast shadows, no directional sun, no perspective, no vignette, no labels, no borders, no objects or human figures, repeatable seamless edges on both axes, detailed realistic material.",
+      "source": "C:\\Users\\Mathy\\.codex\\generated_images\\01a18339-8110-7260-9028-3563406e63a0\\exec-0d9013e2-4272-410c-9508-a5682fba3d54.png",
+      "tool": "image_gen.imagegen",
+      "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
+      "status": "original generated; artistic approval pending",
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Grass_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
+    }
+  ]
+}

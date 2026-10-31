@@ -12,6 +12,7 @@ namespace Aethernia
             var args = Environment.GetCommandLineArgs();
             var index = Array.IndexOf(args, "-aetherniaSmoke");
             if (index < 0 || index + 1 >= args.Length) yield break;
+            Application.runInBackground=true; // Probe only; preserve ordinary player pause settings.
             var output = args[index + 1];
             var started = Time.realtimeSinceStartup;
             var run = Run(output);
@@ -72,6 +73,17 @@ namespace Aethernia
                 var stack=new System.Collections.Generic.Stack<IEnumerator>();stack.Push(CargoQuestSmoke.Run(director,cargo,output));
                 while(stack.Count>0)
                 {var next=stack.Peek();if(!next.MoveNext()){stack.Pop();continue;}if(next.Current is IEnumerator nested)stack.Push(nested);else yield return next.Current;}
+            }
+            var village=GameObject.Find("E07 Medieval Village");
+            if(village!=null)
+            {
+                File.WriteAllText(output+".village.txt","PASS: E07 authored village loaded in standalone; renderers="+village.GetComponentsInChildren<MeshRenderer>().Length+"; graphics="+SystemInfo.graphicsDeviceName+"; actual quest/classes and prior systems checked above.");
+                if(SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null)
+                {
+                    var capture=output+".village.png";var captureRun=StandaloneGameCapture.Save(capture);
+                    while(captureRun.MoveNext())yield return captureRun.Current;
+                    File.WriteAllText(output+".village-image.txt","CAPTURED: standalone Game camera, temporary offscreen target with existing Canvas, native render without synthetic composition.");
+                }
             }
         }
     }

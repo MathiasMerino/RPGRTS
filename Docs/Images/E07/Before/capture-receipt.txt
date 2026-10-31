@@ -1,0 +1,1 @@
+PASS: native Unity Game camera, same 35.26439/45 angle and explicit focus/orthographic size, 1920x1080; 12 views including three classes, actual NPC acceptance and real RPG start. Temporary framing only, not saved to scene.

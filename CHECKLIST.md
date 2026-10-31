@@ -4,6 +4,8 @@ Actualizado: 2026-10-31, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
+- E07: aldea integrada, 33 prefabs, trece materiales nuevos y cinco albedos originales; **67/67 regresión**, 24 comparativas reales, build/recorridos headless-GPU PASS, captura del player y ZIP verificado. Informe Docs/E07_ALDEA_MEDIEVAL.md; aprobación humana/artística pendiente.
+
 - E03–E06: tres apariencias estáticas/retratos/equipo compartidos y misión integrada en AetherniaVillageDemo. **62/62 pruebas**, build Windows y dos recorridos independientes con las tres clases PASS. Informe Docs/E03_E06_PRODUCCION.md. Arte/rig/clips finales y confirmación humana pendientes.
 
 - Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
@@ -633,3 +635,58 @@ Diseños autorizados para uso provisional. F2-07: usuario informa 7/8, cierre X/
 - Archivos: VerticalSliceHud, GameSession.Rename, BuildSmokeProbe/CargoQuestSmoke, ProductionInputTests/MonkIdentityTests, lanzador smoke RequireCargo, documentación y capturas E06; Docs/Validacion/E03_E06_RESULTADOS.json.
 - Pruebas: dirigida de entrada 1/1, regresión completa 62/62, build Windows x64 salida 0; recorridos headless/GPU con sistemas previos y misión con tres clases PASS; ZIP CRC/binarios/históricos verificados.
 - Resultado / problemas: validación técnica aprobada y PR #1 abierto en borrador hacia dev (https://github.com/MathiasMerino/RPGRTS/pull/1). Rama publicada; main intacta. Fallo inicial 61/62 por nombre esperado de prefab corregido y toda la batería repetida. Humanos 7/8 informado, X/ESC pendiente; sin modelos/rig/clips finales.
+
+
+## E07 — TRANSFORMACIÓN DE LA ALDEA (2026-10-31)
+
+Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada AetherniaVillageDemo. Plan y evidencia en Docs/E07_ALDEA_MEDIEVAL.md.
+
+### E07-P0 — Preparación y línea base
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E03–E06.
+- Aceptación: PR revisado, GDD/versiones verificadas, encuadres comparables y snapshot físico/nav conservados.
+- Archivos: plan E07, VillageE07Tests, Docs/Images/E07/Before (12 PNG), Docs/Validacion/E07_BASE_FISICA.txt y procedencia de texturas.
+- Pruebas / resultado: 1/1 dirigida aprobada, compilación Unity salida 0, doce capturas reales; misión aceptada/ruta/combate real completados y snapshot físico/nav registrado. Primer intento de captura intentaba salir de combate activo: arnés corregido para vencer con las reglas existentes. Aprobación artística y humana pendientes.
+
+### E07-P1 — Materiales y arquitectura modular
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P0.
+- Aceptación: Materiales URP compartidos, modelos métricos, pendientes/aleros/cumbrera, módulos y variantes sin sobrescribir D01.
+- Archivos: VillageE07Materials/Geometry/Architecture, cinco fuentes PNG y sus importadores, trece materiales nuevos y siete módulos/cinco edificios en VillageE07; lanzador y prueba de biblioteca.
+- Pruebas / resultado: generación/compilación Unity salida 0 y dirigida 1/1 aprobada; raíz métrica, mallas/materiales soportados/compartidos, referencias, texturas/mipmaps y cuerpos con colisión diferenciada. Recursos D01 preservados. Revisión visual en escena y humana pendientes de P3/P4.
+
+### E07-P2 — Terreno, vegetación y utilería
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P1.
+- Aceptación: Caminos/plaza/entrada/bosque legibles y decorados coherentes, sin bloquear ruta ni zonas RTS/construcción.
+- Archivos: VillageE07Nature/Props, 21 prefabs adicionales (6 naturales, 3 de suelo y 12 de utilería), mallas propias y pruebas/lanzador.
+- Pruebas / resultado: generación/compilación salida 0, 2/2 dirigidas; mallas/materiales compartidos, troncos sólidos, vegetación blanda sin colisión y suelo transitable plano. Distribución de escena y ruta se validan en P3/P4; revisión humana pendiente.
+
+### E07-P3 — Integración e iluminación
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P2.
+- Aceptación: Escena original de demo mejorada, misión y UI intactas, sombras/atmósfera y oclusión reversible comprobadas.
+- Archivos: AetherniaVillageDemo, VillageE07SceneBuilder/Refinement, Volume E07 y mallas de escena; assembly de autoría/lanzadores y VillageE07Tests.
+- Pruebas / resultado: autoría/correcciones salida 0, 5/5 dirigidas y 67/67 regresión final, foto real revisada. Física original/NavMesh/IDs/misión conservados; navegación/recorte probados con triángulos y colisiones intactas. Arte y evaluación humana pendientes.
+
+### E07-P4 — Capturas y regresión
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P3.
+- Aceptación: Antes/después reales, diez vistas mínimas, navegación/cámara y pruebas existentes aprobadas sin falsear expectativas.
+- Archivos: VillageE07Tests, Docs/Images/E07/Before/After y recorte, Docs/Validacion/E07_RESULTADOS.json/E07_BIBLIOTECA.txt, dirección artística/escala/informe.
+- Pruebas / resultado: 67/67 regresión, cero fallos/omisiones; 24 comparativas 1080p y dos capturas de oclusión, inspeccionadas. URP/GUID/meta/referencias y originales comprobados; draw calls 1.292→1.079 en muestra equivalente. No FPS ni aprobación humana.
+
+### E07-P5 — Build y publicación
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P4.
+- Aceptación: Player Windows funciona con las tres clases/misión, ZIP verificado y PR apilado publicado sin fusionar #1/main.
+- Archivos: BuildSmokeProbe/StandaloneGameCapture, referencias a URP instalado, lanzador RequireVillageE07, captura Standalone-1280, evidencia/informe y ZIP local excluido de Git.
+- Pruebas / resultado: build salida 0; headless 36,05 s/GPU 35,59 s con tres clases/misión y sistemas anteriores PASS; captura real inspeccionada y ZIP CRC/binarios/históricos verificados. PR #2 publicado en borrador hacia feature/e03-e06-personajes-vertical-slice (https://github.com/MathiasMerino/RPGRTS/pull/2); #1 sigue abierto/borrador/sin fusionar. Humanos pendientes.
+
+
+### E07-H — Evaluación humana y artística de la aldea
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: revisión jugable/arte / P1. Dependencias: E07-P5.
+- Aceptación: el usuario revisa cámara, oclusiones, lectura de clase/objetivos, movimiento y dirección visual; aprobación explícita.
+- Archivos: informe E07 y protocolo humano previo; no se adivinan resultados de la sesión.
+- Pruebas / resultado: pendiente de validación humana. F2-07 conserva 7/8 informado; X/ESC pendiente. Ninguna automatización aprueba el arte.
