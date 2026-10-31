@@ -165,3 +165,7 @@ El usuario autoriza una pequeña muestra medieval y biblioteca reutilizable, con
 ## Fase 3 — E01 autorizado
 
 La solicitud posterior autoriza tres apariencias de clase, contrato modular de modelos y solución reversible a la oclusión si se reproduce. Se conserva D01 y se parte de `codex/e01-base-ca5ba35`. Orden: ensayo de oclusión con triángulos reales, recorte de renderers validado, figuras métricas/configuración compartida, equipo visual conectado al estado, importación futura documentada y regresión/build. No se alteran clases/habilidades, guardado o navegación; no se inicia C02, razas/subclases ni animaciones definitivas. Fichas/estado real en Docs/E01_PERSONAJES.md. F2-07 permanece pendiente.
+
+## E02 — Infraestructura y piloto humanoide
+
+Autorizado preparar importación nativa FBX/Humanoid, Animator y equipo visual con Monje como piloto. Inventario sin modelo ni clips reales: construir candidato vacío, validación y fallback E01; no fabricar arte final o clips. F3-E02 registra infraestructura, F3-E02-M recurso/Avatar real y F3-E02-A clips/retargeting pendientes. Guía única y manifiesto exacto en Docs/E02_IMPORTACION_HUMANOID.md, reutilizando fichas E01/medidas. No cambiar movimiento, combate o esquema de guardado ni iniciar la fase siguiente. F2-07 permanece pendiente.

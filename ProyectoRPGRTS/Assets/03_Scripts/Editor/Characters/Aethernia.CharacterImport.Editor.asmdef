@@ -1,0 +1,6 @@
+{
+  "name": "Aethernia.CharacterImport.Editor",
+  "references": ["Aethernia.Runtime", "Aethernia.Environment.Editor"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

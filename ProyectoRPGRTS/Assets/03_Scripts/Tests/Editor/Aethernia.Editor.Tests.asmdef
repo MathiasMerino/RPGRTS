@@ -1,6 +1,6 @@
 {
     "name": "Aethernia.Editor.Tests",
-    "references": ["UnityEngine.TestRunner", "UnityEditor.TestRunner", "Aethernia.Runtime", "Aethernia.Environment.Editor", "Unity.InputSystem", "Unity.AI.Navigation", "Unity.ugui"],
+    "references": ["UnityEngine.TestRunner", "UnityEditor.TestRunner", "Aethernia.Runtime", "Aethernia.Environment.Editor", "Aethernia.CharacterImport.Editor", "Unity.InputSystem", "Unity.AI.Navigation", "Unity.ugui"],
     "includePlatforms": ["Editor"],
     "overrideReferences": true,
     "precompiledReferences": ["nunit.framework.dll"],

@@ -59,6 +59,8 @@ E01 aplica este contrato mediante CharacterVisualCatalog/Presenter/Model, tres p
 
 No forzar Animator, retargeting o un controlador de habilidades antes de disponer de un rig/animaciones comprobados. El prototipo seguirá usando geometría provisional hasta el bloque E. El equipo visual futuro deberá reflejar el equipo real o identificarse como muestra, sin sugerir bonificaciones inexistentes.
 
+E02 prepara explícitamente la infraestructura solicitada: candidato Monje vacío y grafo de siete estados sin clips, sin activar Animator sobre la geometría E01. Concepto del Monje se conserva; importación/especificación de manos/ropa, recursos faltantes y límites en [E02_IMPORTACION_HUMANOID](../Docs/E02_IMPORTACION_HUMANOID.md). El modelo y las animaciones reales requieren recursos aprobados y su propia validación; esta preparación no los declara implementados.
+
 ## Dimensionamiento
 
 La tabla de medidas aplicadas vive en [Docs/ESCALA_REFERENCIA.md](../Docs/ESCALA_REFERENCIA.md), ampliada con taller/objetos. Las medidas siguientes son **propuestas no aplicadas**: espada 0,9–1 m, bastón 1,6–1,8 m, daga 0,3–0,4 m; barril 0,6 m diámetro/0,9 m alto. Pivotes de edificio/decoración al suelo, accesorios en punto de agarre y escala de importación comprobada en metros.

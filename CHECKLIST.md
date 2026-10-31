@@ -1,6 +1,6 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01 y E01 específicos.
+Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01 e infraestructura E02.
 
 ## Resumen actual
 
@@ -13,7 +13,9 @@ Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «
 - Pendiente: evaluación humana de controles/diversión/balance (F2-07). Expansión compleja y siguiente iteración de arte/UX sujetas a propuesta.
 - Entrega previa D01: COMO_JUGAR.md, Docs/D01_ESCENARIO_MEDIEVAL.md, medidas y dirección artística; once prefabs, ocho materiales, ocho capturas reales y ZIP Windows D01. Informes y entregas anteriores conservados.
 
-- Entrega actual E01: Docs/E01_PERSONAJES.md (tres fichas, importación y resultados), cinco prefabs, catálogo/ocho materiales compartidos, siete capturas y ZIP Windows E01. F2-07 sigue pendiente.
+- Entrega previa E01: Docs/E01_PERSONAJES.md (tres fichas, importación y resultados), cinco prefabs, catálogo/ocho materiales compartidos, siete capturas y ZIP Windows E01. F2-07 sigue pendiente.
+
+- E02: **infraestructura F3-E02 completada y verificada**, 46/46 pruebas y build/recorridos sin gráficos y con GPU aprobados. F3-E02-M (modelo/rig real) y F3-E02-A (clips/retargeting) pendientes. Guía/manifiesto: Docs/E02_IMPORTACION_HUMANOID.md. La alternativa E01 continúa activa.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -418,3 +420,31 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Archivos: ocho Docs/Images/Fase3*, informe, COMO_JUGAR.md, AGENTS.md, inventario/arquitectura, CHECKLIST.md, REGISTRO_CAMBIOS.md; Builds/Logs excluidos de Git.
 - Pruebas: render, Build, smoke, metadatos/GUID, diff/Git e integridad del paquete.
 - Resultado / problemas: 35/35, build Windows de 170.931.692 bytes, salida 0; player sin gráficos y con GPU aprobados sin fallos NavMesh/excepciones. ZIP 69.570.489 bytes/305 entradas, CRC correcto y SHA-256 en informe. Capturas antes/después y commits locales revisados. F2-07, D/E/C2 siguen pendientes; no se afirma arte final ni evaluación humana.
+
+
+### F3-E02 — Infraestructura Humanoid y piloto Monje
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: importación nativa FBX, candidato Monje sin malla inventada, Animator preparado y equipo visual configurable. Personajes/presentación.
+- Prioridad / dependencias: P1; F3-E01 verificada, controlador y guardado existentes.
+- Aceptación: flujo nativo configurable, validación de rig/escala/URP, fallback E01 intacto, siete estados sin clips falsos, equipo desde estado existente y regresión/build aprobadas. No equivale a integrar un modelo ausente.
+- Archivos: Runtime/Presentation (Rig/Profile/Driver nuevos, Catalog/Model/Presenter ampliados); Editor/Characters y assembly propia; HumanoidPipelineTests y referencia; plantilla Monk_ImportTemplate, MonkAnimations.asset y HumanoidBase.controller; catálogo, lanzador, guía E02 y seguimiento.
+- Pruebas: 4/4 dirigidas y 46/46 finales, cero fallos/omisiones, salida 0; FBX nativo de 1 m, flags Human sin afirmar rig real, rechazo de candidato/clip inválido, alternativa E01, lectura de movimiento, cinco tipos de bindings y round-trip v1. Build 178.013.219 bytes/64,97 s; player sin gráficos 7,40 s y con GPU 7,38 s, PASS/salida 0.
+- Resultado / problemas: infraestructura preparada sin modelo/Avatar/clips reales; plantilla vacía y Animator apagado, grafo con siete motions nulas. Modelo provisional preservado; ventanas/métodos nativos preparados, pero creación/pose/retargeting con recurso real pendientes en E02-M/A. Ensayo ASCII corregido antes de cierre; fixture eliminado. No clips falsos, ítems/ranuras persistentes nuevas ni paquetes. Checkpoint codex/e02-base-2d95959; F2-07 sigue pendiente.
+
+### F3-E02-M — Recurso real y rig del Monje
+- Estado: [ ] Pendiente.
+- Descripción / sistema: recibir/crear y aprobar FBX humanoide, texturas y equipo compatibles. Personajes/arte.
+- Prioridad / dependencias: P1; F3-E02 y recurso con licencia/procedencia comprobada.
+- Aceptación: modelo real aprobado, orientación/escala/pesos/avatar/URP verificados en editor y prefab candidato; sin sustituirlo por geometría de ensayo.
+- Archivos: pendientes; manifiesto exacto en guía E02.
+- Pruebas: pendientes con recurso real; la prueba de importación técnica no las completa.
+- Resultado / problemas: falta el modelo; no iniciar diseño definitivo automáticamente.
+
+### F3-E02-A — Clips reales y retargeting del Monje
+- Estado: [ ] Pendiente.
+- Descripción / sistema: validar Idle/Walk/Run/Attack/Defend/Hit/Defeat con el rig del piloto. Animación.
+- Prioridad / dependencias: P1; F3-E02-M y clips compatibles.
+- Aceptación: clips reales retargeteados y revisados, transiciones/pies/manos/sockets sin deteriorar navegación o combate; registrar limitaciones.
+- Archivos: pendientes; estados/perfil preparados por E02 no son animaciones terminadas.
+- Pruebas: pendientes con clips; no se declara animación funcional sin ejecución real.
+- Resultado / problemas: faltan siete clips; F2-07 permanece independiente y pendiente.

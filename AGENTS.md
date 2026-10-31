@@ -39,6 +39,7 @@
 - Escena jugable: `Assets/01_Scenes/PlayablePrototype.unity`. Validación completa: modo `Vertical`; build: modo `Build`; ejecutar la build sin ventana con `Tools/Invoke-PrototypeSmoke.ps1`. No repetir los generadores sobre assets existentes.
 - D01: grupo visual `D01 Medieval Quarter`, once prefabs en `Assets/02_Prefabs/Environment/Medieval/`; física original conservada. Evidencia/límites en `Docs/D01_ESCENARIO_MEDIEVAL.md`. E01 añade recorte reversible de cubierta; C02 sigue pendiente.
 - E01: VisualRoot conserva controlador/collider; catálogo `Assets/07_Characters/Provisional/ClassVisuals.asset`. Prefabs con CharacterVisualModel, sin agentes/colliders/Animator. Desactivar presentador recupera cápsula; RoofCutaway recupera techo al desactivarse.
+- E02: flujo nativo en Aethernia/Personajes/Importar Humanoid; plantilla vacía y perfil/grafo en Assets/07_Characters/Humanoid. Guía/manifiesto Docs/E02_IMPORTACION_HUMANOID.md. No hay modelo/Avatar/clips reales aprobados: E02-M/E02-A pendientes; no repetir HumanoidPipeline.
 - Antes de cada tarea: revisar `git status`, dependencias y criterios. Revisar el diff y registrar cambios importantes.
 - No sobrescribir cambios ajenos, publicar remotos ni modificar configuración global como parte de tareas locales.
 - Visual Studio Community 2026 y Tools for Unity ya instalados; paquete IDE Unity `2.0.26` presente.

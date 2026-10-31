@@ -15,7 +15,10 @@ MonoBehaviour:
   Entries:
   - ClassId: warrior
     Prefab: {fileID: 8369214138543721982, guid: 77a3bd0aa4cf3644eb4f8bece7b54bab, type: 3}
+    HumanoidPrefab: {fileID: 0}
   - ClassId: mage
     Prefab: {fileID: 4818405744351380324, guid: 40d020de17dfb964ba654bd20ce92b44, type: 3}
+    HumanoidPrefab: {fileID: 0}
   - ClassId: monk
     Prefab: {fileID: 1254723505644931612, guid: 75bf29b5bf9311f4aa763735b1f4b9c3, type: 3}
+    HumanoidPrefab: {fileID: 4750980465152403662, guid: 5d7798e04da39794aaa631ef5aa5d1c5, type: 3}

@@ -44,6 +44,7 @@ namespace Aethernia
             {
                 if (Model != null) { Model.gameObject.SetActive(false); Destroy(Model.gameObject); }
                 Model = Instantiate(prefab, visualRoot, false).GetComponent<CharacterVisualModel>();
+                Model.BindActor(GetComponent<ExplorationUnit>());
                 currentPrefab = prefab;
             }
             visualRoot.gameObject.SetActive(true);

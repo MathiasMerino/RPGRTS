@@ -181,3 +181,25 @@ Build Windows aprobada: 178.001.257 bytes, 45,46 s, salida 0. Player independien
 F3-E01 completada y verificada: fase 3 pasa a 7/8 (C02 pendiente); F2-07 humana pendiente. Siete capturas reales preservadas en Docs/Images; fichas de clase, medidas, importación, fallback, equipo y límites en E01_PERSONAJES.md. La entrega conserva los 367 bloques D01 de escena y añade once; biblioteca D01, prefab técnico del héroe, reglas, NavMesh, paquetes/ProjectSettings y GDD intactos. Metadatos sin faltantes/huérfanos/GUID duplicados. Las figuras son geométricas y estáticas; no se declaran arte, razas, criaturas, rigs o animaciones definitivos. Siguiente actividad recomendada: revisión humana de legibilidad/oclusiones/equipo, seguida de un modelo piloto importado conforme al contrato, sin iniciar C02 automáticamente.
 
 Se registra la entrega en un commit local de la rama codex/e01-character-visuals, con recuperación codex/e01-base-ca5ba35; sin remotos, herramientas nuevas ni cambios globales. Se conservan la serialización YAML nativa de Unity y todos los historiales del checklist; fuentes/docs/scripts revisados antes del commit.
+
+
+## 2026-10-30 — Inicio E02
+
+Base E01 limpia 2d95959, checkpoint codex/e02-base-2d95959 y rama codex/e02-humanoid-pipeline. GDD preservado por hash; consultados contrato E01, dirección, clases/equipo/controlador y criterios del prompt. Inventario Assets: cero FBX/modelos intercambiables, Avatars, clips o controllers de animación existentes. Sin herramienta Unity/MCP expuesta; se conserva Unity 6000.5.8f1/URP y la CLI instalada. Alcance: infraestructura nativa de importación y validación, candidato Monje vacío, siete estados sin movimientos ficticios y bindings visuales sobre Weapon/Armour existentes. Recurso y clips reales quedan pendientes separados; no se altera inventario/combate ni se inicia arte definitivo.
+
+
+## 2026-10-30 — Preparación y pruebas dirigidas E02
+
+Se crea una plantilla Monje vacía (sin Renderer/Avatar), perfil de siete clips nulos y grafo Idle/Walk/Run/Attack/Defend/Hit/Defeat. El catálogo conserva Prefab E01 y añade candidato Humanoid; plantilla inválida mantiene el Monje anterior. Driver solo observa agente y parámetros visuales, sin root motion/eventos de clips; no activa Animator sin rig/Idle aplicado. Bindings de ropa/armadura/arma/bastón/accesorio observan Weapon/Armour, sin nuevos ítems/slots persistentes; campos E01 siguen compatibles. Herramientas editor nativas configuran FBX, auditan y preparan candidatos sin activarlos ni sobrescribir prefabs. No se cambia ningún sistema de reglas.
+
+Primera prueba FBX falló por la sintaxis/cabecera del archivo ASCII técnico, no por un recurso humanoide; corregidos cabecera y normales/UV del fixture. Se preserva E02-first-results.xml/log (3/4). Cierre dirigido posterior 4/4, salida 0: importación FBX nativa de cubo 1x1x1 m, flags Human comprobados sin fingir un rig humanoide, rechazo de candidato incompatible, limpieza del fixture, bindings/guardado v1, fallback y lectura de movimiento sin animaciones. Grafo/perfil rechazan clips vacíos/no humanos. E02-targeted-results.xml/log y comprobantes FBX/estructura conservados. Regresión completa en curso; modelo/Avatar/clips reales y UI manual del workbench pendientes de recursos/revisión.
+
+## 2026-10-30 — Entrega de infraestructura E02
+
+Regresión completa 46/46 aprobadas, cero fallos/omisiones, salida 0; 8,03 s de casos (arranque/recargas excluidos). E02-final-results.xml/log conservados. Sin errores/avisos C# ni excepciones en el log final. Build Windows 178.013.219 bytes, 64,97 s, salida 0. Recorridos independientes sin gráficos 7,40 s y con GPU RTX 3050 Laptop 7,38 s, ambos PASS/salida 0 sin excepciones/agentes inválidos; E02-build y E02-headless/graphics preservados.
+
+ZIP Aethernia-Fase3-E02-Windows.zip: 73.589.346 bytes, 305 entradas, CRC correcto; SHA-256 23a51daced714b1fc4fe9e3e8b9202b5966dcb78f5c922b1b38ddf92b180a83c. Exe/DLL runtime/level0 coinciden con build; cinco ZIP anteriores conservan su hash. La build sigue usando E01; el flujo de importación es una herramienta de editor, no un personaje nuevo en la build.
+
+F3-E02 infraestructura completada y verificada. F3-E02-M (modelo/rig real), F3-E02-A (siete clips, retargeting y adaptación de eventos de acciones) y F2-07 humana permanecen pendientes. No se afirma haber importado un personaje humanoide real, reproducido animaciones o usado manualmente el workbench con recursos ausentes. Manifiesto exacto, instrucciones y límites en Docs/E02_IMPORTACION_HUMANOID.md. No iniciar la siguiente fase automáticamente.
+
+Escenas, prefabs/materiales/meshes E01/D01, física/NavMesh, reglas, GDD, paquetes y ProjectSettings intactos. El catálogo preserva GUID y alternativa; solo añade el candidato vacío. Todos los historiales previos del checklist preservados. Metadatos sin faltantes/huérfanos/duplicados; .gitkeep ignorados por Unity conservan carpetas de recursos vacías. Cambios locales en codex/e02-humanoid-pipeline con checkpoint codex/e02-base-2d95959; sin remotos, instalaciones ni configuración global.
