@@ -677,11 +677,11 @@ Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada Aethern
 - Pruebas / resultado: 67/67 regresión, cero fallos/omisiones; 24 comparativas 1080p y dos capturas de oclusión, inspeccionadas. URP/GUID/meta/referencias y originales comprobados; draw calls 1.292→1.079 en muestra equivalente. No FPS ni aprobación humana.
 
 ### E07-P5 — Build y publicación
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P4.
 - Aceptación: Player Windows funciona con las tres clases/misión, ZIP verificado y PR apilado publicado sin fusionar #1/main.
 - Archivos: BuildSmokeProbe/StandaloneGameCapture, referencias a URP instalado, lanzador RequireVillageE07, captura Standalone-1280, evidencia/informe y ZIP local excluido de Git.
-- Pruebas / resultado: build salida 0; headless 36,05 s/GPU 35,59 s con tres clases/misión y sistemas anteriores PASS; captura real inspeccionada y ZIP CRC/binarios/históricos verificados. Resta publicar/verificar PR apilado; humanos pendientes.
+- Pruebas / resultado: build salida 0; headless 36,05 s/GPU 35,59 s con tres clases/misión y sistemas anteriores PASS; captura real inspeccionada y ZIP CRC/binarios/históricos verificados. PR #2 publicado en borrador hacia feature/e03-e06-personajes-vertical-slice (https://github.com/MathiasMerino/RPGRTS/pull/2); #1 sigue abierto/borrador/sin fusionar. Humanos pendientes.
 
 
 ### E07-H — Evaluación humana y artística de la aldea

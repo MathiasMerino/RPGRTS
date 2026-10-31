@@ -361,3 +361,8 @@ Misma AetherniaVillageDemo transformada con cuatro edificios/cobertizo, plaza, r
 ## 2026-10-31 — E07-P5: Windows y captura independiente
 
 Build final x64 195.637.067 bytes/43,71 s; headless 36,05 s y GPU RTX3050 35,59 s, ambos PASS/salida 0 con tres clases, misión/persistencia y sistemas anteriores. Captura real de player 1280×720 inspeccionada. Captura estándar/automática oculta no útil: se descarta; SingleCameraRequest URP explícita y comprobación de píxeles resuelven el diagnóstico, sin modificar pausa normal. Regresión 67/67 anterior al ajuste aislado del capturador, no se afirma repetirla; binario final recompilado y recorridos nativos repetidos. ZIP 83.358.761 bytes/305 entradas, CRC/binarios verificados, nueve históricos intactos. PR dependiente pendiente de cierre.
+
+
+## 2026-10-31 — E07 publicado para revisión
+
+Rama feature/e07-aldea-medieval publicada y PR #2 en borrador apilado hacia E03–E06: https://github.com/MathiasMerino/RPGRTS/pull/2. PR #1 reconsultado: abierto/borrador/no fusionado, cabeza dab39c2. E07-P0..P5 cerradas técnicamente con evidencia; revisión humana/artística E07-H y confirmación F2-07 pendientes. No merge, force push, release o inicio de E08. Historial de objetivos en informe E07; este cierre solo actualiza documentación.

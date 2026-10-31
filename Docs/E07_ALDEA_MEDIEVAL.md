@@ -151,4 +151,19 @@ Paquete local: `ProyectoRPGRTS/Builds/Aethernia-E07-Aldea-Windows.zip`, **83.358
 .\Tools\Invoke-PrototypeSmoke.ps1 -WithGraphics -RequireCargo -RequireVillageE07
 ```
 
-Código de build verificado: cecbed4. PR apilado pendiente de publicación en el cierre; main/dev/#1 no se fusionan. Evaluación humana E07, confirmación X/ESC y modelos/rig/clips finales pendientes. No se inicia E08.
+Código de build verificado: cecbed4. [PR #2 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/2) publicado hacia feature/e03-e06-personajes-vertical-slice; PR #1 confirmado abierto/borrador/no fusionado con cabeza dab39c2. main/dev/#1 no se fusionan. Evaluación humana E07, confirmación X/ESC y modelos/rig/clips finales pendientes. No se inicia E08.
+
+
+## Historial Git y entrega
+
+| Objetivo | Commit |
+| --- | --- |
+| Diseño/línea base | 487febf |
+| Arquitectura/materiales | 9f42066 |
+| Terreno/vegetación/utilería | fcf22d7 |
+| Integración/luz/optimización | 1683477 |
+| Regresión/comparativas/documentación | d45950a |
+| Build/captura URP del ejecutable | cecbed4 |
+| Comprobantes finales de build | 18f5bc1 |
+
+El cierre documental posterior registra el PR #2 y no altera código/escenas. Rama publicada feature/e07-aldea-medieval, desde E03–E06/dab39c2. Sin force push, cierre/merge de PR #1, merge a dev/main o release final. E07-P0..P5 completadas técnicamente; E07-H y F2-07 conservan validación humana pendiente. El informe y CHECKLIST/REGISTRO/DIRECCION_ARTISTICA están actualizados; no se inicia E08.

@@ -486,5 +486,24 @@
     "method": "Standalone Game camera and existing Canvas; explicit URP SingleCameraRequest to offscreen target; no composition."
   },
   "validation_scope_note": "67/67 regression on functional scene/core scripts; subsequent change restricted to explicit smoke capture, compiled with exact editor and final binary verified again by complete GPU/headless routes. No second 67-case run claimed after this isolated utility.",
-  "validated_build_code_commit": "cecbed4"
+  "validated_build_code_commit": "cecbed4",
+  "git": {
+    "branch": "feature/e07-aldea-medieval",
+    "base": "feature/e03-e06-personajes-vertical-slice",
+    "pull_request": "https://github.com/MathiasMerino/RPGRTS/pull/2",
+    "draft": true,
+    "pr1_merged": false,
+    "pr1_head": "dab39c2",
+    "goal_commits": [
+      "487febf",
+      "9f42066",
+      "fcf22d7",
+      "1683477",
+      "d45950a",
+      "cecbed4",
+      "18f5bc1"
+    ],
+    "main_merged": false,
+    "release_published": false
+  }
 }
