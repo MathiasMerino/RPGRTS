@@ -1,31 +1,62 @@
-# Unity caches and local state; applies also to the nested Unity project.
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
-[Mm]emoryCaptures/
-[Rr]ecordings/
-[Bb]uild/
-[Bb]uilds/
+# Cronicas de Aethernia - entrega del proyecto Unity para evaluacion.
+# El proyecto esta en ProyectoRPGRTS/, no en la raiz del repositorio.
+# CONSERVAR Assets/ y sus .meta, Packages/, ProjectSettings/, Tools/ y documentos.
+# No excluir por extension .dll, .fbx, .png, .unity o .asset: pueden ser necesarios.
+
+# Unity regenera estas carpetas al importar o compilar el proyecto.
+# Rutas ancladas para no ocultar carpetas de codigo con el mismo nombre en Assets.
+/ProyectoRPGRTS/[Ll]ibrary/
+/ProyectoRPGRTS/[Tt]emp/
+/ProyectoRPGRTS/[Oo]bj/
+/ProyectoRPGRTS/[Ll]ogs/
+/ProyectoRPGRTS/[Uu]ser[Ss]ettings/
+/ProyectoRPGRTS/.utmp/
+/ProyectoRPGRTS/.gradle/
+
+# Ejecutables, compilaciones, capturas de perfilado y grabaciones generadas.
+# Las capturas seleccionadas para el informe en Docs/Images SI se versionan.
+/ProyectoRPGRTS/[Bb]uild/
+/ProyectoRPGRTS/[Bb]uilds/
+/ProyectoRPGRTS/[Aa]rtifacts/
+/ProyectoRPGRTS/[Mm]emoryCaptures/
+/ProyectoRPGRTS/[Rr]ecordings/
+/Build/
+/Builds/
+/Logs/
+
+# Estado local de editores y control de versiones alternativo.
 .vs/
 .idea/
+.consulo/
 .plastic/
-# Generated IDE files; retain .vsconfig, source assets and their .meta.
-*.csproj
-*.sln
-*.slnx
 *.suo
 *.user
 *.userprefs
-*.pidb
-*.booproj
 *.opendb
 *.VC.db
+*.VC.db-shm
+*.VC.db-wal
+
+# Soluciones y proyectos C# generados por Unity/Visual Studio.
+# Se conservan .vsconfig, .editorconfig y configuraciones compartidas utiles.
+*.csproj
+*.sln
+*.slnx
+*.pidb
+*.booproj
 *.csproj.meta
 *.sln.meta
 *.slnx.meta
-# Local secrets and OS files.
+*.pidb.meta
+*.booproj.meta
+
+# Informes de fallos y registros locales; los informes academicos en Docs se conservan.
+/ProyectoRPGRTS/sysinfo.txt
+/ProyectoRPGRTS/*.log
+/ProyectoRPGRTS/*.stackdump
+/ProyectoRPGRTS/crashlytics-build.properties
+
+# Credenciales, certificados y claves de firma: nunca necesarios para evaluar.
 .env
 .env.*
 !.env.example
@@ -38,6 +69,11 @@
 *.p8
 *.p7b
 *.mobileprovision
+
+# Archivos auxiliares del sistema operativo y temporales de Office.
 Thumbs.db
+Thumbs.db.meta
+Desktop.ini
 .DS_Store
+.DS_Store.meta
 ~$*

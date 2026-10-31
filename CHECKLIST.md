@@ -554,3 +554,13 @@ El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C
 - Archivos: AGENTS.md, .gitignore, Docs/GITHUB_FLUJO.md, CHECKLIST.md, REGISTRO_CAMBIOS.md y configuración Git local de origin/upstreams; sin editar Unity.
 - Pruebas: remoto inicial sin referencias/tamaño 0; 757 blobs históricos, 682 versiones de texto examinadas sin credenciales candidatas, máximo 3.003.405 bytes; exclusiones Unity/secretos correctas. API GitHub confirma main/dev iguales y default main, 615 rutas/blob SHA idénticas en la base publicada; clonación independiente conserva los 14 commits originales y fsck PASS. Verificación final GitHub-* al publicar la documentación.
 - Resultado / problemas: base inicial publicada por autorización de este encargo; flujo feature/*, fix/*, test/* → dev → PR aprobada a main. Ramas/checkpoints anteriores conservados localmente; no LFS/migración necesaria, instalaciones, configuración global o cambios de visibilidad/permisos/protecciones. La revisión por patrones no garantiza ausencia absoluta de secretos. F2-07 y arte final pendientes; las 52 pruebas C02 siguen siendo evidencia histórica, no se repiten por cambios documentales/Git.
+
+
+### GH-02 — Gitignore e instrucciones para evaluación docente
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: excluir archivos regenerables/locales conservando el proyecto y evidencias necesarias para evaluación académica. Entrega/Git.
+- Prioridad / dependencias: P1; GH-01 y solicitud del usuario del 2026-10-31.
+- Aceptación: no ocultar código, escenas, recursos, .meta, Packages, ProjectSettings, herramientas, GDD o documentación; cachés/builds/secretos excluidos y apertura descrita para docente.
+- Archivos: .gitignore, README.md, CHECKLIST.md, REGISTRO_CAMBIOS.md.
+- Pruebas: git check-ignore --no-index sobre 18 casos excluidos y 19 conservados; revisión de los 616 archivos versionados, cero ocultados por reglas; enlaces README válidos y git diff --check sin errores.
+- Resultado / problemas: rutas de cachés ancladas al proyecto para no ignorar carpetas homónimas dentro de Assets; .dll/.fbx/.png y documentación conservadas. Sin eliminar archivos/commits o cambiar jugabilidad; no se repiten pruebas/build Unity por una configuración de Git y documentación. La primera importación regenera cachés y restaura paquetes; F2-07 pendiente.
