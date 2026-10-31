@@ -4,6 +4,8 @@ Actualizado: 2026-10-31, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
+- E07: aldea integrada, 33 prefabs, trece materiales nuevos y cinco albedos originales; **67/67 regresión**, 24 comparativas reales, build/recorridos headless-GPU PASS, captura del player y ZIP verificado. Informe Docs/E07_ALDEA_MEDIEVAL.md; aprobación humana/artística pendiente.
+
 - E03–E06: tres apariencias estáticas/retratos/equipo compartidos y misión integrada en AetherniaVillageDemo. **62/62 pruebas**, build Windows y dos recorridos independientes con las tres clases PASS. Informe Docs/E03_E06_PRODUCCION.md. Arte/rig/clips finales y confirmación humana pendientes.
 
 - Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
@@ -678,8 +680,8 @@ Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada Aethern
 - Estado: [ ] En desarrollo.
 - Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P4.
 - Aceptación: Player Windows funciona con las tres clases/misión, ZIP verificado y PR apilado publicado sin fusionar #1/main.
-- Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.
-- Pruebas / resultado: pendientes. Aprobación artística y sesión humana no automáticas.
+- Archivos: BuildSmokeProbe/StandaloneGameCapture, referencias a URP instalado, lanzador RequireVillageE07, captura Standalone-1280, evidencia/informe y ZIP local excluido de Git.
+- Pruebas / resultado: build salida 0; headless 36,05 s/GPU 35,59 s con tres clases/misión y sistemas anteriores PASS; captura real inspeccionada y ZIP CRC/binarios/históricos verificados. Resta publicar/verificar PR apilado; humanos pendientes.
 
 
 ### E07-H — Evaluación humana y artística de la aldea

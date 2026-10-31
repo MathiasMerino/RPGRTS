@@ -356,3 +356,8 @@ Misma AetherniaVillageDemo transformada con cuatro edificios/cobertizo, plaza, r
 ## 2026-10-31 — E07-P4: evidencia y regresión
 
 67/67 pruebas aprobadas con las 62 anteriores intactas y cinco nuevas, cero omisiones. Doce pares antes/después de cámara real, dos capturas de recorte y comprobante resumido versionados; integridad por hash/GUID/meta sin incidencias. Dirección artística y escala actualizadas sin modificar el GDD. Fuente de textura generada diferenciada de render del juego, perfiles originales conservados. Confirmación humana y arte final siguen pendientes.
+
+
+## 2026-10-31 — E07-P5: Windows y captura independiente
+
+Build final x64 195.637.067 bytes/43,71 s; headless 36,05 s y GPU RTX3050 35,59 s, ambos PASS/salida 0 con tres clases, misión/persistencia y sistemas anteriores. Captura real de player 1280×720 inspeccionada. Captura estándar/automática oculta no útil: se descarta; SingleCameraRequest URP explícita y comprobación de píxeles resuelven el diagnóstico, sin modificar pausa normal. Regresión 67/67 anterior al ajuste aislado del capturador, no se afirma repetirla; binario final recompilado y recorridos nativos repetidos. ZIP 83.358.761 bytes/305 entradas, CRC/binarios verificados, nueve históricos intactos. PR dependiente pendiente de cierre.

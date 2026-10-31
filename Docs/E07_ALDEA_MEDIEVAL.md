@@ -19,7 +19,7 @@ F2-07 conserva 7/8 comprobaciones humanas informadas; X/ESC pendiente de confirm
 
 ## Resultados
 
-En desarrollo. No se marca validación por la sola existencia de archivos.
+Preparada técnicamente para revisión; aprobación humana/artística independiente.
 
 
 ### E07-P0 verificado
@@ -124,3 +124,31 @@ Las 24 imágenes de la tabla son renders auténticos de Unity: mismo escenario, 
 | Interfaz medieval | [Antes](Images/E07/Before/10-Hud.png) | [Después](Images/E07/After/10-Hud.png) |
 
 Recorte reproducido: [cubierta activada/obstrucción](Images/E07/E07-cutaway-disabled.png) y [recorte contextual/héroe visible](Images/E07/E07-cutaway-enabled.png), sin cambiar las colisiones. Capturas iniciales anteriores al pulido se conservan localmente en Logs/E07-initial-visual. La inspección visual del agente verificó composición, materiales, carteles, objetivo, UI y figuras; no se etiqueta como sesión humana.
+
+
+## Build Windows y cierre técnico
+
+| Ejecución final | Resultado |
+| --- | --- |
+| Windows x64 Development, misma demo | Succeeded/salida 0; 195.637.067 bytes; 43,71 s incremental final (primera build E07: 174,89 s) |
+| Player sin gráficos | PASS/salida 0; 36,05 s; tres clases, misión real y sistemas anteriores |
+| Player GPU RTX 3050 Laptop / D3D12 | PASS/salida 0; 35,59 s; mismos recorridos y captura real válida |
+| Persistencia | v1, etapas aceptada/recuperada/completada, clase/equipo/edificio/hechos y pago único |
+| Memoria asignada al cierre | 114.757.691 bytes headless y 145.522.552 GPU/captura; muestra Development, no pico/FPS/presupuesto final |
+
+[Captura de la build 1280×720](Images/E07/Standalone-1280.png), inspeccionada tras completar los tres recorridos: aldea, UI, clase final y misión completada. Taller dinámico y combatientes RTS/enemigos siguen como proxies técnicos anteriores.
+
+La captura estándar en batch no produjo una imagen útil. Un primer proceso normal oculto se pausaba con runInBackground=0 y se detuvo solo ese proceso propio. La captura automática a RenderTexture también resultó vacía: se descartó y se consultó la API URP instalada. El capturador final solicita explícitamente Camera.main y su Canvas con SingleCameraRequest, comprueba variación de píxeles y conserva el PNG inspeccionado. Captura y ejecución en segundo plano solo se activan con -aetherniaSmoke; la pausa normal/configuración del juego no cambia.
+
+La regresión 67/67 precede a ese último ajuste exclusivo de diagnóstico. Escena y código funcional no cambiaron; el capturador final se compiló y se repitieron los recorridos headless/GPU del binario final. No se afirma una segunda ejecución de las 67 pruebas tras el ajuste. Las assemblies declaran referencias a URP ya instalado, sin cambiar paquetes/versiones.
+
+Paquete local: `ProyectoRPGRTS/Builds/Aethernia-E07-Aldea-Windows.zip`, **83.358.761 bytes**, 305 entradas, CRC correcto; exe/UnityPlayer/Aethernia.Runtime.dll/level0 coinciden con la build. Nueve ZIP históricos intactos. SHA-256 `967592477432b69635216ec85055892e9b9a5b96814bd3a73a736b073c33698a`. Builds/Logs quedan fuera de Git. Logs completos: E07-final-*, E07-build-final-*, E07-headless-final-*, E07-graphics-final-* y E07-package.json. [Resumen versionado](Validacion/E07_RESULTADOS.json).
+
+```powershell
+.\Tools\Invoke-UnityValidation.ps1 -Mode Vertical
+.\Tools\Invoke-UnityValidation.ps1 -Mode BuildVillage
+.\Tools\Invoke-PrototypeSmoke.ps1 -RequireCargo -RequireVillageE07
+.\Tools\Invoke-PrototypeSmoke.ps1 -WithGraphics -RequireCargo -RequireVillageE07
+```
+
+Código de build verificado: cecbed4. PR apilado pendiente de publicación en el cierre; main/dev/#1 no se fusionan. Evaluación humana E07, confirmación X/ESC y modelos/rig/clips finales pendientes. No se inicia E08.

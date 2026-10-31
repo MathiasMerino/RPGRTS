@@ -448,8 +448,43 @@
     },
     "missing_meta": [],
     "orphan_meta": [],
-    "duplicate_guids": []
+    "duplicate_guids": [],
+    "runtime_configuration_change": "References to already-installed URP Core/Universal for validation-only capture; packages/versions/player settings unchanged."
   },
   "human_approval": "Pending; F2-07 user reported 7/8, X/ESC confirmation pending; E07 art not human approved",
-  "build_status": "In progress, receipts appended after execution"
+  "build_status": "Succeeded; final Windows x64 demo, independent headless/GPU routes PASS",
+  "build": "Succeeded; bytes=195637067; seconds=43.7053743",
+  "headless_smoke": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=36.05; frames=134626; allocatedBytes=114757691",
+  "headless_cargo": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; normal RPG/RTS/economy also checked by base probe.",
+  "headless_village": "PASS: E07 authored village loaded in standalone; renderers=340; graphics=Null Device; actual quest/classes and prior systems checked above.",
+  "graphics_smoke": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=35.59; frames=89173; allocatedBytes=145522552",
+  "graphics_cargo": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; normal RPG/RTS/economy also checked by base probe.",
+  "graphics_village": "PASS: E07 authored village loaded in standalone; renderers=340; graphics=NVIDIA GeForce RTX 3050 Laptop GPU; actual quest/classes and prior systems checked above.",
+  "graphics_capture_status": "CAPTURED: standalone Game camera, temporary offscreen target with existing Canvas, native render without synthetic composition.",
+  "package": {
+    "path": "ProyectoRPGRTS\\Builds\\Aethernia-E07-Aldea-Windows.zip",
+    "bytes": 83358761,
+    "sha256": "967592477432b69635216ec85055892e9b9a5b96814bd3a73a736b073c33698a",
+    "entries": 305,
+    "crc": "PASS",
+    "binary_matches": {
+      "Aethernia.exe": true,
+      "UnityPlayer.dll": true,
+      "Aethernia_Data/Managed/Aethernia.Runtime.dll": true,
+      "Aethernia_Data/level0": true
+    },
+    "historical_archives_unchanged": 9
+  },
+  "standalone_capture": {
+    "path": "Docs\\Images\\E07\\Standalone-1280.png",
+    "pixels": [
+      1280,
+      720
+    ],
+    "sha256": "8b2143b0d892be8f010a363cc68ba3a45753244a508452eeeeddd11845a7de88",
+    "visually_inspected": true,
+    "method": "Standalone Game camera and existing Canvas; explicit URP SingleCameraRequest to offscreen target; no composition."
+  },
+  "validation_scope_note": "67/67 regression on functional scene/core scripts; subsequent change restricted to explicit smoke capture, compiled with exact editor and final binary verified again by complete GPU/headless routes. No second 67-case run claimed after this isolated utility.",
+  "validated_build_code_commit": "cecbed4"
 }
