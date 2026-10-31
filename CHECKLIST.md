@@ -617,12 +617,12 @@ Diseños autorizados para uso provisional. F2-07: usuario informa 7/8, cierre X/
 - Resultado / problemas: completada técnicamente; tres retratos conceptuales 3:4 originales, configuración compartida sin estadísticas duplicadas. Bastón accesorio sin item/buff; modelos y validación humana pendientes.
 
 ### PROD-E05 — El cargamento perdido: misión integrada
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: producción integrada / P1. Dependencias: E04 y sistemas existentes.
 - Aceptación: criterios del encargo E05, implementación en Unity y pruebas; validación humana diferenciada.
-- Archivos: previstos en Docs/E03_E06_PRODUCCION.md.
-- Pruebas: pendientes.
-- Resultado / problemas: pendiente; sin modelos/rig/animaciones finales ni cierre humano automático.
+- Archivos: escena AetherniaVillageDemo, Quests/VillageResident/LostCargo/CargoDialogue, LostCargoQuest/Controller/View, extensión GameSession/TurnEncounter, ProductionVillageBuilder, LostCargoTests, lanzador y documentación/capturas E05.
+- Pruebas: generación/compilación salida 0; 5/5 dirigidas antes y después de pulir etiquetas/semilla de prueba; recorridos reales con tres clases, guardado v1 por etapa, recompensa única/inventario lleno y victorias ajenas rechazadas; capturas 720p/1080p.
+- Resultado / problemas: completada técnicamente; misión y NPC provisionales, diálogo/objetivo desacoplados de C02. Escena original preservada; revisión humana pendiente. No se simula victoria ni se cambia formato de guardado.
 
 ### PROD-E06 — Regresión, capturas, build y PR
 - Estado: [ ] En desarrollo.

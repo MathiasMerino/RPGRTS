@@ -16,6 +16,7 @@ namespace Aethernia
         public PrototypeRules Rules => rules;
         public Func<Vector3, Collider, bool, bool> WorldCommand;
         public Func<string, bool> TravelRequested;
+        public Func<string, string, bool?> AdditionalInteraction;
         public PrototypeMode Mode { get; private set; }
         public string ModeTitle => Mode == PrototypeMode.Exploration ? "Exploración" : Mode == PrototypeMode.TurnCombat ? "Combate por turnos" : Mode == PrototypeMode.Construction ? "Construcción" : "Guerra RTS";
         public string LastMessage { get; private set; } = "Selecciona el personaje. Clic derecho: caminar. WASD: cámara. Rueda: zoom.";
@@ -44,6 +45,7 @@ namespace Aethernia
         public bool CompleteInteraction(string id, string title)
         {
             if (Mode != PrototypeMode.Exploration) { Say("Vuelve a Explorar para interactuar con objetos del mundo."); return false; }
+            var extra=AdditionalInteraction?.Invoke(id,title);if(extra.HasValue)return extra.Value;
             if (id == "portal-dungeon" || id == "portal-surface") return TravelRequested != null && TravelRequested(id);
             if (id == "faction-b") { Say("Facción B: relación " + State.ReputationB + ". Las consecuencias se conservan en la partida."); return true; }
             if (id == "market") { var traded = WorldOperations.Trade(State); Say(traded ? "Comercio: 5 oro por 2 madera." : "Oro insuficiente."); return traded; }
