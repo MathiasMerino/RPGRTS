@@ -6,6 +6,8 @@ Fecha: 2026-10-30. Hito artístico E02-A solicitado por el usuario; seguimiento 
 
 Esta ficha prepara revisión y producción futura. No crea FBX, rig, texturas PBR, animaciones o un personaje nuevo en Unity. La apariencia E01 y la infraestructura E02 permanecen intactas.
 
+Actualización E02-B: el usuario autoriza usar esta propuesta **provisionalmente** en Unity. Se aplica un proxy estático de 1,78 m y la ilustración en la UI, conservando la variante E01 y la infraestructura E02. [Implementación, pruebas y límites](../../Docs/E02B_MONJE_PROVISIONAL.md). Esta actualización no sustituye la aprobación artística final pendiente ni modifica la condición de propuesta de la ficha.
+
 ## 1. Concepto general y lectura de referencias
 
 Humano adulto masculino de clase Monje: presencia disciplinada, atlética y ágil; ropa monástica de tejido mate, naranja quemado sobre oscuros terrosos. Combate sin armas como lectura principal y bastón largo opcional, sin armadura pesada. No tiene nombre, orden religiosa, origen regional, símbolos o historia definitivos.

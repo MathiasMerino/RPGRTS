@@ -1,6 +1,6 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02 y propuesta artística E02-A.
+Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B.
 
 ## Resumen actual
 
@@ -18,6 +18,8 @@ Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «
 - E02: **infraestructura F3-E02 completada y verificada**, 46/46 pruebas y build/recorridos sin gráficos y con GPU aprobados. F3-E02-M (modelo/rig real) y F3-E02-A (clips/retargeting) pendientes. Guía/manifiesto: Docs/E02_IMPORTACION_HUMANOID.md. La alternativa E01 continúa activa.
 
 - E02-A artístico: ficha/hoja conceptual entregadas y revisadas en Documentacion/Personajes/MONJE_DISENO_BASE.md; diseño **PROPUESTO, sin aprobación artística**. F3-E02-ARTE-01 cerrada como documentación; F3-E02-ARTE-AP pendiente. No modelo/rig/animaciones nuevos ni cambios al juego.
+
+- E02-B posterior: **F3-E02-B completada y verificada**, nuevo proxy estático Monje 1,78 m y tarjeta de clase; alternativa original E01 conservada. **49/49 pruebas aprobadas**, incluidos tres casos de aceptación, build Windows y recorridos con/sin GPU aprobados. Siete capturas reales revisadas. Informe Docs/E02B_MONJE_PROVISIONAL.md. F3-E02-ARTE-AP, F3-E02-M, F3-E02-A de clips, F2-07 y C02 siguen pendientes. Los apartados anteriores describen sus entregas históricas; el permiso provisional E02-B no es aprobación artística final.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -469,3 +471,13 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Archivos: ficha base y decisiones.
 - Pruebas: revisión artística por el usuario pendiente.
 - Resultado / problemas: no iniciar modelado definitivo, reemplazo del Monje ni animaciones finales.
+
+
+### F3-E02-B — Identidad visual provisional del Monje
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: prefab ligero de 1,78 m basado en concepto, materiales compartidos y referencia 2D en panel Personaje. Presentación/personajes/UI.
+- Prioridad / dependencias: P1; E01/E02 y propuesta E02-A, uso provisional autorizado por nuevo prompt.
+- Aceptación: silueta naranja asimétrica/rapada/pantalón/vendas legibles, física/estadísticas sin cambios, equipo y guardado compatibles, Guerrero/Mago intactos, UI 720p/1080p legible y capturas reales; sin FBX/rig/animaciones definitivos.
+- Archivos: prefab Characters/MonkProvisional/Monk_ConceptProxy, dos materiales/seis mallas/ilustración en 07_Characters/MonkProvisional; UI/ClassReferenceCard; MonkIdentityBuilder/MonkProxyGeometry/ClassReferenceCard/MonkIdentityTests; catálogo/HUD/escena y assembly de editor con cambios acotados; talla esperada actualizada en CharacterVisualTests; lanzador, informe Docs/E02B_MONJE_PROVISIONAL.md, siete Docs/Images/E02B-*, guías/arquitectura/escala/plan/registro.
+- Pruebas: dirigidas 3/3; regresión 49/49, cero fallos/omisiones, salida 0. Monje 1,78 m, 5.252 triángulos/10 renderers con equipo; URP, controles existentes/selección física, ruta real/cofre/inventario/equipo, guardado/carga, victoria RPG y UI 720p/1080p aprobados; Guerrero/Mago preservados. Siete capturas Play Mode GPU revisadas. Build Windows salida 0, recorridos nativos con/sin GPU PASS/salida 0. Logs/comprobantes E02B-* y ZIP Windows E02B verificados.
+- Resultado / problemas: identidad provisional integrada sin cambios de física/NavMesh/reglas/guardado v1. Checkpoint codex/e02-b-base-afa1e7e y alternativa E01/candidato E02 conservados. Anatomía/uniones/manos/paños simples; equipo genérico con posibles intersecciones y postura estática, sin rig/animación. Aprobación artística final, modelo/rig/clips reales y evaluación humana F2-07 siguen pendientes; no se cierra C02 ni se inicia otra fase.

@@ -11,8 +11,12 @@ namespace Aethernia
             public string ClassId;
             public GameObject Prefab;
             public GameObject HumanoidPrefab;
+            public Texture2D ReferenceArt;
+            public Rect ReferenceUv = new Rect(0, 0, 1, 1);
         }
         public Entry[] Entries = Array.Empty<Entry>();
+        public Entry FindEntry(string id)
+        { foreach (var entry in Entries) if (entry.ClassId == id) return entry; return null; }
         public GameObject Find(string id)
         {
             foreach (var entry in Entries)

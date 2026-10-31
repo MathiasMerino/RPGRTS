@@ -4,6 +4,8 @@ La primera tabla conserva el inventario de la primera etapa. Al final se registr
 
 ## Adición E02
 
+Entrega posterior E02-B: `Docs/E02B_MONJE_PROVISIONAL.md` y siete capturas `Docs/Images/E02B-*`; prefab `Assets/02_Prefabs/Characters/MonkProvisional/Monk_ConceptProxy.prefab`; dos materiales/seis mallas/una ilustración en `Assets/07_Characters/MonkProvisional/`; `Assets/02_Prefabs/UI/ClassReferenceCard.prefab`. Autoría: MonkIdentityBuilder/MonkProxyGeometry; runtime: ClassReferenceCard y adiciones pequeñas a catálogo/HUD; pruebas MonkIdentityTests y talla actualizada en CharacterVisualTests; modo MonkIdentity en lanzador y referencia uGUI en assembly de editor existente. Catálogo/escena cambian presentación únicamente. Fuentes anteriores, guía E02, candidato vacío y estados pendientes se conservan. Build local: `ProyectoRPGRTS/Builds/Aethernia-Fase3-E02B-Windows.zip`; resultados exactos en el informe E02-B.
+
 Entrega artística posterior E02-A: `Documentacion/Personajes/MONJE_DISENO_BASE.md`, captura de referencia del usuario en Referencias y hoja PNG/prompt en Conceptos. Documentación fuera de Assets, estado PROPUESTO. No son modelos, texturas PBR o animaciones del juego; se conserva el historial técnico E02 y sus pendientes. Cambios de seguimiento en checklist, registro, dirección artística y enlaces de escala/importación; sin cambios al proyecto Unity.
 
 - Guía única: `Docs/E02_IMPORTACION_HUMANOID.md` (uso, contrato, manifiesto exacto de recursos faltantes, pruebas y límites).

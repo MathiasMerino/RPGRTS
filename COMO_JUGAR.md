@@ -4,7 +4,7 @@ Este prototipo implementa el recorrido jugable y los sistemas mínimos acordados
 
 La segunda etapa audita y corrige la integración existente. El estado real por sistema, pruebas automáticas y límites están en `Docs/AUDITORIA_FASE_2.md`. La sesión humana sigue pendiente; usar `Docs/PRUEBA_MANUAL_FASE_2.md` para registrar resultados.
 
-La entrega actual añade la primera iteración de fase 3 (A/B/C1): auditoría visual, dirección artística documentada y UI contextual. En exploración, el panel derecho abre Resumen, Personaje, Inventario y Partida. La ayuda cambia por modo; Interactuar aparece solo en exploración. Escenario y apariencias todavía son los provisionales anteriores. Véanse `Docs/FASE3_ITERACION_1.md` y `Documentacion/DIRECCION_ARTISTICA.md`.
+La entrega actual incorpora A/B/C1, escenario D01, personajes E01, infraestructura E02 y Monje provisional E02-B. En exploración, el panel derecho abre Resumen, Personaje, Inventario y Partida. La ayuda cambia por modo; Interactuar aparece solo en exploración. Véanse `Docs/E02B_MONJE_PROVISIONAL.md` y `Documentacion/DIRECCION_ARTISTICA.md` para apariencia actual y límites.
 
 ## Abrir el juego
 
@@ -14,11 +14,11 @@ En Unity: esperar a que termine la importación y compilación, revisar Console,
 
 El NavMeshAgent del héroe de la escena está desactivado deliberadamente en edición y se activa al iniciar Play, después de cargar el NavMesh. Mantener ese ajuste; evita un aviso nativo de agente sin superficie durante el arranque de la build.
 
-Entrega de infraestructura E02: `ProyectoRPGRTS/Builds/Aethernia-Fase3-E02-Windows.zip`: descomprimir todo y abrir Aethernia.exe. Los ZIP anteriores conservan las entregas históricas. Al iniciar se crea una partida de ensayo nueva; cargar una partida previa requiere F9 o Partida → Cargar. No hay guardado automático.
+Entrega E02-B: `ProyectoRPGRTS/Builds/Aethernia-Fase3-E02B-Windows.zip`: descomprimir todo y abrir Aethernia.exe. Los ZIP anteriores conservan las entregas históricas. Al iniciar se crea una partida de ensayo nueva; cargar una partida previa requiere F9 o Partida → Cargar. No hay guardado automático.
 
 La casa medieval, el camino y los decorados se encuentran en la misma escena jugable, bajo `D01 Medieval Quarter`. La biblioteca reutilizable está en `Assets/02_Prefabs/Environment/Medieval`; medidas, capturas antes/después y límites en [informe D01](Docs/D01_ESCENARIO_MEDIEVAL.md). El héroe muestra la clase seleccionada mediante figuras geométricas provisionales; conserva la cápsula como física. Fichas e importación futura en [informe E01](Docs/E01_PERSONAJES.md). La cubierta se recorta al interponerse ante el héroe y se restaura al alejarse. La rueda quieta ya no debe provocar acercamiento automático.
 
-E02 prepara importación Humanoid, equipo configurable y siete estados sin clips. No incluye un Monje 3D nuevo: el Monje E01 sigue activo hasta recibir/aprobar modelo y animaciones. Uso del workbench y lista exacta de recursos en [guía E02](Docs/E02_IMPORTACION_HUMANOID.md).
+E02 prepara importación Humanoid, equipo configurable y siete estados sin clips. E02-B añade un Monje estático provisional de 1,78 m basado en el concepto: cabeza rapada, tela naranja asimétrica, torso parcialmente descubierto, pantalón oscuro y vendas. En Personaje → Monje aparece su referencia 2D y estadísticas base; el modelo del mundo permite revisar la clase seleccionada. Equipo E01 conservado, sin animaciones. La alternativa E01 y el candidato E02 siguen disponibles. [Informe/capturas E02-B](Docs/E02B_MONJE_PROVISIONAL.md); uso del workbench y recursos finales faltantes en [guía E02](Docs/E02_IMPORTACION_HUMANOID.md).
 
 ## Controles
 
@@ -60,9 +60,9 @@ Con Unity cerrado sobre este proyecto, ejecutar desde PowerShell en esta carpeta
 .\Tools\Invoke-PrototypeSmoke.ps1 -WithGraphics
 ```
 
-El primer comando ejecuta 46 pruebas de editor, geometría, UI, navegación, persistencia y sistemas integrados; incluye catorce layouts de la UI contextual, cuatro casos D01, tres casos E01, cuatro de infraestructura E02 y capturas con GPU en modo batch. El segundo compila la build de Windows. El tercero inicia esa build sin gráficos, recorre los sistemas automáticamente y escribe un comprobante en Logs. El cuarto repite con dispositivo gráfico en segundo plano. Los lanzadores rechazan fallos de agente o excepciones del log aunque el recorrido devuelva 0. Las pruebas no utilizan la partida guardada del jugador ni sustituyen una sesión humana.
+El primer comando ejecuta 49 pruebas de editor, geometría, UI, navegación, persistencia y sistemas integrados; incluye catorce layouts de la UI contextual, cuatro casos D01, tres casos E01, cuatro de infraestructura E02, tres de identidad Monje E02-B y capturas con GPU en modo batch. El segundo compila la build de Windows. El tercero inicia esa build sin gráficos, recorre los sistemas automáticamente y escribe un comprobante en Logs. El cuarto repite con dispositivo gráfico en segundo plano. Los lanzadores rechazan fallos de agente o excepciones del log aunque el recorrido devuelva 0. Las pruebas no utilizan la partida guardada del jugador ni sustituyen una sesión humana.
 
-No repetir GenerateSandbox, GeneratePlayable, UpgradeVertical, ContextUi, MedievalQuarter, CharacterVisuals o HumanoidPipeline sobre assets ya preparados: las herramientas rechazan sobrescrituras/duplicados. MedievalRefine es una herramienta de autoría, no un paso necesario para abrir o probar la entrega. Las escenas de muestra y referencia se conservan como evidencia de las etapas anteriores.
+No repetir GenerateSandbox, GeneratePlayable, UpgradeVertical, ContextUi, MedievalQuarter, CharacterVisuals, HumanoidPipeline o MonkIdentity sobre assets ya preparados: las herramientas rechazan sobrescrituras/duplicados. MedievalRefine es una herramienta de autoría, no un paso necesario para abrir o probar la entrega. Las escenas de muestra y referencia se conservan como evidencia de las etapas anteriores.
 
 ## Alcance y siguientes fases
 

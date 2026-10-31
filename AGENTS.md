@@ -40,6 +40,7 @@
 - D01: grupo visual `D01 Medieval Quarter`, once prefabs en `Assets/02_Prefabs/Environment/Medieval/`; física original conservada. Evidencia/límites en `Docs/D01_ESCENARIO_MEDIEVAL.md`. E01 añade recorte reversible de cubierta; C02 sigue pendiente.
 - E01: VisualRoot conserva controlador/collider; catálogo `Assets/07_Characters/Provisional/ClassVisuals.asset`. Prefabs con CharacterVisualModel, sin agentes/colliders/Animator. Desactivar presentador recupera cápsula; RoofCutaway recupera techo al desactivarse.
 - E02: flujo nativo en Aethernia/Personajes/Importar Humanoid; plantilla vacía y perfil/grafo en Assets/07_Characters/Humanoid. Guía/manifiesto Docs/E02_IMPORTACION_HUMANOID.md. No hay modelo/Avatar/clips reales aprobados: E02-M/E02-A pendientes; no repetir HumanoidPipeline.
+- E02-B: Monje usa proxy estático de 1,78 m y tarjeta en Personaje; recursos propios en Assets/07_Characters/MonkProvisional, alternativa E01 preservada. Informe Docs/E02B_MONJE_PROVISIONAL.md. No repetir MonkIdentity; no es FBX/rig/animaciones finales ni aprobación humana.
 - Antes de cada tarea: revisar `git status`, dependencias y criterios. Revisar el diff y registrar cambios importantes.
 - No sobrescribir cambios ajenos, publicar remotos ni modificar configuración global como parte de tareas locales.
 - Visual Studio Community 2026 y Tools for Unity ya instalados; paquete IDE Unity `2.0.26` presente.

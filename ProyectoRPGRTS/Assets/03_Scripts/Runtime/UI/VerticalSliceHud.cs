@@ -26,10 +26,12 @@ namespace Aethernia
         [SerializeField] private GameObject characterPanel;
         [SerializeField] private GameObject explorationPages;
         [SerializeField] private RectTransform actionGrid;
+        [SerializeField] private ClassReferenceCard classReference;
         private float refreshAt;
         private PrototypeMode lastMode;
         private bool layoutApplied;
         public ExplorationPage ActivePage { get; private set; }
+        public void ConfigureReference(ClassReferenceCard card) { classReference=card; }
         public void Configure(GameSession game, PrototypeDirector control, Text resources, Text info, HudBinding[] actions, InputField input)
         { session = game; director = control; stats = resources; detail = info; bindings = actions; nameInput = input; }
         public void ConfigureContext(MedievalUiTheme style, Text help, GameObject character, GameObject pages, RectTransform grid, HudBinding[] pageButtons)
@@ -94,6 +96,7 @@ namespace Aethernia
             if (explorationPages != null) explorationPages.SetActive(exploring);
             if (characterPanel != null) characterPanel.SetActive(exploring && ActivePage == ExplorationPage.Character);
             var s = session.State; var profile = session.Rules.Find(s.ClassId);
+            if(classReference!=null) classReference.Refresh(exploring && ActivePage==ExplorationPage.Character,profile);
             if (nameInput != null && !nameInput.isFocused && nameInput.text != s.Name) nameInput.SetTextWithoutNotify(s.Name);
             stats.text = s.Name + " · " + profile.Title + "  |  Salud " + s.Health + "/" + profile.Health + "  |  Oro " + s.Gold + "  Madera " + s.Wood + "  Alimentos " + s.Food + "  |  Tiempo " + (int)s.WorldSeconds + " s";
             var equipment = "Equipo: " + (s.Weapon == "" ? "sin arma" : "espada") + " / " + (s.Armour == "" ? "sin armadura" : "túnica");

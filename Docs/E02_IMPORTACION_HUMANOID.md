@@ -6,6 +6,8 @@ Fecha: 2026-10-30, America/La_Paz. Fuente: GDD v0.2, §12.1 y catálogo de clase
 
 Al comenzar E02, Assets no contenía FBX/modelos externos, Avatar, clips o Animator Controller. Se prepara infraestructura y un **candidato vacío**, no un Monje 3D terminado. El Monje geométrico E01 sigue disponible y activo como alternativa. No se descargan modelos, no se crean clips falsos y no se instalan paquetes/importadores.
 
+Actualización posterior E02-B: la alternativa activa del Monje pasa a un proxy estático de 1,78 m basado en el concepto; se conserva el prefab E01 y este candidato Humanoid vacío. La tarjeta Personaje muestra la referencia original. [Implementación/resultados E02-B](E02B_MONJE_PROVISIONAL.md); el contrato, workbench y pendientes de FBX/Avatar/clips de esta guía siguen vigentes.
+
 Se conservan controlador, clases/habilidades, cápsula/agente, inventario, reglas, guardado v1, escena D01, recorte de techo y UI. No se inicia C02, arte definitivo, razas, subclases o criaturas. La sesión humana F2-07 sigue pendiente.
 
 | Entrega | Estado |

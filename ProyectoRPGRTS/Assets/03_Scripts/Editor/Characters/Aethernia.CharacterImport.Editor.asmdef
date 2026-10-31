@@ -1,6 +1,6 @@
 {
   "name": "Aethernia.CharacterImport.Editor",
-  "references": ["Aethernia.Runtime", "Aethernia.Environment.Editor"],
+  "references": ["Aethernia.Runtime", "Aethernia.Environment.Editor", "Unity.ugui"],
   "includePlatforms": ["Editor"],
   "autoReferenced": true
 }

@@ -100,7 +100,7 @@ namespace Aethernia.Tests.Editor
                     var triangles=0;
                     foreach(var renderer in renderers) { bounds.Encapsulate(renderer.bounds); Assert.That(renderer.sharedMaterial.shader.isSupported,Is.True); }
                     foreach(var filter in node.GetComponentsInChildren<MeshFilter>(true)) triangles+=filter.sharedMesh.triangles.Length/3;
-                    Assert.That(bounds.min.y,Is.EqualTo(0).Within(.005f)); Assert.That(bounds.max.y,Is.EqualTo(1.8f).Within(.015f));
+                    Assert.That(bounds.min.y,Is.EqualTo(0).Within(.005f)); Assert.That(bounds.max.y,Is.EqualTo(id=="monk"?1.78f:1.8f).Within(.015f));
                     Assert.That(bounds.size.x,Is.LessThan(.85f));
                     report.AppendLine(id+": bounds="+bounds.size.ToString("F3")+", renderers="+renderers.Length+", triangles="+triangles);
                 }
