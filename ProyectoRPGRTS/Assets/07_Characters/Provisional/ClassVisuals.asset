@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.CharacterVisualCatalog
   Entries:
   - ClassId: warrior
-    Prefab: {fileID: 8369214138543721982, guid: 77a3bd0aa4cf3644eb4f8bece7b54bab, type: 3}
+    Prefab: {fileID: 8726147529508856561, guid: 6ea705259d45ae64eacc929560a6f743, type: 3}
     HumanoidPrefab: {fileID: 0}
     ReferenceArt: {fileID: 2800000, guid: c0e68875e2e83e54eb107bfe2caa82f7, type: 3}
     ReferenceUv:
@@ -27,7 +27,7 @@ MonoBehaviour:
 
       Guerrero'
   - ClassId: mage
-    Prefab: {fileID: 4818405744351380324, guid: 40d020de17dfb964ba654bd20ce92b44, type: 3}
+    Prefab: {fileID: 4957824546090921224, guid: f04d4a5a6a23a104caef80a8e739ab3e, type: 3}
     HumanoidPrefab: {fileID: 0}
     ReferenceArt: {fileID: 2800000, guid: 95a0fe240353d144f9b4b417260a38fe, type: 3}
     ReferenceUv:
@@ -40,7 +40,7 @@ MonoBehaviour:
 
       Mago'
   - ClassId: monk
-    Prefab: {fileID: 1303856060874188198, guid: f70b889bed681c342ab579393e215893, type: 3}
+    Prefab: {fileID: 7590876109761433908, guid: a7aa9048c34261b4fbd41dfdf12da3a3, type: 3}
     HumanoidPrefab: {fileID: 4750980465152403662, guid: 5d7798e04da39794aaa631ef5aa5d1c5, type: 3}
     ReferenceArt: {fileID: 2800000, guid: 6c609dbebe8ca8b4a946fce64b2cd7e3, type: 3}
     ReferenceUv:

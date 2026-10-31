@@ -296,3 +296,13 @@ F3-ARTE-GUE-01 completa como entrega de propuesta 2D, sujeta a revisión artíst
 Skill imagegen/herramienta integrada: hoja 2D original 1536×1024, Mago masculino adulto de silueta vertical y complexión normal/delgada, expresión reservada, túnicas en capas azul grisáceo/púrpura apagado, cuero marrón, lino beige y metal discreto. Bastón fino, grimorio sujeto al cinturón, bolsas/contenedores de componentes y capucha bajada; efecto de conjuración leve sin ocultar cuerpo/mano. Incluye cuatro vistas, pose neutral con bastón separado, conjuración y cinco detalles de bastón, grimorio, cinturón, tejidos y accesorios. Revisadas figura completa, continuidad general del diseño y coherencia de presentación con las hojas Monje/Guerrero. PNG y prompt exacto en Documentacion/Personajes/Conceptos/MAGO_HOJA_PROPUESTA_v01.*; SHA-256 d11938b0d5125f2e11e698469173c3596956b7a8fa4d2a9150c7053b378ecb29.
 
 F3-ARTE-MAG-01 completa como entrega artística propuesta, pendiente de revisión final. No se modifica Unity, clase, UI, catálogo, materiales o controlador vigente; no se produce FBX, rig, animación o turnaround calibrado. No se repiten tests/build por cambios únicamente raster/documentales; F2-07 sigue pendiente. Guardado/commit local, sin publicar esta solicitud en GitHub.
+
+
+## 2026-10-31 — Inicio producción E03–E06
+
+Brief adjunto autoriza provisionalmente las tres hojas originales y misión narrativa de ensayo. Git limpio, dev 742c04f sincronizado preservando tres commits artísticos, rama solicitada feature/e03-e06-personajes-vertical-slice. No hay rama F2-07 detectada; usuario informa 7/8 humanas, cierre X/ESC pendiente. GDD/hash intactos; inspección dirigida sin modelos humanoides ni herramientas de modelado expuestas. Plan/decisiones en Docs/E03_E06_PRODUCCION.md. Preservar recursos/escenas originales, código modular existente, Facts v1 y gestor C02.
+
+
+## 2026-10-31 — E03: tres representaciones provisionales
+
+Nuevos prefabs métricos E03, mallas horneadas por material reutilizando MonkProxyGeometry (Box añadido), armadura/correas/faldón Guerrero, túnica/capucha/libro/bastón de identidad Mago y uniones/hombros/vendas/paño Monje. Equipo actual anidado sin colliders ni runtime primitives; fuentes originales copiadas íntegras. Originales y física preservados. Generación salida 0, prueba métrica inicial 1/1 y aceptación ampliada 2/2 (incluye Play Mode y tres capturas revisadas). Métricas/resultados en informe E03_E06; no se afirman rig, animaciones o escultura final. Paleta Mago oscura, ajuste reversible previsto E04.

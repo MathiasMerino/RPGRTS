@@ -594,3 +594,40 @@ El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C
 - Archivos: Documentacion/Personajes/Conceptos/MAGO_HOJA_PROPUESTA_v01.png y prompt exacto; registro actualizado.
 - Pruebas: PNG 1536×1024 inspeccionado: seis figuras, cinco recuadros y paleta; continuidad general de túnicas/equipo, silueta, encuadre y materiales revisados; hash verificado. No se ejecuta Unity para una entrega raster/documental.
 - Resultado / problemas: hoja conceptual propuesta para revisión, no turnaround calibrado o modelo/rig/animación. Arte y medidas actuales E01 siguen intactos; aprobación artística final y F2-07 pendientes.
+
+
+## PRODUCCIÓN — E03 a E06 (2026-10-31)
+
+Diseños autorizados para uso provisional. F2-07: usuario informa 7/8, cierre X/ESC pendiente; no equivale a aprobación de arte final.
+
+### PROD-E03 — Integración de tres apariencias
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: producción integrada / P1. Dependencias: hojas originales y base E02-B.
+- Aceptación: criterios del encargo E03, implementación en Unity y pruebas; validación humana diferenciada.
+- Archivos: ProductionCharacterBuilder, MonkProxyGeometry reutilizada con Box, tres prefabs en Characters/E03, mallas/materiales/Source en 07_Characters/ProductionProvisional, catálogo y pruebas ProductionVisualTests; informe y tres capturas.
+- Pruebas: compilación/generación salida 0; 2/2 dirigidas metric/URP/recuperación y Play Mode con tres capturas reales inspeccionadas.
+- Resultado / problemas: completada técnicamente, pendiente de validación humana. Representaciones estáticas 1,78/1,80 m sin colisión, 5.252–6.704 triángulos; originales preservados. No modelos/rig/animaciones finales.
+
+### PROD-E04 — Catálogo, retratos y equipo compartidos
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: producción integrada / P1. Dependencias: E03.
+- Aceptación: criterios del encargo E04, implementación en Unity y pruebas; validación humana diferenciada.
+- Archivos: previstos en Docs/E03_E06_PRODUCCION.md.
+- Pruebas: pendientes.
+- Resultado / problemas: pendiente; sin modelos/rig/animaciones finales ni cierre humano automático.
+
+### PROD-E05 — El cargamento perdido: misión integrada
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: producción integrada / P1. Dependencias: E04 y sistemas existentes.
+- Aceptación: criterios del encargo E05, implementación en Unity y pruebas; validación humana diferenciada.
+- Archivos: previstos en Docs/E03_E06_PRODUCCION.md.
+- Pruebas: pendientes.
+- Resultado / problemas: pendiente; sin modelos/rig/animaciones finales ni cierre humano automático.
+
+### PROD-E06 — Regresión, capturas, build y PR
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: producción integrada / P1. Dependencias: E03/E04/E05.
+- Aceptación: criterios del encargo E06, implementación en Unity y pruebas; validación humana diferenciada.
+- Archivos: previstos en Docs/E03_E06_PRODUCCION.md.
+- Pruebas: pendientes.
+- Resultado / problemas: pendiente; sin modelos/rig/animaciones finales ni cierre humano automático.
