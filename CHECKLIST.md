@@ -564,3 +564,13 @@ El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C
 - Archivos: .gitignore, README.md, CHECKLIST.md, REGISTRO_CAMBIOS.md.
 - Pruebas: git check-ignore --no-index sobre 18 casos excluidos y 19 conservados; revisión de los 616 archivos versionados, cero ocultados por reglas; enlaces README válidos y git diff --check sin errores.
 - Resultado / problemas: rutas de cachés ancladas al proyecto para no ignorar carpetas homónimas dentro de Assets; .dll/.fbx/.png y documentación conservadas. Sin eliminar archivos/commits o cambiar jugabilidad; no se repiten pruebas/build Unity por una configuración de Git y documentación. La primera importación regenera cachés y restaura paquetes; F2-07 pendiente.
+
+
+### F3-E02-ARTE-02 — Nueva hoja conceptual del Monje v02
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: generar nueva propuesta 2D original según brief del usuario; personajes/arte.
+- Prioridad / dependencias: P1; ficha Monje y solicitud artística del 2026-10-31.
+- Aceptación: cuatro vistas, pose neutral, guardia, detalles de vendas/calzado/tela/faja, coherencia de vestimenta, cuerpo completo y fondo neutro; sin integración automática en Unity.
+- Archivos: Documentacion/Personajes/Conceptos/MONJE_HOJA_PROPUESTA_v02.png y prompt exacto; registro actualizado, v01 conservada.
+- Pruebas: imagen 1536×1024 inspeccionada; seis figuras completas y cuatro recuadros de detalles/paleta, hombro izquierdo cubierto y ropa coherente; PNG/hash verificados. No aplica compilar o ejecutar Unity para este cambio artístico.
+- Resultado / problemas: hoja conceptual 2D entregada, propuesta para revisión; no equivale a turnaround calibrado, FBX, rig o animaciones. Aprobación artística final y F2-07 siguen pendientes; apariencia/UI E02-B/C02 conservadas.
