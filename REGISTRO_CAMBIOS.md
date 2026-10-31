@@ -346,3 +346,8 @@ Biblioteca de siete módulos y cinco conjuntos métricos, cubiertas inclinadas/a
 ## 2026-10-31 — E07-P2: terreno y biblioteca de ambientación
 
 Añadidos 21 prefabs propios de suelo/vegetación/utilería (total E07 33), con superficies compartidas, troncos sólidos y plantas blandas. Terreno mantiene Y=0 en el área jugable y limita relieve al fondo exterior; no se cambia NavMesh. Generación/compilación salida 0 y 2/2 dirigidas aprobadas. Detectadas coordenadas fijas de despliegue RTS y enemigo de misión, reservadas para la integración.
+
+
+## 2026-10-31 — E07-P3: integración, iluminación y visibilidad
+
+Misma AetherniaVillageDemo transformada con cuatro edificios/cobertizo, plaza, rutas, bosque y utilería. Originales D01/E03, física previa, NavMesh y coordenadas de misión conservados. Volume exclusivo, tarde cálida/relleno frío, SSAO existente y faroles sin sombras. RoofCutaway reutilizado para muros/techos/troncos/copas con restauración; comprobado contra triángulos y en trayectos reales. Agrupado follaje bajo por celdas tras medir 1.292 draw calls; muestra final 1.079 (−16,49 %), sin afirmar FPS. Añadidos bordes vegetales irregulares, fondo sin afectar mazmorra y texto direccional sin recorte por geometría. 5/5 dirigidas y 67/67 regresión aprobadas, cero omisiones. Expectativa nueva de llegada ajustada al contrato NavMesh existente, sin tocar pruebas anteriores/controlador. BuildSmokeProbe amplía únicamente la ruta explícita de validación para comprobar E07 y solicitar una captura del framebuffer GPU; validación en player pendiente.

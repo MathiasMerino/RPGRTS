@@ -73,6 +73,18 @@ namespace Aethernia
                 while(stack.Count>0)
                 {var next=stack.Peek();if(!next.MoveNext()){stack.Pop();continue;}if(next.Current is IEnumerator nested)stack.Push(nested);else yield return next.Current;}
             }
+            var village=GameObject.Find("E07 Medieval Village");
+            if(village!=null)
+            {
+                File.WriteAllText(output+".village.txt","PASS: E07 authored village loaded in standalone; renderers="+village.GetComponentsInChildren<MeshRenderer>().Length+"; graphics="+SystemInfo.graphicsDeviceName+"; actual quest/classes and prior systems checked above.");
+                if(SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null)
+                {
+                    var capture=output+".village.png";if(File.Exists(capture))File.Delete(capture);ScreenCapture.CaptureScreenshot(capture);
+                    var until=Time.realtimeSinceStartup+5;while(!File.Exists(capture)&&Time.realtimeSinceStartup<until)yield return null;
+                    yield return null;yield return null;
+                    File.WriteAllText(output+".village-image.txt",File.Exists(capture)?"CAPTURED: native standalone framebuffer, no synthetic composition.":"UNAVAILABLE: batch player did not produce screenshot; editor native captures remain separate evidence.");
+                }
+            }
         }
     }
 }

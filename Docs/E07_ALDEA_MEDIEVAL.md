@@ -39,3 +39,62 @@ Cinco PNG originales 1254² intactos se importan hasta 1024 con mipmaps, repetic
 Veintiún prefabs adicionales: dos árboles de ramas/hojas tridimensionales (9.696 tris/3 renderers cada uno, alturas medidas 6,689 y 7,525 m), arbusto, plantas bajas, roca y tronco caído; fondo de suelo 80 m, tramo de camino irregular y plaza de adoquines; banco/mesa/saco/leña/farol/antorcha/señal/herramientas/cesta/pozo/carreta/monolito. Barriles, cajas y cofres D01 se reutilizan sin modelar copias equivalentes. Total E07: 33 prefabs. Terreno plano dentro del área navegable de 40×40 m, relieve de presentación solo fuera de ella; sin sustituir NavMesh. Árboles con colisión/carving del tronco, plantas blandas transitables y props sólidos con física. Generación salida 0 y 2/2 dirigidas aprobadas. Métricas completas en Logs/E07-library-geometry.txt; la distribución integrada sigue en P3.
 
 La inspección de RTS detectó su despliegue fijo X −12/−6 y Z 11..15,5; esa franja y su conexión quedan libres de construcciones/troncos. Se reserva también el spawn real del enemigo junto a la carga. La casa de piedra se ubicará al suroeste, evitando esos sectores; no se mueven coordenadas de misión para acomodar decorados.
+
+
+## Distribución aplicada y conservación
+
+| Zona | Ubicación X/Z, metros | Función y conservación |
+| --- | --- | --- |
+| Entrada | −10 / −16 | Pilares y dintel; camino de acceso al suroeste |
+| Plaza | −3 / −3 | Empedrado, pozo, banco, farol y accesos; NPC en −7,5 / −3 intacto |
+| Casa abierta | 6 / 6 | Presentación nueva sobre colisiones originales; conserva entrada de 1,20×2,20 m |
+| Posada provisional | −1 / 12 | Dos niveles, entramado, chimenea, puerta cerrada, mesa y banco |
+| Casa de piedra | −15 / −7 | Cimiento/mampostería, puerta y acceso propios, fuera del spawn de combate |
+| Almacén | 14 / 4 | Sacos, barril, caja y leña; no ocupa la prueba de taller en 12 / −10 |
+| Cobertizo | −2 / 5 | Cubre el obstáculo de suministros anterior, conserva su colisión y añade solo postes propios |
+| Bosque/cargamento | carga −10 / 3 | Sendero ramificado, carreta y suministros; conserva NPC/carga/portal y combate real |
+| Despliegue RTS | X −12/−6; Z 11..15,5 | Franja libre de nuevos obstáculos; árboles enmarcan la zona |
+
+No se sustituye AetherniaVillageDemo por otra escena. PlayablePrototype y assets D01/E03 quedan intactos; su grupo visual D01 permanece en la demo como recuperación desactivada, con la física original fuera de ese grupo activa. Los proxies visuales técnicos se cubren con arquitectura/ruinas/señales y suministros en sus mismas coordenadas. Los edificios cerrados nuevos tienen BoxCollider/NavMeshObstacle; las colisiones originales y el asset NavMesh no se modifican. El terreno nuevo extiende el fondo visual fuera del cuadrado navegable; no amplía los límites jugables ni tapa la mazmorra situada desde X=45. Relieve solo de fondo, Y=0 dentro del área jugable; adoquines y caminos son láminas de presentación de pocos centímetros.
+
+## Arquitectura, escala y sustitución
+
+Raíces de prefabs a escala uno, 1 unidad = 1 m. Las dimensiones nominales describen cuerpo/huella; aleros, cumbrera, chimeneas y accesorios amplían los bounds. [Inventario medido completo](Validacion/E07_BIBLIOTECA.txt) contiene las 33 piezas, triángulos, renderers y colliders.
+
+| Conjunto | Bounds reales X×Y×Z, metros |
+| --- | --- |
+| Casa 6×8 nominal | 6,800 × 5,998 × 9,090 |
+| Posada 5,5×6 nominal | 6,300 × 7,328 × 7,090 |
+| Casa de piedra | 5,300 × 5,146 × 5,590 |
+| Almacén | 5,000 × 5,238 × 6,090 |
+| Árboles | alturas 6,689 y 7,525; tres renderers y 9.696 tris cada uno |
+| Carreta, incluidos ejes/varas | 1,820 × 1,325 × 2,991 |
+| Saco | 0,680 × 0,750 × 0,680 |
+| Banco | 1,800 × 0,910 × 0,460 |
+
+Guerrero/Mago 1,80 m y Monje 1,78 m conservan mallas, retratos, estadísticas y cápsula/agente de E03. No se introduce rig, animación, población con IA ni interiores nuevos de edificios cerrados. Las piezas modulares se conservan como biblioteca y los conjuntos se hornean por material/grupo de oclusión mediante código de autoría; modificar un módulo no regenera automáticamente los conjuntos ya horneados. No repetir generadores sobre assets existentes.
+
+## Luz, cámara y visibilidad
+
+Luz natural cálida de tarde con sombras suaves, relleno Trilight frío para leer fachadas, tres puntos de farol sin sombras y emisión moderada. Volume propio de escena con ACES, contraste +8, saturación −7, exposición +0,18, bloom 0,10 y viñeta 0,08; niebla leve. Se reutiliza SSAO existente del renderer URP, sin cambiar el pipeline, añadir paquetes o hornear iluminación prematuramente. No se añade una reflection probe sin necesidad demostrada. Solo la assembly de autoría declara referencias a los paquetes URP/uGUI ya instalados.
+
+Cámara/controles conservados: isométrica 35,26439°/45°, zoom normal 7..25, pan/rueda y guardas de UI. Encuadre inicial de esta demo ajustado a foco −1/1 y tamaño 13. Sigue siendo cámara manual, sin añadir seguimiento automático. Las tomas comparativas fijan foco/zoom sobre Camera.main; las de detalle de clase usan zoom temporal 4,5 para inspección, sin cambiar el límite del juego.
+
+RoofCutaway existente oculta/restaura cubiertas y muros altos conservando el zócalo; copas y troncos también se recortan cuando obstruyen al héroe. No cambia colisiones o materiales, no requiere un gestor nuevo. La prueba reproduce el bloqueo real con los componentes desactivados y comprueba rayos contra triángulos al activarlos, dentro de la casa, detrás del edificio, en el bosque, junto a un tronco y de regreso al NPC. Es una comprobación de posiciones concretas, no una aprobación humana de todas las situaciones de cámara.
+
+## Ajustes basados en evidencia
+
+Primera muestra integrada: 1.292 draw calls y 1.258.614 triángulos de frame según UnityStats en el encuadre general; 294 renderers/269.263 triángulos retenidos E07. Se agrupa solo follaje bajo por material y celda, manteniendo instancias fuente sin render para edición; árboles conservan recorte individual. Se retiran sombras innecesarias de suelo, plantas bajas y árboles lejanos. Nuevas franjas de hierba rompen bordes de camino; se varía su distribución para evitar una línea uniforme. Texto direccional se adelanta por el eje de cámara para que la tabla no recorte letras. El suelo de fondo se extiende sin alterar el prefab de 80 m o la mazmorra. Las muestras posteriores se registran en la evidencia final; son contadores de editor/offscreen, no FPS.
+
+Una expectativa nueva de llegada usaba distancia al punto pedido, aun cuando el controlador permite muestrear NavMesh a 0,60 m junto a obstáculos originales. Se corrige el arnés para exigir llegada al destino navegable muestreado dentro de stoppingDistance + 0,08 y comprobar interacción real con el NPC; no se cambian controlador, obstáculos originales o pruebas anteriores. La primera compilación del contador intentó UnityStats.batches, ausente en este editor; se eliminó ese contador, conservando solo APIs disponibles. Incidencias y logs locales se preservan.
+
+## Revisión manual
+
+1. Seleccionar la rama feature/e07-aldea-medieval; depende de E03–E06 y no presupone sus PR fusionados. Abrir ProyectoRPGRTS en Unity 6000.5.8f1. Esperar importación, revisar Console, abrir Assets/01_Scenes/AetherniaVillageDemo.unity y pulsar Play. No ejecutar generadores.
+2. Revisar Game a 1280×720 y 1920×1080; elegir Monje/Guerrero/Mago, comprobar retrato/equipo, escribir nombre y cerrar con ×/ESC. Confirmación humana pendiente.
+3. Seleccionar al héroe y caminar con clic derecho; WASD/flechas/rueda para cámara. Recorrer entrada, plaza, casa abierta y bosque; comprobar cortes/restauración de cubiertas y árboles. Casas cerradas/pozo/utilería son ambientación; interacciones anteriores siguen identificadas por sus etiquetas.
+4. E/Interactuar cerca del habitante (−7,5;−3), aceptar; dirigirse al cargamento (−10;3). Acercarse, esperar llegada, atacar/recuperar y finalizar turnos hasta ganar. Regresar y entregar una sola vez: 20 oro y ración si cabe. Guardar/cargar F5/F9 fuera de combate en cada etapa y repetir con las otras clases.
+5. Probar Inventario/cofre/equipo y Menú/construcción/RTS. El despliegue RTS conserva su zona original; la escalada requiere victoria RPG. Registrar lectura, oclusiones y atascos, además de aprobación artística o cambios solicitados.
+6. Para Windows, extraer el ZIP completo y ejecutar Aethernia.exe junto a Aethernia_Data y DLL; no necesita herramientas internas. Es build Development de revisión, no release final.
+
+F2-07 sigue con 7/8 informado, sin confirmación humana nueva de X/ESC. Aprobación artística E07 y modelos/rig/clips definitivos pendientes. Siguiente actividad recomendada: revisión humana de esta aldea y sus transiciones de visibilidad; E08 no se inicia automáticamente.

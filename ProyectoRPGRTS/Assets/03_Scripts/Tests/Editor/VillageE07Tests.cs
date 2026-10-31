@@ -1,6 +1,7 @@
 using System.Collections;
 using System.IO;
 using System.Text;
+using System.Linq;
 using Aethernia;
 using Aethernia.Editor.Environment;
 using NUnit.Framework;
@@ -54,6 +55,40 @@ namespace Aethernia.Tests.Editor
             }
             File.WriteAllText("Logs/E07-library-geometry.txt",report.ToString());
         }
+        [Test]public void TransformedDemoPreservesOriginalPhysicsNavigationAndQuestReferences()
+        {
+            EditorSceneManager.OpenScene(LostCargoTests.Demo);var root=GameObject.Find(RootName);Assert.That(root,Is.Not.Null);
+            var now=EnvironmentPhysicsSnapshot.Capture(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
+            var original=string.Join("\n",now.Split('\n').Where(l=>!l.StartsWith(RootName+"/",System.StringComparison.Ordinal)));
+            Assert.That(original,Is.EqualTo(File.ReadAllText("../Docs/Validacion/E07_BASE_FISICA.txt").Replace("\r\n","\n")));
+            Assert.That(MedievalQuarterBuilder.Hash(MedievalQuarterBuilder.NavPath),Is.EqualTo(File.ReadAllText(EnvironmentMaterials.Root+"/NavigationBaseline.txt").Trim()));
+            var q=Object.FindAnyObjectByType<LostCargoController>();Assert.That(q.Npc.transform.position,Is.EqualTo(new Vector3(-7.5f,0,-3)));Assert.That(q.Cargo.transform.position,Is.EqualTo(new Vector3(-10,0,3)));
+            foreach(var sceneRoot in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())foreach(var t in sceneRoot.GetComponentsInChildren<Transform>(true))Assert.That(GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(t.gameObject),Is.Zero);
+            foreach(var r in root.GetComponentsInChildren<MeshRenderer>())foreach(var m in r.sharedMaterials)Assert.That(m,Is.Not.Null);
+            Assert.That(RenderSettings.fog,Is.True);Assert.That(GameObject.Find("Directional Light").GetComponent<Light>().shadows,Is.EqualTo(LightShadows.Soft));
+        }
+        [UnityTest]public IEnumerator DoorBehindBuildingForestAndReversibleCutawayStayNavigable()
+        {
+            EditorSceneManager.OpenScene(LostCargoTests.Demo);yield return new EnterPlayMode();yield return null;yield return new WaitForSecondsRealtime(.3f);
+            var d=Object.FindAnyObjectByType<PrototypeDirector>();var root=GameObject.Find(RootName);var rig=Camera.main.GetComponent<IsometricCameraRig>();var canvas=Object.FindAnyObjectByType<VerticalSliceHud>().GetComponent<Canvas>();
+            Assert.That(d.Hero.TryMoveTo(new Vector3(6,0,.3f)),Is.True);yield return Arrive(d.Hero);
+            Assert.That(d.Hero.TryMoveTo(new Vector3(6,0,5)),Is.True);yield return Arrive(d.Hero);rig.FocusOn(d.Hero.transform.position);yield return null;yield return null;
+            var cuts=root.GetComponentsInChildren<RoofCutaway>();Assert.That(cuts.Any(c=>c.IsCutAway),Is.True);Assert.That(VisualBlockers(root,d.Hero.transform.position+Vector3.up*1.55f),Is.Empty,"Hero head visible through native cutaway");
+            canvas.enabled=false;yield return SceneCapture.Save("Logs/E07-cutaway-enabled.png",1920,1080);
+            var physical=EnvironmentPhysicsSnapshot.Capture(UnityEngine.SceneManagement.SceneManager.GetActiveScene());foreach(var c in cuts)c.enabled=false;
+            Assert.That(VisualBlockers(root,d.Hero.transform.position+Vector3.up*1.55f).Length,Is.GreaterThan(0),"Reproduce geometric obstruction when cutaway is disabled");yield return SceneCapture.Save("Logs/E07-cutaway-disabled.png",1920,1080);
+            Assert.That(EnvironmentPhysicsSnapshot.Capture(UnityEngine.SceneManagement.SceneManager.GetActiveScene()),Is.EqualTo(physical));foreach(var c in cuts)c.enabled=true;canvas.enabled=true;yield return null;yield return null;
+            Assert.That(VisualBlockers(root,d.Hero.transform.position+Vector3.up*1.55f),Is.Empty);
+            foreach(var point in new[]{new Vector3(10,0,10.7f),new Vector3(-10.5f,0,7.5f),new Vector3(-17.3f,0,1.7f),new Vector3(-7.5f,0,-4.1f)})
+            {
+                Assert.That(UnityEngine.AI.NavMesh.SamplePosition(point,out var destination,.6f,d.Hero.Agent.areaMask),Is.True);
+                Assert.That(d.Hero.TryMoveTo(point),Is.True);yield return Arrive(d.Hero);rig.FocusOn(point);yield return null;yield return null;
+                Assert.That(Vector3.Distance(d.Hero.transform.position,destination.position),Is.LessThan(d.Hero.Agent.stoppingDistance+.08f),"Arrival at reachable sampled destination: "+point);Assert.That(VisualBlockers(root,d.Hero.transform.position+Vector3.up*1.55f),Is.Empty,"Visible on route at "+point);
+            }
+            Assert.That(Object.FindAnyObjectByType<LostCargoController>().Npc.TryInteract(d.Hero,d.Session),Is.True,"NPC remains within real interaction range after return");
+            File.WriteAllText("Logs/E07-navigation-cutaway.txt","PASS: real NavMesh movement through retained open door/interior, behind building, woodland and NPC; native geometric occlusion reproduced with cutaway disabled, removed with cutaway enabled, original physics unchanged on toggling. Human review pending.");
+            LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
+        }
         [UnityTest]public IEnumerator ComparableViewsAndMissionUseRealGameCamera()
         {
             EditorSceneManager.OpenScene(LostCargoTests.Demo);
@@ -105,6 +140,28 @@ namespace Aethernia.Tests.Editor
         {
             var c=Camera.main;c.transform.rotation=Quaternion.Euler(35.26439f,45,0);c.orthographicSize=size;c.transform.position=focus-c.transform.forward*45;
             yield return SceneCapture.Save("Logs/E07-"+label+"/"+name+".png",1920,1080);
+            if(name=="01-Overview")
+            {
+                var root=GameObject.Find(RootName);var triangles=0;var renderers=0;var active=0;var activeTriangles=0;
+                if(root!=null){renderers=root.GetComponentsInChildren<Renderer>().Length;active=root.GetComponentsInChildren<Renderer>().Count(r=>r.enabled&&!r.forceRenderingOff);foreach(var f in root.GetComponentsInChildren<MeshFilter>()){triangles+=f.sharedMesh.triangles.Length/3;if(f.GetComponent<Renderer>().enabled&&!f.GetComponent<Renderer>().forceRenderingOff)activeTriangles+=f.sharedMesh.triangles.Length/3;}}
+                File.WriteAllText("Logs/E07-"+label+"/rendering.txt","UnityStats after native Game render: drawCalls="+UnityStats.drawCalls+"; setPass="+UnityStats.setPassCalls+"; frameTriangles="+UnityStats.triangles+"; E07 renderers="+renderers+"; active="+active+"; retained triangles="+triangles+"; activeTriangles="+activeTriangles+". Counters are editor batch/offscreen samples, not FPS; retained includes disabled source foliage, zero counters mean unavailable.");
+            }
+        }
+        private static string[] VisualBlockers(GameObject root,Vector3 target)
+        {
+            var c=Camera.main;var depth=Vector3.Dot(target-c.transform.position,c.transform.forward);var ray=new Ray(target-c.transform.forward*depth,c.transform.forward);var hits=new System.Collections.Generic.List<string>();
+            foreach(var f in root.GetComponentsInChildren<MeshFilter>())
+            {
+                var r=f.GetComponent<Renderer>();if(r==null||!r.enabled||r.forceRenderingOff||!r.bounds.IntersectRay(ray,out var boundHit)||boundHit>=depth-.05f)continue;
+                var vertices=f.sharedMesh.vertices;var tris=f.sharedMesh.triangles;var matrix=f.transform.localToWorldMatrix;
+                for(var i=0;i<tris.Length;i+=3)if(Triangle(ray,matrix.MultiplyPoint3x4(vertices[tris[i]]),matrix.MultiplyPoint3x4(vertices[tris[i+1]]),matrix.MultiplyPoint3x4(vertices[tris[i+2]]),depth-.05f)){hits.Add(f.transform.parent.name+"/"+f.name);break;}
+            }
+            return hits.ToArray();
+        }
+        private static bool Triangle(Ray ray,Vector3 a,Vector3 b,Vector3 c,float max)
+        {
+            var e1=b-a;var e2=c-a;var p=Vector3.Cross(ray.direction,e2);var det=Vector3.Dot(e1,p);if(Mathf.Abs(det)<.000001f)return false;
+            var inv=1/det;var s=ray.origin-a;var u=Vector3.Dot(s,p)*inv;if(u<0||u>1)return false;var q=Vector3.Cross(s,e1);var v=Vector3.Dot(ray.direction,q)*inv;if(v<0||u+v>1)return false;var distance=Vector3.Dot(e2,q)*inv;return distance>0&&distance<max;
         }
         private static IEnumerator Arrive(ExplorationUnit hero)
         {yield return null;var until=Time.realtimeSinceStartup+15;while(hero.IsMoving&&Time.realtimeSinceStartup<until)yield return null;Assert.That(hero.IsMoving,Is.False,"E07 route timed out");}
