@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.MedievalUiTheme
   Panel: {r: 0.12, g: 0.1, b: 0.085, a: 0.96}
   Button: {r: 0.28, g: 0.22, b: 0.14, a: 1}
-  Gold: {r: 0.85, g: 0.67, b: 0.34, a: 1}
-  Text: {r: 0.94, g: 0.89, b: 0.76, a: 1}
+  Gold: {r: 0.88235295, g: 0.7607843, b: 0.53333336, a: 1}
+  Text: {r: 0.94509804, g: 0.90588236, b: 0.8156863, a: 1}
   Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  BodyFontSize: 16
+  BodyFontSize: 17
   ButtonFontSize: 16
   HeadingFontSize: 20
   Spacing: 8
   Padding: 16
   ActionButtonSize: {x: 116, y: 34}
+  PanelSprite: {fileID: 21300000, guid: 57657a8ce47f93e47bde181b646d6818, type: 2}
+  PaperSprite: {fileID: 21300000, guid: 3e704a4f4a250064b8739660fbf0b12b, type: 2}
+  ButtonSprite: {fileID: 21300000, guid: 011d7cd9d6423e14da7bef74d4009533, type: 2}
+  InsetSprite: {fileID: 21300000, guid: daaa7efd6f3979d45b822213879d0eb4, type: 2}
+  Ink: {r: 0.16, g: 0.12, b: 0.08, a: 1}

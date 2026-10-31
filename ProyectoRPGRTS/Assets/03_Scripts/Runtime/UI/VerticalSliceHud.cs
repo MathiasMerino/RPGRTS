@@ -27,6 +27,10 @@ namespace Aethernia
         [SerializeField] private GameObject explorationPages;
         [SerializeField] private RectTransform actionGrid;
         [SerializeField] private ClassReferenceCard classReference;
+        [SerializeField] private MedievalHudView compactView;
+        public MedievalHudView CompactView => compactView;
+        public void ConfigureCompact(MedievalHudView view,HudBinding[] extra)
+        { compactView=view;var all=new HudBinding[bindings.Length+extra.Length];Array.Copy(bindings,all,bindings.Length);Array.Copy(extra,0,all,bindings.Length,extra.Length);bindings=all; }
         private float refreshAt;
         private PrototypeMode lastMode;
         private bool layoutApplied;
@@ -41,9 +45,18 @@ namespace Aethernia
             Array.Copy(bindings, all, bindings.Length); Array.Copy(pageButtons, 0, all, bindings.Length, pageButtons.Length); bindings = all;
         }
         public void SelectPage(ExplorationPage page)
-        { if (session.Mode == PrototypeMode.Exploration) { ActivePage = page; Refresh(); } }
+        { if (session.Mode == PrototypeMode.Exploration) { ActivePage = page; if(compactView!=null) compactView.Open(); Refresh(); } }
+        public void ClosePanels() { if(compactView!=null) compactView.Close(); Refresh(); }
         private void Dispatch(string id)
         {
+            if(compactView!=null)
+            {
+                if(id=="close") {ClosePanels();return;}
+                if(id=="help") {compactView.ToggleHelp();Refresh();return;}
+                if(id=="back") {director.Execute("explore");return;}
+                if(id.StartsWith("item-")) {compactView.Inventory.Select(id.Substring(5));Refresh();return;}
+                if(id==PageId()&&compactView.WindowOpen) {ClosePanels();return;}
+            }
             if (id == "page-overview") SelectPage(ExplorationPage.Overview);
             else if (id == "page-character") SelectPage(ExplorationPage.Character);
             else if (id == "page-inventory") SelectPage(ExplorationPage.Inventory);
@@ -58,14 +71,14 @@ namespace Aethernia
             {
                 var id = binding.Id;
                 binding.Label = binding.Button.GetComponentInChildren<Text>(true);
-                if (theme != null) StyleText(binding.Label, theme.ButtonFontSize);
+                if (theme != null) StyleText(binding.Label, compactView!=null&&binding.Id.StartsWith("page-")?15:theme.ButtonFontSize);
                 binding.Listener = () => Dispatch(id);
                 binding.Button.onClick.AddListener(binding.Listener);
             }
             if (nameInput != null) nameInput.onEndEdit.AddListener(session.Rename);
             if (theme != null)
             {
-                StyleText(detail, theme.BodyFontSize); StyleText(controls, theme.BodyFontSize);
+                if(compactView==null) StyleText(detail, theme.BodyFontSize); StyleText(controls, theme.BodyFontSize);
                 StyleText(stats, theme.BodyFontSize + 1);
                 if (nameInput != null) StyleText(nameInput.textComponent, theme.BodyFontSize + 1);
             }
@@ -78,10 +91,15 @@ namespace Aethernia
             foreach (var binding in bindings) if (binding.Button != null && binding.Listener != null) binding.Button.onClick.RemoveListener(binding.Listener);
             if (nameInput != null) nameInput.onEndEdit.RemoveListener(session.Rename);
         }
-        private void Update() { if (Time.unscaledTime > refreshAt) { refreshAt = Time.unscaledTime + 0.5f; Refresh(); } }
+        private void Update()
+        {
+            if(compactView!=null&&UnityEngine.InputSystem.Keyboard.current!=null&&UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame) ClosePanels();
+            if (Time.unscaledTime > refreshAt) { refreshAt = Time.unscaledTime + 0.5f; Refresh(); }
+        }
         private void Refresh()
         {
             if (session == null || session.Rules == null) return;
+            if(compactView!=null) { RefreshCompact();return; }
             if (!layoutApplied || lastMode != session.Mode)
             {
                 ActivePage = ExplorationPage.Overview; lastMode = session.Mode; layoutApplied = true;
@@ -133,6 +151,49 @@ namespace Aethernia
             }
         }
         private string Heading(string title) => "<b><size=" + (theme != null ? theme.HeadingFontSize : 20) + ">" + title + "</size></b>";
+        private void RefreshCompact()
+        {
+            if(!layoutApplied||lastMode!=session.Mode)
+            {ActivePage=ExplorationPage.Overview;lastMode=session.Mode;layoutApplied=true;compactView.Close();}
+            var exploring=session.Mode==PrototypeMode.Exploration;
+            if(nameInput!=null&&!nameInput.isFocused&&nameInput.text!=session.State.Name)nameInput.SetTextWithoutNotify(session.State.Name);
+            compactView.Render(session,director,ActivePage);
+            if(controls!=null)controls.text=Help(session.Mode);
+            foreach(var b in bindings)
+            {
+                var id=b.Id;var visible=true;var ready=true;
+                if(id.StartsWith("mode-")) {visible=exploring&&compactView.WindowOpen&&ActivePage==ExplorationPage.Session;ready=!director.IsBusy;}
+                else if(id=="back") {visible=!exploring;ready=!director.IsBusy;}
+                else if(id=="help") { }
+                else if(id=="close") visible=exploring&&compactView.WindowOpen;
+                else if(id.StartsWith("page-"))
+                {
+                    visible=exploring||id=="page-session";ready=exploring;
+                    if(b.Label!=null) {var selected=compactView.WindowOpen&&id==PageId();b.Label.fontStyle=selected?FontStyle.Bold:FontStyle.Normal;b.Label.color=selected?theme.Gold:theme.Text;}
+                }
+                else if(id.StartsWith("item-")) {visible=exploring&&compactView.WindowOpen&&ActivePage==ExplorationPage.Inventory;ready=compactView.Inventory.Count(session.State,id.Substring(5))>0;}
+                else
+                {
+                    var action=id=="attack"||id=="guard"||id=="recover"||id=="end"||id=="approach";
+                    var war=id=="select-all"||id=="charge";
+                    visible=session.Mode==PrototypeMode.TurnCombat?action||id=="escalate":session.Mode==PrototypeMode.Rts?war:exploring&&compactView.ActionVisible(id,ActivePage);
+                    ready=action?director.Encounter.Battle!=null&&!director.Encounter.Battle.Finished&&!director.Hero.IsMoving:
+                        war?director.Rts.Active:id=="escalate"?!director.IsBusy&&session.HasFact("rpg-victory"):!director.IsBusy;
+                    if(action&&id!="end"&&id!="approach"&&director.Encounter.Battle!=null)ready&=director.Encounter.Battle.ActionAvailable;
+                    if(id=="recover"&&director.Encounter.Battle!=null)ready&=!director.Encounter.Battle.RecoveryUsed&&session.State.Health<session.Rules.Find(session.State.ClassId).Health;
+                    if(id=="ration") ready&=compactView.Inventory.Count(session.State,"ration")>0&&session.State.Health<session.Rules.Find(session.State.ClassId).Health;
+                    if(id=="sword"||id=="armour")ready&=compactView.Inventory.Count(session.State,id=="sword"?"training-sword":"cloth")>0;
+                    if(id=="trade")ready&=session.State.Gold>=5;
+                    if(id.StartsWith("class-")&&b.Label!=null)
+                    {
+                        var chosen=id=="class-"+session.State.ClassId;
+                        b.Label.text=(chosen?"• ":"")+session.Rules.Find(id.Substring(6)).Title;
+                        b.Label.fontStyle=chosen?FontStyle.Bold:FontStyle.Normal;
+                    }
+                }
+                b.Button.gameObject.SetActive(visible);b.Button.interactable=ready;
+            }
+        }
         private void StyleText(Text text, int size)
         { if (text != null) { text.font = theme.Font; text.fontSize = size; text.color = theme.Text; } }
         private string PageId() => ActivePage == ExplorationPage.Character ? "page-character" : ActivePage == ExplorationPage.Inventory ? "page-inventory" : ActivePage == ExplorationPage.Session ? "page-session" : "page-overview";

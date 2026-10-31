@@ -41,7 +41,9 @@ namespace Aethernia.Tests.Editor
             Assert.That(d.Save(Path.GetFullPath("Logs/busy-save.json")), Is.False);
             Assert.That(d.Load(Path.GetFullPath("Logs/busy-save.json")), Is.False);
             Assert.That(d.Session.Mode, Is.EqualTo(PrototypeMode.Rts));
-            Assert.That(GameObject.Find("Combate RPG").GetComponent<Button>().interactable, Is.False);
+            var hud=Object.FindAnyObjectByType<VerticalSliceHud>();
+            var modeButton=System.Array.Find(hud.GetComponentsInChildren<Button>(true),b=>b.name=="Combate RPG");
+            Assert.That(modeButton.interactable, Is.False);Assert.That(modeButton.gameObject.activeInHierarchy, Is.False);
             LogAssert.NoUnexpectedReceived(); yield return new ExitPlayMode();
         }
 
@@ -172,7 +174,8 @@ namespace Aethernia.Tests.Editor
             Assert.That(d.Hero.Warp(new Vector3(-3.4f, 0, -5)), Is.True); yield return null;
             Assert.That(commands.Interact(), Is.True);
             Assert.That(d.Execute("sword"), Is.True); Assert.That(d.Execute("armour"), Is.True);
-            Assert.That(GameObject.Find("Context Actions").GetComponentsInChildren<Text>()[0].text, Does.Contain("Equipo: espada / túnica"));
+            var hud=Object.FindAnyObjectByType<VerticalSliceHud>();hud.SelectPage(ExplorationPage.Character);
+            Assert.That(hud.CompactView.Equipment.text, Does.Contain("espada").And.Contain("túnica"));
             LogAssert.NoUnexpectedReceived(); yield return new ExitPlayMode();
         }
 

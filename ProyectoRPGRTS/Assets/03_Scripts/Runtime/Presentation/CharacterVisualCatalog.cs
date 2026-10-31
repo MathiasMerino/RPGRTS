@@ -13,6 +13,7 @@ namespace Aethernia
             public GameObject HumanoidPrefab;
             public Texture2D ReferenceArt;
             public Rect ReferenceUv = new Rect(0, 0, 1, 1);
+            public string ReferenceCaption = "Referencia 2D provisional";
         }
         public Entry[] Entries = Array.Empty<Entry>();
         public Entry FindEntry(string id)

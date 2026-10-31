@@ -59,7 +59,8 @@ namespace Aethernia.Tests.Editor
             Assert.That(d.Execute("sword")&&d.Execute("armour"),Is.True);Assert.That(presenter.Model.SwordVisible&&presenter.Model.ArmourVisible,Is.True);
             var card=hud.GetComponentInChildren<ClassReferenceCard>(true);Assert.That(card.gameObject.activeSelf,Is.True);
             var save="Logs/E02B-save.json";Assert.That(d.Save(save),Is.True);
-            Button(hud,"Guerrero").onClick.Invoke();Assert.That(card.gameObject.activeSelf,Is.False);
+            Button(hud,"Guerrero").onClick.Invoke();Assert.That(card.gameObject.activeSelf,Is.True);
+            Assert.That(card.Portrait.texture,Is.SameAs(hud.CompactView.Catalog.FindEntry("warrior").ReferenceArt));
             Button(hud,"Mago").onClick.Invoke();Assert.That(presenter.DisplayedClass,Is.EqualTo("mage"));
             Assert.That(d.Load(save),Is.True);yield return null;yield return null;
             Assert.That(presenter.DisplayedClass,Is.EqualTo("monk"));Assert.That(presenter.Model.SwordVisible&&presenter.Model.ArmourVisible,Is.True);
@@ -107,7 +108,8 @@ namespace Aethernia.Tests.Editor
             var context=hud.transform.Find("Context Actions").GetComponent<RectTransform>();var cardRect=card.GetComponent<RectTransform>();
             var corners=new Vector3[4];cardRect.GetWorldCorners(corners);
             foreach(var corner in corners)Assert.That(RectTransformUtility.RectangleContainsScreenPoint(context,RectTransformUtility.WorldToScreenPoint(Camera.main,corner),Camera.main),Is.True);
-            Assert.That(card.Information.text,Does.Contain("Monje").And.Contain("20 PV base").And.Contain("Daño base 5").And.Contain("Referencia 2D provisional"));
+            Assert.That(card.Information.text,Does.Contain("Monje").And.Contain("provisional"));
+            Assert.That(hud.CompactView.Body.text,Does.Contain("Daño base: 5").And.Contain("20 / 20 PV"));
             Assert.That(card.Information.preferredHeight,Is.LessThanOrEqualTo(card.Information.rectTransform.rect.height+1));
             var photo=card.Portrait;var ratio=photo.rectTransform.rect.width/photo.rectTransform.rect.height;
             var expected=photo.texture.width*photo.uvRect.width/(photo.texture.height*photo.uvRect.height);Assert.That(ratio,Is.EqualTo(expected).Within(.002f));

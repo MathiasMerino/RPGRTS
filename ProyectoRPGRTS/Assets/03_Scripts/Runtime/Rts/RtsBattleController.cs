@@ -24,6 +24,7 @@ namespace Aethernia
         public int StartingAllyHealth { get; private set; }
         public int Allies => soldiers.Count(s => s.Team == 0 && s.Health > 0);
         public int Enemies => soldiers.Count(s => s.Team == 1 && s.Health > 0);
+        public int SelectedAllies => soldiers.Count(s => s.Team == 0 && s.Health > 0 && s.Unit != null && s.Unit.IsSelected);
         public bool Won => !Active && Allies > 0 && Enemies == 0 && soldiers.Count > 0;
         public void Configure(GameSession game, GameObject pawn, Material material) { session = game; template = pawn; hostile = material; }
         public void Clear()

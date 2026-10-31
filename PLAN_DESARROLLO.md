@@ -175,3 +175,7 @@ El encargo posterior «E02-A — Diseño artístico del Monje basado en referenc
 ## E02-B — Identidad visual provisional autorizada
 
 Nuevo encargo acotado: aplicar concepto del Monje mediante prefab estático de 1,78 m, materiales compartidos y tarjeta dentro del panel Personaje, conservando variante E01/candidato E02 y todos los sistemas. Orden: checkpoint codex/e02-b-base-afa1e7e, autoría de mallas por material sin primitivas runtime, equipo reutilizado, recorte UV de ilustración original, tres pruebas de aceptación/capturas, regresión y build. Informe único Docs/E02B_MONJE_PROVISIONAL.md. No equivale a aprobación artística final ni cierra F2-07, E02-M, E02-A de clips o C02; no iniciar fase siguiente automáticamente.
+
+## C02 — Rediseño medieval autorizado
+
+Nuevo brief concreta seis bloques F3-C02.1..6: auditoría, sistema visual, HUD compacto, ficha/inventario, contextos por modalidad y validación. Se conserva F3-C02 histórico (mapa/registro/retrato) como historial; el alcance actual no inventa minimapa/compañeros/habilidades ausentes. Se implementa registro de hechos existentes, retratos de tres clases y ventanas cerrables con comandos actuales. Checkpoint codex/c02-base-25c1a10; rama codex/c02-medieval-ui. Informe único Docs/C02_INTERFAZ_MEDIEVAL.md. Orden aplicado: inspección/atlas original, autoría acotada, pruebas de aceptación/capturas, correcciones de serialización/lectura/orden UI, regresión y build. F2-07 y recursos de personaje definitivos siguen pendientes; no iniciar otra fase automáticamente.

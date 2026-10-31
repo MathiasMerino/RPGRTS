@@ -16,5 +16,7 @@ namespace Aethernia
         public float Spacing = 8;
         public float Padding = 16;
         public Vector2 ActionButtonSize = new Vector2(116, 34);
+        public Sprite PanelSprite, PaperSprite, ButtonSprite, InsetSprite;
+        public Color Ink = new Color(.16f, .12f, .08f);
     }
 }

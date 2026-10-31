@@ -16,23 +16,29 @@ MonoBehaviour:
   - ClassId: warrior
     Prefab: {fileID: 8369214138543721982, guid: 77a3bd0aa4cf3644eb4f8bece7b54bab, type: 3}
     HumanoidPrefab: {fileID: 0}
-    ReferenceArt: {fileID: 0}
+    ReferenceArt: {fileID: 2800000, guid: c0e68875e2e83e54eb107bfe2caa82f7, type: 3}
     ReferenceUv:
       serializedVersion: 2
       x: 0
       y: 0
       width: 1
       height: 1
+    ReferenceCaption: 'Modelo provisional
+
+      Guerrero'
   - ClassId: mage
     Prefab: {fileID: 4818405744351380324, guid: 40d020de17dfb964ba654bd20ce92b44, type: 3}
     HumanoidPrefab: {fileID: 0}
-    ReferenceArt: {fileID: 0}
+    ReferenceArt: {fileID: 2800000, guid: 95a0fe240353d144f9b4b417260a38fe, type: 3}
     ReferenceUv:
       serializedVersion: 2
       x: 0
       y: 0
       width: 1
       height: 1
+    ReferenceCaption: 'Modelo provisional
+
+      Mago'
   - ClassId: monk
     Prefab: {fileID: 1303856060874188198, guid: f70b889bed681c342ab579393e215893, type: 3}
     HumanoidPrefab: {fileID: 4750980465152403662, guid: 5d7798e04da39794aaa631ef5aa5d1c5, type: 3}
@@ -43,3 +49,4 @@ MonoBehaviour:
       y: 0.7529297
       width: 0.09765625
       height: 0.20019531
+    ReferenceCaption: "Ilustraci\xF3n conceptual\nMonje \xB7 provisional"

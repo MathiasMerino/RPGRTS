@@ -35,7 +35,7 @@ namespace Aethernia.Tests.Editor
             Assert.That(GameObject.Find("Interaction Chest").GetComponent<InteractionPoint>().TryInteract(d.Hero, d.Session), Is.True);
             FindButton("Inventario").onClick.Invoke();
             Assert.That(hud.ActivePage, Is.EqualTo(ExplorationPage.Inventory));
-            AssertActionCount(4); Assert.That(FindInput().gameObject.activeInHierarchy, Is.False);
+            AssertActionCount(2); Assert.That(FindInput().gameObject.activeInHierarchy, Is.False);
             AssertListenersAreNotDuplicated(hud, d.Session);
             Assert.That(d.Session.State.Weapon, Is.EqualTo("training-sword"));
             var gold = d.Session.State.Gold;
@@ -73,7 +73,7 @@ namespace Aethernia.Tests.Editor
 
         private static VerticalSliceHud Hud() => Object.FindAnyObjectByType<VerticalSliceHud>();
         private static InputField FindInput() => Hud().GetComponentInChildren<InputField>(true);
-        private static Text HelpText() => Hud().transform.Find("Controls").GetComponentInChildren<Text>();
+        private static Text HelpText() => Hud().transform.Find("Controls").GetComponentInChildren<Text>(true);
         private static Button FindButton(string name)
         {
             foreach (var button in Hud().GetComponentsInChildren<Button>(true)) if (button.name == name) return button;
@@ -91,6 +91,7 @@ namespace Aethernia.Tests.Editor
         private static void AssertListenersAreNotDuplicated(VerticalSliceHud hud, GameSession session)
         {
             for (var i = 0; i < 5; i++) { hud.enabled = false; hud.enabled = true; }
+            FindButton("Item training-sword").onClick.Invoke();
             var messages = 0; System.Action<string> listener = _ => messages++;
             session.Message += listener; FindButton("Equipar espada").onClick.Invoke(); session.Message -= listener;
             Assert.That(messages, Is.EqualTo(1), "One UI command must dispatch once after re-enabling.");

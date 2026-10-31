@@ -13,6 +13,8 @@ namespace Aethernia
         public int HeroHealth { get; private set; }
         public int EnemyHealth { get; private set; } = 18;
         public bool ActionAvailable { get; private set; } = true;
+        public bool Guarding => guarding;
+        public bool RecoveryUsed => recovered;
         public float MovementRemaining { get; private set; } = 4;
         public int HeroInitiative { get; }
         public int EnemyInitiative { get; }

@@ -83,6 +83,8 @@ La fuente actual LegacyRuntime.ttf es provisional y procede de Unity. Una futura
 
 C2 pendiente: retrato del único héroe (sin simular compañeros), mapa de la región técnica y diario de los hechos existentes; habilidades/estados y categorías/formaciones solo cuando tengan soporte de datos real. No añadir botones vacíos ni presentar nuevas mecánicas como implementadas.
 
+Actualización C02 posterior autorizada: HUD de dos franjas compactas y ventanas cerrables, atlas original de madera/bronce/pergamino/hierro/cuero, selección marcada con texto/negrita y barras con valores numéricos. Fuente Unity legible, cuerpo 16–18 px y navegación 15 px a referencia 1280×720. Ficha compartida para tres clases; Guerrero/Mago con renders de su geometría provisional, Monje con concepto E02-A/E02-B. Inventario seleccionable de categorías existentes; registro de hechos/reputación, sin nuevo sistema de misiones. Mapa/minimapa, compañeros, habilidades y formaciones ausentes siguen fuera de alcance y no tienen accesos ficticios. La validación humana F2-07 y aprobación artística final siguen pendientes. [Informe, materiales, capturas y resultados C02](../Docs/C02_INTERFAZ_MEDIEVAL.md).
+
 ## Validación y recursos
 
 Criterios de C1: acciones incompatibles ocultas, todas las acciones anteriores accesibles en su contexto, sin doble suscripción, ratón/escritura no ordenan al mundo, sin recortes/solapamiento a 720p/1080p y regresión de navegación/guardado/RPG/RTS. Capturas reales antes/después y build con recorrido automatizado. F2-07 continúa pendiente: estas pruebas no evalúan diversión humana.

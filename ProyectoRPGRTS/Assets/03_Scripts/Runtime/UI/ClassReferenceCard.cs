@@ -10,6 +10,8 @@ namespace Aethernia
         [SerializeField] private RawImage portrait;
         [SerializeField] private AspectRatioFitter aspect;
         [SerializeField] private Text information;
+        [SerializeField] private bool portraitOnly;
+        public void UsePortraitCaption() { portraitOnly=true; }
         public RawImage Portrait => portrait;
         public Text Information => information;
         public void Configure(CharacterVisualCatalog data, RawImage image, AspectRatioFitter fitter, Text text)
@@ -21,7 +23,7 @@ namespace Aethernia
             gameObject.SetActive(visible); if(!visible) return;
             portrait.texture=entry.ReferenceArt; portrait.uvRect=entry.ReferenceUv;
             aspect.aspectRatio=entry.ReferenceArt.width*entry.ReferenceUv.width/(entry.ReferenceArt.height*entry.ReferenceUv.height);
-            information.text=profile.Title+" · "+profile.Health+" PV base\nDaño base "+profile.Damage+"\n"+profile.Range.ToString("0.#")+" m · "+profile.Speed.ToString("0.#")+" m/s\nReferencia 2D provisional";
+            information.text=portraitOnly ? entry.ReferenceCaption : profile.Title+" · "+profile.Health+" PV base\nDaño base "+profile.Damage+"\n"+profile.Range.ToString("0.#")+" m · "+profile.Speed.ToString("0.#")+" m/s\nReferencia 2D provisional";
         }
     }
 }

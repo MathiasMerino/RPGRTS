@@ -15,10 +15,11 @@ namespace Aethernia.Tests.Editor
             {
                 canvas.renderMode = RenderMode.ScreenSpaceCamera; canvas.worldCamera = camera; canvas.planeDistance = 2; camera.targetTexture = target;
                 yield return null; yield return null; yield return null;
-                Canvas.ForceUpdateCanvases(); validate?.Invoke(width, height);
+                Canvas.ForceUpdateCanvases();
                 var active = RenderTexture.active; RenderTexture.active = target;
                 image = new Texture2D(width, height, TextureFormat.RGB24, false); image.ReadPixels(new Rect(0, 0, width, height), 0, 0); image.Apply(); RenderTexture.active = active;
                 File.WriteAllBytes(file, image.EncodeToPNG());
+                validate?.Invoke(width, height);
             }
             finally
             {

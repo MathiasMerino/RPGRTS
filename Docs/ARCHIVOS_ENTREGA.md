@@ -2,6 +2,10 @@
 
 La primera tabla conserva el inventario de la primera etapa. Al final se registra la segunda etapa. Cada asset nuevo incluye su `.meta`, aunque la tabla omite esos acompañantes para facilitar la lectura. Los binarios y registros quedan fuera de Git.
 
+## Adición C02
+
+Informe Docs/C02_INTERFAZ_MEDIEVAL.md y capturas Docs/Images/C02-*; referencias privadas/prompt en Documentacion/UI/C02. Assets/08_UI/Medieval contiene atlas original, cuatro sprites compartidos y dos retratos de modelos E01; Assets/02_Prefabs/UI/C02 contiene plantillas MedievalWindow/ActionSlot. Runtime: MedievalHudView/InventoryPanelView y adiciones de presentación a VerticalSliceHud, ClassReferenceCard, catálogo/tema; lecturas de estado en TurnBattle y RTS. Editor: C02HudBuilder y modos MedievalHud/MedievalHudRefine del lanzador. Pruebas: MedievalHudTests, adaptación de selectores/layouts en tests previos y capturas guardadas incluso al fallar validación. La escena cambia únicamente UI, manteniendo física/NavMesh y recursos del mundo. Build portable local Aethernia-Fase3-C02-Windows.zip; resultados/limitaciones en informe.
+
 ## Adición E02
 
 Entrega posterior E02-B: `Docs/E02B_MONJE_PROVISIONAL.md` y siete capturas `Docs/Images/E02B-*`; prefab `Assets/02_Prefabs/Characters/MonkProvisional/Monk_ConceptProxy.prefab`; dos materiales/seis mallas/una ilustración en `Assets/07_Characters/MonkProvisional/`; `Assets/02_Prefabs/UI/ClassReferenceCard.prefab`. Autoría: MonkIdentityBuilder/MonkProxyGeometry; runtime: ClassReferenceCard y adiciones pequeñas a catálogo/HUD; pruebas MonkIdentityTests y talla actualizada en CharacterVisualTests; modo MonkIdentity en lanzador y referencia uGUI en assembly de editor existente. Catálogo/escena cambian presentación únicamente. Fuentes anteriores, guía E02, candidato vacío y estados pendientes se conservan. Build local: `ProyectoRPGRTS/Builds/Aethernia-Fase3-E02B-Windows.zip`; resultados exactos en el informe E02-B.

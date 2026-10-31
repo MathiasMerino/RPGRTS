@@ -1,6 +1,6 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B.
+Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
 
 ## Resumen actual
 
@@ -20,6 +20,8 @@ Actualizado: 2026-10-30, America/La_Paz. Fase 3 autorizada mediante el prompt «
 - E02-A artístico: ficha/hoja conceptual entregadas y revisadas en Documentacion/Personajes/MONJE_DISENO_BASE.md; diseño **PROPUESTO, sin aprobación artística**. F3-E02-ARTE-01 cerrada como documentación; F3-E02-ARTE-AP pendiente. No modelo/rig/animaciones nuevos ni cambios al juego.
 
 - E02-B posterior: **F3-E02-B completada y verificada**, nuevo proxy estático Monje 1,78 m y tarjeta de clase; alternativa original E01 conservada. **49/49 pruebas aprobadas**, incluidos tres casos de aceptación, build Windows y recorridos con/sin GPU aprobados. Siete capturas reales revisadas. Informe Docs/E02B_MONJE_PROVISIONAL.md. F3-E02-ARTE-AP, F3-E02-M, F3-E02-A de clips, F2-07 y C02 siguen pendientes. Los apartados anteriores describen sus entregas históricas; el permiso provisional E02-B no es aprobación artística final.
+
+- C02 nuevo brief: **F3-C02.1..6 completadas y verificadas**, HUD compacto, ficha compartida, inventario seleccionable, registro de hechos y contextos por modalidad. **52/52 pruebas**, 44 layouts/capturas a cuatro resoluciones, build y recorridos con/sin GPU PASS; trece capturas representativas. Informe Docs/C02_INTERFAZ_MEDIEVAL.md. F3-C02 histórico se conserva; minimapa, arte final y F2-07 siguen pendientes.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -481,3 +483,62 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Archivos: prefab Characters/MonkProvisional/Monk_ConceptProxy, dos materiales/seis mallas/ilustración en 07_Characters/MonkProvisional; UI/ClassReferenceCard; MonkIdentityBuilder/MonkProxyGeometry/ClassReferenceCard/MonkIdentityTests; catálogo/HUD/escena y assembly de editor con cambios acotados; talla esperada actualizada en CharacterVisualTests; lanzador, informe Docs/E02B_MONJE_PROVISIONAL.md, siete Docs/Images/E02B-*, guías/arquitectura/escala/plan/registro.
 - Pruebas: dirigidas 3/3; regresión 49/49, cero fallos/omisiones, salida 0. Monje 1,78 m, 5.252 triángulos/10 renderers con equipo; URP, controles existentes/selección física, ruta real/cofre/inventario/equipo, guardado/carga, victoria RPG y UI 720p/1080p aprobados; Guerrero/Mago preservados. Siete capturas Play Mode GPU revisadas. Build Windows salida 0, recorridos nativos con/sin GPU PASS/salida 0. Logs/comprobantes E02B-* y ZIP Windows E02B verificados.
 - Resultado / problemas: identidad provisional integrada sin cambios de física/NavMesh/reglas/guardado v1. Checkpoint codex/e02-b-base-afa1e7e y alternativa E01/candidato E02 conservados. Anatomía/uniones/manos/paños simples; equipo genérico con posibles intersecciones y postura estática, sin rig/animación. Aprobación artística final, modelo/rig/clips reales y evaluación humana F2-07 siguen pendientes; no se cierra C02 ni se inicia otra fase.
+
+
+## FASE 3 — C02: rediseño de interfaz medieval
+
+El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C02 anterior se conserva como historial. Sin minimapa funcional o sistemas nuevos; registro/retratos muestran datos existentes.
+
+### F3-C02.1 — Auditoría visual
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: Auditoría visual; UI/UX.
+- Prioridad / dependencias: P1; ninguna.
+- Aceptación: Identificar referencias y componentes existentes, sin auditoría ajena al UI.
+- Archivos: Docs/C02_INTERFAZ_MEDIEVAL.md; referencias privadas en Documentacion/UI/C02.
+- Pruebas: lectura de GDD §12.5 con hash intacto, inspección de uGUI/prefabs/scripts y comparación visual de las tres referencias con capturas E02-B.
+- Resultado / problemas: auditoría de presentación completada; referencias no son evidencia Unity. Se conservan uGUI/controles y se concreta C02.2..6 sin mecánicas ficticias.
+
+### F3-C02.2 — Sistema visual
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: Sistema visual; UI/UX.
+- Prioridad / dependencias: P1; C02.1.
+- Aceptación: Atlas/sprites originales compartidos, texto legible y prefabs reutilizables sin dependencias nuevas.
+- Archivos: Assets/08_UI/Medieval/Textures y Sprites; dos prefabs UI/C02; MedievalUiTheme; prompt en Documentacion/UI/C02.
+- Pruebas: Atlas original 1254×1254, cuatro sprites sobre una textura; estilos/portraits verificados en Unity y capturas. Fuentes previas/prefabs intactos, sin dependencias nuevas.
+- Resultado / problemas: verificado técnicamente. Correcciones de serialización, texto y orden de dibujo documentadas; fuentes/modelos/arte provisionales y evaluación humana F2-07 pendientes. No minimapa o mecánicas nuevas.
+
+### F3-C02.3 — HUD de exploración
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: HUD de exploración; UI/UX.
+- Prioridad / dependencias: P1; C02.2.
+- Aceptación: Mayoría de pantalla libre; ventanas cerrables, ayuda opcional, salud/recursos reales e input preservado.
+- Archivos: C02HudBuilder, MedievalHudView, VerticalSliceHud, escena PlayablePrototype y Tools/Invoke-UnityValidation.ps1.
+- Pruebas: Cerrar/abrir ventanas, ayuda, raycasts y centro del mundo libre; 23,29 % de ocupación de franjas persistentes. Layouts/UI guardados tras recarga y navegación conservada.
+- Resultado / problemas: verificado técnicamente. Correcciones de serialización, texto y orden de dibujo documentadas; fuentes/modelos/arte provisionales y evaluación humana F2-07 pendientes. No minimapa o mecánicas nuevas.
+
+### F3-C02.4 — Panel Personaje e inventario
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: Panel Personaje e inventario; UI/UX.
+- Prioridad / dependencias: P1; C02.3.
+- Aceptación: Plantilla para tres clases, concepto Monje, datos/equipo reales, selección y acciones del inventario.
+- Archivos: InventoryPanelView, ClassReferenceCard, catálogo ClassVisuals y retratos en 08_UI/Medieval/Portraits; escena y ficha común.
+- Pruebas: Tres clases con datos/retratos reales, nombre y salud; inventario seleccionado, equipo/ración/comercio y carga aislada; un comando por clic tras reactivar HUD.
+- Resultado / problemas: verificado técnicamente. Correcciones de serialización, texto y orden de dibujo documentadas; fuentes/modelos/arte provisionales y evaluación humana F2-07 pendientes. No minimapa o mecánicas nuevas.
+
+### F3-C02.5 — Interfaces contextuales
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: Interfaces contextuales; UI/UX.
+- Prioridad / dependencias: P1; C02.3.
+- Aceptación: RPG/construcción/RTS con comandos/datos existentes, estados diferenciados y retorno seguro.
+- Archivos: MedievalHudView/VerticalSliceHud, getters de lectura en TurnBattle y RtsBattleController; escena/contextos.
+- Pruebas: Cuatro contextos automáticos, iniciativa/acción/guardia RPG, taller/cancelación, selección/órdenes RTS y retorno bloqueado en encuentro; regresión preservada.
+- Resultado / problemas: verificado técnicamente. Correcciones de serialización, texto y orden de dibujo documentadas; fuentes/modelos/arte provisionales y evaluación humana F2-07 pendientes. No minimapa o mecánicas nuevas.
+
+### F3-C02.6 — Validación y entrega
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: Validación y entrega; UI/UX.
+- Prioridad / dependencias: P1; C02.4, C02.5.
+- Aceptación: Compilar, probar cuatro resoluciones y regresión, capturar, build/recorridos, Git y docs; F2-07 pendiente.
+- Archivos: MedievalHudTests; ContextUiValidationTests, MonkIdentityTests y PhaseTwoValidationTests adaptadas; SceneCapture; Docs/C02_INTERFAZ_MEDIEVAL.md, trece Images/C02-*, guías/plan/registro/AGENTS y ZIP C02.
+- Pruebas: 52/52, cero fallos/omisiones, salida 0; 44 layouts/raycasts/textos a 720p/900p/1080p/1440p. Build salida 0; recorridos nativos con/sin GPU PASS/salida 0; ZIP CRC/hashes y siete archivos históricos preservados. 278 metadatos/GUID íntegros; historial/GDD/mundo conservados.
+- Resultado / problemas: verificado técnicamente. Correcciones de serialización, texto y orden de dibujo documentadas; fuentes/modelos/arte provisionales y evaluación humana F2-07 pendientes. No minimapa o mecánicas nuevas.
