@@ -574,3 +574,13 @@ El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C
 - Archivos: Documentacion/Personajes/Conceptos/MONJE_HOJA_PROPUESTA_v02.png y prompt exacto; registro actualizado, v01 conservada.
 - Pruebas: imagen 1536×1024 inspeccionada; seis figuras completas y cuatro recuadros de detalles/paleta, hombro izquierdo cubierto y ropa coherente; PNG/hash verificados. No aplica compilar o ejecutar Unity para este cambio artístico.
 - Resultado / problemas: hoja conceptual 2D entregada, propuesta para revisión; no equivale a turnaround calibrado, FBX, rig o animaciones. Aprobación artística final y F2-07 siguen pendientes; apariencia/UI E02-B/C02 conservadas.
+
+
+### F3-ARTE-GUE-01 — Hoja conceptual del Guerrero
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: nueva propuesta 2D original de Guerrero medieval funcional, coherente con la presentación del Monje; personajes/arte.
+- Prioridad / dependencias: P1; dirección artística y solicitud del usuario del 2026-10-31.
+- Aceptación: frente/perfil/espalda/3/4, pose neutral y guardia de espada, detalles de armadura/cuero/brazal/bota/arma, figura completa y fondo neutro; sin ornamentación excesiva o integración Unity.
+- Archivos: Documentacion/Personajes/Conceptos/GUERRERO_HOJA_PROPUESTA_v01.png y prompt exacto; registro actualizado.
+- Pruebas: PNG 1536×1024 inspeccionado, seis figuras, cinco grupos de detalle y paleta; manos/espada, silueta, materiales y encuadre revisados; hash verificado. No se ejecuta Unity para una entrega raster/documental.
+- Resultado / problemas: concepto propuesto para revisión, no turnaround calibrado o FBX/rig/animación. Escudo/capa opcionales omitidos para priorizar armadura y espada. Talla del prompt orientativa sin cambiar medidas E01 o controlador; F2-07 y aprobación artística final pendientes.
