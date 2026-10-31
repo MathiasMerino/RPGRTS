@@ -1,6 +1,6 @@
 # E03–E06 — Personajes y misión integrada
 
-Fecha: 2026-10-31. En desarrollo en `feature/e03-e06-personajes-vertical-slice`, desde dev `742c04f`. Los tres commits de propuestas artísticas estaban locales; se sincronizaron con origin/dev antes de crear la rama. No hay ramas de reparación F2-07 locales/remotas observadas. Las hojas Monje v02, Guerrero v01 y Mago v01 existen en Documentacion/Personajes/Conceptos; son originales generados, autorizados por el nuevo encargo para integración provisional, sin aprobación de arte definitivo.
+Fecha: 2026-10-31. Entrega técnica verificada en `feature/e03-e06-personajes-vertical-slice`, desde dev `742c04f`. Los tres commits de propuestas artísticas estaban locales; se sincronizaron con origin/dev antes de crear la rama. No hay ramas de reparación F2-07 locales/remotas observadas. Las hojas Monje v02, Guerrero v01 y Mago v01 existen en Documentacion/Personajes/Conceptos; son originales generados, autorizados por el nuevo encargo para integración provisional, sin aprobación de arte definitivo.
 
 ## Plan y dependencias
 
@@ -99,4 +99,9 @@ La primera regresión dio 61/62: una expectativa histórica usaba un nombre de p
 
 Rendimiento acotado: 5.252–6.704 triángulos y 9–11 renderers por prefab incluyendo equipo inactivo, materiales URP compartidos, equipo repetido sin duplicación y recorridos sin bloqueo/errores de navegación/excepciones de juego. Memoria asignada al cierre del probe: 106.720.803 bytes sin gráficos y 117.058.021 con GPU; son muestras de una build Development batch, no un presupuesto final ni un benchmark de FPS. Faltan perfilado interactivo y revisión humana; no se aplica optimización compleja.
 
-Completado técnicamente: E03, E04, E05 y validación/build de E06. Pendientes: confirmación humana F2-07 (7/8 informado, X/ESC pendiente), aprobación artística definitiva, modelos Humanoid/skinning/clips reales y eventual integración del objetivo en Registro tras revisar C02. No se comienza otra fase. Publicación del PR hacia dev en el cierre de entrega; main se conserva.
+Completado técnicamente: E03, E04, E05 y validación/build de E06. Pendientes: confirmación humana F2-07 (7/8 informado, X/ESC pendiente), aprobación artística definitiva, modelos Humanoid/skinning/clips reales y eventual integración del objetivo en Registro tras revisar C02. No se comienza otra fase. [PR #1 en borrador hacia dev](https://github.com/MathiasMerino/RPGRTS/pull/1), rama publicada; main se conserva.
+
+
+### Git y cierre de alcance
+
+Commits por etapa: `136fb87` E03, `50e860b` E04, `e7bc6f4` E05 y `0f86fa9` E06 (código validado). El cierre documental registra el PR #1 y no modifica código/escenas después de la validación. Rama feature/e03-e06-personajes-vertical-slice publicada con seguimiento de origin; no se fusiona dev/main ni se publica release. Los commits anteriores permanecen como ancestros. E03–E06 finaliza técnicamente; evaluación humana y producción artística final permanecen abiertas.

@@ -627,9 +627,9 @@ Diseños autorizados para uso provisional. F2-07: usuario informa 7/8, cierre X/
 - Resultado / problemas: completada técnicamente; misión y NPC provisionales, diálogo/objetivo desacoplados de C02. Escena original preservada; revisión humana pendiente. No se simula victoria ni se cambia formato de guardado.
 
 ### PROD-E06 — Regresión, capturas, build y PR
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: producción integrada / P1. Dependencias: E03/E04/E05.
 - Aceptación: criterios del encargo E06, implementación en Unity y pruebas; validación humana diferenciada.
 - Archivos: VerticalSliceHud, GameSession.Rename, BuildSmokeProbe/CargoQuestSmoke, ProductionInputTests/MonkIdentityTests, lanzador smoke RequireCargo, documentación y capturas E06; Docs/Validacion/E03_E06_RESULTADOS.json.
 - Pruebas: dirigida de entrada 1/1, regresión completa 62/62, build Windows x64 salida 0; recorridos headless/GPU con sistemas previos y misión con tres clases PASS; ZIP CRC/binarios/históricos verificados.
-- Resultado / problemas: validación técnica aprobada; resta publicar/verificar PR. Fallo inicial 61/62 por nombre esperado de prefab corregido y toda la batería repetida. Humanos 7/8 informado, X/ESC pendiente; sin modelos/rig/clips finales.
+- Resultado / problemas: validación técnica aprobada y PR #1 abierto en borrador hacia dev (https://github.com/MathiasMerino/RPGRTS/pull/1). Rama publicada; main intacta. Fallo inicial 61/62 por nombre esperado de prefab corregido y toda la batería repetida. Humanos 7/8 informado, X/ESC pendiente; sin modelos/rig/clips finales.

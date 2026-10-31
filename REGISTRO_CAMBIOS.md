@@ -321,3 +321,8 @@ Demo independiente reutiliza D01 y NavMesh, añade NPC y carga con componentes e
 ## 2026-10-31 — E06: regresión y demo Windows
 
 HUD difiere refrescos reentrantes, Rename omite eventos idénticos y ESC usa InputAction con liberación al desactivar. Prueba de puntero/teclado con nombre enfocado e inventario a 720p/1080p aprobada; arnés oculto fuerza update Manual y restaura ajustes. Primer cierre detectó recursión al desactivar InputField; intentos siguientes aislaron foco/editor y no se atribuyen como fallos del player. Primera regresión 61/62 por expectativa errónea del nombre de Monje, corregida: repetición completa 62/62, cero omisiones. BuildVillage Windows x64 185.241.263 bytes/64,86 s. Probe independiente amplía recorrido real con las tres clases y persistencia de misión: headless 34,56 s y GPU RTX3050 33,64 s, ambos PASS/salida 0; RequireCargo exige comprobante nuevo y escena correcta. ZIP 77.833.297 bytes/305 entradas, CRC/binarios verificados y ocho históricos intactos. Capturas finales inspeccionadas, instrucciones y evidencia resumida versionadas. GDD/escena original/paquetes/configuración conservados; humano/artes finales pendientes. Preparado para publicar PR de feature hacia dev, sin main ni release final.
+
+
+## 2026-10-31 — Publicación E03–E06
+
+Commits 136fb87/50e860b/e7bc6f4/0f86fa9 por etapa, rama feature/e03-e06-personajes-vertical-slice publicada y PR #1 en borrador hacia dev: https://github.com/MathiasMerino/RPGRTS/pull/1. Checklist técnico E06 cerrado con evidencia; confirmación humana F2-07 y arte final permanecen pendientes. No merge a main/dev, release, force push o nueva fase. Cierre documental posterior sin cambios al código validado.

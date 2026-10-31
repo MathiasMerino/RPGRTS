@@ -316,5 +316,18 @@
     "pending": "Confirmación X/ESC tras el ajuste, evaluación jugable y arte definitivo",
     "automatic_completion": false
   },
-  "first_regression": "61/62: expectativa histórica del nombre monk_E03_Proxy corregida al nombre real monk_Proxy; repetición completa 62/62."
+  "first_regression": "61/62: expectativa histórica del nombre monk_E03_Proxy corregida al nombre real monk_Proxy; repetición completa 62/62.",
+  "git": {
+    "validated_code_commit": "0f86fa9",
+    "stage_commits": [
+      "136fb87",
+      "50e860b",
+      "e7bc6f4",
+      "0f86fa9"
+    ],
+    "pull_request": "https://github.com/MathiasMerino/RPGRTS/pull/1",
+    "draft": true,
+    "base": "dev",
+    "main_unchanged": true
+  }
 }
