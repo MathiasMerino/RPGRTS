@@ -15,6 +15,26 @@ namespace Aethernia.Tests.Editor
     public class VillageE07Tests
     {
         public const string RootName="E07 Medieval Village";
+        [Test]public void ReusableLibraryHasSharedUrpMaterialsAndMetricArchitecture()
+        {
+            var root=VillageE07Materials.Root;
+            Assert.That(AssetDatabase.FindAssets("t:Texture2D",new[]{root+"/Textures"}).Length,Is.EqualTo(5));
+            foreach(var guid in AssetDatabase.FindAssets("t:Texture2D",new[]{root+"/Textures"}))
+            {var p=AssetDatabase.GUIDToAssetPath(guid);var i=(TextureImporter)AssetImporter.GetAtPath(p);Assert.That(i.maxTextureSize,Is.EqualTo(1024));Assert.That(i.mipmapEnabled,Is.True);Assert.That(i.wrapMode,Is.EqualTo(TextureWrapMode.Repeat));}
+            foreach(var guid in AssetDatabase.FindAssets("t:Prefab",new[]{VillageE07Materials.Prefabs}))
+            {
+                var go=AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(guid));Assert.That(go.transform.localScale,Is.EqualTo(Vector3.one));
+                foreach(var t in go.GetComponentsInChildren<Transform>(true))Assert.That(GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(t.gameObject),Is.Zero);
+                foreach(var f in go.GetComponentsInChildren<MeshFilter>(true))Assert.That(f.sharedMesh,Is.Not.Null);
+                foreach(var r in go.GetComponentsInChildren<Renderer>(true))foreach(var m in r.sharedMaterials){Assert.That(m,Is.Not.Null);Assert.That(AssetDatabase.Contains(m),Is.True);Assert.That(m.shader.name,Is.EqualTo("Universal Render Pipeline/Lit"));Assert.That(m.shader.isSupported,Is.True);}
+            }
+            foreach(var name in new[]{"TimberHouse_6x8m","VillageInn_55x6m","StoneCottage_45x45m","Storehouse_42x5m"})
+            {
+                var go=VillageE07Geometry.Load("Architecture",name);Assert.That(go,Is.Not.Null);var rs=go.GetComponentsInChildren<Renderer>();var b=rs[0].bounds;foreach(var r in rs)b.Encapsulate(r.bounds);
+                Assert.That(b.min.y,Is.EqualTo(0).Within(.02f));Assert.That(b.size.y,Is.InRange(4f,8f));Assert.That(go.transform.Find("Contextual cutaway/Pitched roof"),Is.Not.Null);
+                Assert.That(go.GetComponentsInChildren<Collider>().Length,Is.EqualTo(name=="TimberHouse_6x8m"?0:1));
+            }
+        }
         [UnityTest]public IEnumerator ComparableViewsAndMissionUseRealGameCamera()
         {
             EditorSceneManager.OpenScene(LostCargoTests.Demo);

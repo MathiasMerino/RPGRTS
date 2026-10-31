@@ -25,3 +25,10 @@ En desarrollo. No se marca validación por la sola existencia de archivos.
 ### E07-P0 verificado
 
 PR #1 abierto/borrador/no fusionado, dev 742c04f y base feature dab39c2. Compilación nativa y prueba dirigida 1/1 aprobadas. Doce capturas 1080p de cámara real con encuadres explícitos conservadas en Docs/Images/E07/Before; snapshot de física original versionado, hash de NavMesh registrado en Logs. NPC (−7,5;−3), carga (−10;3), casa (6;6), geometría funcional y referencias identificados. Primer arnés de captura intentaba salir de un combate activo; se corrigió para completar el encuentro real sin alterar reglas o pruebas existentes. Las capturas de antes muestran una plataforma de hierba, casa D01 y objetos técnicos dispersos.
+
+
+### E07-P1 verificado técnicamente
+
+Doce prefabs nativos: siete módulos (entramado/piedra/puerta/ventana/cubierta/cerca/muro) y cinco conjuntos (casa 6×8 m abierta sobre física original, posada 5,5×6 m, casa de piedra 4,5×4,5 m, almacén 4,2×5 m y cobertizo 3×3 m). Cubiertas de dos aguas, vuelos/aleros/cumbreras, cerchas, chimeneas, ventanas con jambas/contraventanas y puertas proporcionadas. Mallas se consolidan por material/grupo conservando la separación contextual de cubiertas/muros altos. Son modelos modulares generados por autoría, no edificios comprados o arte final.
+
+Cinco PNG originales 1254² intactos se importan hasta 1024 con mipmaps, repetición y anisotropía 4. Trece materiales E07 URP Lit nuevos comparten esos albedos y microrrelieve procedural D01 de baja intensidad; ese normal aproximado no es un PBR escaneado. Hierro/cuero/lino se reutilizan sin copiar materiales. Variantes clara/oscura y piedra cálida/gris comparten mapas con tintes intencionales. Procedencia/prompts exactos en E07_TEXTURAS_ORIGINALES.json. Generación/compilación salida 0 y prueba dirigida 1/1 aprobada; apariencia integrada se verificará tras P3.

@@ -8,7 +8,13 @@
       "tool": "image_gen.imagegen",
       "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
       "status": "original generated; artistic approval pending",
-      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model"
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Stone_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
     },
     {
       "id": "Wood",
@@ -17,7 +23,13 @@
       "tool": "image_gen.imagegen",
       "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
       "status": "original generated; artistic approval pending",
-      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model"
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Wood_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
     },
     {
       "id": "Soil",
@@ -26,7 +38,13 @@
       "tool": "image_gen.imagegen",
       "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
       "status": "original generated; artistic approval pending",
-      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model"
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Soil_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
     },
     {
       "id": "Slate",
@@ -35,7 +53,13 @@
       "tool": "image_gen.imagegen",
       "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
       "status": "original generated; artistic approval pending",
-      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model"
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Slate_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
     },
     {
       "id": "Grass",
@@ -44,7 +68,13 @@
       "tool": "image_gen.imagegen",
       "skill": "C:/Users/Mathy/.codex/skills/.system/imagegen/SKILL.md",
       "status": "original generated; artistic approval pending",
-      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model"
+      "use": "Unity URP albedo surface; not a gameplay screenshot or 3D model",
+      "project_asset": "ProyectoRPGRTS/Assets/06_Environment/VillageE07/Textures/Grass_Albedo.png",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "import_limit": 1024
     }
   ]
 }

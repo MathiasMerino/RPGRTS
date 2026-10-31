@@ -336,3 +336,8 @@ PR #1 consultado: abierto, borrador y sin fusionar; rama feature/e07-aldea-medie
 ## 2026-10-31 — E07-P0 verificado
 
 Línea base capturada con cámara real: doce vistas 1080p (tres clases, arquitectura, plaza, bosque, NPC, misión y RPG), física original y NavMesh registrados. Prueba nueva 1/1 y compilación salida 0; arnés respeta fin de combate real. Fuente/historial anteriores preservados; cinco albedos originales disponibles, sin assets externos.
+
+
+## 2026-10-31 — E07-P1: arquitectura y superficies
+
+Biblioteca de siete módulos y cinco conjuntos métricos, cubiertas inclinadas/aleros/cumbreras/chimeneas, colisión de edificios cerrados y grupos de recorte contextual separados. Trece materiales URP nuevos, cinco albedos originales importados a 1024/mips; mapas/recursos D01 y cuero/lino/hierro reutilizados, sin modificar originales. Generación salida 0 y dirigida de integridad/métrica/materiales/referencias 1/1 aprobada. Integración/revisión visual pendientes de P3/P4.

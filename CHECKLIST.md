@@ -647,11 +647,11 @@ Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada Aethern
 - Pruebas / resultado: 1/1 dirigida aprobada, compilación Unity salida 0, doce capturas reales; misión aceptada/ruta/combate real completados y snapshot físico/nav registrado. Primer intento de captura intentaba salir de combate activo: arnés corregido para vencer con las reglas existentes. Aprobación artística y humana pendientes.
 
 ### E07-P1 — Materiales y arquitectura modular
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: entorno integrado / P1. Dependencias: E07-P0.
 - Aceptación: Materiales URP compartidos, modelos métricos, pendientes/aleros/cumbrera, módulos y variantes sin sobrescribir D01.
-- Archivos: previstos en Docs/E07_ALDEA_MEDIEVAL.md; se registran al validar.
-- Pruebas / resultado: pendientes. Aprobación artística y sesión humana no automáticas.
+- Archivos: VillageE07Materials/Geometry/Architecture, cinco fuentes PNG y sus importadores, trece materiales nuevos y siete módulos/cinco edificios en VillageE07; lanzador y prueba de biblioteca.
+- Pruebas / resultado: generación/compilación Unity salida 0 y dirigida 1/1 aprobada; raíz métrica, mallas/materiales soportados/compartidos, referencias, texturas/mipmaps y cuerpos con colisión diferenciada. Recursos D01 preservados. Revisión visual en escena y humana pendientes de P3/P4.
 
 ### E07-P2 — Terreno, vegetación y utilería
 - Estado: [ ] Pendiente.
