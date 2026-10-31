@@ -542,3 +542,15 @@ El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C
 - Archivos: MedievalHudTests; ContextUiValidationTests, MonkIdentityTests y PhaseTwoValidationTests adaptadas; SceneCapture; Docs/C02_INTERFAZ_MEDIEVAL.md, trece Images/C02-*, guías/plan/registro/AGENTS y ZIP C02.
 - Pruebas: 52/52, cero fallos/omisiones, salida 0; 44 layouts/raycasts/textos a 720p/900p/1080p/1440p. Build salida 0; recorridos nativos con/sin GPU PASS/salida 0; ZIP CRC/hashes y siete archivos históricos preservados. 278 metadatos/GUID íntegros; historial/GDD/mundo conservados.
 - Resultado / problemas: verificado técnicamente. Correcciones de serialización, texto y orden de dibujo documentadas; fuentes/modelos/arte provisionales y evaluación humana F2-07 pendientes. No minimapa o mecánicas nuevas.
+
+
+## GITHUB — Conexión y conservación del historial
+
+### GH-01 — Publicar repositorio existente y flujo main/dev
+- Estado: [x] Completado y verificado.
+- Descripción / sistema: conectar raíz Git existente con MathiasMerino/RPGRTS, conservar commits y documentar ramas/PR. Control de versiones.
+- Prioridad / dependencias: P1; repositorio vacío creado por el usuario y publicación explícitamente autorizada el 2026-10-31.
+- Aceptación: historial previo intacto, revisión de ignore/tamaño/credenciales, main predeterminada y dev de trabajo, ramas remotas sincronizadas y árbol limpio; sin jugabilidad nueva o push forzado.
+- Archivos: AGENTS.md, .gitignore, Docs/GITHUB_FLUJO.md, CHECKLIST.md, REGISTRO_CAMBIOS.md y configuración Git local de origin/upstreams; sin editar Unity.
+- Pruebas: remoto inicial sin referencias/tamaño 0; 757 blobs históricos, 682 versiones de texto examinadas sin credenciales candidatas, máximo 3.003.405 bytes; exclusiones Unity/secretos correctas. API GitHub confirma main/dev iguales y default main, 615 rutas/blob SHA idénticas en la base publicada; clonación independiente conserva los 14 commits originales y fsck PASS. Verificación final GitHub-* al publicar la documentación.
+- Resultado / problemas: base inicial publicada por autorización de este encargo; flujo feature/*, fix/*, test/* → dev → PR aprobada a main. Ramas/checkpoints anteriores conservados localmente; no LFS/migración necesaria, instalaciones, configuración global o cambios de visibilidad/permisos/protecciones. La revisión por patrones no garantiza ausencia absoluta de secretos. F2-07 y arte final pendientes; las 52 pruebas C02 siguen siendo evidencia histórica, no se repiten por cambios documentales/Git.

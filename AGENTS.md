@@ -43,9 +43,17 @@
 - E02-B: Monje usa proxy estático de 1,78 m y tarjeta en Personaje; recursos propios en Assets/07_Characters/MonkProvisional, alternativa E01 preservada. Informe Docs/E02B_MONJE_PROVISIONAL.md. No repetir MonkIdentity; no es FBX/rig/animaciones finales ni aprobación humana.
 - C02: HUD compacto, ventanas por ×/ESC, Menú para actividades/guardado y Ayuda opcional. MedievalHudView/InventoryPanelView conservan comandos del HUD; atlas en Assets/08_UI/Medieval. Informe Docs/C02_INTERFAZ_MEDIEVAL.md. No repetir MedievalHud; afinación no es paso de arranque.
 - Antes de cada tarea: revisar `git status`, dependencias y criterios. Revisar el diff y registrar cambios importantes.
-- No sobrescribir cambios ajenos, publicar remotos ni modificar configuración global como parte de tareas locales.
+- No sobrescribir cambios ajenos, publicar remotos sin autorización de la sesión ni modificar configuración global como parte de tareas locales.
 - Visual Studio Community 2026 y Tools for Unity ya instalados; paquete IDE Unity `2.0.26` presente.
 - Instalar herramientas solo para necesidades concretas y compatibles; no por supuesto ahorro de tokens.
+
+## GitHub, ramas y Pull Requests
+- Remoto `origin`: `https://github.com/MathiasMerino/RPGRTS.git`. Repositorio público; conservar el historial y revisar credenciales/archivos grandes antes de publicar.
+- `main`: versión estable, predeterminada en GitHub. Incorporar versiones futuras solo mediante PR `dev` → `main` con aprobación del usuario y evidencia de validación; compilar no equivale a aprobación humana.
+- `dev`: rama principal de desarrollo y rama local para continuar. Crear desde `dev` únicamente las ramas temporales necesarias: `feature/<descripcion>`, `fix/<descripcion>` o `test/<descripcion>`. Esta convención sustituye el prefijo histórico `codex/` para trabajo nuevo.
+- PR de una rama temporal → `dev`: explicar problema/resultado, alcance, pruebas ejecutadas y pendientes. Conservar commits mediante merge; no reescribir historia publicada ni usar push forzado. Tras publicar una versión en `main`, incorporar su avance en `dev` mediante fast-forward o merge normal cuando corresponda.
+- No publicar ramas históricas/checkpoints en bloque, borrar referencias previas, usar `push --force`, reinicializar Git ni modificar permisos/protecciones sin encargo explícito. Autenticarse con Git Credential Manager; nunca guardar tokens en archivos, URLs o commits. Si falta autenticación, pedir intervención del usuario.
+- La conexión inicial solicitada el 2026-10-31 autoriza publicar el estado `cacad54` y la documentación de conexión como base común de `main`/`dev`, conservando los 14 commits anteriores. No aprueba arte final ni cierra F2-07 o los demás pendientes del juego.
 
 ## Contexto y búsquedas
 - Mantener este archivo breve; guardar detalles y evidencia en los documentos de seguimiento.
