@@ -49,5 +49,35 @@ namespace Aethernia.Tests.Editor
             }
             Assert.That(AssetDatabase.LoadAssetAtPath<GameObject>(MonkIdentityBuilder.ProxyPath),Is.Not.Null);File.WriteAllText("Logs/E03-geometry.txt",report.ToString());
         }
+        [Test]public void PortraitsUseAuthorizedOriginalSheetsAndCatalogMetadata()
+        {
+            var catalog=AssetDatabase.LoadAssetAtPath<CharacterVisualCatalog>(CharacterVisualBuilder.CatalogPath);
+            foreach(var e in catalog.Entries)
+            {
+                Assert.That(e.IsProvisional,Is.True);Assert.That(e.DisplayTitle,Is.Not.Empty);Assert.That(e.PreviousPrefab,Is.Not.Null);Assert.That(e.PortraitSprite,Is.Not.Null);Assert.That(e.PortraitSprite.texture,Is.SameAs(e.ReferenceArt));
+                Assert.That(e.ConceptSheet,Is.SameAs(e.ReferenceArt));Assert.That(e.PortraitSprite.rect.size,Is.EqualTo(new Vector2(180,240)));Assert.That(e.ReferenceUv.width*e.ReferenceArt.width,Is.EqualTo(180).Within(.01f));
+                var path=AssetDatabase.GetAssetPath(e.ConceptSheet);Assert.That(MedievalQuarterBuilder.Hash(path),Is.EqualTo(MedievalQuarterBuilder.Hash("../Documentacion/Personajes/Conceptos/"+Path.GetFileName(path))));
+                Assert.That(e.SharedMaterials.Length,Is.GreaterThan(0));Assert.That(e.Prefab.GetComponent<CharacterVisualModel>().WeaponAnchor,Is.Not.Null);
+                Assert.That(((TextureImporter)AssetImporter.GetAtPath(path)).textureType,Is.EqualTo(TextureImporterType.Sprite));
+            }
+        }
+        [UnityTest]public IEnumerator PortraitsEquipmentAndSaveRestoreAcrossAllClasses()
+        {
+            EditorSceneManager.OpenScene(MedievalQuarterBuilder.ScenePath);yield return new EnterPlayMode();yield return null;yield return null;
+            var d=Object.FindAnyObjectByType<PrototypeDirector>();var hud=Object.FindAnyObjectByType<VerticalSliceHud>();var presenter=d.Hero.GetComponent<CharacterVisualPresenter>();
+            WorldOperations.AddItem(d.Session.State,"training-sword",1);WorldOperations.AddItem(d.Session.State,"cloth",1);
+            foreach(var id in new[]{"monk","warrior","mage"})
+            {
+                d.Session.SelectClass(id);hud.SelectPage(ExplorationPage.Character);yield return null;yield return null;
+                var model=presenter.Model;var renderers=model.GetComponentsInChildren<Renderer>(true).Length;
+                for(var i=0;i<8;i++){Assert.That(d.Execute("sword"),Is.True);Assert.That(d.Execute("armour"),Is.True);}
+                Assert.That(presenter.Model,Is.SameAs(model));Assert.That(model.GetComponentsInChildren<Renderer>(true).Length,Is.EqualTo(renderers));Assert.That(model.SwordVisible&&model.ArmourVisible,Is.True);
+                var entry=hud.CompactView.Catalog.FindEntry(id);Assert.That(hud.CompactView.Reference.Portrait.texture,Is.SameAs(entry.ReferenceArt));Assert.That(hud.CompactView.Reference.Portrait.uvRect,Is.EqualTo(entry.ReferenceUv));
+                Assert.That(d.Save("Logs/E04-"+id+".json"),Is.True);d.Session.State.Weapon="";d.Session.State.Armour="";d.Session.Say("Ensayo sin equipo");Assert.That(model.SwordVisible||model.ArmourVisible,Is.False);
+                Assert.That(d.Load("Logs/E04-"+id+".json"),Is.True);hud.SelectPage(ExplorationPage.Character);yield return null;Assert.That(presenter.DisplayedClass,Is.EqualTo(id));Assert.That(presenter.Model.SwordVisible&&presenter.Model.ArmourVisible,Is.True);
+                foreach(var width in new[]{1280,1920})yield return SceneCapture.Save("Logs/E04-"+id+"-"+width+".png",width,width*9/16,MedievalHudTests.Layout);
+            }
+            LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
+        }
     }
 }

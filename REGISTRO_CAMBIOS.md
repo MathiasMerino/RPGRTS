@@ -306,3 +306,8 @@ Brief adjunto autoriza provisionalmente las tres hojas originales y misión narr
 ## 2026-10-31 — E03: tres representaciones provisionales
 
 Nuevos prefabs métricos E03, mallas horneadas por material reutilizando MonkProxyGeometry (Box añadido), armadura/correas/faldón Guerrero, túnica/capucha/libro/bastón de identidad Mago y uniones/hombros/vendas/paño Monje. Equipo actual anidado sin colliders ni runtime primitives; fuentes originales copiadas íntegras. Originales y física preservados. Generación salida 0, prueba métrica inicial 1/1 y aceptación ampliada 2/2 (incluye Play Mode y tres capturas revisadas). Métricas/resultados en informe E03_E06; no se afirman rig, animaciones o escultura final. Paleta Mago oscura, ajuste reversible previsto E04.
+
+
+## 2026-10-31 — E04: presentación y equipo compartidos
+
+Se amplía catálogo existente con metadatos visuales/sprites/fuentes/recuperación/materiales, sin estadísticas duplicadas. Recortes nativos 180×240 desde las hojas originales, importadas Sprite/sRGB/NPOT None; no PNG editados ni nuevas imágenes. Anclajes y bindings v1 reutilizados; paleta del Mago moderadamente aclarada. Configuración salida 0 y 4/4 pruebas dirigidas: tres clases, retratos, equipo repetido sin duplicados, estado sin arma/tela y carga restaurada; seis capturas 720p/1080p con layouts/raycast correctos. Tests históricos adaptan las referencias activas manteniendo la recuperación E01/E02-B. No gestor C02 modificado, nuevos items o reglas.

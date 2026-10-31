@@ -609,12 +609,12 @@ Diseños autorizados para uso provisional. F2-07: usuario informa 7/8, cierre X/
 - Resultado / problemas: completada técnicamente, pendiente de validación humana. Representaciones estáticas 1,78/1,80 m sin colisión, 5.252–6.704 triángulos; originales preservados. No modelos/rig/animaciones finales.
 
 ### PROD-E04 — Catálogo, retratos y equipo compartidos
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: producción integrada / P1. Dependencias: E03.
 - Aceptación: criterios del encargo E04, implementación en Unity y pruebas; validación humana diferenciada.
-- Archivos: previstos en Docs/E03_E06_PRODUCCION.md.
-- Pruebas: pendientes.
-- Resultado / problemas: pendiente; sin modelos/rig/animaciones finales ni cierre humano automático.
+- Archivos: CharacterVisualCatalog/Model, ProductionPresentationBuilder, catálogo/prefabs E03, sprites Portraits y fuentes importadas, pruebas ProductionVisualTests y adaptación histórica MonkIdentityTests; informe/capturas.
+- Pruebas: configuración/compilación salida 0; 4/4 dirigidas, tres clases/retratos/equipo repetido/retirada por estado/guardado/carga, layouts/raycast 720p/1080p.
+- Resultado / problemas: completada técnicamente; tres retratos conceptuales 3:4 originales, configuración compartida sin estadísticas duplicadas. Bastón accesorio sin item/buff; modelos y validación humana pendientes.
 
 ### PROD-E05 — El cargamento perdido: misión integrada
 - Estado: [ ] En desarrollo.

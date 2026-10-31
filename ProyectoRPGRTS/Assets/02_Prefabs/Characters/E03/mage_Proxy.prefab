@@ -568,9 +568,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded19ef72e04f9d41a93f1be5f62f7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.CharacterVisualModel
-  trainingSword: {fileID: 4079898819690829226}
-  clothArmour: {fileID: 7428864460891380469}
-  bindings: []
+  trainingSword: {fileID: 0}
+  clothArmour: {fileID: 0}
+  bindings:
+  - Slot: 2
+    Source: 0
+    ItemId: training-sword
+    Visual: {fileID: 4079898819690829226}
+  - Slot: 1
+    Source: 1
+    ItemId: cloth
+    Visual: {fileID: 7428864460891380469}
+  weaponAnchor: {fileID: 8632863489890148384}
 --- !u!1 &5920741722862389336
 GameObject:
   m_ObjectHideFlags: 0

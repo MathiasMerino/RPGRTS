@@ -14,6 +14,14 @@ namespace Aethernia
             public Texture2D ReferenceArt;
             public Rect ReferenceUv = new Rect(0, 0, 1, 1);
             public string ReferenceCaption = "Referencia 2D provisional";
+            public string DisplayTitle;
+            public Sprite PortraitSprite;
+            public Texture2D ConceptSheet;
+            public GameObject PreviousPrefab;
+            public Material[] SharedMaterials = Array.Empty<Material>();
+            public float ReferenceHeightMeters = 1.8f;
+            public bool IsProvisional = true;
+            public string EquipmentPolicy;
         }
         public Entry[] Entries = Array.Empty<Entry>();
         public Entry FindEntry(string id)

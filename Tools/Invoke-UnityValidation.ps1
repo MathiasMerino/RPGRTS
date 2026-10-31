@@ -1,5 +1,5 @@
 ﻿param(
-    [ValidateSet('Baseline', 'GenerateSandbox', 'Foundation', 'GeneratePlayable', 'Playable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'Vertical', 'Build')]
+    [ValidateSet('Baseline', 'GenerateSandbox', 'Foundation', 'GeneratePlayable', 'Playable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'ProductionPresentation', 'Vertical', 'Build')]
     [string]$Mode = 'Baseline',
     [string]$TestFilter = ''
 )
@@ -27,7 +27,7 @@ New-Item -ItemType Directory -Path $taskLogs -Force | Out-Null
 $taskLog = Join-Path $taskLogs "$Mode.log"
 $taskResult = Join-Path $taskLogs "$Mode-results.xml"
 $taskArguments = @('-batchmode', '-projectPath', ('"' + $taskProject + '"'), '-logFile', ('"' + $taskLog + '"'))
-if ($Mode -in @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'Build')) {
+if ($Mode -in @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'ProductionPresentation', 'Build')) {
     $taskMethod = switch ($Mode) {
         GenerateSandbox { 'Aethernia.Editor.TechnicalSandboxBuilder.Create' }
         GeneratePlayable { 'Aethernia.Editor.PlayablePrototypeBuilder.Create' }
@@ -44,6 +44,7 @@ if ($Mode -in @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Prese
         MedievalHud { 'Aethernia.Editor.C02HudBuilder.Upgrade' }
         MedievalHudRefine { 'Aethernia.Editor.C02HudBuilder.Refine' }
         ProductionCharacters { 'Aethernia.Editor.Characters.ProductionCharacterBuilder.Create' }
+        ProductionPresentation { 'Aethernia.Editor.Characters.ProductionPresentationBuilder.Configure' }
         Build { 'Aethernia.Editor.PlayablePrototypeBuilder.Build' }
     }
     if ($Mode -ne 'MedievalHud') { $taskArguments += '-nographics' }
@@ -67,7 +68,7 @@ if (-not $taskProcess.WaitForExit(600000)) {
 }
 $taskProcess.Refresh()
 if ($taskProcess.ExitCode -ne 0) { throw "Unity termino con codigo $($taskProcess.ExitCode). Revisa $taskLog." }
-if ($Mode -notin @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'Build')) {
+if ($Mode -notin @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'ProductionPresentation', 'Build')) {
     if (-not (Test-Path -LiteralPath $taskResult)) { throw 'Unity no genero resultados; no se considera una prueba correcta.' }
     if ((Get-Item -LiteralPath $taskResult).LastWriteTimeUtc -lt $taskStarted) { throw 'El XML de resultados es anterior a esta ejecucion.' }
     [xml]$taskXml = Get-Content -LiteralPath $taskResult -Raw
