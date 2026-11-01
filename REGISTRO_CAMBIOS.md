@@ -430,3 +430,6 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 - 19PNG originales y MP4 de120frames/diez segundos con DSP estéreo48kHz empaquetados y decodificados. Barras/turnos/cámara/poses y captura nativa inspeccionados. Sin pose sampling ni métricas FPS inventadas; memoria nativa y working set muestreado documentados, GC por frame no perfilado.
 - ZIP86756445bytes/306archivos, SHA11d3db3e940f286ef79ff7c2f52dcee3919f2a9accee4a7226b68d9cf2c17a79, CRC/hashes de cada archivo PASS; once ZIP previos intactos. GDD/escena original/recursos E07/E08/versiones/guardado preservados. Informe/checklist/guía/AGENTS actualizados; publicación en borrador pendiente, sin aprobación humana ni E10.
 
+### E09 — Publicación y cierre técnico (2026-11-01)
+- Rama feature/e09-combate-rpg-ia publicada. PR#4 abierto en borrador sobre feature/e08-personajes-animados: https://github.com/MathiasMerino/RPGRTS/pull/4. Main/dev conservan sus SHA iniciales; PR#1/#2/#3 abiertos/borrador/sin fusionar. Sin release estable, force push ni E10.
+- Commits4b21d4f (turnos/reglas/IA),c545386 (presentación/recursos),a07dbd5 (pruebas/sondas),04a4799 (entrega/evidencia), más cierre documental. Seis tareas técnicas E09 completadas y verificadas; E09-H/F2-07/E07-H/E08-H y recursos finales pendientes. Sincronía HEAD/origin/PR y estado limpio comprobados al concluir.

@@ -4,7 +4,7 @@ Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. Publicación para revisión en curso. Informe Docs/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
+- E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. PR#4 abierto en borrador sobre E08: https://github.com/MathiasMerino/RPGRTS/pull/4. Informe Docs/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
 
 - E08: tres humanoides provisionales con rigs Generic/skin y siete estados, integrados en demo; **73/73 regresión**, Windows/headless/GPU PASS, 49 PNG/tres MP4 y ZIP verificado. [PR #3](https://github.com/MathiasMerino/RPGRTS/pull/3) abierto en borrador sobre E07; arte final/retargeting Humanoid y sesión humana pendientes. Informe Docs/E08_PERSONAJES_ANIMADOS.md.
 
@@ -791,11 +791,11 @@ Plan/evidencia única: Docs/E09_COMBATE_TACTICO.md. Historial anterior conservad
 - Pruebas / resultado: Focal16/16, recontrol UI y grabación1/1; regresión final89/89, cero fallos/omisiones y salida0. 19PNG y vídeo auténtico120frames/DSP empaquetados, decodificados e inspeccionados. Escritura E08 no volvió a fallar; causa raíz no confirmada. Sin cierre humano.
 
 ### E09-06 — Build y publicación
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: combate integrado / P1. Dependencias: E09-05.
 - Aceptación: Windows ejecutado, recorridos y ZIP verificados, documentación y PR apilado, Git limpio.
 - Archivos: BuildSmokeProbe/CargoQuestSmoke/TacticalCombatSmoke.cs, Tools/Invoke-PrototypeSmoke.ps1; documentos y evidencia final E09.
-- Pruebas / resultado: Build203799042bytes y recorridos Windows90.81s headless/90.60s GPU PASS, salida0; ZIP86756445bytes/306archivos CRC/SHA por archivo verificados, once históricos intactos. Documentación/evidencia actualizadas; publicación del PR apilado pendiente. Main/dev intactas, sin release estable.
+- Pruebas / resultado: Build203799042bytes y recorridos Windows90.81s headless/90.60s GPU PASS, salida0; ZIP86756445bytes/306archivos CRC/SHA por archivo verificados, once históricos intactos. Documentación/evidencia actualizadas; rama publicada y PR#4 abierto/borrador/base E08 (https://github.com/MathiasMerino/RPGRTS/pull/4). Main/dev y PR#1/#2/#3 intactos; sincronía/limpieza comprobadas al cierre, sin release estable.
 
 ### E09-H — Evaluación humana
 - Estado: [ ] Pendiente.
