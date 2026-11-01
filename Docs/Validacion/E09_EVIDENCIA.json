@@ -1,0 +1,115 @@
+{
+  "images": [
+    {
+      "path": "Docs/Images/E09/mage-Attack.png",
+      "sha256": "35b2ca26a80d4ce960017da7c8f3f3c4a015674bb220518030d4ab95075a30a0",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/mage-Completed.png",
+      "sha256": "52ef04a5d2b487f54e3ad01dcf14f9cc1916987263c9ce4fff4aebb6e42ccda1",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/mage-Damage.png",
+      "sha256": "04798b5db2a89867b0824b80d811d4d9b2b2ae3412b090de11bb707e0bbb9a9a",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/mage-EnemyTurn.png",
+      "sha256": "6e5ec7a72f98ae4b4e93cf94ef151b94248233627188012c8753adf70f21129c",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/mage-Ready.png",
+      "sha256": "5de9bf3d784ee187ccc4b86fc7cf91c999e12e25cac152e9655c36a682632d11",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/mage-Victory.png",
+      "sha256": "733bd210b87d0bb6ef0f01cd6ccabefad493d921569df7abb676a3340054d3ee",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/monk-Attack.png",
+      "sha256": "973145b72622345fcdbf49aafb622f1a5614c21fd66dede26d433f3608c0b3e9",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/monk-Completed.png",
+      "sha256": "edeb4f91bc0bad3a899665e1dc43f60647f386facd94e68d92da69a0386fcfba",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/monk-Damage.png",
+      "sha256": "1629f1224040b2e003d8a6f0e9c8a39752d0ba60c18fce3653486a221abce846",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/monk-EnemyTurn.png",
+      "sha256": "5ba9391daa14ec08443a70665893dd5c6ccf7d45b7107599bc8f127613f12a87",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/monk-Ready.png",
+      "sha256": "221a6cec534aa7d32172ba553812b3fee06de8b187319fe38c357b9b12fc2fc7",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/monk-Victory.png",
+      "sha256": "3f6dea829643f88ce63e86ed65d110c51e16d81fc8fcceb71e6c1308f371e9f7",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/warrior-Attack.png",
+      "sha256": "c0cbea270d9432098ec9ce7a33396afbac0fe212d6bc5669b10a8401a857c357",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/warrior-Completed.png",
+      "sha256": "5eead1b7e9bc5696026e5a79878bcf23391876bf6b127a93d8606dd2f7af742d",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/warrior-Damage.png",
+      "sha256": "beeaf0fd99639df32655151826df46efc0b5ae91a1dbe0a530035eea36d83795",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/warrior-EnemyTurn.png",
+      "sha256": "71bcc8b8ac794847b238571f511d9c98e3e4067ebfbae3543580bcc22300a29a",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/warrior-Ready.png",
+      "sha256": "0a10903e92b4ebda760ecf19c23376a9497e7161695e54289e2013db048f5d24",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/warrior-Victory.png",
+      "sha256": "d4d983853a51339bb6ec47571dcc005181ef50ddad455eefea345ceb6bf00fd1",
+      "kind": "Actual Unity Play Mode commands and outcomes"
+    },
+    {
+      "path": "Docs/Images/E09/Player-Tactical.png",
+      "sha256": "28150554352bfaf49e72cac3d77015a48af5c8ba42a51c4342dc6a0c3b63b587",
+      "kind": "Standalone native Game camera"
+    }
+  ],
+  "video": {
+    "path": "Docs/Images/E09/E09-Combate-Real.mp4",
+    "sha256": "153c8c695e543f62e96bbca2f630a7e02993275aa2c40cfdf4e06340ee2a34c8",
+    "decoded_frames": 120,
+    "capture_step_hz": 12,
+    "measured_fps": false,
+    "native_dsp_audio_muxed": true,
+    "kind": "Real Play Mode combat; authoritative commands, not sampled clip poses"
+  },
+  "audio": {
+    "source": "Unity AudioRenderer native DSP",
+    "rate": 48000,
+    "channels": 2,
+    "seconds": 60.992,
+    "proof": "PASS: 120 real Play Mode frames at fixed capture step 12 Hz, authoritative commands/dice/enemy phase; native AudioRenderer DSP samples=958464 channels=2 rate=48000 RMS=0.005859 peak=0.076390. Capture rate is not measured FPS. No clip pose sampling."
+  }
+}

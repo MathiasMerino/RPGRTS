@@ -1,0 +1,14 @@
+{
+  "base_e08": "a7acaca98149dd495914bc7cf947b23ed0a4eab9",
+  "branch": "feature/e09-combate-rpg-ia",
+  "gdd_sha256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "unchanged_since_e08": {
+    "original_playable_scene": true,
+    "e07_environment_assets": true,
+    "e08_animated_models_clips_prefabs": true,
+    "save_schema_atomic_store": true,
+    "project_versions": true
+  },
+  "authoring_scene_physics_snapshot": "E09_CREATED builder compared before/after through EnvironmentPhysicsSnapshot; no environment assets changed",
+  "human_approval": false
+}

@@ -88,7 +88,7 @@ namespace Aethernia
             if(session.Mode==PrototypeMode.TurnCombat&&battle!=null)
             {
                 var order=battle.HeroInitiative>=battle.EnemyInitiative?"Tú "+battle.HeroInitiative+" → Rival "+battle.EnemyInitiative:"Rival "+battle.EnemyInitiative+" → Tú "+battle.HeroInitiative;
-                Context.text=(battle.Finished?(battle.Won?"VICTORIA":"DERROTA"):"TU TURNO")+" · Rival: "+battle.EnemyHealth+" PV · "+order+" · Mover: "+battle.MovementRemaining.ToString("0.#")+" m · Acción: "+(battle.ActionAvailable?"disponible":"usada");
+                Context.text=(battle.Finished?(battle.Won?"VICTORIA":"DERROTA"):battle.Phase==TurnPhase.Enemy?"ENEMIGO ACTUANDO":"TU TURNO")+" · Rival: "+battle.EnemyHealth+" PV · "+order+" · Mover: "+battle.MovementRemaining.ToString("0.#")+" m · Acción: "+(battle.ActionAvailable?"disponible":"usada");
                 if(battle.Guarding)Context.text+=" · Guardia activa";
             }
             // Root context is a transparent full-screen container, never a screen-sized raycast target.

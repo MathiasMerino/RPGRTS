@@ -6,6 +6,14 @@ La segunda etapa audita y corrige la integración existente. El estado real por 
 
 La interfaz C02 incorpora un HUD medieval compacto sobre D01/E01/E02/E02-B. Arriba aparecen salud/recursos, Ayuda y Menú; abajo, Personaje, Inventario, Registro y acciones contextuales. Las ventanas se cierran con × o ESC. Menú reúne guardado/carga y cambio de actividad; la ayuda es opcional. [Informe C02](Docs/C02_INTERFAZ_MEDIEVAL.md) y dirección artística documentan apariencia y límites.
 
+## Entrega E09 para revisión
+
+Paquete local verificado: `ProyectoRPGRTS/Builds/Aethernia-E09-Combate-Windows.zip`. 89/89 pruebas y recorridos Windows sin gráficos/con GPU aprobados; no sustituyen una sesión humana. Abrir la misma demo con Unity6000.5.8f1. Informe, evidencia audiovisual y guía humana: [E09_COMBATE_TACTICO](Docs/E09_COMBATE_TACTICO.md).
+
+El combate conserva sus reglas: Guerrero con espada, Monje marcial, Mago con ataque arcano a distancia. Seleccionar rival por clic o botón del panel contextual; Atacar, Guardia o Recuperar consumen la acción. Fin de turno muestra ENEMIGO ACTUANDO durante una secuencia breve; esperar a TU TURNO. La IA ataca si dispone de alcance/línea libre, se aproxima por ruta legal o espera. PV/dados son reales, con partículas y sonidos originales provisionales. La misión y recompensa única no cambian; guardar/cargar fuera del encuentro. No hay mana ni hechizos nuevos.
+
+Se conservan los once ZIP anteriores y las escenas originales. Generic/arte/sonidos son pilotos; la sesión humana y X/ESC siguen pendientes de confirmación. E08 y anteriores, descritos abajo, forman el historial.
+
 ## Entrega E08
 
 Paquete local actual: `ProyectoRPGRTS/Builds/Aethernia-E08-Personajes-Windows.zip`; descomprimir completo y abrir Aethernia.exe. Los diez ZIP anteriores se conservan.
@@ -52,7 +60,7 @@ Los paneles y la escritura del nombre bloquean los controles del mundo. Abrir Pe
 4. Menú → Construir y hacer clic derecho en terreno despejado. Cada taller cuesta 10 oro y 5 madera; su huella es 3 × 3 m. No se permite solapar objetos ni colocar sobre el héroe. Consume alimento y produce madera cada 10 segundos simulados. Volver a explorar abandona la colocación.
 5. Volver a Explorar. Buscar el portal gris a la izquierda del asentamiento, seleccionarlo y activarlo cerca. En la mazmorra, activar el hito marrón: la Facción A gana +10 de reputación y B cambia -5. El portal verde permite regresar.
 6. Abrir Menú, guardar, cambiar una condición de prueba y cargar para comprobar que se restauran personaje, recursos, equipo, construcciones y consecuencias. F5/F9 conservan sus atajos. Registro muestra hechos/reputación existentes; no hay mapa o compañeros implementados.
-7. Menú → Combate RPG: la iniciativa determina quién actúa primero. Usar Acercarse o clic derecho para el movimiento limitado, esperar a llegar, luego Atacar, Guardia o Recuperar y finalizar turno. El ataque necesita una línea libre de obstáculos; el rival avanza hasta 3 m por ruta entre turnos, aún con presentación instantánea. Mago tiene alcance mayor; Monje obtiene bonificación de iniciativa. Recuperar se usa una vez por encuentro. Si hay derrota, volver a Explorar y elegir clase para reiniciar la prueba.
+7. Menú → Combate RPG: la iniciativa determina quién actúa primero. Usar Acercarse o clic derecho para el movimiento limitado, esperar a llegar, luego Atacar, Guardia o Recuperar y finalizar turno. El ataque necesita una línea libre de obstáculos; el rival avanza hasta 3 m por ruta entre turnos, con representación animada en la demo E09. Mago tiene alcance mayor; Monje obtiene bonificación de iniciativa. Recuperar se usa una vez por encuentro. Si hay derrota, volver a Explorar y elegir clase para reiniciar la prueba.
 8. Tras una victoria RPG, Escalar a RTS prueba una transición opcional: los seis aliados empiezan con 14 de salud en lugar de 10. Menú → Batalla RTS inicia una prueba independiente de seis contra seis.
 9. En RTS, seleccionar una unidad o Todo el grupo y dar órdenes con clic derecho. Avanzar ordena una formación corta; los soldados atacan automáticamente a los enemigos próximos. El campo de despliegue debe estar libre: si un taller ocupa esa zona, el juego rechaza iniciar sin cambiar la partida. Para este ensayo usar una partida con ese extremo del asentamiento libre; todavía no hay demolición. Al concluir, volver a Explorar y guardar el hecho de victoria; los soldados transitorios se retiran. Aún no existe un mapa de conquista territorial.
 
@@ -65,15 +73,15 @@ El panel muestra arma y armadura equipadas. Una carga ausente/corrupta/incompati
 Con Unity cerrado sobre este proyecto, ejecutar desde PowerShell en esta carpeta:
 
 ```powershell
-.\Tools\Invoke-UnityValidation.ps1 -Mode Vertical
-.\Tools\Invoke-UnityValidation.ps1 -Mode Build
-.\Tools\Invoke-PrototypeSmoke.ps1
-.\Tools\Invoke-PrototypeSmoke.ps1 -WithGraphics
+.\Tools\Invoke-UnityValidation.ps1 -Mode Vertical -TimeoutMinutes 20
+.\Tools\Invoke-UnityValidation.ps1 -Mode BuildVillage -TimeoutMinutes 15
+.\Tools\Invoke-PrototypeSmoke.ps1 -RequireCargo -RequireVillageE07 -RequireAnimatedE08 -RequireTacticalE09
+.\Tools\Invoke-PrototypeSmoke.ps1 -WithGraphics -RequireCargo -RequireVillageE07 -RequireAnimatedE08 -RequireTacticalE09
 ```
 
-El primer comando ejecuta 52 pruebas de editor, geometría, UI, navegación, persistencia y sistemas integrados; incluye pruebas D01/E01/E02/E02-B y tres nuevas C02, con 44 layouts/capturas C02 a cuatro resoluciones, comprobación de textos/botones y raycast de cada control para detectar paneles que lo tapen. El segundo compila la build de Windows. El tercero inicia esa build sin gráficos, recorre los sistemas automáticamente y escribe un comprobante en Logs. El cuarto repite con dispositivo gráfico en segundo plano. Los lanzadores rechazan fallos de agente o excepciones del log aunque el recorrido devuelva 0. Las pruebas no utilizan la partida guardada del jugador ni sustituyen una sesión humana.
+La batería actual reúne 89 pruebas de editor, geometría, UI, navegación, persistencia y sistemas integrados; incluye pruebas D01/E01/E02/E02-B y tres nuevas C02, con 44 layouts/capturas C02 a cuatro resoluciones, comprobación de textos/botones y raycast de cada control para detectar paneles que lo tapen. El segundo compila la build de Windows. El tercero inicia esa build sin gráficos, recorre los sistemas automáticamente y escribe un comprobante en Logs. El cuarto repite con dispositivo gráfico en segundo plano. Los lanzadores rechazan fallos de agente o excepciones del log aunque el recorrido devuelva 0. Las pruebas no utilizan la partida guardada del jugador ni sustituyen una sesión humana.
 
-No repetir GenerateSandbox, GeneratePlayable, UpgradeVertical, ContextUi, MedievalQuarter, CharacterVisuals, HumanoidPipeline, MonkIdentity o MedievalHud sobre assets ya preparados: las herramientas rechazan sobrescrituras/duplicados. MedievalRefine/MedievalHudRefine son herramientas de autoría, no pasos para abrir o probar la entrega. Las escenas de muestra y referencia se conservan como evidencia de las etapas anteriores.
+No repetir GenerateSandbox, GeneratePlayable, UpgradeVertical, ContextUi, MedievalQuarter, CharacterVisuals, HumanoidPipeline, MonkIdentity o MedievalHud sobre assets ya preparados: las herramientas rechazan sobrescrituras/duplicados. MedievalRefine/MedievalHudRefine son herramientas de autoría, no pasos para abrir o probar la entrega. Tampoco repetir CombatE09 ni Generate-E09Audio sobre los recursos existentes. Las escenas de muestra y referencia se conservan como evidencia de las etapas anteriores.
 
 ## Alcance y siguientes fases
 

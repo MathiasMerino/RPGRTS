@@ -82,6 +82,11 @@ namespace Aethernia
                 while(stack.Count>0)
                 {var next=stack.Peek();if(!next.MoveNext()){stack.Pop();continue;}if(next.Current is IEnumerator nested)stack.Push(nested);else yield return next.Current;}
             }
+            if(director.Encounter.UsesStagedCommands)
+            {
+                var tactical=TacticalCombatSmoke.Run(director,output);
+                while(tactical.MoveNext())yield return tactical.Current;
+            }
             if(village!=null)
             {
                 File.WriteAllText(output+".village.txt","PASS: E07 authored village loaded in standalone; renderers="+village.GetComponentsInChildren<MeshRenderer>().Length+"; graphics="+SystemInfo.graphicsDeviceName+"; actual quest/classes and prior systems checked above.");

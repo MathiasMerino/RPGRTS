@@ -1,0 +1,38 @@
+{
+  "number": 4,
+  "url": "https://github.com/MathiasMerino/RPGRTS/pull/4",
+  "state": "open",
+  "draft": true,
+  "base": "feature/e08-personajes-animados",
+  "head": "feature/e09-combate-rpg-ia",
+  "head_sha_at_creation": "04a47993ac17c5527d7fea53aef9c37c845e7422",
+  "default_branch": "main",
+  "stable_branches_unchanged": {
+    "main": "5a2e3cef6707bd844cf728ea1adfff9c6d941002",
+    "dev": "742c04f6ac2afb8dfd3d0e56e3f2d45085c73a46"
+  },
+  "previous_prs": [
+    {
+      "number": 1,
+      "state": "open",
+      "merged": false,
+      "draft": true,
+      "head_sha": "dab39c2188817044dd1603dd48671ac6e319da96"
+    },
+    {
+      "number": 2,
+      "state": "open",
+      "merged": false,
+      "draft": true,
+      "head_sha": "8f0108b5209f3774d9409e83f4f6aa74ae2c03b0"
+    },
+    {
+      "number": 3,
+      "state": "open",
+      "merged": false,
+      "draft": true,
+      "head_sha": "a7acaca98149dd495914bc7cf947b23ed0a4eab9"
+    }
+  ],
+  "human_approval": false
+}

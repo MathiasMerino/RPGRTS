@@ -46,7 +46,7 @@ namespace Aethernia
             if (id == "attack" && session.Mode == PrototypeMode.TurnCombat) { encounter.Attack(); return true; }
             if (id == "guard" && session.Mode == PrototypeMode.TurnCombat) { encounter.Guard(); return true; }
             if (id == "recover" && session.Mode == PrototypeMode.TurnCombat) { encounter.Recover(); return true; }
-            if (id == "end" && session.Mode == PrototypeMode.TurnCombat) { encounter.EndTurn(); return true; }
+            if (id == "end" && session.Mode == PrototypeMode.TurnCombat) { return encounter.RequestEndTurn(); }
             if (id == "approach" && session.Mode == PrototypeMode.TurnCombat) { encounter.Approach(); return true; }
             if (id == "select-all" && rts.Active) { rts.SelectAll(); return true; }
             if (id == "charge" && rts.Active) { rts.SelectAll(); return rts.Command(new Vector3(-7, 0, 13), null, false); }
@@ -77,7 +77,7 @@ namespace Aethernia
         private bool Route(Vector3 point, Collider collider, bool primary)
         {
             if (session.Mode == PrototypeMode.Construction) return !primary && construction.Place(point);
-            if (session.Mode == PrototypeMode.TurnCombat) return !primary && encounter.Move(point);
+            if (session.Mode == PrototypeMode.TurnCombat) return primary ? encounter.TrySelect(collider) : encounter.Move(point);
             return session.Mode == PrototypeMode.Rts && rts.Command(point, collider, primary);
         }
         public bool Travel(string id)

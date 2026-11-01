@@ -22,7 +22,17 @@ namespace Aethernia
                 for(var turn=0;turn<30&&q.CargoEncounter;turn++)
                 {
                     if(d.Session.State.Health<8&&!d.Encounter.Battle.RecoveryUsed)d.Encounter.Recover();else d.Encounter.Attack();
-                    if(q.CargoEncounter&&d.Encounter.Battle!=null&&!d.Encounter.Battle.Finished)d.Encounter.EndTurn();yield return null;
+                    if(q.CargoEncounter&&d.Encounter.Battle!=null&&!d.Encounter.Battle.Finished)
+                    {
+                        if(d.Encounter.UsesStagedCommands)
+                        {
+                            Require(d.Execute("end"),"staged enemy request");var phaseLimit=Time.realtimeSinceStartup+5;
+                            while(d.Encounter.Battle!=null&&d.Encounter.Battle.Phase==TurnPhase.Enemy&&Time.realtimeSinceStartup<phaseLimit)yield return null;
+                            Require(d.Encounter.Battle==null||d.Encounter.Battle.Phase!=TurnPhase.Enemy,"enemy phase timeout");
+                        }
+                        else d.Encounter.EndTurn();
+                    }
+                    yield return null;
                 }
                 Require(LostCargoQuest.Stage(d.Session.State)==CargoQuestStage.Recovered&&d.Session.Mode==PrototypeMode.Exploration,"actual victory/return: "+id);
                 Require(d.Save(output+".cargo-recovered.json")&&d.Load(output+".cargo-recovered.json"),"recovered persistence");
@@ -31,7 +41,7 @@ namespace Aethernia
                 Require(d.Save(output+".cargo-completed.json")&&d.Load(output+".cargo-completed.json"),"completed persistence");
                 Require(LostCargoQuest.Stage(d.Session.State)==CargoQuestStage.Completed,"completion restored");
             }
-            File.WriteAllText(output+".cargo.txt","PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; normal RPG/RTS/economy also checked by base probe.");
+            File.WriteAllText(output+".cargo.txt","PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; staged enemy phases="+d.Encounter.UsesStagedCommands+"; normal RPG/RTS/economy also checked by base probe.");
         }
         private static IEnumerator Arrive(ExplorationUnit hero)
         {var limit=Time.realtimeSinceStartup+15;yield return null;while(hero.IsMoving&&Time.realtimeSinceStartup<limit)yield return null;Require(!hero.IsMoving,"move timeout");}
