@@ -11,6 +11,9 @@ namespace Aethernia
         private bool defeated, guarding;
         private bool controllerBound;
         public float ObservedSpeed { get; private set; }
+        public bool IsMoving => actor != null && actor.IsMoving && ObservedSpeed > .05f;
+        public HumanoidVisualRig Rig => rig;
+        public HumanoidAnimationProfile Profile => profile;
         public bool CanAnimate => controllerBound && rig != null && rig.IsUsable && profile != null && profile.HasClip(CharacterMotion.Idle);
         public void Configure(HumanoidVisualRig value, HumanoidAnimationProfile animations)
         {
@@ -48,9 +51,11 @@ namespace Aethernia
             if (!CanAnimate) { animator.enabled = false; return; }
             if (!animator.enabled) animator.enabled = true;
             animator.SetFloat("Speed", ObservedSpeed);
-            var locomotion = ObservedSpeed > .05f && profile.HasClip(CharacterMotion.Walk) ? 1 : 0;
-            if (ObservedSpeed >= profile.RunSpeed && profile.HasClip(CharacterMotion.Run)) locomotion = 2;
+            var moving = IsMoving;
+            var locomotion = moving && profile.HasClip(CharacterMotion.Walk) ? 1 : 0;
+            if (moving && ObservedSpeed >= profile.RunSpeed && profile.HasClip(CharacterMotion.Run)) locomotion = 2;
             animator.SetInteger("Locomotion", locomotion);
+            if (profile.UseGaitRate) animator.SetFloat("GaitRate", locomotion == 0 ? 1 : Mathf.Clamp(ObservedSpeed / (locomotion == 2 ? profile.RunReferenceSpeed : profile.WalkReferenceSpeed), .25f, 1.5f));
             animator.SetBool("Defending", !defeated && guarding && profile.HasClip(CharacterMotion.Defend));
             animator.SetBool("Defeated", defeated && profile.HasClip(CharacterMotion.Defeat));
         }

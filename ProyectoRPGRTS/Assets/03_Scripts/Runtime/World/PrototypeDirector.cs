@@ -40,7 +40,7 @@ namespace Aethernia
         private void RefreshHero()
         { if (hero != null && session.Rules != null) hero.Agent.speed = session.Rules.Find(session.State.ClassId).Speed; }
         public bool IsBusy => rts.Active || (encounter.Battle != null && !encounter.Battle.Finished);
-        private void ClearEncounters() { encounter.Clear(); rts.Clear(); }
+        private void ClearEncounters(bool preserveAcceptedStrike = false) { encounter.Clear(preserveAcceptedStrike); rts.Clear(); }
         public bool Execute(string id)
         {
             if (id == "attack" && session.Mode == PrototypeMode.TurnCombat) { encounter.Attack(); return true; }
@@ -60,7 +60,7 @@ namespace Aethernia
                 cameraRig.SetRegion(Vector3.zero); cameraRig.FocusOn(new Vector3(-9, 0, 13));
                 return true;
             }
-            if (id == "explore") { ClearEncounters(); hero.Stop(); session.SetMode(PrototypeMode.Exploration); cameraRig.SetRegion(hero.transform.position.x > 30 ? new Vector3(50, 0, 0) : Vector3.zero); return true; }
+            if (id == "explore") { ClearEncounters(encounter.Battle != null && encounter.Battle.Won); hero.Stop(); session.SetMode(PrototypeMode.Exploration); cameraRig.SetRegion(hero.transform.position.x > 30 ? new Vector3(50, 0, 0) : Vector3.zero); return true; }
             if (id == "construct") { ClearEncounters(); hero.Stop(); session.SetMode(PrototypeMode.Construction); session.Say("Clic derecho sobre suelo libre: taller 3×3 m; coste 10 oro y 5 madera."); return true; }
             if (id == "save") return Save(SavePath);
             if (id == "load") return Load(SavePath);

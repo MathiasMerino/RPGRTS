@@ -7,6 +7,7 @@ namespace Aethernia
 {
     public static class PrototypeSaveStore
     {
+        public static string LastWriteFailure { get; private set; } = "";
         public static bool Valid(PrototypeState s, PrototypeRules rules)
         {
             if (s == null || s.Version != 1 || rules.Find(s.ClassId) == null || string.IsNullOrWhiteSpace(s.Name) || s.Name.Length > 32) return false;
@@ -24,7 +25,8 @@ namespace Aethernia
         private static bool Finite(float f) => !float.IsNaN(f) && !float.IsInfinity(f);
         public static bool Save(string path, PrototypeState state, PrototypeRules rules)
         {
-            if (!Valid(state, rules)) return false;
+            LastWriteFailure = "";
+            if (!Valid(state, rules)) { LastWriteFailure = "Invalid state"; return false; }
             try
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));
@@ -33,7 +35,8 @@ namespace Aethernia
                 if (File.Exists(path)) File.Replace(temp, path, null); else File.Move(temp, path);
                 return true;
             }
-            catch (Exception e) when (e is IOException || e is UnauthorizedAccessException || e is ArgumentException) { return false; }
+            catch (Exception e) when (e is IOException || e is UnauthorizedAccessException || e is ArgumentException)
+            { LastWriteFailure = e.GetType().Name + " 0x" + e.HResult.ToString("X8") + ": " + e.Message; return false; }
         }
         public static bool Load(string path, PrototypeRules rules, out PrototypeState state)
         {

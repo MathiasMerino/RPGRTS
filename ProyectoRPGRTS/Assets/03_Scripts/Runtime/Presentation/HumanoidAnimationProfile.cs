@@ -10,6 +10,9 @@ namespace Aethernia
         public RuntimeAnimatorController Controller;
         public AnimationClip Idle, Walk, Run, Attack, Defend, Hit, Defeat;
         [Min(.1f)] public float RunSpeed = 3.8f;
+        public bool AllowGenericClips;
+        public bool UseGaitRate;
+        [Min(.1f)] public float WalkReferenceSpeed = 1.4f, RunReferenceSpeed = 3.5f;
         public AnimationClip Clip(CharacterMotion motion)
         {
             switch (motion)
@@ -24,6 +27,6 @@ namespace Aethernia
             }
         }
         public bool HasClip(CharacterMotion motion)
-        { var clip = Clip(motion); return clip != null && !clip.legacy && clip.humanMotion && !clip.empty; }
+        { var clip = Clip(motion); return clip != null && !clip.legacy && (clip.humanMotion || AllowGenericClips) && !clip.empty; }
     }
 }

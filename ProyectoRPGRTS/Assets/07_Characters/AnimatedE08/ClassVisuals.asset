@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79aef3206dc36fd478391b275f5c441c, type: 3}
+  m_Name: ClassVisuals
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.CharacterVisualCatalog
+  Entries:
+  - ClassId: warrior
+    Prefab: {fileID: 8726147529508856561, guid: 6ea705259d45ae64eacc929560a6f743, type: 3}
+    HumanoidPrefab: {fileID: 4535062197003682528, guid: 8547c36f096554140a71fc5bdc833755, type: 3}
+    ReferenceArt: {fileID: 2800000, guid: aa8575aa309e0574da0a1fc1f515e9b1, type: 3}
+    ReferenceUv:
+      serializedVersion: 2
+      x: 0.125
+      y: 0.7285156
+      width: 0.1171875
+      height: 0.234375
+    ReferenceCaption: 'Concepto provisional
+
+      Guerrero'
+    DisplayTitle: Guerrero
+    PortraitSprite: {fileID: 21300000, guid: b704f5f5136722d4087a6cd888d19437, type: 2}
+    ConceptSheet: {fileID: 2800000, guid: aa8575aa309e0574da0a1fc1f515e9b1, type: 3}
+    PreviousPrefab: {fileID: 8369214138543721982, guid: 77a3bd0aa4cf3644eb4f8bece7b54bab, type: 3}
+    SharedMaterials:
+    - {fileID: 2100000, guid: c1145b8bbb4abda4dad2e2288884a6cc, type: 2}
+    - {fileID: 2100000, guid: 5b92e24f39f667a40b24ca6db4fb68d3, type: 2}
+    - {fileID: 2100000, guid: cb7f673790c27134b908b204817dcd60, type: 2}
+    - {fileID: 2100000, guid: 297321b1e26027a4aa96f6d2741eecbd, type: 2}
+    - {fileID: 2100000, guid: 67cf1525659cfb04f97e752076bb22b1, type: 2}
+    - {fileID: 2100000, guid: 4de8e7e8f22c957438ed56ba57f2ffe4, type: 2}
+    - {fileID: 2100000, guid: d8113894c5ef76848a8c2b7a9e8acfaf, type: 2}
+    - {fileID: 2100000, guid: 7a39879c208b3e4489ad1686ab3afc19, type: 2}
+    ReferenceHeightMeters: 1.8
+    IsProvisional: 1
+    EquipmentPolicy: "E08: esqueleto Generic compartido; espada seg\xFAn inventario,
+      bast\xF3n Mago accesorio de identidad sin estad\xEDsticas."
+  - ClassId: mage
+    Prefab: {fileID: 4957824546090921224, guid: f04d4a5a6a23a104caef80a8e739ab3e, type: 3}
+    HumanoidPrefab: {fileID: 7085414598136386171, guid: de8413de9c60fe44a8ea58a9a3f7a2f6, type: 3}
+    ReferenceArt: {fileID: 2800000, guid: 2a671ba6d4a7b724085b8856df6efbd6, type: 3}
+    ReferenceUv:
+      serializedVersion: 2
+      x: 0.104166664
+      y: 0.7285156
+      width: 0.1171875
+      height: 0.234375
+    ReferenceCaption: 'Concepto provisional
+
+      Mago'
+    DisplayTitle: Mago
+    PortraitSprite: {fileID: 21300000, guid: 82e69744b3293704aa0221ad8d461e93, type: 2}
+    ConceptSheet: {fileID: 2800000, guid: 2a671ba6d4a7b724085b8856df6efbd6, type: 3}
+    PreviousPrefab: {fileID: 4818405744351380324, guid: 40d020de17dfb964ba654bd20ce92b44, type: 3}
+    SharedMaterials:
+    - {fileID: 2100000, guid: c1145b8bbb4abda4dad2e2288884a6cc, type: 2}
+    - {fileID: 2100000, guid: 961d9b56517c55047bb05f13da220a90, type: 2}
+    - {fileID: 2100000, guid: 5b92e24f39f667a40b24ca6db4fb68d3, type: 2}
+    - {fileID: 2100000, guid: cb7f673790c27134b908b204817dcd60, type: 2}
+    - {fileID: 2100000, guid: 297321b1e26027a4aa96f6d2741eecbd, type: 2}
+    - {fileID: 2100000, guid: 523611ff7dd73cf4795d589284298942, type: 2}
+    - {fileID: 2100000, guid: 7a39879c208b3e4489ad1686ab3afc19, type: 2}
+    - {fileID: 2100000, guid: 67cf1525659cfb04f97e752076bb22b1, type: 2}
+    - {fileID: 2100000, guid: d8113894c5ef76848a8c2b7a9e8acfaf, type: 2}
+    ReferenceHeightMeters: 1.8
+    IsProvisional: 1
+    EquipmentPolicy: "E08: esqueleto Generic compartido; espada seg\xFAn inventario,
+      bast\xF3n Mago accesorio de identidad sin estad\xEDsticas."
+  - ClassId: monk
+    Prefab: {fileID: 7590876109761433908, guid: a7aa9048c34261b4fbd41dfdf12da3a3, type: 3}
+    HumanoidPrefab: {fileID: 5251751243926366139, guid: 5f6b10902e0e4934c94849924d9b11ad, type: 3}
+    ReferenceArt: {fileID: 2800000, guid: f67798f2b79ae194e840e6be37866f69, type: 3}
+    ReferenceUv:
+      serializedVersion: 2
+      x: 0.12695312
+      y: 0.7285156
+      width: 0.1171875
+      height: 0.234375
+    ReferenceCaption: 'Concepto provisional
+
+      Monje'
+    DisplayTitle: Monje
+    PortraitSprite: {fileID: 21300000, guid: fbe657e43ac5b4648b4275f6e904568f, type: 2}
+    ConceptSheet: {fileID: 2800000, guid: f67798f2b79ae194e840e6be37866f69, type: 3}
+    PreviousPrefab: {fileID: 1303856060874188198, guid: f70b889bed681c342ab579393e215893, type: 3}
+    SharedMaterials:
+    - {fileID: 2100000, guid: c1145b8bbb4abda4dad2e2288884a6cc, type: 2}
+    - {fileID: 2100000, guid: 5b92e24f39f667a40b24ca6db4fb68d3, type: 2}
+    - {fileID: 2100000, guid: cb7f673790c27134b908b204817dcd60, type: 2}
+    - {fileID: 2100000, guid: 297321b1e26027a4aa96f6d2741eecbd, type: 2}
+    - {fileID: 2100000, guid: 7a39879c208b3e4489ad1686ab3afc19, type: 2}
+    - {fileID: 2100000, guid: 757d223906741dc449000e4a56df1116, type: 2}
+    - {fileID: 2100000, guid: d8113894c5ef76848a8c2b7a9e8acfaf, type: 2}
+    ReferenceHeightMeters: 1.8
+    IsProvisional: 1
+    EquipmentPolicy: "E08: esqueleto Generic compartido; espada seg\xFAn inventario,
+      bast\xF3n Mago accesorio de identidad sin estad\xEDsticas."

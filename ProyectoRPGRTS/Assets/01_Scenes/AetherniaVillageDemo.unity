@@ -30778,6 +30778,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8137802751456085368, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4400504113842201709}
+    - targetCorrespondingSourceObject: {fileID: 8137802751456085368, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4400504113842201710}
   m_SourcePrefab: {fileID: 100100000, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
 --- !u!114 &4400504113842201705 stripped
 MonoBehaviour:
@@ -30818,9 +30821,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.CharacterVisualPresenter
   session: {fileID: 1013268299}
-  catalog: {fileID: 11400000, guid: 3f655ee8b38750c4aa175027c6d209c7, type: 2}
+  catalog: {fileID: 11400000, guid: 409367fc6c17e5d48be1ad35bde4b506, type: 2}
   visualRoot: {fileID: 2010277868}
   legacyBody: {fileID: 4400504113842201707}
+--- !u!114 &4400504113842201710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400504113842201708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b21187176379bb4b86bd74dca9f4a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.CharacterCombatAnimationPresenter
+  encounter: {fileID: 1907032371}
+  visuals: {fileID: 4400504113842201709}
 --- !u!224 &4596673429288053946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30879,7 +30896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f7a2449c828c14096a1088450d26be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ClassReferenceCard
-  catalog: {fileID: 11400000, guid: 3f655ee8b38750c4aa175027c6d209c7, type: 2}
+  catalog: {fileID: 11400000, guid: 409367fc6c17e5d48be1ad35bde4b506, type: 2}
   portrait: {fileID: 7750908114393372553}
   aspect: {fileID: 8250002779632711475}
   information: {fileID: 7324506839510688636}
@@ -35179,7 +35196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.MedievalHudView
   Theme: {fileID: 11400000, guid: df6c92cc2a22ca94ebb2cf51ac693060, type: 2}
-  Catalog: {fileID: 11400000, guid: 3f655ee8b38750c4aa175027c6d209c7, type: 2}
+  Catalog: {fileID: 11400000, guid: 409367fc6c17e5d48be1ad35bde4b506, type: 2}
   HeroName: {fileID: 953526057}
   HealthLabel: {fileID: 1840040114}
   Resources: {fileID: 1560631845}

@@ -1,0 +1,293 @@
+{
+  "images": [
+    {
+      "path": "Docs/Images/E08/Actual-mage-Attack.png",
+      "sha256": "77dcf356243e1944b81a6ff1ad541b72b83c3c205415b077dc6e14b065853fae",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-mage-Defeat.png",
+      "sha256": "f7fcad69d4d9980ceb4e220fdaa25b1f738bb63bd4998a9bc22019618e58d275",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-mage-Defend.png",
+      "sha256": "33af9bfacfc8aa56ce9149989e849e0fe3d62f48f9a606f0a6adc8c1cb3e396d",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-mage-Hit.png",
+      "sha256": "92a65bd50235a28ffd4efa96fcfbbd8711f45efe9cab7f5605b930db12b1b015",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-monk-Attack.png",
+      "sha256": "0c6bea6a292575cb9999f0e23542e416bde3ef856ad7bac92d0111944b191e18",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-monk-Defeat.png",
+      "sha256": "2d6c8bb17afcd6abbc4fbe58d14e9e32e5b64c8b5339a6bf38af86c83edd1efc",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-monk-Defend.png",
+      "sha256": "bc57bc47f34f11d60124950cf5cdd5ac478e36ea09b5ebd24974ee0b92ed4928",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-monk-Hit.png",
+      "sha256": "92c562019ffb8449280f4d40eb7ede4539da9067056ee53da3c7c8d330b93e1a",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-warrior-Attack.png",
+      "sha256": "6fa26546761c76a021bb52aa2fdf7ad7901d8d2b46d472465e6dbeade3313df3",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-warrior-Defeat.png",
+      "sha256": "3b9f3fc1de088c27fb6bf5dbb9ec064fdf7d0fccaee960d95c17e87a96e2ab55",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-warrior-Defend.png",
+      "sha256": "d6dfcda15c6bbfb73adcc0db677f9c965e86ad62408d77aa99a6273d184f6d32",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/Actual-warrior-Hit.png",
+      "sha256": "7b0f0cf012927aa784313fe9839d6603ec2255780acd16b2ffc0caa3ed1fc3aa",
+      "kind": "live editor gameplay"
+    },
+    {
+      "path": "Docs/Images/E08/mage-Pose-Attack.png",
+      "sha256": "a8b7783a760d81e1a14610d436cb71f8c6a1b8046d92695e542bb43f087b8599",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-Pose-Defeat.png",
+      "sha256": "6c521a0641b3373b593a3316001f5a479c9c66baa9fcecf774cee4e00250082e",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-Pose-Defend.png",
+      "sha256": "97efc8898ae4aff513ccffa4d6a7ee1c74ed9298ca8b34c271b90f224212faaf",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-Pose-Hit.png",
+      "sha256": "7965b81d29e10e9622d474964221ee1a8764da8be77f4a28e174700eb51db241",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-Pose-Idle.png",
+      "sha256": "cf404b308b12a29583a860c40f26348d9de388341b8658fb4b9ef84cb1a242ff",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-Pose-Run.png",
+      "sha256": "c49d7e1afb267a9ce2062b26b72436371a6d1329ed3eb25e2f3817d7aa71e827",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-Pose-Walk.png",
+      "sha256": "88237c3ad51b01c9080422d4820d52372caf90afdbffc78d79546fb81b5b1834",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-View-0.png",
+      "sha256": "94a9bb47832294f23de23c8cc49cca104505d6e2a595bdd51a39f14f4030592c",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-View-180.png",
+      "sha256": "2e4b8dba178b7c6d1c109fc39702727f7ce3d63b73815e5ee7bd19e91878234c",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-View-35.png",
+      "sha256": "e6a6b77939d47e76e9497e0fff7ee01c2ece38f2755e6a77a120ca7ca1989779",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/mage-View-90.png",
+      "sha256": "d835a4e2a8c5bea77cac4159b02490574ddcf256204c880afa962ff4703905c9",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-Pose-Attack.png",
+      "sha256": "685901be50b835b311069e3b77d8ca458d538b17cbde9ce73f06f4e70bc6fdde",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-Pose-Defeat.png",
+      "sha256": "e3b1fc8b0b7a286b473a32bb753db78b7d61220f9136b1ede7f17e848767919b",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-Pose-Defend.png",
+      "sha256": "6453de59cf076c7f52e795e6552e0dc1cf4d864fc9497adafbfca5ec2a5e425a",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-Pose-Hit.png",
+      "sha256": "7c15bf6d70690cc1750646aeff1e1bcb2a18ac949aa30228b69fec4c3faae748",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-Pose-Idle.png",
+      "sha256": "773bfe188d596a59e9405d96ab1204aaa19882faed5a03a40a2316ed6b8cfe67",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-Pose-Run.png",
+      "sha256": "02c3fa43d9597bc26d70904a7fd4c2fedd07d8cdfbf0dcf7fb008151d0f7240d",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-Pose-Walk.png",
+      "sha256": "703d588da91fbcaf298e4d239f0dbb4052b6e84cf98a0b61cb9932f35d42bdda",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-View-0.png",
+      "sha256": "d097971c42ff0f694d8ea2040036d7fc99ef579e2caa39c5d39a660acb2c4bef",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-View-180.png",
+      "sha256": "b868cbd07b82b8548248738cb504efcf1e04d364f4bff00d2a769402389a6aec",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-View-35.png",
+      "sha256": "a4f5c21882cdf42e7783f86d4b7ce947fe0c7c6967fc2f620d7a77288fc56683",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/monk-View-90.png",
+      "sha256": "6d3b7f53dbb39f0f7657b4cfca2f30c9128ba54425612c63481c950c63f7fc14",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-Pose-Attack.png",
+      "sha256": "09edf7bbcd8823b876029f37cdf38e66de982004dfa5015d224bdaa9542821c9",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-Pose-Defeat.png",
+      "sha256": "cdedf49c054aa4fcb755406f91222d1b817c17f168dfe8bb95344ff93d11654a",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-Pose-Defend.png",
+      "sha256": "d597f471ba0a04cabc434273a0f8e5cffe86d12eaa8b46d64063c87a8724d212",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-Pose-Hit.png",
+      "sha256": "e8182edd9477e2d499b4c795e46ac36c72cad6eccd34ae66183de334163a5136",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-Pose-Idle.png",
+      "sha256": "4a5596a1fdfd9f793d8b93a35a9adabf8a70571ffe2a167c5b77240c3d2e06f4",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-Pose-Run.png",
+      "sha256": "fd03628b11795536bc374251f4d313d4a9df9c22c365318072508b5077b941a7",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-Pose-Walk.png",
+      "sha256": "d4672511f785be032c1335185272b7cb94fa6c83bd03533cb20296e0af4e1f2f",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-View-0.png",
+      "sha256": "911123deefe551a864792a8ec1c730cae023159e293a985a70ca08e5a7e50f46",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-View-180.png",
+      "sha256": "14e8fd60d412d7e330d102d3afbbc5018a62a71d204c73ec6ed82590f3a4f923",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-View-35.png",
+      "sha256": "9aabfde81e3db42984e84ab1fb398099a66f09dc05e82c38cd666fdcf1fc6247",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-View-90.png",
+      "sha256": "c3dfdee664407c4b57eefb3338508614743480a93393fb2958558ea53f4a17af",
+      "kind": "sampled rig pose with temporary inspection fill"
+    },
+    {
+      "path": "Docs/Images/E08/Player-monk.png",
+      "sha256": "0dd33f877de51259da8485976146ae810fc006e8b2c14bd72f2d401382b90a5f",
+      "kind": "standalone Game camera; ordinary village lighting"
+    },
+    {
+      "path": "Docs/Images/E08/Player-warrior.png",
+      "sha256": "be0db37f5266ffa81545bdb2c11b788b290547d3ef71c9d87046f998514ce98b",
+      "kind": "standalone Game camera; ordinary village lighting"
+    },
+    {
+      "path": "Docs/Images/E08/Player-mage.png",
+      "sha256": "a4d234e96e5dec9e453eb458cf6b08d1a449238f4fc88c8eb89a1834298c3741",
+      "kind": "standalone Game camera; ordinary village lighting"
+    },
+    {
+      "path": "Docs/Images/E08/Player-village.png",
+      "sha256": "e046c7b7c52cb26acdc561d4cb8af654a669167c29e78cbd7d708b968b6d051b",
+      "kind": "standalone Game camera; ordinary village lighting"
+    }
+  ],
+  "videos": [
+    {
+      "path": "Docs/Images/E08/monk-Attack-Sampled.mp4",
+      "frames": 12,
+      "fps_playback": 13,
+      "dimensions": [
+        640,
+        512
+      ],
+      "bytes": 144431,
+      "sha256": "3cd1d5ef01666f9e90e32af5de5d6b95a4f7041497691c6fe4eb6bba3237f5e4",
+      "kind": "Unity clip samples; not live gameplay or a performance measurement",
+      "decoded_frames": 12,
+      "format": "H264 MP4"
+    },
+    {
+      "path": "Docs/Images/E08/warrior-Attack-Sampled.mp4",
+      "frames": 12,
+      "fps_playback": 13,
+      "dimensions": [
+        640,
+        512
+      ],
+      "bytes": 149238,
+      "sha256": "c8868b82607cbae71d45898ea3e8594fdd068995f0b38fc4327781c677ba7b58",
+      "kind": "Unity clip samples; not live gameplay or a performance measurement",
+      "decoded_frames": 12,
+      "format": "H264 MP4"
+    },
+    {
+      "path": "Docs/Images/E08/mage-Attack-Sampled.mp4",
+      "frames": 12,
+      "fps_playback": 9,
+      "dimensions": [
+        640,
+        512
+      ],
+      "bytes": 152035,
+      "sha256": "93ffa92ce3b6b6a8a9825a2e93b023367e2101047108420ab99d1b01dd7a4980",
+      "kind": "Unity clip samples; not live gameplay or a performance measurement",
+      "decoded_frames": 12,
+      "format": "H264 MP4"
+    }
+  ]
+}

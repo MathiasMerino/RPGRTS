@@ -184,3 +184,8 @@ Nuevo brief concreta seis bloques F3-C02.1..6: auditoría, sistema visual, HUD c
 ## E07 — Aldea medieval autorizada
 
 Iteración de entorno integrada en AetherniaVillageDemo, desde dab39c2/E03–E06 porque PR #1 no está fusionado. Se conserva ruta/estado de misión, gameplay y personajes provisionales. Secuencia E07-P0..P5: línea base, biblioteca modular, suelo/vegetación/utilería, iluminación/oclusión, evidencia/regresión, build/PR apilado. Informe único Docs/E07_ALDEA_MEDIEVAL.md. No iniciar E08 ni fusionar PR #1 o main.
+
+
+## E08 — Personajes articulados autorizados
+
+Rama feature/e08-personajes-animados desde 8f0108b/E07; PR apilado hacia E07 mientras #2 permanezca abierto. Autoría original nativa Unity tras comprobar ausencia de Blender/bpy/modelos riggeados. Plan secuencial E08-01..06 en CHECKLIST: piloto, tres mallas/rigs/clips, integración modular cosmética, evidencia/deformación, regresión/build y documentación/publicación. Detalles/fichas/límites en Docs/E08_PERSONAJES_ANIMADOS.md. Generic explícito, sin certificar Humanoid o arte final; catálogo separado de demo y proxies/escena original preservados. No cambios de reglas, root motion o daño desde animaciones, ni E09. Aprobación humana/artística independiente.

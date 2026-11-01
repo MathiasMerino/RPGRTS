@@ -6,6 +6,14 @@ La segunda etapa audita y corrige la integración existente. El estado real por 
 
 La interfaz C02 incorpora un HUD medieval compacto sobre D01/E01/E02/E02-B. Arriba aparecen salud/recursos, Ayuda y Menú; abajo, Personaje, Inventario, Registro y acciones contextuales. Las ventanas se cierran con × o ESC. Menú reúne guardado/carga y cambio de actividad; la ayuda es opcional. [Informe C02](Docs/C02_INTERFAZ_MEDIEVAL.md) y dirección artística documentan apariencia y límites.
 
+## Entrega E08
+
+Paquete local actual: `ProyectoRPGRTS/Builds/Aethernia-E08-Personajes-Windows.zip`; descomprimir completo y abrir Aethernia.exe. Los diez ZIP anteriores se conservan.
+
+La demo actual conserva la aldea E07 y añade Monje, Guerrero y Mago con mallas skinned, rigs Generic y clips originales Idle/Walk/Run/Attack/Defend/Hit/Defeat. La apariencia y las animaciones son provisionales, con aprobación artística/humana pendiente. Fuente, límites y pasos detallados en [E08_PERSONAJES_ANIMADOS](Docs/E08_PERSONAJES_ANIMADOS.md). Las notas de E01–E07 posteriores conservan el historial; sus afirmaciones de figuras estáticas no describen los modelos E08 activos.
+
+Para revisar: Personaje → clase fuera de combate, clic derecho para caminar; recoger/equipar espada en el cofre, acercarse al adversario y usar Atacar/Defender/Finalizar turno. La animación no aplica daño ni altera turnos. F5/F9 conservan la partida v1. Run depende de la velocidad existente del agente, sin tecla nueva de sprint.
+
 ## Abrir el juego
 
 Ejecutar `ProyectoRPGRTS/Builds/Windows/Aethernia.exe`. Mantener junto al ejecutable todos los archivos de la carpeta Windows. Para editarlo, abrir `ProyectoRPGRTS/` en Unity 6000.5.8f1 y cargar `Assets/01_Scenes/AetherniaVillageDemo.unity`. La escena anterior `PlayablePrototype.unity` se conserva.
