@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 namespace Aethernia
 {
-    public enum EncounterCue { Reset, Attack, Guard, GuardEnded, Hit, Defeat }
+    public enum EncounterCue { Reset, Attack, Guard, GuardEnded, Hit, Defeat, Completed }
     public readonly struct EncounterPresentation
     {
         public readonly EncounterCue Cue;
@@ -26,11 +26,11 @@ namespace Aethernia
         public Vector3 EnemyPosition => enemy != null ? enemy.transform.position : hero.transform.position;
         public void Configure(GameSession game, ExplorationUnit actor, GameObject template, Material material)
         { session = game; hero = actor; enemyPrefab = template; enemyMaterial = material; }
-        public void Clear()
+        public void Clear(bool preserveAcceptedStrike = false)
         {
             if (enemy != null) { enemy.gameObject.SetActive(false); Destroy(enemy.gameObject); }
             enemy = null; Battle = null;
-            Show(EncounterCue.Reset);
+            Show(preserveAcceptedStrike ? EncounterCue.Completed : EncounterCue.Reset);
         }
         public bool Begin(int seed = 0)
         { return BeginAt(hero.transform.position+Vector3.forward*3,seed); }

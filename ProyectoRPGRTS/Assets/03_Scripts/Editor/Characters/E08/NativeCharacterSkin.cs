@@ -166,9 +166,12 @@ namespace Aethernia.Editor.Characters
         }
         public void Ribbon(int mat,Vector3 a,Vector3 b,float width)
         {
-            var side=Vector3.Cross((b-a).normalized,Vector3.forward)*width*.5f;var start=vertices.Count;
-            for(var i=0;i<=12;i++){var p=Vector3.Lerp(a,b,i/12f);Vertex(Conform(p-side),Vector3.forward);Vertex(Conform(p+side),Vector3.forward);}
-            for(var i=0;i<12;i++){var n=start+i*2;Face(n,n+1,n+2,mat);Face(n+1,n+3,n+2,mat);Face(n+2,n+1,n,mat);Face(n+2,n+3,n+1,mat);}
+            var side=Vector3.Cross((b-a).normalized,Vector3.forward)*width*.5f;var start=vertices.Count;const int across=8;
+            var normal=a.z+b.z<0?Vector3.back:Vector3.forward;
+            for(var i=0;i<=12;i++)for(var j=0;j<=across;j++)
+            {var p=Vector3.Lerp(a,b,i/12f)+side*(2f*j/across-1);Vertex(Conform(p),normal);}
+            for(var i=0;i<12;i++)for(var j=0;j<across;j++)
+            {var n=start+i*(across+1)+j;Face(n,n+1,n+across+1,mat);Face(n+1,n+across+2,n+across+1,mat);Face(n+across+1,n+1,n,mat);Face(n+across+1,n+across+2,n+1,mat);}
         }
         private Vector3 Conform(Vector3 p)
         {

@@ -100,7 +100,7 @@ namespace Aethernia.Editor.Characters
             foreach(var presenter in Object.FindObjectsByType<CharacterVisualPresenter>(FindObjectsInactive.Include))SetCatalog(presenter,"catalog",catalog);
             foreach(var hud in Object.FindObjectsByType<MedievalHudView>(FindObjectsInactive.Include)){hud.Catalog=catalog;EditorUtility.SetDirty(hud);}
             foreach(var card in Object.FindObjectsByType<ClassReferenceCard>(FindObjectsInactive.Include))SetCatalog(card,"catalog",catalog);
-            var action=director.Hero.GetComponent<CharacterCombatAnimationPresenter>();if(action==null)action=director.Hero.gameObject.AddComponent<CharacterCombatAnimationPresenter>();action.Configure(director.Session,Object.FindAnyObjectByType<TurnEncounter>(),director.Hero.GetComponent<CharacterVisualPresenter>());
+            var action=director.Hero.GetComponent<CharacterCombatAnimationPresenter>();if(action==null)action=director.Hero.gameObject.AddComponent<CharacterCombatAnimationPresenter>();action.Configure(Object.FindAnyObjectByType<TurnEncounter>(),director.Hero.GetComponent<CharacterVisualPresenter>());
             if(EnvironmentPhysicsSnapshot.Capture(scene)!=physics)throw new InvalidOperationException("E08 cambió física del escenario.");
             EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();Debug.Log("E08_INTEGRATED: solo presentación en aldea, escena original y proxies intactos.");
         }
@@ -120,10 +120,20 @@ namespace Aethernia.Editor.Characters
                     source.vertices=generated.vertices;source.normals=generated.normals;source.uv=generated.uv;
                     source.boneWeights=generated.boneWeights;source.bindposes=generated.bindposes;source.subMeshCount=generated.subMeshCount;
                     for(var i=0;i<generated.subMeshCount;i++)source.SetTriangles(generated.GetTriangles(i),i);
-                    source.RecalculateBounds();source.name=id;EditorUtility.SetDirty(source);AssetDatabase.SaveAssets();
+                    source.RecalculateBounds();source.name=id;EditorUtility.SetDirty(source);
+                    var tempClip=Root+"/Animation/"+id+"_Idle_Staging.anim";
+                    try
+                    {
+                        var generatedIdle=NativeCharacterClips.Create(rig,id,CharacterMotion.Idle,tempClip);
+                        var idle=AssetDatabase.LoadAssetAtPath<HumanoidAnimationProfile>(Root+"/Animation/"+id+".asset").Idle;idle.ClearCurves();
+                        foreach(var binding in AnimationUtility.GetCurveBindings(generatedIdle))AnimationUtility.SetEditorCurve(idle,binding,AnimationUtility.GetEditorCurve(generatedIdle,binding));
+                        AnimationUtility.SetAnimationClipSettings(idle,AnimationUtility.GetAnimationClipSettings(generatedIdle));idle.EnsureQuaternionContinuity();EditorUtility.SetDirty(idle);AssetDatabase.SaveAssets();
+                    }
+                    finally{AssetDatabase.DeleteAsset(tempClip);}
                 }
                 finally{Object.DestroyImmediate(node);AssetDatabase.DeleteAsset(stage);}
             }
+            FinalizeAssets();Integrate();
             Debug.Log("E08_REFINED: materiales de piel, ajuste de ropa/vendas y continuidad de pesos; GUID originales conservados.");
         }
         public static void FinalizeAssets()

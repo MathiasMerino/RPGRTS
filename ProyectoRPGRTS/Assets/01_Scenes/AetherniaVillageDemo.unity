@@ -30836,7 +30836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b21187176379bb4b86bd74dca9f4a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.CharacterCombatAnimationPresenter
-  session: {fileID: 1013268299}
   encounter: {fileID: 1907032371}
   visuals: {fileID: 4400504113842201709}
 --- !u!224 &4596673429288053946

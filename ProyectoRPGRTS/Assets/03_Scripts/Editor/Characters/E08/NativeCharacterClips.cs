@@ -43,6 +43,15 @@ namespace Aethernia.Editor.Characters
             if(bone.EndsWith("Fingers",StringComparison.Ordinal))p.z=s*(id=="monk"?45:30);
             if(bone=="Chest")p.x=Mathf.Sin(t*Mathf.PI*2)*.9f;
             if(bone=="Head")p.x=2+Mathf.Sin(t*Mathf.PI*2)*.5f;
+            if(motion==CharacterMotion.Idle)
+            {
+                if(id=="monk")
+                {if(arm)p=new Vector3(-8,s*35,s*48);if(forearm)p=new Vector3(0,s*46,-s*72);}
+                else if(id=="warrior")
+                {if(arm)p=new Vector3(0,s*15,s*76);if(forearm)p=new Vector3(0,s*25,-s*10);}
+                else
+                {if(bone=="LeftUpperArm")p=new Vector3(0,12,70);if(bone=="LeftForearm")p=new Vector3(0,22,-12);if(bone=="RightHand")p.z=-8;}
+            }
             if(motion==CharacterMotion.Walk||motion==CharacterMotion.Run)
             {
                 var run=motion==CharacterMotion.Run;var phase=t*Mathf.PI*2+(left?Mathf.PI:0);var stride=Mathf.Sin(phase);var lift=Mathf.Max(0,-stride);
@@ -90,7 +99,7 @@ namespace Aethernia.Editor.Characters
                     else if(id=="warrior")
                     {
                         var sweep=Mathf.SmoothStep(0,1,Mathf.Clamp01((t-.15f)/.52f));var recover=Mathf.SmoothStep(0,1,Mathf.Clamp01((t-.72f)/.28f));
-                        if(bone=="RightUpperArm")p=Vector3.Lerp(new Vector3(-20,-20,15),new Vector3(35,-115,-48),sweep); 
+                        if(bone=="RightUpperArm")p=Vector3.Lerp(new Vector3(-20,-20,15),new Vector3(35,-115,-48),sweep);
                         if(bone=="RightUpperArm")p=Vector3.Lerp(p,new Vector3(-8,-38,-47),recover);
                         if(bone=="RightForearm")p=new Vector3(0,-20,35*(1-strike));
                         if(bone=="Chest")p.y=-22+strike*48;

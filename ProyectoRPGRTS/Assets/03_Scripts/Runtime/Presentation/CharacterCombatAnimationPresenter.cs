@@ -6,7 +6,6 @@ namespace Aethernia
     // Consume resultados aceptados. La cola es cosmética: jamás retarda turnos ni aplica daño.
     public sealed class CharacterCombatAnimationPresenter : MonoBehaviour
     {
-        [SerializeField] private GameSession session;
         [SerializeField] private TurnEncounter encounter;
         [SerializeField] private CharacterVisualPresenter visuals;
         private readonly Queue<EncounterPresentation> pending = new Queue<EncounterPresentation>();
@@ -14,9 +13,9 @@ namespace Aethernia
         private float nextAction;
         private bool guarding;
         public int PlayedActions { get; private set; }
-        public void Configure(GameSession game, TurnEncounter combat, CharacterVisualPresenter presenter)
+        public void Configure(TurnEncounter combat, CharacterVisualPresenter presenter)
         {
-            var active=isActiveAndEnabled;if(active)Unsubscribe();session=game;encounter=combat;visuals=presenter;if(active)Subscribe();
+            var active=isActiveAndEnabled;if(active)Unsubscribe();encounter=combat;visuals=presenter;if(active)Subscribe();
         }
         private void OnEnable() { Subscribe(); }
         private void OnDisable() { Unsubscribe(); ResetView(); }
@@ -26,6 +25,14 @@ namespace Aethernia
         private void Receive(EncounterPresentation cue)
         {
             if(cue.Cue==EncounterCue.Reset){ResetView();return;}
+            if(cue.Cue==EncounterCue.Completed)
+            {
+                // La misión limpia el encuentro en el mismo frame del golpe ganador.
+                // Conservar solo el último golpe pendiente evita perderlo o reproducir una cola atrasada.
+                guarding=false;var found=false;var strike=default(EncounterPresentation);
+                foreach(var action in pending)if(action.Cue==EncounterCue.Attack){strike=action;found=true;}
+                pending.Clear();if(found){pending.Enqueue(strike);nextAction=0;}return;
+            }
             if(cue.Cue==EncounterCue.Guard){guarding=true;return;}
             if(cue.Cue==EncounterCue.GuardEnded){guarding=false;return;}
             // Un modelo ausente no retiene eventos para otro personaje futuro.
