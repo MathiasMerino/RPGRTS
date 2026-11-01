@@ -95,3 +95,8 @@ Para D/E registrar procedencia/licencia, escala, materiales, memoria/draw calls 
 ## E07 — Aldea integrada para revisión (2026-10-31)
 
 Aplicación provisional de arquitectura europea de piedra/entramado, cubiertas de pizarra inclinadas, plaza/pozo, senderos de tierra, bosque templado y señales de actividad. Trece materiales compartidos nuevos y cinco albedos originales (piedra/madera/tierra/pizarra/hierba), conservando recursos anteriores. Luz cálida de tarde, sombras frías legibles, SSAO existente y postproceso moderado en Volume propio; sin alterar URP global. Recorte reversible de muros altos, cubiertas y árboles con el componente existente. Las figuras de clase siguen estáticas; no se aprueba arte final, narrativa ni sesión humana. Distribución, medidas, procedencia, capturas reales y resultados se centralizan en [E07_ALDEA_MEDIEVAL](../Docs/E07_ALDEA_MEDIEVAL.md).
+
+
+## E08 — Personajes articulados provisionales
+
+Se conserva la propuesta de las tres hojas: Monje naranja asimétrico/pecho libre/vendas, Guerrero acero/cuero/silueta robusta y Mago ciruela/azul grisáceo/túnica dividida/bastón. Base anatómica tridimensional continua, rig Generic y skin reales; ropa adaptada a articulaciones y acciones reconocibles a distancia. Materiales originales compartidos, sin assets externos. El objetivo de esta entrega es sustituir la inmovilidad por animación funcional, sin prometer acabado realista final, anatomía facial final, retargeting Humanoid o aprobación humana. Fichas, dimensiones, preparación de sustitutos y evidencia se centralizan en [E08_PERSONAJES_ANIMADOS](../Docs/E08_PERSONAJES_ANIMADOS.md).

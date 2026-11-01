@@ -366,3 +366,27 @@ Build final x64 195.637.067 bytes/43,71 s; headless 36,05 s y GPU RTX3050 35,59 
 ## 2026-10-31 — E07 publicado para revisión
 
 Rama feature/e07-aldea-medieval publicada y PR #2 en borrador apilado hacia E03–E06: https://github.com/MathiasMerino/RPGRTS/pull/2. PR #1 reconsultado: abierto/borrador/no fusionado, cabeza dab39c2. E07-P0..P5 cerradas técnicamente con evidencia; revisión humana/artística E07-H y confirmación F2-07 pendientes. No merge, force push, release o inicio de E08. Historial de objetivos en informe E07; este cierre solo actualiza documentación.
+
+
+## 2026-10-31 — Inicio E08
+
+PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados desde 8f0108b. Auditoría dirigida y conceptos revisados. No Blender/bpy/modelos riggeados locales o clips disponibles; se evaluará autoría nativa Unity de skins/rig Generic/curvas reales, conservando pipeline Humanoid/proxies y sin instalaciones. Plan secuencial registrado; no se declara capacidad validada todavía.
+
+
+### E08 — Autoría e integración incremental
+- Tres mallas corporales continuas con ropa, rigs Generic válidos de 24 huesos, pesos/bindposes y trece clips originales (cuatro compartidos, nueve específicos); grafo E02 conservado, nuevo grafo común y overrides por clase. Catálogo E08 solo en la demo; proxies/escena original recuperables.
+- Equipamiento existente a huesos, presentación de comandos aceptados/impactos/derrota sin alterar reglas, daño o guardado v1. Root motion y eventos de clip desactivados. Sin instalaciones ni descargas.
+- Primeras pruebas 5/6; se detectó velocidad residual de llegada que mantenía Walk y retenía cues. Driver/presentador consultan también finalización real del trayecto. Capturas detectaron prendas enterradas y encuadre ocluido; ajuste de malla/pesos/ropa/anclajes conservando GUID y física. Repetición y cierre pendientes.
+
+
+### E08 — 2026-11-01, refinamiento y verificación
+- Refinamiento mediante APIs de Mesh para actualizar buffers CPU/GPU conservando GUID; tela subdividida adaptada al pecho, vendas visibles, normales coherentes, poses Idle de clase y anclajes corregidos. Fuente y proxies previos intactos.
+- Caso reproducible de final de victoria: la vuelta automática a explorar podía borrar el golpe aceptado del mismo frame. Cue Completed conserva el último golpe pendiente sin retrasar recompensa, cambio de modo ni estadísticas; carga/nueva actividad siguen cancelando la cola. Prueba de aceptación añadida.
+- Pruebas focales de siete estados y resultados reales de tres clases pasan. Primera regresión 73/73 (wrapper alcanzó el límite de diez minutos); segunda 72/73 por escritura de guardado tras mazmorra, con temporal válido conservado. Recontrol de ese mismo recorrido y capturas 2/2. LastWriteFailure aporta tipo/HResult/mensaje sin cambiar la operación atómica/esquema; se mantiene diagnóstico de la incidencia y se repite la regresión con límite explícito de quince minutos.
+- MP4 de muestras articuladas empaquetados con FFmpeg local ya existente y decodificados con OpenCV; sin instalar/descargar software. Capturas de poses con luz de inspección, acciones integradas sin luz añadida; no confundirlas con evaluación humana ni medición de FPS.
+
+
+### E08 — Verificación final y entrega local (2026-11-01)
+- Regresión final 73/73, cero fallos/omisiones y salida 0. La incidencia intermedia de guardado no se reprodujo en recontrol, pasada final o player; causa concreta no confirmada y evidencia conservada.
+- Build Windows x64 203.270.570 bytes; recorridos headless 54,77 s/GPU 55,46 s PASS con misión y animación de las tres clases y sistemas previos. Cuatro tomas reales del ejecutable inspeccionadas; 49 PNG/tres MP4 seleccionados y verificados en total.
+- ZIP E08 local 86.334.027 bytes/305 archivos, CRC y hashes de cada archivo comprobados; diez paquetes históricos conservan SHA/tamaño. GDD SHA original y escena anterior/versiones intactos. Informes/checklist/instrucciones/fichas actualizados; publicación del PR apilado en curso, revisión humana/artística pendiente, sin E09.

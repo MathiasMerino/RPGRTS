@@ -1,8 +1,10 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-10-31, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
+Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
 
 ## Resumen actual
+
+- E08: tres humanoides provisionales con rigs Generic/skin y siete estados, integrados en demo; **73/73 regresión**, Windows/headless/GPU PASS, 49 PNG/tres MP4 y ZIP verificado. Publicación del PR en curso; arte final/retargeting Humanoid y sesión humana pendientes. Informe Docs/E08_PERSONAJES_ANIMADOS.md.
 
 - E07: aldea integrada, 33 prefabs, trece materiales nuevos y cinco albedos originales; **67/67 regresión**, 24 comparativas reales, build/recorridos headless-GPU PASS, captura del player y ZIP verificado. Informe Docs/E07_ALDEA_MEDIEVAL.md; aprobación humana/artística pendiente.
 
@@ -690,3 +692,58 @@ Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada Aethern
 - Aceptación: el usuario revisa cámara, oclusiones, lectura de clase/objetivos, movimiento y dirección visual; aprobación explícita.
 - Archivos: informe E07 y protocolo humano previo; no se adivinan resultados de la sesión.
 - Pruebas / resultado: pendiente de validación humana. F2-07 conserva 7/8 informado; X/ESC pendiente. Ninguna automatización aprueba el arte.
+
+
+## E08 — PERSONAJES ARTICULADOS (2026-10-31)
+
+Base E07/8f0108b, PR #1/#2 sin fusionar. Plan y evidencia en Docs/E08_PERSONAJES_ANIMADOS.md; aprobación artística/humana independiente.
+
+### E08-01 — Auditoría y piloto de capacidad
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: personajes integrados / P1. Dependencias: E07.
+- Aceptación: Herramientas/recursos/PR revisados, piloto con skin y esqueleto real y límites documentados.
+- Archivos: AnimatedCharacterBuilder/NativeCharacterSkin, Docs/E08_PERSONAJES_ANIMADOS.md.
+- Pruebas / resultado: Unity exacto compiló autoría, tres Avatares Generic válidos; casos de pesos/skin/BindPose y BakeMesh pasan. Sin Blender/bpy/modelos externos; FFmpeg local de Python verificado, sin instalación.
+
+### E08-02 — Modelos, rigging y clips
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: personajes integrados / P1. Dependencias: E08-01.
+- Aceptación: Tres modelos 3D originales articulados, pesos/bindposes válidos, clips reales y conceptos diferenciados.
+- Archivos: Assets/07_Characters/AnimatedE08 y 02_Prefabs/Characters/E08; NativeCharacterSkin/Clips.
+- Pruebas / resultado: Tres mallas originales, 24 huesos, dos influencias normalizadas, trece clips con siete estados por clase; normales/metros/deformación y ajuste de vendas guardado comprobados. Modelos provisionales; humano/artista pendiente.
+
+### E08-03 — Integración modular de animación y combate
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: personajes integrados / P1. Dependencias: E08-02.
+- Aceptación: Grafo compartido, locomoción real, acciones aceptadas/daño/derrota visuales y equipo en manos, sin cambiar reglas.
+- Archivos: HumanoidVisualRig/AnimationProfile/AnimationDriver, CharacterCombatAnimationPresenter, TurnEncounter, PrototypeDirector y catálogo/escena demo.
+- Pruebas / resultado: Prueba integrada de tres clases PASS: velocidades y estados Walk/Run/Idle reales, ataque aceptado/rechazado, Hit/Defend/Defeat, manos/equipo/v1; último golpe sobrevive limpieza de victoria. Reglas, turnos y daño no se mueven a clips.
+
+### E08-04 — Escena, deformación y evidencia
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: personajes integrados / P1. Dependencias: E08-03.
+- Aceptación: E07 conservada, poses/juntas/animación verificadas visualmente y capturas reales de estados.
+- Archivos: AnimatedCharacterTests, Tools/Pack-E08Evidence.py, Docs/Images/E08, E08_EVIDENCIA.json.
+- Pruebas / resultado: 45 PNG seleccionados: doce ángulos, 21 poses y doce tomas de acciones/resultados reales; 36 muestras alimentan tres MP4 decodificados de doce frames. Revisión técnica visual realizada con imágenes nativas; no aprobación humana/artística. E07/física/escena original conservadas en pruebas. Órdenes y poses muestreadas diferenciadas.
+
+### E08-05 — Regresión y Windows
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: personajes integrados / P1. Dependencias: E08-04.
+- Aceptación: Pruebas disponibles y recorridos de tres clases/misión/sistemas anteriores, build y ZIP verificables.
+- Archivos: AnimatedCharacterSmoke/BuildSmokeProbe, PrototypeSaveStore (diagnóstico), lanzadores, E08_REGRESION.xml/E08_RESULTADOS.json/E08_PAQUETE.json y ZIP local.
+- Pruebas / resultado: 73/73 final, salida 0; build 203.270.570 bytes; headless 54,77 s y GPU 55,46 s con misión/animación de tres clases y sistemas previos PASS. ZIP 86.334.027 bytes/305 archivos, CRC y todos los hashes verificados; diez ZIP previos intactos. Un fallo intermedio de escritura y recontrol 2/2 documentados; diagnóstico añadido, sin alterar operación/esquema. No aprobación humana.
+
+### E08-06 — Documentación y publicación
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: personajes integrados / P1. Dependencias: E08-05.
+- Aceptación: Guías/fichas/checklist/registro actualizados, commits y PR apilado, repo limpio y humano pendiente.
+- Archivos: se registran en el informe E08 al implementar.
+- Pruebas / resultado: pendientes; no aprobación artística automática.
+
+
+### E08-H — Revisión humana y artística
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: revisión jugable/arte / P1. Dependencias: E08-06.
+- Aceptación: el usuario revisa las tres clases en la aldea, lectura isométrica, proporciones, ropa, articulaciones, armas y acciones; aprobación explícita. F2-07/X/ESC y E07-H mantienen sus estados independientes.
+- Archivos: Docs/E08_PERSONAJES_ANIMADOS.md y evidencia E08; no se inventan resultados humanos.
+- Pruebas / resultado: pendiente; las pruebas automáticas y la inspección técnica de capturas no sustituyen esa sesión.

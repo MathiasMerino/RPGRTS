@@ -152,3 +152,8 @@ Disponible: generación/edición raster 2D y herramientas nativas de Unity ya ve
 5. Aprobar la lámina v01 como guía conceptual, con las discrepancias de proyección pendientes de resolver en modelado.
 
 Todo continúa **PROPUESTO** hasta una respuesta explícita del usuario. La preparación/revisión documental puede cerrarse en checklist; la aprobación artística, modelado/rig/animaciones reales y evaluación humana F2-07 siguen pendientes. No se inicia una fase posterior automáticamente.
+
+
+## Seguimiento técnico E08 (2026-11-01)
+
+La hoja y esta propuesta conservan su carácter provisional. E08 prepara una representación 3D articulada original, con rig Generic, skin y clips nativos; no equivale a aprobación artística ni a un FBX final. Dimensiones, ficha de Monje/Guerrero/Mago, deformaciones, guía de sustitución y evidencia se mantienen en [E08_PERSONAJES_ANIMADOS](../../Docs/E08_PERSONAJES_ANIMADOS.md), evitando duplicar especificaciones. La variante estática anterior permanece recuperable.
