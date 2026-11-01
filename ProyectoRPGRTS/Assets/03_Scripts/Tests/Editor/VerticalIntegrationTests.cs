@@ -47,7 +47,7 @@ namespace Aethernia.Tests.Editor
             Assert.That(objective.TryInteract(d.Hero, s), Is.True); Assert.That(objective.TryInteract(d.Hero, s), Is.False);
             Assert.That(s.State.ReputationA, Is.EqualTo(10)); Assert.That(s.State.ReputationB, Is.EqualTo(-5));
             yield return SceneCapture.Save("Logs/Dungeon-preview.png");
-            Assert.That(d.Save(path), Is.True); s.State.ReputationA = 0;
+            Assert.That(d.Save(path), Is.True, "Save after dungeon: " + PrototypeSaveStore.LastWriteFailure); s.State.ReputationA = 0;
             Assert.That(d.Load(path), Is.True); Assert.That(s.State.ReputationA, Is.EqualTo(10)); Assert.That(s.HasFact("dungeon-objective"), Is.True);
             File.WriteAllText(path, "invalid"); gold = s.State.Gold;
             Assert.That(d.Load(path), Is.False); Assert.That(s.State.Gold, Is.EqualTo(gold));

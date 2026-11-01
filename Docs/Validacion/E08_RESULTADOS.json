@@ -1,0 +1,72 @@
+{
+  "date_utc": "2026-11-01T04:58:58.947774+00:00",
+  "unity": "6000.5.8f1",
+  "urp": "17.5.0",
+  "editor_tests": {
+    "total": 73,
+    "passed": 73,
+    "failed": 0,
+    "skipped": 0,
+    "xml": "E08_REGRESION.xml",
+    "note": "XML durations exclude Editor startup/domain reload wall time"
+  },
+  "previous_runs": {
+    "first_full": "73/73; launcher timeout, Editor finished naturally",
+    "intermediate_full": "72/73; Save after dungeon, temporary written; cause not reproduced",
+    "focused_recheck": "2/2; same save case and captures"
+  },
+  "build": "Succeeded; bytes=203270570; seconds=73.0849217",
+  "players": {
+    "Final": {
+      "receipt": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=54.77; frames=160486; allocatedBytes=123724298",
+      "cargo": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; normal RPG/RTS/economy also checked by base probe.",
+      "animation": "PASS: E08 standalone actual animation checks\nmonk: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.\nwarrior: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.\nmage: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.",
+      "village": "PASS: E07 authored village loaded in standalone; renderers=340; graphics=Null Device; actual quest/classes and prior systems checked above."
+    },
+    "Graphics": {
+      "receipt": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=55.46; frames=114462; allocatedBytes=160959309",
+      "cargo": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; normal RPG/RTS/economy also checked by base probe.",
+      "animation": "PASS: E08 standalone actual animation checks\nmonk: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.\nwarrior: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.\nmage: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.",
+      "village": "PASS: E07 authored village loaded in standalone; renderers=340; graphics=NVIDIA GeForce RTX 3050 Laptop GPU; actual quest/classes and prior systems checked above."
+    }
+  },
+  "rigs": {
+    "monk": "PASS Generic valid; bones=24 vertices=26676 triangles=51636; normalized skin; seven articulated clips; attack max displacement=0.369 m; root unchanged. Human deformation/art review pending.",
+    "warrior": "PASS Generic valid; bones=24 vertices=28295 triangles=56320; normalized skin; seven articulated clips; attack max displacement=0.673 m; root unchanged. Human deformation/art review pending.",
+    "mage": "PASS Generic valid; bones=24 vertices=28252 triangles=54968; normalized skin; seven articulated clips; attack max displacement=0.654 m; root unchanged. Human deformation/art review pending."
+  },
+  "integration": "monk: PASS real walk/run/arrival; accepted/rejected strike; animated hand socket; guard/end; real hits and defeat; save v1/equipment; unchanged agent.\nwarrior: PASS real walk/run/arrival; accepted/rejected strike; animated hand socket; guard/end; real hits and defeat; save v1/equipment; unchanged agent.\nmage: PASS real walk/run/arrival; accepted/rejected strike; animated hand socket; guard/end; real hits and defeat; save v1/equipment; unchanged agent.\nPASS final accepted strike survives victory cleanup; ordinary reset/load still cancels pending presentation.\n",
+  "evidence": {
+    "png": 49,
+    "mp4": 3,
+    "native_pose_samples": true,
+    "sampled_video_is_live_gameplay": false,
+    "ordinary_runtime_images": 16,
+    "temporary_inspection_light_images": 33,
+    "hash_manifest": "E08_EVIDENCIA.json"
+  },
+  "package": {
+    "zip": "ProyectoRPGRTS/Builds/Aethernia-E08-Personajes-Windows.zip",
+    "bytes": 86334027,
+    "sha256": "adbb3fe1c1fa701f62dbaaf5d165aae532ce47e598d5b3874ecf4fb2b781591b",
+    "entries": 305,
+    "crc_all": "PASS",
+    "all_file_hashes_match": true,
+    "previous_zip_count_preserved": 10,
+    "previous_zip_hashes_unchanged": true,
+    "created_utc": "2026-11-01T04:55:18.926903+00:00"
+  },
+  "preserved": {
+    "gdd_sha256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+    "original_scene_and_versions_unchanged": true,
+    "previous_zip_count": 10,
+    "previous_zip_hashes_unchanged": true
+  },
+  "human_session_performed": false,
+  "art_approval": false,
+  "fbx_export": false,
+  "humanoid_retargeting_verified": false,
+  "rig_type": "Generic",
+  "new_mechanics": false,
+  "next_phase_started": false
+}

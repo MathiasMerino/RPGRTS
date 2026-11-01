@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-01 04:31:50Z" end-time="2026-11-01 04:31:53Z" duration="2.919029">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="73" result="Passed" start-time="2026-11-01 04:31:50Z" end-time="2026-11-01 04:31:53Z" duration="2.919029" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1094" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="73" result="Passed" start-time="2026-11-01 04:31:50Z" end-time="2026-11-01 04:31:53Z" duration="2.749659" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="20740" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1095" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="73" result="Passed" start-time="2026-11-01 04:31:50Z" end-time="2026-11-01 04:31:53Z" duration="2.745751" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1096" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="73" result="Passed" start-time="2026-11-01 04:31:50Z" end-time="2026-11-01 04:31:53Z" duration="2.743000" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1097" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="73" result="Passed" start-time="2026-11-01 04:31:50Z" end-time="2026-11-01 04:31:53Z" duration="2.740205" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="AnimatedCharacterTests" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-01 04:31:29Z" end-time="2026-11-01 04:31:41Z" duration="11.399073" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1008" name="CaptureActualSkinnedPosesAndAngles" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests.CaptureActualSkinnedPosesAndAngles" methodname="CaptureActualSkinnedPosesAndAngles" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" seed="727905117" result="Passed" start-time="2026-11-01 04:31:16Z" end-time="2026-11-01 04:31:41Z" duration="24.684423" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1078" name="VerticalIntegrationTests" fullname="Aethernia.Tests.Editor.VerticalIntegrationTests" classname="Aethernia.Tests.Editor.VerticalIntegrationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-01 04:31:50Z" end-time="2026-11-01 04:31:53Z" duration="2.714457" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1080" name="ClassesConstructionDungeonAndSaveShareOneState" fullname="Aethernia.Tests.Editor.VerticalIntegrationTests.ClassesConstructionDungeonAndSaveShareOneState" methodname="ClassesConstructionDungeonAndSaveShareOneState" classname="Aethernia.Tests.Editor.VerticalIntegrationTests" runstate="Runnable" seed="915851719" result="Passed" start-time="2026-11-01 04:31:41Z" end-time="2026-11-01 04:31:53Z" duration="12.421232" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -75,6 +75,13 @@ namespace Aethernia
                 {var next=stack.Peek();if(!next.MoveNext()){stack.Pop();continue;}if(next.Current is IEnumerator nested)stack.Push(nested);else yield return next.Current;}
             }
             var village=GameObject.Find("E07 Medieval Village");
+            var animated=director.Hero.GetComponent<CharacterVisualPresenter>();
+            if(animated!=null&&animated.Model!=null&&animated.Model.GetComponent<HumanoidAnimationDriver>()!=null)
+            {
+                var stack=new System.Collections.Generic.Stack<IEnumerator>();stack.Push(AnimatedCharacterSmoke.Run(director,output));
+                while(stack.Count>0)
+                {var next=stack.Peek();if(!next.MoveNext()){stack.Pop();continue;}if(next.Current is IEnumerator nested)stack.Push(nested);else yield return next.Current;}
+            }
             if(village!=null)
             {
                 File.WriteAllText(output+".village.txt","PASS: E07 authored village loaded in standalone; renderers="+village.GetComponentsInChildren<MeshRenderer>().Length+"; graphics="+SystemInfo.graphicsDeviceName+"; actual quest/classes and prior systems checked above.");

@@ -1,4 +1,4 @@
-param([switch]$WithGraphics, [switch]$RequireCargo, [switch]$RequireVillageE07)
+﻿param([switch]$WithGraphics, [switch]$RequireCargo, [switch]$RequireVillageE07, [switch]$RequireAnimatedE08)
 
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
@@ -40,4 +40,12 @@ if ($RequireVillageE07) {
     $taskVillageText = Get-Content -LiteralPath $taskVillageReceipt -Raw
     if (-not $taskVillageText.StartsWith('PASS:')) { throw $taskVillageText }
     Write-Output $taskVillageText
+}
+
+if ($RequireAnimatedE08) {
+    $taskAnimatedReceipt = $taskReceipt + '.animated.txt'
+    if (-not (Test-Path -LiteralPath $taskAnimatedReceipt) -or (Get-Item -LiteralPath $taskAnimatedReceipt).LastWriteTimeUtc -lt $taskStarted) { throw 'Falta un comprobante nuevo de animacion E08; compila BuildVillage.' }
+    $taskAnimatedText = Get-Content -LiteralPath $taskAnimatedReceipt -Raw
+    if (-not $taskAnimatedText.StartsWith('PASS:')) { throw $taskAnimatedText }
+    Write-Output $taskAnimatedText
 }
