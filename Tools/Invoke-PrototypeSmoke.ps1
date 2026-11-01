@@ -1,4 +1,4 @@
-﻿param([switch]$WithGraphics, [switch]$RequireCargo, [switch]$RequireVillageE07, [switch]$RequireAnimatedE08)
+﻿param([switch]$WithGraphics, [switch]$RequireCargo, [switch]$RequireVillageE07, [switch]$RequireAnimatedE08, [switch]$RequireTacticalE09)
 
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
@@ -13,7 +13,13 @@ $taskArgs = @('-batchmode', '-aetherniaSmoke', ('"' + $taskReceipt + '"'), '-log
 if (-not $WithGraphics) { $taskArgs += '-nographics' }
 $taskProcess = Start-Process -FilePath $taskExe -ArgumentList $taskArgs -WindowStyle Hidden -PassThru
 Write-Output ('Player smoke PID: ' + $taskProcess.Id)
-if (-not $taskProcess.WaitForExit(180000)) { throw "El player sigue activo (PID $($taskProcess.Id)); consulta el log. No se ha forzado su cierre." }
+$taskWatch = [Diagnostics.Stopwatch]::StartNew()
+$taskPeakWorkingSet = 0L
+while (-not $taskProcess.WaitForExit(500)) {
+    $taskProcess.Refresh()
+    if (-not $taskProcess.HasExited) { $taskPeakWorkingSet = [Math]::Max($taskPeakWorkingSet, $taskProcess.WorkingSet64) }
+    if ($taskWatch.Elapsed.TotalSeconds -ge 180) { throw "El player sigue activo (PID $($taskProcess.Id)); consulta el log. No se ha forzado su cierre." }
+}
 $taskProcess.Refresh()
 if ($taskProcess.ExitCode -ne 0) { throw "El player termino con codigo $($taskProcess.ExitCode). Consulta $taskLog." }
 if (-not (Test-Path -LiteralPath $taskReceipt) -or (Get-Item -LiteralPath $taskReceipt).LastWriteTimeUtc -lt $taskStarted) { throw 'Falta un comprobante nuevo del recorrido.' }
@@ -23,6 +29,7 @@ if (Select-String -LiteralPath $taskLog -Pattern 'Failed to create agent|Excepti
     throw "El recorrido termino, pero el player registro un fallo de navegacion o una excepcion. Consulta $taskLog."
 }
 Write-Output $taskText
+@{ elapsedSeconds = $taskWatch.Elapsed.TotalSeconds; sampledPeakWorkingSetBytes = $taskPeakWorkingSet; sampleIntervalSeconds = 0.5; measuredFps = $false; measuredGc = $false } | ConvertTo-Json | Set-Content -LiteralPath ($taskReceipt + '.metrics.json') -Encoding utf8
 if ($RequireCargo) {
     $taskCargoReceipt = $taskReceipt + '.cargo.txt'
     if (-not (Test-Path -LiteralPath $taskCargoReceipt) -or (Get-Item -LiteralPath $taskCargoReceipt).LastWriteTimeUtc -lt $taskStarted) {
@@ -48,4 +55,13 @@ if ($RequireAnimatedE08) {
     $taskAnimatedText = Get-Content -LiteralPath $taskAnimatedReceipt -Raw
     if (-not $taskAnimatedText.StartsWith('PASS:')) { throw $taskAnimatedText }
     Write-Output $taskAnimatedText
+}
+
+if ($RequireTacticalE09) {
+    $taskTacticalReceipt = $taskReceipt + '.tactical.txt'
+    if (-not (Test-Path -LiteralPath $taskTacticalReceipt) -or (Get-Item -LiteralPath $taskTacticalReceipt).LastWriteTimeUtc -lt $taskStarted) { throw 'Falta un comprobante nuevo de combate E09; compila BuildVillage.' }
+    $taskTacticalText = Get-Content -LiteralPath $taskTacticalReceipt -Raw
+    if (-not $taskTacticalText.StartsWith('PASS:')) { throw $taskTacticalText }
+    Write-Output $taskTacticalText
+    if ($RequireCargo -and $taskCargoText -notmatch 'staged enemy phases=True') { throw 'La mision no uso los turnos escalonados E09.' }
 }

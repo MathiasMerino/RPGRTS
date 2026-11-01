@@ -50,5 +50,23 @@ namespace Aethernia.Tests.Editor
             }
             finally{UnityEngine.Object.DestroyImmediate(rules);}
         }
+        [Test]public void SuccessfulDamageAndGuardAreAppliedExactlyOnce()
+        {
+            var rules=ScriptableObject.CreateInstance<PrototypeRules>();
+            try
+            {
+                var battle=new TurnBattle(rules.Find("warrior"),24,1,0,1,false);var hit=false;
+                for(var i=0;i<20&&!hit;i++)
+                {
+                    var before=battle.EnemyHealth;Assert.That(battle.Attack(1),Is.True);
+                    if(battle.LastHeroResolution.Hit){hit=true;Assert.That(battle.LastHeroResolution.Damage,Is.EqualTo(7));Assert.That(battle.EnemyHealth,Is.EqualTo(before-7));Assert.That(battle.Attack(1),Is.False);Assert.That(battle.EnemyHealth,Is.EqualTo(before-7));}
+                    battle.EndTurn(false);
+                }
+                Assert.That(hit,Is.True);var guarded=new TurnBattle(rules.Find("warrior"),24,0,0,42,false);hit=false;
+                for(var i=0;i<20&&!hit;i++){Assert.That(guarded.Guard(),Is.True);guarded.EndTurn(true);hit=guarded.LastEnemyResolution.Hit;}
+                Assert.That(hit,Is.True);Assert.That(guarded.LastEnemyResolution.Guarded,Is.True);Assert.That(guarded.LastEnemyResolution.Damage,Is.EqualTo(2));
+            }
+            finally{UnityEngine.Object.DestroyImmediate(rules);}
+        }
     }
 }
