@@ -11,6 +11,8 @@ namespace Aethernia
         [SerializeField] private GameSession session;
         public InteractionPoint Target { get; private set; }
         public ExplorationUnit Hero => hero;
+        public bool NearbyInteraction { get; set; }
+        private readonly Collider[] nearby=new Collider[24];
         public void Configure(Camera camera, ExplorationUnit unit, GameSession game)
         { view = camera; hero = unit; session = game; }
         private void Update()
@@ -41,6 +43,15 @@ namespace Aethernia
             if (!accepted) session.Say("No hay un camino accesible hasta ese punto.");
             return accepted;
         }
-        public bool Interact() => session.Mode == PrototypeMode.Exploration && Target != null && Target.TryInteract(hero, session);
+        public bool Interact()
+        {
+            if(session.Paused||session.Mode!=PrototypeMode.Exploration)return false;
+            if(Target!=null&&(!NearbyInteraction||Vector3.Distance(Target.transform.position,hero.transform.position)<=2.2f))return Target.TryInteract(hero,session);
+            if(!NearbyInteraction)return false;
+            var count=Physics.OverlapSphereNonAlloc(hero.transform.position,2.2f,nearby,~0,QueryTriggerInteraction.Collide);InteractionPoint closest=null;var distance=float.MaxValue;
+            for(var i=0;i<count;i++)
+            {var point=nearby[i].GetComponentInParent<InteractionPoint>();if(point==null)continue;var d=Vector3.Distance(point.transform.position,hero.transform.position);if(d<=2.2f&&d<distance){closest=point;distance=d;}}
+            if(closest==null)return false;Target=closest;return Target.TryInteract(hero,session);
+        }
     }
 }

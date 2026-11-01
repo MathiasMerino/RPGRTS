@@ -52,8 +52,16 @@ namespace Aethernia.Editor.Characters
             EditorSceneManager.SaveScene(scene,ScenePath,true);AssetDatabase.SaveAssets();AssetDatabase.Refresh();
             Directory.CreateDirectory("Logs/E10");File.WriteAllText("Logs/E10/authoring.txt","Created new scene/prefab/content and SDF2048; source LiberationSans/OFL bundled; missing optional glyphs="+missing+". Original scene/prefabs preserved. Technical/human acceptance pending.");
             Debug.Log("FIRST_DEMO_CREATED: new scene; shared E07/E08/E09 and native TMP SDF; originals preserved.");
+            Controls();
         }
         private static void Folder(string path){if(AssetDatabase.IsValidFolder(path))return;Folder(Path.GetDirectoryName(path).Replace('\\','/'));AssetDatabase.CreateFolder(Path.GetDirectoryName(path).Replace('\\','/'),Path.GetFileName(path));}
+        public static void Controls()
+        {
+            var scene=EditorSceneManager.OpenScene(ScenePath);var flow=Object.FindAnyObjectByType<DemoFlow>();
+            var motor=flow.GetComponent<DemoHeroMotor>();if(motor==null)motor=flow.gameObject.AddComponent<DemoHeroMotor>();motor.Flow=flow;
+            var guidance=flow.GetComponent<DemoGuidance>();if(guidance==null)guidance=flow.gameObject.AddComponent<DemoGuidance>();guidance.Flow=flow;
+            EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);Debug.Log("DEMO_CONTROLS_BOUND: direct hero/camera opt-in, original scenes preserved.");
+        }
         public static void Build()
         {
             Directory.CreateDirectory("Builds/FirstDemoWindows");var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{ScenePath},locationPathName="Builds/FirstDemoWindows/Aethernia.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-01 22:04:27Z" end-time="2026-11-01 22:05:09Z" duration="41.2827833">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="94" result="Passed" start-time="2026-11-01 22:04:27Z" end-time="2026-11-01 22:05:09Z" duration="41.282783" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1122" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="94" result="Passed" start-time="2026-11-01 22:04:28Z" end-time="2026-11-01 22:05:09Z" duration="41.110018" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="27520" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1123" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="94" result="Passed" start-time="2026-11-01 22:04:28Z" end-time="2026-11-01 22:05:09Z" duration="41.106657" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1124" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="94" result="Passed" start-time="2026-11-01 22:04:28Z" end-time="2026-11-01 22:05:09Z" duration="41.104314" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1125" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="94" result="Passed" start-time="2026-11-01 22:04:28Z" end-time="2026-11-01 22:05:09Z" duration="41.101606" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1015" name="DemoAdventureTests" fullname="Aethernia.Tests.Editor.DemoAdventureTests" classname="Aethernia.Tests.Editor.DemoAdventureTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-01 22:04:28Z" end-time="2026-11-01 22:05:09Z" duration="41.091707" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1016" name="CameraRelativeDiagonalIsNormalized" fullname="Aethernia.Tests.Editor.DemoAdventureTests.CameraRelativeDiagonalIsNormalized" methodname="CameraRelativeDiagonalIsNormalized" classname="Aethernia.Tests.Editor.DemoAdventureTests" runstate="Runnable" seed="1205468979" result="Passed" start-time="2026-11-01 22:04:12Z" end-time="2026-11-01 22:04:12Z" duration="0.039086" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1017" name="ThreeClassesFinishTutorialAndWalkWithRealInput" fullname="Aethernia.Tests.Editor.DemoAdventureTests.ThreeClassesFinishTutorialAndWalkWithRealInput" methodname="ThreeClassesFinishTutorialAndWalkWithRealInput" classname="Aethernia.Tests.Editor.DemoAdventureTests" runstate="Runnable" seed="807809333" result="Passed" start-time="2026-11-01 22:04:12Z" end-time="2026-11-01 22:05:09Z" duration="56.779471" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

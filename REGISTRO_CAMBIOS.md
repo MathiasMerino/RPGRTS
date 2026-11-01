@@ -443,3 +443,8 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 ### E10 — Menú y tipografía, checkpoint editor
 - Nueva escena AetherniaFirstDemo derivada de E09, originales intactos; prefab reutilizable de front-end, TMP SDF2048 y LiberationSans/OFL incorporada desde el paquete instalado. Ajustes reales persistentes, créditos, Continue/carga válida, salida segura en editor; datos de raza/intro y slot separado con respaldo.
 - 3/3 focales y compilación exacta PASS; capturas reales720p/1080p/1440p/4K, creación/prólogo/créditos, textos y raycasts comprobados. Corregidos errores iniciales de firma C#/API TMP y recuperación de importación asíncrona de esenciales antes de -quit. Editor validado; ejecutable/flujo integral y humanos pendientes.
+
+
+### E11 — Prólogo, combate y control directo verificados
+- Primer encuentro E09 conectado a prólogo omisible; mismo estado/clase/linaje y equipo, victoria real activa exploración y guarda progreso; Continuar omite introducción completada. WASD relativo al agente, diagonal/cápsula/NavMesh y animación/cámara; E próximo, pausa y foco de UI. Escenas/modelos anteriores intactos.
+- Focal2/2 PASS con las tres clases y teclado InputSystem. Primeras pasadas detectaron en QA el buffer Editor sin foco: fixture temporal AllDeviceInputAlwaysGoesToGameView/IgnoreFocus, restaurada en finally; ninguna aserción debilitada ni HP/victoria forzados. XML intermedio conservado; capturas de exploración reales. Siguiente RTS/héroe y economía; Windows/regresión global/humanos pendientes.

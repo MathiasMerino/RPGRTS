@@ -19,6 +19,7 @@ namespace Aethernia
         public float Size => size;
         public float PanSpeed => panSpeed;
         public GameSession InputSession { get; set; }
+        public bool ReserveWASDForHero { get; set; }
         public void SetPanSpeed(float value) { if(!float.IsNaN(value)&&!float.IsInfinity(value))panSpeed=Mathf.Clamp(value,4,24); }
 
         private void Awake() { view = GetComponent<Camera>(); Refresh(); }
@@ -35,10 +36,11 @@ namespace Aethernia
             var pan = Vector2.zero;
             if (keyboard != null)
             {
-                pan.x = (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed ? 1 : 0) -
-                        (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed ? 1 : 0);
-                pan.y = (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed ? 1 : 0) -
-                        (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed ? 1 : 0);
+                var direct=ReserveWASDForHero&&InputSession!=null&&InputSession.Mode==PrototypeMode.Exploration;
+                pan.x = ((!direct&&keyboard.dKey.isPressed) || keyboard.rightArrowKey.isPressed ? 1 : 0) -
+                        ((!direct&&keyboard.aKey.isPressed) || keyboard.leftArrowKey.isPressed ? 1 : 0);
+                pan.y = ((!direct&&keyboard.wKey.isPressed) || keyboard.upArrowKey.isPressed ? 1 : 0) -
+                        ((!direct&&keyboard.sKey.isPressed) || keyboard.downArrowKey.isPressed ? 1 : 0);
             }
             if (mouse != null && mouse.middleButton.isPressed) pan -= mouse.delta.ReadValue() * 0.04f;
             var blocked = UiInputGuard.BlocksWorldInput;

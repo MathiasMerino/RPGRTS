@@ -11,9 +11,12 @@ namespace Aethernia
         private NavMeshPath path;
         public bool IsSelected { get; private set; }
         public float LastPathLength { get; private set; }
+        public bool DirectControl { get; private set; }
+        private Vector3 directVelocity;
+        public Vector3 PresentationVelocity=>DirectControl?directVelocity:Agent.velocity;
         public NavMeshAgent Agent => agent != null ? agent : (agent = GetComponent<NavMeshAgent>());
-        public bool IsMoving => Agent.enabled && Agent.isOnNavMesh &&
-            (Agent.pathPending || (Agent.hasPath && Agent.remainingDistance > Agent.stoppingDistance + 0.02f));
+        public bool IsMoving => Agent.enabled && Agent.isOnNavMesh && (DirectControl?directVelocity.sqrMagnitude>.0025f:
+            (Agent.pathPending || (Agent.hasPath && Agent.remainingDistance > Agent.stoppingDistance + 0.02f)));
         private void Awake() { agent = GetComponent<NavMeshAgent>(); path = new NavMeshPath(); }
         // The scene hero is serialized disabled: native agents can enable before scene surfaces.
         // Runtime spawned prefabs already enable against a loaded surface.
@@ -26,6 +29,7 @@ namespace Aethernia
         }
         public bool TryMoveTo(Vector3 point, float maximumDistance = float.PositiveInfinity)
         {
+            DirectControl=false;directVelocity=Vector3.zero;
             if (!CalculatePath(point) || LastPathLength > maximumDistance + 0.01f) return false;
             return Agent.SetPath(path);
         }
@@ -64,6 +68,15 @@ namespace Aethernia
             return NavMesh.SamplePosition(point, out var hit, 1, Agent.areaMask) && Agent.Warp(hit.position);
         }
         public void Stop()
-        { if (Agent.enabled && Agent.isOnNavMesh) Agent.ResetPath(); }
+        { DirectControl=false;directVelocity=Vector3.zero;if (Agent.enabled && Agent.isOnNavMesh) Agent.ResetPath(); }
+        public bool MoveDirect(Vector3 displacement,float seconds)
+        {
+            if(!Agent.enabled||!Agent.isOnNavMesh||seconds<=0||float.IsNaN(seconds)||float.IsInfinity(seconds))return false;
+            if(float.IsNaN(displacement.sqrMagnitude)||float.IsInfinity(displacement.sqrMagnitude))return false;
+            if(Agent.hasPath)Agent.ResetPath();DirectControl=true;directVelocity=displacement/seconds;Agent.Move(displacement);
+            if(displacement.sqrMagnitude>.000001f)transform.rotation=Quaternion.LookRotation(displacement.normalized);
+            return displacement.sqrMagnitude>.000001f;
+        }
+        public void EndDirectControl(){if(DirectControl)Stop();}
     }
 }

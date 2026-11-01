@@ -13,6 +13,14 @@ namespace Aethernia
         private static EventSystem lastSystem;
         private static PointerEventData pointer;
         private static readonly List<RaycastResult> hits = new List<RaycastResult>();
+        public static bool IsTyping
+        {
+            get
+            {
+                var selected=EventSystem.current==null?null:EventSystem.current.currentSelectedGameObject;
+                return selected!=null&&((selected.TryGetComponent<InputField>(out var legacy)&&legacy.isFocused)||(selected.TryGetComponent<TMPro.TMP_InputField>(out var sdf)&&sdf.isFocused));
+            }
+        }
         public static bool BlocksWorldInput
         {
             get

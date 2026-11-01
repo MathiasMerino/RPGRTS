@@ -824,18 +824,18 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 - Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
 
 ### E11-A — Selección, prólogo y tutorial RPG
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E10-B.
 - Aceptación: Clase/linaje persistentes, prólogo omisible y encuentro legal con tres clases.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+- Pruebas / resultado: focal E11 2/2, tres clases con combate/teclado real/cámara/animación/pausa/foco y save/continue PASS. Evidencia y límites en informe; humanos y build integral pendientes.
 
 ### E11-B — Exploración WASD
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E11-A.
 - Aceptación: Diagonal normalizada, colisiones, animación, cámara y UI/pausa sin conflictos RTS.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+- Pruebas / resultado: focal E11 2/2, tres clases con combate/teclado real/cámara/animación/pausa/foco y save/continue PASS. Evidencia y límites en informe; humanos y build integral pendientes.
 
 ### E12 — RTS y héroe compartido
 - Estado: [ ] Pendiente.
