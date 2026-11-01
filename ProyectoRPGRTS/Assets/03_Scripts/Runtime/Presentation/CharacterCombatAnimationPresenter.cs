@@ -14,6 +14,7 @@ namespace Aethernia
         private float nextAction;
         private bool guarding;
         public int PlayedActions { get; private set; }
+        public bool ExternallyControlled { get; set; }
         public event Action<EncounterPresentation> MotionStarted;
         public void Configure(TurnEncounter combat, CharacterVisualPresenter presenter)
         {
@@ -46,6 +47,7 @@ namespace Aethernia
         }
         private void LateUpdate()
         {
+            if(ExternallyControlled)return;
             var current=visuals!=null&&visuals.Model!=null?visuals.Model.GetComponent<HumanoidAnimationDriver>():null;
             if(current!=driver){driver=current;pending.Clear();nextAction=0;guarding=false;}
             if(driver==null||!driver.CanAnimate)return;

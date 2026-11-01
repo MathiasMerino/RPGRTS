@@ -68,5 +68,21 @@ namespace Aethernia.Editor.Characters
             if(report.summary.result!=BuildResult.Succeeded)throw new InvalidOperationException("First demo build: "+report.summary.result);
             File.WriteAllText("Logs/BuildFirstDemo-summary.txt","Succeeded; bytes="+report.summary.totalSize+"; seconds="+report.summary.totalTime.TotalSeconds);
         }
+        public static void Rts()
+        {
+            var scene=EditorSceneManager.OpenScene(ScenePath);var flow=Object.FindAnyObjectByType<DemoFlow>();
+            var path=Root+"/RtsRules.asset";var rules=AssetDatabase.LoadAssetAtPath<RtsDemoRules>(path);if(rules==null){rules=ScriptableObject.CreateInstance<RtsDemoRules>();AssetDatabase.CreateAsset(rules,path);}
+            flow.Director.Rts.ConfigureDemo(rules,flow.Front.Catalog,Object.FindAnyObjectByType<CombatFeedbackPresenter>());
+            var input=flow.GetComponent<DemoRtsInput>();if(input==null)input=flow.gameObject.AddComponent<DemoRtsInput>();input.Flow=flow;
+            var overlay=flow.GetComponent<DemoRtsOverlay>();if(overlay==null)overlay=flow.gameObject.AddComponent<DemoRtsOverlay>();overlay.Flow=flow;
+            if(flow.Patrol==null)
+            {
+                var npc=Object.FindAnyObjectByType<LostCargoController>().Npc.gameObject;var source=PrefabUtility.GetCorrespondingObjectFromSource(npc);var marker=(GameObject)PrefabUtility.InstantiatePrefab(source);
+                marker.name="Capitan de patrulla · demo";marker.transform.position=new Vector3(-12,0,8);flow.Patrol=marker.GetComponent<InteractionPoint>();flow.Patrol.Configure("demo-patrol","Capitán de patrulla");
+                foreach(var text in marker.GetComponentsInChildren<Text>(true))text.text="Capitán de patrulla · E";
+                PrefabUtility.RecordPrefabInstancePropertyModifications(flow.Patrol);PrefabUtility.RecordPrefabInstancePropertyModifications(marker.transform);
+            }
+            EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();Debug.Log("DEMO_RTS_BOUND: shared hero, role data, selection/commands and world interaction; validation pending.");
+        }
     }
 }

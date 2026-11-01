@@ -62,9 +62,9 @@ namespace Aethernia
             notice=ui.Text(transform,"Status","",590,580,630,94,20);
             BuildCharacter();BuildIntro();BuildOptions();
             var credits=Panel(DemoScreen.Credits,"Credits");ui.Text(credits,"Credits text",Flow.Content.Credits,145,65,990,510,23);Add(credits,"credits-back","Volver",145,600,250,ShowMain);
-            var retry=Panel(DemoScreen.Retry,"Defeat");ui.Text(retry,"Defeat title","El sendero sigue cerrado",210,175,860,65,36).color=ui.Gold;
+            var retry=Panel(DemoScreen.Retry,"Defeat");ui.Text(retry,"Defeat title","La aventura continúa",210,175,860,65,36).color=ui.Gold;
             ui.Text(retry,"Defeat explanation","Has perdido este encuentro. Puedes iniciar un nuevo intento con la salud de tu clase restaurada; los dados y las reglas no cambian.",210,265,840,126,23);
-            Add(retry,"retry","Reintentar encuentro",210,433,430,()=>{Flow.Resume();Flow.RetryFirstCombat();});
+            Add(retry,"retry","Reintentar encuentro",210,433,430,()=>{Flow.Resume();Flow.RetryCurrentEncounter();});
             Show(DemoScreen.Main);
         }
         private void BuildCharacter()

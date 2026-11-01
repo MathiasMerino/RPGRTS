@@ -12,12 +12,14 @@ namespace Aethernia
         public InteractionPoint Target { get; private set; }
         public ExplorationUnit Hero => hero;
         public bool NearbyInteraction { get; set; }
+        public bool ExternalRtsPointer { get; set; }
         private readonly Collider[] nearby=new Collider[24];
         public void Configure(Camera camera, ExplorationUnit unit, GameSession game)
         { view = camera; hero = unit; session = game; }
         private void Update()
         {
             if(session.Paused||session.Mode==PrototypeMode.MainMenu||session.Mode==PrototypeMode.CharacterCreation||session.Mode==PrototypeMode.Intro)return;
+            if(ExternalRtsPointer&&session.Mode==PrototypeMode.Rts)return;
             var mouse = Mouse.current;
             if (mouse == null || view == null) return;
             var blocked = UiInputGuard.BlocksWorldInput;

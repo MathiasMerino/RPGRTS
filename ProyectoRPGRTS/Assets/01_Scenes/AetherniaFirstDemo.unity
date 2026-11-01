@@ -11252,6 +11252,8 @@ GameObject:
   - component: {fileID: 623395484}
   - component: {fileID: 623395486}
   - component: {fileID: 623395487}
+  - component: {fileID: 623395489}
+  - component: {fileID: 623395488}
   m_Layer: 0
   m_Name: E10-E13 Demo Flow
   m_TagString: Untagged
@@ -11276,6 +11278,7 @@ MonoBehaviour:
   Front: {fileID: 1998431177}
   Content: {fileID: 11400000, guid: 79e1fb787d4d18f46be7998ec9d70ddc, type: 2}
   CameraRig: {fileID: 6537101244742408881}
+  Patrol: {fileID: 1381735257}
 --- !u!4 &623395485
 Transform:
   m_ObjectHideFlags: 0
@@ -11316,6 +11319,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0f9827339889c44b9169f768524eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.DemoGuidance
+  Flow: {fileID: 623395484}
+--- !u!114 &623395488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623395483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4439d8f1f3c7c843a970e4a1c8e7b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.DemoRtsOverlay
+  Flow: {fileID: 623395484}
+--- !u!114 &623395489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623395483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150ee30cb7ff5a34ab4f802bf8a25fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.DemoRtsInput
   Flow: {fileID: 623395484}
 --- !u!1 &625129572
 GameObject:
@@ -24423,6 +24452,86 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1453309795748770815, guid: 8f85cf000c27c9949a6bd8aff6c5669f, type: 3}
   m_PrefabInstance: {fileID: 625893319}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1381735256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417588039363128404, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534357878189577026, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: factId
+      value: demo-patrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534357878189577026, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: displayName
+      value: "Capit\xE1n de patrulla"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704653492750194828, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_Name
+      value: "Capitan de patrulla \xB7 demo"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764130598938551331, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+      propertyPath: m_Text
+      value: "Capit\xE1n de patrulla \xB7 E"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+--- !u!114 &1381735257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4534357878189577026, guid: b81388f0e69eca94d85f06c2a67b1b51, type: 3}
+  m_PrefabInstance: {fileID: 1381735256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc762fbbc11dc14b981824ed056f7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.InteractionPoint
 --- !u!1 &1387337799
 GameObject:
   m_ObjectHideFlags: 0
@@ -33951,6 +34060,9 @@ MonoBehaviour:
   session: {fileID: 1013268299}
   template: {fileID: 8137802751456085368, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
   hostile: {fileID: 2100000, guid: 7ff724946317c4f45bab239a431e0e02, type: 2}
+  demoRules: {fileID: 11400000, guid: 6bac13a22b5401f4dbf44378e572810f, type: 2}
+  visuals: {fileID: 11400000, guid: 409367fc6c17e5d48be1ad35bde4b506, type: 2}
+  feedback: {fileID: 2128498147}
 --- !u!114 &1907032371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46451,3 +46563,4 @@ SceneRoots:
   - {fileID: 2128498149}
   - {fileID: 623395485}
   - {fileID: 1998431176}
+  - {fileID: 1381735256}

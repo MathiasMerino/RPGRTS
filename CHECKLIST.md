@@ -838,11 +838,11 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 - Pruebas / resultado: focal E11 2/2, tres clases con combate/teclado real/cámara/animación/pausa/foco y save/continue PASS. Evidencia y límites en informe; humanos y build integral pendientes.
 
 ### E12 — RTS y héroe compartido
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E11-B.
 - Aceptación: Selección/órdenes/roles/acción real del mismo héroe, resultados y transición válidos.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+- Pruebas / resultado: patrulla1/1 con las tres clases y reglas12/12; selección/grupos/órdenes/heroísmo/guardia/recuperación/victoria/slot real. Fallo Mago intermedio preservado; ajuste de detención por alcance, sin forzar vida/victoria. Build/regresión global/humanos pendientes.
 
 ### E13 — Asentamiento y economía
 - Estado: [ ] Pendiente.

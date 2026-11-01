@@ -448,3 +448,8 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 ### E11 — Prólogo, combate y control directo verificados
 - Primer encuentro E09 conectado a prólogo omisible; mismo estado/clase/linaje y equipo, victoria real activa exploración y guarda progreso; Continuar omite introducción completada. WASD relativo al agente, diagonal/cápsula/NavMesh y animación/cámara; E próximo, pausa y foco de UI. Escenas/modelos anteriores intactos.
 - Focal2/2 PASS con las tres clases y teclado InputSystem. Primeras pasadas detectaron en QA el buffer Editor sin foco: fixture temporal AllDeviceInputAlwaysGoesToGameView/IgnoreFocus, restaurada en finally; ninguna aserción debilitada ni HP/victoria forzados. XML intermedio conservado; capturas de exploración reales. Siguiente RTS/héroe y economía; Windows/regresión global/humanos pendientes.
+
+
+### E12 — Patrulla y héroe compartido verificados
+- RtsBattleController existente ampliado opt-in;6v6 clásico y escalada preservados. Misma unidad/modelo/estado del héroe, tres roles militares, rangos/LOS, selección/cajas/Shift/grupos, órdenes y acciones con restricciones. Datos SO/controles/UI/feedback separados; helpers de daño/guardia conservan reglas RPG. NPC Capitán activa batalla; victoria real habilita campamento y guarda progreso, derrota ofrece reintento.
+-12 reglas E09 PASS; patrulla1/1 final con Guerrero/Monje/Mago desde RPG legal hasta victoria RTS/save/continue. Fallo intermedio del Mago conservado: al guardar distancia/guardia se detienen unidades en rango incluso durante cooldown; se usan ración y recuperación legales. Sin HP/victoria forzados. Seis capturas reales, barras compactas y Generic/arco piloto. Próximo E13, limpieza de widgets de batalla y QA integral/Windows.

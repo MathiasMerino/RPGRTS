@@ -13,6 +13,7 @@ namespace Aethernia
         public DemoFrontEnd Front;
         public DemoContent Content;
         public IsometricCameraRig CameraRig;
+        public InteractionPoint Patrol;
         public GameSession Session=>Director.Session;
         public string SlotPath { get; set; }
         public bool IsPlaying { get; private set; }
@@ -26,10 +27,10 @@ namespace Aethernia
             if(CameraRig!=null)CameraRig.InputSession=Session;
             if(string.IsNullOrEmpty(SlotPath))SlotPath=Path.Combine(Application.persistentDataPath,"AetherniaPrototype","demo-v1.json");
         }
-        private void OnEnable(){if(Director!=null)Director.Encounter.Resolved+=CombatResolved;}
+        private void OnEnable(){if(Director!=null){Director.Encounter.Resolved+=CombatResolved;Director.Rts.Resolved+=RtsResolved;Session.AdditionalInteraction+=Interact;}}
         private void OnDisable()
         {
-            if(Director!=null)Director.Encounter.Resolved-=CombatResolved;
+            if(Director!=null){Director.Encounter.Resolved-=CombatResolved;Director.Rts.Resolved-=RtsResolved;Session.AdditionalInteraction-=Interact;}
             Time.timeScale=1;AudioListener.volume=entryVolume;
         }
         private void Start()
@@ -101,6 +102,35 @@ namespace Aethernia
         {
             Director.Execute("explore");Session.SelectClass(Session.State.ClassId);
             Director.Hero.Warp(new Vector3(-10,0,1.4f));ActivateGame();BeginFirstCombat();
+        }
+        public void RetryCurrentEncounter()
+        {
+            if(Session.State.Demo!=null&&Session.State.Demo.Chapter==DemoChapter.FirstRts)
+            {Director.Execute("explore");Session.SelectClass(Session.State.ClassId);Resume();BeginPatrol();}
+            else RetryFirstCombat();
+        }
+        private bool? Interact(string id,string title)
+        {
+            if(id!="demo-patrol")return null;
+            if(Session.State.Demo==null||Session.State.Demo.Chapter<DemoChapter.RoadToRts){Session.Say("Abre primero el sendero del prólogo.");return false;}
+            if(Session.State.Demo.Chapter>=DemoChapter.Settlement){Session.Say("La patrulla ya aseguró el campamento. Puedes explorar y administrar sus instalaciones.");return true;}
+            return BeginPatrol();
+        }
+        public bool BeginPatrol()
+        {
+            if(!IsPlaying||Director.IsBusy||Session.State.Demo==null||Session.State.Demo.Chapter<DemoChapter.RoadToRts)return false;
+            Director.Encounter.Clear();
+            if(!Director.Rts.BeginWithHero(Director.Hero))return false;
+            Session.State.Demo.Chapter=DemoChapter.FirstRts;CameraRig.SetRegion(Vector3.zero);CameraRig.SetZoom(8);CameraRig.FocusOn(new Vector3(-9,0,13));return true;
+        }
+        private void RtsResolved(bool won)
+        {
+            if(Session.State.Demo==null||Session.State.Demo.Chapter!=DemoChapter.FirstRts)return;
+            if(!won){Session.Paused=true;Front.ShowRetry();return;}
+            Director.Execute("explore");Session.State.Demo.Chapter=DemoChapter.Settlement;
+            if(!Session.HasFact("demo-camp-secured"))Session.State.Facts.Add("demo-camp-secured");
+            Director.Hero.Warp(new Vector3(9,0,-10));CameraRig.FocusOn(Director.Hero.transform.position);
+            Session.Say("La patrulla aseguró un campamento. Puedes fundar su centro y construir; ayudar aquí no te obliga a gobernar.");Director.Save(SlotPath);
         }
         private void CombatResolved(bool won)
         {

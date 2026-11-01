@@ -20,6 +20,7 @@ namespace Aethernia
         public float PanSpeed => panSpeed;
         public GameSession InputSession { get; set; }
         public bool ReserveWASDForHero { get; set; }
+        public void SetZoom(float value){if(float.IsNaN(value)||float.IsInfinity(value))return;size=Mathf.Clamp(value,minimumSize,maximumSize);Refresh();}
         public void SetPanSpeed(float value) { if(!float.IsNaN(value)&&!float.IsInfinity(value))panSpeed=Mathf.Clamp(value,4,24); }
 
         private void Awake() { view = GetComponent<Camera>(); Refresh(); }

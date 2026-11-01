@@ -20,6 +20,8 @@ namespace Aethernia
         public int PresentedCount { get; private set; }
         public int ActiveEffects { get {effects.RemoveAll(x=>x==null);return effects.Count;} }
         public int PendingCount=>pending.Count;
+        public Material SharedEffectMaterial=>sharedMaterial;
+        public void PresentRealtime(CombatFeedback result){if(!result.Result.Accepted)return;if(result.ClassId=="mage"||result.Result.Kind==CombatActionKind.Guard)Launch(result);Present(result);}
         public void Configure(TurnEncounter combat,CharacterVisualPresenter actor,CharacterCombatAnimationPresenter animator,
             CombatAudioPlayer sound,GameObject impact,Material material,Font textFont)
         {encounter=combat;hero=actor;animationView=animator;audioPlayer=sound;impactPrefab=impact;sharedMaterial=material;font=textFont;}
