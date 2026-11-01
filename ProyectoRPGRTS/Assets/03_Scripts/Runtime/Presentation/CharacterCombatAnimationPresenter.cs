@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace Aethernia
@@ -13,6 +14,7 @@ namespace Aethernia
         private float nextAction;
         private bool guarding;
         public int PlayedActions { get; private set; }
+        public event Action<EncounterPresentation> MotionStarted;
         public void Configure(TurnEncounter combat, CharacterVisualPresenter presenter)
         {
             var active=isActiveAndEnabled;if(active)Unsubscribe();encounter=combat;visuals=presenter;if(active)Subscribe();
@@ -35,6 +37,7 @@ namespace Aethernia
             }
             if(cue.Cue==EncounterCue.Guard){guarding=true;return;}
             if(cue.Cue==EncounterCue.GuardEnded){guarding=false;return;}
+            if(cue.Cue==EncounterCue.Recover)return; // No existe clip de curación: conserva Idle/guardia, no simula otro ataque.
             // Un modelo ausente no retiene eventos para otro personaje futuro.
             if(visuals==null||visuals.Model==null||visuals.Model.GetComponent<HumanoidAnimationDriver>()==null)return;
             if(cue.Cue==EncounterCue.Defeat){pending.Clear();nextAction=0;}
@@ -55,6 +58,7 @@ namespace Aethernia
             var delta=cue.Target-driver.transform.position;delta.y=0;
             if(delta.sqrMagnitude>.01f)driver.transform.rotation=Quaternion.LookRotation(delta);
             pending.Dequeue();nextAction=Time.time+driver.Profile.Clip(motion).length+.1f;PlayedActions++;
+            MotionStarted?.Invoke(cue);
         }
     }
 }

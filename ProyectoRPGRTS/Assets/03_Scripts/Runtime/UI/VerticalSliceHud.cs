@@ -191,7 +191,7 @@ namespace Aethernia
                     var action=id=="attack"||id=="guard"||id=="recover"||id=="end"||id=="approach";
                     var war=id=="select-all"||id=="charge";
                     visible=session.Mode==PrototypeMode.TurnCombat?action||id=="escalate":session.Mode==PrototypeMode.Rts?war:exploring&&compactView.ActionVisible(id,ActivePage);
-                    ready=action?director.Encounter.Battle!=null&&!director.Encounter.Battle.Finished&&!director.Hero.IsMoving:
+                    ready=action?director.Encounter.PlayerCanAct:
                         war?director.Rts.Active:id=="escalate"?!director.IsBusy&&session.HasFact("rpg-victory"):!director.IsBusy;
                     if(action&&id!="end"&&id!="approach"&&director.Encounter.Battle!=null)ready&=director.Encounter.Battle.ActionAvailable;
                     if(id=="recover"&&director.Encounter.Battle!=null)ready&=!director.Encounter.Battle.RecoveryUsed&&session.State.Health<session.Rules.Find(session.State.ClassId).Health;
