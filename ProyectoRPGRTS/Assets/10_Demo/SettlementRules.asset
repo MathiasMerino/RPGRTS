@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb055dc60740b340a61890a85ba57d1, type: 3}
+  m_Name: SettlementRules
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.SettlementRules
+  Blueprints:
+  - Id: townhall
+    Title: Centro del campamento
+    Gold: 15
+    Wood: 8
+    FoodPerCycle: 0
+    WoodPerCycle: 0
+    FoodConsumed: 0
+    Storage: 0
+    RequiresCenter: 0
+    Upgradeable: 0
+  - Id: workshop
+    Title: "Taller de recolecci\xF3n"
+    Gold: 10
+    Wood: 5
+    FoodPerCycle: 0
+    WoodPerCycle: 1
+    FoodConsumed: 1
+    Storage: 0
+    RequiresCenter: 1
+    Upgradeable: 1
+  - Id: farm
+    Title: Granja
+    Gold: 8
+    Wood: 5
+    FoodPerCycle: 2
+    WoodPerCycle: 0
+    FoodConsumed: 0
+    Storage: 0
+    RequiresCenter: 1
+    Upgradeable: 1
+  - Id: barracks
+    Title: Cuartel
+    Gold: 12
+    Wood: 8
+    FoodPerCycle: 0
+    WoodPerCycle: 0
+    FoodConsumed: 0
+    Storage: 0
+    RequiresCenter: 1
+    Upgradeable: 0
+  - Id: warehouse
+    Title: "Almac\xE9n"
+    Gold: 10
+    Wood: 5
+    FoodPerCycle: 0
+    WoodPerCycle: 0
+    FoodConsumed: 0
+    Storage: 100
+    RequiresCenter: 1
+    Upgradeable: 1
+  BaseStorage: 200
+  RecruitGold: 5
+  RecruitFood: 2
+  MaximumRecruits: 6
+  UpgradeGold: 10
+  UpgradeWood: 5

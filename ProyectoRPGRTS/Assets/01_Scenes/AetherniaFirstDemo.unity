@@ -11254,6 +11254,7 @@ GameObject:
   - component: {fileID: 623395487}
   - component: {fileID: 623395489}
   - component: {fileID: 623395488}
+  - component: {fileID: 623395490}
   m_Layer: 0
   m_Name: E10-E13 Demo Flow
   m_TagString: Untagged
@@ -11345,6 +11346,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150ee30cb7ff5a34ab4f802bf8a25fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.DemoRtsInput
+  Flow: {fileID: 623395484}
+--- !u!114 &623395490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623395483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c7b0160617b9947b20be8fa858903f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.DemoSettlementPanel
   Flow: {fileID: 623395484}
 --- !u!1 &625129572
 GameObject:
@@ -18319,6 +18333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.GameSession
   rules: {fileID: 11400000, guid: 7905db8f900ab914c8766c3a63d03b59, type: 2}
+  settlementRules: {fileID: 11400000, guid: f1885fa9e00353243bdd99fcf97688f9, type: 2}
 --- !u!114 &1013268300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34096,6 +34111,18 @@ MonoBehaviour:
   session: {fileID: 1013268299}
   hero: {fileID: 4400504113842201705}
   prefab: {fileID: 5638066673320286884, guid: c7e845a8765253c43ab1460fd653c2a9, type: 3}
+  settlement: {fileID: 11400000, guid: f1885fa9e00353243bdd99fcf97688f9, type: 2}
+  blueprints:
+  - Id: townhall
+    Prefab: {fileID: 4427192835117541917, guid: 2a46bbe5b5e34ae429194e6d6912f120, type: 3}
+  - Id: workshop
+    Prefab: {fileID: 4915295290942063768, guid: 2058ccb1a3f914f4dbf24d9988570665, type: 3}
+  - Id: farm
+    Prefab: {fileID: 2300867370870149472, guid: 718609221aec6ff4282afbcb96ca4461, type: 3}
+  - Id: barracks
+    Prefab: {fileID: 4290272241920402558, guid: 56041ea4e79bb164ba58959a7e023c3a, type: 3}
+  - Id: warehouse
+    Prefab: {fileID: 5535510896618445393, guid: ba3b1b8bfaa713d4cae33ad2791e5940, type: 3}
 --- !u!4 &1907032373
 Transform:
   m_ObjectHideFlags: 0

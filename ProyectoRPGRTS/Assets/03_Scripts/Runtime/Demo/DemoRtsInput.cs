@@ -16,7 +16,7 @@ namespace Aethernia
         private void Update()
         {
             var rts=Flow.Director.Rts;var active=rts.Active&&rts.IncludesHero&&!Flow.Session.Paused;if(pointer!=null)pointer.ExternalRtsPointer=rts.IncludesHero;
-            if(!active){Dragging=false;return;}
+            if(!active){Dragging=false;if(!rts.IncludesHero)foreach(var group in groups)group.Clear();return;}
             var mouse=Mouse.current;var key=Keyboard.current;var additive=key!=null&&(key.leftShiftKey.isPressed||key.rightShiftKey.isPressed);
             if(key!=null&&!UiInputGuard.IsTyping)
             {

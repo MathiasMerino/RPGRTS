@@ -22,7 +22,8 @@ namespace Aethernia
             if (s.Items.Select(i => i.Id).Distinct().Count() != s.Items.Count) return false;
             if (s.Weapon != "" && (s.Weapon != "training-sword" || !s.Items.Any(i => i.Id == s.Weapon))) return false;
             if (s.Armour != "" && (s.Armour != "cloth" || !s.Items.Any(i => i.Id == s.Armour))) return false;
-            return s.Buildings.Count <= 32 && s.Buildings.All(b => b != null && b.Id == "workshop" && Finite(b.Position.x) && Finite(b.Position.y) && Finite(b.Position.z) && Mathf.Abs(b.Position.y) <= 0.2f && Mathf.Abs(b.Position.x) <= 16 && Mathf.Abs(b.Position.z) <= 16);
+            if(s.Army==null||s.Army.Count>6||s.Army.Any(r=>r==null||string.IsNullOrEmpty(r.Id)||r.Id.Length!=32||!r.Id.All(Uri.IsHexDigit)||!SettlementRules.KnownRole(r.Role)||r.Health<=0||r.Health>10)||s.Army.Select(r=>r.Id).Distinct().Count()!=s.Army.Count)return false;
+            return s.Buildings.Count <= 32 && s.Buildings.All(b => b != null && SettlementRules.KnownBuilding(b.Id) && (s.Demo!=null||b.Id=="workshop") && b.Level>=1&&b.Level<=2 && Finite(b.Position.x) && Finite(b.Position.y) && Finite(b.Position.z) && Mathf.Abs(b.Position.y) <= 0.2f && Mathf.Abs(b.Position.x) <= 16 && Mathf.Abs(b.Position.z) <= 16);
         }
         private static bool Finite(float f) => !float.IsNaN(f) && !float.IsInfinity(f);
         public static bool Save(string path, PrototypeState state, PrototypeRules rules)
@@ -50,6 +51,11 @@ namespace Aethernia
                 if (!json.Contains("\"Version\"") || !json.Contains("\"ClassId\"")) return false;
                 var candidate = JsonUtility.FromJson<PrototypeState>(json);
                 if (candidate != null && string.IsNullOrEmpty(candidate.RaceId)) candidate.RaceId="human";
+                if(candidate!=null)
+                {
+                    if(candidate.Army==null)candidate.Army=new System.Collections.Generic.List<RecruitRecord>();
+                    if(!json.Contains("\"Level\"")&&candidate.Buildings!=null)foreach(var b in candidate.Buildings)if(b!=null)b.Level=1;
+                }
                 if (!Valid(candidate, rules)) return false;
                 state = candidate; return true;
             }

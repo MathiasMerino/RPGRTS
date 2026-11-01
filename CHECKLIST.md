@@ -4,6 +4,8 @@ Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
+- Demo E10–E13 en desarrollo: E10 editor3/3, E11 editor2/2 y E12 patrulla1/1 con tres clases verificadas; E13 focal en curso. Escena nueva AetherniaFirstDemo, base E09 preservada. No build nueva ni aprobación humana todavía. Recuperación: Docs/PROGRESO_DEMO.md.
+
 - E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. PR#4 abierto en borrador sobre E08: https://github.com/MathiasMerino/RPGRTS/pull/4. Informe Docs/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
 
 - E08: tres humanoides provisionales con rigs Generic/skin y siete estados, integrados en demo; **73/73 regresión**, Windows/headless/GPU PASS, 49 PNG/tres MP4 y ZIP verificado. [PR #3](https://github.com/MathiasMerino/RPGRTS/pull/3) abierto en borrador sobre E07; arte final/retargeting Humanoid y sesión humana pendientes. Informe Docs/E08_PERSONAJES_ANIMADOS.md.
@@ -845,14 +847,14 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 - Pruebas / resultado: patrulla1/1 con las tres clases y reglas12/12; selección/grupos/órdenes/heroísmo/guardia/recuperación/victoria/slot real. Fallo Mago intermedio preservado; ajuste de detención por alcance, sin forzar vida/victoria. Build/regresión global/humanos pendientes.
 
 ### E13 — Asentamiento y economía
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E12.
 - Aceptación: Edificios funcionales/costes/producción/reclutas/guardado sin duplicación y juego libre.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+- Pruebas / resultado:6/6 editor, cinco edificios/costes/producción/ejército/upgrade/save/load y despliegue real con fixture explícita; no equivale al end-to-end narrativo. XML intermedio de espera de Update preservado. Windows/global/humanos pendientes.
 
 ### DEMO-QA — Validación y entrega E10–E13
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E13.
 - Aceptación: Regresión, end-to-end/reinicio, capturas, Windows ejecutado, ZIP y PR apilado, Git limpio.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.

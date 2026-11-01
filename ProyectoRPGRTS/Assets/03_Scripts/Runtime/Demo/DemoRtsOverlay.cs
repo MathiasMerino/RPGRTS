@@ -16,6 +16,9 @@ namespace Aethernia
         private Button attack,guard,recover;
         private DemoWidgets ui;
         private Canvas canvas;
+        public int LiveBars=>bars.Count;
+        private void ClearBars(){foreach(var bar in bars.Values)if(bar.Root!=null)Destroy(bar.Root.gameObject);bars.Clear();}
+        private void OnDisable(){ClearBars();}
         private void Start()
         {
             ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite);canvas=Flow.ExistingHud.GetComponent<Canvas>();
@@ -28,7 +31,7 @@ namespace Aethernia
         {
             if(panel==null)return;var rts=Flow.Director.Rts;var show=Flow.IsPlaying&&rts.IncludesHero&&Flow.Session.Mode==PrototypeMode.Rts;panel.gameObject.SetActive(show);
             foreach(var b in bars.Values)b.Root.gameObject.SetActive(false);
-            if(!show){drag.gameObject.SetActive(false);return;}
+            if(!show){ClearBars();drag.gameObject.SetActive(false);return;}
             rts.CopyStatus(status);var selectedHero=false;
             foreach(var unit in status)
             {

@@ -104,6 +104,7 @@ namespace Aethernia
             if (IsBusy) return Reject("No puedes cargar durante un encuentro activo.");
             if (!PrototypeSaveStore.Load(path, session.Rules, out var loaded))
                 return Reject("No se pudo cargar: archivo ausente, ilegible o datos incompatibles. La partida actual se conserva.");
+            if(loaded.Demo!=null&&construction.Settlement==null)return Reject("Esta partida pertenece a la primera demo integrada. Ábrela desde AetherniaFirstDemo.");
             if (!construction.CanRestore(loaded.Buildings))
                 return Reject("No se pudo cargar: una construcción guardada se solapa con el escenario. La partida actual se conserva.");
             foreach (var building in loaded.Buildings)

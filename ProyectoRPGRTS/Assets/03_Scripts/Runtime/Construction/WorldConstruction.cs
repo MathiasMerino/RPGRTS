@@ -9,6 +9,13 @@ namespace Aethernia
         [SerializeField] private ExplorationUnit hero;
         [SerializeField] private GameObject prefab;
         private readonly List<GameObject> placed = new List<GameObject>();
+        [SerializeField]private SettlementRules settlement;
+        [SerializeField]private BuildingPrefabBinding[] blueprints=System.Array.Empty<BuildingPrefabBinding>();
+        public SettlementRules Settlement=>settlement;
+        public string SelectedBlueprint { get; private set; }="workshop";
+        public void ConfigureSettlement(SettlementRules rules,BuildingPrefabBinding[] visuals){settlement=rules;blueprints=visuals;}
+        public bool SelectBlueprint(string id){if(settlement==null||settlement.Find(id)==null)return false;SelectedBlueprint=id;return true;}
+        private GameObject Template(string id){if(session.State.Demo!=null)foreach(var b in blueprints)if(b.Id==id)return b.Prefab;return id=="workshop"?prefab:null;}
         public void Configure(GameSession game, ExplorationUnit actor, GameObject workshop) { session = game; hero = actor; prefab = workshop; }
         public bool CanPlace(Vector3 point, bool ignorePlaced = false)
         {
@@ -24,6 +31,12 @@ namespace Aethernia
         }
         public bool Place(Vector3 point)
         {
+            if(session.State.Demo!=null&&settlement!=null)
+            {
+                var model=Template(SelectedBlueprint);
+                if(model==null||!CanPlace(point)||!SettlementOperations.Build(session.State,settlement,SelectedBlueprint,point)){session.Say("No se puede construir: comprueba terreno, centro, recursos y requisitos.");return false;}
+                placed.Add(Instantiate(model,point,Quaternion.identity));session.Say(settlement.Find(SelectedBlueprint).Title+" construido. Las instalaciones productivas requieren activación.");return true;
+            }
             if (prefab == null || !CanPlace(point) || !WorldOperations.BuildWorkshop(session.State, point))
             { session.Say("Colocación inválida o recursos insuficientes. Coste: 10 oro y 5 madera."); return false; }
             placed.Add(Instantiate(prefab, point, Quaternion.identity));
@@ -43,7 +56,7 @@ namespace Aethernia
         {
             foreach (var go in placed) if (go != null) { go.SetActive(false); Destroy(go); }
             placed.Clear();
-            foreach (var record in session.State.Buildings) placed.Add(Instantiate(prefab, record.Position, Quaternion.identity));
+            foreach (var record in session.State.Buildings) placed.Add(Instantiate(Template(record.Id)??prefab, record.Position, Quaternion.identity));
         }
     }
 }

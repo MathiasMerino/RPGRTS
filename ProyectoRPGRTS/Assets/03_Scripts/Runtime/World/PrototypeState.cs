@@ -14,7 +14,14 @@ namespace Aethernia
     {
         public string Id;
         public Vector3 Position;
+        public int Level=1;
+        public bool ProductionPaused;
         public BuildingRecord(string id, Vector3 position) { Id = id; Position = position; }
+    }
+    [Serializable] public sealed class RecruitRecord
+    {
+        public string Id,Role;
+        public int Health=10;
     }
     [Serializable] public sealed class PrototypeState
     {
@@ -37,5 +44,6 @@ namespace Aethernia
         public List<string> Facts = new List<string>();
         public List<ItemStack> Items = new List<ItemStack> { new ItemStack("ration", 2) };
         public List<BuildingRecord> Buildings = new List<BuildingRecord>();
+        public List<RecruitRecord> Army = new List<RecruitRecord>();
     }
 }

@@ -16,6 +16,7 @@ namespace Aethernia
             public float AttackAt;
             public float OrderedUntil;
             public string Role="swordsman";
+            public string RecruitId;
             public float Range=1.5f;
             public int Damage=2,Maximum=10;
             public bool Hero,Guarding,MoveOrder;
@@ -33,6 +34,7 @@ namespace Aethernia
         private bool heroRecoveryUsed;
         private int sequence;
         public bool IncludesHero=>sharedHero!=null;
+        public RtsDemoRules DemoRules=>demoRules;
         public event Action<bool> Resolved;
         public event Action<CombatFeedback> ActionResolved;
         private readonly List<Soldier> soldiers = new List<Soldier>();
@@ -47,7 +49,8 @@ namespace Aethernia
         public void ConfigureDemo(RtsDemoRules rules,CharacterVisualCatalog models,CombatFeedbackPresenter effects){demoRules=rules;visuals=models;feedback=effects;}
         private int Health(Soldier s)=>s.Hero?session.State.Health:s.Health;
         private int Maximum(Soldier s)=>s.Hero?session.Rules.Find(session.State.ClassId).Health:s.Maximum;
-        private void SetHealth(Soldier s,int value){if(s.Hero)session.State.Health=value;else s.Health=value;}
+        private void SetHealth(Soldier s,int value)
+        {if(s.Hero)session.State.Health=value;else{s.Health=value;if(!string.IsNullOrEmpty(s.RecruitId)){var record=session.State.Army.Find(x=>x.Id==s.RecruitId);if(record!=null)record.Health=value;}}}
         public void CopyStatus(List<RtsUnitStatus> buffer){buffer.Clear();foreach(var s in soldiers)buffer.Add(new RtsUnitStatus(s.Unit,s.Hero?session.Rules.Find(session.State.ClassId).Title:demoRules?.Find(s.Role)?.Title??s.Role,s.Team,Health(s),Maximum(s),s.Hero));}
         public void Clear()
         {
@@ -92,6 +95,13 @@ namespace Aethernia
         public bool BeginWithHero(ExplorationUnit hero)
         {
             if(hero==null||demoRules==null||Active||session.State.Health<=0)return false;
+            var reinforcements=new List<Vector3>();
+            for(var i=0;i<session.State.Army.Count;i++)
+            {
+                if(!NavMesh.SamplePosition(new Vector3(-10.5f,0,11+i*.9f),out var point,.35f,NavMesh.AllAreas))return RejectDeployment();
+                foreach(var block in Physics.OverlapCapsule(point.position+Vector3.up*.35f,point.position+Vector3.up*1.45f,.29f,~0,QueryTriggerInteraction.Ignore))if(block.GetComponentInParent<ExplorationUnit>()==null)return RejectDeployment();
+                reinforcements.Add(point.position);
+            }
             var requested=new Vector3(-13.3f,0,13.2f);
             if(!NavMesh.SamplePosition(requested,out var at, .5f,NavMesh.AllAreas))return RejectDeployment();
             foreach(var block in Physics.OverlapCapsule(at.position+Vector3.up*.35f,at.position+Vector3.up*1.45f,.29f,~0,QueryTriggerInteraction.Ignore))if(block.GetComponentInParent<ExplorationUnit>()==null)return RejectDeployment();
@@ -101,6 +111,12 @@ namespace Aethernia
             {
                 var role=demoRules.Roles[index++%demoRules.Roles.Length];s.Role=role.Id;s.Range=role.Range;s.Damage=role.Damage;s.Maximum=role.Health;s.Health=role.Health;s.Unit.Agent.speed=role.Speed;
                 BuildVisual(s,role);
+            }
+            for(var i=0;i<session.State.Army.Count;i++)
+            {
+                var record=session.State.Army[i];var role=demoRules.Find(record.Role);if(role==null)continue;
+                var unit=Instantiate(template,reinforcements[i],Quaternion.identity).GetComponent<ExplorationUnit>();unit.name="Recluta "+role.Title;unit.Agent.speed=role.Speed;unit.Select(true);
+                var s=new Soldier{Unit=unit,Team=0,Health=record.Health,Maximum=role.Health,Damage=role.Damage,Range=role.Range,Role=role.Id,RecruitId=record.Id};BuildVisual(s,role);soldiers.Add(s);
             }
             hero.Stop();if(!hero.Warp(at.position)){Clear();session.SetMode(PrototypeMode.Exploration);return false;}
             sharedHero=hero;heroRecoveryUsed=false;sequence=0;hero.Select(true);
@@ -177,6 +193,7 @@ namespace Aethernia
             if (Allies == 0 || Enemies == 0)
             {
                 Active = false;
+                session.State.Army.RemoveAll(s=>s.Health<=0);
                 foreach (var soldier in soldiers) if (soldier.Unit != null && soldier.Health > 0) soldier.Unit.Stop();
                 if (Won && !session.HasFact("rts-victory")) session.State.Facts.Add("rts-victory");
                 session.Say(Won ? "Victoria RTS registrada en la partida." : "Derrota RTS; puedes reiniciar la prueba.");

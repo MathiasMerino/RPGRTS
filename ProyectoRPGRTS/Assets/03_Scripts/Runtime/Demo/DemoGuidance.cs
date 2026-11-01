@@ -19,7 +19,8 @@ namespace Aethernia
             if(panel==null)return;var state=Flow.Session.State;var visible=Flow.IsPlaying&&!Flow.LegacyProbe&&state.Demo!=null&&!Flow.ExistingHud.CompactView.WindowOpen&&!Flow.ExistingHud.CompactView.HelpOpen;
             panel.SetActive(visible);if(!visible)return;
             var text="";var battle=Flow.Director.Encounter.Battle;
-            if(state.Demo.Chapter==DemoChapter.FirstCombat&&battle!=null)
+            if(Flow.Session.Mode==PrototypeMode.Rts)text="DIRIGE LA PATRULLA\nClic o arrastre: seleccionar. Shift: añadir. Clic derecho: mover/atacar. Selecciona tu héroe para usar Guardia o Recuperar.";
+            else if(state.Demo.Chapter==DemoChapter.FirstCombat&&battle!=null)
             {
                 if(battle.Phase==TurnPhase.Enemy)text="TURNO DEL RIVAL\nEspera a que termine. El daño y las tiradas aparecen en el panel del encuentro.";
                 else if(!battle.ActionAvailable)text="ACCIÓN REALIZADA\nPulsa Fin de turno. La guardia reduce el siguiente daño; Recuperar se usa una vez.";

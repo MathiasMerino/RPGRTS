@@ -21,6 +21,7 @@ namespace Aethernia
         public int EncounterSeed { get; set; }
         public event Action Started;
         private float entryVolume;
+        private DemoChapter patrolReturn;
         private void Awake()
         {
             entryVolume=AudioListener.volume;
@@ -43,6 +44,10 @@ namespace Aethernia
         }
         private void Update()
         {
+            if(IsPlaying&&Session.State.Demo!=null&&Session.State.Demo.Chapter==DemoChapter.Settlement&&Session.State.Demo.Produced>0&&SettlementOperations.Has(Session.State,"townhall")&&SettlementOperations.Has(Session.State,"workshop"))
+            {
+                Session.State.Demo.Chapter=DemoChapter.FreeExploration;Director.Execute("explore");Session.Say("El campamento ya produce. Puedes explorar libremente, atender misiones, construir o entrenar reclutas; no hay una coronación obligatoria.");Director.Save(SlotPath);
+            }
             if(IsPlaying&&Keyboard.current!=null&&Keyboard.current.pKey.wasPressedThisFrame&&!UiInputGuard.BlocksWorldInput)
             {if(Session.Paused)Resume();else{Pause();Front.ShowOptions();}}
         }
@@ -50,7 +55,7 @@ namespace Aethernia
         public void ShowMain()
         {
             Time.timeScale=1;IsPlaying=false;Session.Paused=true;ExistingHud.gameObject.SetActive(false);
-            Director.Hero.Stop();Session.SetMode(PrototypeMode.MainMenu);CameraRig.SetRegion(Vector3.zero);CameraRig.FocusOn(new Vector3(-1,0,1));Front.ShowMain();
+            Director.Hero.Stop();Session.SetMode(PrototypeMode.MainMenu);CameraRig.SetZoom(13);CameraRig.SetRegion(Vector3.zero);CameraRig.FocusOn(new Vector3(-1,0,1));Front.ShowMain();
         }
         public void CreateCharacter(){Session.SetMode(PrototypeMode.CharacterCreation);Front.ShowCreation();}
         public bool StartNew(string name,string classId,string lineage)
@@ -105,7 +110,7 @@ namespace Aethernia
         }
         public void RetryCurrentEncounter()
         {
-            if(Session.State.Demo!=null&&Session.State.Demo.Chapter==DemoChapter.FirstRts)
+            if(Director.Rts.IncludesHero&&!Director.Rts.Active)
             {Director.Execute("explore");Session.SelectClass(Session.State.ClassId);Resume();BeginPatrol();}
             else RetryFirstCombat();
         }
@@ -113,23 +118,24 @@ namespace Aethernia
         {
             if(id!="demo-patrol")return null;
             if(Session.State.Demo==null||Session.State.Demo.Chapter<DemoChapter.RoadToRts){Session.Say("Abre primero el sendero del prólogo.");return false;}
-            if(Session.State.Demo.Chapter>=DemoChapter.Settlement){Session.Say("La patrulla ya aseguró el campamento. Puedes explorar y administrar sus instalaciones.");return true;}
             return BeginPatrol();
         }
         public bool BeginPatrol()
         {
             if(!IsPlaying||Director.IsBusy||Session.State.Demo==null||Session.State.Demo.Chapter<DemoChapter.RoadToRts)return false;
-            Director.Encounter.Clear();
+            patrolReturn=Session.State.Demo.Chapter;Director.Encounter.Clear();
             if(!Director.Rts.BeginWithHero(Director.Hero))return false;
-            Session.State.Demo.Chapter=DemoChapter.FirstRts;CameraRig.SetRegion(Vector3.zero);CameraRig.SetZoom(8);CameraRig.FocusOn(new Vector3(-9,0,13));return true;
+            if(patrolReturn<DemoChapter.Settlement)Session.State.Demo.Chapter=DemoChapter.FirstRts;CameraRig.SetRegion(Vector3.zero);CameraRig.SetZoom(8);CameraRig.FocusOn(new Vector3(-9,0,13));return true;
         }
         private void RtsResolved(bool won)
         {
-            if(Session.State.Demo==null||Session.State.Demo.Chapter!=DemoChapter.FirstRts)return;
+            if(Session.State.Demo==null||!Director.Rts.IncludesHero)return;
             if(!won){Session.Paused=true;Front.ShowRetry();return;}
+            if(patrolReturn>=DemoChapter.Settlement)
+            {Director.Execute("explore");Session.State.Demo.Chapter=patrolReturn;CameraRig.SetZoom(11);CameraRig.FocusOn(Director.Hero.transform.position);Session.Say("Patrulla de entrenamiento terminada. No genera otra recompensa; el ejército conserva bajas y salud.");Director.Save(SlotPath);return;}
             Director.Execute("explore");Session.State.Demo.Chapter=DemoChapter.Settlement;
             if(!Session.HasFact("demo-camp-secured"))Session.State.Facts.Add("demo-camp-secured");
-            Director.Hero.Warp(new Vector3(9,0,-10));CameraRig.FocusOn(Director.Hero.transform.position);
+            Director.Hero.Warp(new Vector3(9,0,-10));CameraRig.SetZoom(11);CameraRig.FocusOn(Director.Hero.transform.position);
             Session.Say("La patrulla aseguró un campamento. Puedes fundar su centro y construir; ayudar aquí no te obliga a gobernar.");Director.Save(SlotPath);
         }
         private void CombatResolved(bool won)

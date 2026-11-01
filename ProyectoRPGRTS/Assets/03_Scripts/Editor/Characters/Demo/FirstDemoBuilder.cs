@@ -84,5 +84,45 @@ namespace Aethernia.Editor.Characters
             }
             EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();Debug.Log("DEMO_RTS_BOUND: shared hero, role data, selection/commands and world interaction; validation pending.");
         }
+        public static void Settlement()
+        {
+            var scene=EditorSceneManager.OpenScene(ScenePath);var flow=Object.FindAnyObjectByType<DemoFlow>();Folder(Root+"/Prefabs/Buildings");
+            var rules=AssetDatabase.LoadAssetAtPath<SettlementRules>(Root+"/SettlementRules.asset");if(rules==null){rules=ScriptableObject.CreateInstance<SettlementRules>();AssetDatabase.CreateAsset(rules,Root+"/SettlementRules.asset");}
+            var original=(GameObject)new SerializedObject(flow.Director.Construction).FindProperty("prefab").objectReferenceValue;
+            var table=rules.Blueprints.Select(p=>new BuildingPrefabBinding{Id=p.Id,Prefab=CampPrefab(original,p.Id)}).ToArray();
+            flow.Session.ConfigureSettlement(rules);flow.Director.Construction.ConfigureSettlement(rules,table);
+            var panel=flow.GetComponent<DemoSettlementPanel>();if(panel==null)panel=flow.gameObject.AddComponent<DemoSettlementPanel>();panel.Flow=flow;
+            EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();Debug.Log("DEMO_SETTLEMENT_BOUND: shared 3x3 collision/nav obstacle, E07 shell/materials, five functional blueprints; tests pending.");
+        }
+        private static GameObject CampPrefab(GameObject original,string id)
+        {
+            var path=Root+"/Prefabs/Buildings/"+id+".prefab";var existing=AssetDatabase.LoadAssetAtPath<GameObject>(path);if(existing!=null)return existing;
+            var node=(GameObject)PrefabUtility.InstantiatePrefab(original);node.name="Camp "+id;
+            try
+            {
+                foreach(var renderer in node.GetComponentsInChildren<Renderer>())renderer.enabled=false;
+                var shed=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/02_Prefabs/Environment/VillageE07/Architecture/OpenWoodshed_3x3m.prefab");var skin=(GameObject)PrefabUtility.InstantiatePrefab(shed);skin.transform.SetParent(node.transform,false);
+                foreach(var collider in skin.GetComponentsInChildren<Collider>())Object.DestroyImmediate(collider);
+                var wall=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Plaster.mat");var wood=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/DarkOak.mat");
+                if(id!="farm")
+                {
+                    Box(node.transform,"Plaster rear",new Vector3(0,1.22f,1.25f),new Vector3(2.6f,2.44f,.12f),wall);
+                    Box(node.transform,"Side panel",new Vector3(1.25f,1.22f,0),new Vector3(.12f,2.44f,2.6f),wall);
+                    Box(node.transform,"Door left",new Vector3(-1.02f,1.22f,-1.25f),new Vector3(.56f,2.44f,.12f),wall);
+                    Box(node.transform,"Door right",new Vector3(1.02f,1.22f,-1.25f),new Vector3(.56f,2.44f,.12f),wall);
+                    Box(node.transform,"Lintel",new Vector3(0,2.35f,-1.25f),new Vector3(1.5f,.18f,.16f),wood);
+                }
+                else
+                {
+                    var earth=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Earth.mat");for(var i=0;i<3;i++)Box(node.transform,"Planting bed",new Vector3(-.8f+i*.8f,.07f,0),new Vector3(.5f,.1f,2.4f),earth);
+                }
+                var decoration=id=="warehouse"?"SupplySack_75cm":id=="barracks"?"ToolRack_140cm":id=="workshop"?"Woodpile_2m":"WayfindingSign_190cm";
+                var prop=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/02_Prefabs/Environment/VillageE07/Props/"+decoration+".prefab"));prop.transform.SetParent(node.transform,false);prop.transform.localPosition=new Vector3(-.6f,0,.4f);foreach(var c in prop.GetComponentsInChildren<Collider>())Object.DestroyImmediate(c);
+                return PrefabUtility.SaveAsPrefabAsset(node,path);
+            }
+            finally{Object.DestroyImmediate(node);}
+        }
+        private static void Box(Transform parent,string name,Vector3 point,Vector3 size,Material material)
+        {var box=GameObject.CreatePrimitive(PrimitiveType.Cube);box.name=name;box.transform.SetParent(parent,false);box.transform.localPosition=point;box.transform.localScale=size;box.GetComponent<Renderer>().sharedMaterial=material;Object.DestroyImmediate(box.GetComponent<Collider>());}
     }
 }

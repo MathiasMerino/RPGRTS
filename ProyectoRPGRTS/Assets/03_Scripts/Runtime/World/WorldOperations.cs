@@ -40,14 +40,15 @@ namespace Aethernia
             state.Gold -= 10; state.Wood -= 5;
             state.Buildings.Add(new BuildingRecord("workshop", position)); return true;
         }
-        public static void Advance(PrototypeState state, float seconds)
+        public static void Advance(PrototypeState state, float seconds,SettlementRules settlement=null)
         {
             if (seconds <= 0 || float.IsNaN(seconds) || float.IsInfinity(seconds)) return;
             state.WorldSeconds += seconds;
             var next = Mathf.FloorToInt(state.WorldSeconds / 10);
             var cycles = Mathf.Clamp(next - state.ProductionCycle, 0, 1000);
-            var produced = Math.Min(state.Food, cycles * state.Buildings.Count);
-            state.Food -= produced; state.Wood += produced; state.ProductionCycle = next;
+            if(state.Demo!=null&&settlement!=null)SettlementOperations.Produce(state,settlement,cycles);
+            else{var produced = Math.Min(state.Food, cycles * state.Buildings.Count);state.Food -= produced; state.Wood += produced;}
+            state.ProductionCycle = next;
         }
         public static bool CompleteQuest(PrototypeState state)
         {

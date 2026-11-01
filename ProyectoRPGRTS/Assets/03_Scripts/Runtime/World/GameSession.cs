@@ -10,6 +10,9 @@ namespace Aethernia
         public event Action Changed;
         public event Action<string> Message;
         [SerializeField] private PrototypeRules rules;
+        [SerializeField] private SettlementRules settlementRules;
+        public SettlementRules Settlement=>settlementRules;
+        public void ConfigureSettlement(SettlementRules value){settlementRules=value;}
         private bool ownsRules;
         private int displayedSecond;
         public PrototypeState State { get; private set; } = new PrototypeState();
@@ -30,7 +33,7 @@ namespace Aethernia
         private void Update()
         {
             if (Paused || Mode == PrototypeMode.TurnCombat || Mode == PrototypeMode.Rts || Mode == PrototypeMode.MainMenu || Mode == PrototypeMode.CharacterCreation || Mode == PrototypeMode.Intro) return;
-            WorldOperations.Advance(State, Time.deltaTime);
+            WorldOperations.Advance(State, Time.deltaTime,settlementRules);
             if ((int)State.WorldSeconds != displayedSecond) { displayedSecond = (int)State.WorldSeconds; Changed?.Invoke(); }
         }
         public void SetMode(PrototypeMode mode) { Mode = mode; Say("Modo: " + ModeTitle); }

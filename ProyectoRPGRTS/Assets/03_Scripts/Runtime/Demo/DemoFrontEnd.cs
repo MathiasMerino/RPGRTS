@@ -106,14 +106,15 @@ namespace Aethernia
             Add(p,"fullscreen","Pantalla / ventana",480,483,280,()=>{Preferences.Fullscreen=!Preferences.Fullscreen;RefreshOptions();});
             Add(p,"quality","Calidad gráfica",780,483,300,()=>{Preferences.Quality=(Preferences.Quality+1)%Mathf.Max(1,QualitySettings.names.Length);RefreshOptions();});
             ui.Text(p,"Audio scope","Sin pista musical: no se ofrece un control de música sin uso. P: pausar durante el juego.",190,558,900,52,17);
-            Add(p,"apply","Aplicar y volver",190,635,890,()=>{ApplyPreferences(true);if(Flow.IsPlaying)Flow.Resume();else ShowMain();});RefreshOptions();
+            Add(p,"apply","Aplicar y volver",190,635,470,()=>{ApplyPreferences(true);if(Flow.IsPlaying)Flow.Resume();else ShowMain();});
+            Add(p,"return-title","Guardar y volver al título",680,635,400,()=>Flow.ReturnToTitle());RefreshOptions();
         }
         public void ApplyPreferences(bool display){Preferences.Apply(Audio,Flow.CameraRig,display);Preferences.Save();}
         private void RefreshOptions(){optionsDisplay.text=Preferences.Width+" × "+Preferences.Height+" · "+(Preferences.Fullscreen?"Pantalla completa":"Ventana")+"\nCalidad: "+QualitySettings.names[Preferences.Quality]+(Application.isEditor?" · Resolución aplicada en el ejecutable":"");}
         public void ShowMain(){Show(DemoScreen.Main);var valid=Flow.HasSave();Controls["continue"].interactable=valid;Controls["load"].interactable=valid;Notify(valid?"Partida de demo disponible. Nueva partida creará un respaldo antes de reemplazarla.":"No hay una partida de demo válida. Puedes comenzar una aventura.");}
         public void ShowCreation(){Show(DemoScreen.Character);RefreshCharacter();}
         public void ShowIntro(int introPageIndex){introPage=introPageIndex;Show(DemoScreen.Intro);introText.text=Flow.Content.Intro[Mathf.Clamp(introPage,0,Flow.Content.Intro.Length-1)];}
-        public void ShowOptions(){Show(DemoScreen.Options);RefreshOptions();}
+        public void ShowOptions(){Show(DemoScreen.Options);Controls["return-title"].gameObject.SetActive(Flow.IsPlaying);Controls["return-title"].interactable=!Flow.Director.IsBusy;RefreshOptions();}
         public void ShowRetry()=>Show(DemoScreen.Retry);
         public void Notify(string value){notice.text=value;notice.transform.SetAsLastSibling();}
         public void Hide(){Screen=DemoScreen.None;canvas.enabled=false;fade.blocksRaycasts=false;notice.text="";}
