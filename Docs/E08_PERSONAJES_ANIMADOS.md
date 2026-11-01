@@ -14,7 +14,7 @@ No sprint nuevo, root motion, cambios de estadísticas/IDs/esquema v1 ni daño d
 
 ## Resultados
 
-Base técnica implementada y verificada, pendiente de revisión humana/artística y publicación del PR de esta rama. Tres humanoides provisionales con skin y rigs Generic, siete estados por clase, locomoción y combate visual conectados a resultados reales. **Regresión final 73/73, salida 0; Windows y dos recorridos del ejecutable PASS.**
+Base técnica implementada y verificada, con [PR #3 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/3) y revisión humana/artística pendiente. Tres humanoides provisionales con skin y rigs Generic, siete estados por clase, locomoción y combate visual conectados a resultados reales. **Regresión final 73/73, salida 0; Windows y dos recorridos del ejecutable PASS.**
 
 Se entregan 49 PNG reales y tres MP4 de muestras de clips; las tomas de inspección se distinguen de la ejecución integrada. ZIP local `ProyectoRPGRTS/Builds/Aethernia-E08-Personajes-Windows.zip` (86.334.027 bytes, 305 archivos; CRC y hash de todos los binarios comprobados). Diez ZIP anteriores conservados. El arte final realista, retargeting Humanoid, FBX/Blend y aprobación humana siguen pendientes. No se inicia E09.
 
@@ -110,4 +110,4 @@ Para ejecutar: descomprimir el ZIP completo y abrir Aethernia.exe. Para evaluaci
 
 ## Versionado
 
-Base E07 `8f0108b`; cambios de implementación `6242116`, refinamiento/golpe final `53ee6ea`; bloque de verificación y documentación completado en los commits siguientes de feature/e08-personajes-animados. PR de revisión: publicación en curso. main/dev y PR #1/#2 se conservan sin fusionar.
+Base E07 `8f0108b`; cambios de implementación `6242116`, refinamiento/golpe final `53ee6ea`; verificación/evidencia `b8e3861`, informe `4ca2b8c` y cierre documental en el commit siguiente de feature/e08-personajes-animados. PR de revisión: [#3, abierto en borrador](https://github.com/MathiasMerino/RPGRTS/pull/3), base feature/e07-aldea-medieval. main/dev y PR #1/#2 se conservan sin fusionar.

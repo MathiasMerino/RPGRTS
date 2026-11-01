@@ -390,3 +390,8 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 - Regresión final 73/73, cero fallos/omisiones y salida 0. La incidencia intermedia de guardado no se reprodujo en recontrol, pasada final o player; causa concreta no confirmada y evidencia conservada.
 - Build Windows x64 203.270.570 bytes; recorridos headless 54,77 s/GPU 55,46 s PASS con misión y animación de las tres clases y sistemas previos. Cuatro tomas reales del ejecutable inspeccionadas; 49 PNG/tres MP4 seleccionados y verificados en total.
 - ZIP E08 local 86.334.027 bytes/305 archivos, CRC y hashes de cada archivo comprobados; diez paquetes históricos conservan SHA/tamaño. GDD SHA original y escena anterior/versiones intactos. Informes/checklist/instrucciones/fichas actualizados; publicación del PR apilado en curso, revisión humana/artística pendiente, sin E09.
+
+
+### E08 — Publicación para revisión (2026-11-01)
+- Rama feature/e08-personajes-animados publicada conservando historial E07. Commits de implementación 6242116, correcciones 53ee6ea, validación/evidencia b8e3861 e informe 4ca2b8c; cierre documental posterior.
+- PR #3 abierto en borrador sobre feature/e07-aldea-medieval: https://github.com/MathiasMerino/RPGRTS/pull/3. #1/#2 continúan abiertos/borrador/sin fusionar; main/dev se mantienen. No release estable ni E09. Técnica E08 verificada, revisión humana/artística independiente pendiente.

@@ -4,7 +4,7 @@ Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- E08: tres humanoides provisionales con rigs Generic/skin y siete estados, integrados en demo; **73/73 regresión**, Windows/headless/GPU PASS, 49 PNG/tres MP4 y ZIP verificado. Publicación del PR en curso; arte final/retargeting Humanoid y sesión humana pendientes. Informe Docs/E08_PERSONAJES_ANIMADOS.md.
+- E08: tres humanoides provisionales con rigs Generic/skin y siete estados, integrados en demo; **73/73 regresión**, Windows/headless/GPU PASS, 49 PNG/tres MP4 y ZIP verificado. [PR #3](https://github.com/MathiasMerino/RPGRTS/pull/3) abierto en borrador sobre E07; arte final/retargeting Humanoid y sesión humana pendientes. Informe Docs/E08_PERSONAJES_ANIMADOS.md.
 
 - E07: aldea integrada, 33 prefabs, trece materiales nuevos y cinco albedos originales; **67/67 regresión**, 24 comparativas reales, build/recorridos headless-GPU PASS, captura del player y ZIP verificado. Informe Docs/E07_ALDEA_MEDIEVAL.md; aprobación humana/artística pendiente.
 
@@ -734,11 +734,11 @@ Base E07/8f0108b, PR #1/#2 sin fusionar. Plan y evidencia en Docs/E08_PERSONAJES
 - Pruebas / resultado: 73/73 final, salida 0; build 203.270.570 bytes; headless 54,77 s y GPU 55,46 s con misión/animación de tres clases y sistemas previos PASS. ZIP 86.334.027 bytes/305 archivos, CRC y todos los hashes verificados; diez ZIP previos intactos. Un fallo intermedio de escritura y recontrol 2/2 documentados; diagnóstico añadido, sin alterar operación/esquema. No aprobación humana.
 
 ### E08-06 — Documentación y publicación
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: personajes integrados / P1. Dependencias: E08-05.
 - Aceptación: Guías/fichas/checklist/registro actualizados, commits y PR apilado, repo limpio y humano pendiente.
-- Archivos: se registran en el informe E08 al implementar.
-- Pruebas / resultado: pendientes; no aprobación artística automática.
+- Archivos: Docs/E08_PERSONAJES_ANIMADOS.md, E08_GITHUB.json, checklist/registro/plan/AGENTS/COMO_JUGAR/dirección/ficha Monje.
+- Pruebas / resultado: commits por bloques, rama feature/e08-personajes-animados publicada; PR #3 abierto/borrador/base E07 (https://github.com/MathiasMerino/RPGRTS/pull/3). main/dev y PR #1/#2 sin fusionar ni modificar; comprobación de sincronía/limpieza al cierre. Fichas, licencias, Generic/clips, importación futura, pruebas/build/evidencia y límites documentados. Humano/arte final pendientes; no E09.
 
 
 ### E08-H — Revisión humana y artística

@@ -1,0 +1,9 @@
+{
+  "number": 3,
+  "url": "https://github.com/MathiasMerino/RPGRTS/pull/3",
+  "state": "open",
+  "draft": true,
+  "base": "feature/e07-aldea-medieval",
+  "head": "feature/e08-personajes-animados",
+  "head_sha_at_creation": "4ca2b8c30a4ad43032b73beb3f366f002906e07e"
+}
