@@ -1,0 +1,118 @@
+{
+  "origin": "Original deterministic DSP; Tools/Generate-E09Audio.py; no external samples",
+  "usage": "Project-owned provisional sound effects; no third-party asset license introduced",
+  "clips": [
+    {
+      "name": "Select",
+      "seconds": 0.08,
+      "sample_rate": 48000,
+      "rms": 0.19142095391747277,
+      "peak": 0.6,
+      "sha256": "8eb44942532dbfc57e4f7b43dc5d417058a71d4bad53edade799a2d4281d8604"
+    },
+    {
+      "name": "PanelOpen",
+      "seconds": 0.18,
+      "sample_rate": 48000,
+      "rms": 0.18996865264286847,
+      "peak": 0.6,
+      "sha256": "b53759fab6bc0f450fe435613e223ca9f90703eb24eb50ac17a8a0d1bdf29da2"
+    },
+    {
+      "name": "PanelClose",
+      "seconds": 0.14,
+      "sample_rate": 48000,
+      "rms": 0.19093330761415503,
+      "peak": 0.6,
+      "sha256": "79f18c573b8cc9ef17fead233bd1ac12c8df9b3bf371c44f2a2fae7b9345b9b2"
+    },
+    {
+      "name": "Confirm",
+      "seconds": 0.13,
+      "sample_rate": 48000,
+      "rms": 0.18896590931519996,
+      "peak": 0.6,
+      "sha256": "f72ac68043702a891635d040589bc64df78a3a5073d735d692ab47c116d5275b"
+    },
+    {
+      "name": "Sword",
+      "seconds": 0.28,
+      "sample_rate": 48000,
+      "rms": 0.11265101822563328,
+      "peak": 0.6,
+      "sha256": "b8285335b109b8ffb104b8be6ca096731d4d33006c5087a95c8c3ccfa5389579"
+    },
+    {
+      "name": "Punch",
+      "seconds": 0.22,
+      "sample_rate": 48000,
+      "rms": 0.179824298292776,
+      "peak": 0.6,
+      "sha256": "e379f855512a867f8d7e04f5db894c8f0fe14c7d9dd4a4a2749795652927893d"
+    },
+    {
+      "name": "Block",
+      "seconds": 0.25,
+      "sample_rate": 48000,
+      "rms": 0.1303438588359563,
+      "peak": 0.6,
+      "sha256": "42fe829d32262abaa59ec21d092becb0caa6bbaad81eb36021322b8e7f73c0df"
+    },
+    {
+      "name": "Arcane",
+      "seconds": 0.45,
+      "sample_rate": 48000,
+      "rms": 0.14821346940521563,
+      "peak": 0.6,
+      "sha256": "7defe83b8e0f05f6d4c5ad4ab15b8d5d926dbd2281f5c1bb048ff83fce003803"
+    },
+    {
+      "name": "Hurt",
+      "seconds": 0.25,
+      "sample_rate": 48000,
+      "rms": 0.11352935138605928,
+      "peak": 0.6,
+      "sha256": "ab101dc5675d348081dfa02ffd4cca730f7ff844c376feaeb24cc7144595c481"
+    },
+    {
+      "name": "Miss",
+      "seconds": 0.19,
+      "sample_rate": 48000,
+      "rms": 0.10036687319896,
+      "peak": 0.6,
+      "sha256": "5d0d0d61cb5135773349f86089f266cccff13cf92971d1fda736642ea2da5024"
+    },
+    {
+      "name": "Victory",
+      "seconds": 0.72,
+      "sample_rate": 48000,
+      "rms": 0.1488412491760752,
+      "peak": 0.6,
+      "sha256": "72f1cdc62509f85f873ea6ff0fb85a48069c02ed1ea5579ec5d232a3389aa8df"
+    },
+    {
+      "name": "Defeat",
+      "seconds": 0.7,
+      "sample_rate": 48000,
+      "rms": 0.15000906139781683,
+      "peak": 0.6,
+      "sha256": "94e84bc32313dbc792c5bd3b056b62fc2f870358d1f7a208940840c134ea999f"
+    },
+    {
+      "name": "Quest",
+      "seconds": 0.78,
+      "sample_rate": 48000,
+      "rms": 0.13998713174098246,
+      "peak": 0.6,
+      "sha256": "8593bd728b80eee965821104a805027d627952b5c3bc7a64711f61180607d49c"
+    },
+    {
+      "name": "Recover",
+      "seconds": 0.38,
+      "sample_rate": 48000,
+      "rms": 0.18746030961264679,
+      "peak": 0.6,
+      "sha256": "f8b8e7552cb43a7fbaf49a4482e976a6924fd63caf2cce64074144e8b25d5656"
+    }
+  ]
+}

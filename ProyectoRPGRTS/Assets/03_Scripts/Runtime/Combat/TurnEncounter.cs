@@ -145,7 +145,7 @@ namespace Aethernia
             var path=new NavMeshPath();var canApproach=(distance>1.8f||!line)&&enemy.Agent.CalculatePath(hero.transform.position,path)&&path.status==NavMeshPathStatus.PathComplete;
             LastEnemyIntent=MeleeEnemyPolicy.Decide(new EnemySituation(Battle.Phase==TurnPhase.Enemy,Battle.EnemyHealth>0,Battle.HeroHealth>0,distance<=1.8f,line,canApproach));
             if(LastEnemyIntent==EnemyIntent.Approach)
-            {var before=EnemyPosition;if(enemy.TryStepTowards(hero.transform.position,3,1.3f))EnemyMoved?.Invoke(before,EnemyPosition);}
+            {var before=EnemyPosition;if(enemy.TryStepTowards(hero.transform.position,3,1.3f))EnemyMoved?.Invoke(before,EnemyPosition);else LastEnemyIntent=EnemyIntent.Wait;}
         }
         private void ResolveEnemy()
         {
