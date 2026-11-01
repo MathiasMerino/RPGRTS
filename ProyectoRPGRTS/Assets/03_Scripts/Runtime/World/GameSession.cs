@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aethernia
 {
-    public enum PrototypeMode { Exploration, TurnCombat, Construction, Rts }
+    public enum PrototypeMode { Exploration, TurnCombat, Construction, Rts, MainMenu, CharacterCreation, Intro }
     public sealed class GameSession : MonoBehaviour
     {
         public event Action Changed;
@@ -18,7 +18,8 @@ namespace Aethernia
         public Func<string, bool> TravelRequested;
         public Func<string, string, bool?> AdditionalInteraction;
         public PrototypeMode Mode { get; private set; }
-        public string ModeTitle => Mode == PrototypeMode.Exploration ? "Exploración" : Mode == PrototypeMode.TurnCombat ? "Combate por turnos" : Mode == PrototypeMode.Construction ? "Construcción" : "Guerra RTS";
+        public bool Paused { get; set; }
+        public string ModeTitle => Mode == PrototypeMode.Exploration ? "Exploración" : Mode == PrototypeMode.TurnCombat ? "Combate por turnos" : Mode == PrototypeMode.Construction ? "Construcción" : Mode==PrototypeMode.Rts?"Guerra RTS":Mode==PrototypeMode.MainMenu?"Menú principal":Mode==PrototypeMode.CharacterCreation?"Crear personaje":"Prólogo";
         public string LastMessage { get; private set; } = "Selecciona el personaje. Clic derecho: caminar. WASD: cámara. Rueda: zoom.";
         private void Awake()
         {
@@ -28,7 +29,7 @@ namespace Aethernia
         public void Configure(PrototypeRules value) { rules = value; }
         private void Update()
         {
-            if (Mode == PrototypeMode.TurnCombat || Mode == PrototypeMode.Rts) return;
+            if (Paused || Mode == PrototypeMode.TurnCombat || Mode == PrototypeMode.Rts || Mode == PrototypeMode.MainMenu || Mode == PrototypeMode.CharacterCreation || Mode == PrototypeMode.Intro) return;
             WorldOperations.Advance(State, Time.deltaTime);
             if ((int)State.WorldSeconds != displayedSecond) { displayedSecond = (int)State.WorldSeconds; Changed?.Invoke(); }
         }

@@ -1,9 +1,25 @@
 {
-    "name": "Aethernia.Editor.Tests",
-    "references": ["UnityEngine.TestRunner", "UnityEditor.TestRunner", "Aethernia.Runtime", "Aethernia.Environment.Editor", "Aethernia.CharacterImport.Editor", "Unity.InputSystem", "Unity.AI.Navigation", "Unity.ugui"],
-    "includePlatforms": ["Editor"],
-    "overrideReferences": true,
-    "precompiledReferences": ["nunit.framework.dll"],
-    "autoReferenced": false,
-    "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+  "name": "Aethernia.Editor.Tests",
+  "references": [
+    "UnityEngine.TestRunner",
+    "UnityEditor.TestRunner",
+    "Aethernia.Runtime",
+    "Aethernia.Environment.Editor",
+    "Aethernia.CharacterImport.Editor",
+    "Unity.InputSystem",
+    "Unity.AI.Navigation",
+    "Unity.ugui",
+    "Unity.TextMeshPro"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ]
 }

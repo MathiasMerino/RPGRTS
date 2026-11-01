@@ -11,6 +11,8 @@ namespace Aethernia
         public static bool Valid(PrototypeState s, PrototypeRules rules)
         {
             if (s == null || s.Version != 1 || rules.Find(s.ClassId) == null || string.IsNullOrWhiteSpace(s.Name) || s.Name.Length > 32) return false;
+            if (!string.IsNullOrEmpty(s.RaceId) && !DemoContent.KnownLineage(s.RaceId)) return false;
+            if (s.Demo != null && (!Enum.IsDefined(typeof(DemoChapter),s.Demo.Chapter) || s.Demo.Produced<0 || s.Demo.Produced>1000000)) return false;
             if (s.Gold < 0 || s.Wood < 0 || s.Food < 0 || s.Gold > 1000000 || s.Wood > 1000000 || s.Food > 1000000 || s.Health < 0 || s.Health > rules.Find(s.ClassId).Health) return false;
             if (!Finite(s.HeroPosition.x) || !Finite(s.HeroPosition.y) || !Finite(s.HeroPosition.z) || s.HeroPosition.sqrMagnitude > 1000000) return false;
             if (!Finite(s.WorldSeconds) || s.WorldSeconds < 0 || s.WorldSeconds / 10 >= int.MaxValue || s.ProductionCycle != Mathf.FloorToInt(s.WorldSeconds / 10)) return false;
@@ -47,6 +49,7 @@ namespace Aethernia
                 var json = File.ReadAllText(path);
                 if (!json.Contains("\"Version\"") || !json.Contains("\"ClassId\"")) return false;
                 var candidate = JsonUtility.FromJson<PrototypeState>(json);
+                if (candidate != null && string.IsNullOrEmpty(candidate.RaceId)) candidate.RaceId="human";
                 if (!Valid(candidate, rules)) return false;
                 state = candidate; return true;
             }

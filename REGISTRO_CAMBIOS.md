@@ -433,3 +433,13 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 ### E09 — Publicación y cierre técnico (2026-11-01)
 - Rama feature/e09-combate-rpg-ia publicada. PR#4 abierto en borrador sobre feature/e08-personajes-animados: https://github.com/MathiasMerino/RPGRTS/pull/4. Main/dev conservan sus SHA iniciales; PR#1/#2/#3 abiertos/borrador/sin fusionar. Sin release estable, force push ni E10.
 - Commits4b21d4f (turnos/reglas/IA),c545386 (presentación/recursos),a07dbd5 (pruebas/sondas),04a4799 (entrega/evidencia), más cierre documental. Seis tareas técnicas E09 completadas y verificadas; E09-H/F2-07/E07-H/E08-H y recursos finales pendientes. Sincronía HEAD/origin/PR y estado limpio comprobados al concluir.
+
+
+### E10–E13 — Inicio autorizado
+- Auditoría dirigida del nuevo prompt completo, GDD/convenciones y sistemas reutilizables; E09 real89/89, PR#1–#4 abiertos/borrador, main/dev intactas, base66cf80f limpia. Rama feature/e10-e13-demo-jugable creada sin merges.
+- Plan secuencial y criterios añadidos; núcleo E10–E13 prioritario, E14/E15 condicionales, sin aprobar automáticamente lore/bonos/arte/humanos.
+
+
+### E10 — Menú y tipografía, checkpoint editor
+- Nueva escena AetherniaFirstDemo derivada de E09, originales intactos; prefab reutilizable de front-end, TMP SDF2048 y LiberationSans/OFL incorporada desde el paquete instalado. Ajustes reales persistentes, créditos, Continue/carga válida, salida segura en editor; datos de raza/intro y slot separado con respaldo.
+- 3/3 focales y compilación exacta PASS; capturas reales720p/1080p/1440p/4K, creación/prólogo/créditos, textos y raycasts comprobados. Corregidos errores iniciales de firma C#/API TMP y recuperación de importación asíncrona de esenciales antes de -quit. Editor validado; ejecutable/flujo integral y humanos pendientes.

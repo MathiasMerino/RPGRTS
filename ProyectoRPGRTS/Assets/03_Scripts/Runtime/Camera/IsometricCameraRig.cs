@@ -17,6 +17,9 @@ namespace Aethernia
         private Camera view;
         public Vector3 Focus => focus;
         public float Size => size;
+        public float PanSpeed => panSpeed;
+        public GameSession InputSession { get; set; }
+        public void SetPanSpeed(float value) { if(!float.IsNaN(value)&&!float.IsInfinity(value))panSpeed=Mathf.Clamp(value,4,24); }
 
         private void Awake() { view = GetComponent<Camera>(); Refresh(); }
         public void Configure(Vector3 centre) { focus = centre; view = GetComponent<Camera>(); Refresh(); }
@@ -26,6 +29,7 @@ namespace Aethernia
 
         private void Update()
         {
+            if(InputSession!=null&&InputSession.Paused)return;
             var keyboard = Keyboard.current;
             var mouse = Mouse.current;
             var pan = Vector2.zero;

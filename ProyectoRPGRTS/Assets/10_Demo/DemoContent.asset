@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9b8d9d7c9281d45bb07b5b09e450fd, type: 3}
+  m_Name: DemoContent
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.DemoContent
+  Subtitle: "Un mundo de aventuras, ej\xE9rcitos y decisiones"
+  Intro:
+  - 'EL SILENCIO DE LOS UMBRALES
+
+
+    En Aethernia, antiguos pasos arcanos comienzan
+    a apagarse. Los caminos se vuelven inciertos y los reinos buscan respuestas entre
+    las ruinas.'
+  - "HAS LLEGADO A LA FRONTERA\n\nViajas con provisiones y equipo de entrenamiento.
+    Cerca de una aldea, un merodeador cierra el sendero. Antes de buscar respuestas,
+    tendr\xE1s que abrirte paso."
+  - 'UN CAMINO PROPIO
+
+
+    Quienes sobreviven en la frontera se ayudan para mantener
+    sus hogares. Puedes prestarles tu fuerza, dirigir una patrulla o levantar un
+    campamento; tu destino no exige una corona.'
+  Lineages:
+  - Id: human
+    Title: Humano
+    Description: Una procedencia humana abierta a distintas culturas. Sin bonificaciones
+      raciales en esta demo.
+  - Id: elf
+    Title: Elfo
+    Description: "Linaje \xE9lfico provisional, inspirado en la diversidad de Aethernia.
+      Sin cultura pol\xEDtica impuesta ni bonificaciones."
+  - Id: dwarf
+    Title: Enano
+    Description: "Linaje enano provisional. Sus culturas e identidades se definir\xE1n
+      despu\xE9s; no altera estad\xEDsticas."
+  VisualNotice: Linajes provisionales. Los tres reutilizan el modelo humano de clase;
+    no hay apariencia racial final ni bonos.
+  NarrativeNotice: "Pr\xF3logo de demostraci\xF3n: narrativa provisional, revisable
+    y no can\xF3nica."
+  Credits: "CR\xD3NICAS DE AETHERNIA\nProyecto de Mathias Merino\n\nDesarrollo asistido
+    con Codex.\nMotor Unity 6000.5.8f1 \xB7 Universal Render Pipeline.\nEscenario,
+    materiales, personajes Generic, animaciones y efectos originales del proyecto.\nSonidos
+    originales sintetizados: banco E09.\nTipograf\xEDa Liberation Sans: SIL Open
+    Font License 1.1 (licencia incluida).\n\nArte, reglas nuevas y narrativa de esta
+    demo son provisionales. No se incorpor\xF3 m\xFAsica comercial ni assets externos
+    sin licencia."

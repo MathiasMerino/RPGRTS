@@ -803,3 +803,78 @@ Plan/evidencia única: Docs/E09_COMBATE_TACTICO.md. Historial anterior conservad
 - Aceptación: el usuario evalúa turnos, legibilidad, clases, audio, controles y disfrute; aprobación explícita.
 - Archivos: guía y evidencia E09.
 - Pruebas / resultado: no realizadas por humanos; F2-07/E08-H independientes.
+
+
+## PRIMERA DEMO — E10–E15 (nuevo encargo)
+
+Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuevos provisionales.
+
+### E10-A — Auditoría y base Git
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: demo integrada / P1. Dependencias: E09.
+- Aceptación: Estado/PR/GDD/recursos contrastados y plan secuencial documentado.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: GDD/hash y PR#1–#4 contrastados, base66cf80f limpia y rama/plan conservados; ningún merge.
+
+### E10-B — Menú, tipografía y opciones
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: demo integrada / P1. Dependencias: E10-A.
+- Aceptación: Menú TMP real, derechos de fuente, español, opciones funcionales, guardado válido/ausente y cuatro resoluciones.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+### E11-A — Selección, prólogo y tutorial RPG
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: demo integrada / P1. Dependencias: E10-B.
+- Aceptación: Clase/linaje persistentes, prólogo omisible y encuentro legal con tres clases.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+### E11-B — Exploración WASD
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: demo integrada / P1. Dependencias: E11-A.
+- Aceptación: Diagonal normalizada, colisiones, animación, cámara y UI/pausa sin conflictos RTS.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+### E12 — RTS y héroe compartido
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: demo integrada / P1. Dependencias: E11-B.
+- Aceptación: Selección/órdenes/roles/acción real del mismo héroe, resultados y transición válidos.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+### E13 — Asentamiento y economía
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: demo integrada / P1. Dependencias: E12.
+- Aceptación: Edificios funcionales/costes/producción/reclutas/guardado sin duplicación y juego libre.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+### DEMO-QA — Validación y entrega E10–E13
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: demo integrada / P1. Dependencias: E13.
+- Aceptación: Regresión, end-to-end/reinicio, capturas, Windows ejecutado, ZIP y PR apilado, Git limpio.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+### E14 — Compañeros y mazmorra (condicional)
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: demo integrada / P2. Dependencias: DEMO-QA.
+- Aceptación: Solo iniciar tras núcleo estable; grupo real y mazmorra verificables si se implementan.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+### E15 — Territorio y conquista (condicional)
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: demo integrada / P2. Dependencias: E14/núcleo estable.
+- Aceptación: Solo iniciar tras núcleo estable; propiedad/efecto RTS persistentes si se implementan.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+### DEMO-H — Evaluación humana
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: demo integrada / P1. Dependencias: DEMO-QA.
+- Aceptación: Usuario revisa controles/nitidez/experiencia; pendientes humanos anteriores separados.
+- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.

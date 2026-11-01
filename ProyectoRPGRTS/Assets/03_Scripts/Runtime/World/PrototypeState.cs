@@ -21,6 +21,8 @@ namespace Aethernia
         public int Version = 1;
         public string Name = "Aventurero";
         public string ClassId = "warrior";
+        public string RaceId = "human";
+        public DemoProgress Demo;
         public int Health = 24;
         public int Gold = 50;
         public int Wood = 20;

@@ -11,6 +11,7 @@ namespace Aethernia
         public int PlayedCount { get; private set; }
         public int ActiveVoices { get {var n=0;if(voices!=null)foreach(var s in voices)if(s.isPlaying)n++;return n;} }
         public CombatAudioBank Bank=>bank;
+        public float EffectsGain { get; set; } = 1;
         public void Configure(CombatAudioBank data){bank=data;}
         private void Awake()
         {
@@ -25,7 +26,7 @@ namespace Aethernia
         {
             var clip=bank==null?null:bank.Find(sound);if(clip==null||voices==null)return false;
             var index=ui?uiIndex++%2:2+worldIndex++%4;var source=voices[index];source.Stop();source.transform.position=point;
-            source.clip=clip;source.volume=ui?bank.InterfaceVolume:bank.WorldVolume;source.Play();PlayedCount++;return true;
+            source.clip=clip;source.volume=(ui?bank.InterfaceVolume:bank.WorldVolume)*Mathf.Clamp01(EffectsGain);source.Play();PlayedCount++;return true;
         }
         private void OnDisable(){if(voices!=null)foreach(var voice in voices)if(voice!=null)voice.Stop();}
     }

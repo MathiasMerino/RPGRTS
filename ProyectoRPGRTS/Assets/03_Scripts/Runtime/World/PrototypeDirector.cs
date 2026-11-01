@@ -18,6 +18,8 @@ namespace Aethernia
         public RtsBattleController Rts => rts;
         public ExplorationUnit Hero => hero;
         public string SavePath => Path.Combine(Application.persistentDataPath, "AetherniaPrototype", "save-v1.json");
+        public string SavePathOverride { get; set; }
+        public string ActiveSavePath => string.IsNullOrEmpty(SavePathOverride)?SavePath:SavePathOverride;
         public void Configure(GameSession game, ExplorationUnit actor, IsometricCameraRig camera, WorldConstruction builder, TurnEncounter turns, RtsBattleController war)
         { session = game; hero = actor; cameraRig = camera; construction = builder; encounter = turns; rts = war; }
         private void OnEnable()
@@ -33,9 +35,9 @@ namespace Aethernia
         }
         private void Update()
         {
-            if (Keyboard.current == null) return;
-            if (Keyboard.current.f5Key.wasPressedThisFrame) Save(SavePath);
-            if (Keyboard.current.f9Key.wasPressedThisFrame) Load(SavePath);
+            if (Keyboard.current == null || session.Paused || session.Mode==PrototypeMode.MainMenu || session.Mode==PrototypeMode.CharacterCreation || session.Mode==PrototypeMode.Intro) return;
+            if (Keyboard.current.f5Key.wasPressedThisFrame) Save(ActiveSavePath);
+            if (Keyboard.current.f9Key.wasPressedThisFrame) Load(ActiveSavePath);
         }
         private void RefreshHero()
         { if (hero != null && session.Rules != null) hero.Agent.speed = session.Rules.Find(session.State.ClassId).Speed; }
@@ -62,8 +64,8 @@ namespace Aethernia
             }
             if (id == "explore") { ClearEncounters(encounter.Battle != null && encounter.Battle.Won); hero.Stop(); session.SetMode(PrototypeMode.Exploration); cameraRig.SetRegion(hero.transform.position.x > 30 ? new Vector3(50, 0, 0) : Vector3.zero); return true; }
             if (id == "construct") { ClearEncounters(); hero.Stop(); session.SetMode(PrototypeMode.Construction); session.Say("Clic derecho sobre suelo libre: taller 3×3 m; coste 10 oro y 5 madera."); return true; }
-            if (id == "save") return Save(SavePath);
-            if (id == "load") return Load(SavePath);
+            if (id == "save") return Save(ActiveSavePath);
+            if (id == "load") return Load(ActiveSavePath);
             if (id.StartsWith("class-")) { session.SelectClass(id.Substring(6)); return true; }
             bool result;
             if (id == "trade") result = WorldOperations.Trade(session.State);
