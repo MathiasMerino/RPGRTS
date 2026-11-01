@@ -1,0 +1,60 @@
+{
+  "editor": {
+    "total": 89,
+    "passed": 89,
+    "failed": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "xml": "Docs/Validacion/E09_REGRESION.xml",
+    "runner_duration_seconds_excludes_domain_reload_waits": 32.9297579
+  },
+  "build": "Succeeded; bytes=203799042; seconds=85.0036909",
+  "players": {
+    "headless": {
+      "exit_code": 0,
+      "receipts": {
+        "": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=90.81; frames=182495; allocatedBytes=125212006",
+        ".cargo.txt": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; staged enemy phases=True; normal RPG/RTS/economy also checked by base probe.",
+        ".animated.txt": "PASS: E08 standalone actual animation checks\nmonk: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.\nwarrior: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.\nmage: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.",
+        ".village.txt": "PASS: E07 authored village loaded in standalone; renderers=340; graphics=Null Device; actual quest/classes and prior systems checked above.",
+        ".tactical.txt": "PASS: E09 real staged turn, AI decision=Attack; duplicate end/attack rejected; authoritative damage once; HP bar; 14 original clips, voices<=6/effects<=8; native output peak=0.076364; DSP/editor evidence checked separately, human hearing pending."
+      },
+      "metrics": {
+        "elapsedSeconds": 111.2327409,
+        "sampleIntervalSeconds": 0.5,
+        "measuredGc": false,
+        "sampledPeakWorkingSetBytes": 224141312,
+        "measuredFps": false
+      },
+      "allocated_memory_snapshot_bytes": 125212006
+    },
+    "gpu": {
+      "exit_code": 0,
+      "receipts": {
+        "": "PASS: standalone player; exploration, inventory, construction, dungeon consequence, save/load, RPG and RTS succeeded. Seconds=90.60; frames=136406; allocatedBytes=163487282",
+        ".cargo.txt": "PASS: standalone actual NPC/path/quest/combat/reward/v1 save-load for monk, warrior and mage; staged enemy phases=True; normal RPG/RTS/economy also checked by base probe.",
+        ".animated.txt": "PASS: E08 standalone actual animation checks\nmonk: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.\nwarrior: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.\nmage: valid Generic/skin, actual walk/run/idle, accepted/rejected attack, guard, actual damage/defeat, save v1; root motion off.",
+        ".village.txt": "PASS: E07 authored village loaded in standalone; renderers=340; graphics=NVIDIA GeForce RTX 3050 Laptop GPU; actual quest/classes and prior systems checked above.",
+        ".tactical.txt": "PASS: E09 real staged turn, AI decision=Attack; duplicate end/attack rejected; authoritative damage once; HP bar; 14 original clips, voices<=6/effects<=8; native output peak=0.076364; DSP/editor evidence checked separately, human hearing pending."
+      },
+      "metrics": {
+        "measuredGc": false,
+        "sampledPeakWorkingSetBytes": 555999232,
+        "sampleIntervalSeconds": 0.5,
+        "elapsedSeconds": 94.5151233,
+        "measuredFps": false
+      },
+      "allocated_memory_snapshot_bytes": 163487282
+    }
+  },
+  "quest_editor": "warrior: PASS NPC/path/accept/actual dice combat/staged enemy turns/victory/return/unique reward/v1 save-load; no forced health/victory.\nmonk: PASS NPC/path/accept/actual dice combat/staged enemy turns/victory/return/unique reward/v1 save-load; no forced health/victory.\nmage: PASS NPC/path/accept/actual dice combat/staged enemy turns/victory/return/unique reward/v1 save-load; no forced health/victory.",
+  "phases_fallback_editor": "PASS: staged enemy phase rejects duplicate end/hero input; melee navigates <=3m and waits out of reach; accepted attack damages once, repeat rejected; missing Attack/all profiles do not block turn; physical LOS obstacle rejects player attack and enemy damage; effect/voice budgets bounded.",
+  "recording": "PASS: 120 real Play Mode frames at fixed capture step 12 Hz, authoritative commands/dice/enemy phase; native AudioRenderer DSP samples=958464 channels=2 rate=48000 RMS=0.005859 peak=0.076390. Capture rate is not measured FPS. No clip pose sampling.",
+  "human_playtest_performed": false,
+  "e08_save_incident": {
+    "reproduced_in_final_regression_or_players": false,
+    "root_cause_confirmed": false
+  },
+  "gc_per_frame_profiled": false,
+  "fps_benchmark_performed": false
+}

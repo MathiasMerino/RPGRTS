@@ -189,3 +189,8 @@ Iteración de entorno integrada en AetherniaVillageDemo, desde dab39c2/E03–E06
 ## E08 — Personajes articulados autorizados
 
 Rama feature/e08-personajes-animados desde 8f0108b/E07; PR apilado hacia E07 mientras #2 permanezca abierto. Autoría original nativa Unity tras comprobar ausencia de Blender/bpy/modelos riggeados. Plan secuencial E08-01..06 en CHECKLIST: piloto, tres mallas/rigs/clips, integración modular cosmética, evidencia/deformación, regresión/build y documentación/publicación. Detalles/fichas/límites en Docs/E08_PERSONAJES_ANIMADOS.md. Generic explícito, sin certificar Humanoid o arte final; catálogo separado de demo y proxies/escena original preservados. No cambios de reglas, root motion o daño desde animaciones, ni E09. Aprobación humana/artística independiente.
+
+
+## E09 — Combate táctico autorizado
+
+Rama feature/e09-combate-rpg-ia desde a7acaca/E08 mientras PR#3 está abierto. Secuencia E09-01..06: auditoría, fases/resultados/IA melee, presentación Generic/selección/UI, VFX/audio original, evidencia/regresión y build/PR apilado. No sistema mágico paralelo, cifras nuevas, ranged enemigo sin perfil aprobado, E10 ni merges. Informe único Docs/E09_COMBATE_TACTICO.md; E09-H/F2-07/E08-H independientes y pendientes de humanos.

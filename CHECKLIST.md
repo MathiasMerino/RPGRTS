@@ -4,6 +4,8 @@ Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
+- E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. Publicación para revisión en curso. Informe Docs/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
+
 - E08: tres humanoides provisionales con rigs Generic/skin y siete estados, integrados en demo; **73/73 regresión**, Windows/headless/GPU PASS, 49 PNG/tres MP4 y ZIP verificado. [PR #3](https://github.com/MathiasMerino/RPGRTS/pull/3) abierto en borrador sobre E07; arte final/retargeting Humanoid y sesión humana pendientes. Informe Docs/E08_PERSONAJES_ANIMADOS.md.
 
 - E07: aldea integrada, 33 prefabs, trece materiales nuevos y cinco albedos originales; **67/67 regresión**, 24 comparativas reales, build/recorridos headless-GPU PASS, captura del player y ZIP verificado. Informe Docs/E07_ALDEA_MEDIEVAL.md; aprobación humana/artística pendiente.
@@ -747,3 +749,57 @@ Base E07/8f0108b, PR #1/#2 sin fusionar. Plan y evidencia en Docs/E08_PERSONAJES
 - Aceptación: el usuario revisa las tres clases en la aldea, lectura isométrica, proporciones, ropa, articulaciones, armas y acciones; aprobación explícita. F2-07/X/ESC y E07-H mantienen sus estados independientes.
 - Archivos: Docs/E08_PERSONAJES_ANIMADOS.md y evidencia E08; no se inventan resultados humanos.
 - Pruebas / resultado: pendiente; las pruebas automáticas y la inspección técnica de capturas no sustituyen esa sesión.
+
+
+## E09 — COMBATE TÁCTICO E IA (2026-11-01)
+
+Plan/evidencia única: Docs/E09_COMBATE_TACTICO.md. Historial anterior conservado.
+
+### E09-01 — Auditoría dirigida y control de versiones
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: combate integrado / P1. Dependencias: E08.
+- Aceptación: PR, GDD, reglas, recursos y limitaciones contrastados; base E08 preservada.
+- Archivos: AGENTS/GDD/especificación leídos; Docs/E09_COMBATE_TACTICO.md; rama feature/e09-combate-rpg-ia.
+- Pruebas / resultado: Git limpio inicial y PR #1/#2/#3 abiertos sin fusionar; SHA GDD coincide; reglas/recursos auditados. Base a7acaca preservada.
+
+### E09-02 — Turnos, resultados e IA local
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: combate integrado / P1. Dependencias: E09-01.
+- Aceptación: Fases y acciones legales; decisiones melee verificables; daño único y valores/RNG conservados.
+- Archivos: Combat/TurnBattle.cs, CombatResolution.cs, CombatFeedback.cs, TurnEncounter.cs; PrototypeDirector.cs; TacticalCombatRulesTests.cs.
+- Pruebas / resultado: 12 casos de reglas y regresión final89/89 PASS; RNG de tres clases, recursos, fases, decisiones y daño/bloqueo único. Commit4b21d4f; IA melee con LOS/paso legal y fallback comprobados.
+
+### E09-03 — Animación, selección e interfaz
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: combate integrado / P1. Dependencias: E09-02.
+- Aceptación: Identidades de clase, enemigo animado, objetivo real, HP/fase correctos y fallback sin bloqueos.
+- Archivos: CharacterCombatAnimationPresenter.cs, EnemyCombatVisual.cs, CombatHudPanel.cs, MedievalHudView.cs, VerticalSliceHud.cs; E09CombatBuilder.cs; AetherniaVillageDemo.unity.
+- Pruebas / resultado: Integración focal16/16, selección por collider real, misión tres clases, fallback de Attack/perfil; barra comprobada mediante malla real. Primera regresión88/89 detectó botón de26px; corrección a32px, recontrol Monje y regresión final89/89 PASS. Revisión humana pendiente.
+
+### E09-04 — VFX y audio
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: combate integrado / P1. Dependencias: E09-03.
+- Aceptación: Efectos sobrios de resultados reales y PCM original reproducible; UI2D/mundo3D y límites comprobados.
+- Archivos: CombatFeedbackPresenter.cs, CombatTransient.cs, CombatAudioBank/Player.cs, UiAudioFeedback.cs; Assets/09_Feedback/CombatE09; Tools/Generate-E09Audio.py.
+- Pruebas / resultado: 14 PCM importados no silenciosos, material URP y presupuestos de8efectos/6voces verificados; captura DSP nativa aprobada. Sonidos originales piloto, escucha humana pendiente.
+
+### E09-05 — Regresión y evidencia
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: combate integrado / P1. Dependencias: E09-04.
+- Aceptación: Batería anterior/nueva, misión tres clases, escritura, capturas/video auténticos y distinción humano/automático.
+- Archivos: TacticalCombatRules/Integration/RecordingTests.cs; Tools/Pack-E09Evidence.py; informe y Docs/Validacion E09.
+- Pruebas / resultado: Focal16/16, recontrol UI y grabación1/1; regresión final89/89, cero fallos/omisiones y salida0. 19PNG y vídeo auténtico120frames/DSP empaquetados, decodificados e inspeccionados. Escritura E08 no volvió a fallar; causa raíz no confirmada. Sin cierre humano.
+
+### E09-06 — Build y publicación
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: combate integrado / P1. Dependencias: E09-05.
+- Aceptación: Windows ejecutado, recorridos y ZIP verificados, documentación y PR apilado, Git limpio.
+- Archivos: BuildSmokeProbe/CargoQuestSmoke/TacticalCombatSmoke.cs, Tools/Invoke-PrototypeSmoke.ps1; documentos y evidencia final E09.
+- Pruebas / resultado: Build203799042bytes y recorridos Windows90.81s headless/90.60s GPU PASS, salida0; ZIP86756445bytes/306archivos CRC/SHA por archivo verificados, once históricos intactos. Documentación/evidencia actualizadas; publicación del PR apilado pendiente. Main/dev intactas, sin release estable.
+
+### E09-H — Evaluación humana
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: experiencia/arte/audio / P1. Dependencias: E09-06.
+- Aceptación: el usuario evalúa turnos, legibilidad, clases, audio, controles y disfrute; aprobación explícita.
+- Archivos: guía y evidencia E09.
+- Pruebas / resultado: no realizadas por humanos; F2-07/E08-H independientes.

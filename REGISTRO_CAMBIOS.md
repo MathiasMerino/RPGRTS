@@ -395,3 +395,38 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 ### E08 — Publicación para revisión (2026-11-01)
 - Rama feature/e08-personajes-animados publicada conservando historial E07. Commits de implementación 6242116, correcciones 53ee6ea, validación/evidencia b8e3861 e informe 4ca2b8c; cierre documental posterior.
 - PR #3 abierto en borrador sobre feature/e07-aldea-medieval: https://github.com/MathiasMerino/RPGRTS/pull/3. #1/#2 continúan abiertos/borrador/sin fusionar; main/dev se mantienen. No release estable ni E09. Técnica E08 verificada, revisión humana/artística independiente pendiente.
+
+
+### E09 — Inicio (2026-11-01)
+- Auditoría dirigida: GDD/hash, especificación autorizada y combate/E08/HUD revisados. Git limpio inicial; PR #1/#2/#3 abiertos sin fusionar. Rama feature/e09-combate-rpg-ia desde a7acaca. Plan secuencial documentado; conservar balance, Generic, aldea y misión, sin E10.
+
+
+### E09 — Turnos y presentación incremental (2026-11-01)
+- TurnBattle existente extendido con fases, rondas y resultados únicos; política melee local separada, distancias/dados/balance preservados. HUD bloquea entradas durante Enemy; movimiento legal y revalidación LOS, sin daño desde animación. Commit4b21d4f del núcleo.
+- Enemigo reutiliza visual/rig Generic E08; selección, Attack/Hit/Defeat, cola temporal de impactos, fallback de clips/perfil y panel contextual C02. Sin sistemas paralelos de ventanas/magia ni retargeting Humanoid. Se corrigió la barra sin sprite que no representaba el porcentaje visual.
+- 14 WAV DSP originales, banco compartido, UI2D/mundo3D seis voces; ParticleSystem URP/material compartido y hasta8efectos. Recursos originales con manifiesto; sin descargas ni instalaciones.
+- Focales11/11 reglas y16/16 ampliadas pasan. Misión real con cada clase: NPC/aceptación/ruta/dados/victoria/recompensa única/save-load. 120frames y audio DSP nativo no silencioso grabados; se revisa el encuadre antes de empaquetar. Fixtures collider hijo/estado capturado tras EnterPlayMode y APIs Unity6.5 corregidos; no se falsean resultados de reglas.
+- Regresión final y prueba LOS físico adicional en curso; pendientes build/ZIP/PR y evaluación humana. La incidencia E08 de escritura se vuelve a observar durante los recorridos, sin atribuir causa raíz.
+
+
+### E09 — Primera regresión y corrección de interfaz (2026-11-01)
+- 88/89 pruebas: el caso integrado Monje detectó el nuevo botón Select real enemy de26px bajo el mínimo32px exigido por MedievalHudTests. Se aumenta el área del botón/texto a32px mediante refinamiento puntual de escena; no se debilita la prueba. Los88 casos restantes, incluida LOS física, guardado y tres clases E09, pasaron. XML intermedio preservado.
+- El lanzador alcanzó15min y Unity terminó después; resultado del runner conservado, no se tomó el timeout por PASS. Repetición final con límite20min.
+- Inspección del vídeo inicial detectó oclusión/ataques bloqueados por el entorno. La toma y sonda específica se trasladan al claro legal junto al cargamento; la grabación exigirá daño real de ambos combatientes, sin forzar vida/dados. No se mueve ni elimina geometría de la aldea.
+
+
+### E09 — Recontrol de UI y grabación (2026-11-01)
+- Monje integrado pasa con área de selección32px. La toma adicional falló su nueva aserción de daño: el guion de captura intentaba atacar en frames fijos mientras Enemy aún estaba activo y saltaba acciones legalmente. Se corrige solo el guion para esperar fase/acción reales; no se alteran dados, plazos ni HP del juego. XML intermedio conservado.
+- Grabación corregida1/1 PASS y salida0:120frames reales, rival11/18PV/héroe18/24 al final, audioDSP estéreo48kHz no silencioso (RMS0.005859, pico0.076390). MP4 H264/AAC decodificado120frames y audio;18PNG empaquetados provisionalmente hasta capturas finales.
+- Fallback enemigo sin perfil conserva cápsula/reglas y se añade al caso integrado. Repetición89 con límite20min en curso; el lanzador adopta20min por defecto tras observar15min insuficientes para esta batería. No se fuerza cierre de Unity.
+
+
+### E09 — Regresión final (2026-11-01)
+- 89/89 PASS, cero fallos/omisiones, salida0; XML final E09_REGRESION.xml. Focales y errores intermedios conservados. Selección32px/mesh HP, IA/LOS/pasos/fases/daño único, clips ausentes y perfil enemigo nulo, misión legal con las tres clases, recompensa única, guardado y sistemas previos verificados.
+- No reaparece la escritura transitoria E08 en esta pasada; no se declara causa raíz resuelta. Pendientes humanos/artísticos, retargeting Humanoid y restricciones de armas por clase conservados. Commit audiovisual c545386; build Windows y sondas en curso.
+
+### E09 — Build, recorridos y evidencia final (2026-11-01)
+- Windows x64 Development203799042bytes, compilación85.00s y salida0. Recorridos independientes sin gráficos90.81s/con RTX3050 90.60s PASS, salida0; NPC/misión/tres clases/recompensa/v1, animación/daño/derrota, inventario/construcción/RTS y nueva sonda por fases. Audio real pico0.076364 en ambos. Sin excepciones/avisos de agente inválido detectados.
+- 19PNG originales y MP4 de120frames/diez segundos con DSP estéreo48kHz empaquetados y decodificados. Barras/turnos/cámara/poses y captura nativa inspeccionados. Sin pose sampling ni métricas FPS inventadas; memoria nativa y working set muestreado documentados, GC por frame no perfilado.
+- ZIP86756445bytes/306archivos, SHA11d3db3e940f286ef79ff7c2f52dcee3919f2a9accee4a7226b68d9cf2c17a79, CRC/hashes de cada archivo PASS; once ZIP previos intactos. GDD/escena original/recursos E07/E08/versiones/guardado preservados. Informe/checklist/guía/AGENTS actualizados; publicación en borrador pendiente, sin aprobación humana ni E10.
+
