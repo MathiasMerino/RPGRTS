@@ -99,6 +99,6 @@ namespace Aethernia
         }
         public bool HasFact(string id) => State.Facts.Contains(id);
         public bool RouteWorldClick(Vector3 point, Collider collider, bool primary) => WorldCommand != null && WorldCommand(point, collider, primary);
-        public void ReplaceState(PrototypeState state) { State = state;ProgressionOperations.Activate(State,rules.Progression);EquipmentOperations.RegisterDungeonLoot(State);cachedProfile=null; Mode = PrototypeMode.Exploration; Say("Partida cargada; hechos y recursos restaurados."); }
+        public void ReplaceState(PrototypeState state) { State = state;LastProgressionNotice="";ProgressionOperations.Activate(State,rules.Progression);EquipmentOperations.RegisterDungeonLoot(State);cachedProfile=null; Mode = PrototypeMode.Exploration; Say("Partida cargada; hechos y recursos restaurados."); }
     }
 }

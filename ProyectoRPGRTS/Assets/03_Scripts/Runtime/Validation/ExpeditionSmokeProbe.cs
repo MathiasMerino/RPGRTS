@@ -81,7 +81,7 @@ namespace Aethernia
             var deadline=Time.realtimeSinceStartup+100;while(rts.Active&&Time.realtimeSinceStartup<deadline){if(S.Health<flow.Session.HeroProfile.Health)rts.HeroAction("recover");if(flow.Session.Rules.Progression!=null)rts.HeroAction("technique");yield return null;}
             Require(!rts.Active&&S.Territories.Single(t=>t.Id=="outpost").Owner==S.FactionId&&S.Health>0,"real conquest victory");
             Require(S.Companions.Count==3&&S.Facts.Contains("umbral-outpost-conquered"),"companions not consumed by RTS");yield return Capture("Conquest");
-            var wood=S.Wood;var cycle=S.ProductionCycle;deadline=Time.realtimeSinceStartup+12;while(S.ProductionCycle==cycle&&Time.realtimeSinceStartup<deadline)yield return null;Require(S.Wood==wood+2,"two territorial online bonuses, paused workshop");
+            var wood=S.Wood;var cycle=S.ProductionCycle;deadline=Time.realtimeSinceStartup+(flow.Session.Rules.Progression!=null?30:12);while(S.ProductionCycle==cycle&&Time.realtimeSinceStartup<deadline)yield return null;Require(S.ProductionCycle>cycle,"territorial production world cycle advanced; start="+cycle+" actual="+S.ProductionCycle+" world="+S.WorldSeconds);Require(S.Wood==wood+2*(S.ProductionCycle-cycle),"two territorial online bonuses per actual cycle, paused workshop; before="+wood+" actual="+S.Wood+" cycles="+(S.ProductionCycle-cycle));
             panel.Open();Click("territory-tab");yield return null;yield return Capture("ControlledResources");panel.Close();
             // Deja una reserva real para comprobar también esa composición al reiniciar.
             yield return Move(new Vector3(9,0,-10));Require(party.SetParty(first,false),"reserve before restart");Require(D.Save(slot),"atomic final save");
