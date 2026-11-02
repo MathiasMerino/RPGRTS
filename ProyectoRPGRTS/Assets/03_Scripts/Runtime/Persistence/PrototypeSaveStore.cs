@@ -8,6 +8,7 @@ namespace Aethernia
     public static class PrototypeSaveStore
     {
         public static string LastWriteFailure { get; private set; } = "";
+        public static int LastWriteRetries { get; private set; }
         public static bool Valid(PrototypeState s, PrototypeRules rules)
         {
             if (s == null || s.Version != 1 || rules.Find(s.ClassId) == null || string.IsNullOrWhiteSpace(s.Name) || s.Name.Length > 32) return false;
@@ -29,13 +30,15 @@ namespace Aethernia
         public static bool Save(string path, PrototypeState state, PrototypeRules rules)
         {
             LastWriteFailure = "";
+            LastWriteRetries=0;
             if (!Valid(state, rules)) { LastWriteFailure = "Invalid state"; return false; }
             try
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));
                 var temp = path + ".tmp";
+                state.HasDemoProgress=state.Demo!=null;
                 File.WriteAllText(temp, JsonUtility.ToJson(state, true));
-                if (File.Exists(path)) File.Replace(temp, path, null); else File.Move(temp, path);
+                if (File.Exists(path)) AtomicFileReplacement.Replace(temp,path,count=>LastWriteRetries=count); else File.Move(temp, path);
                 return true;
             }
             catch (Exception e) when (e is IOException || e is UnauthorizedAccessException || e is ArgumentException)
@@ -53,6 +56,11 @@ namespace Aethernia
                 if (candidate != null && string.IsNullOrEmpty(candidate.RaceId)) candidate.RaceId="human";
                 if(candidate!=null)
                 {
+                    // Unity puede fabricar DemoProgress aunque el objeto original fuese null.
+                    // Sin marcador, solo reconocer campañas intermedias con el hecho inicial real.
+                    if(!json.Contains("\"HasDemoProgress\""))candidate.HasDemoProgress=candidate.Facts!=null&&candidate.Facts.Contains("demo-starter-kit");
+                    if(!candidate.HasDemoProgress)candidate.Demo=null;
+                    else if(!json.Contains("\"Demo\"")||System.Text.RegularExpressions.Regex.IsMatch(json,"\"Demo\"\\s*:\\s*null"))return false;
                     if(candidate.Army==null)candidate.Army=new System.Collections.Generic.List<RecruitRecord>();
                     if(!json.Contains("\"Level\"")&&candidate.Buildings!=null)foreach(var b in candidate.Buildings)if(b!=null)b.Level=1;
                 }

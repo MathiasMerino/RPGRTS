@@ -12,9 +12,11 @@ namespace Aethernia
         public int Width = 1280, Height = 720, Quality = 1;
         public bool Fullscreen;
         private const string Key = "Aethernia.Demo.Options.v1";
+        internal static string SessionStorageKey;
         [NonSerialized] public string StorageKey=Key;
-        public static DemoPreferences Load(string storageKey=Key)
+        public static DemoPreferences Load(string storageKey=null)
         {
+            storageKey=storageKey??SessionStorageKey??Key;
             DemoPreferences p;
             try { p = JsonUtility.FromJson<DemoPreferences>(PlayerPrefs.GetString(storageKey, "")); }
             catch (ArgumentException) { p = null; }

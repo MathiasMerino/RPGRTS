@@ -31,7 +31,8 @@ namespace Aethernia
         private readonly Vector2Int[] resolutions={new Vector2Int(1280,720),new Vector2Int(1920,1080),new Vector2Int(2560,1440),new Vector2Int(3840,2160)};
         private void Awake()
         {
-            ui=new DemoWidgets(Font,Theme.ButtonSprite);Preferences=DemoPreferences.Load();Preferences.Apply(Audio,Flow.CameraRig,false);
+            ui=new DemoWidgets(Font,Theme.ButtonSprite);Preferences=DemoPreferences.Load();Preferences.Apply(Audio,Flow.CameraRig,!Application.isEditor);
+            displayIndex=System.Array.FindIndex(resolutions,r=>r.x==Preferences.Width&&r.y==Preferences.Height);if(displayIndex<0)displayIndex=0;
             Build();
         }
         private RectTransform Panel(DemoScreen id,string name)
@@ -111,7 +112,7 @@ namespace Aethernia
         }
         public void ApplyPreferences(bool display){Preferences.Apply(Audio,Flow.CameraRig,display);Preferences.Save();}
         private void RefreshOptions(){optionsDisplay.text=Preferences.Width+" × "+Preferences.Height+" · "+(Preferences.Fullscreen?"Pantalla completa":"Ventana")+"\nCalidad: "+QualitySettings.names[Preferences.Quality]+(Application.isEditor?" · Resolución aplicada en el ejecutable":"");}
-        public void ShowMain(){Show(DemoScreen.Main);var valid=Flow.HasSave();Controls["continue"].interactable=valid;Controls["load"].interactable=valid;Notify(valid?"Partida de demo disponible. Nueva partida creará un respaldo antes de reemplazarla.":"No hay una partida de demo válida. Puedes comenzar una aventura.");}
+        public void ShowMain(){Show(DemoScreen.Main);var valid=Flow.HasSave();Controls["continue"].interactable=valid;Controls["load"].interactable=valid;Notify(valid?"Partida disponible. Nueva partida creará un respaldo antes de reemplazarla.":"No hay una partida válida. Puedes comenzar una aventura.");}
         public void ShowCreation(){Show(DemoScreen.Character);RefreshCharacter();}
         public void ShowIntro(int introPageIndex){introPage=introPageIndex;Show(DemoScreen.Intro);introText.text=Flow.Content.Intro[Mathf.Clamp(introPage,0,Flow.Content.Intro.Length-1)];}
         public void ShowOptions(){Show(DemoScreen.Options);Controls["return-title"].gameObject.SetActive(Flow.IsPlaying);Controls["return-title"].interactable=!Flow.Director.IsBusy;RefreshOptions();}

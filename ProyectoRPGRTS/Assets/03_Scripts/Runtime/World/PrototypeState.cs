@@ -29,6 +29,8 @@ namespace Aethernia
         public string Name = "Aventurero";
         public string ClassId = "warrior";
         public string RaceId = "human";
+        // JsonUtility serializa clases anidadas por valor y no conserva null: presencia explícita.
+        public bool HasDemoProgress;
         public DemoProgress Demo;
         public int Health = 24;
         public int Gold = 50;

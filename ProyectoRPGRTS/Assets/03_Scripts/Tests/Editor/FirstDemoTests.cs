@@ -16,6 +16,38 @@ namespace Aethernia.Tests.Editor
 {
     public sealed class FirstDemoTests
     {
+        [UnityTest] public IEnumerator ActualTutorialDefeatOffersExplicitRetry()=>Defeat();
+        private static IEnumerator Defeat()
+        {
+            EditorSceneManager.OpenScene(FirstDemoBuilder.ScenePath);yield return new EnterPlayMode();yield return null;yield return null;
+            var flow=Object.FindAnyObjectByType<DemoFlow>();flow.SlotPath="Logs/E10/defeat-"+System.Guid.NewGuid().ToString("N")+".json";flow.EncounterSeed=42;
+            Assert.That(flow.StartNew("Reintento","mage","elf"),Is.True);Click(flow.Front,"skip");
+            for(var turn=0;turn<40&&flow.Front.Screen!=DemoScreen.Retry;turn++)
+            {
+                if(flow.Director.Encounter.PlayerCanAct)flow.Director.Execute("end");
+                var end=Time.realtimeSinceStartup+5;while(flow.Director.Encounter.Battle!=null&&flow.Director.Encounter.Battle.Phase==TurnPhase.Enemy&&Time.realtimeSinceStartup<end)yield return null;
+                yield return null;
+            }
+            Assert.That(flow.Front.Screen,Is.EqualTo(DemoScreen.Retry));Assert.That(flow.Session.State.Health,Is.EqualTo(0));Assert.That(flow.Director.Encounter.Battle.Won,Is.False);
+            Assert.That(flow.Session.Paused,Is.True);var gold=flow.Session.State.Gold;Click(flow.Front,"retry");
+            Assert.That(flow.Session.State.Health,Is.EqualTo(flow.Session.Rules.Find("mage").Health));Assert.That(flow.Session.State.ClassId,Is.EqualTo("mage"));Assert.That(flow.Session.State.RaceId,Is.EqualTo("elf"));Assert.That(flow.Session.State.Gold,Is.EqualTo(gold));
+            Assert.That(flow.Front.Screen,Is.EqualTo(DemoScreen.None));Assert.That(flow.Session.Mode,Is.EqualTo(PrototypeMode.TurnCombat));Assert.That(flow.Director.Encounter.Battle.Finished,Is.False);
+            LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
+        }
+        [Test] public void LegacyRoundtripDoesNotInventDemoProgress()
+        {
+            var rules=ScriptableObject.CreateInstance<PrototypeRules>();var path="Logs/E10/legacy-null-"+System.Guid.NewGuid().ToString("N")+".json";
+            try
+            {
+                Assert.That(PrototypeSaveStore.Save(path,new PrototypeState(),rules),Is.True);Assert.That(PrototypeSaveStore.Load(path,rules,out var saved),Is.True);Assert.That(saved.Demo,Is.Null);
+                File.WriteAllText(path,JsonUtility.ToJson(new PrototypeState()).Replace("\"HasDemoProgress\":false,",""));
+                Assert.That(PrototypeSaveStore.Load(path,rules,out saved),Is.True);Assert.That(saved.Demo,Is.Null,"Guardar legado no lo convierte en campaña de demo");
+                var demo=new PrototypeState{Demo=new DemoProgress()};Assert.That(PrototypeSaveStore.Save(path,demo,rules),Is.True);
+                Assert.That(PrototypeSaveStore.Load(path,rules,out saved),Is.True);Assert.That(saved.Demo,Is.Not.Null);Assert.That(saved.HasDemoProgress,Is.True);
+                File.WriteAllText(path,"{\"Version\":1,\"ClassId\":\"warrior\",\"HasDemoProgress\":true,\"Demo\":null}");Assert.That(PrototypeSaveStore.Load(path,rules,out _),Is.False);
+            }
+            finally{Object.DestroyImmediate(rules);}
+        }
         [Test] public void FontAndProvisionalDataHaveRealSources()
         {
             var font=AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FirstDemoBuilder.FontPath);
@@ -24,6 +56,7 @@ namespace Aethernia.Tests.Editor
             Assert.That(File.ReadAllText("Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt"),Does.Contain("SIL Open Font License"));
             var data=AssetDatabase.LoadAssetAtPath<DemoContent>(FirstDemoBuilder.Root+"/DemoContent.asset");
             Assert.That(data.Lineages.Select(x=>x.Id),Is.EquivalentTo(new[]{"human","elf","dwarf"}));Assert.That(data.Intro.Length,Is.EqualTo(3));
+            EditorSceneManager.OpenScene(FirstDemoBuilder.ScenePath);var flow=Object.FindAnyObjectByType<DemoFlow>();Assert.That(flow.Front.Audio,Is.Not.Null,"Referencia compartida de audio persistida en la escena");
         }
         [Test] public void SelectionSaveAndPreferencesAreSeparateAndCompatible()
         {
@@ -78,6 +111,12 @@ namespace Aethernia.Tests.Editor
         }
         private static void Validate(DemoFrontEnd view,int width,int height,Camera camera)
         {
+            foreach(var slider in view.GetComponentsInChildren<Slider>())
+            {
+                var bounds=slider.GetComponent<RectTransform>().rect;
+                Assert.That(slider.fillRect.rect.width,Is.LessThanOrEqualTo(bounds.width+1),"Relleno fuera del slider "+slider.name);
+                Assert.That(slider.handleRect.rect.height,Is.LessThanOrEqualTo(bounds.height+1),"Tirador fuera del slider "+slider.name);
+            }
             foreach(var button in view.GetComponentsInChildren<Button>())
             {
                 var p=new Vector3[4];button.GetComponent<RectTransform>().GetWorldCorners(p);var min=RectTransformUtility.WorldToScreenPoint(camera,p[0]);var max=RectTransformUtility.WorldToScreenPoint(camera,p[2]);

@@ -47,8 +47,8 @@ namespace Aethernia
         {
             var r=Rect(parent,name,x,y,width,36);Fill(r,Color.clear);var s=r.gameObject.AddComponent<Slider>();s.minValue=0;s.maxValue=1;
             var track=Rect(r,"Track",0,12,width,10);Fill(track,new Color(.16f,.16f,.14f),false);
-            var fill=Rect(track,"Fill",0,0,width,10);s.fillRect=fill;s.targetGraphic=Fill(fill,Gold,false);
-            var handleArea=Rect(r,"Handle Area",0,0,width,36);var handle=Rect(handleArea,"Handle",0,3,18,30);Fill(handle,Ink);
+            var fill=Stretch(track,"Fill");s.fillRect=fill;s.targetGraphic=Fill(fill,Gold,false);
+            var handleArea=Rect(r,"Handle Area",9,3,width-18,30);var handle=Stretch(handleArea,"Handle");handle.pivot=new Vector2(.5f,.5f);handle.sizeDelta=new Vector2(18,0);Fill(handle,Ink);
             s.handleRect=handle;s.direction=UnityEngine.UI.Slider.Direction.LeftToRight;s.value=value;if(changed!=null)s.onValueChanged.AddListener(changed);return s;
         }
     }

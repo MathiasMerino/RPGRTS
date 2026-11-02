@@ -4,7 +4,7 @@ Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- Demo E10–E13 en desarrollo: E10 editor3/3, E11 editor2/2 y E12 patrulla1/1 con tres clases verificadas; E13 focal en curso. Escena nueva AetherniaFirstDemo, base E09 preservada. No build nueva ni aprobación humana todavía. Recuperación: Docs/PROGRESO_DEMO.md.
+- Demo E10–E13 en desarrollo: E10 editor3/3, E11 editor2/2 y E12 patrulla1/1 con tres clases verificadas; E13 focal6/6 y colisión/opciones1/1 PASS. Regresión102 y recorridos Windows/reinicio en curso. Escena nueva AetherniaFirstDemo, base E09 preservada; primera build compilada, entrega aún no aceptada ni revisión humana realizada. Recuperación: Docs/PROGRESO_DEMO.md.
 
 - E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. PR#4 abierto en borrador sobre E08: https://github.com/MathiasMerino/RPGRTS/pull/4. Informe Docs/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
 

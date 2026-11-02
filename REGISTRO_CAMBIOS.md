@@ -459,3 +459,20 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 - Cinco tipos funcionales con catálogo SO, colisión/NavMeshObstacle3x3 y presentación modular E07; centro/requisitos, producción activable10s online, almacén/capacidad, mejoras, cuartel/reclutas pagados6máximo. Version1 aditiva para nivel/producción/ejército/linaje; no offline/duplicación al cargar, legado migrado. Reclutas se despliegan y conservan salud/bajas; práctica no genera otra recompensa. Liberación de widgets/grupos RTS entre encuentros.
 -6/6 editor PASS, cinco casos de reglas y fixture económica real de colocación/producción/free/upgrade/recluta/deploy/continuar. Primera5/6 por observación del progreso antes del Update siguiente, condición conservada y espera finita corregida. XML/capturas guardados. Pendiente QA integral desde menú, Windows/reinicio/regresión global/evidencia/PR; humanos no aprobados.
 - Nuevo MonkMeshy FBX/meta ajeno preservado fuera de estos commits e integración; no sobrescribir ni publicar procedencia no auditada.
+
+
+## 2026-11-01 — QA E10–E13: colisión, opciones y primera build
+
+- Focal de colisión1/1 PASS: teclado real, muro físico/retirada y opciones720p–4K; primer fallo de preparación (encuentro activo) preservado en XML, sin marcarlo como fallo del producto.
+- Revisión de captura detectó relleno/tirador Slider fuera del rectángulo: corregidos anclajes compartidos y añadida aceptación geométrica, evento de volumen aplicado/persistido con clave aislada. Pausa oculta/restituye HUD.
+- Primera BuildFirstDemo PASS; smoke Windows inicial pasa menús/prólogo/RPG/movimiento y falla observación de animación solo al detenerse ante obstáculo. Ajuste de ventana de observación pendiente, comprobante preservado; no se declara end-to-end aprobado.
+- Lanzada regresión102. Nueva guía humana y controles documentados; original GDD/hash y escenas anteriores sin cambios. Doce ZIP históricos inventariados con SHA. GitHub main/dev y PR#1–#4 sin cambios; modelo MonkMeshy ajeno preservado fuera de commits.
+
+
+## 2026-11-01 — Compatibilidad v1, reemplazo atómico y opciones nativas
+
+- Regresión102:91/102. Reproducido JsonUtility convirtiendo Demo nulo en objeto; marcador HasDemoProgress derivado al guardar y normalización legada antes de validar. Sin cambiar Version1 ni GDD. Focal de carga/progreso y misión aprobadas; XML intermedios conservados.
+- Regresión103:101/103. Dos fallos de reemplazo de JSON antiguo; HRESULT1175 (0x80070497) documentado. AtomicFileReplacement repite File.Replace para32/33/1175 hasta4reintentos50/100/200/400ms, sin borrar destino ni fallback no atómico; permisos permanentes no se reintentan. Diagnóstico LastWriteRetries. Focal12PASS y bloqueo Windows real+derrota/reintento2PASS.
+- Opciones verificadas en nuevos procesos: master.63/efectos.57/cámara14/resolución1920x1080 y cambio/restauración de calidad. NativeKey de prueba separada, borrada tras continuar. Pantalla guardada se aplica al arrancar el player; índice del selector se sincroniza con la resolución cargada.
+- Prueba nativa detectó referencia Audio nula del prefab de menú: corregida como override en la escena nueva mediante Controls seguro y aceptación de referencia persistida. No se alteró la escena histórica. Los dos FAIL de resume anteriores se preservan.
+- Build actual y12procesos Windows finales PASS con tres clases, fondos normales, producción/recluta, guardado y reinicio; omitir prólogo probado con Mago. Capturas/video DSP nativos renovados; revisión humana no realizada. Regresión110 en curso, no se declara cerrada todavía.

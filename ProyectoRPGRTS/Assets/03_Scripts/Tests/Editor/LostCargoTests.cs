@@ -62,7 +62,7 @@ namespace Aethernia.Tests.Editor
             Assert.That(q.Npc.TryInteract(d.Hero,s),Is.True);var gold=s.State.Gold;var ration=s.State.Items.Find(i=>i.Id=="ration").Count;view.ClaimButton.onClick.Invoke();
             Assert.That(s.State.Gold,Is.EqualTo(gold+20));Assert.That(s.State.Items.Find(i=>i.Id=="ration").Count,Is.EqualTo(ration+1));Assert.That(q.Claim(),Is.False);Assert.That(LostCargoQuest.Stage(s.State),Is.EqualTo(CargoQuestStage.Completed));
             if(id=="monk")yield return Pair("Completed",MedievalHudTests.Layout);
-            view.CloseDialogue();Assert.That(d.Save("Logs/E05-complete-"+id+".json"),Is.True);Assert.That(d.Load("Logs/E05-complete-"+id+".json"),Is.True);Assert.That(LostCargoQuest.Stage(s.State),Is.EqualTo(CargoQuestStage.Completed));Assert.That(q.Claim(),Is.False);
+            view.CloseDialogue();Assert.That(d.Save("Logs/E05-complete-"+id+".json"),Is.True,PrototypeSaveStore.LastWriteFailure);Assert.That(d.Load("Logs/E05-complete-"+id+".json"),Is.True);Assert.That(LostCargoQuest.Stage(s.State),Is.EqualTo(CargoQuestStage.Completed));Assert.That(q.Claim(),Is.False);
             Assert.That(d.Hero.GetComponent<CharacterVisualPresenter>().DisplayedClass,Is.EqualTo(id));File.WriteAllText("Logs/E05-route-"+id+".txt","PASS: NPC distance, real navigation, dialogue acceptance, v1 stage save/load, real RPG victory, exploration return, unique reward and completion restore.");
             LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
         }

@@ -40,7 +40,7 @@ namespace Aethernia.Editor.Characters
             var ui=new GameObject("Demo Front End",typeof(RectTransform));ui.layer=5;
             var front=ui.AddComponent<DemoFrontEnd>();front.Font=font;front.Theme=hud.CompactView.Theme;front.Catalog=AssetDatabase.LoadAssetAtPath<CharacterVisualCatalog>(AnimatedCharacterBuilder.Root+"/ClassVisuals.asset");front.Audio=Object.FindAnyObjectByType<CombatAudioPlayer>();
             var prefab=PrefabUtility.SaveAsPrefabAsset(ui,Root+"/Prefabs/DemoFrontEnd.prefab");Object.DestroyImmediate(ui);
-            var instance=(GameObject)PrefabUtility.InstantiatePrefab(prefab);front=instance.GetComponent<DemoFrontEnd>();front.Flow=flow;flow.Front=front;PrefabUtility.RecordPrefabInstancePropertyModifications(front);
+            var instance=(GameObject)PrefabUtility.InstantiatePrefab(prefab);front=instance.GetComponent<DemoFrontEnd>();front.Flow=flow;front.Audio=Object.FindAnyObjectByType<CombatAudioPlayer>();flow.Front=front;PrefabUtility.RecordPrefabInstancePropertyModifications(front);
             foreach(var text in scene.GetRootGameObjects().SelectMany(go=>go.GetComponentsInChildren<Text>(true)).ToArray())
             {
                 // El campo legado mantiene su caret; el creador nuevo usa TMP_InputField real.
@@ -58,6 +58,7 @@ namespace Aethernia.Editor.Characters
         public static void Controls()
         {
             var scene=EditorSceneManager.OpenScene(ScenePath);var flow=Object.FindAnyObjectByType<DemoFlow>();
+            flow.Front.Audio=Object.FindAnyObjectByType<CombatAudioPlayer>();if(flow.Front.Audio==null)throw new InvalidOperationException("Falta reproductor de audio compartido E09");PrefabUtility.RecordPrefabInstancePropertyModifications(flow.Front);
             var motor=flow.GetComponent<DemoHeroMotor>();if(motor==null)motor=flow.gameObject.AddComponent<DemoHeroMotor>();motor.Flow=flow;
             var guidance=flow.GetComponent<DemoGuidance>();if(guidance==null)guidance=flow.gameObject.AddComponent<DemoGuidance>();guidance.Flow=flow;
             EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);Debug.Log("DEMO_CONTROLS_BOUND: direct hero/camera opt-in, original scenes preserved.");

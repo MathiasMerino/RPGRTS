@@ -194,3 +194,10 @@ Rama feature/e08-personajes-animados desde 8f0108b/E07; PR apilado hacia E07 mie
 ## E09 — Combate táctico autorizado
 
 Rama feature/e09-combate-rpg-ia desde a7acaca/E08 mientras PR#3 está abierto. Secuencia E09-01..06: auditoría, fases/resultados/IA melee, presentación Generic/selección/UI, VFX/audio original, evidencia/regresión y build/PR apilado. No sistema mágico paralelo, cifras nuevas, ranged enemigo sin perfil aprobado, E10 ni merges. Informe único Docs/E09_COMBATE_TACTICO.md; E09-H/F2-07/E08-H independientes y pendientes de humanos.
+
+
+## E10–E13 — Primera demo integrada autorizada
+
+Rama feature/e10-e13-demo-jugable desde66cf80f/E09 mientras PR#4 permanezca abierto. Plan único Docs/DEMO_E10_E13.md: menú TMP/opciones, creación con clases existentes/linajes solo metadatos, prólogo provisional y encuentro RPG real, WASD, patrulla con mismo héroe, asentamiento/producción/ejército persistente, regresión/Windows/reinicio/evidencia/PR apilado. Nueva escena AetherniaFirstDemo conserva AetherniaVillageDemo y PlayablePrototype; no regenerar autorías existentes. CHECKLIST registra aceptación por bloque, no por existencia de código.
+
+E14 y E15 son extensiones condicionales de menor prioridad. Se prioriza cerrar y entregar el núcleo E10–E13; compañeros/combate grupal/mazmorra ampliada y propiedad territorial requieren siguiente iteración verificable. No introducir versiones incompletas para llenar el checklist. Evaluación humana/artística E09-H/E08-H/E07-H/F2-07 y nueva DEMO-H siguen separadas. Guía Docs/PRUEBA_MANUAL_DEMO.md; no modificar GDD Word para convertir reglas/lore provisionales en canon.

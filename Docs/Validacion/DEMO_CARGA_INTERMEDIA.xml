@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="6" result="Failed(Child)" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 00:12:39Z" end-time="2026-11-02 00:12:42Z" duration="2.9526804">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="103" result="Failed" site="Child" start-time="2026-11-02 00:12:39Z" end-time="2026-11-02 00:12:42Z" duration="2.952680" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1134" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="103" result="Failed" site="Child" start-time="2026-11-02 00:12:39Z" end-time="2026-11-02 00:12:42Z" duration="2.787998" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="10596" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1135" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="103" result="Failed" site="Child" start-time="2026-11-02 00:12:39Z" end-time="2026-11-02 00:12:42Z" duration="2.784175" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1136" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="103" result="Failed" site="Child" start-time="2026-11-02 00:12:39Z" end-time="2026-11-02 00:12:42Z" duration="2.781614" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1137" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="103" result="Failed" site="Child" start-time="2026-11-02 00:12:39Z" end-time="2026-11-02 00:12:42Z" duration="2.778361" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1033" name="FirstDemoTests" fullname="Aethernia.Tests.Editor.FirstDemoTests" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-02 00:12:05Z" end-time="2026-11-02 00:12:11Z" duration="6.257750" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1035" name="FontAndProvisionalDataHaveRealSources" fullname="Aethernia.Tests.Editor.FirstDemoTests.FontAndProvisionalDataHaveRealSources" methodname="FontAndProvisionalDataHaveRealSources" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" seed="786726171" result="Passed" start-time="2026-11-02 00:11:50Z" end-time="2026-11-02 00:11:50Z" duration="0.176510" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1034" name="LegacyRoundtripDoesNotInventDemoProgress" fullname="Aethernia.Tests.Editor.FirstDemoTests.LegacyRoundtripDoesNotInventDemoProgress" methodname="LegacyRoundtripDoesNotInventDemoProgress" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" seed="1548522546" result="Passed" start-time="2026-11-02 00:11:50Z" end-time="2026-11-02 00:11:50Z" duration="0.100073" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1037" name="MainMenuActionsLayoutsAndNewGame" fullname="Aethernia.Tests.Editor.FirstDemoTests.MainMenuActionsLayoutsAndNewGame" methodname="MainMenuActionsLayoutsAndNewGame" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" seed="1275845437" result="Passed" start-time="2026-11-02 00:11:50Z" end-time="2026-11-02 00:12:11Z" duration="20.725290" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1036" name="SelectionSaveAndPreferencesAreSeparateAndCompatible" fullname="Aethernia.Tests.Editor.FirstDemoTests.SelectionSaveAndPreferencesAreSeparateAndCompatible" methodname="SelectionSaveAndPreferencesAreSeparateAndCompatible" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" seed="1707003781" result="Passed" start-time="2026-11-02 00:12:11Z" end-time="2026-11-02 00:12:11Z" duration="0.043696" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1054" name="LostCargoTests" fullname="Aethernia.Tests.Editor.LostCargoTests" classname="Aethernia.Tests.Editor.LostCargoTests" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2026-11-02 00:12:22Z" end-time="2026-11-02 00:12:29Z" duration="7.116547" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1058" name="MageCompletesQuest" fullname="Aethernia.Tests.Editor.LostCargoTests.MageCompletesQuest" methodname="MageCompletesQuest" classname="Aethernia.Tests.Editor.LostCargoTests" runstate="Runnable" seed="1227004393" result="Failed" start-time="2026-11-02 00:12:11Z" end-time="2026-11-02 00:12:29Z" duration="17.700778" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Expected: True
+  But was:  False
+]]></message>
+                  <stack-trace><![CDATA[at Aethernia.Tests.Editor.LostCargoTests+<Complete>d__7.MoveNext () [0x008a6] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\LostCargoTests.cs:65
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1118" name="VerticalIntegrationTests" fullname="Aethernia.Tests.Editor.VerticalIntegrationTests" classname="Aethernia.Tests.Editor.VerticalIntegrationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 00:12:39Z" end-time="2026-11-02 00:12:42Z" duration="2.745619" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1120" name="ClassesConstructionDungeonAndSaveShareOneState" fullname="Aethernia.Tests.Editor.VerticalIntegrationTests.ClassesConstructionDungeonAndSaveShareOneState" methodname="ClassesConstructionDungeonAndSaveShareOneState" classname="Aethernia.Tests.Editor.VerticalIntegrationTests" runstate="Runnable" seed="215596673" result="Passed" start-time="2026-11-02 00:12:29Z" end-time="2026-11-02 00:12:42Z" duration="12.997213" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

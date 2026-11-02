@@ -63,3 +63,30 @@ Primera pasada5/6: producción fue correcta pero la prueba observó el progreso 
 Nuevo archivo ajeno detectado Assets/07_Characters/MonkMeshy (FBX y meta): preservado, no integrado ni incluido en commits de esta demo, procedencia/licencia no auditada en este encargo. Puede dejar el workspace original con elementos sin seguimiento; no ocultarlos ni publicarlos para simular limpieza. Nuevos resultados técnicos todavía no equivalen a aprobación humana.
 
 Próximo exacto: QA de demo completa sin fixture desde menú y build Windows/reinicio para tres clases; regresión89+nuevas, fuentes/capturas y paquete/PR. E14/E15 siguen sin iniciar mientras se cierra el núcleo prioritario.
+
+
+## QA — Colisión y revisión de capturas
+
+DemoCollisionTests1/1 PASS (DEMO_COLISION_OPCIONES.xml): teclado real en Play, muro físico temporal sin obstáculo NavMesh bloquea el cuerpo y retirarlo permite continuar; opciones a cuatro resoluciones con botones/textos/raycast. La fixture abandona el encuentro mediante Clear explícito para aislar colisión; no representa un tutorial ganado. Primer intento0/1 conservado: la fixture dejó el encuentro activo y el cambio de modo se rechazó correctamente.
+
+La inspección visual de Options mostró fill/handle del slider fuera de límites; se corrigieron los anclajes, se añadieron aserciones geométricas y verificación de evento/volumen/persistencia aislada. Pausa oculta HUD para evitar mezcla visual. Regresión completa y repetición de captura en curso; no declarar todavía aceptado este último ajuste.
+
+Primera compilación FirstDemoWindows correcta. Primer probe Windows sin gráficos avanzó menú/creación/prólogo/RPG/movimiento, pero falló al observar velocidad solo al final, cuando se había detenido junto a una colisión; se conserva el comprobante. Se corregirá la ventana de observación de la prueba, manteniendo movimiento y animación requeridos. No se declara recorrido integral aprobado aún.
+
+
+## QA — Compatibilidad de carga detectada por regresión
+
+Primera batería completa102: **91PASS/11FAIL**, sin omisiones. XML íntegro DEMO_REGRESION_INTERMEDIA.xml. Los once fallos se concentraron en cargas históricas: JsonUtility serializa clases anidadas por valor y convirtió el Demo nulo en un progreso inicial; el director lo rechazó correctamente como campaña ajena a la escena vieja. Se añadió marcador explícito HasDemoProgress, derivado al guardar y normalizado antes de validar/cargar. Para campañas intermedias sin marcador se requiere el hecho demo-starter-kit; JSON legado conserva Demo=null y reglas antiguas. Version1 se mantiene, GDD/escenas previas intactos.
+
+Nueva aceptación de regresión exige que el roundtrip legado siga sin progreso de campaña, que una campaña genuina sí lo conserve y que un marcador sin objeto válido se rechace. Focal de carga y repetición completa103 pendientes de cerrar; no se entrega un estado91/102 como estable.
+
+
+## QA — Correcciones finales y aceptación nativa
+
+La segunda regresión completa103 dio101PASS/2FAIL, ambos al reemplazar archivos JSON anteriores. Error capturado1175/0x80070497, sin afirmar antivirus u otra causa no probada. La escritura conserva File.Replace atómico; repite solo32/33/1175 con4esperas50/100/200/400ms (750ms máximo), preservando destino y temporal si agota. Permisos permanentes no se reintentan. AtomicReplacementTests cubre recuperación/exhaustión/permisos y bloqueo Windows real de200ms; LastWriteRetries permite observarlo. Focal12 más bloqueo real/derrota2 aprobadas. El tutorial se pierde cediendo turnos legalmente hasta0PV; Retry restaura la clase como nuevo intento explícito, sin premiar oro ni cambiar linaje.
+
+Las opciones nativas revelaron Audio nulo en la instancia del prefab, referencia externa perdida al guardar la plantilla. Se enlazó el reproductor E09 existente mediante override de escena, se corrigió Create futuro y se añadió aceptación de referencia. No se regeneraron recursos. El player aplica la pantalla guardada al iniciar; el selector parte de la resolución cargada. Se conserva FAIL previo y no se presenta como prueba aprobada.
+
+Recorridos finales Logs/DemoQA/{Headless,GPU}-20261102-010055: **12procesos PASS**, crear y cerrar/reabrir/Continuar para tres clases. Además del recorrido, verifica sliders reales y persistencia entre procesos de master.63/efectos.57/cámara14; calidad cambia/aplica/restaura y GPU confirma Screen1920x1080. Headless no comprueba pantalla física. Las claves PlayerPrefs de QA se aíslan por slot y eliminan tras resume; las preferencias personales se conservan. NativeSkip real para Mago y Next para otras clases; no se fuerzan vida/victoria/recursos.
+
+Regresión final110 en curso; cierre técnico/PR condicionados a su resultado fresco. La evaluación humana de pantalla completa, sonido percibido, controles, legibilidad, balance y arte continúa pendiente.
