@@ -102,3 +102,6 @@ Pruebas intermedias conservadas: cierre C#capturado antes de EnterPlayMode en fi
 
 
 Cierre técnico:110/110 global+6/6 después del último recorte,12procesos finales Headless/GPU-20261102-014152 y2desdeZIPUnpackedCutaway (Headless-20261102-014556) PASS. Hero visible en captura final; sin aprobación humana inferida.18PNG, vídeo407frames codificados/33.917s/audioDSP RMS.002746; paquete306archivos87411924bytes/CRC/SHA por archivo,12ZIP anteriores intactos. Informe consolidado ENTREGA_E10_E13.md. Publicación/PR en cierre, main/dev no se fusionan.
+
+
+Cierre de publicación: feature/e10-e13-demo-jugable publicada, PR#5 abierto en borrador sobre E09 https://github.com/MathiasMerino/RPGRTS/pull/5. Commits1ee7ae2/22e627d/00ed6c1/dd56e9c/91d83b7/238d9e2 y cierre documental posterior, sin reescritura. Snapshot previo confirma main/dev/defaultmain y PR1..4 intactos; verificación final HEAD/origin/PR tras push documental. Cambios propios limpios; MonkMeshy ajeno conserva estado untracked fuera de publicación. E14/E15 y humanos pendientes.

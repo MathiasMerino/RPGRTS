@@ -8,6 +8,8 @@ La interfaz C02 incorpora un HUD medieval compacto sobre D01/E01/E02/E02-B. Arri
 
 ## Primera demo integrada E10–E13
 
+Código publicado en la rama `feature/e10-e13-demo-jugable`, [PR#5 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/5). Main conserva la versión aprobada; no contiene automáticamente esta demo.
+
 Escena nueva: `Assets/01_Scenes/AetherniaFirstDemo.unity`. Abrir con Unity **6000.5.8f1**, esperar la importación y pulsar Play. El ejecutable nuevo se prepara en `ProyectoRPGRTS/Builds/FirstDemoWindows/Aethernia.exe`; la build y sus doce procesos Windows (crear/reiniciar por clase, con/sinGPU) están verificados; paquete Aethernia-E10-E13-Demo-Windows.zip preparado. Las entregas anteriores descritas abajo conservan su propio comportamiento.
 
 Nueva partida permite elegir Guerrero, Monje o Mago, nombre y linaje provisional. Los linajes no tienen bonificaciones ni modelos raciales diferentes. El prólogo puede continuarse u omitirse. El primer combate usa los turnos, alcance, movimiento limitado, guardia y recuperación existentes; esperar a TU TURNO y usar Acercarse antes de atacar si falta alcance. Una derrota ofrece un reintento explícito.

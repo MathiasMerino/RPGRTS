@@ -4,7 +4,7 @@ Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- Demo E10–E13: núcleo implementado y verificado técnicamente, regresión110/110 y6/6 posteriores al recorte visual; doce procesos Windows finales PASS (tres clases, con/sinGPU, crear/reiniciar/Continuar/opciones). Build/ZIP portable/evidencia aprobados; publicación PR en curso. E14/E15 y evaluación humana pendientes. Informe: Docs/ENTREGA_E10_E13.md.
+- Demo E10–E13: núcleo implementado y verificado técnicamente, regresión110/110 y6/6 posteriores al recorte visual; doce procesos Windows finales PASS (tres clases, con/sinGPU, crear/reiniciar/Continuar/opciones). Build/ZIP portable/evidencia aprobados; PR#5 abierto en borrador sobre E09: https://github.com/MathiasMerino/RPGRTS/pull/5. E14/E15 y evaluación humana pendientes. Informe: Docs/ENTREGA_E10_E13.md.
 
 - E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. PR#4 abierto en borrador sobre E08: https://github.com/MathiasMerino/RPGRTS/pull/4. Informe Docs/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
 
@@ -854,11 +854,11 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 - Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/ENTREGA_E10_E13.md; revisión humana pendiente.
 
 ### DEMO-QA — Validación y entrega E10–E13
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E13.
-- Aceptación: Regresión, end-to-end/reinicio, capturas, Windows ejecutado, ZIP y PR apilado, Git limpio.
+- Aceptación: Regresión, end-to-end/reinicio, capturas, Windows ejecutado, ZIP y PR apilado, cambios propios limpios/sincronizados y assets ajenos preservados/documentados.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: 110/110 global+6/6 posteriores, Windows12procesos+2desdeZIPextraído y18PNG/vídeoDSP nativo PASS. ZIP306archivos/CRC/SHA correcto,12paquetes históricos intactos; publicación PR en cierre. ModeloMonkMeshy ajeno preservado sin seguimiento y fuera de commits.
+- Pruebas / resultado: 110/110 global+6/6 posteriores, Windows12procesos+2desdeZIPextraído y18PNG/vídeoDSP nativo PASS. ZIP306archivos/CRC/SHA correcto,12paquetes históricos intactos; PR#5 draft abierto sobre E09 y feature publicada;main/dev/PR1..4 intactos. ModeloMonkMeshy ajeno preservado sin seguimiento y fuera de commits.
 
 ### E14 — Compañeros y mazmorra (condicional)
 - Estado: [ ] Pendiente.

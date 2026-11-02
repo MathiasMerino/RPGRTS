@@ -1,6 +1,6 @@
 # Primera demo integrada E10–E13
 
-Estado técnico: **110/110 pruebas de regresión aprobadas**, sin omisiones; después del último ajuste visual, **6/6 pruebas de asentamiento aprobadas**. Compilación Unity6000.5.8f1/URP17.5.0 correcta. Doce procesos Windows finales y dos desde ZIP extraído aprobados. Publicación en borrador en cierre. La evaluación humana permanece pendiente.
+Estado técnico: **110/110 pruebas de regresión aprobadas**, sin omisiones; después del último ajuste visual, **6/6 pruebas de asentamiento aprobadas**. Compilación Unity6000.5.8f1/URP17.5.0 correcta. Doce procesos Windows finales y dos desde ZIP extraído aprobados. [PR#5 publicado en borrador](https://github.com/MathiasMerino/RPGRTS/pull/5), apilado sobre E09. La evaluación humana permanece pendiente.
 
 ## Fases y alcance
 
@@ -75,7 +75,7 @@ Slot nuevo: `%USERPROFILE%/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS/Aether
 
 [Guía humana](PRUEBA_MANUAL_DEMO.md) enteramente pendiente. También continúan E09-H/E08-H/E07-H/F2-07 y confirmación X/ESC. Arte/Generic/clips/audio son provisionales, linajes visuales no implementados, pantalla completa y percepción de balance/legibilidad requieren revisión humana. Interiores de edificios, música, compañeros, mazmorra ampliada y conquista no forman parte del núcleo cerrado.
 
-Rama feature/e10-e13-demo-jugable sobre E09 para conservar la pila de PR. Commits por fase1ee7ae2,22e627d,00ed6c1,dd56e9c y correcciones91d83b7; pulido/documentación/publicación se registrarán al cerrar. Main/dev y PR#1–#4 deben permanecer intactos, sin merge ni force push. El FBX MonkMeshy ajeno se conserva sin seguimiento fuera de nuestros commits; no se integra ni se publica.
+Rama feature/e10-e13-demo-jugable sobre E09 para conservar la pila de PR. Commits por fase1ee7ae2,22e627d,00ed6c1,dd56e9c y correcciones91d83b7; pulido/evidencia238d9e2 y cierre documental posterior conservados. [PR#5](https://github.com/MathiasMerino/RPGRTS/pull/5) abierto en borrador sobre feature/e09-combate-rpg-ia. Main/dev y PR#1–#4 verificados intactos, sin merge ni force push. El FBX MonkMeshy ajeno se conserva sin seguimiento fuera de nuestros commits; no se integra ni se publica.
 
 Siguiente actividad recomendada: sesión DEMO-H, registrar claridad/dificultad/controles/visibilidad y corregir hallazgos. Después E14 (compañeros/mazmorra) y E15 (territorios), cada una con aceptación propia; no iniciar una expansión masiva automáticamente.
 

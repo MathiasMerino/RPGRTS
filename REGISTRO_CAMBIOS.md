@@ -489,3 +489,8 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 ## 2026-11-01 — Entrega técnica E10–E13 preparada
 
 110/110 global y6/6 posteriores al recorte final;12procesos Windows finales con/sinGPU y2desdeZIP extraído PASS. Captura confirma avatar visible con retiro contextual reversible del conjunto visual, física intacta.18PNG originales, MP4nativo33.917s con DSP real; sin simulación de poses ni benchmarkFPS. ZIP306archivos/87411924bytes/CRC y SHA individual PASS;12ZIP históricos conservados. GDD/hash, escenas históricas, paquetes y configuración de proyecto preservados tras finalizar Unity. Informe Docs/ENTREGA_E10_E13.md, guía humana/COMO_JUGAR y fuentes de evidencia actualizados. Publicación/PR en cierre; E14/E15 y revisiones humanas no iniciadas/completadas automáticamente.
+
+
+## 2026-11-01 — Publicación E10–E13
+
+Rama feature/e10-e13-demo-jugable publicada mediante push normal; PR#5 abierto draft sobre feature/e09-combate-rpg-ia (PR#4 todavía draft abierto): https://github.com/MathiasMerino/RPGRTS/pull/5. Main5a2e3cef ydev742c04f6, predeterminadamain yPR#1–#4 contrastados sin cambios. Conservados los commits porfase ycorrecciones91d83b7/238d9e2; documentación de cierre en commitposterior. ChecklistQA técnica completada, revisiónhumana yE14/E15 pendientes. Git propio sin cambios; archivos ajenosMonkMeshy preservados sin seguimiento/no publicados. No merges, forcepush ni cambios globales.
