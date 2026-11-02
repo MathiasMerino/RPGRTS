@@ -4,8 +4,8 @@ from pathlib import Path
 
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
-    a=argparse.ArgumentParser();a.add_argument('--demo',required=True);a.add_argument('--expedition',required=True);a.add_argument('--portable',required=True);a.add_argument('--revision',required=True);args=a.parse_args()
-    root=Path(__file__).resolve().parent.parent; project=root/'ProyectoRPGRTS'; report=root/'Docs/Validacion/E16'; images=root/'Docs/Images/E16'
+    a=argparse.ArgumentParser();a.add_argument('--phase',choices=['E16','E17'],default='E16');a.add_argument('--demo',required=True);a.add_argument('--expedition',required=True);a.add_argument('--portable',required=True);a.add_argument('--revision',required=True);args=a.parse_args()
+    root=Path(__file__).resolve().parent.parent; project=root/'ProyectoRPGRTS'; report=root/('Docs/Validacion/'+args.phase); images=root/('Docs/Images/'+args.phase)
     receipts=[]; captures=[]
     for kind,value,expected in [('Demo',args.demo,6),('Expedition',args.expedition,6),('Portable',args.portable,2)]:
         source=Path(value); proofs=sorted(source.glob('*.txt'));assert len(proofs)==expected,(kind,len(proofs))
@@ -22,10 +22,17 @@ def main():
         for name in selected:
             source_png=source/'Captures'/(name+'.png');assert source_png.exists(),source_png
             copy_image(root,source_png,images/kind/(name+'.png'),'Windows player '+args.revision,captures)
-    for png in sorted((project/'Logs/E16/Captures').glob('*.png')):copy_image(root,png,images/'PlayMode'/png.name,'Unity Play Mode '+args.revision,captures)
-    assert len(list((images/'PlayMode').glob('*.png')))==29
-    for png in sorted((images/'Antes').glob('*.png')):captures.append({'file':png.relative_to(root).as_posix(),'source':'Auditoría inicial: Unity menú/selección y player E14 ruinas/RTS','sha256':sha(png),'kind':'Anterior, encuadre y estado no necesariamente idénticos'})
-    shutil.copy2(project/'Logs/E16/build.txt',report/'BUILD.txt')
+    if args.phase=='E16':
+        for png in sorted((project/'Logs/E16/Captures').glob('*.png')):copy_image(root,png,images/'PlayMode'/png.name,'Unity Play Mode '+args.revision,captures)
+        assert len(list((images/'PlayMode').glob('*.png')))==29
+    else:
+        for folder in ['UI','World','Experience']:
+            for png in sorted((project/('Logs/E17/Captures/'+folder)).glob('*.png')):copy_image(root,png,images/'PlayMode'/folder/png.name,'Unity Play Mode E17 '+args.revision,captures)
+        for folder in ['Demo','Expedition']:
+            for png in sorted((root/('Docs/Images/E16/'+folder)).glob('*.png')):copy_image(root,png,images/'Antes'/folder/png.name,'Windows player E16 r3; comparison state/time may differ',captures)
+
+    for png in sorted((images/'Antes').glob('*.png')):captures.append({'file':png.relative_to(root).as_posix(),'source':'Anterior; consultar origen conservado','sha256':sha(png),'kind':'Anterior, encuadre y estado no necesariamente idénticos'})
+    shutil.copy2(project/('Logs/'+args.phase+'/build.txt'),report/'BUILD.txt')
     (report/'WINDOWS.json').write_text(json.dumps({'revision':args.revision,'passedProcesses':len(receipts),'receipts':receipts,'gameplayInputs':'Partidas reales y acciones legales; slots aislados; sin alterar HP o fondos','fpsMeasured':False,'gcProfiled':False},indent=2,ensure_ascii=False),encoding='utf-8')
     (report/'CAPTURAS.json').write_text(json.dumps(captures,indent=2,ensure_ascii=False),encoding='utf-8')
     print(json.dumps({'processes':len(receipts),'screenshots':len(captures),'revision':args.revision}))

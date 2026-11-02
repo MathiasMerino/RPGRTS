@@ -13547,6 +13547,7 @@ GameObject:
   - component: {fileID: 623395488}
   - component: {fileID: 623395490}
   - component: {fileID: 623395491}
+  - component: {fileID: 623395492}
   m_Layer: 0
   m_Name: E10-E13 Demo Flow
   m_TagString: Untagged
@@ -13665,6 +13666,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ModeTransitionView
   Flow: {fileID: 623395484}
+--- !u!114 &623395492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623395483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf2312fed838d646a38c7462263133e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.AlphaGraphicsPolicy
+  MainCamera: {fileID: 473023502}
 --- !u!1 &625129572
 GameObject:
   m_ObjectHideFlags: 0

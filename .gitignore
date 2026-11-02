@@ -83,3 +83,6 @@ Desktop.ini
 /ProyectoRPGRTS/Assets/07_Characters/MonkMeshy.meta
 /ProyectoRPGRTS/Assets/LocalOnly/
 /ProyectoRPGRTS/Assets/LocalOnly.meta
+
+# Python tooling bytecode
+__pycache__/

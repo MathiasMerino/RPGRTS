@@ -1086,7 +1086,7 @@ Encargo posterior autoriza esta fase sobre E16; no E18.
 - Pruebas / resultado: reproducción fallida preservada: construcción sobre ayuda e indicadores7/7desactivados. Corrección1/1, cierres1/1, pase final2/2 PASS. Ayuda excluye paneles contextuales, indicadores0/7desactivados; × por raycast y Escape por InputSystem en ficha/inventario/sesión/grupo. Avisos y fundido0.18s sin bloquear entrada; comandos RTS laterales solo Alpha. Captura inspeccionada; no evaluación humana ni nuevos sonidos/cinemáticas.
 
 ### E17-F — QA, rendimiento y candidata alfa
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Sistema / prioridad: alfa / P1. Dependencias: E17-E.
 - Aceptación: Regresión y recorridos Windows reales; capturas comparables, métricas disponibles, ZIP verificable, PRdraft y guía; no v1.0.
 - Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.

@@ -575,3 +575,7 @@ Shader Graph Lit URP17.5 nativo, variación de terreno, mezcla de bordes, normal
 ## 2026-11-02 — E17-E integración visual
 
 Reproducidos y corregidos ocultamiento de indicadores RTS al cambiar modelo (7/7→0/7) y solapamiento construcción/ayuda. Panel RTS lateral solo Alpha. Decoración sobre HUD existente con avisos/fundido0.18s y suscripciones liberadas; sin estado nuevo de gameplay. Cierres reales de automatización por puntero/ESC: ficha, inventario, sesión y grupo. Pase final2/2, XML de reproducción preservado. Evaluación humana pendiente. Continúa F.
+
+## 2026-11-02 — E17-F preparación de validación
+
+Bajo/Medio/Alto sustituyen nombres históricos Mobile/PC mediante tres assets URP propios (originales conservados). Diferencias reales de escala interna, MSAA, sombras, luces, AO/post;2/2dirigidas PASS. Medidor nativo solo con argumento explícito, captura existente reutilizada y opciones/partida aisladas; métricas aún no recogidas. Herramientas de ZIP/evidencia reutilizadas con parámetro de fase conservando E16 por defecto. Regresión/build/recorridos/portable pendientes; no se declara alfa entregada todavía.
