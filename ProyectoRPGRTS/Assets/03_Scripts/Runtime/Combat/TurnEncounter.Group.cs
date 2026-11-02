@@ -41,7 +41,7 @@ namespace Aethernia
                 if(!NavMesh.SamplePosition(desired,out var at,.6f,NavMesh.AllAreas)||Physics.OverlapCapsule(at.position+Vector3.up*.35f,at.position+Vector3.up*1.45f,.29f,~0,QueryTriggerInteraction.Ignore).Any(c=>c.GetComponentInParent<ExplorationUnit>()==null))return false;places.Add(at.position);
             }
             Clear();partyWorld.Reconcile();hero.Stop();groupUnits.Add("hero",hero);
-            var members=new List<TacticalCombatant>{new TacticalCombatant{Id="hero",Title=session.State.Name,Hero=true,Profile=session.Rules.Find(session.State.ClassId),ReadHealth=()=>session.State.Health,WriteHealth=value=>session.State.Health=value,Weapon=HeroActionRules.WeaponBonus(session.State),Armour=session.State.Armour=="cloth"?1:0}};
+            var members=new List<TacticalCombatant>{new TacticalCombatant{Id="hero",Title=session.State.Name,Hero=true,Profile=session.HeroProfile,ReadHealth=()=>session.State.Health,WriteHealth=value=>session.State.Health=value,Weapon=HeroActionRules.WeaponBonus(session.State),Armour=session.State.Armour=="cloth"?1:0}};
             foreach(var c in session.State.Companions.Where(x=>x.InParty&&x.Health>0))
             {
                 if(!partyWorld.Units.TryGetValue(c.Id,out var unit)||Vector3.Distance(unit.transform.position,hero.transform.position)>12)continue;

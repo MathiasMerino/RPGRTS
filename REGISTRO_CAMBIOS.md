@@ -603,3 +603,7 @@ PR8 sigue abierto/draft en d7cacd7; main/dev/PR1..8 snapshot. Rama feature/e18-p
 ## 2026-11-02 — E18-A diagnóstico RTS
 
 Siete escenarios6/7; nuevo ensayo de retaguardia no garantiza victoria(Monje). CSV/terminales y XML preservados, contratos de resolución/reintento comprobados. Sin cambios de salud/daño/reglas ni aserciones históricas. E17-A-RTS permanece abierto; no asumir táctica universal ganadora ni repetir hasta verde. Continúa progresión optativa E18.
+
+## 2026-11-02 — E18-BC experiencia y atributos
+
+Progresión optativa en nueva escena/rules propios,4niveles, XP por hechos reales/ledger único y crédito migrado de completados antiguos. Derivados por clase/atributos/nivel y elecciones sin acumulación/curación por equipar/cargar; revisión aditiva del estadoVersion1. Primer RPG legal alcanza nivel2 en tres clases y conserva estado al Continuar. Primer pase18/19 por carpeta de captura ausente; corregido y7/7progresión PASS,12reglas tácticas anteriores aprobadas. Nulos/corrupción rechazados. Escenas/física/arte/versiones anteriores conservados. Continúan técnicas/UI/equipo y resto E18.

@@ -127,7 +127,7 @@ namespace Aethernia
             var exploring = session.Mode == PrototypeMode.Exploration;
             if (explorationPages != null) explorationPages.SetActive(exploring);
             if (characterPanel != null) characterPanel.SetActive(exploring && ActivePage == ExplorationPage.Character);
-            var s = session.State; var profile = session.Rules.Find(s.ClassId);
+            var s = session.State; var profile = session.HeroProfile;
             if(classReference!=null) classReference.Refresh(exploring && ActivePage==ExplorationPage.Character,profile);
             if (nameInput != null && !nameInput.isFocused && nameInput.text != s.Name) nameInput.SetTextWithoutNotify(s.Name);
             stats.text = s.Name + " · " + profile.Title + "  |  Salud " + s.Health + "/" + profile.Health + "  |  Oro " + s.Gold + "  Madera " + s.Wood + "  Alimentos " + s.Food + "  |  Tiempo " + (int)s.WorldSeconds + " s";
@@ -194,8 +194,8 @@ namespace Aethernia
                     ready=action?director.Encounter.PlayerCanAct:
                         war?director.Rts.Active:id=="escalate"?!director.IsBusy&&session.HasFact("rpg-victory"):!director.IsBusy;
                     if(action&&id!="end"&&id!="approach"&&director.Encounter.Battle!=null)ready&=director.Encounter.Battle.ActionAvailable;
-                    if(id=="recover"&&director.Encounter.Battle!=null)ready&=!director.Encounter.Battle.RecoveryUsed&&session.State.Health<session.Rules.Find(session.State.ClassId).Health;
-                    if(id=="ration") ready&=compactView.Inventory.Count(session.State,"ration")>0&&session.State.Health<session.Rules.Find(session.State.ClassId).Health;
+                    if(id=="recover"&&director.Encounter.Battle!=null)ready&=!director.Encounter.Battle.RecoveryUsed&&session.State.Health<session.HeroProfile.Health;
+                    if(id=="ration") ready&=compactView.Inventory.Count(session.State,"ration")>0&&session.State.Health<session.HeroProfile.Health;
                     if(id=="sword"||id=="armour")ready&=compactView.Inventory.Count(session.State,id=="sword"?"training-sword":"cloth")>0;
                     if(id=="trade")ready&=session.State.Gold>=5;
                     if(id.StartsWith("class-")&&b.Label!=null)

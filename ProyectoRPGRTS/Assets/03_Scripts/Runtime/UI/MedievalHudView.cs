@@ -35,7 +35,7 @@ namespace Aethernia
         }
         public void Render(GameSession session,PrototypeDirector director,ExplorationPage page)
         {
-            var s=session.State;var p=session.Rules.Find(s.ClassId);var exploring=session.Mode==PrototypeMode.Exploration;
+            var s=session.State;var p=session.HeroProfile;var exploring=session.Mode==PrototypeMode.Exploration;
             HeroName.text=s.Name+" · "+p.Title;
             HealthLabel.text=s.Health+" / "+p.Health+" PV";
             HealthFill.fillAmount=Mathf.Clamp01((float)s.Health/p.Health);

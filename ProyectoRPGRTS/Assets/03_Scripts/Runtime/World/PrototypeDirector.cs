@@ -40,7 +40,7 @@ namespace Aethernia
             if (Keyboard.current.f9Key.wasPressedThisFrame) Load(ActiveSavePath);
         }
         private void RefreshHero()
-        { if (hero != null && session.Rules != null) hero.Agent.speed = session.Rules.Find(session.State.ClassId).Speed; }
+        { if (hero != null && session.Rules != null) hero.Agent.speed = session.HeroProfile.Speed; }
         public bool IsBusy => rts.Active || encounter.GroupActive || (encounter.Battle != null && !encounter.Battle.Finished);
         private void ClearEncounters(bool preserveAcceptedStrike = false) { encounter.Clear(preserveAcceptedStrike); rts.Clear(); }
         public bool Execute(string id)
@@ -71,7 +71,7 @@ namespace Aethernia
             if (id == "trade") result = WorldOperations.Trade(session.State);
             else if (id == "sword") result = WorldOperations.Equip(session.State, "training-sword");
             else if (id == "armour") result = WorldOperations.Equip(session.State, "cloth");
-            else if (id == "ration") result = WorldOperations.UseRation(session.State, session.Rules.Find(session.State.ClassId).Health);
+            else if (id == "ration") result = WorldOperations.UseRation(session.State, session.HeroProfile.Health);
             else return false;
             var success = id == "trade" ? "Intercambio: 5 oro por 2 madera." : id == "sword" ? "Espada equipada." : id == "armour" ? "Túnica equipada." : "Ración consumida: recuperas hasta 4 puntos.";
             session.Say(result ? success : "No puedes realizar esa acción con los recursos actuales."); return result;

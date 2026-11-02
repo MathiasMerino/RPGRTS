@@ -47,7 +47,7 @@ namespace Aethernia
         {
             if (Phase != TurnPhase.Player || Finished || !ActionAvailable || distance > profile.Range || distance < 0 || float.IsNaN(distance) || float.IsInfinity(distance)) { Message = "Sin acción o fuera de alcance."; return false; }
             var roll = random.Next(1, 21);
-            var hit = roll + 2 >= 12;
+            var hit = roll + HeroActionRules.Accuracy(profile) >= 12;
             var before = EnemyHealth;
             if (hit) EnemyHealth = Math.Max(0, EnemyHealth - HeroActionRules.AttackDamage(profile,weaponBonus));
             LastHeroResolution = new CombatResolution(++sequence, CombatSide.Player, CombatActionKind.Attack, roll, hit, before-EnemyHealth, 0, before, EnemyHealth);
@@ -86,8 +86,8 @@ namespace Aethernia
         private void ResolveEnemyAttack(bool inReach)
         {
             var before = HeroHealth; var roll = inReach ? random.Next(1, 21) : 0;
-            var hit = inReach && roll + 2 >= 12 + armourBonus;
-            if (hit) HeroHealth = Math.Max(0, HeroHealth - HeroActionRules.GuardedDamage(3,guarding));
+            var hit = inReach && roll + 2 >= HeroActionRules.Defense(profile) + armourBonus;
+            if (hit) HeroHealth = Math.Max(0, HeroHealth - HeroActionRules.GuardedDamage(3,guarding,HeroActionRules.GuardReduction(profile)));
             LastEnemyResolution = new CombatResolution(++sequence, CombatSide.Enemy,
                 inReach ? CombatActionKind.Attack : CombatActionKind.Wait, roll, hit, before-HeroHealth, 0, before, HeroHealth, guarding && hit);
         }

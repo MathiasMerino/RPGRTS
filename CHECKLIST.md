@@ -1121,14 +1121,14 @@ Encargo71c1a4f1 autoriza implementación secuencial con arte provisional. Depend
 - Pruebas / resultado: 7escenarios6/7: contratos/inicialización/resolución/reintento correctos; escenario nuevo de reserva pierde con Monje. Se conserva aserción de victoria y XML fallido; no se promete carga/táctica ganadora universal ni se declara resuelta E17-A-RTS. Continuar progresión independiente, balance a revisar.
 
 ### E18-BC — Experiencia, niveles y atributos
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: RPG/estado / P1. Dependencias: E18-A.
 - Aceptación: Curva acotada configurable, efectos reales, fuentes únicas y derivación sin acumulación; tres clases.
-- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Archivos: ProgressionRules/Operations, PrototypeState/Rules, GameSession, SaveStore, productores de recompensas, combate/perfiles; ProgressionSceneBuilder y ProgressionTests; Assets/14_Progression y AetherniaProgressionDemo.
+- Pruebas / resultado: 19focales18PASS/1fallo auxiliar carpeta de captura; corregido y7/7progresión PASS. XP real del primer RPG por tres clases, nivel2/estadísticas/aprendizaje/guardar/Continuar, curva/ledger/atributos, crédito antiguo único y datos corruptos. Física/dependencias iguales aE17. Habilidades ejecutables/UI de progresión siguen en DEF/MOQ.
 
 ### E18-DEF — Habilidades y progresión común RPG/RTS
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Sistema / prioridad: Combate / P1. Dependencias: E18-BC.
 - Aceptación: Técnicas diferenciadas con coste/objetivo/feedback; elecciones persistentes y adaptadores por modalidad.
 - Archivos: Docs/E18_PROGRESION.md; detalle al implementar.

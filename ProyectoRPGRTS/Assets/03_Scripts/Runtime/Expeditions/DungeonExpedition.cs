@@ -23,7 +23,7 @@ namespace Aethernia
             if(id=="umbral-entry")return Travel(true);
             if(id=="umbral-exit")return Travel(false);
             if(id=="umbral-objective")
-            {var ok=ExpeditionOperations.RewardDungeon(Flow.Session.State,Rules);Flow.Session.Say(ok?"Ruinas completadas: +30oro, +15madera, +6alimento para tu asentamiento.":"Completa ambos encuentros; la recompensa se entrega una sola vez.");if(ok)Flow.Director.Save(Flow.SlotPath);return ok;}
+            {var ok=ExpeditionOperations.RewardDungeon(Flow.Session.State,Rules);Flow.Session.Say(ok?"Ruinas completadas: +30oro, +15madera, +6alimento para tu asentamiento.":"Completa ambos encuentros; la recompensa se entrega una sola vez.");if(ok){Flow.Session.AwardForFact("umbral-reward");Flow.Director.Save(Flow.SlotPath);}return ok;}
             if(id=="umbral-cache")
             {if(Flow.Session.HasFact(id))return false;Flow.Session.State.Gold=Math.Min(1000000,Flow.Session.State.Gold+5);Flow.Session.State.Facts.Add(id);Flow.Session.Say("Alijo opcional:5oro, registrado una sola vez.");return true;}
             if(id=="umbral-battle-1"||id=="umbral-battle-2")
@@ -49,7 +49,7 @@ namespace Aethernia
         {
             Flow.Front.Audio?.Play(won?FeedbackSound.Victory:FeedbackSound.Defeat,Vector3.zero,true);
             if(won)
-            {if(!Flow.Session.HasFact(encounterFact))Flow.Session.State.Facts.Add(encounterFact);Flow.Director.Execute("explore");Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);Party.Reconcile();Flow.Session.Say("Encuentro despejado. Continúa al objetivo o vuelve a descansar.");Flow.Director.Save(Flow.SlotPath);}
+            {if(!Flow.Session.HasFact(encounterFact)){Flow.Session.State.Facts.Add(encounterFact);Flow.Session.AwardForFact(encounterFact);}Flow.Director.Execute("explore");Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);Party.Reconcile();Flow.Session.Say("Encuentro despejado. Continúa al objetivo o vuelve a descansar.");Flow.Director.Save(Flow.SlotPath);}
             else Flow.Session.Say("El héroe cayó. Retirada segura disponible; nadie del grupo se borra permanentemente.");
         }
         public bool Retreat()
@@ -65,7 +65,7 @@ namespace Aethernia
             while(Flow.Session.State.WorldSeconds-start<Rules.RestSeconds)
             {if(!Flow.IsPlaying||Flow.Session.State!=restingState||Flow.Session.Mode!=PrototypeMode.Exploration||Vector3.Distance(origin,Flow.Director.Hero.transform.position)>.6f){rest=null;yield break;}yield return null;}
             if(Flow.Session.State!=restingState){rest=null;yield break;}
-            var state=Flow.Session.State;state.Health+=HeroActionRules.Recovery(state.Health,Flow.Session.Rules.Find(state.ClassId).Health);
+            var state=Flow.Session.State;state.Health+=HeroActionRules.Recovery(state.Health,Flow.Session.HeroProfile.Health);
             if(state.Health>0)Flow.Director.Hero.GetComponentInChildren<HumanoidAnimationDriver>()?.SetDefeated(false);
             foreach(var c in state.Companions)c.Health+=HeroActionRules.Recovery(c.Health,Party.Roles.Find(c.Role).Health);
             rest=null;Party.Reconcile();Flow.Session.Say("Descanso completado. Salud recuperada con el tiempo de juego; no hay muerte permanente de compañeros.");Flow.Director.Save(Flow.SlotPath);

@@ -29,3 +29,7 @@ Reglas nuevas optativas mediante configuración E18, con snapshots derivados inm
 ## A — investigación ejecutada
 
 Siete escenarios6/7, XMLRTS_A_6_7.xml. La expectativa histórica de victoria se conserva; contratos de resolución/selección/inicialización/reintento siguen correctos. La táctica nueva de reserva también puede perder (Monje), por lo que reservar al héroe no se presenta como garantía ni corrección. Trazas terminales y estados reales en RTS_A_TRACES.json. No se identificó carrera/evento perdido para corregir; dependencia de geometría/temporización/órdenes y balance sigue abierta. El escenario exploratorio conserva su aserción y fallo: no esconderlo ni declarar regresión completa si vuelve a fallar. Se continúa BC como autoriza E18, sin cambiar reglas para forzar victoria.
+
+## BC — base verificada
+
+Escena AetherniaProgressionDemo y RootAssets/14_Progression, reglas compartidas optativas. Curva/fuentes/derivados descritos ya integrados, migración con crédito único por hechos válidos y ledger deXP. Datos guardadosVersion1aditivos, no reset ni curación al cargar.7/7progresión PASS tras arreglar carpeta de captura (18/19primer pasecon12reglas tácticas legacy PASS). Victoria real primer RPG/level2/aprenderDisciplina/save/Continue por tres clases, física igualE17y sin privados. Técnica tiene datos pero aún no ejecución/UI: DEF/MOQ pendientes.

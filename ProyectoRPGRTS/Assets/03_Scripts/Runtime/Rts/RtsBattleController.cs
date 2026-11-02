@@ -61,10 +61,10 @@ namespace Aethernia
         public void Configure(GameSession game, GameObject pawn, Material material) { session = game; template = pawn; hostile = material; }
         public void ConfigureDemo(RtsDemoRules rules,CharacterVisualCatalog models,CombatFeedbackPresenter effects){demoRules=rules;visuals=models;feedback=effects;}
         private int Health(Soldier s)=>s.Hero?session.State.Health:s.Health;
-        private int Maximum(Soldier s)=>s.Hero?session.Rules.Find(session.State.ClassId).Health:s.Maximum;
+        private int Maximum(Soldier s)=>s.Hero?session.HeroProfile.Health:s.Maximum;
         private void SetHealth(Soldier s,int value)
         {if(s.Hero)session.State.Health=value;else{s.Health=value;if(!string.IsNullOrEmpty(s.RecruitId)){var record=session.State.Army.Find(x=>x.Id==s.RecruitId);if(record!=null)record.Health=value;}}}
-        public void CopyStatus(List<RtsUnitStatus> buffer){buffer.Clear();foreach(var s in soldiers)buffer.Add(new RtsUnitStatus(s.Unit,s.Hero?session.Rules.Find(session.State.ClassId).Title:demoRules?.Find(s.Role)?.Title??s.Role,s.Team,Health(s),Maximum(s),s.Hero));}
+        public void CopyStatus(List<RtsUnitStatus> buffer){buffer.Clear();foreach(var s in soldiers)buffer.Add(new RtsUnitStatus(s.Unit,s.Hero?session.HeroProfile.Title:demoRules?.Find(s.Role)?.Title??s.Role,s.Team,Health(s),Maximum(s),s.Hero));}
         public void Clear()
         {
             Trace("clear");recoveryTraceFrame=-1;
@@ -146,7 +146,7 @@ namespace Aethernia
             }
             hero.Stop();if(!hero.Warp(at.position)){Clear();session.SetMode(PrototypeMode.Exploration);return false;}
             sharedHero=hero;heroRecoveryUsed=false;sequence=0;hero.Select(true);
-            var profile=session.Rules.Find(session.State.ClassId);var actor=hero.GetComponent<CharacterVisualPresenter>();
+            var profile=session.HeroProfile;var actor=hero.GetComponent<CharacterVisualPresenter>();
             var h=new Soldier{Unit=hero,Team=0,Hero=true,Role="hero",Range=profile.Range,Animator=actor.Model==null?null:actor.Model.GetComponent<HumanoidAnimationDriver>()};soldiers.Add(h);
             hero.GetComponent<CharacterCombatAnimationPresenter>().ExternallyControlled=true;
             Trace("begin",h);
@@ -226,8 +226,8 @@ namespace Aethernia
         {Soldier best=null;var distance=float.MaxValue;foreach(var s in soldiers)if(s.Team!=source.Team&&Health(s)>0){var d=Vector3.Distance(source.Unit.transform.position,s.Unit.transform.position);if(d<distance){distance=d;best=s;}}return best;}
         private void Strike(Soldier source,Soldier target)
         {
-            var before=Health(target);var damage=source.Hero?HeroActionRules.AttackDamage(session.Rules.Find(session.State.ClassId),HeroActionRules.WeaponBonus(session.State)):source.Damage;
-            var guarded=target.Guarding;var actual=Mathf.Min(before,HeroActionRules.GuardedDamage(damage,guarded));SetHealth(target,before-actual);source.AttackAt=Time.time+1;Trace("strike",source,target,actual);
+            var before=Health(target);var damage=source.Hero?HeroActionRules.AttackDamage(session.HeroProfile,HeroActionRules.WeaponBonus(session.State)):source.Damage;
+            var guarded=target.Guarding;var actual=Mathf.Min(before,HeroActionRules.GuardedDamage(damage,guarded,target.Hero?HeroActionRules.GuardReduction(session.HeroProfile):1));SetHealth(target,before-actual);source.AttackAt=Time.time+1;Trace("strike",source,target,actual);
             if(IncludesHero){source.Unit.Stop();source.Guarding=false;source.Animator?.SetGuarding(false);source.Animator?.TryPlay(CharacterMotion.Attack);target.Animator?.TryPlay(before-actual<=0?CharacterMotion.Defeat:CharacterMotion.Hit);Emit(source,new CombatResolution(++sequence,source.Team==0?CombatSide.Player:CombatSide.Enemy,CombatActionKind.Attack,hit:true,damage:actual,before:before,after:before-actual,guarded:guarded),target.Unit.transform.position);}
             target.Guarding=false;target.Animator?.SetGuarding(false);
             if(Health(target)<=0)

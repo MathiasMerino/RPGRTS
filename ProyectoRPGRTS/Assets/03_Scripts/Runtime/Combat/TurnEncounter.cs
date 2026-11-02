@@ -69,7 +69,7 @@ namespace Aethernia
             enemy.name = "RPG Enemy";
             foreach (var renderer in enemy.GetComponentsInChildren<Renderer>()) renderer.sharedMaterial = enemyMaterial;
             TargetSelected=true;EnemySpawned?.Invoke(enemy,enemyVisualPrefab);
-            Battle = new TurnBattle(session.Rules.Find(session.State.ClassId), session.State.Health,
+            Battle = new TurnBattle(session.HeroProfile, session.State.Health,
                 session.State.Weapon == "training-sword" ? 1 : 0, session.State.Armour == "cloth" ? 1 : 0, seed == 0 ? Environment.TickCount : seed,
                 Vector3.Distance(hero.transform.position, EnemyPosition) <= 1.9f && HasClearAttackLine(enemy, hero));
             session.SetMode(PrototypeMode.TurnCombat);
@@ -175,7 +175,7 @@ namespace Aethernia
         private void Sync()
         {
             session.State.Health = Battle.HeroHealth;
-            if (Battle.Won && !session.HasFact("rpg-victory")) session.State.Facts.Add("rpg-victory");
+            if (Battle.Won && !session.HasFact("rpg-victory")){session.State.Facts.Add("rpg-victory");session.AwardForFact("rpg-victory");}
             if (Battle.Finished) { hero.Stop(); if (enemy != null) enemy.gameObject.SetActive(false); }
             session.Say(Battle.Finished ? (Battle.Won ? "Victoria RPG. Resultado registrado; puedes explorar o probar la escalada RTS." : "Derrota RPG. Vuelve a Explorar y elige una clase para reiniciar.") : Battle.Message);
             if(Battle.Finished&&!resolutionSent){resolutionSent=true;Resolved?.Invoke(Battle.Won);}

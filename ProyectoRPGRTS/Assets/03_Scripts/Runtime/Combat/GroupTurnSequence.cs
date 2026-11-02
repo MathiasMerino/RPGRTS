@@ -34,8 +34,8 @@ namespace Aethernia
         public bool Attack(TacticalCombatant target,float distance,bool clear)
         {
             if(Finished||!ActionAvailable||target==null||!Members.Contains(target)||target.Hostile==Current.Hostile||target.Health<=0||!clear||float.IsNaN(distance)||float.IsInfinity(distance)||distance<0||distance>Current.Profile.Range)return false;
-            var roll=random.Next(1,21);var hit=roll+2>=12+target.Armour;var before=target.Health;
-            if(hit)target.Health=Math.Max(0,before-HeroActionRules.GuardedDamage(HeroActionRules.AttackDamage(Current.Profile,Current.Weapon),target.Guarding));
+            var roll=random.Next(1,21);var hit=roll+HeroActionRules.Accuracy(Current.Profile)>=HeroActionRules.Defense(target.Profile)+target.Armour;var before=target.Health;
+            if(hit)target.Health=Math.Max(0,before-HeroActionRules.GuardedDamage(HeroActionRules.AttackDamage(Current.Profile,Current.Weapon),target.Guarding,HeroActionRules.GuardReduction(target.Profile)));
             LastResolution=new CombatResolution(++sequence,Current.Hostile?CombatSide.Enemy:CombatSide.Player,CombatActionKind.Attack,roll,hit,before-target.Health,0,before,target.Health,target.Guarding&&hit);target.Guarding=false;ActionAvailable=false;return true;
         }
         public bool Guard()
