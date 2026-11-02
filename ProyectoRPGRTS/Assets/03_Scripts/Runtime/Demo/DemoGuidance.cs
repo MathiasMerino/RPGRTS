@@ -19,7 +19,9 @@ namespace Aethernia
             if(panel==null)return;var state=Flow.Session.State;var visible=Flow.IsPlaying&&!Flow.LegacyProbe&&state.Demo!=null&&!Flow.ExistingHud.CompactView.WindowOpen&&!Flow.ExistingHud.CompactView.HelpOpen;
             panel.SetActive(visible);if(!visible)return;
             var text="";var battle=Flow.Director.Encounter.Battle;
-            if(Flow.Session.Mode==PrototypeMode.Rts)text="DIRIGE LA PATRULLA\nClic o arrastre: seleccionar. Shift: añadir. Clic derecho: mover/atacar. Selecciona tu héroe para usar Guardia o Recuperar.";
+            if(Flow.Session.Mode==PrototypeMode.Rts)text=(Flow.Director.Rts.ContextId=="conquest-outpost"?"CONQUISTA DEL PUESTO":"DIRIGE LA PATRULLA")+"\nClic o arrastre: seleccionar. Shift: añadir. Clic derecho: mover/atacar. Selecciona tu héroe para usar Guardia o Recuperar.";
+            else if(Flow.Director.Encounter.InGroup)text="GRUPO EN COMBATE\nSelecciona objetivo y posición. Una acción y4m por turno. Los enemigos actúan automáticamente.";
+            else if(Flow.Director.Hero.transform.position.x>65)text="RUINAS DEL UMBRAL\nE: guardianías, objetivo y salida. Vence ambos encuentros; viajar conserva salud.";
             else if(state.Demo.Chapter==DemoChapter.FirstCombat&&battle!=null)
             {
                 if(battle.Phase==TurnPhase.Enemy)text="TURNO DEL RIVAL\nEspera a que termine. El daño y las tiradas aparecen en el panel del encuentro.";

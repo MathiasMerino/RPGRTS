@@ -1,0 +1,34 @@
+{
+  "Unity": "6000.5.8f1",
+  "URP": "17.5.0",
+  "GDD_SHA256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "originalScenesPackagesVersionUnchanged": [
+    "ProyectoRPGRTS/Assets/01_Scenes/PlayablePrototype.unity",
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaVillageDemo.unity",
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaFirstDemo.unity",
+    "ProyectoRPGRTS/Packages/manifest.json",
+    "ProyectoRPGRTS/Packages/packages-lock.json",
+    "ProyectoRPGRTS/ProjectSettings/ProjectVersion.txt"
+  ],
+  "navBeforeAfterEqual": true,
+  "navSHA256": "cb3c1d976531c6a8a2dd50505e1957da3e7933121c3131c2b4cf310bbb136093",
+  "baselineInputs": [
+    {
+      "file": "mage.json",
+      "SHA256": "154f9694b7b350089f92581ccdd494638d09d4c7a511c2997141be43d24ebe8d",
+      "committedBytesMatch": true
+    },
+    {
+      "file": "monk.json",
+      "SHA256": "d0961136bc3b7aed3f375a598a415da86cf698fc5551a409b5d2ef43fd21e32a",
+      "committedBytesMatch": true
+    },
+    {
+      "file": "warrior.json",
+      "SHA256": "26250a15a42a5b971711299d58ca9a913310498af1defda663c1819659b2cbf6",
+      "committedBytesMatch": true
+    }
+  ],
+  "MeshyIntegrated": false,
+  "newMechanicsAfterBuild": false
+}

@@ -16,6 +16,7 @@ namespace Aethernia
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)] private static void IsolateOptions()
         {
             var args=Environment.GetCommandLineArgs();var index=Array.IndexOf(args,"-aetherniaDemoSmoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");
             DemoPreferences.SessionStorageKey=index>=0&&index+1<args.Length?"Aethernia.Tests.NativeOptions."+args[index+1]:null;
         }
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)] private static void Install()

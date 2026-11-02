@@ -13,7 +13,7 @@ namespace Aethernia
         public readonly CombatFeedback Feedback;
         public EncounterPresentation(EncounterCue cue, Vector3 target, CombatFeedback feedback=default) { Cue = cue; Target = target; Feedback=feedback; }
     }
-    public sealed class TurnEncounter : MonoBehaviour
+    public sealed partial class TurnEncounter : MonoBehaviour
     {
         [SerializeField] private GameSession session;
         [SerializeField] private ExplorationUnit hero;
@@ -49,6 +49,7 @@ namespace Aethernia
         public void ConfigureTactics(bool staged,GameObject visual){stagedCommands=staged;enemyVisualPrefab=visual;}
         public void Clear(bool preserveAcceptedStrike = false)
         {
+            ClearGroup();
             if(enemyRoutine!=null){StopCoroutine(enemyRoutine);enemyRoutine=null;}
             if (enemy != null) { enemy.gameObject.SetActive(false); Destroy(enemy.gameObject); }
             enemy = null; Battle = null;TargetSelected=false;
@@ -91,26 +92,30 @@ namespace Aethernia
         }
         public void Attack()
         {
+            if(InGroup){GroupAttack();return;}
             if (!Ready()) return;
             if (!HasClearAttackLine(hero, enemy)) { session.Say("El objetivo está bloqueado por un obstáculo. Busca una línea de ataque libre."); return; }
             if(!TargetSelected){session.Say("Selecciona un objetivo válido.");return;}
             if (Battle.Attack(Vector3.Distance(hero.transform.position, EnemyPosition))) {Show(EncounterCue.Attack,Battle.LastHeroResolution);Publish(Battle.LastHeroResolution);}
             Sync();
         }
-        public void Guard() { if (Ready()) { if (Battle.Guard()) {Show(EncounterCue.Guard,Battle.LastHeroResolution);Publish(Battle.LastHeroResolution);} Sync(); } }
-        public void Recover() { if (Ready()) { if(Battle.Recover()){Show(EncounterCue.Recover,Battle.LastHeroResolution);Publish(Battle.LastHeroResolution);} Sync(); } }
+        public void Guard() { if(InGroup){GroupGuard();return;}if (Ready()) { if (Battle.Guard()) {Show(EncounterCue.Guard,Battle.LastHeroResolution);Publish(Battle.LastHeroResolution);} Sync(); } }
+        public void Recover() { if(InGroup){GroupRecover();return;}if (Ready()) { if(Battle.Recover()){Show(EncounterCue.Recover,Battle.LastHeroResolution);Publish(Battle.LastHeroResolution);} Sync(); } }
         public bool TrySelect(Collider target)
         {
+            if(InGroup)return GroupSelect(target);
             if(Battle==null||Battle.Finished||enemy==null||target==null||!target.transform.IsChildOf(enemy.transform))return false;
             TargetSelected=true;session.Say("Objetivo seleccionado: merodeador · "+Battle.EnemyHealth+" / 18 PV.");return true;
         }
         public bool Move(Vector3 point)
         {
+            if(InGroup)return GroupMove(point);
             if (!Ready() || !hero.TryMoveTo(point, Battle.MovementRemaining)) return false;
             var accepted = Battle.Move(hero.LastPathLength); Sync(); return accepted;
         }
         public void Approach()
         {
+            if(InGroup){GroupApproach();return;}
             var delta = EnemyPosition - hero.transform.position; delta.y = 0;
             Move(hero.transform.position + delta.normalized * Mathf.Min(Mathf.Max(0, delta.magnitude - 1.2f), 3.8f));
             Sync();
@@ -123,6 +128,7 @@ namespace Aethernia
         }
         public bool RequestEndTurn()
         {
+            if(InGroup)return GroupEnd();
             if(!stagedCommands){var ready=Ready();if(ready)EndTurn();return ready;}
             if(!Ready()||!Battle.BeginEnemyTurn())return false;
             session.Say("Turno del enemigo: evalúa posición y alcance.");enemyRoutine=StartCoroutine(EnemyTurnSequence());return true;

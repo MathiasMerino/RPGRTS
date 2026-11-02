@@ -1,0 +1,140 @@
+{
+  "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-054838",
+  "images": [
+    {
+      "file": "Docs/Images/E14E15/mage-Continued.png",
+      "sha256": "a4e0c65959ce6031cdbaabe9575d89865dce6d41caf175247c7022b75ef1265e",
+      "bytes": 1448849
+    },
+    {
+      "file": "Docs/Images/E14E15/mage-Following.png",
+      "sha256": "570880e137a7d3824d0465b187c589494e034d0b039124654d65ac91cabe6df0",
+      "bytes": 1449164
+    },
+    {
+      "file": "Docs/Images/E14E15/mage-GroupCombat.png",
+      "sha256": "1d2d11bc966b8cbfe2097e3737ca3866ce981e9484f256f6a2db2fc24581e84a",
+      "bytes": 1096367
+    },
+    {
+      "file": "Docs/Images/E14E15/mage-RtsBattle.png",
+      "sha256": "8b40582f157b9eaf45a506a6dd15b05a2ff8f0ea528d5131d04ef021b55e640c",
+      "bytes": 1451705
+    },
+    {
+      "file": "Docs/Images/E14E15/monk-Continued.png",
+      "sha256": "fadc3b6d71ec9b88288fd2c566e7d2e96c1fbb1b616e0e15d159144816a2db30",
+      "bytes": 1447973
+    },
+    {
+      "file": "Docs/Images/E14E15/monk-Following.png",
+      "sha256": "4dfca5115d4adec0182daa00f3d98f4e4236da5cbbaaf39295d5577c8928948a",
+      "bytes": 1448444
+    },
+    {
+      "file": "Docs/Images/E14E15/monk-GroupCombat.png",
+      "sha256": "25d10533cd237e703d77afb31cf6d89b194a3dc5c40130e904f82dbaaf718e9b",
+      "bytes": 1096488
+    },
+    {
+      "file": "Docs/Images/E14E15/monk-RtsBattle.png",
+      "sha256": "f281d431d101cf038baf12420ca9f85e6cb2c56db4bf1dc4defc0b7c1a61a6cd",
+      "bytes": 1450705
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Army.png",
+      "sha256": "ebb01933c2f7a9b6b81117c7b760f4da2dd96d1043e1bbed808f5933a6913dde",
+      "bytes": 1006079
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Conquest.png",
+      "sha256": "85d5e445cd923b7c31afb11c95adf8ea4b87e06c6c6beed48aa96a9835bf232c",
+      "bytes": 1415769
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Continued.png",
+      "sha256": "239068af143eac795f9c90d4ae5e78f367ed97d626c5fe145a0d02f865320d4e",
+      "bytes": 1448426
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-ControlledResources.png",
+      "sha256": "276038a3390604c9386166e6b5dc64bcdbed36f65fe24e9d0ccbcd6b9f9b01c5",
+      "bytes": 984414
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Entry.png",
+      "sha256": "8141e626b7c049da325e79a9defce56c6a948060dc0826ab4f3500a543bd72e0",
+      "bytes": 1430791
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Following.png",
+      "sha256": "7fe9b5ef0de626156ee2e6bfcf4a15088cdc27c184786e6e0d0c8719277c5f22",
+      "bytes": 1449528
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-GroupCombat.png",
+      "sha256": "f7504476e28798b12d0103bd4d2e3c65ec020a46df28857ae4e9b926b8a36ab8",
+      "bytes": 1085761
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Interior.png",
+      "sha256": "2d0af12121b166220d34ff20040782cc2d7685e3b65861595465e3fbaf9c9641",
+      "bytes": 997524
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Recruitment.png",
+      "sha256": "3fd4aad0d28949eb347385eace1794f2d74af1c06a0dcaec345924f458a229e8",
+      "bytes": 1027421
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Reward.png",
+      "sha256": "db810aceb72b7069e76910c4f6af5f40c84ef5ab4248e808848afa16950c95ec",
+      "bytes": 1093332
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-RtsBattle.png",
+      "sha256": "b7e25d8e12f6c8ae3f43a0c1fc57b98cfc9cc7efea5deb71adf99c588e9f1130",
+      "bytes": 1453020
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Saved.png",
+      "sha256": "41055728ee7484c73cc744152549e9cfc1a4481c9b51d5062a00f1eaab190ee6",
+      "bytes": 1069471
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-Selection.png",
+      "sha256": "98b91c4d6277cc534f42ebf7531ac3f96e6fdd8ed52bda17732408bdef6c90fa",
+      "bytes": 1448509
+    },
+    {
+      "file": "Docs/Images/E14E15/warrior-TerritoriesBefore.png",
+      "sha256": "b78b6bec3edb1529942d56b2c7746ded381727b891f44ecc7fd0c03954096670",
+      "bytes": 995167
+    }
+  ],
+  "videos": [
+    {
+      "file": "Docs/Videos/E14E15/E14-Expedicion.mp4",
+      "sha256": "3f84b9de2461ca669cc1d3b65e14eba182807b3e0bd03c28eb7402211ab55b64",
+      "firstFrame": 259,
+      "lastFrame": 544,
+      "seconds": 23.833333333333332,
+      "decodeVerified": true,
+      "nativeDSP": true,
+      "continuous": true
+    },
+    {
+      "file": "Docs/Videos/E14E15/E15-Conquista.mp4",
+      "sha256": "bf55e161ca353f6984748f06cdc4025cbbd27cb9fd79b469816789b2cff2c46c",
+      "firstFrame": 1260,
+      "lastFrame": 1356,
+      "seconds": 8.083333333333334,
+      "decodeVerified": true,
+      "nativeDSP": true,
+      "continuous": true
+    }
+  ],
+  "captureStepHz": 12,
+  "measuredFPS": false,
+  "generatedAI": false
+}

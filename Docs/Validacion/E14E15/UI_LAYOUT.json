@@ -1,0 +1,42 @@
+[
+  {
+    "file": "army-tab-1024.png",
+    "SHA256": "8525fc66e2b6390531be1b0f73c450fe74b45b2a2c6f6c5c2274543c7fc4938e",
+    "kind": "PlayMode UI fixture, not native end-to-end"
+  },
+  {
+    "file": "army-tab-1280.png",
+    "SHA256": "d58a52a4fed834aa943d2f6291a1f4cf1acb5e7f4c1abe5500c7f67c9a040f20",
+    "kind": "PlayMode UI fixture, not native end-to-end"
+  },
+  {
+    "file": "group-1024.png",
+    "SHA256": "94cc72aa956fa057cd4fec886d5b74a8bb51044b3a3f948ad656eacfef96f50e",
+    "kind": "PlayMode UI fixture, not native end-to-end"
+  },
+  {
+    "file": "group-1280.png",
+    "SHA256": "f7e71b839c3bde127bf69a9e92a7625105bbffc0defce5c881ca95c7c53af730",
+    "kind": "PlayMode UI fixture, not native end-to-end"
+  },
+  {
+    "file": "party-tab-1024.png",
+    "SHA256": "40760508523ed22c7394711916d553e13739a18feddd2f01c6c1619a60fee8f1",
+    "kind": "PlayMode UI fixture, not native end-to-end"
+  },
+  {
+    "file": "party-tab-1280.png",
+    "SHA256": "a010b02feb7ce1713a43662663143b29a550a469a1a1ad7d91ba55c8cfc711da",
+    "kind": "PlayMode UI fixture, not native end-to-end"
+  },
+  {
+    "file": "territory-tab-1024.png",
+    "SHA256": "33331e15eac87a7a78c22b81dba47c6043dc5e235792ce584a397530284d8d85",
+    "kind": "PlayMode UI fixture, not native end-to-end"
+  },
+  {
+    "file": "territory-tab-1280.png",
+    "SHA256": "ffd4047e07e560352610a1b1976264614e9f5f42b17229dde0020c8a247b1066",
+    "kind": "PlayMode UI fixture, not native end-to-end"
+  }
+]

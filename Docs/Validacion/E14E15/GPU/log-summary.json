@@ -1,0 +1,38 @@
+[
+  {
+    "log": "mage-resume.log",
+    "warningsJobTempAlloc": 0,
+    "scriptExceptions": 0,
+    "invalidAgents": 0
+  },
+  {
+    "log": "mage-start.log",
+    "warningsJobTempAlloc": 4,
+    "scriptExceptions": 0,
+    "invalidAgents": 0
+  },
+  {
+    "log": "monk-resume.log",
+    "warningsJobTempAlloc": 0,
+    "scriptExceptions": 0,
+    "invalidAgents": 0
+  },
+  {
+    "log": "monk-start.log",
+    "warningsJobTempAlloc": 1,
+    "scriptExceptions": 0,
+    "invalidAgents": 0
+  },
+  {
+    "log": "warrior-resume.log",
+    "warningsJobTempAlloc": 0,
+    "scriptExceptions": 0,
+    "invalidAgents": 0
+  },
+  {
+    "log": "warrior-start.log",
+    "warningsJobTempAlloc": 0,
+    "scriptExceptions": 0,
+    "invalidAgents": 0
+  }
+]

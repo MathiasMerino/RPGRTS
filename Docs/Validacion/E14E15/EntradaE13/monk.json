@@ -1,0 +1,86 @@
+{
+    "Version": 1,
+    "Name": "Viajero monk",
+    "ClassId": "monk",
+    "RaceId": "human",
+    "HasDemoProgress": true,
+    "Demo": {
+        "Chapter": 6,
+        "IntroSeen": true,
+        "Produced": 1
+    },
+    "Health": 8,
+    "Gold": 8,
+    "Wood": 0,
+    "Food": 7,
+    "WorldSeconds": 10.032554626464844,
+    "ProductionCycle": 1,
+    "ReputationA": 0,
+    "ReputationB": 0,
+    "Weapon": "training-sword",
+    "Armour": "cloth",
+    "HeroPosition": {
+        "x": 9.0,
+        "y": 0.02500009536743164,
+        "z": -10.0
+    },
+    "Facts": [
+        "demo-starter-kit",
+        "rpg-victory",
+        "rts-victory",
+        "demo-camp-secured"
+    ],
+    "Items": [
+        {
+            "Id": "ration",
+            "Count": 1
+        },
+        {
+            "Id": "training-sword",
+            "Count": 1
+        },
+        {
+            "Id": "cloth",
+            "Count": 1
+        }
+    ],
+    "Buildings": [
+        {
+            "Id": "townhall",
+            "Position": {
+                "x": 12.0,
+                "y": 0.0,
+                "z": -8.0
+            },
+            "Level": 1,
+            "ProductionPaused": false
+        },
+        {
+            "Id": "workshop",
+            "Position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": false
+        },
+        {
+            "Id": "barracks",
+            "Position": {
+                "x": 15.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": false
+        }
+    ],
+    "Army": [
+        {
+            "Id": "fa4f1b3c90b24337a955b00366ca8118",
+            "Role": "archer",
+            "Health": 10
+        }
+    ]
+}

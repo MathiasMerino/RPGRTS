@@ -1,10 +1,12 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
+Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
 
 ## Resumen actual
 
-- Demo E10–E13: núcleo implementado y verificado técnicamente, regresión110/110 y6/6 posteriores al recorte visual; doce procesos Windows finales PASS (tres clases, con/sinGPU, crear/reiniciar/Continuar/opciones). Build/ZIP portable/evidencia aprobados; PR#5 abierto en borrador sobre E09: https://github.com/MathiasMerino/RPGRTS/pull/5. E14/E15 y evaluación humana pendientes. Informe: Docs/ENTREGA_E10_E13.md.
+- E14/E15: alcance piloto completado técnicamente; grupo/mazmorra, facciones/territorios y conquista conectados a E13.121/121 regresión,11/11 tras pulido y1/1UI final a dos resoluciones;20procesos Windows PASS; ZIP nuevo CRC/SHA/portable verificado,24PNG y2MP4 reales. Informe Docs/ENTREGA_E14_E15.md; EXP-H humano/arte/balance pendientes. [PR#6](https://github.com/MathiasMerino/RPGRTS/pull/6) abierto en borrador sobre PR5; sin merges.
+
+- Demo E10–E13: núcleo implementado y verificado técnicamente, regresión110/110 y6/6 posteriores al recorte visual; doce procesos Windows finales PASS (tres clases, con/sinGPU, crear/reiniciar/Continuar/opciones). Build/ZIP portable/evidencia aprobados; PR#5 abierto en borrador sobre E09: https://github.com/MathiasMerino/RPGRTS/pull/5. E14/E15 entregadas posteriormente (ver resumen); evaluación humana pendiente. Informe histórico: Docs/ENTREGA_E10_E13.md.
 
 - E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. PR#4 abierto en borrador sobre E08: https://github.com/MathiasMerino/RPGRTS/pull/4. Informe Docs/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
 
@@ -880,3 +882,55 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 - Aceptación: Usuario revisa controles/nitidez/experiencia; pendientes humanos anteriores separados.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
 - Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+
+## E14–E15 — EXPEDICIONES Y CONQUISTA (encargo posterior)
+
+### E14-A — Estado y reclutamiento de compañeros
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: expediciones / P1. Dependencias: DEMO-QA E10–E13.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: PrototypeState, PrototypeSaveStore, ExpeditionRules, PartyWorld, GroupTurnSequence, TurnBattle y TurnEncounter.Group; tests ExpeditionRulesTests/ExpeditionIntegrationTests; escena AetherniaExpeditions.
+- Pruebas / resultado: 8/8 reglas puras aprobadas en E14_GRUPO_INTERMEDIO.xml; integración posterior recluta tres compañeros, conserva IDs y restaura sin duplicados en E14_INTEGRACION.xml. Evaluación humana pendiente en EXP-H.
+
+### E14-B — Seguimiento y turnos de grupo
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: expediciones / P1. Dependencias: E14-A.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: PrototypeState, PrototypeSaveStore, ExpeditionRules, PartyWorld, GroupTurnSequence, TurnBattle y TurnEncounter.Group; tests ExpeditionRulesTests/ExpeditionIntegrationTests; escena AetherniaExpeditions.
+- Pruebas / resultado: Prueba Play Mode E14_INTEGRACION.xml aprobada: seguimiento, NavMesh, dos combates con daño real e iniciativa y reloj estratégico detenido. Bloqueo de movimiento reproducido y corregido con cancelación por falta de progreso. Evaluación humana pendiente en EXP-H.
+
+### E14-C — Ruinas, interfaz, recompensa e integración
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: expediciones / P1. Dependencias: E14-B.
+- Aceptación: Dos combates, transición/retorno, objetivo único y reutilización del botín en granja/reclutas; cámaras/UI legibles en dos resoluciones. Reglas provisionales; EXP-H separado.
+- Archivos: DungeonExpedition, ExpeditionPanel, ExpeditionBuilder, AetherniaExpeditions, Assets/11_Expeditions y GUIA_EXPEDICIONES.
+- Pruebas / resultado: E14_INTEGRACION.xml; UI_FINAL.xml y PULIDO_FOCAL_11.xml;20procesos Windows acumulados. Recompensa no duplicada tras reinicio; captura/vídeo reales.
+
+### E15-A — Facciones, territorios y economía
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: expediciones / P1. Dependencias: E14-C.
+- Aceptación: Raza/cultura/facción/reino independientes; tres territorios persistentes; bonos reales online con capacidad, sin producción offline/duplicada. Reglas provisionales; EXP-H separado.
+- Archivos: ExpeditionRules, PrototypeState, WorldOperations, TerritoryCampaign, Rules.asset; informe E14_E15_EXPEDICIONES.
+- Pruebas / resultado: ExpeditionRulesTests incluidos en121/121; producción real+2madera por ciclo verificada en Windows y conservada al cargar.
+
+### E15-B — Ejército seleccionado y conquista real
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: expediciones / P1. Dependencias: E15-A.
+- Aceptación: Preparar hasta6soldados separados de3compañeros, marchar, desplegar solo seleccionados junto al mismo héroe y conquistar solo con victoria real; derrota conserva enemigo. Reglas provisionales; EXP-H separado.
+- Archivos: RtsBattleController, SupportVisualFactory, TerritoryCampaign, DemoFlow, DemoRtsOverlay, ExpeditionPanel.
+- Pruebas / resultado: CampaignIntegrationTests2/2; recorridos reales de tres clases antes/después del pulido, órdenes/selección y20procesos acumulados; bajas y reserva conservadas.
+
+### EXP-QA — Regresión, Windows, reinicio y publicación
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: expediciones / P1. Dependencias: E15-B.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: Tools/Invoke-ExpeditionSmoke.ps1, Export-ExpeditionEvidence.py, Package-Expeditions.py; Runtime/Validation y Tests/Editor; Docs/Validacion/E14E15, Images/E14E15, Videos/E14E15 y entrega/guía.
+- Pruebas / resultado:121/121+11/11+1/1UI,20procesos Windows PASS;22PNG nativos+2UI,2MP4 conDSP/decodificación, ZIP CRC/SHA/extracción y13ZIP antiguos intactos. PR#6 publicado en borrador sobre feature/e10-e13-demo-jugable; main/dev y PR1..5 intactos. Evidencia GitHub en GITHUB.json; no intervención humana ejecutada.
+
+### EXP-H — Evaluación humana
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: expediciones / P1. Dependencias: EXP-QA.
+- Aceptación: sesión humana de navegación, cámara, lectura de combate/objetivos, composición, balance de descanso/economía y conquista; registrar observaciones reales sin reemplazarlas por automatización.
+- Archivos: Docs/GUIA_EXPEDICIONES.md y futura acta humana; no modificar código antes de documentar hallazgos.
+- Pruebas / resultado: no realizada. La inspección técnica de capturas y los recorridos automatizados no constituyen aprobación humana.

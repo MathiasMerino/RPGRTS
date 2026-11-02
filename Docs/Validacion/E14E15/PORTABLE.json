@@ -1,0 +1,1268 @@
+{
+  "archive": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Builds\\Aethernia-E14-E15-Expediciones-Windows.zip",
+  "archiveSHA256": "958df84773407fe81274c366588ba60e97b4fe19feca69763c37be38912baf36",
+  "archiveBytes": 87458324,
+  "portableExe": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Builds\\PortableE14E15-20261102-055044\\Aethernia.exe",
+  "CRC": "PASS",
+  "perFileSHA": "PASS",
+  "previousArchivesUnchanged": 13,
+  "DoNotShipExcluded": true,
+  "files": {
+    "Aethernia.exe": {
+      "sha256": "0fb7bc201bdef9341359db95c319b489c1c46d2f70a081bc548f46bf03df4c90",
+      "bytes": 667648
+    },
+    "Aethernia_Data/app.info": {
+      "sha256": "0bbb06669fdf2f12ed701da53c333679224d66690f0c297fc9dc397cd4c5a67d",
+      "bytes": 29
+    },
+    "Aethernia_Data/boot.config": {
+      "sha256": "70f1d86d0bfca1bcd97969e931aff5096cba5ebcf6cf8befd088f77203592189",
+      "bytes": 328
+    },
+    "Aethernia_Data/globalgamemanagers": {
+      "sha256": "384f3774fd233071ba5d0d49d685565553556a7c8fcc3fe2ac7f746d87b07077",
+      "bytes": 122756
+    },
+    "Aethernia_Data/globalgamemanagers.assets": {
+      "sha256": "76a383c986ea472eee1f657299acf8e0622c7c5391cd587ce0e7f53988998102",
+      "bytes": 1030536
+    },
+    "Aethernia_Data/globalgamemanagers.assets.resS": {
+      "sha256": "f122983b2e999b7f97c5b76ff4a4d07663df0407e3d921d2826aa61d3671a70a",
+      "bytes": 6176992
+    },
+    "Aethernia_Data/level0": {
+      "sha256": "dfbcd6fd789c41efa9c04b4cef9825403253ace7a79d84f52a3ea6f7ee1338af",
+      "bytes": 499656
+    },
+    "Aethernia_Data/Managed/Aethernia.Runtime.dll": {
+      "sha256": "443350927af2400fb065e0d86a62ed7abc6d1d065e22053941aea26c31a52f4f",
+      "bytes": 279040
+    },
+    "Aethernia_Data/Managed/Aethernia.Runtime.pdb": {
+      "sha256": "12c36554cefd22617ba8f9a6cc7c6292b1cea204cf74425fd278fa29533ef14a",
+      "bytes": 90644
+    },
+    "Aethernia_Data/Managed/Mono.Security.dll": {
+      "sha256": "1849437c1d2fe7698c0fde2a9a6aad9a864372a373b7c1d887da902a36965b36",
+      "bytes": 241152
+    },
+    "Aethernia_Data/Managed/mscorlib.dll": {
+      "sha256": "f7698bd46af58d3ee9dac59a286cfedfd28e51f71c0fe3940671a3ccc7af5711",
+      "bytes": 4632064
+    },
+    "Aethernia_Data/Managed/netstandard.dll": {
+      "sha256": "6ae62e082dc494a2433984177f60ca4db5fae69b1f360a8b33754172b310b8c5",
+      "bytes": 90112
+    },
+    "Aethernia_Data/Managed/System.Buffers.dll": {
+      "sha256": "762f8fdbe975e05b76be5fe996c53ce7c75e4a2830f2f50b02a5948ef6ba0aeb",
+      "bytes": 4608
+    },
+    "Aethernia_Data/Managed/System.Collections.Immutable.dll": {
+      "sha256": "5b1b1c83ba3d135c2fdfe425842fbe9c7432878b7e468623acb554c69b4c130f",
+      "bytes": 252680
+    },
+    "Aethernia_Data/Managed/System.ComponentModel.Composition.dll": {
+      "sha256": "335d76d10ae5b80d1faae4833937b9166551ccc9e79ee8262d2da4d58843f79d",
+      "bytes": 257024
+    },
+    "Aethernia_Data/Managed/System.Configuration.dll": {
+      "sha256": "d7139dd6b622233d316aac733b392b9c1a545375804f62685f57f9d36f1c7ac2",
+      "bytes": 124928
+    },
+    "Aethernia_Data/Managed/System.Core.dll": {
+      "sha256": "a4637c44a11ea827d686313cfca3f5191225d2a96f7eaf0f10aa32de446380d2",
+      "bytes": 1113088
+    },
+    "Aethernia_Data/Managed/System.Data.DataSetExtensions.dll": {
+      "sha256": "80432a96154f8d2935b2f1c9e61b2ee6109fd6234e281327b3b297451c8931ba",
+      "bytes": 29696
+    },
+    "Aethernia_Data/Managed/System.Data.dll": {
+      "sha256": "ab47d362cff6f6e665cadbc8c6c81f9fa3612f23483a44d08b339347ac99f116",
+      "bytes": 2125312
+    },
+    "Aethernia_Data/Managed/System.dll": {
+      "sha256": "d26cada0fc3dcae061f0fa421df15a082cb35ccf81ccaeebc8b0e2d2e6877099",
+      "bytes": 2641920
+    },
+    "Aethernia_Data/Managed/System.Drawing.dll": {
+      "sha256": "3c3586ba170c1788a8d3a4e419eb1f50f092070f4d81e90238b2fe6c5405cf2c",
+      "bytes": 489984
+    },
+    "Aethernia_Data/Managed/System.EnterpriseServices.dll": {
+      "sha256": "00595c8eea345fe0e47da702100e460aaaf8f14d27a24950b71d926cbf1201c4",
+      "bytes": 44544
+    },
+    "Aethernia_Data/Managed/System.IO.Compression.dll": {
+      "sha256": "a2803c059bd49c7fe520673f7e2b06657bb0419b253a5267e3f1da14b357dd5a",
+      "bytes": 114688
+    },
+    "Aethernia_Data/Managed/System.IO.Compression.FileSystem.dll": {
+      "sha256": "f45ca89827639a880dcbeab1917af99a5bd18aec4433fbcb2d7774ccf9fe7121",
+      "bytes": 18432
+    },
+    "Aethernia_Data/Managed/System.Memory.dll": {
+      "sha256": "c4f030a2cba7da7cdcf493257c24560e203d355904aee490d645a935842f834a",
+      "bytes": 4608
+    },
+    "Aethernia_Data/Managed/System.Net.Http.dll": {
+      "sha256": "128b31fec424c70356952314abff2f6b1408f64b7613d2ae4bde5e84c2f8ac03",
+      "bytes": 122880
+    },
+    "Aethernia_Data/Managed/System.Numerics.dll": {
+      "sha256": "b968dc8852985029fd5dd08a1a9c3a6b8750ea4470cd677a5051c33fc5a08639",
+      "bytes": 119296
+    },
+    "Aethernia_Data/Managed/System.Reflection.Metadata.dll": {
+      "sha256": "afcfd6c166fe0d59f45cc6363082806f6a7ea8ceed9dc6c75eec9fd79ccb5717",
+      "bytes": 487584
+    },
+    "Aethernia_Data/Managed/System.Runtime.CompilerServices.Unsafe.dll": {
+      "sha256": "fd67abc4c4af10affbcd42fd68a2a7bc361b26714afe6965d4d0d139459d8297",
+      "bytes": 19256
+    },
+    "Aethernia_Data/Managed/System.Runtime.dll": {
+      "sha256": "e0a7334b7ba419aaab6bd3bb6992d693e689341a9178172c9bf99c2aa6a085bd",
+      "bytes": 12288
+    },
+    "Aethernia_Data/Managed/System.Runtime.Serialization.dll": {
+      "sha256": "685123acdbb6ac313e503e89f4831fed096be838ccb000b85b33ee903562807f",
+      "bytes": 934400
+    },
+    "Aethernia_Data/Managed/System.Security.dll": {
+      "sha256": "02d51b98dc8c877124fea386c9fbf7264790aae381ab15577eb0e2d082d1bcc4",
+      "bytes": 320000
+    },
+    "Aethernia_Data/Managed/System.ServiceModel.Internals.dll": {
+      "sha256": "077333adc8bf20eb40e94d1909db2d07a16925a9192b69064f34eaf128804c8b",
+      "bytes": 215040
+    },
+    "Aethernia_Data/Managed/System.Transactions.dll": {
+      "sha256": "6557e5029469211193ccec80dd4d3ad090f5eb87d80f5d5341d77a6d3506b64b",
+      "bytes": 35328
+    },
+    "Aethernia_Data/Managed/System.Xml.dll": {
+      "sha256": "32129a7d847a5efeacee6bd4b0d6bbffc8923551c5446a8c216d8ef1191b1de1",
+      "bytes": 3160064
+    },
+    "Aethernia_Data/Managed/System.Xml.Linq.dll": {
+      "sha256": "fd300e794b9ccd85d95bbab54e282da1333faa20a9209457944e831c27452b00",
+      "bytes": 136704
+    },
+    "Aethernia_Data/Managed/Unity.AI.Navigation.dll": {
+      "sha256": "d6ed7f725a8912c9da83ce65b05dc8102d881042a9d18a7be504b8946e19319f",
+      "bytes": 23040
+    },
+    "Aethernia_Data/Managed/Unity.AI.Navigation.pdb": {
+      "sha256": "7ff1ab293074dda2eb126aa7c2bbb45a24641dd20f5c1ccb413a44949b89f7aa",
+      "bytes": 23484
+    },
+    "Aethernia_Data/Managed/Unity.Burst.dll": {
+      "sha256": "abe28e3dc435612f9e41498e604ec14c19ee0d6565a8e6d1dd162d1d0fb064b7",
+      "bytes": 296960
+    },
+    "Aethernia_Data/Managed/Unity.Burst.pdb": {
+      "sha256": "053ebbe0de5d8fc330a5fdc6b911fda5bcfe7d39aa842eb67eca4f83396ece48",
+      "bytes": 166292
+    },
+    "Aethernia_Data/Managed/Unity.Burst.Unsafe.dll": {
+      "sha256": "9d9c1ff52411decbee5d9f0d1cd61ebeaa222077aa77a52101ea3debafae98e2",
+      "bytes": 5632
+    },
+    "Aethernia_Data/Managed/Unity.Collections.dll": {
+      "sha256": "352435f9d08b76c48f9205ad8ebbe0d65aea3ba1ce71859098bca5c703cac168",
+      "bytes": 440320
+    },
+    "Aethernia_Data/Managed/Unity.Collections.LowLevel.ILSupport.dll": {
+      "sha256": "ff50383f807f9692e4913b97e47d86fefcb8faa33d6d48cd3e3fd6fc7ffb448d",
+      "bytes": 5120
+    },
+    "Aethernia_Data/Managed/Unity.Collections.pdb": {
+      "sha256": "782bfd2584ff79be5f81d7a1652ae98615465984cde30bfcdf8f5a1313386e49",
+      "bytes": 228988
+    },
+    "Aethernia_Data/Managed/Unity.InputSystem.dll": {
+      "sha256": "6c534efa21c9c966f64104e352007c057af9e5bd39c1d908cc8977ae7eb60f2f",
+      "bytes": 1132544
+    },
+    "Aethernia_Data/Managed/Unity.InputSystem.ForUI.dll": {
+      "sha256": "8ee1a1c1a1be6b6e92e4f208a5817f70e8073e6d0c67a7e5880d4d0405698c7a",
+      "bytes": 15360
+    },
+    "Aethernia_Data/Managed/Unity.InputSystem.ForUI.pdb": {
+      "sha256": "a68a77cee20f7a3c9fdada04f3ab2be9e59934691226eebf0d4041c9eea3c4a3",
+      "bytes": 19980
+    },
+    "Aethernia_Data/Managed/Unity.InputSystem.pdb": {
+      "sha256": "4d34dbe41ed611361c25f29ac5c76bf1b4597ea2e2d9cda922c4bf719b97fe32",
+      "bytes": 428484
+    },
+    "Aethernia_Data/Managed/Unity.InternalAPIEngineBridge.004.dll": {
+      "sha256": "586178886095decac02e72815483672120892aa9d2be2ad61348b2982a666f0c",
+      "bytes": 4096
+    },
+    "Aethernia_Data/Managed/Unity.InternalAPIEngineBridge.004.pdb": {
+      "sha256": "0110eff80062f65076d55ff0053024aa4f6f6870401667af50a4d077b81aeb11",
+      "bytes": 16680
+    },
+    "Aethernia_Data/Managed/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll": {
+      "sha256": "a9c32dcfc4f071c58c7265e77912177995052a92945d0c4f2eb3da3837308e4a",
+      "bytes": 3584
+    },
+    "Aethernia_Data/Managed/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.pdb": {
+      "sha256": "8608c4b9d6885a035f114ef79763b48569fb9fc5e71ce04a9d042bacbc037b89",
+      "bytes": 16520
+    },
+    "Aethernia_Data/Managed/Unity.Mathematics.dll": {
+      "sha256": "d887c955da76b40cf3308663bd78dd3ae8fb2401f5f1ba9cf431d36e7f471cbb",
+      "bytes": 5632
+    },
+    "Aethernia_Data/Managed/Unity.Mathematics.pdb": {
+      "sha256": "ad0eb15f372d54db0f9cf939736ac40b48223d68bf31c8e1415a6dfcc5520ba9",
+      "bytes": 16420
+    },
+    "Aethernia_Data/Managed/Unity.Multiplayer.Center.Common.dll": {
+      "sha256": "47ad186ca6823d592e50f774da3427e30a0300dbccc35921ae8f6a57d84561c4",
+      "bytes": 8704
+    },
+    "Aethernia_Data/Managed/Unity.Multiplayer.Center.Common.pdb": {
+      "sha256": "b90fd75af63e031ff1991573802a4dc1b2262504f85ddf014c5b6c76c6583342",
+      "bytes": 17668
+    },
+    "Aethernia_Data/Managed/Unity.PathTracing.Runtime.dll": {
+      "sha256": "e526dd406ffb53085437bbb3b90c46dc5c18f50a9f5aa24d4783ef84ad9a69dd",
+      "bytes": 148992
+    },
+    "Aethernia_Data/Managed/Unity.PathTracing.Runtime.pdb": {
+      "sha256": "cf0e4aee0fb88398723a2380949d822e2e4b59d1a675474760c4ac8ffd06c5e4",
+      "bytes": 63232
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll": {
+      "sha256": "86af74665a889e7a873463747e995a193c82178c1e28eb0f441784243023a3b2",
+      "bytes": 7680
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.pdb": {
+      "sha256": "0cf6fc79c3a038ae66a5cb78bb56e9681eccb577705829c01b639f02668eb946",
+      "bytes": 16748
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll": {
+      "sha256": "353d18be9ea7c6a003144ea81856e23e8c95e8ce568b810c85142c0757aba3dd",
+      "bytes": 1168896
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Core.Runtime.pdb": {
+      "sha256": "89aebaf03db705191fca6ba9e8478a05567304c4d629135c3a3a7f048c129c35",
+      "bytes": 342516
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Core.Runtime.Shared.dll": {
+      "sha256": "0876e90866f55cf4b1d6bcd6cdc14846c72f20227af18984442c492956d53bf2",
+      "bytes": 11264
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Core.Runtime.Shared.pdb": {
+      "sha256": "d8efc054b61e24a2b93b19e7862970ea6a785c33c85a1304092ee7389b34bb5c",
+      "bytes": 18708
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll": {
+      "sha256": "0f953f1de8d0309cd4847b0e195523d34978bdfae97b8e34a839c2ea2daac399",
+      "bytes": 3584
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.pdb": {
+      "sha256": "9eafa2e902c652ec0d8f68345dbd2805b186b9d8ee3bc4e55c9f949fd8666537",
+      "bytes": 16448
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.GPUDriven.Runtime.dll": {
+      "sha256": "293f7a3ab424040ca20564e77ba68a738f77617d4f5988386eb45cc874dd21c8",
+      "bytes": 276480
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.GPUDriven.Runtime.pdb": {
+      "sha256": "73baf97225e3741e1c19b2ff856f891965e6f74da5707cc3c6bde9d0fc670df4",
+      "bytes": 110368
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll": {
+      "sha256": "85082305976948d693f6ed58fbb71c7cf2130fe6402ff782b6549354995608ea",
+      "bytes": 3584
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.pdb": {
+      "sha256": "70a1b6fe7546878a2ff813ebcb4e81cc8c165406265eebb1cb23732d2234e384",
+      "bytes": 16448
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Universal.2D.Runtime.dll": {
+      "sha256": "2c352c228480c26d23355d178364ca373de03ee5d9c802eeab9df83c967c55a9",
+      "bytes": 200192
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Universal.2D.Runtime.pdb": {
+      "sha256": "b551e85be4902e34f985de6fb05c41f64af383dae5a0e8fc1cd482a45fd6de59",
+      "bytes": 105004
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.dll": {
+      "sha256": "51df2d995601528108db1c9df420b6b9f6695052c684ebf7b486363e0b64dc92",
+      "bytes": 4096
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.pdb": {
+      "sha256": "abd6d26bdee677601cb341185583d414682bf17ec1b2f3615d096269f5de5a1d",
+      "bytes": 16528
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll": {
+      "sha256": "65274690e7e975f1634355982380ef5719ef9b8991b99ff3f0e629b0b839f49f",
+      "bytes": 728576
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Universal.Runtime.pdb": {
+      "sha256": "481bc0ce80981659647e9239b7b2dd3289f2d9210b6eb6ffa7a425626c41473f",
+      "bytes": 243448
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll": {
+      "sha256": "5fa401fe3beea0b114c1d7d94bd21f3aea057f7e228a89d36c20d8b13efd921f",
+      "bytes": 3584
+    },
+    "Aethernia_Data/Managed/Unity.RenderPipelines.Universal.Shaders.pdb": {
+      "sha256": "73a659c153d18e314cc7a17f77330179019cbf146781be789cc0192ac83a894a",
+      "bytes": 16436
+    },
+    "Aethernia_Data/Managed/Unity.Scripting.dll": {
+      "sha256": "881c00ee513ea7a39fab1d9da2d1e56af4b157154beb0dd9c4073f3aebe32bd1",
+      "bytes": 68520
+    },
+    "Aethernia_Data/Managed/Unity.Scripting.pdb": {
+      "sha256": "119664670f2f4a38230a5730a292a94e17fa6afda9c57b255db9224fabc23663",
+      "bytes": 28600
+    },
+    "Aethernia_Data/Managed/Unity.SurfaceCache.Runtime.dll": {
+      "sha256": "43d2a85eb398891de5f878e992163ca8a55b3153f4173981374f64a6d58a4b17",
+      "bytes": 3584
+    },
+    "Aethernia_Data/Managed/Unity.SurfaceCache.Runtime.pdb": {
+      "sha256": "e5ceb0cae5718c4d2961d22897ac6334f75af5f5984f333f53da1e62509d9c3b",
+      "bytes": 16904
+    },
+    "Aethernia_Data/Managed/Unity.TextMeshPro.dll": {
+      "sha256": "0e901833e09cdd1a217c83c6ef4d6e4e60100e51f8476392db561bfd59c77527",
+      "bytes": 442880
+    },
+    "Aethernia_Data/Managed/Unity.TextMeshPro.pdb": {
+      "sha256": "67705812d2e29a61a9a179e17f2132f84426d85bdc9bdc01cabcdac7337fd951",
+      "bytes": 183332
+    },
+    "Aethernia_Data/Managed/Unity.Timeline.dll": {
+      "sha256": "1d8d31d8733357e66ad724b5b7cd745f5c0396cf314eeded8dafa7916cc0a858",
+      "bytes": 122368
+    },
+    "Aethernia_Data/Managed/Unity.Timeline.pdb": {
+      "sha256": "72a8b066b22da2b3d46572c8746e72da24ea7e921ec1965e205ca33031092f38",
+      "bytes": 67212
+    },
+    "Aethernia_Data/Managed/Unity.UnifiedRayTracing.Runtime.dll": {
+      "sha256": "719196f108cd547684723476770cb25c3323da61490bb72a85e4dbd6161cd23a",
+      "bytes": 95744
+    },
+    "Aethernia_Data/Managed/Unity.UnifiedRayTracing.Runtime.pdb": {
+      "sha256": "c6aec12005ba8246b73f81032610ac53ceaa81a7764dc0e96f884a1d76de8c29",
+      "bytes": 47740
+    },
+    "Aethernia_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll": {
+      "sha256": "ed7ce205f66eafe39bbb5d084d42e7fe11cb4b386ff208e5d5110891be0b7b37",
+      "bytes": 86016
+    },
+    "Aethernia_Data/Managed/Unity.VisualScripting.Core.dll": {
+      "sha256": "e584a921f8f57b7ff6fd6287e992486214a93bd0bd42b60d25c88e6811af5af8",
+      "bytes": 550400
+    },
+    "Aethernia_Data/Managed/Unity.VisualScripting.Core.pdb": {
+      "sha256": "87b05523088c86fa4c6bf4405fe5b8f701f9b20a9758e4b57d9ee803ebb3af2f",
+      "bytes": 246540
+    },
+    "Aethernia_Data/Managed/Unity.VisualScripting.DocCodeExamples.dll": {
+      "sha256": "ec59fbbb5c557ca7f06aaff166177a5066b4ba05c7e84d68fb4f7511acb12f0d",
+      "bytes": 6144
+    },
+    "Aethernia_Data/Managed/Unity.VisualScripting.DocCodeExamples.pdb": {
+      "sha256": "52ab5a76303f94c4e7555f58530893a6190c06ab3d0b1a4415c3030380873da5",
+      "bytes": 16960
+    },
+    "Aethernia_Data/Managed/Unity.VisualScripting.Flow.dll": {
+      "sha256": "58eea20be18900a10f088789f8d18c9cf811ed61bcddf912dd0a17dfb7e28d62",
+      "bytes": 335872
+    },
+    "Aethernia_Data/Managed/Unity.VisualScripting.Flow.pdb": {
+      "sha256": "e9028add41ca20925d6941a76fad78eb562bac49577ed29f8c30cffd3430e77b",
+      "bytes": 167256
+    },
+    "Aethernia_Data/Managed/Unity.VisualScripting.State.dll": {
+      "sha256": "33eaa7055b7a85057833cdb0b101c8b2be39d334f9e043c7575f32e365daad25",
+      "bytes": 27136
+    },
+    "Aethernia_Data/Managed/Unity.VisualScripting.State.pdb": {
+      "sha256": "94c14ccaf707134b57bb3e02f35bed68b11c4b02f956c03282b75feab247a4f1",
+      "bytes": 26124
+    },
+    "Aethernia_Data/Managed/UnityEngine.AccessibilityModule.dll": {
+      "sha256": "6090ab2ad0f4f44c72b429d568a4e86d23a8fb0101921e30efa0c461253da2ff",
+      "bytes": 49072
+    },
+    "Aethernia_Data/Managed/UnityEngine.AccessibilityModule.pdb": {
+      "sha256": "9bc502c4a30db5d13b8a04103cec5cf58c047fb795954ba5734262a14889d1fe",
+      "bytes": 20704
+    },
+    "Aethernia_Data/Managed/UnityEngine.AdaptivePerformanceModule.dll": {
+      "sha256": "d282a48a5d88db7ac4ba46512a4d8489b7780c8bb9791d3384c3eb7a459bd1a3",
+      "bytes": 118184
+    },
+    "Aethernia_Data/Managed/UnityEngine.AdaptivePerformanceModule.pdb": {
+      "sha256": "3563abe16252b5aa1525c7c5068f2dd3e7001c4dbcb85dcbe947c4580716ee6c",
+      "bytes": 44912
+    },
+    "Aethernia_Data/Managed/UnityEngine.AIModule.dll": {
+      "sha256": "a0b82fdaeab698d6cf6d1cf76eea8ad5f172a8cbe7d6b0664c3b1a0bdf066066",
+      "bytes": 86440
+    },
+    "Aethernia_Data/Managed/UnityEngine.AIModule.pdb": {
+      "sha256": "fa5acf80034751f36fcb1ba83d0b37cc25462b05b2dd0a03eacb83c30424948f",
+      "bytes": 22232
+    },
+    "Aethernia_Data/Managed/UnityEngine.AMDModule.dll": {
+      "sha256": "526735259999a0aeb6a46a1cb116cf78baafadcf3408786e68a687d1e63fedc3",
+      "bytes": 21936
+    },
+    "Aethernia_Data/Managed/UnityEngine.AMDModule.pdb": {
+      "sha256": "d39b91a749443cbc710bd25485b63015878ec57944ab33abe18aef800feb71a4",
+      "bytes": 12304
+    },
+    "Aethernia_Data/Managed/UnityEngine.AndroidJNIModule.dll": {
+      "sha256": "4fb12b1e655c55b6398a0a5e25c791ea73a6fd809820f34a81570eef70169e14",
+      "bytes": 120752
+    },
+    "Aethernia_Data/Managed/UnityEngine.AndroidJNIModule.pdb": {
+      "sha256": "bafe81aab37e4de9c8e2f792c2278e503066dd16d8f8b554acee71677bb89bd6",
+      "bytes": 40872
+    },
+    "Aethernia_Data/Managed/UnityEngine.AnimationModule.dll": {
+      "sha256": "85169723ffd48c876e331e2f953a60659662ba01dd559dc837599d6566835474",
+      "bytes": 218536
+    },
+    "Aethernia_Data/Managed/UnityEngine.AnimationModule.pdb": {
+      "sha256": "17e00ea33d33b0d067f522e40ede9004782cbafcdb0ddba0a5d6f8719474f422",
+      "bytes": 50288
+    },
+    "Aethernia_Data/Managed/UnityEngine.ARModule.dll": {
+      "sha256": "c4d33b77a0e17a9dc83e202ff4acbae27b8497054c554dbe824ab63294b814e1",
+      "bytes": 27048
+    },
+    "Aethernia_Data/Managed/UnityEngine.ARModule.pdb": {
+      "sha256": "e3d32669d5bf3ec3b46c7af4a8eca204ac48a3ed4a6d8fb9511b3c3fc841ee49",
+      "bytes": 10740
+    },
+    "Aethernia_Data/Managed/UnityEngine.AssetBundleModule.dll": {
+      "sha256": "58e4b540d553319b364e38e72804938089f7e6df27f87a41d62dc41aeb98b118",
+      "bytes": 42408
+    },
+    "Aethernia_Data/Managed/UnityEngine.AssetBundleModule.pdb": {
+      "sha256": "7bfc19d96546099d9fb20a9510f270b2663569f4c9c9e99c01f60d65458e3f13",
+      "bytes": 13876
+    },
+    "Aethernia_Data/Managed/UnityEngine.AudioModule.dll": {
+      "sha256": "ef5a2bac2ccfea9617137efd0708165dcbcb2b3a4d08b21c67fa2dfcb78af591",
+      "bytes": 142768
+    },
+    "Aethernia_Data/Managed/UnityEngine.AudioModule.pdb": {
+      "sha256": "90efd91baa0532913d6552654c01dcb8aaaf5e84628294432fecd597ccdaba72",
+      "bytes": 31300
+    },
+    "Aethernia_Data/Managed/UnityEngine.ClothModule.dll": {
+      "sha256": "abb72fd9af670fea254697e6643d7ee1949a18ffa9a901cbe6d00bbffee28602",
+      "bytes": 37296
+    },
+    "Aethernia_Data/Managed/UnityEngine.ClothModule.pdb": {
+      "sha256": "be7ee00883200b1424b5c3f9565bd108089a3d949c6721cae710160019fccea8",
+      "bytes": 11320
+    },
+    "Aethernia_Data/Managed/UnityEngine.ClusterInputModule.dll": {
+      "sha256": "3a45f480d1adf2c3500082e0c657e2d05e60c9bc5da1ce4af1528e393ba21dfb",
+      "bytes": 29104
+    },
+    "Aethernia_Data/Managed/UnityEngine.ClusterInputModule.pdb": {
+      "sha256": "c448679cacc38a191122f3aa012dbef30be853659d37a8536a277b37ec007c14",
+      "bytes": 10188
+    },
+    "Aethernia_Data/Managed/UnityEngine.ClusterRendererModule.dll": {
+      "sha256": "022bd10d5e25df61a0d3db136a4b3dfa29351fe7098439e0c37a9086e8cca67b",
+      "bytes": 28080
+    },
+    "Aethernia_Data/Managed/UnityEngine.ClusterRendererModule.pdb": {
+      "sha256": "552a481f0741f252098bfe36a07c881493e7915b3d43582522c782208ff288b2",
+      "bytes": 10656
+    },
+    "Aethernia_Data/Managed/UnityEngine.ContentLoadModule.dll": {
+      "sha256": "38e3b8ffd4716bc6ef28e77d7966ea50467353679e86628445a709bdefe57ab3",
+      "bytes": 46504
+    },
+    "Aethernia_Data/Managed/UnityEngine.ContentLoadModule.pdb": {
+      "sha256": "e48213040f109f1dcdec858487e0ae14fb5129743a0b76beafb34097c9e47065",
+      "bytes": 14692
+    },
+    "Aethernia_Data/Managed/UnityEngine.CoreModule.dll": {
+      "sha256": "80187c2f82c8bb82f8425f87df630152121cd0076c75d84996004ca162d8d33c",
+      "bytes": 1974192
+    },
+    "Aethernia_Data/Managed/UnityEngine.CoreModule.pdb": {
+      "sha256": "ebb18388923099c6fa831e4da94983b97099dcf56cb8fcb90b17df40d60805e3",
+      "bytes": 473244
+    },
+    "Aethernia_Data/Managed/UnityEngine.CrashReportingModule.dll": {
+      "sha256": "02f586c32624e3418a1ca936a257a895198aa06de1422b44c2835ba52993245b",
+      "bytes": 28080
+    },
+    "Aethernia_Data/Managed/UnityEngine.CrashReportingModule.pdb": {
+      "sha256": "fa612674685c334230b45c9b448c378f0487808a67b8e2da5962aa651c5db642",
+      "bytes": 10824
+    },
+    "Aethernia_Data/Managed/UnityEngine.DirectorModule.dll": {
+      "sha256": "296857a73dd84d4500ed6355d7d094fabefb0db2898915e97abeac466fbd3cd5",
+      "bytes": 41896
+    },
+    "Aethernia_Data/Managed/UnityEngine.DirectorModule.pdb": {
+      "sha256": "8c81cdb16b54fcce4883d7faa2c43b2ce4d5e3d138ecbcc629d111a35c2d9f6f",
+      "bytes": 13736
+    },
+    "Aethernia_Data/Managed/UnityEngine.dll": {
+      "sha256": "3f5474a8e192ba126fd41b582639e18c53f1cd159c7dae9852b0fad815235878",
+      "bytes": 210352
+    },
+    "Aethernia_Data/Managed/UnityEngine.DSPGraphModule.dll": {
+      "sha256": "8056b02715e9d2a736631a4b5c5122723913e2850366306efade6dfd62835146",
+      "bytes": 32688
+    },
+    "Aethernia_Data/Managed/UnityEngine.DSPGraphModule.pdb": {
+      "sha256": "16d6661ff7c2970c2366f6f094fb90bf431c3fabf492ef1b91edbb44a7ae1992",
+      "bytes": 10400
+    },
+    "Aethernia_Data/Managed/UnityEngine.GameCenterModule.dll": {
+      "sha256": "beda7af14db2518c512bddb7241b079579e62fbc06b5cbc6b7ec3cf1609aa7d5",
+      "bytes": 45480
+    },
+    "Aethernia_Data/Managed/UnityEngine.GameCenterModule.pdb": {
+      "sha256": "a2338c3fc25666e1afae5cebee4e807ebce8ae06e1a76c128f924fc5abcd8086",
+      "bytes": 16504
+    },
+    "Aethernia_Data/Managed/UnityEngine.GIModule.dll": {
+      "sha256": "3181be1039b60876920acb697f8c3d73d5f73ba5bf79b46dcf66ef912490a2d3",
+      "bytes": 25520
+    },
+    "Aethernia_Data/Managed/UnityEngine.GIModule.pdb": {
+      "sha256": "4626c62a46a6dc8917fa0b240425398e5f1d54ffd209df2611cf0a5fb416a857",
+      "bytes": 10060
+    },
+    "Aethernia_Data/Managed/UnityEngine.GraphicsStateCollectionSerializerModule.dll": {
+      "sha256": "f3ca35c069c5c43b63e6a668035518a39cfc7b919f706132d68f7a3b707509ad",
+      "bytes": 14248
+    },
+    "Aethernia_Data/Managed/UnityEngine.GraphicsStateCollectionSerializerModule.pdb": {
+      "sha256": "f99331703e7dff59466be3f4310fe029ad0a1136c388424d25732ce581793d44",
+      "bytes": 10092
+    },
+    "Aethernia_Data/Managed/UnityEngine.GridModule.dll": {
+      "sha256": "ca70fce3da5d5b320013bf0315ab584a1fbd188f070e96d32eec940fbe5b6a3d",
+      "bytes": 32176
+    },
+    "Aethernia_Data/Managed/UnityEngine.GridModule.pdb": {
+      "sha256": "44dc08dc91bc553a06b2f8c42de8565499cdabd1ae3c8198eedf2b2b69fab509",
+      "bytes": 10840
+    },
+    "Aethernia_Data/Managed/UnityEngine.HierarchyCoreModule.dll": {
+      "sha256": "96b57194abc5e03416b6bd6666e6f8d3dfa426841fcba3e29ccfa094312ad6c3",
+      "bytes": 105392
+    },
+    "Aethernia_Data/Managed/UnityEngine.HierarchyCoreModule.pdb": {
+      "sha256": "9cd2be48eb9da5441811d5abbc40b630708ec77ca7433c929bacda9185f14741",
+      "bytes": 33088
+    },
+    "Aethernia_Data/Managed/UnityEngine.HierarchyModule.dll": {
+      "sha256": "192e0c48272cd90ff610723794ad7893142fe6e78975e87059c2e96864156b19",
+      "bytes": 100264
+    },
+    "Aethernia_Data/Managed/UnityEngine.HierarchyModule.pdb": {
+      "sha256": "3e2fa9a631aff0f5e260ac339ee874b8a37d166298ea1e5a06b7fb3222498e91",
+      "bytes": 39924
+    },
+    "Aethernia_Data/Managed/UnityEngine.HotReloadModule.dll": {
+      "sha256": "8e95a32a0db34444ae07d96ce45f03b7cc3b3b6207399a3ddbd8a170abbecf7f",
+      "bytes": 25520
+    },
+    "Aethernia_Data/Managed/UnityEngine.HotReloadModule.pdb": {
+      "sha256": "6fb82a3d2f550bb3df68024d6a733e972cac94ae7435ee8104370b7698cdf250",
+      "bytes": 10060
+    },
+    "Aethernia_Data/Managed/UnityEngine.IdentifiersModule.dll": {
+      "sha256": "d963560a918b55c2b8a6b007bf551907d6220f98cf6792dd777ee80bf6ed65ad",
+      "bytes": 16816
+    },
+    "Aethernia_Data/Managed/UnityEngine.IdentifiersModule.pdb": {
+      "sha256": "9cfd187a996ec1f57e1bab9d03a7ae5343cbc04156068f4cfdde702d1860f8b0",
+      "bytes": 10496
+    },
+    "Aethernia_Data/Managed/UnityEngine.ImageConversionModule.dll": {
+      "sha256": "f6e2c604acdd5de19abeb1230f0359e73a2c1972a2c95e30eefb9d9fab9d7bb5",
+      "bytes": 33712
+    },
+    "Aethernia_Data/Managed/UnityEngine.ImageConversionModule.pdb": {
+      "sha256": "93b09e21d0b52a56b0c839efea8eb390eddd49b328c2652b7952eb5edb35ef39",
+      "bytes": 11272
+    },
+    "Aethernia_Data/Managed/UnityEngine.IMGUIModule.dll": {
+      "sha256": "b3168e9a044d3c4414c593bc1cd38c508a2b201a6ec5b87aa9e112fea92d2c87",
+      "bytes": 188840
+    },
+    "Aethernia_Data/Managed/UnityEngine.IMGUIModule.pdb": {
+      "sha256": "f31782c842de0317f982b55863e5a4cc5d08da0427288da4dc9c9fafc9e9598d",
+      "bytes": 64148
+    },
+    "Aethernia_Data/Managed/UnityEngine.InputForUIModule.dll": {
+      "sha256": "1a713129d365bf9a8229bff4ec5b57b0ddd75652d42eeff2cf1016d244b2b934",
+      "bytes": 55728
+    },
+    "Aethernia_Data/Managed/UnityEngine.InputForUIModule.pdb": {
+      "sha256": "b860bf3cf153b5368749c6d403e04db7fd78faa5bb763f8c418ce0a22ac37c27",
+      "bytes": 23216
+    },
+    "Aethernia_Data/Managed/UnityEngine.InputLegacyModule.dll": {
+      "sha256": "799f412303729d09479bf85d025e06296563ca968d40b4f365b138949d1fb83e",
+      "bytes": 41896
+    },
+    "Aethernia_Data/Managed/UnityEngine.InputLegacyModule.pdb": {
+      "sha256": "1a24ef41c1e4bf427ce2d4541018b1523ce89166daaed134eae3b52b976eba8a",
+      "bytes": 13416
+    },
+    "Aethernia_Data/Managed/UnityEngine.InputModule.dll": {
+      "sha256": "5993245d344a288e9a61ddde09b329c60a2a47cbebc05cf39aa84ba99d60dd29",
+      "bytes": 30632
+    },
+    "Aethernia_Data/Managed/UnityEngine.InputModule.pdb": {
+      "sha256": "65c354b3fa591f72c490d9c5a7164e92c27d902f2685b4b135e72cf98fbe181f",
+      "bytes": 11472
+    },
+    "Aethernia_Data/Managed/UnityEngine.InsightsModule.dll": {
+      "sha256": "67847130b47ee428578fa0c8af38c416ba9e3f32a66b7a0561502679f946dc80",
+      "bytes": 15784
+    },
+    "Aethernia_Data/Managed/UnityEngine.InsightsModule.pdb": {
+      "sha256": "fa61ce4fc680f5dfbe05795694313da10e0e4586c3fb598cf42cc32e72ca2650",
+      "bytes": 10856
+    },
+    "Aethernia_Data/Managed/UnityEngine.JSONSerializeModule.dll": {
+      "sha256": "d987adaf3f537d168bed9ea53b726e9e10fb673e003c88f34665e6d14aac0d5c",
+      "bytes": 28080
+    },
+    "Aethernia_Data/Managed/UnityEngine.JSONSerializeModule.pdb": {
+      "sha256": "01512a90a448072d70f42cfc501d883c0e34ec5657e6c858baa5b1e3a075c789",
+      "bytes": 10552
+    },
+    "Aethernia_Data/Managed/UnityEngine.LocalizationModule.dll": {
+      "sha256": "263266661cc77f0106a688694e2bdc83e3632797a2604a1b3edae660db266298",
+      "bytes": 28080
+    },
+    "Aethernia_Data/Managed/UnityEngine.LocalizationModule.pdb": {
+      "sha256": "2962b3b37e050e0e7003f8cf22af9faff6563ad1c3bdb065cddea8bc0bc6801f",
+      "bytes": 10488
+    },
+    "Aethernia_Data/Managed/UnityEngine.MarshallingModule.dll": {
+      "sha256": "cd93058471d677cac1b0f000027e1e11feb7957e375901f984f1d73338b8047d",
+      "bytes": 97200
+    },
+    "Aethernia_Data/Managed/UnityEngine.MarshallingModule.pdb": {
+      "sha256": "bc68387a85326aa857a4fe1a121bb4493213346616adf47ad73e40df9492de2e",
+      "bytes": 15968
+    },
+    "Aethernia_Data/Managed/UnityEngine.MathematicsModule.dll": {
+      "sha256": "b4b8f19efd4dadbd4ece925fcef614348e2416bf4f1a1e3c717400cef6933819",
+      "bytes": 740776
+    },
+    "Aethernia_Data/Managed/UnityEngine.MathematicsModule.pdb": {
+      "sha256": "cd4a01ef3ac1c5c636de4411e33741b22058dc85a0cab23d649dbf8607bbc995",
+      "bytes": 324352
+    },
+    "Aethernia_Data/Managed/UnityEngine.MultiplayerModule.dll": {
+      "sha256": "03aed58fdeb554267c7b34c32ce1b59af3db0d74c6ef30af40aac0ac4cfd1766",
+      "bytes": 17840
+    },
+    "Aethernia_Data/Managed/UnityEngine.MultiplayerModule.pdb": {
+      "sha256": "521f4149ea81c6018b76510973fb72762e4adb49ab1946e9820078859e4bb0e2",
+      "bytes": 10968
+    },
+    "Aethernia_Data/Managed/UnityEngine.NVIDIAModule.dll": {
+      "sha256": "06b41139018439f28c11ce13527d717aa41a3279b69b6c31b146650f6e3d9626",
+      "bytes": 40360
+    },
+    "Aethernia_Data/Managed/UnityEngine.NVIDIAModule.pdb": {
+      "sha256": "e79a5739fd861cfb9a4d3703806d5d7b088564ed9f435b747460b45f61b500ed",
+      "bytes": 15480
+    },
+    "Aethernia_Data/Managed/UnityEngine.ParticleSystemModule.dll": {
+      "sha256": "5c92c2cd0abae5a837269308602971f12f7843a5f15c8da8bb96f4853a2fbb80",
+      "bytes": 168880
+    },
+    "Aethernia_Data/Managed/UnityEngine.ParticleSystemModule.pdb": {
+      "sha256": "be0e6ea66319bba10e648288d4581ebc0caccfb5512d9c58cd648704d11dc8ff",
+      "bytes": 36044
+    },
+    "Aethernia_Data/Managed/UnityEngine.pdb": {
+      "sha256": "a36e3f6154d30516d1377c44280399548c1ea494c3f5829556b0043360d705bf",
+      "bytes": 12932
+    },
+    "Aethernia_Data/Managed/UnityEngine.PerformanceReportingModule.dll": {
+      "sha256": "6dd063a783f762f147609fa97f4c21fe51c79106a8c449d85a6503e6983375cc",
+      "bytes": 26544
+    },
+    "Aethernia_Data/Managed/UnityEngine.PerformanceReportingModule.pdb": {
+      "sha256": "1b036f028695d126da9fb1d5aef0a3b9de95ee92bc709e780a43c8843b6285ba",
+      "bytes": 10308
+    },
+    "Aethernia_Data/Managed/UnityEngine.Physics2DModule.dll": {
+      "sha256": "47b338623d239a22d8495a15360262d852f6a4a32bfe8b881d63f781996624f2",
+      "bytes": 222128
+    },
+    "Aethernia_Data/Managed/UnityEngine.Physics2DModule.pdb": {
+      "sha256": "24d58779398c532fa0b235794b4e5195c840410c8d36d86ea522e116a91c239b",
+      "bytes": 43376
+    },
+    "Aethernia_Data/Managed/UnityEngine.PhysicsBackendPhysXModule.dll": {
+      "sha256": "5733f271a93d3c3ec165295f7d2eda2012b46364c550e1fa241774b4ecdf9f3b",
+      "bytes": 14248
+    },
+    "Aethernia_Data/Managed/UnityEngine.PhysicsBackendPhysXModule.pdb": {
+      "sha256": "949e6649c54e50ce956f01f5faba6d14d073177b2796e987f94f59577e87036c",
+      "bytes": 10088
+    },
+    "Aethernia_Data/Managed/UnityEngine.PhysicsCore2DModule.dll": {
+      "sha256": "3b6fef6d99c1e105abfd01a3b69ca179ee7ace9a0b94628c19fdaea14ff03c4b",
+      "bytes": 450472
+    },
+    "Aethernia_Data/Managed/UnityEngine.PhysicsCore2DModule.pdb": {
+      "sha256": "b67dfdbdb1019e9f88bf54c0dae24db2bb3f9c9cf743c21c21a4e860cbda2597",
+      "bytes": 107104
+    },
+    "Aethernia_Data/Managed/UnityEngine.PhysicsModule.dll": {
+      "sha256": "247687fc451fdb2bbdbc095bcd4f461da84708f4b5af85534622c858c9fa7e10",
+      "bytes": 180144
+    },
+    "Aethernia_Data/Managed/UnityEngine.PhysicsModule.pdb": {
+      "sha256": "04294002b34e79d99b398db352ea81d0be7ebf4a4e0cce327f3535b07b1c853b",
+      "bytes": 39768
+    },
+    "Aethernia_Data/Managed/UnityEngine.PropertiesModule.dll": {
+      "sha256": "4e34125a1eb2f5c76f9e3dbd11fc8b521f69945f305f70ea7a7a08f1a65b7761",
+      "bytes": 124848
+    },
+    "Aethernia_Data/Managed/UnityEngine.PropertiesModule.pdb": {
+      "sha256": "979095a51629f8081d434505a420b7c8c13495424bb32b9c5e57091b17829f7c",
+      "bytes": 51804
+    },
+    "Aethernia_Data/Managed/UnityEngine.RenderAs2DModule.dll": {
+      "sha256": "0ca1e122a87c765e60ad15f5a6fd4872996732933a39b5d267f8617390078569",
+      "bytes": 27056
+    },
+    "Aethernia_Data/Managed/UnityEngine.RenderAs2DModule.pdb": {
+      "sha256": "1d0fe4f599573caebc08f661c0b5b39107407de874ffd5f089b09ad6d0ad4182",
+      "bytes": 10120
+    },
+    "Aethernia_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll": {
+      "sha256": "39f92c1b37821af02771f49e4167f02de685087831a7afa578b1f8ff454e651f",
+      "bytes": 25512
+    },
+    "Aethernia_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.pdb": {
+      "sha256": "817fb78ca55602746c2199d4d6982c74e93799bbf94f28117659e3bbd20563f6",
+      "bytes": 10128
+    },
+    "Aethernia_Data/Managed/UnityEngine.ScreenCaptureModule.dll": {
+      "sha256": "ac5895945b896f30d862507e70a4149a3120a85ead8a34825646e86807b8c9c0",
+      "bytes": 27560
+    },
+    "Aethernia_Data/Managed/UnityEngine.ScreenCaptureModule.pdb": {
+      "sha256": "45e4d65fc7c3143ebae049d8cb21b4b56f86e75d54ed93b95d5cd2245beeeb6b",
+      "bytes": 10592
+    },
+    "Aethernia_Data/Managed/UnityEngine.ScriptingModule.dll": {
+      "sha256": "f6757a8980bacb185ac7b689a5cf552be780adb4adb8c91fe678eee056460df5",
+      "bytes": 27560
+    },
+    "Aethernia_Data/Managed/UnityEngine.ScriptingModule.pdb": {
+      "sha256": "4f48692bd89d94902aa173cd88c5751b3691f2de960dd7dfb8fdc06e49773abb",
+      "bytes": 10600
+    },
+    "Aethernia_Data/Managed/UnityEngine.ShaderVariantAnalyticsModule.dll": {
+      "sha256": "efa96d45f33b0c3b744a299315d29ca1144b9a07e112b27de8645a8347934dca",
+      "bytes": 25520
+    },
+    "Aethernia_Data/Managed/UnityEngine.ShaderVariantAnalyticsModule.pdb": {
+      "sha256": "6a99ee1b3ba27ef2d0291d18223f6cae1c4c9878ccd7589ba960ec63ac4368d5",
+      "bytes": 10196
+    },
+    "Aethernia_Data/Managed/UnityEngine.SharedInternalsModule.dll": {
+      "sha256": "c0b02a3d2820f9120c4a8521b9019992c7b56d93064b2261754efa9110bbbc56",
+      "bytes": 36784
+    },
+    "Aethernia_Data/Managed/UnityEngine.SharedInternalsModule.pdb": {
+      "sha256": "ccfabe234c5d7e00c6b0e8f8ffa69e93f2b356a306e6ca6977bf17b6d3ab8273",
+      "bytes": 13616
+    },
+    "Aethernia_Data/Managed/UnityEngine.SpriteMaskModule.dll": {
+      "sha256": "6ae4885d058c9e36266dac3ddd680126eea04fff1ac88bc5bae65429df1a0c5a",
+      "bytes": 29608
+    },
+    "Aethernia_Data/Managed/UnityEngine.SpriteMaskModule.pdb": {
+      "sha256": "cea7070701ea4e6f5328c092de2fd325a78fe2324e1eb55b396733bdd0e34cac",
+      "bytes": 10408
+    },
+    "Aethernia_Data/Managed/UnityEngine.SpriteShapeModule.dll": {
+      "sha256": "6e7b67fa71f1896a35603b1358273e318ab23d687d28969071cf43bb71f3f4b1",
+      "bytes": 33712
+    },
+    "Aethernia_Data/Managed/UnityEngine.SpriteShapeModule.pdb": {
+      "sha256": "bcf86aaa0de6226ab3974fbdc3eb3d1743736994f746db3285689c5e25b695a2",
+      "bytes": 11456
+    },
+    "Aethernia_Data/Managed/UnityEngine.StreamingModule.dll": {
+      "sha256": "179e202b51ca7069bef667aa9c31fa7cefd1328d1cbf122eb4401ede785262bd",
+      "bytes": 27048
+    },
+    "Aethernia_Data/Managed/UnityEngine.StreamingModule.pdb": {
+      "sha256": "8641e8e6e37da481edd1f306ea0c2979d406ba3f0ff06bd65b8ef3eb000e918c",
+      "bytes": 10148
+    },
+    "Aethernia_Data/Managed/UnityEngine.SubstanceModule.dll": {
+      "sha256": "d1b9e00950a98f74cb4476c28d1c48c359f6681fbebc507816fae73291213dfc",
+      "bytes": 30640
+    },
+    "Aethernia_Data/Managed/UnityEngine.SubstanceModule.pdb": {
+      "sha256": "e78a737e9e5af82ca3541a3f59e06f4d9ef9ce16cc4ae0b1cfe25c1dabc47b81",
+      "bytes": 12016
+    },
+    "Aethernia_Data/Managed/UnityEngine.SubsystemsModule.dll": {
+      "sha256": "590ff643430b94112afa268fb4aa56981553f44b9d5f2816e40ca116e6992088",
+      "bytes": 42416
+    },
+    "Aethernia_Data/Managed/UnityEngine.SubsystemsModule.pdb": {
+      "sha256": "29cdeba46de10c7eb69fa47b0374c1a0421ca4ee870f167140c5be747f564ffa",
+      "bytes": 16032
+    },
+    "Aethernia_Data/Managed/UnityEngine.TerrainModule.dll": {
+      "sha256": "3cb12f958b2a6a9d03974a0b812b696de2dbe24ee4a6072fa85724662471f54d",
+      "bytes": 131504
+    },
+    "Aethernia_Data/Managed/UnityEngine.TerrainModule.pdb": {
+      "sha256": "4c00ed2123cf14fe4d7d6d930c722fa3f0e0e0c89ced1fbce261d5477c8e4e1e",
+      "bytes": 29032
+    },
+    "Aethernia_Data/Managed/UnityEngine.TerrainPhysicsModule.dll": {
+      "sha256": "024bf25f72f458df6347d0cc93dcef2ac7691bb7dc1881db8f9a3f50b1d8c7ba",
+      "bytes": 27056
+    },
+    "Aethernia_Data/Managed/UnityEngine.TerrainPhysicsModule.pdb": {
+      "sha256": "d3fc7a8ecf89b3c41019e571834d346ceb29a24c8e232deac5feb1505ad6e77f",
+      "bytes": 10512
+    },
+    "Aethernia_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll": {
+      "sha256": "8779733a6a74085786356c3d7ac481c90b1107cf04716e6fd68cc07d7e440015",
+      "bytes": 77744
+    },
+    "Aethernia_Data/Managed/UnityEngine.TextCoreFontEngineModule.pdb": {
+      "sha256": "d6416d1bb1bc06da97298b73fc960001b4dfc741d618ed68f51e2e9f455bee08",
+      "bytes": 24844
+    },
+    "Aethernia_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll": {
+      "sha256": "b93e73b8d164645c581f2e21990f5fb7034bef0521762064f9ae0934306d1730",
+      "bytes": 332200
+    },
+    "Aethernia_Data/Managed/UnityEngine.TextCoreTextEngineModule.pdb": {
+      "sha256": "8ef74fd95a77db44afbe707e8ecdb959f57fab0d4a1dfa5c8cafad0831b8af47",
+      "bytes": 123800
+    },
+    "Aethernia_Data/Managed/UnityEngine.TextRenderingModule.dll": {
+      "sha256": "edb493c7c5fe0945b562275616714d63ee1ce3c48f83b2d5b8b173510750ce0b",
+      "bytes": 39336
+    },
+    "Aethernia_Data/Managed/UnityEngine.TextRenderingModule.pdb": {
+      "sha256": "a3afafc0f68ac97a2a2396e3b30e462a21cbf6fe23cbfb535a9b0421f71a3c72",
+      "bytes": 14580
+    },
+    "Aethernia_Data/Managed/UnityEngine.TilemapModule.dll": {
+      "sha256": "2b867efd4bab02d66e92f354de1cb7f678908515ff153048265db00b550088d4",
+      "bytes": 75184
+    },
+    "Aethernia_Data/Managed/UnityEngine.TilemapModule.pdb": {
+      "sha256": "3795ee1eab08120f45c6f848abb23bb29bf066236034e84d32156c42715ab985",
+      "bytes": 22912
+    },
+    "Aethernia_Data/Managed/UnityEngine.TLSModule.dll": {
+      "sha256": "8b0dbcc72e110fea67d168182c3ef750701354be76fdc005dd20cc4ce2210b0a",
+      "bytes": 33200
+    },
+    "Aethernia_Data/Managed/UnityEngine.TLSModule.pdb": {
+      "sha256": "4e8f3441a1c2abfd25505900c8f858913f3fd6d3aab966b6bd36d2df69a6228b",
+      "bytes": 10248
+    },
+    "Aethernia_Data/Managed/UnityEngine.U2DRuntimeModule.dll": {
+      "sha256": "c4808d15635474595ca656cfc0af6ae75ca4fcd963acdf291721a78cbaa86add",
+      "bytes": 26544
+    },
+    "Aethernia_Data/Managed/UnityEngine.U2DRuntimeModule.pdb": {
+      "sha256": "14def922c8ac444ef3319233f67b73c1bcd0b71a01e5933301200ba00cb22011",
+      "bytes": 10480
+    },
+    "Aethernia_Data/Managed/UnityEngine.UI.dll": {
+      "sha256": "759abe95f89309f8e0d8c96d7df12792bb947188fb94fc158740919051736de1",
+      "bytes": 262656
+    },
+    "Aethernia_Data/Managed/UnityEngine.UI.pdb": {
+      "sha256": "b2c5ed110ece5ef8a35c6478dab7ca5e77567ab212e0e106a8243f7708ef71b0",
+      "bytes": 135260
+    },
+    "Aethernia_Data/Managed/UnityEngine.UIElementsModule.dll": {
+      "sha256": "9010efd0e26f2f6ee1db357afa2044044c5ebee80c8cc534cd0afca66dc4ffc7",
+      "bytes": 2349488
+    },
+    "Aethernia_Data/Managed/UnityEngine.UIElementsModule.pdb": {
+      "sha256": "8df9b480fc5b0780c1674c39a2543c5eb029720455e88cc8c0217d0a1dede7b8",
+      "bytes": 861136
+    },
+    "Aethernia_Data/Managed/UnityEngine.UIModule.dll": {
+      "sha256": "5e1626fb07c6b00f93230672f7a987e09234c98afa6b93a3e3213e5b846a2b00",
+      "bytes": 54192
+    },
+    "Aethernia_Data/Managed/UnityEngine.UIModule.pdb": {
+      "sha256": "4a8f9466b7b2ecd1643fd38b156b70e9b9e3234bbde61bfdd9eabaf4f0cf70d6",
+      "bytes": 14316
+    },
+    "Aethernia_Data/Managed/UnityEngine.UmbraModule.dll": {
+      "sha256": "8c7f697bf2a2e294d4e1b7ad9f2e4d6bb31d118c7ead81401c35aecba7a4b27a",
+      "bytes": 25520
+    },
+    "Aethernia_Data/Managed/UnityEngine.UmbraModule.pdb": {
+      "sha256": "1dee574037fa7d0c2af1f80af09ebcece350ab1c7951d5d9f114cbc1cf14e88a",
+      "bytes": 10060
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll": {
+      "sha256": "58c24d00c4d156bf96b17459e4bff80da41351159943c3d040036cccb49512d6",
+      "bytes": 35752
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.pdb": {
+      "sha256": "5ae17d61483d87735d76a39f0866af2cbee225efa2a199da4599a3a9d54f6802",
+      "bytes": 13840
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityAnalyticsModule.dll": {
+      "sha256": "c551a14a78cdd219f2cb933440b68287e85d7e572626f026ade8d07802cd8670",
+      "bytes": 60328
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityAnalyticsModule.pdb": {
+      "sha256": "9aa34345c170d069fb25a3f2436a6d9c4bafc82042550f303e070d5df263cb8f",
+      "bytes": 16796
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityConnectModule.dll": {
+      "sha256": "29986257727c6b728a9d598b0986662db550079a93b507fde2ee9e8d314d3dd1",
+      "bytes": 29096
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityConnectModule.pdb": {
+      "sha256": "ed1b85ce9d1faab43045cafc7a33dd6e47dcc2125daed1670031305e8363d5b0",
+      "bytes": 10628
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityConsentModule.dll": {
+      "sha256": "d0d128466654cde0544482e94b68c44bf5031d875923620e03097c69a621e081",
+      "bytes": 16296
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityConsentModule.pdb": {
+      "sha256": "7303fa7c31d2d6d2dc234a6163f0b91b35843be653964bef9c0666d3f55874e2",
+      "bytes": 10636
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityCurlModule.dll": {
+      "sha256": "bb9b537257557920e008de5f5620f73f07d11165829b04b8c3724e0ecb662f64",
+      "bytes": 27560
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityCurlModule.pdb": {
+      "sha256": "24f1a0497b5a99ae8b04545622cf7a182eacac0e0635c59755db30e24cd0ac39",
+      "bytes": 10456
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll": {
+      "sha256": "e490241284fb20412134d2aa38601106ab9ec03a37af77963752a341bf6a94d0",
+      "bytes": 30120
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.pdb": {
+      "sha256": "8a6b0c7a0861e754ed3bb04c98ba40b40f3de83feab334997f571326bec4c7d6",
+      "bytes": 11348
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll": {
+      "sha256": "cb6aaefdfc6e2e73c5186e9779c12900c14d6549d82acfbabe9a46cd331584ec",
+      "bytes": 29608
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestAudioModule.pdb": {
+      "sha256": "753841def6636ea57474ba3f537ef2742cb6440a4ebcfabb2836c5cedae11a77",
+      "bytes": 11248
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestModule.dll": {
+      "sha256": "2b2d06233f651d13a49c34ed3b030f6933ffcc000b4bb391739160c34f565291",
+      "bytes": 79272
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestModule.pdb": {
+      "sha256": "f243b62dab39cfd319366017c337bcac28dd278d6720f4ea73be0fb8c48af3c9",
+      "bytes": 27384
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll": {
+      "sha256": "8fbda7c620c75d24f0e666997d33a5efb10e758ae71bfccf05d6bd4c2080ba37",
+      "bytes": 28592
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestTextureModule.pdb": {
+      "sha256": "6b2db3d6bdcbae65466672c7fefcaf1affda2755e02f570793c5e5f0a2e589b6",
+      "bytes": 11404
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll": {
+      "sha256": "eb80258d8a9e06331400aea57548ad9535aaa46252887e2a8392c84f8dfe9277",
+      "bytes": 36784
+    },
+    "Aethernia_Data/Managed/UnityEngine.UnityWebRequestWWWModule.pdb": {
+      "sha256": "1f95f7810c14feb57917dac1f0eb1c32e31e6f04662b90748a271ca7361fb7a1",
+      "bytes": 13372
+    },
+    "Aethernia_Data/Managed/UnityEngine.VectorGraphicsModule.dll": {
+      "sha256": "d2e3b21a5bb9832640b096793e174d91a971f49675c06eb2310b5b39543fe805",
+      "bytes": 227760
+    },
+    "Aethernia_Data/Managed/UnityEngine.VectorGraphicsModule.pdb": {
+      "sha256": "2fed0b1c4781deb3a0e61b7b94e2614eca6274317b104f7ef4f56ebae3192729",
+      "bytes": 103452
+    },
+    "Aethernia_Data/Managed/UnityEngine.VehiclesModule.dll": {
+      "sha256": "84f29a9779ed662aaf6a24ddd58b51946e7422785cd960b14d278785b173e585",
+      "bytes": 32688
+    },
+    "Aethernia_Data/Managed/UnityEngine.VehiclesModule.pdb": {
+      "sha256": "7b42770a7fb70e1a181a11a9f44a7aaad0cd6eb46b74e1e9fbc1f420806ff80f",
+      "bytes": 11128
+    },
+    "Aethernia_Data/Managed/UnityEngine.VFXModule.dll": {
+      "sha256": "54f1aeecc837b18f62a61e07c6e5a178f8f3544c034865791b18f42cc475911d",
+      "bytes": 81832
+    },
+    "Aethernia_Data/Managed/UnityEngine.VFXModule.pdb": {
+      "sha256": "c8954d4744610398a2e4015f518cb3b9a7a852f25adc07124e0c7ee62c3fa3e8",
+      "bytes": 18568
+    },
+    "Aethernia_Data/Managed/UnityEngine.VideoModule.dll": {
+      "sha256": "be1c3811c83d86dc6854a4981d327712d3bb2442223cbaf345ab4d011e427ec5",
+      "bytes": 48552
+    },
+    "Aethernia_Data/Managed/UnityEngine.VideoModule.pdb": {
+      "sha256": "b8c5ef8361877a3c0af639c5ec26c11c37c8803d8fd40f4ccc335eb6fb92c641",
+      "bytes": 14304
+    },
+    "Aethernia_Data/Managed/UnityEngine.VirtualTexturingModule.dll": {
+      "sha256": "d3d7606838c5ec0ee800545b312a24de37d3849a01b4e063b935b0717c7c97b1",
+      "bytes": 43440
+    },
+    "Aethernia_Data/Managed/UnityEngine.VirtualTexturingModule.pdb": {
+      "sha256": "75e757ae1d49293e6c887294ca4a0e6f04f86e78fb7011420dc9e8cddde4a033",
+      "bytes": 13220
+    },
+    "Aethernia_Data/Managed/UnityEngine.WindModule.dll": {
+      "sha256": "b6a24338eafbdf2663096484748f346679aea0a3fdd0de567b45ea0ca350e36d",
+      "bytes": 28072
+    },
+    "Aethernia_Data/Managed/UnityEngine.WindModule.pdb": {
+      "sha256": "ea47ce51bea2c269bc5511dda371b8ab9f132a9ba83f76263b01fb6d3201243d",
+      "bytes": 10204
+    },
+    "Aethernia_Data/Managed/UnityEngine.XRModule.dll": {
+      "sha256": "267b21a1678ab39b89a1f056b9e97651a48c7c5d9ec22713e828227e7ffab225",
+      "bytes": 95656
+    },
+    "Aethernia_Data/Managed/UnityEngine.XRModule.pdb": {
+      "sha256": "5b0e075ce2450c9abb864ccbf582c732a36354f94eca308a39ebe74a23da418a",
+      "bytes": 23476
+    },
+    "Aethernia_Data/Plugins/x86_64/lib_burst_generated.dll": {
+      "sha256": "b729564cb0814f0844fd4bf2ce0e577ea9d2167dd654d8ca48791c5e09c68d79",
+      "bytes": 485888
+    },
+    "Aethernia_Data/Plugins/x86_64/lib_burst_generated.pdb": {
+      "sha256": "49faeea63b1af25dbc1642862e14e42816a08d97659436e5359f89a0274aad7b",
+      "bytes": 3067904
+    },
+    "Aethernia_Data/Plugins/x86_64/libonigwrap.dll": {
+      "sha256": "57ec06e02dfccd4e1ad9d4dab949b4b28389cb01fbc1c375909074509b185c6b",
+      "bytes": 551344
+    },
+    "Aethernia_Data/Resources/unity default resources": {
+      "sha256": "1fbaff511bdec6cf276529de02215fee9fdcf7298ea9d7c49dc6b984ee73a7f5",
+      "bytes": 5881648
+    },
+    "Aethernia_Data/Resources/unity_builtin_extra": {
+      "sha256": "5880d87e1aa75595982e2e2632defd714df5d1b934c68cc1628f489c39247575",
+      "bytes": 405400
+    },
+    "Aethernia_Data/resources.assets": {
+      "sha256": "e868c930bd1d69bed2132eff090ed349d6c3bb162aec05893ea0ab70b09ff8fd",
+      "bytes": 43468
+    },
+    "Aethernia_Data/resources.assets.resS": {
+      "sha256": "340051f4f506bff5616e93d52c58f37ca04c1495c3b6a057018bac1ae1d0b232",
+      "bytes": 1048576
+    },
+    "Aethernia_Data/RuntimeInitializeOnLoads.json": {
+      "sha256": "846379cb649d5eb547645d1ec63002ac5a3bbf7e014a7814d03535ad171755c0",
+      "bytes": 5132
+    },
+    "Aethernia_Data/ScriptingAssemblies.json": {
+      "sha256": "67f3270cd1297ae0815944a2baff35be81b8de78ad2848e73adf8215d9032d42",
+      "bytes": 4573
+    },
+    "Aethernia_Data/sharedassets0.assets": {
+      "sha256": "2bf0de62293da34e6553269cd88d5e1e63aa34a2a058965ee230ec27dd3af5d3",
+      "bytes": 17896456
+    },
+    "Aethernia_Data/sharedassets0.assets.resS": {
+      "sha256": "65d00db6a4201ab362bd9a1ce1ef35197b0e3912974b0279dd5eefd143f82320",
+      "bytes": 15292208
+    },
+    "Aethernia_Data/sharedassets0.resource": {
+      "sha256": "e4d35506f69100b4395911e4a08cace677e3cefea816b9ca399d327000c0273b",
+      "bytes": 457792
+    },
+    "D3D12/D3D12Core.dll": {
+      "sha256": "625bd40005b1c3708695d5256ecf230d278e6b8edba5a88af70f3d91324f3052",
+      "bytes": 4725304
+    },
+    "D3D12/d3d12SDKLayers.dll": {
+      "sha256": "c0730cc70d3250d3de19c04c17845ba9e70eecaf502d684d1409195ebc5b5959",
+      "bytes": 4930104
+    },
+    "dstorage.dll": {
+      "sha256": "cae65787f61514bec6f012f44546e68b19e39d8854a9ab52af813370d44b272a",
+      "bytes": 206904
+    },
+    "dstoragecore.dll": {
+      "sha256": "cf85b19a92a8276f8baca0db9bbcd60735bad50768deb303d310e84d5f4fdd11",
+      "bytes": 1482784
+    },
+    "GUIA_EXPEDICIONES.md": {
+      "sha256": "c702e4794e7a1a59d1f0d01b2fd8d16f64326af2273a47519e7fbe5094cef368",
+      "bytes": 5264
+    },
+    "LEEME.txt": {
+      "sha256": "74915f294e784469f69a5e6416bc99e65be7a3a543e5457882280670fe683fc5",
+      "bytes": 383
+    },
+    "MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll": {
+      "sha256": "aaaa095c3fc1d290765d336627a3d1c13c3a9c09740c45feb6304acca76fb55c",
+      "bytes": 7831464
+    },
+    "MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll": {
+      "sha256": "2e3125c80324dd71c41bddd6528c607d47b28e659b9064f6c3a0e08a2d388a08",
+      "bytes": 611240
+    },
+    "MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser": {
+      "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741",
+      "bytes": 1605
+    },
+    "MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx": {
+      "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a",
+      "bytes": 60575
+    },
+    "MonoBleedingEdge/etc/mono/2.0/machine.config": {
+      "sha256": "e91782a27fa39fc6c1d6ee8b08529f5d35052310d0006034b878eb04b8f2af30",
+      "bytes": 29066
+    },
+    "MonoBleedingEdge/etc/mono/2.0/settings.map": {
+      "sha256": "49c6160f9d54af4270a3b4e997fc4a8301f79b9e2070118fa46ddbcbbc44f9a2",
+      "bytes": 2622
+    },
+    "MonoBleedingEdge/etc/mono/2.0/web.config": {
+      "sha256": "cf2b54339e069b9e42f7d6795eecbf562c50c1011f4ca8f65f578fe52d97ff92",
+      "bytes": 11635
+    },
+    "MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser": {
+      "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741",
+      "bytes": 1605
+    },
+    "MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx": {
+      "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a",
+      "bytes": 60575
+    },
+    "MonoBleedingEdge/etc/mono/4.0/machine.config": {
+      "sha256": "e60aec2c5115d65b3acb3c55ea21576dbd770f579166c017125571e46ae560ed",
+      "bytes": 33598
+    },
+    "MonoBleedingEdge/etc/mono/4.0/settings.map": {
+      "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8",
+      "bytes": 2622
+    },
+    "MonoBleedingEdge/etc/mono/4.0/web.config": {
+      "sha256": "e38bb8cc68fe5b4edecdfd288d094b9e8ced7629039b2a347682aba0d8bd7492",
+      "bytes": 18802
+    },
+    "MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser": {
+      "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741",
+      "bytes": 1605
+    },
+    "MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx": {
+      "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a",
+      "bytes": 60575
+    },
+    "MonoBleedingEdge/etc/mono/4.5/machine.config": {
+      "sha256": "ee950004b576fb28dc85f4b0435ed04bf96612de2e8b53be84d07afe85a0de6c",
+      "bytes": 34056
+    },
+    "MonoBleedingEdge/etc/mono/4.5/settings.map": {
+      "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8",
+      "bytes": 2622
+    },
+    "MonoBleedingEdge/etc/mono/4.5/web.config": {
+      "sha256": "c4cbddd4fd9347b58cc5a72b36dc4ba1ad2bb699e65869d05cd3fb9865f0d824",
+      "bytes": 18811
+    },
+    "MonoBleedingEdge/etc/mono/browscap.ini": {
+      "sha256": "4ddd50f31fb968f30bedefc253a46dc3f2890192d05cdaa9e0a64a056eee807e",
+      "bytes": 311984
+    },
+    "MonoBleedingEdge/etc/mono/config": {
+      "sha256": "5776169973a26a387b8b3e5c0f2301a7ab9a6dd7c7d3efa22a96abc47fbf8662",
+      "bytes": 3815
+    },
+    "MonoBleedingEdge/etc/mono/mconfig/config.xml": {
+      "sha256": "0c56e34c69124510fa8c19e7b4c2ca6c1c4ff460ae19f798dd0ca035809e396d",
+      "bytes": 25817
+    },
+    "PartidasEjemplo/mage.json": {
+      "sha256": "154f9694b7b350089f92581ccdd494638d09d4c7a511c2997141be43d24ebe8d",
+      "bytes": 1783
+    },
+    "PartidasEjemplo/monk.json": {
+      "sha256": "d0961136bc3b7aed3f375a598a415da86cf698fc5551a409b5d2ef43fd21e32a",
+      "bytes": 1785
+    },
+    "PartidasEjemplo/warrior.json": {
+      "sha256": "26250a15a42a5b971711299d58ca9a913310498af1defda663c1819659b2cbf6",
+      "bytes": 1791
+    },
+    "Revisar-mage.cmd": {
+      "sha256": "78ac42a93ddeb7668607a84ead37a29de2a5be3e2efd0005b7aa0070f309b58d",
+      "bytes": 105
+    },
+    "Revisar-monk.cmd": {
+      "sha256": "abf98d2f04a27af5df04eff34057fdb00f6bee522d2a737e7d969d73634a077f",
+      "bytes": 105
+    },
+    "Revisar-warrior.cmd": {
+      "sha256": "335047cc710751e1e8a8097e6ef937b1b0ac43761bc23da297a7123a1479b568",
+      "bytes": 108
+    },
+    "UnityCrashHandler64.exe": {
+      "sha256": "3f42978de142c63bed9612ef062daafd7e42e359eac464d5580f14ab09c79053",
+      "bytes": 1807792
+    },
+    "UnityPlayer.dll": {
+      "sha256": "86651c24325a44263d2ff409e342f3e031b89c6a67f4b3c6b3cab3ad9ec63e5b",
+      "bytes": 88429992
+    },
+    "WinPixEventRuntime.dll": {
+      "sha256": "81adcfd8253c3489be720da7e30f16004dc9a1f02a8b418c6c3aef4993032e6d",
+      "bytes": 58368
+    }
+  }
+}

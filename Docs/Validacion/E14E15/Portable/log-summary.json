@@ -1,0 +1,14 @@
+[
+  {
+    "log": "warrior-resume.log",
+    "warningsJobTempAlloc": 0,
+    "scriptExceptions": 0,
+    "invalidAgents": 0
+  },
+  {
+    "log": "warrior-start.log",
+    "warningsJobTempAlloc": 0,
+    "scriptExceptions": 0,
+    "invalidAgents": 0
+  }
+]

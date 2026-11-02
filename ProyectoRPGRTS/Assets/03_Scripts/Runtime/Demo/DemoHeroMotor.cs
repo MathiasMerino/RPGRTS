@@ -22,7 +22,7 @@ namespace Aethernia
             var keys=Keyboard.current;var input=Vector2.zero;
             if(keys!=null)input=new Vector2((keys.dKey.isPressed?1:0)-(keys.aKey.isPressed?1:0),(keys.wKey.isPressed?1:0)-(keys.sKey.isPressed?1:0));
             var ui=Flow.ExistingHud.CompactView;
-            LastReadInput=input;LastBlocked=UiInputGuard.IsTyping||ui.WindowOpen||ui.HelpOpen;ApplyInput(input,Time.deltaTime,LastBlocked);
+            LastReadInput=input;LastBlocked=UiInputGuard.IsTyping||ui.WindowOpen||ui.HelpOpen||Flow.Session.WorldUiOpen;ApplyInput(input,Time.deltaTime,LastBlocked);
         }
         private void LateUpdate(){if(CanControl&&Hero.IsMoving)Flow.CameraRig.FocusOn(Hero.transform.position);}
         public static Vector3 CameraRelative(Vector2 input,Transform camera)

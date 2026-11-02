@@ -18,7 +18,7 @@ namespace Aethernia
         private readonly List<float> audio=new List<float>();private readonly StringBuilder timeline=new StringBuilder();
         private void Start()
         {
-            var args=Environment.GetCommandLineArgs();var slot=args[Array.IndexOf(args,"-aetherniaDemoSmoke")+1];
+            var args=Environment.GetCommandLineArgs();var index=Array.IndexOf(args,"-aetherniaDemoSmoke");if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");var slot=args[index+1];
             directory=Path.Combine(Path.GetDirectoryName(slot),"Recording");Directory.CreateDirectory(directory);
             if(SystemInfo.graphicsDeviceType==GraphicsDeviceType.Null){File.WriteAllText(Path.Combine(directory,"proof.txt"),"UNAVAILABLE: graphics device Null");enabled=false;return;}
             flow=FindAnyObjectByType<DemoFlow>();oldRate=Time.captureFramerate;Time.captureFramerate=12;

@@ -4,6 +4,13 @@ namespace Aethernia
 {
     public sealed class TurnBattle
     {
+        public GroupTurnSequence Group { get; private set; }
+        public static TurnBattle CreateGroup(System.Collections.Generic.IReadOnlyList<TacticalCombatant> members,int seed)
+        {
+            var hero=System.Linq.Enumerable.First(members,m=>m.Hero);
+            var result=new TurnBattle(hero.Profile,hero.Health,hero.Weapon,hero.Armour,seed,false);
+            result.Group=new GroupTurnSequence(members,seed);return result;
+        }
         private readonly Random random;
         private readonly ClassProfile profile;
         private readonly int weaponBonus;

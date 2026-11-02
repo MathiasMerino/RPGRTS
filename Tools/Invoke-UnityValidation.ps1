@@ -1,5 +1,5 @@
-﻿param(
-    [ValidateSet('Baseline', 'GenerateSandbox', 'Foundation', 'GeneratePlayable', 'Playable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'ProductionPresentation', 'VillageDemo', 'VillagePolish', 'VillageE07Library', 'VillageE07Nature', 'VillageE07Transform', 'VillageE07Refine', 'VillageE07Visibility', 'AnimatedCharacters', 'AnimatedRefine', 'AnimatedFinalize', 'CombatE09', 'CombatE09Refine', 'BuildVillage', 'FirstDemo', 'FirstDemoControls', 'FirstDemoRts', 'FirstDemoSettlement', 'BuildFirstDemo', 'Vertical', 'Build')]
+param(
+    [ValidateSet('Baseline', 'GenerateSandbox', 'Foundation', 'GeneratePlayable', 'Playable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'ProductionPresentation', 'VillageDemo', 'VillagePolish', 'VillageE07Library', 'VillageE07Nature', 'VillageE07Transform', 'VillageE07Refine', 'VillageE07Visibility', 'AnimatedCharacters', 'AnimatedRefine', 'AnimatedFinalize', 'CombatE09', 'CombatE09Refine', 'BuildVillage', 'FirstDemo', 'FirstDemoControls', 'FirstDemoRts', 'FirstDemoSettlement', 'Expeditions', 'ExpeditionRefine', 'BuildExpeditions', 'BuildFirstDemo', 'Vertical', 'Build')]
     [string]$Mode = 'Baseline',
     [string]$TestFilter = '',
     [ValidateRange(1, 60)] [int]$TimeoutMinutes = 20
@@ -28,7 +28,7 @@ New-Item -ItemType Directory -Path $taskLogs -Force | Out-Null
 $taskLog = Join-Path $taskLogs "$Mode.log"
 $taskResult = Join-Path $taskLogs "$Mode-results.xml"
 $taskArguments = @('-batchmode', '-projectPath', ('"' + $taskProject + '"'), '-logFile', ('"' + $taskLog + '"'))
-if ($Mode -in @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'ProductionPresentation', 'VillageDemo', 'VillagePolish', 'VillageE07Library', 'VillageE07Nature', 'VillageE07Transform', 'VillageE07Refine', 'VillageE07Visibility', 'AnimatedCharacters', 'AnimatedRefine', 'AnimatedFinalize', 'CombatE09', 'CombatE09Refine', 'BuildVillage', 'FirstDemo', 'FirstDemoControls', 'FirstDemoRts', 'FirstDemoSettlement', 'BuildFirstDemo', 'Build')) {
+if ($Mode -in @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'ProductionPresentation', 'VillageDemo', 'VillagePolish', 'VillageE07Library', 'VillageE07Nature', 'VillageE07Transform', 'VillageE07Refine', 'VillageE07Visibility', 'AnimatedCharacters', 'AnimatedRefine', 'AnimatedFinalize', 'CombatE09', 'CombatE09Refine', 'BuildVillage', 'FirstDemo', 'FirstDemoControls', 'FirstDemoRts', 'FirstDemoSettlement', 'Expeditions', 'ExpeditionRefine', 'BuildExpeditions', 'BuildFirstDemo', 'Build')) {
     $taskMethod = switch ($Mode) {
         GenerateSandbox { 'Aethernia.Editor.TechnicalSandboxBuilder.Create' }
         GeneratePlayable { 'Aethernia.Editor.PlayablePrototypeBuilder.Create' }
@@ -62,6 +62,9 @@ if ($Mode -in @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Prese
         FirstDemoRts { 'Aethernia.Editor.Characters.FirstDemoBuilder.Rts' }
         FirstDemoControls { 'Aethernia.Editor.Characters.FirstDemoBuilder.Controls' }
         FirstDemo { 'Aethernia.Editor.Characters.FirstDemoBuilder.Create' }
+        Expeditions { 'Aethernia.Editor.Characters.ExpeditionBuilder.Create' }
+        ExpeditionRefine { 'Aethernia.Editor.Characters.ExpeditionBuilder.Refine' }
+        BuildExpeditions { 'Aethernia.Editor.Characters.ExpeditionBuilder.Build' }
         BuildFirstDemo { 'Aethernia.Editor.Characters.FirstDemoBuilder.Build' }
         BuildVillage { 'Aethernia.Editor.ProductionVillageBuilder.Build' }
         Build { 'Aethernia.Editor.PlayablePrototypeBuilder.Build' }
@@ -87,7 +90,7 @@ if (-not $taskProcess.WaitForExit($TimeoutMinutes * 60000)) {
 }
 $taskProcess.Refresh()
 if ($taskProcess.ExitCode -ne 0) { throw "Unity termino con codigo $($taskProcess.ExitCode). Revisa $taskLog." }
-if ($Mode -notin @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'ProductionPresentation', 'VillageDemo', 'VillagePolish', 'VillageE07Library', 'VillageE07Nature', 'VillageE07Transform', 'VillageE07Refine', 'VillageE07Visibility', 'AnimatedCharacters', 'AnimatedRefine', 'AnimatedFinalize', 'CombatE09', 'CombatE09Refine', 'BuildVillage', 'FirstDemo', 'FirstDemoControls', 'FirstDemoRts', 'FirstDemoSettlement', 'BuildFirstDemo', 'Build')) {
+if ($Mode -notin @('GenerateSandbox', 'GeneratePlayable', 'UpgradeVertical', 'Presentation', 'AgentStartup', 'ContextUi', 'MedievalQuarter', 'MedievalRefine', 'CharacterVisuals', 'CharacterPolish', 'HumanoidPipeline', 'MonkIdentity', 'MedievalHud', 'MedievalHudRefine', 'ProductionCharacters', 'ProductionPresentation', 'VillageDemo', 'VillagePolish', 'VillageE07Library', 'VillageE07Nature', 'VillageE07Transform', 'VillageE07Refine', 'VillageE07Visibility', 'AnimatedCharacters', 'AnimatedRefine', 'AnimatedFinalize', 'CombatE09', 'CombatE09Refine', 'BuildVillage', 'FirstDemo', 'FirstDemoControls', 'FirstDemoRts', 'FirstDemoSettlement', 'Expeditions', 'ExpeditionRefine', 'BuildExpeditions', 'BuildFirstDemo', 'Build')) {
     if (-not (Test-Path -LiteralPath $taskResult)) { throw 'Unity no genero resultados; no se considera una prueba correcta.' }
     if ((Get-Item -LiteralPath $taskResult).LastWriteTimeUtc -lt $taskStarted) { throw 'El XML de resultados es anterior a esta ejecucion.' }
     [xml]$taskXml = Get-Content -LiteralPath $taskResult -Raw

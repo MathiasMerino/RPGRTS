@@ -49,7 +49,7 @@ namespace Aethernia
                 bar.Fill.fillAmount=(float)unit.Health/unit.Maximum;var detailed=unit.Hero||(rts.SelectedAllies==1&&unit.Unit.IsSelected);bar.Label.text=(unit.Hero?"HÉROE · ":unit.Team==0?"A ":"B ")+(detailed?unit.Role+" ":"")+unit.Health;
                 bar.Label.color=unit.Unit.IsSelected?ui.Gold:ui.Ink;
             }
-            text.text="PATRULLA · "+rts.Allies+" aliados / "+rts.Enemies+" rivales · "+rts.SelectedAllies+" seleccionados\nCtrl+1/2/3: guardar grupo · 1/2/3: seleccionar";
+            text.text=(rts.ContextId=="conquest-outpost"?"CONQUISTA":"PATRULLA")+" · "+rts.Allies+" aliados / "+rts.Enemies+" rivales · "+rts.SelectedAllies+" seleccionados\nCtrl+1/2/3: guardar grupo · 1/2/3: seleccionar";
             attack.interactable=guard.interactable=recover.interactable=rts.Active&&selectedHero&&!Flow.Session.Paused;
             var input=Flow.GetComponent<DemoRtsInput>();drag.gameObject.SetActive(input!=null&&input.Dragging);
             if(input!=null&&input.Dragging)

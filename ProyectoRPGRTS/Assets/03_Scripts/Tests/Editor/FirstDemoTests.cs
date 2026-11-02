@@ -95,7 +95,7 @@ namespace Aethernia.Tests.Editor
     }
     public static class DemoCapture
     {
-        public static IEnumerator Save(string path,int width,int height,DemoFrontEnd view=null)
+        public static IEnumerator Save(string path,int width,int height,DemoFrontEnd view=null,System.Action<Camera,int,int> validate=null)
         {
             var canvases=Object.FindObjectsByType<Canvas>().Where(c=>c.isRootCanvas&&c.renderMode!=RenderMode.WorldSpace).ToArray();var modes=canvases.Select(c=>c.renderMode).ToArray();var cameras=canvases.Select(c=>c.worldCamera).ToArray();var distances=canvases.Select(c=>c.planeDistance).ToArray();
             var camera=Camera.main;var old=camera.targetTexture;var target=RenderTexture.GetTemporary(width,height,24);Texture2D image=null;
@@ -104,6 +104,7 @@ namespace Aethernia.Tests.Editor
                 camera.targetTexture=target;foreach(var canvas in canvases){canvas.renderMode=RenderMode.ScreenSpaceCamera;canvas.worldCamera=camera;canvas.planeDistance=2;}
                 yield return null;yield return null;yield return null;Canvas.ForceUpdateCanvases();
                 if(view!=null)Validate(view,width,height,camera);
+                validate?.Invoke(camera,width,height);
                 var previous=RenderTexture.active;RenderTexture.active=target;image=new Texture2D(width,height,TextureFormat.RGB24,false);image.ReadPixels(new Rect(0,0,width,height),0,0);image.Apply();RenderTexture.active=previous;File.WriteAllBytes(path,image.EncodeToPNG());
             }
             finally
