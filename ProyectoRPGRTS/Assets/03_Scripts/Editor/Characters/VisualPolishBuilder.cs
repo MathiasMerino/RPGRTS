@@ -42,7 +42,7 @@ namespace Aethernia.Editor.Characters
             flow.ExistingHud.CompactView.Theme=theme;
             foreach(var image in flow.ExistingHud.GetComponentsInChildren<Image>(true))
             {
-                var s=image.sprite;if(s==old.PanelSprite||s==old.InsetSprite){image.sprite=profile.Panel;image.color=Color.white;}
+                if(image.type==Image.Type.Filled)continue;var s=image.sprite;if(s==old.PanelSprite||s==old.InsetSprite){image.sprite=profile.Panel;image.color=Color.white;}
                 else if(s==old.PaperSprite){image.sprite=profile.Paper;image.color=Color.white;}
                 else if(s==old.ButtonSprite){image.sprite=profile.Button;if(image.type!=Image.Type.Filled)image.color=Color.white;}
             }
@@ -124,6 +124,7 @@ namespace Aethernia.Editor.Characters
             foreach(var bridge in flow.ExistingHud.GetComponentsInChildren<LegacySdfPresenter>(true))bridge.MinimumSize=14;
             var path=Root+"/Prefabs/ClassCard.prefab";var node=PrefabUtility.LoadPrefabContents(path);
             try{var image=node.GetComponent<ClassCardView>().Figure.rectTransform;image.pivot=Vector2.one*.5f;image.offsetMin=new Vector2(6,3);image.offsetMax=new Vector2(-6,-3);PrefabUtility.SaveAsPrefabAsset(node,path);}finally{PrefabUtility.UnloadPrefabContents(node);}
+            flow.ExistingHud.CompactView.HealthFill.sprite=null;
             FillLight(flow,Object.FindAnyObjectByType<RegionalAtmosphere>());
             EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();Debug.Log("E16_REFINED: portrait centering and legacy navigation font sizes, no gameplay changes.");
         }

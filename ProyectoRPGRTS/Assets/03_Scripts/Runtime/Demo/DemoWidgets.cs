@@ -35,7 +35,7 @@ namespace Aethernia
             if(style!=null&&style.ButtonPrefab!=null)
             {
                 var node=Object.Instantiate(style.ButtonPrefab,parent,false);node.name=name;var rect=node.GetComponent<RectTransform>();rect.anchorMin=rect.anchorMax=rect.pivot=new Vector2(0,1);rect.anchoredPosition=new Vector2(x,-y);rect.sizeDelta=new Vector2(w,h);
-                var label=node.GetComponentInChildren<TMP_Text>();label.text=caption;var result=node.GetComponent<Button>();result.onClick.RemoveAllListeners();if(action!=null)result.onClick.AddListener(action);return result;
+                var label=node.GetComponentInChildren<TMP_Text>();var lr=label.rectTransform;lr.anchorMin=Vector2.zero;lr.anchorMax=Vector2.one;lr.offsetMin=new Vector2(12,4);lr.offsetMax=new Vector2(-12,-4);label.horizontalAlignment=HorizontalAlignmentOptions.Center;label.verticalAlignment=VerticalAlignmentOptions.Middle;label.text=caption;var result=node.GetComponent<Button>();result.onClick.RemoveAllListeners();if(action!=null)result.onClick.AddListener(action);return result;
             }
             var r=Rect(parent,name,x,y,w,h);var image=Fill(r,new Color(.30f,.26f,.19f));if(button!=null){image.sprite=button;image.type=Image.Type.Sliced;image.color=Color.white;}
             var b=r.gameObject.AddComponent<Button>();b.targetGraphic=image;
