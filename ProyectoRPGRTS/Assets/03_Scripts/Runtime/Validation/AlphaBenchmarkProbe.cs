@@ -11,7 +11,7 @@ namespace Aethernia
     {
         [Serializable]private sealed class Metric{public string name,unit;public bool available;public double mean,p95,maximum;}
         [Serializable]private sealed class Row{public string workload,quality;public int width,height,frames;public double seconds,meanFrameMs,p95FrameMs;public List<Metric> counters=new List<Metric>();}
-        [Serializable]private sealed class Report{public string unity,cpu,gpu,driver,os,status="RUNNING",limitations="Development player, fixed paused village and menu preview. 2s warmup per profile; no capture during samples; does not predict large armies or player enjoyment.";public int memoryMB;public List<Row> rows=new List<Row>();}
+        [Serializable]private sealed class Report{public string unity,cpu,gpu,driver,os,status="RUNNING",limitations="Development player, fixed paused village, menu preview and paused RTS(13+ units). 2s warmup per profile; no capture during samples; does not predict large armies or player enjoyment.";public int memoryMB;public List<Row> rows=new List<Row>();}
         private string output;
         private bool complete;
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]private static void Install()
@@ -24,16 +24,17 @@ namespace Aethernia
             if(!flow.Continue())throw new InvalidOperationException("Benchmark could not continue baseline.");flow.Director.Hero.Stop();flow.Session.Paused=true;
             var report=new Report{unity=Application.unityVersion,cpu=SystemInfo.processorType,gpu=SystemInfo.graphicsDeviceName,driver=SystemInfo.graphicsDeviceVersion,os=SystemInfo.operatingSystem,memoryMB=SystemInfo.systemMemorySize};
             var names=new[]{"Draw Calls Count","Batches Count","SetPass Calls Count","Triangles Count","GC Allocated In Frame","Main Thread"};var units=new[]{"count","count","count","count","bytes","nanoseconds"};
-            for(var workload=0;workload<2;workload++)
+            for(var workload=0;workload<3;workload++)
             {
                 if(workload==1)flow.ShowMain();
+                if(workload==2){if(!flow.Continue())throw new InvalidOperationException("RTS benchmark could not continue baseline.");flow.Session.Paused=false;if(!flow.BeginPatrol())throw new InvalidOperationException("RTS benchmark could not deploy.");flow.Session.Paused=true;}
                 foreach(var width in new[]{1280,1920})
                 {
                     Screen.SetResolution(width,width*9/16,FullScreenMode.Windowed);var resolutionLimit=Time.realtimeSinceStartup+8;while((Screen.width!=width||Screen.height!=width*9/16)&&Time.realtimeSinceStartup<resolutionLimit)yield return null;
                     for(var quality=0;quality<QualitySettings.names.Length;quality++)
                     {
                         QualitySettings.SetQualityLevel(quality,true);QualitySettings.vSyncCount=0;Application.targetFrameRate=-1;var warm=Time.realtimeSinceStartup+2;while(Time.realtimeSinceStartup<warm)yield return null;
-                        var row=new Row{workload=workload==0?"Paused village / real E13 state":"Main menu / animated 3D preview",quality=QualitySettings.names[quality],width=Screen.width,height=Screen.height};
+                        var row=new Row{workload=workload==0?"Paused village / real E13 state":workload==1?"Main menu / animated 3D preview":"Paused RTS / real deployment and selection UI",quality=QualitySettings.names[quality],width=Screen.width,height=Screen.height};
                         var recorders=new ProfilerRecorder[names.Length];var values=new List<double>[names.Length];var deltas=new List<double>(2048);
                         try
                         {

@@ -133,10 +133,18 @@ namespace Aethernia.Tests.Editor
             invalid.Entries=new[]{new CharacterVisualCatalog.Entry {ClassId="mage",Prefab=missingBinding}};
             try
             {
+                var approved=presenter.Model;var savedState=JsonUtility.ToJson(d.Session.State);
                 presenter.Configure(d.Session,invalid,presenter.VisualRoot,legacy);
                 d.Session.Say("Missing model binding"); d.Session.Say("Repeat invalid appearance");
-                Assert.That(legacy.enabled,Is.True); Assert.That(presenter.VisualRoot.gameObject.activeSelf,Is.False);
+                Assert.That(presenter.Model,Is.SameAs(approved),"E17 retains an already loaded valid model when the catalog fails.");
+                Assert.That(legacy.enabled,Is.False);Assert.That(presenter.VisualRoot.gameObject.activeSelf,Is.True);
+                Assert.That(JsonUtility.ToJson(d.Session.State),Is.EqualTo(savedState));
                 Assert.That(presenter.VisualRoot.childCount,Is.EqualTo(1),"Invalid replacements must not accumulate objects.");
+                // If both the catalog and loaded representation are unusable, preserve the
+                // original technical body fallback as well as the state/controller.
+                approved.transform.localScale=Vector3.one*2;d.Session.Say("Loaded visual violates metre-scale contract");
+                Assert.That(legacy.enabled,Is.True);Assert.That(presenter.VisualRoot.gameObject.activeSelf,Is.False);
+                Assert.That(JsonUtility.ToJson(d.Session.State),Is.EqualTo(savedState));approved.transform.localScale=Vector3.one;
             }
             finally
             {

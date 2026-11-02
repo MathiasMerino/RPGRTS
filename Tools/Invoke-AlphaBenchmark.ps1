@@ -19,6 +19,6 @@ $taskProcess.Refresh()
 if($taskProcess.ExitCode -ne 0){throw "Benchmark exit=$($taskProcess.ExitCode). $taskLog"}
 if(-not(Test-Path -LiteralPath $taskOutput)){throw 'No existe informe de rendimiento.'}
 $taskReport=Get-Content -LiteralPath $taskOutput -Raw | ConvertFrom-Json
-if($taskReport.status -ne 'PASS' -or $taskReport.rows.Count -ne 12){throw 'Medicion incompleta.'}
+if($taskReport.status -ne 'PASS' -or $taskReport.rows.Count -ne 18){throw 'Medicion incompleta.'}
 if(Select-String -LiteralPath $taskLog -Pattern 'Exception:|NullReferenceException|Assertion failed' -Quiet){throw 'Error en el registro del benchmark.'}
-Write-Output "PASS 12 escenarios medidos: $taskOutput"
+Write-Output "PASS 18 escenarios medidos: $taskOutput"

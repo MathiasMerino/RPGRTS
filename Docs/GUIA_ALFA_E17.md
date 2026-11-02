@@ -31,4 +31,4 @@ Evaluación humana de ×/ESC/controles/diversión, aprobación artística y bala
 
 ## Repetir comprobaciones técnicas
 
-Cerrar el editor antes de ejecutar Tools/Invoke-UnityValidation.ps1 -Mode Vertical. BuildAlpha compila únicamente la escena E17; no sustituye las builds anteriores. Invoke-DemoSmoke.ps1 e Invoke-ExpeditionSmoke.ps1 aceptan -WithGraphics -Executable y usan slots aislados. Invoke-AlphaBenchmark.ps1 mide explícitamente una build sin editor ni grabación; no interpreta los12Hz de vídeo como FPS.
+Cerrar el editor antes de ejecutar Tools/Invoke-UnityValidation.ps1 -Mode Vertical. BuildAlpha compila únicamente la escena E17; no sustituye las builds anteriores. Invoke-DemoSmoke.ps1 e Invoke-ExpeditionSmoke.ps1 aceptan -WithGraphics -Executable y usan slots aislados. Invoke-AlphaBenchmark.ps1 mide explícitamente aldea pausada, menú3D y RTS pausado en una build sin editor ni grabación; no interpreta los12Hz de vídeo como FPS.

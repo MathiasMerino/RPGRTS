@@ -4,7 +4,7 @@ from pathlib import Path
 
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
-    a=argparse.ArgumentParser();a.add_argument('--phase',choices=['E16','E17'],default='E16');a.add_argument('--demo',required=True);a.add_argument('--expedition',required=True);a.add_argument('--portable',required=True);a.add_argument('--revision',required=True);args=a.parse_args()
+    a=argparse.ArgumentParser();a.add_argument('--phase',choices=['E16','E17'],default='E16');a.add_argument('--demo',required=True);a.add_argument('--expedition',required=True);a.add_argument('--portable',required=True);a.add_argument('--revision',required=True);a.add_argument('--recording');a.add_argument('--benchmark');args=a.parse_args()
     root=Path(__file__).resolve().parent.parent; project=root/'ProyectoRPGRTS'; report=root/('Docs/Validacion/'+args.phase); images=root/('Docs/Images/'+args.phase)
     receipts=[]; captures=[]
     for kind,value,expected in [('Demo',args.demo,6),('Expedition',args.expedition,6),('Portable',args.portable,2)]:
@@ -34,6 +34,11 @@ def main():
     for png in sorted((images/'Antes').glob('*.png')):captures.append({'file':png.relative_to(root).as_posix(),'source':'Anterior; consultar origen conservado','sha256':sha(png),'kind':'Anterior, encuadre y estado no necesariamente idénticos'})
     shutil.copy2(project/('Logs/'+args.phase+'/build.txt'),report/'BUILD.txt')
     (report/'WINDOWS.json').write_text(json.dumps({'revision':args.revision,'passedProcesses':len(receipts),'receipts':receipts,'gameplayInputs':'Partidas reales y acciones legales; slots aislados; sin alterar HP o fondos','fpsMeasured':False,'gcProfiled':False},indent=2,ensure_ascii=False),encoding='utf-8')
+    if args.benchmark:
+        benchmark=Path(args.benchmark);data=json.loads((benchmark/'performance.json').read_text(encoding='utf-8-sig'));assert data['status']=='PASS' and len(data['rows'])==18
+        shutil.copy2(benchmark/'performance.json',report/'PERFORMANCE.json')
+        for png in sorted(benchmark.glob('Quality-*.png')):copy_image(root,png,images/'Quality'/png.name,'Native quality capture after performance sampling',captures)
+    if args.recording:export_video(root,Path(args.recording),report,root/('Docs/Videos/'+args.phase),args.phase)
     (report/'CAPTURAS.json').write_text(json.dumps(captures,indent=2,ensure_ascii=False),encoding='utf-8')
     print(json.dumps({'processes':len(receipts),'screenshots':len(captures),'revision':args.revision}))
 def copy_image(root,source,target,kind,manifest):
@@ -41,4 +46,19 @@ def copy_image(root,source,target,kind,manifest):
     with source.open('rb') as stream:header=stream.read(24)
     assert header[:8]==b'\x89PNG\r\n\x1a\n';width,height=struct.unpack('>II',header[16:24])
     manifest.append({'file':target.relative_to(root).as_posix(),'source':str(source),'sha256':sha(target),'kind':kind,'width':width,'height':height})
+def export_video(root,recording,evidence,videos,phase):
+    import subprocess,imageio_ffmpeg
+    proof=(recording/'proof.txt').read_text(encoding='utf-8-sig');assert proof.startswith('PASS:'),proof
+    rows=[line.split('|') for line in (recording/'timeline.txt').read_text(encoding='utf-8-sig').splitlines()];encoder=imageio_ffmpeg.get_ffmpeg_exe();videos.mkdir(parents=True,exist_ok=True);manifest=[]
+    for mode,name in [('TurnCombat','Expedicion'),('Rts','Conquista')]:
+        frames=[int(row[0]) for row in rows if row[3]==mode];assert frames,mode
+        start=end=frames[0]
+        for frame in frames[1:]:
+            if frame!=end+1:break
+            end=frame
+        start=max(0,start-(72 if mode=='TurnCombat' else 24));end=min(len(rows)-1,end+24);count=end-start+1;target=videos/(phase+'-'+name+'.mp4');assert not target.exists(),'Preserve existing videos'
+        subprocess.run([encoder,'-loglevel','error','-framerate','12','-start_number',str(start),'-i',str(recording/'frame-%05d.jpg'),'-ss',str(start/12),'-i',str(recording/'Native-DSP.wav'),'-t',str(count/12),'-c:v','libx264','-crf','20','-pix_fmt','yuv420p','-r','12','-c:a','aac','-b:a','128k','-movflags','+faststart',str(target)],check=True,capture_output=True)
+        subprocess.run([encoder,'-v','error','-i',str(target),'-f','null','-'],check=True,capture_output=True)
+        manifest.append({'file':target.relative_to(root).as_posix(),'source':str(recording),'sha256':sha(target),'firstFrame':start,'lastFrame':end,'seconds':count/12,'nativeDSP':True,'continuous':True,'decodeVerified':True,'captureStepHz':12,'measuredFps':False})
+    shutil.copy2(recording/'proof.txt',evidence/'VIDEO_PROOF.txt');shutil.copy2(recording/'timeline.txt',evidence/'VIDEO_TIMELINE.txt');(evidence/'VIDEOS.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
 if __name__=='__main__':main()

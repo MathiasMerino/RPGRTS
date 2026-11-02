@@ -1,37 +1,54 @@
-# E17 — candidata alfa de desarrollo
+# E17 — informe técnico de revisión
 
-Base b0afdc2 (E16, PR7 abierto). Rama feature/e17-art-pipeline-alpha-polish. Encargo8693f0cc autoriza E17; no E18. Reglas/GDD/versiones y escenas históricas conservadas. Sin subagentes ni herramientas nuevas.
+Rama feature/e17-art-pipeline-alpha-polish, base E16 b0afdc2 / PR7 en borrador. Unity6000.5.8f1 y URP17.5.0 conservados; GDD original sin cambios. No E18 ni nuevos plugins. Este informe distingue pruebas automáticas e inspección técnica de capturas de la evaluación humana, que sigue pendiente.
 
-Secuencia aprobada: A diagnóstico RTS con trazas y repeticiones, B pipeline/fallback y análisis local Meshy, C composición y UI a720p/1080p/1440p (4K si viable), D terreno/materiales/shaders URP e iluminación, E transiciones/contextos y combate, F regresión/rendimiento/capturas/build/ZIP/PRdraft.
+## Estado por bloque
 
-Estado inicial: A en desarrollo, B–F pendientes. No se declara resuelta la intermitencia por repetir. Meshy experimental: análisis y escena aislada locales; no publicar FBX, derivados ni incorporarlo al héroe sin aprobación. Arte y evaluación humanas pendientes.
+| Bloque | Resultado técnico | Evidencia |
+|---|---|---|
+| A | Diagnóstico y contratos comprobados; expectativa de carga ganadora pendiente | Validacion/E17/RTS* |
+| B | Fábrica/contrato de visual y fallback integrado; Meshy aislado | E17_PIPELINE_PERSONAJES.md, PIPELINE*, MESHY_DATOS_TECNICOS.json |
+| C | Menú y selección Alpha, tres retratos y preview3D reutilizado | UI_FINAL_2.xml;20vistas720p–4K |
+| D | ShaderGraph Lit, superficies, viento y ruinas | WORLD_3.xml y WORLD_FINAL_1.xml;SURFACES.json;WIND_GPU.txt |
+| E | Selección RTS y paneles corregidos, avisos/fundidos cortos | EXPERIENCE_REPRODUCTION.xml;EXPERIENCE_FINAL_2.xml;WINDOW_INPUT.txt |
+| F | Perfiles dirigidos2/2; regresión142/143; compatibilidad de prueba fallback5/5PASS; build/medición/recorridos pendientes | QUALITY_2.xml; resultados finales por registrar |
 
+## RTS: causa observada y límite de la conclusión
 
-## A — diagnóstico inicial
+Cinco escenarios iniciales controlaron orden de clases y caps solicitados default/30/120, además de Mago aislado30/120:4/5aserciones de victoria, diez batallas observadas, nueve victorias y una derrota real Monje30. El héroe acabó con0PV pese a sobrevivir cinco aliados y quedar cero enemigos; resoluciónfalse correcta. Recuperación aceptada una vez por batalla. Las trazas no reprodujeron evento perdido ni inicialización defectuosa. La trayectoria NavMesh y temporización varían; no existe evidencia histórica suficiente para atribuir una causa única al Mago E16.
 
-Lote baseline5escenarios (tres clases en secuencia con cap solicitado default/30/120 y Mago aislado30/120):4/5aserciones de victoria aprobadas, diez batallas observadas de once previstas (se detuvo la secuencia30enMonje). Hubo nueve victorias y una derrota real; la recuperación se aceptó una vez en cada batalla. La derrota termina conHP0, cinco aliados y cero enemigos; se emite Resolved(false) y la transición de derrota correcta. No hay evento perdido en esta reproducción. La hipótesis inicial de recuperación nunca aceptada queda descartada para este lote.
+La prueba histórica conserva su estrategia y aserciones de victoria. Nuevos escenarios comprueban evento único, estado coherente, selección/grupos/órdenes, derrota/reintento y retorno reales. Se repararon errores propios del nuevo fixture (consultar Won después de Clear y limpiar un reintento todavía activo); XML intermedios conservados. LastResolvedVictory mantiene un snapshot hasta el siguiente Begin aceptado. No se cambió salud, daño, cadencia o recompensa. E17-A-RTS y E16-QA-RTS permanecen abiertos: no se promete una carga ganadora universal ni se cierra por un reintento.
 
-La carga idéntica no garantiza que sobreviva el héroe con trayectorias NavMesh/temporización distintas; no se cambia balance ni se adjudica victoria al ejército con héroe muerto. La prueba histórica mantiene sus aserciones de victoria. Se añaden comprobaciones separadas de resolución/derrota/reintento con cinco escenarios, sin exigir ganar todas las cargas. Esto no se presentará como corrección de la expectativa intermitente de victoria. XML y traza reducida baseline conservados. Revisión de estrategia/balance y determinismo físico pendientes; no se concluye una causa única del resultado E16 sin su traza.
+## Integración artística
 
+CharacterVisualFactory y CharacterVisualContract son comunes a héroe y apoyos. Prioridad: reemplazo revisado optativo → humanoide E08 → prefab actual/anterior → cuerpo técnico. Se valida y crea antes de retirar el modelo existente; no se duplican agentes/controladores de gameplay. Catálogo Alpha referencia los prefabs E08 y conserva el estado de partida.14/14más1/1ampliado verificaron animación, fallback, tres clases, movimiento/equipo y guardado.
 
-Pase de contratos intermedio1/6: cinco fallos de la nueva prueba por consultar Won tras Clear(), aunque la victoria ya había devuelto la exploración. Error de comprobación reconocido, XML conservado. Se usa el evento emitido y se conserva LastResolvedVictory hasta la siguiente batalla aceptada, útil para presentar el resultado tras la transición. No se atribuye retrospectivamente este problema de prueba nuevo a E16. Se verifica evento único, snapshot y estado; se mantienen las aserciones históricas y las trazas de derrota real.
+Meshy experimental permanece solo local:99.466triángulos/222.717vértices,1submesh/material,UV0ausente,0skins/huesos/Animator/Avatar y sin texturas finales. Copia aislada normalizada a1.78m, sin rotación adicional arbitraria. Necesita retopología, UV, texturas, rig y pesos en Blender u otra herramienta autorizada. Ni original ni derivados se publican o entran en el catálogo/build. No es automáticamente compatible con animaciones por estar importado Generic.
 
+## Presentación y UI
 
-Contratos posteriores4/5: el caso30validó derrota/reintento pero su limpieza intentaba volver a explorar durante un RTS activo; la siguiente creación era rechazada correctamente por IsBusy. Se corrige únicamente la limpieza del fixture con Clear() después de comprobar el reintento y se exige que el nuevo intento no conserve un resultado anterior. XML conservado; repetir soloThreeClasses30. No se reduce ninguna aserción de combate.
+Escena nueva AetherniaAlphaCandidate conserva las anteriores. Menú con fondo ambiental y preview3D real; selección con tres opciones verticales, retrato, ilustración existente y modelo E08 animado aislado. El preview no modifica la clase/equipo del jugador, no tiene física/IA y deja de renderizar al jugar. Fuentes SDF dinámicas originales y glifos españoles/fallback comprobados; no se regeneró atlas.20vistas reales1280×720,1920×1080,2560×1440,3840×2160; límites/raycast/overflow comprobados y captura4K inspeccionada a tamaño original. Las ilustraciones tienen resolución fuente limitada; los cuerpos E08 siguen siendo provisionales.
 
+Se reprodujeron dos defectos: construcción bajo ayuda y7/7indicadores aliados desactivados al sustituir modelos. Corregidos: exclusión contextual y preservación del renderer de selección. Mando RTS lateral solo Alpha despeja al héroe; barras aliadas/rivales mantienen colores existentes. × por raycast y Escape por InputSystem comprobados en ficha/inventario/sesión/grupo. Avisos y fundido0.18s reutilizan HUD/eventos sin bloquear entrada, tocar reloj/reglas ni añadir gestor UI. Se mantienen feedback/sonidos/animaciones/cámara existentes; no hay cinemáticas largas ni cambios narrativos.
 
-Cierre A: cuatro contextos de contrato aprobados en lote y ThreeClasses30 aprobado aisladamente tras reparar solo limpieza del fixture (RTS_CONTRACT_30_FINAL.xml). Se verifican selección simple/múltiple, órdenes, héroe, resolución única, retorno/victoria y derrota/reintento reales. La prueba histórica de victoria conserva sus aserciones. LastResolvedVictory es un snapshot de presentación, sin cambios de daño, salud, costes, cadencia, NavMesh ni guardado. No se declara corregido el resultado intermitente de la carga automática; sigue pendiente revisar estrategia/balance/determinismo, con derrota real reproducida y evidencia. Continúa B sin bloquear arte por esta expectativa pendiente.
+## Escenarios y shaders
 
+Shader Graph17.5 ya instalado, graph nativo editable Lit y HLSL propio modesto: ruido de superficie en coordenadas de mundo, mezcla suave en bordes de camino con hierba existente, normales originales, smoothness/metallic adecuados y viento0.035m solo en dos materiales de hojas.15materiales compartidos y377asignaciones; cero texturas nuevas duplicadas. Bounds visuales se amplían y restauran sin modificar mesh/collider. Viento GPU92.901píxeles cambiantes; control estático0. Firma física igual a E16, sin Terrain nuevo ni navegación recalculada.
 
-## B — pipeline verificado
+Volumen propio Neutral, contraste5/saturación−5/exposición+0.08, bloom0.04/umbral1.4 y vignette0.10. Luz de apoyo existente2.8en ruinas. Marcadores de entrada/salida apartados1.2m de spawn; triggers/puntos de viaje siguen iguales. Viaje ida/vuelta y recorte/restauración de techos comprobados. Se conservan distribución, antorchas y geometría E16; ninguna ampliación de mazmorra.
 
-Contrato/fábrica compartida para héroe y apoyos; candidatos inválidos o sin animación compatible recurren a la clase anterior, conservando estado/controlador. El modelo ya cargado sigue visible si se pierden referencias.14/14 de pipeline/animación/Humanoid más1/1 ampliado de fallback con tres clases, movimiento y guardado. Catálogo Alpha sin dependencias Meshy/LocalOnly. [Guía y ficha del recurso](E17_PIPELINE_PERSONAJES.md). Estudio/captura privados generados; datos técnicos en Validacion/E17/MESHY_DATOS_TECNICOS.json. Originales FBX/meta intactos. No autorización artística final ni publicación de derivados.
+## Calidad y rendimiento
 
+Bajo/Medio/Alto son tres assets URP propios, con originales conservados. Bajo:80%render3D,MSAA1,sombras20m/512,una luz por objeto y AO/postdesactivados. Medio:100%,MSAA2,40m/1024,dos luces. Alto:100%,MSAA4,60m/2048,cuatro luces y sombras suaves. UI a resolución nativa. Índice1histórico pasa a Medio; formato de guardado intacto.2/2dirigidas verifican pipeline/cámara y estado sin mutación. No hay opciones simuladas ni LOD destructivos o paquetes nuevos.
 
-## C — presentación verificada
+Medidor nativo explícito preparado para aldea pausada, menú con preview y RTS pausado con despliegue real, tres perfiles a720p/1080p; registra tiempos reales y contadores disponibles con hardware. Calentamiento2s, muestreo≥3s/120frames con límite12s, capturas fuera del muestreo. Development player y escenas pequeñas no representan ejércitos futuros. Resultados nativos pendientes: no se inventan FPS ni se confunde paso12Hz de grabación con rendimiento.
 
-Nueva escena AetherniaAlphaCandidate conserva E16. Tres opciones de clase verticales con retrato/realce, ilustración de referencia y preview3D del modelo E08; nombre/linaje/confirmación con comandos existentes. Previews aislados sin sesión/agentes/controladores, se apagan al jugar; la composición no altera estado. Monje sin arma visible y Mago con su bastón en la vista previa, sin tocar inventario. La pose/arte/rig siguen provisionales.
+## Validación, arte y revisión humana
 
-2/2 pruebas aprobadas con20capturas reales a1280×720/1920×1080/2560×1440/3840×2160, comprobación de límites/raycast/overflow y captura4K vista en resolución original. Se corrigió persistencia de overrides de prefab. La fuente SDF existente es dinámica: glifos españoles se comprueban con resolución/fallback y generación real, no exigiendo que estén precargados. No se regeneró fuente/atlas ni se modificó su asset. F2-07/humano pendiente. Contextos de otros paneles se revisan en la integración E.
+Las pruebas citadas son automáticas en Unity exacto; la inspección de imágenes es técnica mediante archivos reales. No se realizó una sesión manual humana nueva. Gameplay RPG/RTS/economía/construcción/grupo/ruinas/conquista/persistencia se volverá a ejercitar en regresión y procesos Windows antes de cerrar F. Arte/modelos/rig/animaciones/audio finales, balance, diversión y aprobación de controles/legibilidad siguen pendientes. Consultar GUIA_ALFA_E17.md y CHECKLIST.md; conservar todos los fallos intermedios y el historial anterior.
 
-D verificado: Shader Graph Lit17.5 editable,15materiales compartidos, normales originales, bordes de camino y variación procedural. Viento GPU0.035m, límites visuales restaurables; sin cambio de colliders. Neutral/contraste5/saturación−5/exposición+0.08/bloom0.04. Marcadores entrada/salida separados1.2m de spawn y luz de apoyo2.8.3/3+1/1 PASS; World capturas reales inspeccionadas.
+### Regresión general y ajuste de compatibilidad de la prueba
+
+REGRESION_GENERAL.xml conserva142/143 aprobadas,0omitidas, en fuente f56d0bb. Único fallo: CharacterVisualTests.ClassEquipmentLoadMovementAndVisualReplacementStayConsistent, línea138, antes de llegar a movimiento/guardado. La expectativa E01 exigía cápsula pese a existir un modelo aprobado utilizable; contradice la política E17-B de conservar el modelo ya cargado si falla el catálogo. Se actualiza esa expectativa y se fortalece el caso: identidad del modelo/estado intactos, sin acumulación, y cápsula cuando también se invalida el modelo cargado mediante escala incompatible. Movimiento, equipo, guardar/cargar y capturas posteriores permanecen en el caso. No es un cambio de reglas o del resultado RTS. Verificación dirigida5/5PASS(FALLBACK_COMPAT_5.xml): caso histórico completo más los cuatro casos de pipeline. No se afirma143/143 de una nueva regresión global.
+
+Las14resoluciones RTS de este lote fueron victorias (RTS_REGRESSION_TRACES.json); la derrota inicial reproducida se conserva y el pendiente no se cierra por este resultado.

@@ -579,3 +579,7 @@ Reproducidos y corregidos ocultamiento de indicadores RTS al cambiar modelo (7/7
 ## 2026-11-02 — E17-F preparación de validación
 
 Bajo/Medio/Alto sustituyen nombres históricos Mobile/PC mediante tres assets URP propios (originales conservados). Diferencias reales de escala interna, MSAA, sombras, luces, AO/post;2/2dirigidas PASS. Medidor nativo solo con argumento explícito, captura existente reutilizada y opciones/partida aisladas; métricas aún no recogidas. Herramientas de ZIP/evidencia reutilizadas con parámetro de fase conservando E16 por defecto. Regresión/build/recorridos/portable pendientes; no se declara alfa entregada todavía.
+
+## 2026-11-02 — E17-F regresión y compatibilidad fallback
+
+General142/143,0omitidas; XML conservado. Único fallo antes de movimiento: prueba E01 esperaba cápsula aunque E17-B conserva un modelo aprobado válido. Expectativa actualizada con comprobaciones más fuertes de identidad/estado y cápsula cuando también se invalida el modelo cargado; equipo/movimiento/guardar/cargar conservados. Dirigidas5/5PASS. No cambia runtime de gameplay ni pruebas RTS;14victorias trazadas no cierran el pendiente inicial. Medidor explícito ampliado aRTS pausado (18escenarios previstos); compilación/nativo pendientes.
