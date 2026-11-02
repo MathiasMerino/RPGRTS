@@ -1,0 +1,9 @@
+# Recuperación E10–E13 — entrega técnica
+
+- Núcleo E10–E13 terminado. Informe/guía/evidencia: Docs/ENTREGA_E10_E13.md; historial técnico Docs/DEMO_E10_E13.md. No hay trabajo de código pendiente ni procesos de validación activos.
+- Rama feature/e10-e13-demo-jugable desde66cf80f/E09. Commits1ee7ae2/22e627d/00ed6c1/dd56e9c/91d83b7/238d9e2 más cierre documental. PR#5 draft https://github.com/MathiasMerino/RPGRTS/pull/5 baseE09; no merge/force. Cerrar último push documental y verificar HEAD=origin=PR si se interrumpe aquí.
+- 110/110 global +6/6 posteriores al recorte visual.12procesos finales Headless/GPU-20261102-014152 y2desdeZIPHeadless-20261102-014556 PASS. Flujo/opciones reales, reinicios y mismoestado; captura final héroevisible. GUI/audio/cámara/calidad/resolución1920 persistentes; QA usa slots/PlayerPrefs aislados.
+- Nueva escena Assets/01_Scenes/AetherniaFirstDemo.unity; BuildFirstDemo → Builds/FirstDemoWindows/Aethernia.exe. No repetir FirstDemo/TMP/autorías. Escenas históricas/Packages/ProjectSettings/GDD intactos. GDD SHA dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661.
+- ZIP final87411924bytes/306archivos, SHA6c833b8dab2bac55cc67502ee9f607eaecaea3494fd2837e4776b0673b81026e, CRC/SHAindividual/portable PASS;12ZIPviejosintactos.18PNG y MP4nativo407frames/12Hz=33.917s, audioDSP RMS.002746 (noFPSmedido). Fuentes/metadata en Docs/Validacion/DemoE10E13 yDocs/Images/DemoE10E13.
+- Main5a2e3cef6707bd844cf728ea1adfff9c6d941002,dev742c04f6ac2afb8dfd3d0e56e3f2d45085c73a46/defaultmain yPR1..4 intactos. AuthGCMmemoria, nunca guardar tokens. Snapshot final enLogs/DemoQA tras cierre.
+- Cambios propios limpios/sincronizados. Assets/07_Characters/MonkMeshy +meta ajenos untracked: preservar fuera de commits; no ocultar ni publicar. E14/E15 no iniciados; DEMO-H/E09-H/E08-H/E07-H/F2-07/X/ESC/artes finales pendientes de humanidad. Próximo recomendado: sesión humana de demo, no otra expansión automática.

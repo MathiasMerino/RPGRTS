@@ -433,3 +433,64 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 ### E09 — Publicación y cierre técnico (2026-11-01)
 - Rama feature/e09-combate-rpg-ia publicada. PR#4 abierto en borrador sobre feature/e08-personajes-animados: https://github.com/MathiasMerino/RPGRTS/pull/4. Main/dev conservan sus SHA iniciales; PR#1/#2/#3 abiertos/borrador/sin fusionar. Sin release estable, force push ni E10.
 - Commits4b21d4f (turnos/reglas/IA),c545386 (presentación/recursos),a07dbd5 (pruebas/sondas),04a4799 (entrega/evidencia), más cierre documental. Seis tareas técnicas E09 completadas y verificadas; E09-H/F2-07/E07-H/E08-H y recursos finales pendientes. Sincronía HEAD/origin/PR y estado limpio comprobados al concluir.
+
+
+### E10–E13 — Inicio autorizado
+- Auditoría dirigida del nuevo prompt completo, GDD/convenciones y sistemas reutilizables; E09 real89/89, PR#1–#4 abiertos/borrador, main/dev intactas, base66cf80f limpia. Rama feature/e10-e13-demo-jugable creada sin merges.
+- Plan secuencial y criterios añadidos; núcleo E10–E13 prioritario, E14/E15 condicionales, sin aprobar automáticamente lore/bonos/arte/humanos.
+
+
+### E10 — Menú y tipografía, checkpoint editor
+- Nueva escena AetherniaFirstDemo derivada de E09, originales intactos; prefab reutilizable de front-end, TMP SDF2048 y LiberationSans/OFL incorporada desde el paquete instalado. Ajustes reales persistentes, créditos, Continue/carga válida, salida segura en editor; datos de raza/intro y slot separado con respaldo.
+- 3/3 focales y compilación exacta PASS; capturas reales720p/1080p/1440p/4K, creación/prólogo/créditos, textos y raycasts comprobados. Corregidos errores iniciales de firma C#/API TMP y recuperación de importación asíncrona de esenciales antes de -quit. Editor validado; ejecutable/flujo integral y humanos pendientes.
+
+
+### E11 — Prólogo, combate y control directo verificados
+- Primer encuentro E09 conectado a prólogo omisible; mismo estado/clase/linaje y equipo, victoria real activa exploración y guarda progreso; Continuar omite introducción completada. WASD relativo al agente, diagonal/cápsula/NavMesh y animación/cámara; E próximo, pausa y foco de UI. Escenas/modelos anteriores intactos.
+- Focal2/2 PASS con las tres clases y teclado InputSystem. Primeras pasadas detectaron en QA el buffer Editor sin foco: fixture temporal AllDeviceInputAlwaysGoesToGameView/IgnoreFocus, restaurada en finally; ninguna aserción debilitada ni HP/victoria forzados. XML intermedio conservado; capturas de exploración reales. Siguiente RTS/héroe y economía; Windows/regresión global/humanos pendientes.
+
+
+### E12 — Patrulla y héroe compartido verificados
+- RtsBattleController existente ampliado opt-in;6v6 clásico y escalada preservados. Misma unidad/modelo/estado del héroe, tres roles militares, rangos/LOS, selección/cajas/Shift/grupos, órdenes y acciones con restricciones. Datos SO/controles/UI/feedback separados; helpers de daño/guardia conservan reglas RPG. NPC Capitán activa batalla; victoria real habilita campamento y guarda progreso, derrota ofrece reintento.
+-12 reglas E09 PASS; patrulla1/1 final con Guerrero/Monje/Mago desde RPG legal hasta victoria RTS/save/continue. Fallo intermedio del Mago conservado: al guardar distancia/guardia se detienen unidades en rango incluso durante cooldown; se usan ración y recuperación legales. Sin HP/victoria forzados. Seis capturas reales, barras compactas y Generic/arco piloto. Próximo E13, limpieza de widgets de batalla y QA integral/Windows.
+
+
+### E13 — Economía y asentamiento verificados
+- Cinco tipos funcionales con catálogo SO, colisión/NavMeshObstacle3x3 y presentación modular E07; centro/requisitos, producción activable10s online, almacén/capacidad, mejoras, cuartel/reclutas pagados6máximo. Version1 aditiva para nivel/producción/ejército/linaje; no offline/duplicación al cargar, legado migrado. Reclutas se despliegan y conservan salud/bajas; práctica no genera otra recompensa. Liberación de widgets/grupos RTS entre encuentros.
+-6/6 editor PASS, cinco casos de reglas y fixture económica real de colocación/producción/free/upgrade/recluta/deploy/continuar. Primera5/6 por observación del progreso antes del Update siguiente, condición conservada y espera finita corregida. XML/capturas guardados. Pendiente QA integral desde menú, Windows/reinicio/regresión global/evidencia/PR; humanos no aprobados.
+- Nuevo MonkMeshy FBX/meta ajeno preservado fuera de estos commits e integración; no sobrescribir ni publicar procedencia no auditada.
+
+
+## 2026-11-01 — QA E10–E13: colisión, opciones y primera build
+
+- Focal de colisión1/1 PASS: teclado real, muro físico/retirada y opciones720p–4K; primer fallo de preparación (encuentro activo) preservado en XML, sin marcarlo como fallo del producto.
+- Revisión de captura detectó relleno/tirador Slider fuera del rectángulo: corregidos anclajes compartidos y añadida aceptación geométrica, evento de volumen aplicado/persistido con clave aislada. Pausa oculta/restituye HUD.
+- Primera BuildFirstDemo PASS; smoke Windows inicial pasa menús/prólogo/RPG/movimiento y falla observación de animación solo al detenerse ante obstáculo. Ajuste de ventana de observación pendiente, comprobante preservado; no se declara end-to-end aprobado.
+- Lanzada regresión102. Nueva guía humana y controles documentados; original GDD/hash y escenas anteriores sin cambios. Doce ZIP históricos inventariados con SHA. GitHub main/dev y PR#1–#4 sin cambios; modelo MonkMeshy ajeno preservado fuera de commits.
+
+
+## 2026-11-01 — Compatibilidad v1, reemplazo atómico y opciones nativas
+
+- Regresión102:91/102. Reproducido JsonUtility convirtiendo Demo nulo en objeto; marcador HasDemoProgress derivado al guardar y normalización legada antes de validar. Sin cambiar Version1 ni GDD. Focal de carga/progreso y misión aprobadas; XML intermedios conservados.
+- Regresión103:101/103. Dos fallos de reemplazo de JSON antiguo; HRESULT1175 (0x80070497) documentado. AtomicFileReplacement repite File.Replace para32/33/1175 hasta4reintentos50/100/200/400ms, sin borrar destino ni fallback no atómico; permisos permanentes no se reintentan. Diagnóstico LastWriteRetries. Focal12PASS y bloqueo Windows real+derrota/reintento2PASS.
+- Opciones verificadas en nuevos procesos: master.63/efectos.57/cámara14/resolución1920x1080 y cambio/restauración de calidad. NativeKey de prueba separada, borrada tras continuar. Pantalla guardada se aplica al arrancar el player; índice del selector se sincroniza con la resolución cargada.
+- Prueba nativa detectó referencia Audio nula del prefab de menú: corregida como override en la escena nueva mediante Controls seguro y aceptación de referencia persistida. No se alteró la escena histórica. Los dos FAIL de resume anteriores se preservan.
+- Build actual y12procesos Windows finales PASS con tres clases, fondos normales, producción/recluta, guardado y reinicio; omitir prólogo probado con Mago. Capturas/video DSP nativos renovados; revisión humana no realizada. Regresión110 en curso, no se declara cerrada todavía.
+
+
+## 2026-11-01 — Regresión110 aprobada y visibilidad del campamento
+
+- Regresión global110/110 PASS, cero fallos/omisiones. XML DEMO_REGRESION_110.xml. No sumar los focales superpuestos como si fuesen casos distintos.
+- Captura real identificó edificio nuevo ocultando al avatar. WorldConstruction.Spawn reutiliza RoofCutaway para la campaña; oculta contextualmente el conjunto visual agrupado por materiales de E07 y lo restaura al dejar de interponerse. Física/colisiones/NavMeshObstacle quedan activos. Guardado legado conserva la ruta anterior equivalente.
+- Focal posterior6/6 PASS: oclusión/retirada de hastiales y vigas, restauración, bounds físicos, producción, reclutas, despliegue y carga. Primeros intentos preservados (fixture de cierre del IEnumerator y nodo Roof sin malla); captura nativa posterior detectó hastial aún visible y se amplió aceptación a todo el conjunto, sin cambiar reglas.
+- Build posterior correcta; repetición Windows final y actualización de paquete/evidencia en curso. Evaluación artística/humana sigue pendiente, al igual que E14/E15.
+
+
+## 2026-11-01 — Entrega técnica E10–E13 preparada
+
+110/110 global y6/6 posteriores al recorte final;12procesos Windows finales con/sinGPU y2desdeZIP extraído PASS. Captura confirma avatar visible con retiro contextual reversible del conjunto visual, física intacta.18PNG originales, MP4nativo33.917s con DSP real; sin simulación de poses ni benchmarkFPS. ZIP306archivos/87411924bytes/CRC y SHA individual PASS;12ZIP históricos conservados. GDD/hash, escenas históricas, paquetes y configuración de proyecto preservados tras finalizar Unity. Informe Docs/ENTREGA_E10_E13.md, guía humana/COMO_JUGAR y fuentes de evidencia actualizados. Publicación/PR en cierre; E14/E15 y revisiones humanas no iniciadas/completadas automáticamente.
+
+
+## 2026-11-01 — Publicación E10–E13
+
+Rama feature/e10-e13-demo-jugable publicada mediante push normal; PR#5 abierto draft sobre feature/e09-combate-rpg-ia (PR#4 todavía draft abierto): https://github.com/MathiasMerino/RPGRTS/pull/5. Main5a2e3cef ydev742c04f6, predeterminadamain yPR#1–#4 contrastados sin cambios. Conservados los commits porfase ycorrecciones91d83b7/238d9e2; documentación de cierre en commitposterior. ChecklistQA técnica completada, revisiónhumana yE14/E15 pendientes. Git propio sin cambios; archivos ajenosMonkMeshy preservados sin seguimiento/no publicados. No merges, forcepush ni cambios globales.

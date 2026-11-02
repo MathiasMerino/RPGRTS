@@ -1,0 +1,146 @@
+[
+  {
+    "file": "Menu-720p.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/warrior-Main.png",
+    "mode": "Windows GPU",
+    "sha256": "9c6536b4c350e5f25081ed2bd2d158fb746a4d1585c01d120f11412eeaf8d95e",
+    "bytes": 1051052,
+    "syntheticComposition": false
+  },
+  {
+    "file": "Menu-4K.png",
+    "source": "ProyectoRPGRTS/Logs/E10/Captures/Main-3840.png",
+    "mode": "Unity Editor",
+    "sha256": "2f07230c426eae36cd28b702a4caa9cfb00ca7df7042f2552066bbf67fe1f032",
+    "bytes": 8344076,
+    "syntheticComposition": false
+  },
+  {
+    "file": "Prologo.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/warrior-Intro.png",
+    "mode": "Windows GPU",
+    "sha256": "d452b447ca1891d908d46f8d6bf4f263e7002b5a90fdf099164211e7683b9eb7",
+    "bytes": 1209154,
+    "syntheticComposition": false
+  },
+  {
+    "file": "RPG.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/warrior-Rpg.png",
+    "mode": "Windows GPU",
+    "sha256": "8e45406af78bb98fc24bd294244793e6404c9ff861f1f3374277f5cb570a3c26",
+    "bytes": 1434401,
+    "syntheticComposition": false
+  },
+  {
+    "file": "Construccion.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/warrior-Camp.png",
+    "mode": "Windows GPU",
+    "sha256": "1047d1d8881ae0a0ea144cfd0e92c6685408657ef4c2455c218cd5ce9a1c6e6a",
+    "bytes": 1434222,
+    "syntheticComposition": false
+  },
+  {
+    "file": "Campamento.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/warrior-Free.png",
+    "mode": "Windows GPU, recorte contextual final",
+    "sha256": "a67b732fb05f511ffd0fcb18839ee515e617ae3d1db5f6a6db91daaa62f2731c",
+    "bytes": 1454806,
+    "syntheticComposition": false
+  },
+  {
+    "file": "Opciones-720p.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/warrior-Options.png",
+    "mode": "Windows GPU, target720p/display1080p",
+    "sha256": "0c8cb3f6ed3d1a61286412182486e3e549ccd8f02cbc32df134335004b014608",
+    "bytes": 1218864,
+    "syntheticComposition": false
+  },
+  {
+    "file": "Opciones-4K.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/Captures/Options-3840.png",
+    "mode": "Unity Editor, fixture colision",
+    "sha256": "9bfbf94d9aef3d31e53f372dbffeaf2aec5409d43a2e0a3b240b1ebc5eb480bf",
+    "bytes": 10142119,
+    "syntheticComposition": false
+  },
+  {
+    "file": "warrior-Creation.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/warrior-Creation.png",
+    "mode": "Windows GPU",
+    "sha256": "79a459d35589cae6c645716bc7e161b54682f6e27618e06d9d735c438ebc2a81",
+    "bytes": 1266782,
+    "syntheticComposition": false
+  },
+  {
+    "file": "warrior-Wasd.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/warrior-Wasd.png",
+    "mode": "Windows GPU",
+    "sha256": "efee4e78b1eb7624c8fc11b01961444eeeb5680c6ca1e799dabba3896120eee9",
+    "bytes": 1418093,
+    "syntheticComposition": false
+  },
+  {
+    "file": "warrior-Rts.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/warrior-Rts.png",
+    "mode": "Windows GPU",
+    "sha256": "10a234bc0d4d1fe15157a00d8b9289bf9cae7b8dc128a8471e71d13d3f5157b4",
+    "bytes": 1456340,
+    "syntheticComposition": false
+  },
+  {
+    "file": "monk-Creation.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/monk-Creation.png",
+    "mode": "Windows GPU",
+    "sha256": "a04937580a611c8c9a5c0a0bb51d78e8d57825bdb390c8a0d4b34f62b2896213",
+    "bytes": 1248538,
+    "syntheticComposition": false
+  },
+  {
+    "file": "monk-Wasd.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/monk-Wasd.png",
+    "mode": "Windows GPU",
+    "sha256": "647a7d87663f1c42b78a58d432cfd58d6186a42a3125ff5085ef8d3e21d0bc1d",
+    "bytes": 1412842,
+    "syntheticComposition": false
+  },
+  {
+    "file": "monk-Rts.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/monk-Rts.png",
+    "mode": "Windows GPU",
+    "sha256": "6a9d2b72b13211c6b26f256b98cdd51535b0e28bbf76d4bddb4d31c50ba283a1",
+    "bytes": 1447124,
+    "syntheticComposition": false
+  },
+  {
+    "file": "mage-Creation.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/mage-Creation.png",
+    "mode": "Windows GPU",
+    "sha256": "ae76520d8c9b251308fde002cce63e10b72cfa78bc4c8d1bb54b7d2247bacff6",
+    "bytes": 1265465,
+    "syntheticComposition": false
+  },
+  {
+    "file": "mage-Wasd.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/mage-Wasd.png",
+    "mode": "Windows GPU",
+    "sha256": "6612676f72fb6f6a6051775fb42511de09bac6350c390695ecb881dc7f4a5faa",
+    "bytes": 1412417,
+    "syntheticComposition": false
+  },
+  {
+    "file": "mage-Rts.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Captures/mage-Rts.png",
+    "mode": "Windows GPU",
+    "sha256": "283204b7adfd3e42c418269dc7c2f55fa4b0a735c61b280607642b61d6778f89",
+    "bytes": 1445268,
+    "syntheticComposition": false
+  },
+  {
+    "file": "Campamento-antes-recorte.png",
+    "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-010055/Captures/warrior-Free.png",
+    "mode": "Windows GPU anterior al recorte; misma pose de camara, salud de combate puede variar",
+    "sha256": "35c3fa8b337505033c94f819714091e3d22b19e777bcba7a070ad487013066a8",
+    "bytes": 1458318,
+    "syntheticComposition": false
+  }
+]

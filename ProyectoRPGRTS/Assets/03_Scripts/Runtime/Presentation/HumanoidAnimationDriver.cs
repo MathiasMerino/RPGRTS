@@ -45,7 +45,7 @@ namespace Aethernia
         }
         private void LateUpdate()
         {
-            ObservedSpeed = actor != null && actor.Agent.enabled && actor.Agent.isOnNavMesh ? actor.Agent.velocity.magnitude : 0;
+            ObservedSpeed = actor != null && actor.Agent.enabled && actor.Agent.isOnNavMesh ? actor.PresentationVelocity.magnitude : 0;
             if (rig == null || rig.Animator == null) return;
             var animator = rig.Animator;
             if (!CanAnimate) { animator.enabled = false; return; }

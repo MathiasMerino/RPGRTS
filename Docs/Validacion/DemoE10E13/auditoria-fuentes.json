@@ -1,0 +1,12 @@
+{
+  "scannedTextFiles": 220,
+  "credentialPatternsFound": 0,
+  "contributedFilesOver50MiB": [],
+  "gddSha256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "historicalScenesPackagesProjectSettingsUnchanged": true,
+  "onlyNewScene": [
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaFirstDemo.unity",
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaFirstDemo.unity.meta"
+  ],
+  "foreignAssetsExcluded": "MonkMeshy"
+}

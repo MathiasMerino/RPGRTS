@@ -1,0 +1,57 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Aethernia.Editor.Characters;
+using NUnit.Framework;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.TestTools;
+using Object=UnityEngine.Object;
+
+namespace Aethernia.Tests.Editor
+{
+    public sealed class DemoRtsTests
+    {
+        private sealed class Counter{public int Guards;public void Receive(CombatFeedback r){if(r.Result.Kind==CombatActionKind.Guard)Guards++;}}
+        [UnityTest] public IEnumerator PatrolUsesSameHeroAndRealOrdersForThreeClasses()=>Patrol();
+        private static IEnumerator Patrol()
+        {
+            EditorSceneManager.OpenScene(FirstDemoBuilder.ScenePath);yield return new EnterPlayMode();yield return null;yield return null;
+            var flow=Object.FindAnyObjectByType<DemoFlow>();var d=flow.Director;flow.SlotPath="Logs/E12/patrol-"+System.Guid.NewGuid().ToString("N")+".json";d.SavePathOverride=flow.SlotPath;flow.EncounterSeed=42;Directory.CreateDirectory("Logs/E12/Captures");
+            foreach(var id in new[]{"warrior","monk","mage"})
+            {
+                flow.ShowMain();Assert.That(flow.StartNew("Patrullero",id,"human"),Is.True);flow.CompleteIntro();yield return null;
+                d.Encounter.Approach();yield return Arrive(d.Hero);
+                for(var turn=0;turn<30&&flow.Session.State.Demo.Chapter==DemoChapter.FirstCombat;turn++)
+                {
+                    var b=d.Encounter.Battle;if(b.HeroHealth<8&&!b.RecoveryUsed)d.Encounter.Recover();else d.Encounter.Attack();
+                    if(flow.Session.State.Demo.Chapter!=DemoChapter.FirstCombat)break;Assert.That(d.Execute("end"),Is.True);var phase=Time.realtimeSinceStartup+5;
+                    while(d.Encounter.Battle!=null&&d.Encounter.Battle.Phase==TurnPhase.Enemy&&Time.realtimeSinceStartup<phase)yield return null;
+                }
+                Assert.That(flow.Session.State.Demo.Chapter,Is.EqualTo(DemoChapter.RoadToRts),"Tutorial legal antes de patrulla");
+                Assert.That(d.Execute("ration"),Is.True);Assert.That(d.Hero.TryMoveTo(flow.Patrol.transform.position+Vector3.back*1.1f),Is.True);yield return Arrive(d.Hero);
+                var hero=d.Hero;var model=hero.GetComponent<CharacterVisualPresenter>().Model;var health=flow.Session.State.Health;var rts=d.Rts;
+                Assert.That(flow.Patrol.TryInteract(hero,flow.Session),Is.True);Assert.That(rts.IncludesHero&&rts.Active,Is.True);var units=new List<RtsUnitStatus>();rts.CopyStatus(units);
+                Assert.That(units.Count,Is.EqualTo(13));Assert.That(units.Single(x=>x.Hero).Unit,Is.SameAs(hero));Assert.That(units.Single(x=>x.Hero).Health,Is.EqualTo(health));Assert.That(hero.GetComponent<CharacterVisualPresenter>().Model,Is.SameAs(model));
+                Assert.That(units.Where(x=>!x.Hero).Select(x=>x.Role).Distinct().Count(),Is.EqualTo(3));
+                var ally=units.First(x=>x.Team==0&&!x.Hero).Unit;var foe=units.First(x=>x.Team==1).Unit;
+                Assert.That(rts.SelectUnit(ally.GetComponentInChildren<Collider>(),false),Is.True);Assert.That(rts.SelectedAllies,Is.EqualTo(1));Assert.That(rts.SelectUnit(hero.GetComponentInChildren<Collider>(),true),Is.True);Assert.That(rts.SelectedAllies,Is.EqualTo(2));
+                var counter=new Counter();rts.ActionResolved+=counter.Receive;Assert.That(rts.HeroAction("guard"),Is.True);Assert.That(rts.HeroAction("guard"),Is.False);Assert.That(counter.Guards,Is.EqualTo(1));
+                rts.SelectArea(Camera.main,new Rect(0,0,Screen.width,Screen.height),false);Assert.That(rts.SelectedAllies,Is.EqualTo(7));var group=new List<ExplorationUnit>();rts.RememberGroup(group);rts.SelectUnit(ally.GetComponentInChildren<Collider>(),false);rts.SelectGroup(group,false);Assert.That(rts.SelectedAllies,Is.EqualTo(7));
+                Assert.That(rts.Command(new Vector3(-10,0,13),null,false),Is.True);yield return TacticalCombatIntegrationTests.Wait(.15f);Assert.That(rts.Command(foe.transform.position,foe.GetComponentInChildren<Collider>(),false),Is.True);
+                yield return TacticalCombatIntegrationTests.Wait(.4f);yield return DemoCapture.Save("Logs/E12/Captures/"+id+"-Patrol.png",1280,720);
+                var limit=Time.realtimeSinceStartup+45;while(rts.Active&&Time.realtimeSinceStartup<limit)
+                {if(flow.Session.State.Health<flow.Session.Rules.Find(id).Health)rts.HeroAction("recover");yield return null;}
+                Assert.That(rts.Active,Is.False,"RTS debe terminar con combate real: "+id);Assert.That(flow.Session.State.Demo.Chapter,Is.EqualTo(DemoChapter.Settlement),id+": victoria RTS real");Assert.That(flow.Session.State.ClassId,Is.EqualTo(id));Assert.That(d.Hero,Is.SameAs(hero));Assert.That(d.Hero.gameObject.activeInHierarchy,Is.True);rts.ActionResolved-=counter.Receive;
+                Assert.That(d.Save(flow.SlotPath),Is.True,PrototypeSaveStore.LastWriteFailure);flow.ShowMain();Assert.That(flow.Continue(),Is.True);Assert.That(flow.Session.State.Demo.Chapter,Is.EqualTo(DemoChapter.Settlement));
+                yield return TacticalCombatIntegrationTests.Wait(.3f);yield return DemoCapture.Save("Logs/E12/Captures/"+id+"-Secured.png",1280,720);
+            }
+            File.WriteAllText("Logs/E12/patrol.txt","PASS three classes: actual RPG -> navigation/interaction -> 6v6+same hero RTS, role/range data, single/additive/rectangle selection and groups, move/attack orders, real guard with duplicate cooldown rejection, combat victory -> secured camp and v1 continue. No forced health/victory.");
+            LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
+        }
+        private static IEnumerator Arrive(ExplorationUnit unit){var end=Time.realtimeSinceStartup+20;yield return null;while(unit.IsMoving&&Time.realtimeSinceStartup<end)yield return null;Assert.That(unit.IsMoving,Is.False);}
+        [UnityTearDown] public IEnumerator Cleanup(){if(EditorApplication.isPlaying)yield return new ExitPlayMode();}
+    }
+}

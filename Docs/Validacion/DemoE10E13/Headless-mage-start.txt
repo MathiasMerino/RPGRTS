@@ -1,0 +1,1 @@
+PASS: menú -> creación -> prólogo -> RPG legal -> WASD -> interacción -> RTS mismo héroe -> construcción con fondos iniciales -> activación/producción -> cuartel/recluta -> guardado; class=mage; seconds=37.79; allocatedBytes=137464745

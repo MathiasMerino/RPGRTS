@@ -16,8 +16,8 @@ namespace Aethernia
         public int EncounterSeed { get; set; } // Runtime default 0 keeps normal randomness; validation may reproduce a seed.
         public void Configure(GameSession game,PrototypeDirector control,InteractionPoint villager,InteractionPoint load,LostCargoView presentation)
         {session=game;director=control;npc=villager;cargo=load;view=presentation;}
-        private void OnEnable(){if(session==null)return;session.AdditionalInteraction=Interact;director.Encounter.Resolved+=Resolved;}
-        private void OnDisable(){if(session==null)return;if(session.AdditionalInteraction==Interact)session.AdditionalInteraction=null;director.Encounter.Resolved-=Resolved;}
+        private void OnEnable(){if(session==null)return;session.AdditionalInteraction+=Interact;director.Encounter.Resolved+=Resolved;}
+        private void OnDisable(){if(session==null)return;session.AdditionalInteraction-=Interact;director.Encounter.Resolved-=Resolved;}
         private bool? Interact(string id,string title)
         {
             if(id==LostCargoQuest.NpcId){view.ShowDialogue();session.Say("Habitante de la aldea: conversación abierta.");return true;}

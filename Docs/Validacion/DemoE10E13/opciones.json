@@ -1,0 +1,20 @@
+{
+  "runHeadless": "ProyectoRPGRTS\\Logs\\DemoQA\\Headless-20261102-014152",
+  "runGPU": "ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-014152",
+  "classes": [
+    "warrior",
+    "monk",
+    "mage"
+  ],
+  "volumeMaster": 0.63,
+  "effectsGain": 0.57,
+  "cameraPanSpeed": 14,
+  "nativeGPUResolution": [
+    1920,
+    1080
+  ],
+  "qualityChangedAndRestored": true,
+  "persistedAcrossProcesses": true,
+  "playerPrefsIsolatedAndDeletedAfterResume": true,
+  "fullscreenHumanCheck": "pending"
+}

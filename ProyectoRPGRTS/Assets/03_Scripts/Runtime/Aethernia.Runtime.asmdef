@@ -5,7 +5,9 @@
     "Unity.AI.Navigation",
     "Unity.ugui",
     "Unity.RenderPipelines.Core.Runtime",
-    "Unity.RenderPipelines.Universal.Runtime"
+    "Unity.RenderPipelines.Universal.Runtime",
+    "Unity.TextMeshPro",
+    "Unity.Collections"
   ],
   "autoReferenced": true
 }

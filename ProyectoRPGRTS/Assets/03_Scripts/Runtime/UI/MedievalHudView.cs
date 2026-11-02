@@ -56,7 +56,7 @@ namespace Aethernia
             ((RectTransform)Feedback.transform.parent).anchoredPosition=new Vector2(260,show?-84:-550);
             Context.text=session.ModeTitle.ToUpperInvariant();
             Hint.gameObject.SetActive(exploring);
-            Hint.text="Clic izq.: seleccionar · Clic der.: caminar\nE: interactuar · WASD / rueda: cámara";
+            Hint.text=s.Demo==null?"Clic izq.: seleccionar · Clic der.: caminar\nE: interactuar · WASD / rueda: cámara":"WASD: caminar · E: interactuar cerca\nFlechas / botón medio / rueda: cámara · P: pausa";
             if(show)
             {
                 Paper.anchoredPosition=page==ExplorationPage.Character||page==ExplorationPage.Inventory?new Vector2(242,-74):new Vector2(24,-74);
@@ -83,6 +83,8 @@ namespace Aethernia
                 Inventory.Render(s);
             }
             if(session.Mode==PrototypeMode.Construction) Context.text="TALLER SELECCIONADO · 10 oro + 5 madera · 3 × 3 m · clic derecho: colocar · 10 s: 1 alimento → 1 madera";
+            if(session.Mode==PrototypeMode.Construction&&s.Demo!=null&&director.Construction.Settlement!=null)
+            {var blueprint=director.Construction.Settlement.Find(director.Construction.SelectedBlueprint);Context.text=blueprint.Title+" · "+blueprint.Gold+" oro / "+blueprint.Wood+" madera · 3 × 3 m · clic derecho para colocar";}
             if(session.Mode==PrototypeMode.Rts) Context.text="GUERRA RTS · Seleccionados: "+director.Rts.SelectedAllies+" · Aliados: "+director.Rts.Allies+" · Rivales: "+director.Rts.Enemies+" · Ataque automático cercano";
             var battle=director.Encounter.Battle;
             if(session.Mode==PrototypeMode.TurnCombat&&battle!=null)

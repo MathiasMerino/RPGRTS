@@ -4,12 +4,15 @@ using UnityEngine;
 
 namespace Aethernia
 {
-    public enum PrototypeMode { Exploration, TurnCombat, Construction, Rts }
+    public enum PrototypeMode { Exploration, TurnCombat, Construction, Rts, MainMenu, CharacterCreation, Intro }
     public sealed class GameSession : MonoBehaviour
     {
         public event Action Changed;
         public event Action<string> Message;
         [SerializeField] private PrototypeRules rules;
+        [SerializeField] private SettlementRules settlementRules;
+        public SettlementRules Settlement=>settlementRules;
+        public void ConfigureSettlement(SettlementRules value){settlementRules=value;}
         private bool ownsRules;
         private int displayedSecond;
         public PrototypeState State { get; private set; } = new PrototypeState();
@@ -18,7 +21,8 @@ namespace Aethernia
         public Func<string, bool> TravelRequested;
         public Func<string, string, bool?> AdditionalInteraction;
         public PrototypeMode Mode { get; private set; }
-        public string ModeTitle => Mode == PrototypeMode.Exploration ? "Exploración" : Mode == PrototypeMode.TurnCombat ? "Combate por turnos" : Mode == PrototypeMode.Construction ? "Construcción" : "Guerra RTS";
+        public bool Paused { get; set; }
+        public string ModeTitle => Mode == PrototypeMode.Exploration ? "Exploración" : Mode == PrototypeMode.TurnCombat ? "Combate por turnos" : Mode == PrototypeMode.Construction ? "Construcción" : Mode==PrototypeMode.Rts?"Guerra RTS":Mode==PrototypeMode.MainMenu?"Menú principal":Mode==PrototypeMode.CharacterCreation?"Crear personaje":"Prólogo";
         public string LastMessage { get; private set; } = "Selecciona el personaje. Clic derecho: caminar. WASD: cámara. Rueda: zoom.";
         private void Awake()
         {
@@ -28,8 +32,8 @@ namespace Aethernia
         public void Configure(PrototypeRules value) { rules = value; }
         private void Update()
         {
-            if (Mode == PrototypeMode.TurnCombat || Mode == PrototypeMode.Rts) return;
-            WorldOperations.Advance(State, Time.deltaTime);
+            if (Paused || Mode == PrototypeMode.TurnCombat || Mode == PrototypeMode.Rts || Mode == PrototypeMode.MainMenu || Mode == PrototypeMode.CharacterCreation || Mode == PrototypeMode.Intro) return;
+            WorldOperations.Advance(State, Time.deltaTime,settlementRules);
             if ((int)State.WorldSeconds != displayedSecond) { displayedSecond = (int)State.WorldSeconds; Changed?.Invoke(); }
         }
         public void SetMode(PrototypeMode mode) { Mode = mode; Say("Modo: " + ModeTitle); }
@@ -49,7 +53,8 @@ namespace Aethernia
         public bool CompleteInteraction(string id, string title)
         {
             if (Mode != PrototypeMode.Exploration) { Say("Vuelve a Explorar para interactuar con objetos del mundo."); return false; }
-            var extra=AdditionalInteraction?.Invoke(id,title);if(extra.HasValue)return extra.Value;
+            if(AdditionalInteraction!=null)foreach(Func<string,string,bool?> handler in AdditionalInteraction.GetInvocationList())
+            {var extra=handler(id,title);if(extra.HasValue)return extra.Value;}
             if (id == "portal-dungeon" || id == "portal-surface") return TravelRequested != null && TravelRequested(id);
             if (id == "faction-b") { Say("Facción B: relación " + State.ReputationB + ". Las consecuencias se conservan en la partida."); return true; }
             if (id == "market") { var traded = WorldOperations.Trade(State); Say(traded ? "Comercio: 5 oro por 2 madera." : "Oro insuficiente."); return traded; }

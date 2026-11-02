@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="6" result="Passed" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-01 22:44:49Z" end-time="2026-11-01 22:45:10Z" duration="21.1107143">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="101" result="Passed" start-time="2026-11-01 22:44:49Z" end-time="2026-11-01 22:45:10Z" duration="21.110714" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1131" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="101" result="Passed" start-time="2026-11-01 22:44:49Z" end-time="2026-11-01 22:45:10Z" duration="20.969444" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="25152" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1132" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="101" result="Passed" start-time="2026-11-01 22:44:49Z" end-time="2026-11-01 22:45:10Z" duration="20.966719" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1133" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="101" result="Passed" start-time="2026-11-01 22:44:49Z" end-time="2026-11-01 22:45:10Z" duration="20.964320" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1134" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="101" result="Passed" start-time="2026-11-01 22:44:49Z" end-time="2026-11-01 22:45:10Z" duration="20.962275" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1020" name="DemoSettlementTests" fullname="Aethernia.Tests.Editor.DemoSettlementTests" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-01 22:44:49Z" end-time="2026-11-01 22:45:10Z" duration="20.955220" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1026" name="ActualBuildingsProductionRecruitDeploymentAndContinue" fullname="Aethernia.Tests.Editor.DemoSettlementTests.ActualBuildingsProductionRecruitDeploymentAndContinue" methodname="ActualBuildingsProductionRecruitDeploymentAndContinue" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="816898539" result="Passed" start-time="2026-11-01 22:44:34Z" end-time="2026-11-01 22:45:10Z" duration="36.041194" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="CostsRequirementsAndInvalidPointsAreTransactional" fullname="Aethernia.Tests.Editor.DemoSettlementTests.CostsRequirementsAndInvalidPointsAreTransactional" methodname="CostsRequirementsAndInvalidPointsAreTransactional" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="90863577" result="Passed" start-time="2026-11-01 22:45:10Z" end-time="2026-11-01 22:45:10Z" duration="0.003718" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1022" name="ProductionNeedsActivationAndCyclesAreConsumedOnce" fullname="Aethernia.Tests.Editor.DemoSettlementTests.ProductionNeedsActivationAndCyclesAreConsumedOnce" methodname="ProductionNeedsActivationAndCyclesAreConsumedOnce" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="721592440" result="Passed" start-time="2026-11-01 22:45:10Z" end-time="2026-11-01 22:45:10Z" duration="0.000970" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="RecruitmentRequiresPaymentBarracksAndFiniteSlots" fullname="Aethernia.Tests.Editor.DemoSettlementTests.RecruitmentRequiresPaymentBarracksAndFiniteSlots" methodname="RecruitmentRequiresPaymentBarracksAndFiniteSlots" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="527582485" result="Passed" start-time="2026-11-01 22:45:10Z" end-time="2026-11-01 22:45:10Z" duration="0.001119" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="SaveLoadKeepsProductionRosterAndLegacyWorkshopWithoutOfflineGain" fullname="Aethernia.Tests.Editor.DemoSettlementTests.SaveLoadKeepsProductionRosterAndLegacyWorkshopWithoutOfflineGain" methodname="SaveLoadKeepsProductionRosterAndLegacyWorkshopWithoutOfflineGain" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="462566205" result="Passed" start-time="2026-11-01 22:45:10Z" end-time="2026-11-01 22:45:10Z" duration="0.023369" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1023" name="StorageUpgradeAndProductionAreIndependentOfFramePartition" fullname="Aethernia.Tests.Editor.DemoSettlementTests.StorageUpgradeAndProductionAreIndependentOfFramePartition" methodname="StorageUpgradeAndProductionAreIndependentOfFramePartition" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="928941467" result="Passed" start-time="2026-11-01 22:45:10Z" end-time="2026-11-01 22:45:10Z" duration="0.001935" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

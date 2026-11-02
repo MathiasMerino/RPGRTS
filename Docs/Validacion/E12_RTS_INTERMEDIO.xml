@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="13" result="Failed(Child)" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-01 22:17:59Z" end-time="2026-11-01 22:19:05Z" duration="66.4947506">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="95" result="Failed" site="Child" start-time="2026-11-01 22:17:59Z" end-time="2026-11-01 22:19:05Z" duration="66.494751" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1124" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="95" result="Failed" site="Child" start-time="2026-11-01 22:17:59Z" end-time="2026-11-01 22:19:05Z" duration="66.347851" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="28588" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1125" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="95" result="Failed" site="Child" start-time="2026-11-01 22:17:59Z" end-time="2026-11-01 22:19:05Z" duration="66.344790" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1126" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="95" result="Failed" site="Child" start-time="2026-11-01 22:17:59Z" end-time="2026-11-01 22:19:05Z" duration="66.343030" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1127" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="95" result="Failed" site="Child" start-time="2026-11-01 22:17:59Z" end-time="2026-11-01 22:19:05Z" duration="66.341499" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1018" name="DemoRtsTests" fullname="Aethernia.Tests.Editor.DemoRtsTests" classname="Aethernia.Tests.Editor.DemoRtsTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-11-01 22:17:59Z" end-time="2026-11-01 22:19:05Z" duration="66.307520" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1019" name="PatrolUsesSameHeroAndRealOrdersForThreeClasses" fullname="Aethernia.Tests.Editor.DemoRtsTests.PatrolUsesSameHeroAndRealOrdersForThreeClasses" methodname="PatrolUsesSameHeroAndRealOrdersForThreeClasses" classname="Aethernia.Tests.Editor.DemoRtsTests" runstate="Runnable" seed="901316015" result="Failed" start-time="2026-11-01 22:17:39Z" end-time="2026-11-01 22:19:05Z" duration="86.201931" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  mage: victoria RTS real
+  Expected: Settlement
+  But was:  FirstRts
+]]></message>
+                  <stack-trace><![CDATA[at Aethernia.Tests.Editor.DemoRtsTests+<Patrol>d__2.MoveNext () [0x008b0] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\DemoRtsTests.cs:46
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1093" name="TacticalCombatRulesTests" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.020655" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="ParameterizedMethod" id="1105" name="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.008603" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1102" name="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;warrior&quot;)" methodname="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="687515476" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.005794" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1103" name="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;monk&quot;)" methodname="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1545381980" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.000300" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1104" name="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;mage&quot;)" methodname="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1312610635" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.000203" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1106" name="GuardRecoveryAndWaitUseExistingResourcesOnce" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.GuardRecoveryAndWaitUseExistingResourcesOnce" methodname="GuardRecoveryAndWaitUseExistingResourcesOnce" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1544768276" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.002494" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1101" name="MeleeSelectsOnlyPermittedIntent" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.005031" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1094" name="MeleeSelectsOnlyPermittedIntent(True,True,True,True,True,False,Attack)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,True,True,True,False,Attack)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="583070824" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.000872" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1095" name="MeleeSelectsOnlyPermittedIntent(True,True,True,False,True,True,Approach)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,True,False,True,True,Approach)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1650310299" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.000201" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1096" name="MeleeSelectsOnlyPermittedIntent(True,True,True,True,False,True,Approach)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,True,True,False,True,Approach)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1486917246" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.000161" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1097" name="MeleeSelectsOnlyPermittedIntent(True,True,True,False,False,False,Wait)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,True,False,False,False,Wait)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1200686886" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.000134" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1098" name="MeleeSelectsOnlyPermittedIntent(False,True,True,True,True,True,Wait)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(False,True,True,True,True,True,Wait)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1614879355" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.000161" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1099" name="MeleeSelectsOnlyPermittedIntent(True,False,True,True,True,True,Wait)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,False,True,True,True,True,Wait)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="2085776351" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.000133" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1100" name="MeleeSelectsOnlyPermittedIntent(True,True,False,True,True,True,Wait)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,False,True,True,True,Wait)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="980177797" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.000126" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1107" name="SuccessfulDamageAndGuardAreAppliedExactlyOnce" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.SuccessfulDamageAndGuardAreAppliedExactlyOnce" methodname="SuccessfulDamageAndGuardAreAppliedExactlyOnce" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1606919078" result="Passed" start-time="2026-11-01 22:19:05Z" end-time="2026-11-01 22:19:05Z" duration="0.001126" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
