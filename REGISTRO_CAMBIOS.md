@@ -1,4 +1,4 @@
-﻿# Registro de cambios de Crónicas de Aethernia
+# Registro de cambios de Crónicas de Aethernia
 
 Conservar entradas anteriores; añadir fecha, tareas, alcance, archivos y validación al terminar cada actividad.
 
@@ -519,3 +519,7 @@ Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nue
 -20procesos Windows PASS:6headless,6GPU previos al pulido,6GPU finales y2desde ZIP extraído; Guerrero/Monje/Mago, economía pagada, dos victorias RPG, conquista real, producción y reinicio conservados. Los8procesos finales no presentan excepciones, agentes inválidos ni avisos JobTempAlloc observados en algunas ejecuciones anteriores.
 -22PNG nativos+2PNG Play Mode para geometríaUI;2clips continuos23.8s/8.1s conaudioDSP real y decodificación/SHA verificados. Captura12Hz no implica FPS medidos. NavMesh/GDD/escenas originales/paquetes intactos; escalas y colliders conservados.
 -ZIP nuevo87,458,324bytes, SHA256958df84773407fe81274c366588ba60e97b4fe19feca69763c37be38912baf36; CRC/extracción/SHA individual PASS,13ZIP anteriores intactos. Guía, partidas E13 reales y lanzadores separados incluidos. No autoriza arte final, balance o E16. Meshy ajeno sin incorporar.
+
+### E14–E15 — publicación y cierre técnico
+- PR#6 abierto en borrador sobre feature/e10-e13-demo-jugable: https://github.com/MathiasMerino/RPGRTS/pull/6. Main/dev/default y PR1..5 conservados; sin merges ni push forzado. Historial desde c33e34d preservado.
+- E14-A/B/C, E15-A/B y EXP-QA completados técnicamente; EXP-H humano/arte/balance permanece pendiente. Cambios propios confirmados; Meshy ajeno sin versionar y excluido del PR. README/guía/entrega/recuperación actualizados.

@@ -45,9 +45,11 @@ Los recorridos Windows parten de copias intactas de partidas E13 auténticas, co
 - SHA256 ZIP: `958df84773407fe81274c366588ba60e97b4fe19feca69763c37be38912baf36`. CRC, extracción y hashes individuales en PORTABLE.json. No se distribuye la carpeta DoNotShip.
 - **22PNG del player Windows intactos +2PNG de fixtures Play Mode para resoluciones**, en [galería](Images/E14E15). [Manifiesto nativo](Validacion/E14E15/Media/manifest.json), [evidencia UI](Validacion/E14E15/UI_LAYOUT.json). No son imágenes conceptuales generadas.
 - Vídeos con audioDSP: [expedición,23.8s](Videos/E14E15/E14-Expedicion.mp4) y [conquista,8.1s](Videos/E14E15/E15-Conquista.mp4). Cada uno recorta un tramo continuo de una ejecución; decodificación verificada y SHA/intervalos de fotogramas documentados. Grabación fuente1519frames,12Hz de captura, RMS0.003030; no es una medición de FPS.
-- [Auditoría de fuentes](Validacion/E14E15/SOURCE_AUDIT.json): GDD, versiones/paquetes y escenas originales intactos. main/dev y PR1..5 siguen sin fusionarse ni modificarse; rama feature/e14-e15-expediciones-conquista desde c33e34d. Publicación mediante PRdraft apilado hacia feature/e10-e13-demo-jugable; no se aprueba arte ni se fusiona automáticamente.
+- [Auditoría de fuentes](Validacion/E14E15/SOURCE_AUDIT.json): GDD, versiones/paquetes y escenas originales intactos. main/dev y PR1..5 siguen sin fusionarse ni modificarse; rama feature/e14-e15-expediciones-conquista desde c33e34d. [PR#6 publicado en borrador](https://github.com/MathiasMerino/RPGRTS/pull/6), apilado hacia feature/e10-e13-demo-jugable; [verificación GitHub](Validacion/E14E15/GITHUB.json). No se aprueba arte ni se fusiona automáticamente.
 
 ![Combate de grupo, captura real Windows](Images/E14E15/warrior-GroupCombat.png)
 ![Propiedad y recursos después de victoria real](Images/E14E15/warrior-ControlledResources.png)
 
 La siguiente actividad recomendada es una sesión humana de navegación, composición de grupo, dificultad y claridad de la conquista; corregir sus hallazgos y perfilar antes de ampliar contenido/territorios. Modelos, animaciones, iluminación profunda y shaders finales permanecen en una línea artística separada.
+
+Todos los cambios de la entrega están confirmados en Git. Los únicos archivos locales sin versionar son los recursos Meshy ajenos, conservados fuera del PR; no se ocultan ni se eliminan.

@@ -4,7 +4,7 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- E14/E15: alcance piloto completado técnicamente; grupo/mazmorra, facciones/territorios y conquista conectados a E13.121/121 regresión,11/11 tras pulido y1/1UI final a dos resoluciones;20procesos Windows PASS; ZIP nuevo CRC/SHA/portable verificado,24PNG y2MP4 reales. Informe Docs/ENTREGA_E14_E15.md; EXP-H humano/arte/balance pendientes. Publicación de PRdraft apilado sobre PR5 en curso.
+- E14/E15: alcance piloto completado técnicamente; grupo/mazmorra, facciones/territorios y conquista conectados a E13.121/121 regresión,11/11 tras pulido y1/1UI final a dos resoluciones;20procesos Windows PASS; ZIP nuevo CRC/SHA/portable verificado,24PNG y2MP4 reales. Informe Docs/ENTREGA_E14_E15.md; EXP-H humano/arte/balance pendientes. [PR#6](https://github.com/MathiasMerino/RPGRTS/pull/6) abierto en borrador sobre PR5; sin merges.
 
 - Demo E10–E13: núcleo implementado y verificado técnicamente, regresión110/110 y6/6 posteriores al recorte visual; doce procesos Windows finales PASS (tres clases, con/sinGPU, crear/reiniciar/Continuar/opciones). Build/ZIP portable/evidencia aprobados; PR#5 abierto en borrador sobre E09: https://github.com/MathiasMerino/RPGRTS/pull/5. E14/E15 entregadas posteriormente (ver resumen); evaluación humana pendiente. Informe histórico: Docs/ENTREGA_E10_E13.md.
 
@@ -922,11 +922,11 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 - Pruebas / resultado: CampaignIntegrationTests2/2; recorridos reales de tres clases antes/después del pulido, órdenes/selección y20procesos acumulados; bajas y reserva conservadas.
 
 ### EXP-QA — Regresión, Windows, reinicio y publicación
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: expediciones / P1. Dependencias: E15-B.
 - Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
 - Archivos: Tools/Invoke-ExpeditionSmoke.ps1, Export-ExpeditionEvidence.py, Package-Expeditions.py; Runtime/Validation y Tests/Editor; Docs/Validacion/E14E15, Images/E14E15, Videos/E14E15 y entrega/guía.
-- Pruebas / resultado:121/121+11/11+1/1UI,20procesos Windows PASS;22PNG nativos+2UI,2MP4 conDSP/decodificación, ZIP CRC/SHA/extracción y13ZIP antiguos intactos. Falta publicación/verificación final del PR; no intervención humana ejecutada.
+- Pruebas / resultado:121/121+11/11+1/1UI,20procesos Windows PASS;22PNG nativos+2UI,2MP4 conDSP/decodificación, ZIP CRC/SHA/extracción y13ZIP antiguos intactos. PR#6 publicado en borrador sobre feature/e10-e13-demo-jugable; main/dev y PR1..5 intactos. Evidencia GitHub en GITHUB.json; no intervención humana ejecutada.
 
 ### EXP-H — Evaluación humana
 - Estado: [ ] Pendiente.
