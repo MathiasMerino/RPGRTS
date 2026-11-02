@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="11" result="Failed(Child)" total="11" passed="9" failed="2" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 21:54:24Z" end-time="2026-11-02 21:54:25Z" duration="1.3708529">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:54:24Z" end-time="2026-11-02 21:54:25Z" duration="1.370853" total="11" passed="9" failed="2" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1229" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:54:24Z" end-time="2026-11-02 21:54:25Z" duration="1.161949" total="11" passed="9" failed="2" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="5060" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1230" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:54:24Z" end-time="2026-11-02 21:54:25Z" duration="1.150619" total="11" passed="9" failed="2" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1231" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:54:24Z" end-time="2026-11-02 21:54:25Z" duration="1.139856" total="11" passed="9" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1232" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:54:24Z" end-time="2026-11-02 21:54:25Z" duration="1.127086" total="11" passed="9" failed="2" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1111" name="HeroTechniqueTests" fullname="Aethernia.Tests.Editor.HeroTechniqueTests" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" testcasecount="6" result="Failed" site="Child" start-time="2026-11-02 21:54:10Z" end-time="2026-11-02 21:54:11Z" duration="1.405399" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1116" name="GroupTechniqueRejectsAlliesObstaclesAndOutOfTurnActors" fullname="Aethernia.Tests.Editor.HeroTechniqueTests.GroupTechniqueRejectsAlliesObstaclesAndOutOfTurnActors" methodname="GroupTechniqueRejectsAlliesObstaclesAndOutOfTurnActors" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" seed="230168477" result="Passed" start-time="2026-11-02 21:53:28Z" end-time="2026-11-02 21:53:28Z" duration="0.052901" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1117" name="RealControllersAndUiUseSameProgressionInRpgAndRts" fullname="Aethernia.Tests.Editor.HeroTechniqueTests.RealControllersAndUiUseSameProgressionInRpgAndRts" methodname="RealControllersAndUiUseSameProgressionInRpgAndRts" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" seed="1938425643" result="Passed" start-time="2026-11-02 21:53:28Z" end-time="2026-11-02 21:53:55Z" duration="26.966332" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1118" name="SkillSheetUsesRealPointsAndFitsTwoResolutions" fullname="Aethernia.Tests.Editor.HeroTechniqueTests.SkillSheetUsesRealPointsAndFitsTwoResolutions" methodname="SkillSheetUsesRealPointsAndFitsTwoResolutions" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" seed="834276325" result="Failed" start-time="2026-11-02 21:53:55Z" end-time="2026-11-02 21:54:11Z" duration="16.292862" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Technique requirements: Golpe poderoso · DESBLOQUEADA
+1 acción RPG / recarga RTS 3s · coste 1 de 2 foco por encuentro · alcance 1.8 m
+  Expected: False
+  But was:  True
+]]></message>
+                  <stack-trace><![CDATA[at Aethernia.Tests.Editor.HeroTechniqueTests+<>c__DisplayClass9_0.<Sheet>b__0 (UnityEngine.Camera c, System.Int32 w, System.Int32 h) [0x000ed] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\HeroTechniqueTests.cs:47
+at Aethernia.Tests.Editor.DemoCapture+<Save>d__0.MoveNext () [0x0020f] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\FirstDemoTests.cs:107
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1115" name="TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution" fullname="Aethernia.Tests.Editor.HeroTechniqueTests.TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.022131" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1112" name="TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution(&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.HeroTechniqueTests.TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution(&quot;warrior&quot;)" methodname="TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" seed="672295961" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.010875" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1113" name="TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution(&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.HeroTechniqueTests.TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution(&quot;monk&quot;)" methodname="TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" seed="1892796327" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.000888" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1114" name="TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution(&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.HeroTechniqueTests.TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution(&quot;mage&quot;)" methodname="TechniqueCostsAnActionAndFiniteFocusOnlyOnValidExecution" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" seed="1960325725" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.000715" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestFixture" id="1167" name="ProgressionBalanceTests" fullname="Aethernia.Tests.Editor.ProgressionBalanceTests" classname="Aethernia.Tests.Editor.ProgressionBalanceTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.113797" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="ParameterizedMethod" id="1172" name="ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk" fullname="Aethernia.Tests.Editor.ProgressionBalanceTests.ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk" classname="Aethernia.Tests.Editor.ProgressionBalanceTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.108997" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1169" name="ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk(&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.ProgressionBalanceTests.ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk(&quot;warrior&quot;)" methodname="ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk" classname="Aethernia.Tests.Editor.ProgressionBalanceTests" runstate="Runnable" seed="1276307123" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.043673" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1170" name="ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk(&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.ProgressionBalanceTests.ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk(&quot;monk&quot;)" methodname="ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk" classname="Aethernia.Tests.Editor.ProgressionBalanceTests" runstate="Runnable" seed="2140349793" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.032067" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1171" name="ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk(&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.ProgressionBalanceTests.ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk(&quot;mage&quot;)" methodname="ControlledSeedMatrixDistinguishesPreparedPartyFromSoloRisk" classname="Aethernia.Tests.Editor.ProgressionBalanceTests" runstate="Runnable" seed="2076704933" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.030317" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-case id="1168" name="EnemyRecoveryConsumesNormalActionAndIsOncePerActor" fullname="Aethernia.Tests.Editor.ProgressionBalanceTests.EnemyRecoveryConsumesNormalActionAndIsOncePerActor" methodname="EnemyRecoveryConsumesNormalActionAndIsOncePerActor" classname="Aethernia.Tests.Editor.ProgressionBalanceTests" runstate="Runnable" seed="574431671" result="Passed" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:11Z" duration="0.001966" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1203" name="TroopProgressionTests" fullname="Aethernia.Tests.Editor.TroopProgressionTests" classname="Aethernia.Tests.Editor.TroopProgressionTests" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2026-11-02 21:54:24Z" end-time="2026-11-02 21:54:25Z" duration="1.065336" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1208" name="RealArmyUiTrainingAndOldSaveMigration" fullname="Aethernia.Tests.Editor.TroopProgressionTests.RealArmyUiTrainingAndOldSaveMigration" methodname="RealArmyUiTrainingAndOldSaveMigration" classname="Aethernia.Tests.Editor.TroopProgressionTests" runstate="Runnable" seed="380686362" result="Failed" label="Error" start-time="2026-11-02 21:54:11Z" end-time="2026-11-02 21:54:25Z" duration="13.785648" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object]]></message>
+                  <stack-trace><![CDATA[  at Aethernia.Tests.Editor.TroopProgressionTests+<ArmyUi>d__12.MoveNext () [0x00238] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\TroopProgressionTests.cs:44 
+  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44 ]]></stack-trace>
+                </failure>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

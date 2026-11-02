@@ -619,3 +619,7 @@ Nueve definiciones configurables compartidas, slots arma/armadura/accesorio, bon
 ## 2026-11-02 — E18 IJK/LN en validación
 
 Roles compartidos con costes distintos, progreso de participantes RPG y entrenamiento pagado del ejército; guardado aditivo. Cuatro pruebas puras militares y cuatro de balance PASS;720simulaciones separadas de jugabilidad. UI militar sigue fallando en auxiliar de localización, se conservanXML y no se cierra tarea. Ficha corregida para textoRTS3s, repeticiónUI tresclases720/1080PASS. Reintento tras derrota separado del bloqueo de cambio de clase, panelgrupo/XP integrados; validación nativa pendiente. Preparado compositorQA que reutiliza recorridos reales conXP/quest/forja/entrenamiento, sin premios artificiales.
+
+## 2026-11-02 — E18 IJK/LN verificación dirigida
+
+UI militar1/1PASS tras identificar por IL la closure de captura perdida al entrar en Play Mode; captura trasladada al bucle posterior. El fixture requería además1madera: se espera producción territorial real, sin alterar fondos/costes. Cuatro pruebas puras y entrenamiento/UI/guardado a720/1080 completan IJK. LNcuatrocasos/720semillas PASS, CSVy parámetros publicados como simulación sin geometría. BuildWindows nueva generada; recorrido nativoWarrior ya superó patrulla/misión/reclutamiento, todavía en curso. E17-A-RTS/humano abiertos.

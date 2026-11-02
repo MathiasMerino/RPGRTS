@@ -4,6 +4,8 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
+- E18 en desarrollo autorizado: XP/niveles/técnicas/equipo/botín verificados por bloques; compañeros/ejército/balance e integración bajo validación. Rama feature/e18-progresion-balance; incidencia E17-A-RTS y aprobación humana abiertas. No E19.
+
 - E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. No E18.
 
 - E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes; E17 se autoriza posteriormente en su sección.
@@ -1142,21 +1144,21 @@ Encargo71c1a4f1 autoriza implementación secuencial con arte provisional. Depend
 - Pruebas / resultado: 14/14coreequipo/progresión, venta madera1/1 y UI1/1tresclases720/1080(save/Continue/botínmigrado/equip/upgradepagado/ventarecursos/forja), seis capturas reales inspeccionadas. Intermedios por fondos insuficientes y captionUI desbordada preservados/corregidos sin añadir recursos. Catálogo9; botín único pendiente all-or-nothing, no duplicación. Mazmorra E18 nueva se validará en ciclo final; fixture procede de ejecución E17 real.
 
 ### E18-IJK — Compañeros, economía y ejército
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: Mundo / P1. Dependencias: E18-GH.
 - Aceptación: Roles útiles, grupo3 separado de ejército6, mejoras pagadas y persistentes y recursos no negativos.
-- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Archivos: TroopProgression, RecruitRecord, Settlement/ExpeditionOperations, SaveStore, PartyWorld, DungeonExpedition, RtsBattleController, paneles, datos14_Progression; Docs/E18_PROGRESION.md.
+- Pruebas / resultado: cuatrocasos puros PASS en IJK_INTERMEDIA; UI entrenamiento/migración/producción territorial/save/load720/1080 PASS IJK_UI_FINAL_1.xml. Fallos auxiliares previos conservados: closure perdida en recarga de dominio y madera insuficiente del fixture, sin alterar aserciones/costes. CapturasArmy reales. Recorrido nativo completo sigue en MOQ/RSTUV.
 
 ### E18-LN — IA y balance
-- Estado: [ ] Pendiente.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: Combate/datos / P1. Dependencias: E18-IJK.
 - Aceptación: Escenarios con semillas y parámetros/razones documentados; simulación separada de experiencia real.
-- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Archivos: GroupTurnSequence, TurnEncounter.Group, ProgressionRules, ExpeditionRules E18, ProgressionBalanceTests; Docs/E18_BALANCE.md y Validacion/E18/balance-*.
+- Pruebas / resultado: cuatrocasos PASS en IJK_LN_DEF.xml,720simulaciones: grupo360/360, solosGuerrero89/120/Monje86/120/Mago93/120; recuperación enemiga usa acción normal una vez. No geometría ni aprobación humana. Pruebas nativas de balance pendientes en MOQ/RSTUV; E17-A-RTS continúa abierto.
 
 ### E18-MOQ — Ciclo, interfaz y persistencia
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Sistema / prioridad: Integración / P1. Dependencias: E18-LN.
 - Aceptación: Nueva partida→progresión→ruinas→mejora→conquista→guardar/reiniciar, migración segura y UI coherente.
 - Archivos: Docs/E18_PROGRESION.md; detalle al implementar.

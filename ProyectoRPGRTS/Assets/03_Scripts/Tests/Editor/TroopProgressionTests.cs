@@ -48,23 +48,26 @@ namespace Aethernia.Tests.Editor
             Assert.That(flow.Continue(),Is.True);yield return null;yield return null;
             var s=flow.Session.State;
             var camp=Object.FindAnyObjectByType<DemoSettlementPanel>();Assert.That(camp,Is.Not.Null);
-            Debug.Log("E18_ARMY_UI: camp="+camp.name+" units="+flow.Director.Rts.DemoRules.name);
+            
             camp.Open();Assert.That(camp.SelectBuilding(s.Buildings.FindIndex(b=>b.Id=="workshop")),Is.True);
             Assert.That(camp.Improve(),Is.True);
             flow.Director.Execute("explore");
             Assert.That(camp.SellWood(),Is.True);Assert.That(camp.SellWood(),Is.True);
+            var cycle=s.ProductionCycle;var deadline=Time.realtimeSinceStartup+15;
+            while(s.ProductionCycle==cycle&&Time.realtimeSinceStartup<deadline)yield return null;
+            Assert.That(s.Wood,Is.GreaterThanOrEqualTo(3),"real territorial production funds the remaining training wood");
             var node=GameObject.Find("E14 E15 Expedition integration");Assert.That(node,Is.Not.Null,"integration scene object");
             var panel=node.GetComponent<ExpeditionPanel>();
             Assert.That(panel,Is.Not.Null,"expedition component exists");
-            Debug.Log("E18_ARMY_UI: panel="+panel.name+" controls="+panel.Controls.Count);
+            
             panel.Open();yield return null;
             Assert.That(panel.Controls.ContainsKey("army-tab"),Is.True,"panel Start initialized");
             panel.Controls["army-tab"].onClick.Invoke();yield return null;yield return null;
             Assert.That(s.Army.Count,Is.GreaterThan(0));var health=s.Army[0].Health;
-            Assert.That(panel.Controls["train-0"].interactable,Is.True);
+            Assert.That(panel.Controls["train-0"].interactable,Is.True,"training resources G"+s.Gold+" W"+s.Wood+" atCamp="+Object.FindAnyObjectByType<PartyWorld>().AtCamp);
             panel.Controls["train-0"].onClick.Invoke();
             Assert.That(s.Army[0].Level,Is.EqualTo(2));Assert.That(s.Army[0].Health,Is.EqualTo(health));
-            foreach(var width in new[]{1280,1920})yield return DemoCapture.Save("Logs/E18/Captures/Army-"+width+".png",width,width*9/16,null,(c,w,h)=>{foreach(var t in panel.Controls["close"].transform.parent.GetComponentsInChildren<TMPro.TMP_Text>()){t.ForceMeshUpdate();Assert.That(t.isTextOverflowing,Is.False,t.name+": "+t.text);}});
+            foreach(var width in new[]{1280,1920}){var currentPanel=panel;yield return DemoCapture.Save("Logs/E18/Captures/Army-"+width+".png",width,width*9/16,null,(c,w,h)=>{foreach(var t in currentPanel.Controls["close"].transform.parent.GetComponentsInChildren<TMPro.TMP_Text>()){t.ForceMeshUpdate();Assert.That(t.isTextOverflowing,Is.False,t.name+": "+t.text);}});}
             panel.Close();Assert.That(flow.Director.Save(flow.SlotPath),Is.True,PrototypeSaveStore.LastWriteFailure);flow.ShowMain();Assert.That(flow.Continue(),Is.True);Assert.That(flow.Session.State.Army[0].Level,Is.EqualTo(2));LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
         }
         [UnityTearDown]public IEnumerator Exit(){if(EditorApplication.isPlaying)yield return new ExitPlayMode();}

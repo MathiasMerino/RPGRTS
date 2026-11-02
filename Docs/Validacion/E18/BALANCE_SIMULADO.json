@@ -1,0 +1,53 @@
+{
+  "scope": "Geometry-free controlled seeded simulation; not native gameplay nor human balance approval",
+  "rows": [
+    {
+      "class": "mage",
+      "party": "False",
+      "seeds": 120,
+      "wins": 93,
+      "losses": 27,
+      "averageRounds": 8.35
+    },
+    {
+      "class": "mage",
+      "party": "True",
+      "seeds": 120,
+      "wins": 120,
+      "losses": 0,
+      "averageRounds": 4.525
+    },
+    {
+      "class": "monk",
+      "party": "False",
+      "seeds": 120,
+      "wins": 86,
+      "losses": 34,
+      "averageRounds": 11.125
+    },
+    {
+      "class": "monk",
+      "party": "True",
+      "seeds": 120,
+      "wins": 120,
+      "losses": 0,
+      "averageRounds": 5.458333333333333
+    },
+    {
+      "class": "warrior",
+      "party": "False",
+      "seeds": 120,
+      "wins": 89,
+      "losses": 31,
+      "averageRounds": 10.416666666666666
+    },
+    {
+      "class": "warrior",
+      "party": "True",
+      "seeds": 120,
+      "wins": 120,
+      "losses": 0,
+      "averageRounds": 5.2
+    }
+  ]
+}
