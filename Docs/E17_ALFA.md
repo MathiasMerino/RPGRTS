@@ -21,3 +21,8 @@ Contratos posteriores4/5: el caso30validó derrota/reintento pero su limpieza in
 
 
 Cierre A: cuatro contextos de contrato aprobados en lote y ThreeClasses30 aprobado aisladamente tras reparar solo limpieza del fixture (RTS_CONTRACT_30_FINAL.xml). Se verifican selección simple/múltiple, órdenes, héroe, resolución única, retorno/victoria y derrota/reintento reales. La prueba histórica de victoria conserva sus aserciones. LastResolvedVictory es un snapshot de presentación, sin cambios de daño, salud, costes, cadencia, NavMesh ni guardado. No se declara corregido el resultado intermitente de la carga automática; sigue pendiente revisar estrategia/balance/determinismo, con derrota real reproducida y evidencia. Continúa B sin bloquear arte por esta expectativa pendiente.
+
+
+## B — pipeline verificado
+
+Contrato/fábrica compartida para héroe y apoyos; candidatos inválidos o sin animación compatible recurren a la clase anterior, conservando estado/controlador. El modelo ya cargado sigue visible si se pierden referencias.14/14 de pipeline/animación/Humanoid más1/1 ampliado de fallback con tres clases, movimiento y guardado. Catálogo Alpha sin dependencias Meshy/LocalOnly. [Guía y ficha del recurso](E17_PIPELINE_PERSONAJES.md). Estudio/captura privados generados; datos técnicos en Validacion/E17/MESHY_DATOS_TECNICOS.json. Originales FBX/meta intactos. No autorización artística final ni publicación de derivados.

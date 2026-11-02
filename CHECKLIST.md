@@ -1058,14 +1058,14 @@ Encargo posterior autoriza esta fase sobre E16; no E18.
 - Pruebas / resultado: baseline5escenarios4/5 (10batallas:9victorias/1derrota real). Contratos4/5 y caso30aislado1/1 tras reparar limpieza del fixture. Se preservan todos los XML. Snapshot/evento/estados comprobados sin alterar reglas; la expectativa de victoria de la carga sigue pendiente (E17-A-RTS).
 
 ### E17-B — Pipeline visual y Meshy local
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: alfa / P1. Dependencias: E17-A.
 - Aceptación: Sustitución desacoplada con fallback probado; revisar importación/UV/rig/escala en escena local, sin publicar arte experimental.
-- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Archivos: CharacterVisualContract/Factory/Catalog/Presenter, SupportVisualFactory; AlphaPipelineBuilder; AlphaArtPipelineTests; Assets/13_AlphaCandidate/Characters; .gitignore; Docs/E17_PIPELINE_PERSONAJES.md.
+- Pruebas / resultado:14/14 y1/1 tras ampliar fallback, movimiento/equipo/guardar/cargar por tres clases. Copia FBX/estudio/captura privados; hashes originales intactos, catálogo sin dependencias experimentales. Meshy99.466tris,1submesh/material,UV0ausente,sinrig/Avatar; no integración runtime ni publicación.
 
 ### E17-C — Presentación y tipografía
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Sistema / prioridad: alfa / P1. Dependencias: E17-B.
 - Aceptación: Menú/selección mejorados, retratos proporcionados, cierres y escalado720p/1080p/1440p;4K si viable.
 - Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
