@@ -4,7 +4,8 @@
     "Aethernia.Runtime",
     "Aethernia.Environment.Editor",
     "Unity.ugui",
-    "Unity.TextMeshPro"
+    "Unity.TextMeshPro",
+    "Unity.AI.Navigation"
   ],
   "includePlatforms": [
     "Editor"

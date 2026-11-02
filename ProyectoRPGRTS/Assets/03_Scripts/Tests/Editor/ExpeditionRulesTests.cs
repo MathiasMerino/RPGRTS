@@ -30,7 +30,7 @@ namespace Aethernia.Tests.Editor
         }
         [Test]public void OwnershipOnlyChangesOnWinAndOnlineBonusDoesNotDuplicate()
         {
-            var s=Ready();s.Wood=0;ExpeditionOperations.InitializeTerritories(s,rules);ExpeditionOperations.InitializeTerritories(s,rules);Assert.That(s.Territories.Count,Is.EqualTo(3));Assert.That(ExpeditionOperations.Conquer(s,"outpost",false),Is.False);Assert.That(s.Territories.Single(t=>t.Id=="outpost").Owner,Is.EqualTo("faction-b"));
+            var s=Ready();s.Wood=0;ExpeditionOperations.InitializeTerritories(s,rules);ExpeditionOperations.InitializeTerritories(s,rules);Assert.That(s.Territories.Count,Is.EqualTo(3));Assert.That(s.Territories.Single(t=>t.Id=="camp").Secured,Is.True);Assert.That(ExpeditionOperations.Conquer(s,"outpost",false),Is.False);Assert.That(s.Territories.Single(t=>t.Id=="outpost").Owner,Is.EqualTo("faction-b"));
             Assert.That(ExpeditionOperations.ClaimNeutral(s,rules),Is.True);Assert.That(ExpeditionOperations.Conquer(s,"outpost",true),Is.True);Assert.That(ExpeditionOperations.Conquer(s,"outpost",true),Is.False);
             WorldOperations.Advance(s,10,settlement);Assert.That(s.Wood,Is.EqualTo(2));var path="Logs/E14/territory-"+Guid.NewGuid().ToString("N")+".json";Assert.That(PrototypeSaveStore.Save(path,s,heroRules),Is.True);Assert.That(PrototypeSaveStore.Load(path,heroRules,out s),Is.True);Assert.That(s.Wood,Is.EqualTo(2));WorldOperations.Advance(s,10,settlement);Assert.That(s.Wood,Is.EqualTo(4));
         }

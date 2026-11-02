@@ -52,7 +52,11 @@ namespace Aethernia
             var c=s.Companions.Find(x=>x.Id==id);if(c==null||c.InParty==active||(active&&(c.Health<=0||s.Companions.Count(x=>x.InParty)>=rules.MaximumCompanions)))return false;c.InParty=active;return true;
         }
         public static void InitializeTerritories(PrototypeState s,ExpeditionRules rules)
-        {if(!Ready(s))return;foreach(var p in rules.Territories)if(s.Territories.All(t=>t.Id!=p.Id))s.Territories.Add(new TerritoryRecord(p.Id,p.InitialOwner));}
+        {
+            if(!Ready(s))return;
+            foreach(var p in rules.Territories)if(s.Territories.All(t=>t.Id!=p.Id))s.Territories.Add(new TerritoryRecord(p.Id,p.InitialOwner,p.Id=="camp"&&p.InitialOwner==s.FactionId));
+            var camp=s.Territories.Find(t=>t.Id=="camp");if(camp?.Owner==s.FactionId)camp.Secured=true;
+        }
         public static bool RewardDungeon(PrototypeState s,ExpeditionRules rules)
         {
             if(!s.Facts.Contains("umbral-battle-1")||!s.Facts.Contains("umbral-battle-2")||s.Facts.Contains("umbral-reward"))return false;
