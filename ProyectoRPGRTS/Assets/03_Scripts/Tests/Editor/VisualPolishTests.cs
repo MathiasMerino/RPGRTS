@@ -24,7 +24,7 @@ namespace Aethernia.Tests.Editor
             EditorSceneManager.OpenScene(VisualPolishBuilder.ScenePath);Assert.That(PhysicsSignature(),Is.EqualTo(original));Assert.That(Object.FindAnyObjectByType<GameSession>().Rules,Is.SameAs(originalRules));
             Assert.That(GameObject.Find("E16 visual environment · no physics").GetComponentsInChildren<Collider>(true),Is.Empty);
         }
-        private static string[] PhysicsSignature()=>Object.FindObjectsByType<Collider>(FindObjectsInactive.Include).Select(c=>c.GetType().Name+"|"+c.name+"|"+c.transform.position.ToString("F4")+"|"+c.bounds.size.ToString("F4")+"|"+c.enabled+"|"+c.isTrigger).OrderBy(s=>s,StringComparer.Ordinal).ToArray();
+        internal static string[] PhysicsSignature()=>Object.FindObjectsByType<Collider>(FindObjectsInactive.Include).Select(c=>c.GetType().Name+"|"+c.name+"|"+c.transform.position.ToString("F4")+"|"+c.bounds.size.ToString("F4")+"|"+c.enabled+"|"+c.isTrigger).OrderBy(s=>s,StringComparer.Ordinal).ToArray();
         [Test]public void SharedArtAndLibraryAreReplaceableAndComplete()
         {
             var p=AssetDatabase.LoadAssetAtPath<VisualPresentationProfile>(VisualPolishBuilder.Root+"/Presentation.asset");Assert.That(p.Classes.Length,Is.EqualTo(3));Assert.That(p.CardPrefab,Is.Not.Null);Assert.That(p.ButtonPrefab,Is.Not.Null);

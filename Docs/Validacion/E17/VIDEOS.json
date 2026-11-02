@@ -1,0 +1,28 @@
+[
+  {
+    "file": "Docs/Videos/E17/E17-Expedicion.mp4",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-182541\\Recording",
+    "sha256": "2806b2821079ab8d83170cdd5374cca7b59b6a70d720a413b6e5c0eb77311ffc",
+    "firstFrame": 260,
+    "lastFrame": 547,
+    "seconds": 24.0,
+    "nativeDSP": true,
+    "continuous": true,
+    "decodeVerified": true,
+    "captureStepHz": 12,
+    "measuredFps": false
+  },
+  {
+    "file": "Docs/Videos/E17/E17-Conquista.mp4",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-182541\\Recording",
+    "sha256": "1e5daf492dbb108875b21d78aeef2d6c24c0f2488509b715b9559fddff1a5231",
+    "firstFrame": 1224,
+    "lastFrame": 1320,
+    "seconds": 8.083333333333334,
+    "nativeDSP": true,
+    "continuous": true,
+    "decodeVerified": true,
+    "captureStepHz": 12,
+    "measuredFps": false
+  }
+]

@@ -17,6 +17,7 @@ namespace Aethernia
         {
             var args=Environment.GetCommandLineArgs();var index=Array.IndexOf(args,"-aetherniaDemoSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaAlphaBenchmark");
             DemoPreferences.SessionStorageKey=index>=0&&index+1<args.Length?"Aethernia.Tests.NativeOptions."+args[index+1]:null;
         }
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)] private static void Install()

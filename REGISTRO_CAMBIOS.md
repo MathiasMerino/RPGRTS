@@ -551,3 +551,47 @@ Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nue
 - Se revisaron capturas técnicamente; ninguna sesión manual humana nueva ni perfil FPS/GC. E16-HUM y variación RTS E16-QA-RTS siguen pendientes. GDD, originales PNG, Nav, versiones/paquetes, escenas anteriores y Meshy ajeno conservados. Guía/informe/checklist actualizados; publicación en borrador en preparación.
 
 - Publicación E16: [PR #7](https://github.com/MathiasMerino/RPGRTS/pull/7) en borrador sobre feature/e14-e15-expediciones-conquista; push normal, historial conservado. Main/dev y PR1..6 sin cambios, sin merges. Checklist técnico/documental E16 cerrado; valoración humana y variación del test RTS permanecen pendientes.
+
+## 2026-11-02 — Inicio E17 autorizado
+
+PR7/base b0afdc2 comprobados; rama nueva desde E16 sin merges. Seis bloques secuenciales; prioridad diagnóstico RTS con trazas. Meshy experimental local intacto y excluido de publicación hasta aprobación; no iniciar E18.
+
+## 2026-11-02 — E17-A diagnóstico y contrato de resolución
+
+Cinco escenarios baseline4/5, derrota real por héroeHP0 con ejército vencedor. Trazas verifican recuperación aceptada, resolución y transición; no se ha probado evento perdido. Snapshot LastResolvedVictory conserva el resultado tras Clear y se reinicia al aceptar otra batalla. Contratos en cinco contextos verificados (4/5+luego1/1tras corregir limpieza de fixture), sin quitar aserciones históricas. Se conserva evidencia de errores de prueba propios y del fallo real. Expectativa de victoria automática pendiente; no se modifican reglas para forzarla. Continúa B.
+
+## 2026-11-02 — E17-B pipeline y estudio local
+
+Contrato visual y fábrica reutilizados por héroe/apoyos, validación de malla/material/escala/rig/clips y fallback antes de sustituir el modelo. Catálogo Alpha comparte prefabs/materiales E08.14/14+1/1 funcionales con tres clases y persistencia. Meshy inspeccionado solo mediante copia local:99.466tris/222.717vértices,1submesh/material,UV0ausente,sinrig/Avatar. Normalización de inspección1.78m; original/meta intactos. Arte experimental y derivados excluidos de Git; no activados en héroe. Guía de importación actualizada. Continúa C.
+
+## 2026-11-02 — E17-C menú, clases y tipografía
+
+Layout opcional Alpha y preview3D reutilizando catálogo/fábrica, sin modificar escenas previas ni estado de selección antes de confirmar. Persiste overrides de prefab; se verifica fuente dinámica/glifos españoles sin reemplazar fuente.2/2pruebas,20vistas reales720p–4K, proporciones/límites/raycast/overflow, física y dependencias conservadas; preview desactivado durante gameplay. Capturas originales inspeccionadas técnicamente; arte/rig y valoración humana pendientes. Continúa D.
+
+## 2026-11-02 — E17-D superficies y mundo
+
+Shader Graph Lit URP17.5 nativo, variación de terreno, mezcla de bordes, normales originales y viento leve en dos materiales de hojas;15variantes compartidas/377asignaciones. Volumen propio Neutral, bloom reducido y luz de apoyo existente ajustada. Los marcadores de viaje ya no ocupan el punto de aparición. Sin cambios en física/nav/escenas anteriores.3/3pruebas GPU/compilación/viaje y1/1 posterior al ajuste, capturas reales. Continúa E.
+
+## 2026-11-02 — E17-E integración visual
+
+Reproducidos y corregidos ocultamiento de indicadores RTS al cambiar modelo (7/7→0/7) y solapamiento construcción/ayuda. Panel RTS lateral solo Alpha. Decoración sobre HUD existente con avisos/fundido0.18s y suscripciones liberadas; sin estado nuevo de gameplay. Cierres reales de automatización por puntero/ESC: ficha, inventario, sesión y grupo. Pase final2/2, XML de reproducción preservado. Evaluación humana pendiente. Continúa F.
+
+## 2026-11-02 — E17-F preparación de validación
+
+Bajo/Medio/Alto sustituyen nombres históricos Mobile/PC mediante tres assets URP propios (originales conservados). Diferencias reales de escala interna, MSAA, sombras, luces, AO/post;2/2dirigidas PASS. Medidor nativo solo con argumento explícito, captura existente reutilizada y opciones/partida aisladas; métricas aún no recogidas. Herramientas de ZIP/evidencia reutilizadas con parámetro de fase conservando E16 por defecto. Regresión/build/recorridos/portable pendientes; no se declara alfa entregada todavía.
+
+## 2026-11-02 — E17-F regresión y compatibilidad fallback
+
+General142/143,0omitidas; XML conservado. Único fallo antes de movimiento: prueba E01 esperaba cápsula aunque E17-B conserva un modelo aprobado válido. Expectativa actualizada con comprobaciones más fuertes de identidad/estado y cápsula cuando también se invalida el modelo cargado; equipo/movimiento/guardar/cargar conservados. Dirigidas5/5PASS. No cambia runtime de gameplay ni pruebas RTS;14victorias trazadas no cierran el pendiente inicial. Medidor explícito ampliado aRTS pausado (18escenarios previstos); compilación/nativo pendientes.
+
+## 2026-11-02 — E17-F build y perfilado nativo
+
+Build final fuente0802286, Unity6000.5.8f1,206493085bytes,72.39s(incremental; primer build777.24s). Medición inicial inválida porque batch omitía render por cuadro; JSON conservado sin usarlo como FPS. Medidor opt-in corregido a peticionesURP explícitas de escena/UI/preview, targetMSAA1/2/4 y guardas de render real;18escenarios PASS con SetPass/triángulos/CPU/GC, DrawCalls/Batches no obtenidos con aliases consultados. RTX3050Laptop/i5-12450H, datos/limitaciones en PERFORMANCE.json. No FPS de presentación ni extrapolación a grandes ejércitos. Seis procesos demoGPU PASS, expediciones y portable en curso.
+
+## 2026-11-02 — E17-F entrega técnica
+
+14/14procesosWindows PASS,12demo/expedición por tres clases y2portable.82PNG reales con manifiesto, dosMP4 continuos con DSP/decodificación verificada. ZIP87.816.123bytes, SHA2564c16177bc696334549eebc942f21fc6ebcd63b151fafac79eb7d9910d4b6e87d; CRC/per-fileSHA/extracción y17ZIPanteriores intactos. Informe/guía/comparativa/artedocs/checklist actualizados. SourceRuntime0802286; metadatos de prefiltrado normalizados por Unity solo en assets URP propios. Arte humano, UX/balance y estrategia RTS pendientes; no E18. Publicación PRdraft final en preparación.
+
+## 2026-11-02 — Publicación E17
+
+[PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) abierto en borrador sobre feature/e16-pulido-visual-ui (PR7 todavía abierto). Push normal de feature/e17-art-pipeline-alpha-polish; main/dev y PR1..7 comprobados contra snapshot inicial, intactos. F técnico/documental cerrado con sus resultados reales, E17-A-RTS y E17-HUM siguen pendientes; sin merges/force, sin Meshy/derivados publicados y sin E18.

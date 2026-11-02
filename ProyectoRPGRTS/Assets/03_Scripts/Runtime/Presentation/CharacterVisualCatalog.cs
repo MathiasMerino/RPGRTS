@@ -11,6 +11,10 @@ namespace Aethernia
             public string ClassId;
             public GameObject Prefab;
             public GameObject HumanoidPrefab;
+            [Tooltip("Referencia revisada; no activa automáticamente FBX experimentales.")]
+            public GameObject ReplacementPrefab;
+            public bool UseReplacement;
+            public bool ReplacementRequiresAnimation=true;
             public Texture2D ReferenceArt;
             public Rect ReferenceUv = new Rect(0, 0, 1, 1);
             public string ReferenceCaption = "Referencia 2D provisional";
@@ -26,14 +30,15 @@ namespace Aethernia
         public Entry[] Entries = Array.Empty<Entry>();
         public Entry FindEntry(string id)
         { foreach (var entry in Entries) if (entry.ClassId == id) return entry; return null; }
+        public GameObject Candidate(Entry entry,int index,out bool requiresAnimation)
+        {
+            requiresAnimation=index==1||(index==0&&entry.ReplacementRequiresAnimation);
+            switch(index){case 0:return entry.UseReplacement?entry.ReplacementPrefab:null;case 1:return entry.HumanoidPrefab;case 2:return entry.Prefab;case 3:return entry.PreviousPrefab;default:return null;}
+        }
         public GameObject Find(string id)
         {
-            foreach (var entry in Entries)
-                if (entry.ClassId == id)
-                {
-                    var rig = entry.HumanoidPrefab == null ? null : entry.HumanoidPrefab.GetComponent<HumanoidVisualRig>();
-                    return rig != null && rig.IsUsable ? entry.HumanoidPrefab : entry.Prefab;
-                }
+            var entry=FindEntry(id);if(entry==null)return null;
+            for(var i=0;i<4;i++){var prefab=Candidate(entry,i,out var animated);if(CharacterVisualContract.CanUse(prefab,animated,out _))return prefab;}
             return null;
         }
     }

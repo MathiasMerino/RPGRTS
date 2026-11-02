@@ -1,0 +1,6 @@
+{
+  "attempt1": "GraphData.InitializeOutputs requires AddContexts first in SG17.5; no scene/material changes applied",
+  "repair": "Call AddContexts before InitializeOutputs; source verified against installed package",
+  "validation": "pending",
+  "finalStatus": "Verified: 3/3 world tests, then 1/1 region travel after marker offset; Unity 6000.5.8f1"
+}

@@ -1,0 +1,1 @@
+PASS movingPixels=92901 staticPixels=0 resolution=512x512; actual GPU captures, no physics movement

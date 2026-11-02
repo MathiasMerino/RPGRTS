@@ -4,7 +4,9 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes, sin iniciar E17.
+- E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. No E18.
+
+- E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes; E17 se autoriza posteriormente en su sección.
 
 - E14/E15: alcance piloto completado técnicamente; grupo/mazmorra, facciones/territorios y conquista conectados a E13.121/121 regresión,11/11 tras pulido y1/1UI final a dos resoluciones;20procesos Windows PASS; ZIP nuevo CRC/SHA/portable verificado,24PNG y2MP4 reales. Informe Docs/ENTREGA_E14_E15.md; EXP-H humano/arte/balance pendientes. [PR#6](https://github.com/MathiasMerino/RPGRTS/pull/6) abierto en borrador sobre PR5; sin merges.
 
@@ -1045,3 +1047,64 @@ Encargo posterior autoriza E16 sobre E14/E15; no inicia E17 ni aprueba arte defi
 - Aceptación: identificar las condiciones de derrota del Mago y distinguir estabilidad del controlador de una estrategia automática ganadora; registrar estado y órdenes sin alterar salud/costes/balance para forzar el resultado.
 - Archivos: DemoRtsTests.cs (sin cambios E16); Docs/Validacion/E16/FOCAL_POST_CAPAS_INTERMEDIA.xml, RTS_REPETICION_1.xml; Docs/E16_PULIDO_VISUAL.md.
 - Pruebas / resultado: pasó en regresión125/125; perdió en un pase dirigido9/10; repetición aislada1/1 pasó las tres clases sin cambios. No se declara determinismo ni resolución de esta variación por el hecho de repetirla. Escena histórica sin perfil E16.
+
+## FASE E17 — ESTABILIDAD Y CANDIDATA ALFA
+
+Encargo posterior autoriza esta fase sobre E16; no E18.
+
+### E17-A — Estabilidad y diagnóstico RTS
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: alfa / P1. Dependencias: E16.
+- Aceptación: Trazas, condiciones controladas y repeticiones; selección/órdenes/victoria/derrota/transiciones. No cambiar reglas para forzar victorias.
+- Archivos: Runtime/Rts/RtsBattleController.cs, RtsTraceSample.cs; Tests/Editor/DemoRtsTests.cs, E17RtsInvestigationTests.cs, RtsTraceRecorder.cs; Docs/Validacion/E17/RTS*.
+- Pruebas / resultado: baseline5escenarios4/5 (10batallas:9victorias/1derrota real). Contratos4/5 y caso30aislado1/1 tras reparar limpieza del fixture. Se preservan todos los XML. Snapshot/evento/estados comprobados sin alterar reglas; la expectativa de victoria de la carga sigue pendiente (E17-A-RTS).
+
+### E17-B — Pipeline visual y Meshy local
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-A.
+- Aceptación: Sustitución desacoplada con fallback probado; revisar importación/UV/rig/escala en escena local, sin publicar arte experimental.
+- Archivos: CharacterVisualContract/Factory/Catalog/Presenter, SupportVisualFactory; AlphaPipelineBuilder; AlphaArtPipelineTests; Assets/13_AlphaCandidate/Characters; .gitignore; Docs/E17_PIPELINE_PERSONAJES.md.
+- Pruebas / resultado:14/14 y1/1 tras ampliar fallback, movimiento/equipo/guardar/cargar por tres clases. Copia FBX/estudio/captura privados; hashes originales intactos, catálogo sin dependencias experimentales. Meshy99.466tris,1submesh/material,UV0ausente,sinrig/Avatar; no integración runtime ni publicación.
+
+### E17-C — Presentación y tipografía
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-B.
+- Aceptación: Menú/selección mejorados, retratos proporcionados, cierres y escalado720p/1080p/1440p;4K si viable.
+- Archivos: DemoFrontEnd.Alpha.cs/Visual.cs/FrontEnd.cs; ClassCardView, RuntimeClassPreview; AlphaSceneBuilder; AlphaPresentationTests; AetherniaAlphaCandidate.unity y ClassOption.prefab.
+- Pruebas / resultado:2/2 PASS,20capturas reales720p/1080p/1440p/4K; bounds/raycast/overflow, glifos dinámicos/fallback, física igual aE16, dependencia artística pública, JSON de partida idéntico durante selección y preview apagado al jugar. Se preservaron fallos de override/testglifos; fuente/atlas original sin cambios. Inspección técnica de imagen original4K; aprobación humana pendiente.
+
+### E17-D — Escenarios y materiales URP
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-C.
+- Aceptación: Superficies/vegetación/ruinas mejoradas sin cambiar navegación; shader compatible y materiales compartidos.
+- Archivos: AlphaSurfaceGraph/Builder, VisualWindBounds, AlphaWorldTests, escena Alpha; Assets/13_AlphaCandidate/Shaders, Materials, Lighting; Docs/Validacion/E17/WORLD*, SURFACES.json y WIND_GPU.txt.
+- Pruebas / resultado:3/3 PASS y1/1 tras separar marcadores de los puntos de aparición.15materiales/377asignaciones compartidas, texturas originales, firma física igual aE16. Viento GPU92.901píxeles variables frente a0en control estático; viaje/oclusión/restauración comprobados. Capturas aldea/ruinas inspeccionadas; valoración humana pendiente.
+
+### E17-E — Transiciones y lectura de combate
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E17-D.
+- Aceptación: Presentación integrada en flujo real, feedback de estados y cámara sin nuevas reglas o escenas narrativas.
+- Archivos: ModeTransitionView, AlphaExperienceBuilder/Tests, SupportVisualFactory, ExplorationUnit, DemoSettlementPanel/RtsOverlay; escena Alpha.
+- Pruebas / resultado: reproducción fallida preservada: construcción sobre ayuda e indicadores7/7desactivados. Corrección1/1, cierres1/1, pase final2/2 PASS. Ayuda excluye paneles contextuales, indicadores0/7desactivados; × por raycast y Escape por InputSystem en ficha/inventario/sesión/grupo. Avisos y fundido0.18s sin bloquear entrada; comandos RTS laterales solo Alpha. Captura inspeccionada; no evaluación humana ni nuevos sonidos/cinemáticas.
+
+### E17-F — QA, rendimiento y candidata alfa
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-E.
+- Aceptación: Regresión y recorridos Windows reales; capturas comparables, métricas disponibles, ZIP verificable, PRdraft y guía; no v1.0.
+- Archivos: AlphaQualityBuilder/Tests, AlphaGraphicsPolicy, AlphaBenchmarkProbe; perfiles Graphics, escena Alpha; herramientas de build/benchmark/export/ZIP; Docs/E17_ALFA.md, GUIA_ALFA_E17.md, COMPARATIVA_E17.md y Validacion/Images/Videos/E17.
+- Pruebas / resultado: general142/143, caso histórico fallback actualizado y fortalecido5/5dirigidas;2/2calidad. BuildPASS y14/14procesosWindows finales con tres clases/reinicios/ZIP.18medicionesoffscreen con render verificado (sin FPSDisplay/GPU; DrawCalls/Batches no obtenidos);82PNG/2MP4 reales. CRC/SHA/17ZIPprevios intactos. [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) abierto en borrador sobre E16; main/dev y PR1..7 intactos, sin merges/force. Primer perfilado sin render invalidado y conservado; humano/estrategiaRTS siguen abiertos.
+
+### E17-HUM — Revisión humana/artística
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-F.
+- Aceptación: Sesión del usuario y aprobación explícita; no sustituirla por automatización.
+- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+
+### E17-A-RTS — Expectativa de victoria de la carga automática
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: QA/balance RTS / P1. Dependencias: E17-A.
+- Aceptación: investigar supervivencia del héroe con trayectoria/temporización variables; conservar pruebas de victoria y pérdida, sin otorgar victorias o salud artificiales. No exigir una carga ganadora universal sin regla aprobada.
+- Archivos: evidencia RTS de Docs/Validacion/E17 y futura investigación dirigida.
+- Pruebas / resultado: derrota real Monje30reproducida conHP0/aliados5/enemigos0 y evento correcto; E16Mago sin traza histórica suficiente para demostrar causa única. No se cierra por reintento.

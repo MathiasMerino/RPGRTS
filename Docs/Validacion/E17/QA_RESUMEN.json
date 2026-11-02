@@ -1,0 +1,26 @@
+{
+  "sourceRevision": "08022860fc3f3af2c3066e02d6736cdcc573542d",
+  "editor": "6000.5.8f1",
+  "generalRegression": {
+    "passed": 142,
+    "total": 143,
+    "failed": 1,
+    "skipped": 0,
+    "xml": "REGRESION_GENERAL.xml",
+    "failure": "Historical fallback expectation before movement; incompatible with E17 keep-current policy"
+  },
+  "nativeBuild": "PASS; BUILD.txt",
+  "nativeGameplayProcesses": "14/14 PASS; WINDOWS.json",
+  "nativeBenchmark": "18/18 verified offscreen rows; PERFORMANCE.json; not display FPS",
+  "portable": "PASS; PORTABLE.json; 17 historical archives unchanged",
+  "humanEvaluation": "PENDING",
+  "beforeArchives": 17,
+  "privateArt": "Excluded, originals locally preserved",
+  "fallbackCompatibility": {
+    "passed": 5,
+    "total": 5,
+    "xml": "FALLBACK_COMPAT_5.xml",
+    "change": "Test strengthened to assert model/state retained and technical body when both catalog/model invalid. No gameplay rule change."
+  },
+  "knownRtsChargeExpectation": "PENDING; initial defeat retained"
+}

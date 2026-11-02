@@ -77,3 +77,12 @@ Desktop.ini
 .DS_Store
 .DS_Store.meta
 ~$*
+
+# E17: arte experimental sin autorización de publicación y sus pruebas locales.
+/ProyectoRPGRTS/Assets/07_Characters/MonkMeshy/
+/ProyectoRPGRTS/Assets/07_Characters/MonkMeshy.meta
+/ProyectoRPGRTS/Assets/LocalOnly/
+/ProyectoRPGRTS/Assets/LocalOnly.meta
+
+# Python tooling bytecode
+__pycache__/

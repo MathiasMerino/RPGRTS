@@ -49,7 +49,8 @@ namespace Aethernia
         {
             canvas=gameObject.GetComponent<Canvas>();if(canvas==null)canvas=gameObject.AddComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=30;
             var scaler=gameObject.AddComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(1280,720);scaler.matchWidthOrHeight=.5f;gameObject.AddComponent<GraphicRaycaster>();fade=gameObject.AddComponent<CanvasGroup>();
-            if(Presentation!=null)BuildPolishedMain();
+            if(AlphaLayout)BuildAlphaMain();
+            else if(Presentation!=null)BuildPolishedMain();
             else {
             var main=Panel(DemoScreen.Main,"Main menu");
             var slab=DemoWidgets.Rect(main,"Bronze frame",40,42,516,633);DemoWidgets.Fill(slab,new Color(.57f,.43f,.24f,.8f));
@@ -74,6 +75,7 @@ namespace Aethernia
         }
         private void BuildCharacter()
         {
+            if(AlphaLayout){BuildAlphaCharacter();return;}
             if(Presentation!=null){BuildPolishedCharacter();return;}
             var p=Panel(DemoScreen.Character,"Character creation");ui.Text(p,"Heading","ELIGE TU CAMINO",60,40,850,64,36).color=ui.Gold;
             ui.Text(p,"Name label","Nombre",60,123,300,30);NameInput=ui.Input(p,"Name","Viajero",60,160,540);
@@ -90,7 +92,7 @@ namespace Aethernia
         public void ChooseClass(string id){if(Flow.Session.Rules.Find(id)==null)return;ChosenClass=id;RefreshCharacter();}
         private void RefreshCharacter()
         {
-            if(classText==null)return;if(Presentation!=null){RefreshPolishedCharacter();return;}var profile=Flow.Session.Rules.Find(ChosenClass);classText.text=profile.Title+"\n"+Flow.Content.ClassDescription(ChosenClass)+"\n"+profile.Health+" PV · Alcance "+profile.Range.ToString("0.#")+" m";
+            if(classText==null)return;if(AlphaLayout){RefreshAlphaCharacter();return;}if(Presentation!=null){RefreshPolishedCharacter();return;}var profile=Flow.Session.Rules.Find(ChosenClass);classText.text=profile.Title+"\n"+Flow.Content.ClassDescription(ChosenClass)+"\n"+profile.Health+" PV · Alcance "+profile.Range.ToString("0.#")+" m";
             var entry=Catalog.FindEntry(ChosenClass);portrait.sprite=entry==null?null:entry.PortraitSprite;portrait.enabled=portrait.sprite!=null;
             var lineage=Flow.Content.Lineages[lineageIndex];lineageText.text=lineage.Title+" · provisional\n"+lineage.Description;
         }

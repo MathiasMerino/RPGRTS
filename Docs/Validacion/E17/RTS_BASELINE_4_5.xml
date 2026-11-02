@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="5" result="Failed(Child)" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 15:03:45Z" end-time="2026-11-02 15:04:54Z" duration="68.662598">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="130" result="Failed" site="Child" start-time="2026-11-02 15:03:45Z" end-time="2026-11-02 15:04:54Z" duration="68.662598" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1169" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="130" result="Failed" site="Child" start-time="2026-11-02 15:03:45Z" end-time="2026-11-02 15:04:54Z" duration="68.500157" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="6748" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1170" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="130" result="Failed" site="Child" start-time="2026-11-02 15:03:45Z" end-time="2026-11-02 15:04:54Z" duration="68.496368" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1171" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="130" result="Failed" site="Child" start-time="2026-11-02 15:03:45Z" end-time="2026-11-02 15:04:54Z" duration="68.493550" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1172" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="130" result="Failed" site="Child" start-time="2026-11-02 15:03:45Z" end-time="2026-11-02 15:04:54Z" duration="68.490944" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1040" name="E17RtsInvestigationTests" fullname="Aethernia.Tests.Editor.E17RtsInvestigationTests" classname="Aethernia.Tests.Editor.E17RtsInvestigationTests" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2026-11-02 15:03:45Z" end-time="2026-11-02 15:04:54Z" duration="68.480462" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1045" name="MageIsolated120" fullname="Aethernia.Tests.Editor.E17RtsInvestigationTests.MageIsolated120" methodname="MageIsolated120" classname="Aethernia.Tests.Editor.E17RtsInvestigationTests" runstate="Runnable" seed="1972865207" result="Passed" start-time="2026-11-02 15:00:09Z" end-time="2026-11-02 15:00:49Z" duration="40.448141" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1044" name="MageIsolated30" fullname="Aethernia.Tests.Editor.E17RtsInvestigationTests.MageIsolated30" methodname="MageIsolated30" classname="Aethernia.Tests.Editor.E17RtsInvestigationTests" runstate="Runnable" seed="277950526" result="Passed" start-time="2026-11-02 15:00:49Z" end-time="2026-11-02 15:01:26Z" duration="36.886660" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1043" name="ThreeClasses120" fullname="Aethernia.Tests.Editor.E17RtsInvestigationTests.ThreeClasses120" methodname="ThreeClasses120" classname="Aethernia.Tests.Editor.E17RtsInvestigationTests" runstate="Runnable" seed="2116357280" result="Passed" start-time="2026-11-02 15:01:26Z" end-time="2026-11-02 15:02:43Z" duration="76.893757" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1042" name="ThreeClasses30" fullname="Aethernia.Tests.Editor.E17RtsInvestigationTests.ThreeClasses30" methodname="ThreeClasses30" classname="Aethernia.Tests.Editor.E17RtsInvestigationTests" runstate="Runnable" seed="1473179613" result="Failed" start-time="2026-11-02 15:02:43Z" end-time="2026-11-02 15:03:35Z" duration="51.884293" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  monk: victoria RTS real
+  Expected: Settlement
+  But was:  FirstRts
+]]></message>
+                  <stack-trace><![CDATA[at Aethernia.Tests.Editor.DemoRtsTests+<Patrol>d__2.MoveNext () [0x009ae] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\DemoRtsTests.cs:49
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1041" name="ThreeClassesDefault" fullname="Aethernia.Tests.Editor.E17RtsInvestigationTests.ThreeClassesDefault" methodname="ThreeClassesDefault" classname="Aethernia.Tests.Editor.E17RtsInvestigationTests" runstate="Runnable" seed="1589952424" result="Passed" start-time="2026-11-02 15:03:35Z" end-time="2026-11-02 15:04:54Z" duration="78.537893" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

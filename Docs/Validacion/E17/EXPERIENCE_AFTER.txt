@@ -1,0 +1,1 @@
+constructionHelpOverlap=False; selectedAllyIndicatorsDisabled=0/7

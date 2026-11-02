@@ -1,0 +1,1 @@
+PASS automatic pointer raycast X and queued Escape: character, inventory, session, expedition. Human evaluation remains pending.

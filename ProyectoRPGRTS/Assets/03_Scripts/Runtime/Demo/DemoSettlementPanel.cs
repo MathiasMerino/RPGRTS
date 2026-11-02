@@ -58,7 +58,7 @@ namespace Aethernia
         {
             if(panel==null)return;var state=Flow.Session.State;var available=Flow.IsPlaying&&state.Demo!=null&&state.Demo.Chapter>=DemoChapter.Settlement&&!Flow.Session.Paused;
             var modal=Flow.Front.Presentation!=null&&(Flow.ExistingHud.CompactView.WindowOpen||Flow.ExistingHud.CompactView.HelpOpen);
-            manage.gameObject.SetActive(available&&!modal&&Flow.Session.Mode==PrototypeMode.Exploration);panel.gameObject.SetActive(available&&Flow.Session.Mode==PrototypeMode.Construction);if(!panel.gameObject.activeSelf)return;
+            manage.gameObject.SetActive(available&&!modal&&Flow.Session.Mode==PrototypeMode.Exploration);panel.gameObject.SetActive(available&&!modal&&Flow.Session.Mode==PrototypeMode.Construction);if(!panel.gameObject.activeSelf)return;
             if(lastCount!=state.Buildings.Count){lastCount=state.Buildings.Count;selected=lastCount-1;}
             resources.text="Oro "+state.Gold+" · Madera "+state.Wood+" · Alimento "+state.Food+" · Cap. "+SettlementOperations.Capacity(state,Rules)+" · Ejército "+state.Army.Count+"/6";
             var b=Selected;selectedLabel.text=b==null?"Ningún edificio seleccionado.":Rules.Find(b.Id).Title+" · nivel "+b.Level+(b.ProductionPaused?" · producción pausada":" · activo");

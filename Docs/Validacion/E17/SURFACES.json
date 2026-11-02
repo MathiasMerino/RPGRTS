@@ -1,0 +1,128 @@
+{
+    "graph": "Assets/13_AlphaCandidate/Shaders/MedievalSurface.shadergraph",
+    "materials": 15,
+    "renderers": 377,
+    "physicsEdited": false,
+    "entries": [
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/AgedOak.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/AgedOak_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.2199999988079071,
+            "renderers": 31
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/LeafLight.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/LeafLight_Alpha.mat",
+            "wind": 0.03500000014901161,
+            "edge": 0.0,
+            "smoothness": 0.11999999731779099,
+            "renderers": 90
+        },
+        {
+            "source": "Assets/12_VisualPolish/Materials/DungeonStone.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/DungeonStone_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.11999999731779099,
+            "renderers": 16
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/LeafDark.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/LeafDark_Alpha.mat",
+            "wind": 0.03500000014901161,
+            "edge": 0.0,
+            "smoothness": 0.11999999731779099,
+            "renderers": 75
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/GreyStone.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/GreyStone_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.11999999731779099,
+            "renderers": 30
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/DarkOak.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/DarkOak_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.2199999988079071,
+            "renderers": 68
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/Bronze.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/Bronze_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.30000001192092898,
+            "renderers": 15
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/WarmStone.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/WarmStone_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.11999999731779099,
+            "renderers": 14
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/Plaster.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/Plaster_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.11999999731779099,
+            "renderers": 8
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/Earth.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/Earth_Alpha.mat",
+            "wind": 0.0,
+            "edge": 1.0,
+            "smoothness": 0.11999999731779099,
+            "renderers": 6
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/EmberGlass.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/EmberGlass_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.11999999731779099,
+            "renderers": 12
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/Slate.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/Slate_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.18000000715255738,
+            "renderers": 6
+        },
+        {
+            "source": "Assets/12_VisualPolish/Materials/GrassWarm.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/GrassWarm_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.05999999865889549,
+            "renderers": 2
+        },
+        {
+            "source": "Assets/06_Environment/VillageE07/Materials/ForestFloor.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/ForestFloor_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.6499999761581421,
+            "smoothness": 0.11999999731779099,
+            "renderers": 2
+        },
+        {
+            "source": "Assets/12_VisualPolish/Materials/DungeonFloor.mat",
+            "result": "Assets/13_AlphaCandidate/Materials/DungeonFloor_Alpha.mat",
+            "wind": 0.0,
+            "edge": 0.0,
+            "smoothness": 0.11999999731779099,
+            "renderers": 2
+        }
+    ]
+}

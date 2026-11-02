@@ -1,6 +1,6 @@
 # Plan de desarrollo de Crónicas de Aethernia
 
-Actualizado: 2026-11-02, America/La_Paz. Estado actual: E16, pulido visual autorizado sobre E14/E15. Informe y pruebas en Docs/E16_PULIDO_VISUAL.md; la aceptación estética humana y F2-07 siguen pendientes. Los apartados de diagnóstico y planificación siguientes conservan su contexto histórico. No iniciar E17 automáticamente.
+Actualizado:2026-11-02, America/La_Paz. Estado actual: E17 autorizado sobre E16/PR7, seis bloques secuenciales A–F. A–E verificados técnicamente con la incidencia de estrategia RTS documentada; F validado técnicamente (142/143+5/5compatibilidad,14procesosWindows,18mediciones,82PNG/2MP4,ZIP); PR#8 abierto en borrador sobre E16. Informe Docs/E17_ALFA.md y pipeline Docs/E17_PIPELINE_PERSONAJES.md. Revisión humana/artística y F2-07 siguen pendientes. Los apartados siguientes conservan su contexto histórico. No iniciar E18 automáticamente.
 El usuario indicó «continua con el prompt» después de recibir este plan. Se continúa con la base técnica y sus verificaciones; las reglas y sistemas todavía pendientes de diseño mantienen sus decisiones abiertas.
 
 ## Avance verificado

@@ -1,0 +1,15 @@
+{
+  "sourceCommit": "08022860fc3f3af2c3066e02d6736cdcc573542d",
+  "protectedSourceChanges": [],
+  "privateOriginalHashesIntact": true,
+  "trackedExperimentalFiles": [],
+  "credentialPatternHits": [],
+  "scope": "Known credential patterns in changed tracked text; not a guarantee against all secrets. Private binary hashes compared locally. No original art/versions/packages changed.",
+  "alphaAssetInventory": {
+    "nonMetaBytes": 213837,
+    "newRasterTextureCount": 0,
+    "scope": "On-disk asset inventory, not runtime memory/performance"
+  },
+  "originalGddSha256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "ownUrpBuildMetadata": "Unity pre-build updated serialized stripping/prefilter flags on own Bajo/Medio assets; original pipelines unchanged."
+}

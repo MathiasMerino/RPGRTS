@@ -1,0 +1,33 @@
+{
+    "source": "Assets/07_Characters/MonkMeshy/Meshy_AI_Ascetic_Warrior_20261101_generate.fbx",
+    "experimentalStatus": "Not approved for runtime or publication",
+    "animationType": "Generic",
+    "normalization": "Wrapper root scale1; child scale factor=0.9375268; rotateMinus90X=False; feetY0; front requires human review",
+    "importerScale": 1.0,
+    "normalizedHeight": 1.779999852180481,
+    "originalSize": {
+        "x": 1.2612601518630982,
+        "y": 1.898612380027771,
+        "z": 0.47443148493766787
+    },
+    "rootEuler": {
+        "x": 270.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "meshes": 1,
+    "vertices": 222717,
+    "triangles": 99466,
+    "submeshes": 1,
+    "materials": 1,
+    "textures": 0,
+    "transforms": 1,
+    "skins": 0,
+    "bones": 0,
+    "animators": 0,
+    "uvVertices": 0,
+    "nonFiniteUv": 0,
+    "degenerateUvTriangles": 0,
+    "validAvatar": false,
+    "hasUv": false
+}

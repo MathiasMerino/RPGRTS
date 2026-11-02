@@ -9,6 +9,7 @@ namespace Aethernia
         [SerializeField] private GameObject selectionIndicator;
         private NavMeshAgent agent;
         private NavMeshPath path;
+        public GameObject SelectionIndicator => selectionIndicator;
         public bool IsSelected { get; private set; }
         public float LastPathLength { get; private set; }
         public bool DirectControl { get; private set; }
