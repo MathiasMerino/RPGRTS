@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e134d5a2062fc4b88344c610726d79, type: 3}
+  m_Name: Theme
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.MedievalUiTheme
+  Panel: {r: 0.12, g: 0.1, b: 0.085, a: 0.96}
+  Button: {r: 0.28, g: 0.22, b: 0.14, a: 1}
+  Gold: {r: 0.78, g: 0.64, b: 0.39, a: 1}
+  Text: {r: 0.91, g: 0.88, b: 0.8, a: 1}
+  Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  BodyFontSize: 18
+  ButtonFontSize: 16
+  HeadingFontSize: 20
+  Spacing: 8
+  Padding: 16
+  ActionButtonSize: {x: 116, y: 34}
+  PanelSprite: {fileID: -6903186186838378319, guid: 96ac6ecab0c7a534ba7f0d45bf5f9744, type: 2}
+  PaperSprite: {fileID: 6625805620976976838, guid: 96ac6ecab0c7a534ba7f0d45bf5f9744, type: 2}
+  ButtonSprite: {fileID: 4008703387611795466, guid: 96ac6ecab0c7a534ba7f0d45bf5f9744, type: 2}
+  InsetSprite: {fileID: -6903186186838378319, guid: 96ac6ecab0c7a534ba7f0d45bf5f9744, type: 2}
+  Ink: {r: 0.16, g: 0.12, b: 0.08, a: 1}
