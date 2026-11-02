@@ -1072,11 +1072,11 @@ Encargo posterior autoriza esta fase sobre E16; no E18.
 - Pruebas / resultado:2/2 PASS,20capturas reales720p/1080p/1440p/4K; bounds/raycast/overflow, glifos dinámicos/fallback, física igual aE16, dependencia artística pública, JSON de partida idéntico durante selección y preview apagado al jugar. Se preservaron fallos de override/testglifos; fuente/atlas original sin cambios. Inspección técnica de imagen original4K; aprobación humana pendiente.
 
 ### E17-D — Escenarios y materiales URP
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: alfa / P1. Dependencias: E17-C.
-- Aceptación: Mejoras visibles de superficies/vegetación/ruinas/RTS sin cambiar navegación; shader modesto compatible y materiales compartidos.
-- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Aceptación: Superficies/vegetación/ruinas mejoradas sin cambiar navegación; shader compatible y materiales compartidos.
+- Archivos: AlphaSurfaceGraph/Builder, VisualWindBounds, AlphaWorldTests, escena Alpha; Assets/13_AlphaCandidate/Shaders, Materials, Lighting; Docs/Validacion/E17/WORLD*, SURFACES.json y WIND_GPU.txt.
+- Pruebas / resultado:3/3 PASS y1/1 tras separar marcadores de los puntos de aparición.15materiales/377asignaciones compartidas, texturas originales, firma física igual aE16. Viento GPU92.901píxeles variables frente a0en control estático; viaje/oclusión/restauración comprobados. Capturas aldea/ruinas inspeccionadas; valoración humana pendiente.
 
 ### E17-E — Transiciones y lectura de combate
 - Estado: [ ] Pendiente.

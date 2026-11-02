@@ -567,3 +567,7 @@ Contrato visual y fábrica reutilizados por héroe/apoyos, validación de malla/
 ## 2026-11-02 — E17-C menú, clases y tipografía
 
 Layout opcional Alpha y preview3D reutilizando catálogo/fábrica, sin modificar escenas previas ni estado de selección antes de confirmar. Persiste overrides de prefab; se verifica fuente dinámica/glifos españoles sin reemplazar fuente.2/2pruebas,20vistas reales720p–4K, proporciones/límites/raycast/overflow, física y dependencias conservadas; preview desactivado durante gameplay. Capturas originales inspeccionadas técnicamente; arte/rig y valoración humana pendientes. Continúa D.
+
+## 2026-11-02 — E17-D superficies y mundo
+
+Shader Graph Lit URP17.5 nativo, variación de terreno, mezcla de bordes, normales originales y viento leve en dos materiales de hojas;15variantes compartidas/377asignaciones. Volumen propio Neutral, bloom reducido y luz de apoyo existente ajustada. Los marcadores de viaje ya no ocupan el punto de aparición. Sin cambios en física/nav/escenas anteriores.3/3pruebas GPU/compilación/viaje y1/1 posterior al ajuste, capturas reales. Continúa E.

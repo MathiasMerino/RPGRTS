@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Passed" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 16:43:31Z" end-time="2026-11-02 16:43:35Z" duration="3.983073">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="139" result="Passed" start-time="2026-11-02 16:43:31Z" end-time="2026-11-02 16:43:35Z" duration="3.983073" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1181" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="139" result="Passed" start-time="2026-11-02 16:43:31Z" end-time="2026-11-02 16:43:35Z" duration="3.772712" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="24332" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1182" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="139" result="Passed" start-time="2026-11-02 16:43:31Z" end-time="2026-11-02 16:43:35Z" duration="3.765803" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1183" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="139" result="Passed" start-time="2026-11-02 16:43:31Z" end-time="2026-11-02 16:43:35Z" duration="3.759059" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1184" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="139" result="Passed" start-time="2026-11-02 16:43:31Z" end-time="2026-11-02 16:43:35Z" duration="3.752560" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1009" name="AlphaWorldTests" fullname="Aethernia.Tests.Editor.AlphaWorldTests" classname="Aethernia.Tests.Editor.AlphaWorldTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 16:43:31Z" end-time="2026-11-02 16:43:35Z" duration="3.738189" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1011" name="RegionTravelAndCutawayRestore" fullname="Aethernia.Tests.Editor.AlphaWorldTests.RegionTravelAndCutawayRestore" methodname="RegionTravelAndCutawayRestore" classname="Aethernia.Tests.Editor.AlphaWorldTests" runstate="Runnable" seed="588022836" result="Passed" start-time="2026-11-02 16:42:36Z" end-time="2026-11-02 16:43:16Z" duration="40.148987" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1010" name="SharedShaderCompilesAndKeepsOriginalTexturesAndPhysics" fullname="Aethernia.Tests.Editor.AlphaWorldTests.SharedShaderCompilesAndKeepsOriginalTexturesAndPhysics" methodname="SharedShaderCompilesAndKeepsOriginalTexturesAndPhysics" classname="Aethernia.Tests.Editor.AlphaWorldTests" runstate="Runnable" seed="772208115" result="Passed" start-time="2026-11-02 16:43:16Z" end-time="2026-11-02 16:43:18Z" duration="1.313144" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1012" name="WindMovesGpuPixelsAndStaticMaterialDoesNot" fullname="Aethernia.Tests.Editor.AlphaWorldTests.WindMovesGpuPixelsAndStaticMaterialDoesNot" methodname="WindMovesGpuPixelsAndStaticMaterialDoesNot" classname="Aethernia.Tests.Editor.AlphaWorldTests" runstate="Runnable" seed="1301516777" result="Passed" start-time="2026-11-02 16:43:18Z" end-time="2026-11-02 16:43:35Z" duration="17.401914" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
