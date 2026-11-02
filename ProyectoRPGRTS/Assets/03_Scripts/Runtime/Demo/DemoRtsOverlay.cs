@@ -39,7 +39,7 @@ namespace Aethernia
                 if(unit.Hero&&unit.Unit.IsSelected)selectedHero=true;
                 if(!bars.TryGetValue(unit.Unit,out var bar))
                 {
-                    var barWidth=unit.Hero?80:44;var rect=DemoWidgets.Rect(canvas.transform,"RTS health",0,0,barWidth,32);rect.anchorMin=rect.anchorMax=new Vector2(.5f,.5f);rect.pivot=new Vector2(.5f,0);
+                    var barWidth=unit.Hero?80:44;var rect=DemoWidgets.Rect(canvas.transform,"RTS health",0,0,barWidth,32);rect.anchorMin=rect.anchorMax=new Vector2(.5f,.5f);rect.pivot=new Vector2(.5f,0);if(Flow.Front.Presentation!=null)rect.SetAsFirstSibling();
                     DemoWidgets.Fill(DemoWidgets.Rect(rect,"Track",0,23,barWidth,6),new Color(.06f,.06f,.05f),false);
                     var fill=DemoWidgets.Fill(DemoWidgets.Rect(rect,"Health",0,23,barWidth,6),unit.Team==0?new Color(.43f,.65f,.32f):new Color(.70f,.27f,.20f),false);fill.sprite=Flow.Front.Presentation==null?Flow.Front.Theme.ButtonSprite:null;fill.type=Image.Type.Filled;fill.fillMethod=Image.FillMethod.Horizontal;
                     bar=new Bar{Root=rect,Fill=fill,Label=ui.Text(rect,"Unit name","",0,0,150,22,15)};bars.Add(unit.Unit,bar);
