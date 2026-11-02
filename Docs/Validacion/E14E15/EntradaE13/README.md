@@ -1,0 +1,1 @@
+Partidas auténticas de la ejecución Windows E10–E13 Headless-20261102-014152, una por clase. Copias exactas; SHA256 adjunto. No son fixtures preparadas para ganar. Entradas reproducibles del recorrido E14/E15; el probe obtiene recursos con interacciones, paga reclutas y recupera salud con el descanso de campamento. Solo usar sobre slots aislados, nunca sobre partidas personales.
