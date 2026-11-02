@@ -137,7 +137,7 @@ namespace Aethernia
             var profile=session.Rules.Find(session.State.ClassId);var actor=hero.GetComponent<CharacterVisualPresenter>();
             var h=new Soldier{Unit=hero,Team=0,Hero=true,Role="hero",Range=profile.Range,Animator=actor.Model==null?null:actor.Model.GetComponent<HumanoidAnimationDriver>()};soldiers.Add(h);
             hero.GetComponent<CharacterCombatAnimationPresenter>().ExternallyControlled=true;
-            session.Say("La patrulla necesita tu mando. Arrastra para seleccionar; clic derecho para mover o atacar. Tu héroe conserva vida y equipo.");return true;
+            session.Say((expedition?"Conquista del puesto.":"La patrulla necesita tu mando.")+" Arrastra para seleccionar; clic derecho para mover o atacar. Tu héroe conserva vida y equipo.");return true;
         }
         private void BuildVisual(Soldier s,RtsRoleProfile role)
         {

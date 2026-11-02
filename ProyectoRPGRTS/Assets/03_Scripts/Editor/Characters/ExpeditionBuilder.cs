@@ -69,6 +69,16 @@ namespace Aethernia.Editor.Characters
                 var size=wall.localScale;size.y=.65f;Box(root.transform,name+" Cutaway",new Vector3(wall.position.x,.325f,wall.position.z),size,wall.GetComponent<Renderer>().sharedMaterial);
                 var visual=root.transform.Find(name+" Cutaway");Object.DestroyImmediate(visual.GetComponent<Collider>());
             }
+            // También recortar las divisiones del primer plano: ocultaban al héroe
+            // junto a la guardianía aunque la interfaz dejara libre su proyección.
+            foreach(var wall in root.GetComponentsInChildren<BoxCollider>())
+            {
+                if(wall.name!="Corridor wall"||wall.transform.position.z>=0)continue;
+                var original=wall.GetComponent<Renderer>();original.enabled=false;
+                if(wall.transform.Find("Cutaway stone")!=null)continue;
+                var visual=GameObject.CreatePrimitive(PrimitiveType.Cube);visual.name="Cutaway stone";visual.transform.SetParent(wall.transform,false);
+                visual.transform.localPosition=new Vector3(0,(-1+.65f/3)/2,0);visual.transform.localScale=new Vector3(1,.65f/3,1);visual.GetComponent<Renderer>().sharedMaterial=original.sharedMaterial;Object.DestroyImmediate(visual.GetComponent<Collider>());
+            }
             // UV por metro: conserva el material compartido y el collider del suelo original.
             const string path=Root+"/RuinsFloor.asset";var mesh=AssetDatabase.LoadAssetAtPath<Mesh>(path);
             if(mesh==null)

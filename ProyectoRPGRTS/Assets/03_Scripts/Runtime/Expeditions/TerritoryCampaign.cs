@@ -1,5 +1,7 @@
 using System;
 using System.Linq;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Aethernia
@@ -8,7 +10,11 @@ namespace Aethernia
     {
         public DemoFlow Flow;public PartyWorld Party;public ExpeditionRules Rules;
         private PrototypeState observed;private string pending;private Vector3 returnPoint;
+        private readonly Dictionary<string,TMP_Text> labels=new Dictionary<string,TMP_Text>();
+        private readonly Dictionary<string,string> owners=new Dictionary<string,string>();
         public string LastResult{get;private set;}="";
+        public string FactionTitle(string id){if(string.IsNullOrEmpty(id))return "Neutral";foreach(var f in Rules.Factions)if(f.Id==id)return f.Title;return id;}
+        private void Start(){foreach(var p in FindObjectsByType<InteractionPoint>())if(p.FactId.StartsWith("territory-")){var label=p.GetComponentInChildren<TMP_Text>();if(label!=null)labels[p.FactId.Substring(10)]=label;}}
         private void OnEnable(){if(Flow!=null){Flow.Session.AdditionalInteraction+=Interact;Flow.Director.Rts.Resolved+=Resolved;}}
         private void OnDisable(){if(Flow!=null){Flow.Session.AdditionalInteraction-=Interact;Flow.Director.Rts.Resolved-=Resolved;}}
         private void Update()
@@ -16,6 +22,13 @@ namespace Aethernia
             if(!Flow.IsPlaying)return;
             if(Flow.Session.State!=observed){observed=Flow.Session.State;pending=null;}
             ExpeditionOperations.InitializeTerritories(observed,Rules);
+            foreach(var pair in labels)
+            {
+                var record=observed.Territories.Find(t=>t.Id==pair.Key);if(record==null)continue;var key=record.Owner+"|"+record.Secured;
+                if(owners.TryGetValue(pair.Key,out var old)&&old==key)continue;owners[pair.Key]=key;
+                pair.Value.text=Rules.Find(pair.Key).Title+"\n"+FactionTitle(record.Owner)+" · E";
+                pair.Value.GetComponentInParent<InteractionPoint>().Configure("territory-"+pair.Key,Rules.Find(pair.Key).Title+" · "+FactionTitle(record.Owner));
+            }
         }
         public bool SelectSoldier(string id,bool selected)
         {

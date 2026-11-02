@@ -30,7 +30,7 @@ namespace Aethernia
             {
                 if(!Inside||Flow.Session.HasFact(id)||Flow.Director.IsBusy)return false;
                 var centre=id.EndsWith("1")?new Vector3(78,0,0):new Vector3(86,0,0);
-                if(!Flow.Director.Encounter.BeginGroup(centre,TestSeed))return false;encounterFact=id;Flow.CameraRig.FocusOn(centre);Flow.ExistingHud.ClosePanels();return true;
+                if(!Flow.Director.Encounter.BeginGroup(centre,TestSeed))return false;encounterFact=id;Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);Flow.ExistingHud.ClosePanels();return true;
             }
             return false;
         }

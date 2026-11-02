@@ -509,3 +509,8 @@ Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nue
 - Nueva escena AetherniaExpeditions, originales preservados; ruinas24×16m, dos encuentros, alijo, recompensa única y salida. Materiales/colisiones/roles existentes; suelo con UV por metro y recorte visual frontal sin cambiar barreras físicas.
 - Tres recorridos Windows con partidas E13 reales, más tres reinicios independientes, PASS. Recursos del cofre pagan compañeros; recompensa de ruinas paga granja/ejército. Sin salud o fondos añadidos por el probe. Focales de composición reducida y derrota2/2 PASS.
 - Seguimiento/representación compartida, controlador RPG ampliado y despliegue RTS seleccionable; patrulla anterior distingue ContextId y conserva sus reglas. Pausa/carga cancelan descanso del estado anterior. La revisión de capturas detectó recortes de etiquetas/orden visual del panel: corrección local pendiente, registrada sin aprobar visualmente la entrega.
+
+### E14–E15 — pulido visual verificable
+- Panel de grupo lateral; textos compactos completos, capa encima del HUD, cierre al abrir ficha/inventario/ayuda y adaptación4:3. Propietarios usan nombres de facción, marcadores actualizan propietario e instrucciones distinguen conquista/patrulla.
+- Cámara de combate centra al héroe; recorte de paredes frontales/divisiones cercanas evita ocultarlo. Colliders originales3m y SHA del NavMesh conservados. Nueva escena únicamente; no se regeneraron autorías históricas.
+- Regresión121/121 PASS; tras cambios de presentación11/11 focales PASS y1/1UI final con ocho vistas a1280×720/1024×768, límites/raycast/textos, ventanas históricas y héroe fuera del HUD. Build exacta recompilada; recorrido GPU final y portable en ejecución. Evaluación humana no realizada.
