@@ -61,14 +61,15 @@ namespace Aethernia
         {if(!Party.AtCamp||Flow.Director.IsBusy||rest!=null)return false;Flow.Director.Hero.Stop();rest=StartCoroutine(RestSequence());return true;}
         private IEnumerator RestSequence()
         {
-            var restingState=Flow.Session.State;var start=restingState.WorldSeconds;var origin=Flow.Director.Hero.transform.position;Flow.Session.Say("Descanso10segundos en campamento: recupera hasta4PV por miembro. Caminar lo cancela.");
+            var restingState=Flow.Session.State;var start=restingState.WorldSeconds;var origin=Flow.Director.Hero.transform.position;Flow.Session.Say(restingState.ProgressionRevision==1?"Descanso10s: hasta4PV para héroe, grupo y ejército. Caminar lo cancela.":"Descanso10segundos en campamento: recupera hasta4PV por miembro. Caminar lo cancela.");
             while(Flow.Session.State.WorldSeconds-start<Rules.RestSeconds)
             {if(!Flow.IsPlaying||Flow.Session.State!=restingState||Flow.Session.Mode!=PrototypeMode.Exploration||Vector3.Distance(origin,Flow.Director.Hero.transform.position)>.6f){rest=null;yield break;}yield return null;}
             if(Flow.Session.State!=restingState){rest=null;yield break;}
             var state=Flow.Session.State;state.Health+=HeroActionRules.Recovery(state.Health,Flow.Session.HeroProfile.Health);
             if(state.Health>0)Flow.Director.Hero.GetComponentInChildren<HumanoidAnimationDriver>()?.SetDefeated(false);
             foreach(var c in state.Companions)c.Health+=HeroActionRules.Recovery(c.Health,TroopProgression.Profile(c,Party.Roles.Find(c.Role)).Health);
-            rest=null;Party.Reconcile();Flow.Session.Say("Descanso completado. Salud recuperada con el tiempo de juego; no hay muerte permanente de compañeros.");Flow.Director.Save(Flow.SlotPath);
+            if(state.ProgressionRevision==1)foreach(var soldier in state.Army)soldier.Health+=HeroActionRules.Recovery(soldier.Health,TroopProgression.Profile(soldier,Party.Roles.Find(soldier.Role)).Health);
+            rest=null;Party.Reconcile();Flow.Session.Say(state.ProgressionRevision==1?"Descanso completado: héroe, grupo y ejército recuperan salud.":"Descanso completado. Salud recuperada con el tiempo de juego; no hay muerte permanente de compañeros.");Flow.Director.Save(Flow.SlotPath);
         }
     }
 }

@@ -28,6 +28,6 @@ namespace Aethernia
             new ItemDefinition("forge-ore","Mineral de forja",ItemKind.Material,sell:2)};
         public static ItemDefinition Find(string id,ItemCatalog catalog=null)=>Array.Find(catalog==null?standard:catalog.Entries,e=>e.Id==id);
         public static bool Known(string id)=>Array.Exists(standard,e=>e.Id==id);
-        public static string Visual(string id)=>Find(id)?.VisualId??"";
+        public static string Visual(string id)=>Find(id)?.VisualId??(id??"");
     }
 }

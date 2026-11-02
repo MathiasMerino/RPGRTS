@@ -67,8 +67,12 @@ namespace Aethernia.Tests.Editor
             Assert.That(panel.Controls["train-0"].interactable,Is.True,"training resources G"+s.Gold+" W"+s.Wood+" atCamp="+Object.FindAnyObjectByType<PartyWorld>().AtCamp);
             panel.Controls["train-0"].onClick.Invoke();
             Assert.That(s.Army[0].Level,Is.EqualTo(2));Assert.That(s.Army[0].Health,Is.EqualTo(health));
+            var dungeon=Object.FindAnyObjectByType<DungeonExpedition>();var started=s.WorldSeconds;Assert.That(dungeon.Rest(),Is.True);
+            while(dungeon.Resting)yield return null;
+            Assert.That(s.WorldSeconds-started,Is.GreaterThanOrEqualTo(dungeon.Rules.RestSeconds));
+            Assert.That(s.Army[0].Health,Is.EqualTo(TroopProgression.Profile(s.Army[0],flow.Director.Rts.DemoRules.Find(s.Army[0].Role)).Health),"camp rest can actually fill trained maximum health");
             foreach(var width in new[]{1280,1920}){var currentPanel=panel;yield return DemoCapture.Save("Logs/E18/Captures/Army-"+width+".png",width,width*9/16,null,(c,w,h)=>{foreach(var t in currentPanel.Controls["close"].transform.parent.GetComponentsInChildren<TMPro.TMP_Text>()){t.ForceMeshUpdate();Assert.That(t.isTextOverflowing,Is.False,t.name+": "+t.text);}});}
-            panel.Close();Assert.That(flow.Director.Save(flow.SlotPath),Is.True,PrototypeSaveStore.LastWriteFailure);flow.ShowMain();Assert.That(flow.Continue(),Is.True);Assert.That(flow.Session.State.Army[0].Level,Is.EqualTo(2));LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
+            panel.Close();Assert.That(flow.Director.Save(flow.SlotPath),Is.True,PrototypeSaveStore.LastWriteFailure);flow.ShowMain();Assert.That(flow.Continue(),Is.True);Assert.That(flow.Session.State.Army[0].Level,Is.EqualTo(2));Assert.That(flow.Session.State.Army[0].Health,Is.EqualTo(s.Army[0].Health));LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
         }
         [UnityTearDown]public IEnumerator Exit(){if(EditorApplication.isPlaying)yield return new ExitPlayMode();}
     }

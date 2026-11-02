@@ -627,3 +627,15 @@ UI militar1/1PASS tras identificar por IL la closure de captura perdida al entra
 ## 2026-11-02 — E18 integración dirigida y primera build
 
 MOQdirigida1/1PASS: reintento explícito recupera salud sin cambiar clase/XP, seleccionar misma clase no cura, grupo muestra un juego de órdenes/nombres y técnica solo en turno propio; avisoXP no reaparece por cargar. Dos capturasGroup. Primera buildWindows PASS, primera ejecuciónWarrior superó patrulla, misión,3compañeros,2guardianías,botín,forja,entrenamiento y conquista, pero falló al esperar producción: checkpoint200,08s/ciclo20, siguiente210s, grabación fija12Hz tardó más de12s reales del watchdog. Se amplía solo watchdogQA E18 a30s y se exige ciclo avanzado y exactamente2madera por ciclo real. Reglasdeproducción10s/intactas, sin modificar expectativas RTS históricas. Comprobante fallido conservado, todavía no recorrido completoPASS.
+
+## 2026-11-02 — E18 ciclo nativo completo por tres clases
+
+Seis procesos Windows GPU PASS en run221506: Nueva partida→prólogo→RPG/XP/nivel/elección→patrulla→campamento/misión→compañeros→dosguardianías/XP→botín→taller2/forja/equipo→ejército/entrenamiento→conquista/producción→guardar/título, seguido de reinicio exacto por clase sin duplicación. Niveles4/XP60,compañeros2 y territorios conservados; salud final distintaWarrior37/Monk13/Mage24. Dos clips reales con audioDSP exportados y decodificados. MOQcerrado técnicamente; RSTUVregresión/portable/ZIP/PR y humano siguen abiertos.
+
+## 2026-11-02 — E18 regresión general y correcciones finales en validación
+
+General174/176: reservaRTS falló conGuerrero (incidencia abierta) y FiveVisualSlots falló al ocultar una vinculación visual personalizada desconocida para inventario. Se conserva XML íntegro/FALLOS_GENERALES, sin excluir ni modificar aserciones históricas. ItemCatalog.Visual ahora conserva ID visual desconocido para bindings locales; inventario/guardado siguen rechazándolo como ítem. Ficha muestra solo atributo principal efectivo y derivados; otros atributosGDD quedan como referencias, sin cifras sin aplicación. Descanso campamentoE18 recupera también ejército superviviente, haciendo aprovechable+2PVmáximos del entrenamiento sin curación instantánea; regla10s previa. Validación dirigida cuatrocasos y nueva build/portable pendientes, no afirmar regresión completaverde.
+
+## 2026-11-02 — E18 cierre dirigido4/4
+
+LegacyFiveVisualSlots y equipoE18 PASS sin modificar aserciones; problema visual corregido. UIArmy comprueba entrenamiento sin curación, descanso real10s hasta máximo mejorado yHPpersistente trasContinue; ficha con atributo principal aplicado/derivados pasa3clases×720/1080. XML CIERRE_DIRIGIDO_4 conserva4/4. General174/176 previo se conserva, uno corregido por dirigida y RTS sin resolver; no afirmar nueva regresión totalmente verde. Se genera candidata final y resta verificar ZIP/portable/PR.
