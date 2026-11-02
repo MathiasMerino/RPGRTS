@@ -14,11 +14,12 @@ $taskBaseline=Join-Path $taskRoot 'Docs/Validacion/E14E15/EntradaE13/warrior.jso
 $taskArgs=@('-batchmode','-aetherniaAlphaBenchmark',('"'+$taskOutput+'"'),'-benchmarkBaseline',('"'+$taskBaseline+'"'),'-screen-width','1280','-screen-height','720','-logFile',('"'+$taskLog+'"'))
 $taskProcess=Start-Process -FilePath $taskExe -ArgumentList $taskArgs -WindowStyle Hidden -PassThru
 Write-Output "Benchmark nativo PID=$($taskProcess.Id). Sin editor, grabacion ni otros players de QA."
-if(-not $taskProcess.WaitForExit(240000)){throw "Proceso sigue activo PID=$($taskProcess.Id); revisar $taskLog. No se fuerza cierre."}
+if(-not $taskProcess.WaitForExit(360000)){throw "Proceso sigue activo PID=$($taskProcess.Id); revisar $taskLog. No se fuerza cierre."}
 $taskProcess.Refresh()
 if($taskProcess.ExitCode -ne 0){throw "Benchmark exit=$($taskProcess.ExitCode). $taskLog"}
 if(-not(Test-Path -LiteralPath $taskOutput)){throw 'No existe informe de rendimiento.'}
 $taskReport=Get-Content -LiteralPath $taskOutput -Raw | ConvertFrom-Json
 if($taskReport.status -ne 'PASS' -or $taskReport.rows.Count -ne 18){throw 'Medicion incompleta.'}
 if(Select-String -LiteralPath $taskLog -Pattern 'Exception:|NullReferenceException|Assertion failed' -Quiet){throw 'Error en el registro del benchmark.'}
+foreach($taskRow in $taskReport.rows){if($taskRow.renderSubmissions -lt $taskRow.frames-1 -or -not($taskRow.counters | Where-Object {$_.available -and $_.unit -eq 'count' -and $_.mean -gt 0})){throw 'Fila sin render verificado.'}}
 Write-Output "PASS 18 escenarios medidos: $taskOutput"
