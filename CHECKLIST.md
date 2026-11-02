@@ -1065,14 +1065,14 @@ Encargo posterior autoriza esta fase sobre E16; no E18.
 - Pruebas / resultado:14/14 y1/1 tras ampliar fallback, movimiento/equipo/guardar/cargar por tres clases. Copia FBX/estudio/captura privados; hashes originales intactos, catálogo sin dependencias experimentales. Meshy99.466tris,1submesh/material,UV0ausente,sinrig/Avatar; no integración runtime ni publicación.
 
 ### E17-C — Presentación y tipografía
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: alfa / P1. Dependencias: E17-B.
 - Aceptación: Menú/selección mejorados, retratos proporcionados, cierres y escalado720p/1080p/1440p;4K si viable.
-- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Archivos: DemoFrontEnd.Alpha.cs/Visual.cs/FrontEnd.cs; ClassCardView, RuntimeClassPreview; AlphaSceneBuilder; AlphaPresentationTests; AetherniaAlphaCandidate.unity y ClassOption.prefab.
+- Pruebas / resultado:2/2 PASS,20capturas reales720p/1080p/1440p/4K; bounds/raycast/overflow, glifos dinámicos/fallback, física igual aE16, dependencia artística pública, JSON de partida idéntico durante selección y preview apagado al jugar. Se preservaron fallos de override/testglifos; fuente/atlas original sin cambios. Inspección técnica de imagen original4K; aprobación humana pendiente.
 
 ### E17-D — Escenarios y materiales URP
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Sistema / prioridad: alfa / P1. Dependencias: E17-C.
 - Aceptación: Mejoras visibles de superficies/vegetación/ruinas/RTS sin cambiar navegación; shader modesto compatible y materiales compartidos.
 - Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.

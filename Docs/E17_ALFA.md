@@ -26,3 +26,10 @@ Cierre A: cuatro contextos de contrato aprobados en lote y ThreeClasses30 aproba
 ## B — pipeline verificado
 
 Contrato/fábrica compartida para héroe y apoyos; candidatos inválidos o sin animación compatible recurren a la clase anterior, conservando estado/controlador. El modelo ya cargado sigue visible si se pierden referencias.14/14 de pipeline/animación/Humanoid más1/1 ampliado de fallback con tres clases, movimiento y guardado. Catálogo Alpha sin dependencias Meshy/LocalOnly. [Guía y ficha del recurso](E17_PIPELINE_PERSONAJES.md). Estudio/captura privados generados; datos técnicos en Validacion/E17/MESHY_DATOS_TECNICOS.json. Originales FBX/meta intactos. No autorización artística final ni publicación de derivados.
+
+
+## C — presentación verificada
+
+Nueva escena AetherniaAlphaCandidate conserva E16. Tres opciones de clase verticales con retrato/realce, ilustración de referencia y preview3D del modelo E08; nombre/linaje/confirmación con comandos existentes. Previews aislados sin sesión/agentes/controladores, se apagan al jugar; la composición no altera estado. Monje sin arma visible y Mago con su bastón en la vista previa, sin tocar inventario. La pose/arte/rig siguen provisionales.
+
+2/2 pruebas aprobadas con20capturas reales a1280×720/1920×1080/2560×1440/3840×2160, comprobación de límites/raycast/overflow y captura4K vista en resolución original. Se corrigió persistencia de overrides de prefab. La fuente SDF existente es dinámica: glifos españoles se comprueban con resolución/fallback y generación real, no exigiendo que estén precargados. No se regeneró fuente/atlas ni se modificó su asset. F2-07/humano pendiente. Contextos de otros paneles se revisan en la integración E.

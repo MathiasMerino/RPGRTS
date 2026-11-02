@@ -563,3 +563,7 @@ Cinco escenarios baseline4/5, derrota real por héroeHP0 con ejército vencedor.
 ## 2026-11-02 — E17-B pipeline y estudio local
 
 Contrato visual y fábrica reutilizados por héroe/apoyos, validación de malla/material/escala/rig/clips y fallback antes de sustituir el modelo. Catálogo Alpha comparte prefabs/materiales E08.14/14+1/1 funcionales con tres clases y persistencia. Meshy inspeccionado solo mediante copia local:99.466tris/222.717vértices,1submesh/material,UV0ausente,sinrig/Avatar. Normalización de inspección1.78m; original/meta intactos. Arte experimental y derivados excluidos de Git; no activados en héroe. Guía de importación actualizada. Continúa C.
+
+## 2026-11-02 — E17-C menú, clases y tipografía
+
+Layout opcional Alpha y preview3D reutilizando catálogo/fábrica, sin modificar escenas previas ni estado de selección antes de confirmar. Persiste overrides de prefab; se verifica fuente dinámica/glifos españoles sin reemplazar fuente.2/2pruebas,20vistas reales720p–4K, proporciones/límites/raycast/overflow, física y dependencias conservadas; preview desactivado durante gameplay. Capturas originales inspeccionadas técnicamente; arte/rig y valoración humana pendientes. Continúa D.
