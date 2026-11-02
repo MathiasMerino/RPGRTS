@@ -1079,11 +1079,11 @@ Encargo posterior autoriza esta fase sobre E16; no E18.
 - Pruebas / resultado:3/3 PASS y1/1 tras separar marcadores de los puntos de aparición.15materiales/377asignaciones compartidas, texturas originales, firma física igual aE16. Viento GPU92.901píxeles variables frente a0en control estático; viaje/oclusión/restauración comprobados. Capturas aldea/ruinas inspeccionadas; valoración humana pendiente.
 
 ### E17-E — Transiciones y lectura de combate
-- Estado: [ ] Pendiente.
-- Sistema / prioridad: alfa / P1. Dependencias: E17-D.
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E17-D.
 - Aceptación: Presentación integrada en flujo real, feedback de estados y cámara sin nuevas reglas o escenas narrativas.
-- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Archivos: ModeTransitionView, AlphaExperienceBuilder/Tests, SupportVisualFactory, ExplorationUnit, DemoSettlementPanel/RtsOverlay; escena Alpha.
+- Pruebas / resultado: reproducción fallida preservada: construcción sobre ayuda e indicadores7/7desactivados. Corrección1/1, cierres1/1, pase final2/2 PASS. Ayuda excluye paneles contextuales, indicadores0/7desactivados; × por raycast y Escape por InputSystem en ficha/inventario/sesión/grupo. Avisos y fundido0.18s sin bloquear entrada; comandos RTS laterales solo Alpha. Captura inspeccionada; no evaluación humana ni nuevos sonidos/cinemáticas.
 
 ### E17-F — QA, rendimiento y candidata alfa
 - Estado: [ ] Pendiente.

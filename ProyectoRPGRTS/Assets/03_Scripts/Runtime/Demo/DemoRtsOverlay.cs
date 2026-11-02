@@ -24,12 +24,17 @@ namespace Aethernia
             ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite,Flow.Front.Presentation);canvas=Flow.ExistingHud.GetComponent<Canvas>();
             panel=DemoWidgets.Rect(canvas.transform,"Hero RTS commands",456,98,570,124);ui.Surface(panel,new Color(.035f,.043f,.046f,.96f));text=ui.Text(panel,"Group context","",12,6,546,56,18);
             attack=ui.Button(panel,"Hero attack","Atacar",12,72,170,42,()=>Order("attack"));guard=ui.Button(panel,"Hero guard","Guardia",196,72,170,42,()=>Order("guard"));recover=ui.Button(panel,"Hero recover","Recuperar",380,72,170,42,()=>Order("recover"));
+            if(Flow.Front.AlphaLayout)
+            {
+                panel.anchoredPosition=new Vector2(920,-98);panel.sizeDelta=new Vector2(344,168);text.rectTransform.sizeDelta=new Vector2(320,96);text.fontSize=17;
+                var buttons=new[]{attack,guard,recover};for(var i=0;i<buttons.Length;i++){var rect=buttons[i].GetComponent<RectTransform>();rect.anchoredPosition=new Vector2(12+i*108,-112);rect.sizeDelta=new Vector2(104,42);buttons[i].GetComponentInChildren<TMP_Text>().fontSize=16;}
+            }
             drag=DemoWidgets.Rect(canvas.transform,"Selection rectangle",0,0,0,0);DemoWidgets.Fill(drag,new Color(.70f,.63f,.36f,.18f),false);
         }
         private void Order(string action){if(!Flow.Director.Rts.HeroAction(action))Flow.Session.Say("Selecciona al héroe y espera su intervalo; comprueba alcance y recursos.");}
         private void LateUpdate()
         {
-            if(panel==null)return;var rts=Flow.Director.Rts;var show=Flow.IsPlaying&&rts.IncludesHero&&Flow.Session.Mode==PrototypeMode.Rts;panel.gameObject.SetActive(show);
+            if(panel==null)return;var rts=Flow.Director.Rts;var show=Flow.IsPlaying&&rts.IncludesHero&&Flow.Session.Mode==PrototypeMode.Rts&&!Flow.ExistingHud.CompactView.HelpOpen;panel.gameObject.SetActive(show);
             foreach(var b in bars.Values)b.Root.gameObject.SetActive(false);
             if(!show){ClearBars();drag.gameObject.SetActive(false);return;}
             rts.CopyStatus(status);var selectedHero=false;var occupied=Flow.Front.Presentation==null?null:new List<Rect>();

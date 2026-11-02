@@ -8,7 +8,7 @@ namespace Aethernia
         {
             var physical=unit.GetComponentsInChildren<Renderer>();
             if(!CharacterVisualFactory.TryCreate(catalog,role.VisualClass,unit.transform,out var model,out _,out _))return null;var node=model.gameObject;model.BindActor(unit);
-            foreach(var r in physical)r.enabled=false;model.ApplyEquipment(new PrototypeState{Weapon=role.Id=="swordsman"?"training-sword":"",Armour="cloth"});
+            foreach(var r in physical)if(unit.SelectionIndicator==null||!r.transform.IsChildOf(unit.SelectionIndicator.transform))r.enabled=false;model.ApplyEquipment(new PrototypeState{Weapon=role.Id=="swordsman"?"training-sword":"",Armour="cloth"});
             if(role.Id=="archer"&&model.WeaponAnchor!=null&&effect!=null)
             {
                 Bow(model.WeaponAnchor,new[]{new Vector3(0,-.45f,0),new Vector3(.16f,-.25f,0),new Vector3(.21f,0,0),new Vector3(.16f,.25f,0),new Vector3(0,.45f,0)},.025f,new Color(.48f,.30f,.13f),effect);

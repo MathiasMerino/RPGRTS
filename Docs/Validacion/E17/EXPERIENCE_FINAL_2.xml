@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 17:10:56Z" end-time="2026-11-02 17:10:58Z" duration="2.8175041">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="141" result="Passed" start-time="2026-11-02 17:10:56Z" end-time="2026-11-02 17:10:58Z" duration="2.817504" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1184" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="141" result="Passed" start-time="2026-11-02 17:10:56Z" end-time="2026-11-02 17:10:58Z" duration="2.616549" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="1804" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1185" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="141" result="Passed" start-time="2026-11-02 17:10:56Z" end-time="2026-11-02 17:10:58Z" duration="2.610632" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1186" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="141" result="Passed" start-time="2026-11-02 17:10:56Z" end-time="2026-11-02 17:10:58Z" duration="2.605086" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1187" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="141" result="Passed" start-time="2026-11-02 17:10:56Z" end-time="2026-11-02 17:10:58Z" duration="2.599502" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1006" name="AlphaExperienceTests" fullname="Aethernia.Tests.Editor.AlphaExperienceTests" classname="Aethernia.Tests.Editor.AlphaExperienceTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-02 17:10:56Z" end-time="2026-11-02 17:10:58Z" duration="2.584737" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1007" name="AlphaWindowsCloseByEscapeAndPointer" fullname="Aethernia.Tests.Editor.AlphaExperienceTests.AlphaWindowsCloseByEscapeAndPointer" methodname="AlphaWindowsCloseByEscapeAndPointer" classname="Aethernia.Tests.Editor.AlphaExperienceTests" runstate="Runnable" seed="8781114" result="Passed" start-time="2026-11-02 17:10:22Z" end-time="2026-11-02 17:10:43Z" duration="20.939091" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1008" name="ContextAndSelectionRemainReadable" fullname="Aethernia.Tests.Editor.AlphaExperienceTests.ContextAndSelectionRemainReadable" methodname="ContextAndSelectionRemainReadable" classname="Aethernia.Tests.Editor.AlphaExperienceTests" runstate="Runnable" seed="1148789054" result="Passed" start-time="2026-11-02 17:10:43Z" end-time="2026-11-02 17:10:58Z" duration="15.036382" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

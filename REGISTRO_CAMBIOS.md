@@ -571,3 +571,7 @@ Layout opcional Alpha y preview3D reutilizando catálogo/fábrica, sin modificar
 ## 2026-11-02 — E17-D superficies y mundo
 
 Shader Graph Lit URP17.5 nativo, variación de terreno, mezcla de bordes, normales originales y viento leve en dos materiales de hojas;15variantes compartidas/377asignaciones. Volumen propio Neutral, bloom reducido y luz de apoyo existente ajustada. Los marcadores de viaje ya no ocupan el punto de aparición. Sin cambios en física/nav/escenas anteriores.3/3pruebas GPU/compilación/viaje y1/1 posterior al ajuste, capturas reales. Continúa E.
+
+## 2026-11-02 — E17-E integración visual
+
+Reproducidos y corregidos ocultamiento de indicadores RTS al cambiar modelo (7/7→0/7) y solapamiento construcción/ayuda. Panel RTS lateral solo Alpha. Decoración sobre HUD existente con avisos/fundido0.18s y suscripciones liberadas; sin estado nuevo de gameplay. Cierres reales de automatización por puntero/ESC: ficha, inventario, sesión y grupo. Pase final2/2, XML de reproducción preservado. Evaluación humana pendiente. Continúa F.
