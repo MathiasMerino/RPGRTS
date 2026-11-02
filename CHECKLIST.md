@@ -4,9 +4,9 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- E17: A–E técnicos verificados, F validado y PRdraft en preparación sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. No E18.
+- E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. No E18.
 
-- E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes, sin iniciar E17.
+- E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes; E17 se autoriza posteriormente en su sección.
 
 - E14/E15: alcance piloto completado técnicamente; grupo/mazmorra, facciones/territorios y conquista conectados a E13.121/121 regresión,11/11 tras pulido y1/1UI final a dos resoluciones;20procesos Windows PASS; ZIP nuevo CRC/SHA/portable verificado,24PNG y2MP4 reales. Informe Docs/ENTREGA_E14_E15.md; EXP-H humano/arte/balance pendientes. [PR#6](https://github.com/MathiasMerino/RPGRTS/pull/6) abierto en borrador sobre PR5; sin merges.
 
@@ -1088,11 +1088,11 @@ Encargo posterior autoriza esta fase sobre E16; no E18.
 - Pruebas / resultado: reproducción fallida preservada: construcción sobre ayuda e indicadores7/7desactivados. Corrección1/1, cierres1/1, pase final2/2 PASS. Ayuda excluye paneles contextuales, indicadores0/7desactivados; × por raycast y Escape por InputSystem en ficha/inventario/sesión/grupo. Avisos y fundido0.18s sin bloquear entrada; comandos RTS laterales solo Alpha. Captura inspeccionada; no evaluación humana ni nuevos sonidos/cinemáticas.
 
 ### E17-F — QA, rendimiento y candidata alfa
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: alfa / P1. Dependencias: E17-E.
 - Aceptación: Regresión y recorridos Windows reales; capturas comparables, métricas disponibles, ZIP verificable, PRdraft y guía; no v1.0.
 - Archivos: AlphaQualityBuilder/Tests, AlphaGraphicsPolicy, AlphaBenchmarkProbe; perfiles Graphics, escena Alpha; herramientas de build/benchmark/export/ZIP; Docs/E17_ALFA.md, GUIA_ALFA_E17.md, COMPARATIVA_E17.md y Validacion/Images/Videos/E17.
-- Pruebas / resultado: general142/143, caso histórico fallback actualizado y fortalecido5/5dirigidas;2/2calidad. BuildPASS y14/14procesosWindows finales con tres clases/reinicios/ZIP.18medicionesoffscreen con render verificado (sin FPSDisplay/GPU; DrawCalls/Batches no obtenidos);82PNG/2MP4 reales. CRC/SHA/17ZIPprevios intactos. Publicación PRdraft pendiente como último paso. Primer perfilado sin render invalidado y conservado; humano/estrategiaRTS siguen abiertos.
+- Pruebas / resultado: general142/143, caso histórico fallback actualizado y fortalecido5/5dirigidas;2/2calidad. BuildPASS y14/14procesosWindows finales con tres clases/reinicios/ZIP.18medicionesoffscreen con render verificado (sin FPSDisplay/GPU; DrawCalls/Batches no obtenidos);82PNG/2MP4 reales. CRC/SHA/17ZIPprevios intactos. [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) abierto en borrador sobre E16; main/dev y PR1..7 intactos, sin merges/force. Primer perfilado sin render invalidado y conservado; humano/estrategiaRTS siguen abiertos.
 
 ### E17-HUM — Revisión humana/artística
 - Estado: [ ] Pendiente.

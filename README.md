@@ -4,7 +4,7 @@ Prototipo académico de RPG isométrico y RTS desarrollado en Unity. Las mecáni
 
 ## Abrir para evaluar
 
-1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e17-art-pipeline-alpha-polish`; depende de E16 (PR #7), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
+1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e17-art-pipeline-alpha-polish`; [PR#8 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/8), depende de E16 (PR #7), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
 2. En Unity Hub, añadir **la carpeta `ProyectoRPGRTS/`**, situada dentro del repositorio.
 3. Abrir con **Unity 6000.5.8f1** y esperar a que importe los recursos y restaure los paquetes. La primera apertura necesita conexión para descargar las dependencias declaradas en `Packages/`.
 4. Abrir `Assets/01_Scenes/AetherniaAlphaCandidate.unity`, revisar Console y pulsar **Play**. Se conservan AetherniaVisualPolish, AetherniaExpeditions, AetherniaFirstDemo, AetherniaVillageDemo y PlayablePrototype. La UI E17 se comprueba a720p/1080p/1440p/4K; ver resultados y límites en el informe.

@@ -1,0 +1,22 @@
+{
+  "pr": "https://github.com/MathiasMerino/RPGRTS/pull/8",
+  "number": 8,
+  "draft": true,
+  "state": "open",
+  "base": "feature/e16-pulido-visual-ui",
+  "mainDevUnchanged": true,
+  "priorPRsUnchanged": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "merged": false,
+  "forcedPush": false,
+  "experimentalArtTracked": false,
+  "headAtPrCreation": "c477abce94c3f17e6ec8f8bcd027bf16cbc718c6",
+  "scope": "Creation snapshot; final branch synchronization verified separately after documentation push."
+}

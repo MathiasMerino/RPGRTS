@@ -591,3 +591,7 @@ Build final fuente0802286, Unity6000.5.8f1,206493085bytes,72.39s(incremental; pr
 ## 2026-11-02 — E17-F entrega técnica
 
 14/14procesosWindows PASS,12demo/expedición por tres clases y2portable.82PNG reales con manifiesto, dosMP4 continuos con DSP/decodificación verificada. ZIP87.816.123bytes, SHA2564c16177bc696334549eebc942f21fc6ebcd63b151fafac79eb7d9910d4b6e87d; CRC/per-fileSHA/extracción y17ZIPanteriores intactos. Informe/guía/comparativa/artedocs/checklist actualizados. SourceRuntime0802286; metadatos de prefiltrado normalizados por Unity solo en assets URP propios. Arte humano, UX/balance y estrategia RTS pendientes; no E18. Publicación PRdraft final en preparación.
+
+## 2026-11-02 — Publicación E17
+
+[PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) abierto en borrador sobre feature/e16-pulido-visual-ui (PR7 todavía abierto). Push normal de feature/e17-art-pipeline-alpha-polish; main/dev y PR1..7 comprobados contra snapshot inicial, intactos. F técnico/documental cerrado con sus resultados reales, E17-A-RTS y E17-HUM siguen pendientes; sin merges/force, sin Meshy/derivados publicados y sin E18.

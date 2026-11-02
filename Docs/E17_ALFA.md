@@ -85,4 +85,4 @@ Los originales GDD, modelos/texturas/materiales previos, paquetes, escenas hist�
 
 Siguiente actividad recomendada: revisión humana de la candidata con GUIA_ALFA_E17.md, registrar decisiones de UX/balance, perfilar RTS activo y asignaciones de interfaz antes de aumentar unidades, y preparar UV/retopo/rig/modelos finales mediante pipeline. No se inicia E18 ni se aprueba arte automáticamente.
 
-Commits por bloque: A`ab20917`,B`0cf3d34`,C`6d7d377`,D`9b83395`,E`49780b1`; F`f56d0bb`,`4fcb224` y refinamientos del medidor`e3f5878`,`521e17f`,`0802286`. Commit de entrega/documentación y PR registrados al publicar.
+Commits por bloque: A`ab20917`,B`0cf3d34`,C`6d7d377`,D`9b83395`,E`49780b1`; F`f56d0bb`,`4fcb224` y refinamientos del medidor`e3f5878`,`521e17f`,`0802286`. Entrega/evidencia`c477abc`; publicación mediante [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8), abierto en borrador sobre feature/e16-pulido-visual-ui. Main/dev y PR1..7 comprobados sin cambios; no merges/force ni arte experimental publicado.
