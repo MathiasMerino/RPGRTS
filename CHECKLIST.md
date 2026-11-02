@@ -1108,3 +1108,70 @@ Encargo posterior autoriza esta fase sobre E16; no E18.
 - Aceptación: investigar supervivencia del héroe con trayectoria/temporización variables; conservar pruebas de victoria y pérdida, sin otorgar victorias o salud artificiales. No exigir una carga ganadora universal sin regla aprobada.
 - Archivos: evidencia RTS de Docs/Validacion/E17 y futura investigación dirigida.
 - Pruebas / resultado: derrota real Monje30reproducida conHP0/aliados5/enemigos0 y evento correcto; E16Mago sin traza histórica suficiente para demostrar causa única. No se cierra por reintento.
+
+## FASE E18 — PROGRESIÓN Y CICLO JUGABLE
+
+Encargo71c1a4f1 autoriza implementación secuencial con arte provisional. Dependencia E17/PR8 sin aprobación humana ni merge. No E19.
+
+### E18-A — Estabilidad RTS pendiente
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: RTS/QA / P1. Dependencias: E17.
+- Aceptación: Trazas/repeticiones y táctica de reserva con órdenes legales; conservar prueba de carga y no forzar victoria.
+- Archivos: DemoRtsTests, E18RtsScenarioTests; Docs/Validacion/E18/RTS_A*.
+- Pruebas / resultado: 7escenarios6/7: contratos/inicialización/resolución/reintento correctos; escenario nuevo de reserva pierde con Monje. Se conserva aserción de victoria y XML fallido; no se promete carga/táctica ganadora universal ni se declara resuelta E17-A-RTS. Continuar progresión independiente, balance a revisar.
+
+### E18-BC — Experiencia, niveles y atributos
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: RPG/estado / P1. Dependencias: E18-A.
+- Aceptación: Curva acotada configurable, efectos reales, fuentes únicas y derivación sin acumulación; tres clases.
+- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E18-DEF — Habilidades y progresión común RPG/RTS
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: Combate / P1. Dependencias: E18-BC.
+- Aceptación: Técnicas diferenciadas con coste/objetivo/feedback; elecciones persistentes y adaptadores por modalidad.
+- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E18-GH — Equipo, inventario y botín
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: Recompensas / P1. Dependencias: E18-DEF.
+- Aceptación: Catálogo pequeño, efectos reales, botín configurable único y sin pérdida/duplicación por carga.
+- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E18-IJK — Compañeros, economía y ejército
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: Mundo / P1. Dependencias: E18-GH.
+- Aceptación: Roles útiles, grupo3 separado de ejército6, mejoras pagadas y persistentes y recursos no negativos.
+- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E18-LN — IA y balance
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: Combate/datos / P1. Dependencias: E18-IJK.
+- Aceptación: Escenarios con semillas y parámetros/razones documentados; simulación separada de experiencia real.
+- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E18-MOQ — Ciclo, interfaz y persistencia
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: Integración / P1. Dependencias: E18-LN.
+- Aceptación: Nueva partida→progresión→ruinas→mejora→conquista→guardar/reiniciar, migración segura y UI coherente.
+- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E18-RSTUV — Validación, entrega y PR
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: QA/build / P1. Dependencias: E18-MOQ.
+- Aceptación: Regresión/recorridos reales/tres clases, capturas/build/ZIP/guía y PRdraft, sin main/merges.
+- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E18-HUM — Sesión humana
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: Evaluación / P1. Dependencias: E18-RSTUV.
+- Aceptación: Usuario evalúa duración25–45min, diversión, dificultad y arte; no deducirla de automatización.
+- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.

@@ -595,3 +595,11 @@ Build final fuente0802286, Unity6000.5.8f1,206493085bytes,72.39s(incremental; pr
 ## 2026-11-02 — Publicación E17
 
 [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) abierto en borrador sobre feature/e16-pulido-visual-ui (PR7 todavía abierto). Push normal de feature/e17-art-pipeline-alpha-polish; main/dev y PR1..7 comprobados contra snapshot inicial, intactos. F técnico/documental cerrado con sus resultados reales, E17-A-RTS y E17-HUM siguen pendientes; sin merges/force, sin Meshy/derivados publicados y sin E18.
+
+## 2026-11-02 — Inicio E18 autorizado
+
+PR8 sigue abierto/draft en d7cacd7; main/dev/PR1..8 snapshot. Rama feature/e18-progresion-balance desde E17. GDDhash y Meshy originales comprobados intactos. Primero diagnóstico RTS: comparar carga histórica con órdenes legales de reserva del héroe, sin cambiar reglas/aserciones existentes. Resto secuencial con arte provisional; no E19.
+
+## 2026-11-02 — E18-A diagnóstico RTS
+
+Siete escenarios6/7; nuevo ensayo de retaguardia no garantiza victoria(Monje). CSV/terminales y XML preservados, contratos de resolución/reintento comprobados. Sin cambios de salud/daño/reglas ni aserciones históricas. E17-A-RTS permanece abierto; no asumir táctica universal ganadora ni repetir hasta verde. Continúa progresión optativa E18.
