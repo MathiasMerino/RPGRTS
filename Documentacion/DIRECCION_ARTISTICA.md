@@ -100,3 +100,9 @@ Aplicación provisional de arquitectura europea de piedra/entramado, cubiertas d
 ## E08 — Personajes articulados provisionales
 
 Se conserva la propuesta de las tres hojas: Monje naranja asimétrico/pecho libre/vendas, Guerrero acero/cuero/silueta robusta y Mago ciruela/azul grisáceo/túnica dividida/bastón. Base anatómica tridimensional continua, rig Generic y skin reales; ropa adaptada a articulaciones y acciones reconocibles a distancia. Materiales originales compartidos, sin assets externos. El objetivo de esta entrega es sustituir la inmovilidad por animación funcional, sin prometer acabado realista final, anatomía facial final, retargeting Humanoid o aprobación humana. Fichas, dimensiones, preparación de sustitutos y evidencia se centralizan en [E08_PERSONAJES_ANIMADOS](../Docs/E08_PERSONAJES_ANIMADOS.md).
+
+## E17 — coherencia y sustitución progresiva
+
+Se mantienen las identidades E08 y la escala1u=1m. Menú/selección combinan retratos existentes con preview3D real E08, marcado provisional; no convertirlo en aprobación de anatomía o acabado final. La fábrica visual desacopla reemplazos revisados de movimiento/reglas/equipo/guardado; preparación en [pipeline E17](../Docs/E17_PIPELINE_PERSONAJES.md). Meshy experimental se estudia solo local: sin UV0/rig, no se integra ni publica.
+
+En la escena Alpha, Shader Graph Lit URP17.5 reutiliza albedos/normales, añade variación de superficies y mezcla de camino, dos materiales de hojas con viento0.035m y bounds restaurables. Volumen Neutral y luz de apoyo existente mejoran lectura de ruinas; marcadores visuales apartados de spawn conservan interacciones. Indicadores RTS preservados y mando lateral, con colores de bando existentes. Tres perfiles gráficos reales conservan fuentes/lectura UI. No se descargan recursos ni se cambia GDD/versiones/escenas históricas; aprobación humana pendiente. [Informe y comparaciones reales](../Docs/E17_ALFA.md).

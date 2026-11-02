@@ -1,0 +1,1 @@
+PASS: 1483 continuous native Windows Game camera frames at fixed capture step12Hz; audio DSP samples=11862016 channels=2 rate=48000 rms=0.003020 peak=0.054686. Capture step is not measured FPS. Gameplay actions are those of the explicit demo smoke; no pose sampling or fabricated results.

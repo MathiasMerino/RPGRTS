@@ -583,3 +583,11 @@ Bajo/Medio/Alto sustituyen nombres históricos Mobile/PC mediante tres assets UR
 ## 2026-11-02 — E17-F regresión y compatibilidad fallback
 
 General142/143,0omitidas; XML conservado. Único fallo antes de movimiento: prueba E01 esperaba cápsula aunque E17-B conserva un modelo aprobado válido. Expectativa actualizada con comprobaciones más fuertes de identidad/estado y cápsula cuando también se invalida el modelo cargado; equipo/movimiento/guardar/cargar conservados. Dirigidas5/5PASS. No cambia runtime de gameplay ni pruebas RTS;14victorias trazadas no cierran el pendiente inicial. Medidor explícito ampliado aRTS pausado (18escenarios previstos); compilación/nativo pendientes.
+
+## 2026-11-02 — E17-F build y perfilado nativo
+
+Build final fuente0802286, Unity6000.5.8f1,206493085bytes,72.39s(incremental; primer build777.24s). Medición inicial inválida porque batch omitía render por cuadro; JSON conservado sin usarlo como FPS. Medidor opt-in corregido a peticionesURP explícitas de escena/UI/preview, targetMSAA1/2/4 y guardas de render real;18escenarios PASS con SetPass/triángulos/CPU/GC, DrawCalls/Batches no obtenidos con aliases consultados. RTX3050Laptop/i5-12450H, datos/limitaciones en PERFORMANCE.json. No FPS de presentación ni extrapolación a grandes ejércitos. Seis procesos demoGPU PASS, expediciones y portable en curso.
+
+## 2026-11-02 — E17-F entrega técnica
+
+14/14procesosWindows PASS,12demo/expedición por tres clases y2portable.82PNG reales con manifiesto, dosMP4 continuos con DSP/decodificación verificada. ZIP87.816.123bytes, SHA2564c16177bc696334549eebc942f21fc6ebcd63b151fafac79eb7d9910d4b6e87d; CRC/per-fileSHA/extracción y17ZIPanteriores intactos. Informe/guía/comparativa/artedocs/checklist actualizados. SourceRuntime0802286; metadatos de prefiltrado normalizados por Unity solo en assets URP propios. Arte humano, UX/balance y estrategia RTS pendientes; no E18. Publicación PRdraft final en preparación.

@@ -1,0 +1,159 @@
+{
+    "Version": 1,
+    "Name": "Viajero warrior",
+    "ClassId": "warrior",
+    "RaceId": "human",
+    "HasDemoProgress": true,
+    "Demo": {
+        "Chapter": 6,
+        "IntroSeen": true,
+        "Produced": 7
+    },
+    "Health": 24,
+    "Gold": 10,
+    "Wood": 17,
+    "Food": 7,
+    "WorldSeconds": 86.9157943725586,
+    "ProductionCycle": 8,
+    "ReputationA": 0,
+    "ReputationB": -5,
+    "Weapon": "training-sword",
+    "Armour": "cloth",
+    "HeroPosition": {
+        "x": 8.881863594055176,
+        "y": 0.02500009536743164,
+        "z": -10.00545597076416
+    },
+    "Facts": [
+        "demo-starter-kit",
+        "rpg-victory",
+        "rts-victory",
+        "demo-camp-secured",
+        "reference-chest",
+        "umbral-battle-1",
+        "umbral-battle-2",
+        "umbral-reward",
+        "umbral-outpost-conquered"
+    ],
+    "Items": [
+        {
+            "Id": "ration",
+            "Count": 1
+        },
+        {
+            "Id": "training-sword",
+            "Count": 2
+        },
+        {
+            "Id": "cloth",
+            "Count": 2
+        }
+    ],
+    "Buildings": [
+        {
+            "Id": "townhall",
+            "Position": {
+                "x": 12.0,
+                "y": 0.0,
+                "z": -8.0
+            },
+            "Level": 1,
+            "ProductionPaused": false
+        },
+        {
+            "Id": "workshop",
+            "Position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": true
+        },
+        {
+            "Id": "barracks",
+            "Position": {
+                "x": 15.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": false
+        },
+        {
+            "Id": "farm",
+            "Position": {
+                "x": 11.5,
+                "y": 0.0,
+                "z": -14.0
+            },
+            "Level": 1,
+            "ProductionPaused": false
+        }
+    ],
+    "Army": [
+        {
+            "Id": "04f1842ebf52488d8eb436293c30b2eb",
+            "Role": "archer",
+            "Health": 10,
+            "InParty": false
+        },
+        {
+            "Id": "2884bdb6a64c4fb096166657a360aacd",
+            "Role": "swordsman",
+            "Health": 4,
+            "InParty": false
+        },
+        {
+            "Id": "321a33c35c014ebaa908709ef084e649",
+            "Role": "archer",
+            "Health": 10,
+            "InParty": false
+        }
+    ],
+    "Companions": [
+        {
+            "Id": "a05278c6fb204a18bfc2c180ade4ee44",
+            "Role": "swordsman",
+            "Health": 10,
+            "InParty": false
+        },
+        {
+            "Id": "3ac0b1917adb4ff9b7a41480195abb7c",
+            "Role": "brawler",
+            "Health": 10,
+            "InParty": true
+        },
+        {
+            "Id": "8739e9e9ba174c55a34728dde6ce4546",
+            "Role": "archer",
+            "Health": 10,
+            "InParty": true
+        }
+    ],
+    "ArmySelection": [
+        "04f1842ebf52488d8eb436293c30b2eb",
+        "2884bdb6a64c4fb096166657a360aacd",
+        "321a33c35c014ebaa908709ef084e649"
+    ],
+    "Territories": [
+        {
+            "Id": "camp",
+            "Owner": "player-company",
+            "Secured": true
+        },
+        {
+            "Id": "crossing",
+            "Owner": "player-company",
+            "Secured": true
+        },
+        {
+            "Id": "outpost",
+            "Owner": "player-company",
+            "Secured": true
+        }
+    ],
+    "CultureId": "",
+    "FactionId": "player-company",
+    "KingdomId": ""
+}

@@ -1,0 +1,9 @@
+{
+  "elapsedSeconds": 5.3746367,
+  "sampledPeakWorkingSetBytes": 812703744,
+  "sampleIntervalSeconds": 0.5,
+  "measuredGc": false,
+  "measuredFps": false,
+  "class": "warrior",
+  "resume": true
+}
