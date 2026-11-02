@@ -1045,3 +1045,64 @@ Encargo posterior autoriza E16 sobre E14/E15; no inicia E17 ni aprueba arte defi
 - Aceptación: identificar las condiciones de derrota del Mago y distinguir estabilidad del controlador de una estrategia automática ganadora; registrar estado y órdenes sin alterar salud/costes/balance para forzar el resultado.
 - Archivos: DemoRtsTests.cs (sin cambios E16); Docs/Validacion/E16/FOCAL_POST_CAPAS_INTERMEDIA.xml, RTS_REPETICION_1.xml; Docs/E16_PULIDO_VISUAL.md.
 - Pruebas / resultado: pasó en regresión125/125; perdió en un pase dirigido9/10; repetición aislada1/1 pasó las tres clases sin cambios. No se declara determinismo ni resolución de esta variación por el hecho de repetirla. Escena histórica sin perfil E16.
+
+## FASE E17 — ESTABILIDAD Y CANDIDATA ALFA
+
+Encargo posterior autoriza esta fase sobre E16; no E18.
+
+### E17-A — Estabilidad y diagnóstico RTS
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: alfa / P1. Dependencias: E16.
+- Aceptación: Trazas, condiciones controladas y repeticiones; selección/órdenes/victoria/derrota/transiciones. No cambiar reglas para forzar victorias.
+- Archivos: Runtime/Rts/RtsBattleController.cs, RtsTraceSample.cs; Tests/Editor/DemoRtsTests.cs, E17RtsInvestigationTests.cs, RtsTraceRecorder.cs; Docs/Validacion/E17/RTS*.
+- Pruebas / resultado: baseline5escenarios4/5 (10batallas:9victorias/1derrota real). Contratos4/5 y caso30aislado1/1 tras reparar limpieza del fixture. Se preservan todos los XML. Snapshot/evento/estados comprobados sin alterar reglas; la expectativa de victoria de la carga sigue pendiente (E17-A-RTS).
+
+### E17-B — Pipeline visual y Meshy local
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-A.
+- Aceptación: Sustitución desacoplada con fallback probado; revisar importación/UV/rig/escala en escena local, sin publicar arte experimental.
+- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E17-C — Presentación y tipografía
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-B.
+- Aceptación: Menú/selección mejorados, retratos proporcionados, cierres y escalado720p/1080p/1440p;4K si viable.
+- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E17-D — Escenarios y materiales URP
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-C.
+- Aceptación: Mejoras visibles de superficies/vegetación/ruinas/RTS sin cambiar navegación; shader modesto compatible y materiales compartidos.
+- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E17-E — Transiciones y lectura de combate
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-D.
+- Aceptación: Presentación integrada en flujo real, feedback de estados y cámara sin nuevas reglas o escenas narrativas.
+- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E17-F — QA, rendimiento y candidata alfa
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-E.
+- Aceptación: Regresión y recorridos Windows reales; capturas comparables, métricas disponibles, ZIP verificable, PRdraft y guía; no v1.0.
+- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+### E17-HUM — Revisión humana/artística
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: alfa / P1. Dependencias: E17-F.
+- Aceptación: Sesión del usuario y aprobación explícita; no sustituirla por automatización.
+- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
+
+
+### E17-A-RTS — Expectativa de victoria de la carga automática
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: QA/balance RTS / P1. Dependencias: E17-A.
+- Aceptación: investigar supervivencia del héroe con trayectoria/temporización variables; conservar pruebas de victoria y pérdida, sin otorgar victorias o salud artificiales. No exigir una carga ganadora universal sin regla aprobada.
+- Archivos: evidencia RTS de Docs/Validacion/E17 y futura investigación dirigida.
+- Pruebas / resultado: derrota real Monje30reproducida conHP0/aliados5/enemigos0 y evento correcto; E16Mago sin traza histórica suficiente para demostrar causa única. No se cierra por reintento.

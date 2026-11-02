@@ -1,0 +1,23 @@
+# E17 — candidata alfa de desarrollo
+
+Base b0afdc2 (E16, PR7 abierto). Rama feature/e17-art-pipeline-alpha-polish. Encargo8693f0cc autoriza E17; no E18. Reglas/GDD/versiones y escenas históricas conservadas. Sin subagentes ni herramientas nuevas.
+
+Secuencia aprobada: A diagnóstico RTS con trazas y repeticiones, B pipeline/fallback y análisis local Meshy, C composición y UI a720p/1080p/1440p (4K si viable), D terreno/materiales/shaders URP e iluminación, E transiciones/contextos y combate, F regresión/rendimiento/capturas/build/ZIP/PRdraft.
+
+Estado inicial: A en desarrollo, B–F pendientes. No se declara resuelta la intermitencia por repetir. Meshy experimental: análisis y escena aislada locales; no publicar FBX, derivados ni incorporarlo al héroe sin aprobación. Arte y evaluación humanas pendientes.
+
+
+## A — diagnóstico inicial
+
+Lote baseline5escenarios (tres clases en secuencia con cap solicitado default/30/120 y Mago aislado30/120):4/5aserciones de victoria aprobadas, diez batallas observadas de once previstas (se detuvo la secuencia30enMonje). Hubo nueve victorias y una derrota real; la recuperación se aceptó una vez en cada batalla. La derrota termina conHP0, cinco aliados y cero enemigos; se emite Resolved(false) y la transición de derrota correcta. No hay evento perdido en esta reproducción. La hipótesis inicial de recuperación nunca aceptada queda descartada para este lote.
+
+La carga idéntica no garantiza que sobreviva el héroe con trayectorias NavMesh/temporización distintas; no se cambia balance ni se adjudica victoria al ejército con héroe muerto. La prueba histórica mantiene sus aserciones de victoria. Se añaden comprobaciones separadas de resolución/derrota/reintento con cinco escenarios, sin exigir ganar todas las cargas. Esto no se presentará como corrección de la expectativa intermitente de victoria. XML y traza reducida baseline conservados. Revisión de estrategia/balance y determinismo físico pendientes; no se concluye una causa única del resultado E16 sin su traza.
+
+
+Pase de contratos intermedio1/6: cinco fallos de la nueva prueba por consultar Won tras Clear(), aunque la victoria ya había devuelto la exploración. Error de comprobación reconocido, XML conservado. Se usa el evento emitido y se conserva LastResolvedVictory hasta la siguiente batalla aceptada, útil para presentar el resultado tras la transición. No se atribuye retrospectivamente este problema de prueba nuevo a E16. Se verifica evento único, snapshot y estado; se mantienen las aserciones históricas y las trazas de derrota real.
+
+
+Contratos posteriores4/5: el caso30validó derrota/reintento pero su limpieza intentaba volver a explorar durante un RTS activo; la siguiente creación era rechazada correctamente por IsBusy. Se corrige únicamente la limpieza del fixture con Clear() después de comprobar el reintento y se exige que el nuevo intento no conserve un resultado anterior. XML conservado; repetir soloThreeClasses30. No se reduce ninguna aserción de combate.
+
+
+Cierre A: cuatro contextos de contrato aprobados en lote y ThreeClasses30 aprobado aisladamente tras reparar solo limpieza del fixture (RTS_CONTRACT_30_FINAL.xml). Se verifican selección simple/múltiple, órdenes, héroe, resolución única, retorno/victoria y derrota/reintento reales. La prueba histórica de victoria conserva sus aserciones. LastResolvedVictory es un snapshot de presentación, sin cambios de daño, salud, costes, cadencia, NavMesh ni guardado. No se declara corregido el resultado intermitente de la carga automática; sigue pendiente revisar estrategia/balance/determinismo, con derrota real reproducida y evidencia. Continúa B sin bloquear arte por esta expectativa pendiente.

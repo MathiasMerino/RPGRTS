@@ -551,3 +551,11 @@ Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nue
 - Se revisaron capturas técnicamente; ninguna sesión manual humana nueva ni perfil FPS/GC. E16-HUM y variación RTS E16-QA-RTS siguen pendientes. GDD, originales PNG, Nav, versiones/paquetes, escenas anteriores y Meshy ajeno conservados. Guía/informe/checklist actualizados; publicación en borrador en preparación.
 
 - Publicación E16: [PR #7](https://github.com/MathiasMerino/RPGRTS/pull/7) en borrador sobre feature/e14-e15-expediciones-conquista; push normal, historial conservado. Main/dev y PR1..6 sin cambios, sin merges. Checklist técnico/documental E16 cerrado; valoración humana y variación del test RTS permanecen pendientes.
+
+## 2026-11-02 — Inicio E17 autorizado
+
+PR7/base b0afdc2 comprobados; rama nueva desde E16 sin merges. Seis bloques secuenciales; prioridad diagnóstico RTS con trazas. Meshy experimental local intacto y excluido de publicación hasta aprobación; no iniciar E18.
+
+## 2026-11-02 — E17-A diagnóstico y contrato de resolución
+
+Cinco escenarios baseline4/5, derrota real por héroeHP0 con ejército vencedor. Trazas verifican recuperación aceptada, resolución y transición; no se ha probado evento perdido. Snapshot LastResolvedVictory conserva el resultado tras Clear y se reinicia al aceptar otra batalla. Contratos en cinco contextos verificados (4/5+luego1/1tras corregir limpieza de fixture), sin quitar aserciones históricas. Se conserva evidencia de errores de prueba propios y del fallo real. Expectativa de victoria automática pendiente; no se modifican reglas para forzarla. Continúa B.
