@@ -1,4 +1,4 @@
-# Registro de cambios de Crónicas de Aethernia
+﻿# Registro de cambios de Crónicas de Aethernia
 
 Conservar entradas anteriores; añadir fecha, tareas, alcance, archivos y validación al terminar cada actividad.
 
@@ -494,3 +494,18 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 ## 2026-11-01 — Publicación E10–E13
 
 Rama feature/e10-e13-demo-jugable publicada mediante push normal; PR#5 abierto draft sobre feature/e09-combate-rpg-ia (PR#4 todavía draft abierto): https://github.com/MathiasMerino/RPGRTS/pull/5. Main5a2e3cef ydev742c04f6, predeterminadamain yPR#1–#4 contrastados sin cambios. Conservados los commits porfase ycorrecciones91d83b7/238d9e2; documentación de cierre en commitposterior. ChecklistQA técnica completada, revisiónhumana yE14/E15 pendientes. Git propio sin cambios; archivos ajenosMonkMeshy preservados sin seguimiento/no publicados. No merges, forcepush ni cambios globales.
+
+
+## 2026-11-01 — Inicio E14–E15 autorizado
+
+Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nueva desdec33e34d, sin merges/main/dev. Plan/reglas provisionales y tareas dependientes en Docs/E14_E15_EXPEDICIONES.md yCHECKLIST. Eliminaciones locales ajenas de3texturas yFBXMeshy preservados; consulta pendiente, sin sobrescrituras. Se inicia estado/reclutamiento antes de sistemas dependientes.
+
+### E14 — grupo y combate verificados (2026-11-02 UTC)
+- Restauradas por autorización expresa las tres texturas E07; FBX Meshy ajeno intacto. Estado aditivo de compañeros, roles existentes, reserva e identidades persistentes.
+- Iniciativa individual y acciones legales enlazadas a salud compartida; seguimiento y dos encuentros reales en nueva escena, originales preservados.
+- QA:23/23 pruebas relacionadas;8/8 reglas nuevas;1/1 integración completa tras reproducir y corregir bloqueo por destinos ocupados. XML intermedios conservados; no se ocultan fallos. Cancelar movimiento/terminar turno no reembolsa metros. Validación Windows/E15 pendiente.
+
+### E14 — mazmorra e integración económica
+- Nueva escena AetherniaExpeditions, originales preservados; ruinas24×16m, dos encuentros, alijo, recompensa única y salida. Materiales/colisiones/roles existentes; suelo con UV por metro y recorte visual frontal sin cambiar barreras físicas.
+- Tres recorridos Windows con partidas E13 reales, más tres reinicios independientes, PASS. Recursos del cofre pagan compañeros; recompensa de ruinas paga granja/ejército. Sin salud o fondos añadidos por el probe. Focales de composición reducida y derrota2/2 PASS.
+- Seguimiento/representación compartida, controlador RPG ampliado y despliegue RTS seleccionable; patrulla anterior distingue ContextId y conserva sus reglas. Pausa/carga cancelan descanso del estado anterior. La revisión de capturas detectó recortes de etiquetas/orden visual del panel: corrección local pendiente, registrada sin aprobar visualmente la entrega.

@@ -35,6 +35,8 @@ namespace Aethernia
         private int sequence;
         public bool IncludesHero=>sharedHero!=null;
         public RtsDemoRules DemoRules=>demoRules;
+        public GameObject UnitTemplate=>template;
+        public string ContextId { get; private set; }="patrol";
         public event Action<bool> Resolved;
         public event Action<CombatFeedback> ActionResolved;
         private readonly List<Soldier> soldiers = new List<Soldier>();
@@ -93,10 +95,17 @@ namespace Aethernia
             return true;
         }
         public bool BeginWithHero(ExplorationUnit hero)
+        {return BeginHeroForce(hero,session.State.Army,false,6);}
+        public bool BeginExpedition(ExplorationUnit hero,IReadOnlyList<string> ids,int defenders)
+        {
+            if(ids==null||ids.Count==0||ids.Count>6||ids.Distinct().Count()!=ids.Count||ids.Any(id=>session.State.Army.All(r=>r.Id!=id))||defenders<1||defenders>6)return false;
+            return BeginHeroForce(hero,session.State.Army.Where(r=>ids.Contains(r.Id)).ToList(),true,defenders);
+        }
+        private bool BeginHeroForce(ExplorationUnit hero,IReadOnlyList<RecruitRecord> roster,bool expedition,int defenders)
         {
             if(hero==null||demoRules==null||Active||session.State.Health<=0)return false;
             var reinforcements=new List<Vector3>();
-            for(var i=0;i<session.State.Army.Count;i++)
+            for(var i=0;i<roster.Count;i++)
             {
                 if(!NavMesh.SamplePosition(new Vector3(-10.5f,0,11+i*.9f),out var point,.35f,NavMesh.AllAreas))return RejectDeployment();
                 foreach(var block in Physics.OverlapCapsule(point.position+Vector3.up*.35f,point.position+Vector3.up*1.45f,.29f,~0,QueryTriggerInteraction.Ignore))if(block.GetComponentInParent<ExplorationUnit>()==null)return RejectDeployment();
@@ -106,15 +115,20 @@ namespace Aethernia
             if(!NavMesh.SamplePosition(requested,out var at, .5f,NavMesh.AllAreas))return RejectDeployment();
             foreach(var block in Physics.OverlapCapsule(at.position+Vector3.up*.35f,at.position+Vector3.up*1.45f,.29f,~0,QueryTriggerInteraction.Ignore))if(block.GetComponentInParent<ExplorationUnit>()==null)return RejectDeployment();
             if(!Begin())return false;
+            ContextId=expedition?"conquest-outpost":"patrol";
+            if(expedition)
+            {
+                var enemyIndex=0;foreach(var s in soldiers.ToArray())if(s.Team==0||enemyIndex++>=defenders){s.Unit.gameObject.SetActive(false);Destroy(s.Unit.gameObject);soldiers.Remove(s);}
+            }
             var index=0;
             foreach(var s in soldiers)
             {
                 var role=demoRules.Roles[index++%demoRules.Roles.Length];s.Role=role.Id;s.Range=role.Range;s.Damage=role.Damage;s.Maximum=role.Health;s.Health=role.Health;s.Unit.Agent.speed=role.Speed;
                 BuildVisual(s,role);
             }
-            for(var i=0;i<session.State.Army.Count;i++)
+            for(var i=0;i<roster.Count;i++)
             {
-                var record=session.State.Army[i];var role=demoRules.Find(record.Role);if(role==null)continue;
+                var record=roster[i];var role=demoRules.Find(record.Role);if(role==null)continue;
                 var unit=Instantiate(template,reinforcements[i],Quaternion.identity).GetComponent<ExplorationUnit>();unit.name="Recluta "+role.Title;unit.Agent.speed=role.Speed;unit.Select(true);
                 var s=new Soldier{Unit=unit,Team=0,Health=record.Health,Maximum=role.Health,Damage=role.Damage,Range=role.Range,Role=role.Id,RecruitId=record.Id};BuildVisual(s,role);soldiers.Add(s);
             }
@@ -127,20 +141,7 @@ namespace Aethernia
         }
         private void BuildVisual(Soldier s,RtsRoleProfile role)
         {
-            var prefab=visuals==null?null:visuals.Find(role.VisualClass);if(prefab==null)return;
-            var physical=s.Unit.GetComponentsInChildren<Renderer>();s.Visual=Instantiate(prefab,s.Unit.transform,false);s.Visual.GetComponent<CharacterVisualModel>().BindActor(s.Unit);s.Animator=s.Visual.GetComponent<HumanoidAnimationDriver>();
-            foreach(var r in physical)r.enabled=false;
-            var model=s.Visual.GetComponent<CharacterVisualModel>();var state=new PrototypeState{Weapon=role.Id=="swordsman"?"training-sword":"",Armour="cloth"};model.ApplyEquipment(state);
-            if(role.Id=="archer"&&model.WeaponAnchor!=null&&feedback!=null)
-            {
-                BowLine(model.WeaponAnchor,new[]{new Vector3(0,-.45f,0),new Vector3(.16f,-.25f,0),new Vector3(.21f,0,0),new Vector3(.16f,.25f,0),new Vector3(0,.45f,0)},.025f,new Color(.48f,.30f,.13f));
-                BowLine(model.WeaponAnchor,new[]{new Vector3(0,-.45f,0),new Vector3(0,.45f,0)},.008f,new Color(.78f,.74f,.62f));
-                var mage=visuals.Find("mage").GetComponent<HumanoidAnimationDriver>();s.Animator.Configure(s.Visual.GetComponent<HumanoidVisualRig>(),mage.Profile);
-            }
-        }
-        private void BowLine(Transform parent,Vector3[] points,float width,Color color)
-        {
-            var node=new GameObject("Provisional bow");node.transform.SetParent(parent,false);var line=node.AddComponent<LineRenderer>();line.sharedMaterial=feedback.SharedEffectMaterial;line.useWorldSpace=false;line.positionCount=points.Length;line.SetPositions(points);line.startWidth=line.endWidth=width;line.startColor=line.endColor=color;
+            var model=SupportVisualFactory.Attach(s.Unit,role,visuals,feedback==null?null:feedback.SharedEffectMaterial);if(model==null)return;s.Visual=model.gameObject;s.Animator=s.Visual.GetComponent<HumanoidAnimationDriver>();
         }
         private bool RejectDeployment()
         { session.Say("Zona de despliegue RTS bloqueada. Se conserva el mundo; prueba en una partida con esa zona libre."); return false; }
@@ -194,6 +195,7 @@ namespace Aethernia
             {
                 Active = false;
                 session.State.Army.RemoveAll(s=>s.Health<=0);
+                session.State.ArmySelection.RemoveAll(id=>session.State.Army.All(s=>s.Id!=id));
                 foreach (var soldier in soldiers) if (soldier.Unit != null && soldier.Health > 0) soldier.Unit.Stop();
                 if (Won && !session.HasFact("rts-victory")) session.State.Facts.Add("rts-victory");
                 session.Say(Won ? "Victoria RTS registrada en la partida." : "Derrota RTS; puedes reiniciar la prueba.");

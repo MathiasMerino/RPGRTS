@@ -1,4 +1,4 @@
-# Checklist de Crónicas de Aethernia
+﻿# Checklist de Crónicas de Aethernia
 
 Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
 
@@ -880,3 +880,56 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 - Aceptación: Usuario revisa controles/nitidez/experiencia; pendientes humanos anteriores separados.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
 - Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+
+
+## E14–E15 — EXPEDICIONES Y CONQUISTA (encargo posterior)
+
+### E14-A — Estado y reclutamiento de compañeros
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: expediciones / P1. Dependencias: DEMO-QA E10–E13.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: PrototypeState, PrototypeSaveStore, ExpeditionRules, PartyWorld, GroupTurnSequence, TurnBattle y TurnEncounter.Group; tests ExpeditionRulesTests/ExpeditionIntegrationTests; escena AetherniaExpeditions.
+- Pruebas / resultado: 8/8 reglas puras aprobadas en E14_GRUPO_INTERMEDIO.xml; integración posterior recluta tres compañeros, conserva IDs y restaura sin duplicados en E14_INTEGRACION.xml. Evaluación humana pendiente en EXP-H.
+
+### E14-B — Seguimiento y turnos de grupo
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: expediciones / P1. Dependencias: E14-A.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: PrototypeState, PrototypeSaveStore, ExpeditionRules, PartyWorld, GroupTurnSequence, TurnBattle y TurnEncounter.Group; tests ExpeditionRulesTests/ExpeditionIntegrationTests; escena AetherniaExpeditions.
+- Pruebas / resultado: Prueba Play Mode E14_INTEGRACION.xml aprobada: seguimiento, NavMesh, dos combates con daño real e iniciativa y reloj estratégico detenido. Bloqueo de movimiento reproducido y corregido con cancelación por falta de progreso. Evaluación humana pendiente en EXP-H.
+
+### E14-C — Ruinas, interfaz, recompensa e integración
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: expediciones / P1. Dependencias: E14-B.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: previstos Runtime/Expeditions, ampliaciones de controladores existentes y escena nueva desde E10–E13; evidencia en informe.
+- Pruebas / resultado: pendientes, sin declarar compilación equivalente a funcionalidad.
+
+### E15-A — Facciones, territorios y economía
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: expediciones / P1. Dependencias: E14-C.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: previstos Runtime/Expeditions, ampliaciones de controladores existentes y escena nueva desde E10–E13; evidencia en informe.
+- Pruebas / resultado: pendientes, sin declarar compilación equivalente a funcionalidad.
+
+### E15-B — Ejército seleccionado y conquista real
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: expediciones / P1. Dependencias: E15-A.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: previstos Runtime/Expeditions, ampliaciones de controladores existentes y escena nueva desde E10–E13; evidencia en informe.
+- Pruebas / resultado: pendientes, sin declarar compilación equivalente a funcionalidad.
+
+### EXP-QA — Regresión, Windows, reinicio y publicación
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: expediciones / P1. Dependencias: E15-B.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: previstos Runtime/Expeditions, ampliaciones de controladores existentes y escena nueva desde E10–E13; evidencia en informe.
+- Pruebas / resultado: pendientes, sin declarar compilación equivalente a funcionalidad.
+
+### EXP-H — Evaluación humana
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: expediciones / P1. Dependencias: EXP-QA.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Archivos: previstos Runtime/Expeditions, ampliaciones de controladores existentes y escena nueva desde E10–E13; evidencia en informe.
+- Pruebas / resultado: pendientes, sin declarar compilación equivalente a funcionalidad.
+

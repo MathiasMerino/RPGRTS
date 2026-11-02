@@ -41,7 +41,7 @@ namespace Aethernia
         }
         private void RefreshHero()
         { if (hero != null && session.Rules != null) hero.Agent.speed = session.Rules.Find(session.State.ClassId).Speed; }
-        public bool IsBusy => rts.Active || (encounter.Battle != null && !encounter.Battle.Finished);
+        public bool IsBusy => rts.Active || encounter.GroupActive || (encounter.Battle != null && !encounter.Battle.Finished);
         private void ClearEncounters(bool preserveAcceptedStrike = false) { encounter.Clear(preserveAcceptedStrike); rts.Clear(); }
         public bool Execute(string id)
         {
@@ -62,7 +62,7 @@ namespace Aethernia
                 cameraRig.SetRegion(Vector3.zero); cameraRig.FocusOn(new Vector3(-9, 0, 13));
                 return true;
             }
-            if (id == "explore") { ClearEncounters(encounter.Battle != null && encounter.Battle.Won); hero.Stop(); session.SetMode(PrototypeMode.Exploration); cameraRig.SetRegion(hero.transform.position.x > 30 ? new Vector3(50, 0, 0) : Vector3.zero); return true; }
+            if (id == "explore") { ClearEncounters(encounter.Battle != null && encounter.Battle.Won); hero.Stop(); session.SetMode(PrototypeMode.Exploration); cameraRig.SetRegion(hero.transform.position.x>65?new Vector3(80,0,0):hero.transform.position.x > 30 ? new Vector3(50, 0, 0) : Vector3.zero); return true; }
             if (id == "construct") { ClearEncounters(); hero.Stop(); session.SetMode(PrototypeMode.Construction); session.Say("Clic derecho sobre suelo libre: taller 3×3 m; coste 10 oro y 5 madera."); return true; }
             if (id == "save") return Save(ActiveSavePath);
             if (id == "load") return Load(ActiveSavePath);
@@ -105,6 +105,7 @@ namespace Aethernia
             if (!PrototypeSaveStore.Load(path, session.Rules, out var loaded))
                 return Reject("No se pudo cargar: archivo ausente, ilegible o datos incompatibles. La partida actual se conserva.");
             if(loaded.Demo!=null&&construction.Settlement==null)return Reject("Esta partida pertenece a la primera demo integrada. Ábrela desde AetherniaFirstDemo.");
+            if((loaded.Companions.Count>0||loaded.Territories.Count>0||loaded.HeroPosition.x>65)&&!encounter.GroupConfigured)return Reject("Esta partida incluye expediciones E14–E15. Ábrela desde AetherniaExpeditions.");
             if (!construction.CanRestore(loaded.Buildings))
                 return Reject("No se pudo cargar: una construcción guardada se solapa con el escenario. La partida actual se conserva.");
             foreach (var building in loaded.Buildings)

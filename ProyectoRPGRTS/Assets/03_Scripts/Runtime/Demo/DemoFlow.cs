@@ -39,6 +39,8 @@ namespace Aethernia
             var args=Environment.GetCommandLineArgs();LegacyProbe=Array.IndexOf(args,"-aetherniaSmoke")>=0;
             if(LegacyProbe){Front.Hide();IsPlaying=true;return;}
             var index=Array.IndexOf(args,"-aetherniaDemoSmoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaSave");
             if(index>=0&&index+1<args.Length)SlotPath=args[index+1];
             Director.SavePathOverride=SlotPath;ShowMain();
         }
@@ -129,7 +131,7 @@ namespace Aethernia
         }
         private void RtsResolved(bool won)
         {
-            if(Session.State.Demo==null||!Director.Rts.IncludesHero)return;
+            if(Session.State.Demo==null||!Director.Rts.IncludesHero||Director.Rts.ContextId!="patrol")return;
             if(!won){Session.Paused=true;Front.ShowRetry();return;}
             if(patrolReturn>=DemoChapter.Settlement)
             {Director.Execute("explore");Session.State.Demo.Chapter=patrolReturn;CameraRig.SetZoom(11);CameraRig.FocusOn(Director.Hero.transform.position);Session.Say("Patrulla de entrenamiento terminada. No genera otra recompensa; el ejército conserva bajas y salud.");Director.Save(SlotPath);return;}
