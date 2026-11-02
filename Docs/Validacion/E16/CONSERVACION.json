@@ -1,0 +1,18 @@
+{
+  "base": "4efcd00a8fbd5a95f984fcf9f7bfddc5edf2b226",
+  "GDD_SHA256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "originalScenesPackagesVersionsNavCore": "unchanged against base",
+  "sourceSheetsUnchanged": true,
+  "foreignMeshyUnchanged": true,
+  "foreignFilesExcluded": [
+    "ProyectoRPGRTS\\Assets\\07_Characters\\MonkMeshy.meta",
+    "ProyectoRPGRTS\\Assets\\07_Characters\\MonkMeshy\\Meshy_AI_Ascetic_Warrior_20261101_generate.fbx",
+    "ProyectoRPGRTS\\Assets\\07_Characters\\MonkMeshy\\Meshy_AI_Ascetic_Warrior_20261101_generate.fbx.meta"
+  ],
+  "changesLimitedTo": "optional presentation, own scene/assets, QA and documentation",
+  "nativeFpsMeasured": false,
+  "nativeGcProfiled": false,
+  "runtimeChangesReviewed": "Only UI/presentation files; no gameplay state/rules/controller source changes",
+  "portableFilesUnchangedAfterExecution": 314,
+  "finalBuildCompilerAndShaderErrorsDetected": false
+}

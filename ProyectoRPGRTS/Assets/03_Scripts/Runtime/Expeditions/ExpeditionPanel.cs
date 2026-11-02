@@ -19,13 +19,13 @@ namespace Aethernia
         private int tab;
         private void Start()
         {
-            ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite);
+            ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite,Flow.Front.Presentation);
             // El marco histórico de1280x720 debe caber también en pantallas4:3.
             Flow.ExistingHud.GetComponent<CanvasScaler>().screenMatchMode=CanvasScaler.ScreenMatchMode.Expand;
             var root=new GameObject("Expedition interface",typeof(RectTransform));root.transform.SetParent(Flow.ExistingHud.transform,false);
             layer=(RectTransform)root.transform;layer.anchorMin=layer.anchorMax=layer.pivot=Vector2.one;layer.anchoredPosition=Vector2.zero;layer.sizeDelta=new Vector2(1280,720);
             Add(root.transform,"open","Grupo y expediciones",1000,286,264,Open);
-            var panel=DemoWidgets.Rect(root.transform,"Expedition window",384,92,880,500);window=panel.gameObject;DemoWidgets.Fill(panel,new Color(.04f,.045f,.045f,1));
+            var panel=DemoWidgets.Rect(root.transform,"Expedition window",384,92,880,500);window=panel.gameObject;ui.Surface(panel,new Color(.04f,.045f,.045f,1));
             ui.Text(panel,"Title","EXPEDICIONES · COMPAÑÍA DEL CAMPAMENTO",16,10,785,36,24).color=ui.Gold;
             Add(panel,"close","×",816,6,48,Close);
             Add(panel,"party-tab","Grupo",16,52,204,()=>tab=0);Add(panel,"army-tab","Ejército",232,52,204,()=>tab=1);Add(panel,"territory-tab","Territorios",448,52,204,()=>tab=2);Add(panel,"rest","Descansar10s",664,52,200,()=>Dungeon.Rest());
@@ -36,7 +36,7 @@ namespace Aethernia
             Add(panel,"march-crossing","Marchar al paso",16,324,272,()=>{Close();Territory.March("crossing");});Add(panel,"march-outpost","Marchar al puesto",300,324,272,()=>{Close();Territory.March("outpost");});
             Add(panel,"all-army","Preparar todo el ejército",584,324,280,()=>{foreach(var r in Flow.Session.State.Army)Territory.SelectSoldier(r.Id,true);});
             ui.Text(panel,"Guide","Grupo:5oro/2alimento por rol único. Retirar conserva identidad/salud en reserva.\nWASD explora; E en entrada/encuentros/objetivo/salida. Descanso recupera4PV en10s.\nEjército se recluta desde Administrar campamento/cuartel; capacidad6 separada del grupo3.",16,432,848,62,16);
-            var combat=DemoWidgets.Rect(root.transform,"Group turn interface",920,92,344,500);groupCombat=combat.gameObject;DemoWidgets.Fill(combat,new Color(.04f,.045f,.045f,1));
+            var combat=DemoWidgets.Rect(root.transform,"Group turn interface",920,92,344,500);groupCombat=combat.gameObject;ui.Surface(combat,new Color(.04f,.045f,.045f,1));
             combatText=ui.Text(combat,"Initiative and health","",16,12,312,280,16);
             Add(combat,"target-0","Guardián1",16,300,148,()=>Flow.Director.Encounter.SelectGroupTarget("enemy-0"));Add(combat,"target-1","Guardián2",180,300,148,()=>Flow.Director.Encounter.SelectGroupTarget("enemy-1"));
             Add(combat,"group-approach","Acercarse",16,350,100,()=>Flow.Director.Encounter.GroupApproach());Add(combat,"group-attack","Atacar",128,350,100,()=>Flow.Director.Encounter.GroupAttack());Add(combat,"group-guard","Guardia",240,350,88,()=>Flow.Director.Encounter.GroupGuard());Add(combat,"group-recover","Recuperar",16,396,148,()=>Flow.Director.Encounter.GroupRecover());Add(combat,"group-end","Fin de turno",180,396,148,()=>Flow.Director.Encounter.GroupEnd());
@@ -55,7 +55,7 @@ namespace Aethernia
             if(window==null)return;var s=Flow.Session.State;var e=Flow.Director.Encounter;var available=Flow.IsPlaying&&ExpeditionOperations.Ready(s)&&Flow.Session.Mode==PrototypeMode.Exploration&&!Flow.Session.Paused;
             var existing=Flow.ExistingHud.CompactView;if(window.activeSelf&&(existing.WindowOpen||existing.HelpOpen))Close();
             var bounds=((RectTransform)layer.parent).rect;layer.localScale=Vector3.one*Mathf.Min(1,bounds.width/1280,bounds.height/720);
-            controls["open"].gameObject.SetActive(available&&!window.activeSelf);if(!available)Close();
+            controls["open"].gameObject.SetActive(available&&!window.activeSelf&&(Flow.Front.Presentation==null||(!existing.WindowOpen&&!existing.HelpOpen)));if(!available)Close();
             if(window.activeSelf)
             {
                 var text=new StringBuilder();text.AppendLine("Oro "+s.Gold+" · Madera "+s.Wood+" · Alimento "+s.Food+" · Héroe "+s.Health+"PV");

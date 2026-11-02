@@ -1,0 +1,1 @@
+PASS: nuevo proceso conserva héroe, grupo, reserva, ejército, territorios, recursos y recompensas sin duplicar; class=mage; seconds=1.50

@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="125" result="Passed" total="125" passed="125" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 08:50:54Z" end-time="2026-11-02 08:51:09Z" duration="15.2511245">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="125" result="Passed" start-time="2026-11-02 08:50:54Z" end-time="2026-11-02 08:51:09Z" duration="15.251125" total="125" passed="125" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1163" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="125" result="Passed" start-time="2026-11-02 08:50:54Z" end-time="2026-11-02 08:51:09Z" duration="15.018889" total="125" passed="125" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="10004" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1164" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="125" result="Passed" start-time="2026-11-02 08:50:54Z" end-time="2026-11-02 08:51:09Z" duration="15.014169" total="125" passed="125" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1165" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="125" result="Passed" start-time="2026-11-02 08:50:54Z" end-time="2026-11-02 08:51:09Z" duration="15.010046" total="125" passed="125" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1166" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="125" result="Passed" start-time="2026-11-02 08:50:54Z" end-time="2026-11-02 08:51:09Z" duration="15.002715" total="125" passed="125" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="AnimatedCharacterTests" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-02 08:29:22Z" end-time="2026-11-02 08:29:58Z" duration="35.063898" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="ParameterizedMethod" id="1005" name="AuthoredRigHasValidSkinAndArticulatedClips" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests.AuthoredRigHasValidSkinAndArticulatedClips" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:28:20Z" end-time="2026-11-02 08:28:24Z" duration="4.203057" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1002" name="AuthoredRigHasValidSkinAndArticulatedClips(&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests.AuthoredRigHasValidSkinAndArticulatedClips(&quot;monk&quot;)" methodname="AuthoredRigHasValidSkinAndArticulatedClips" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" seed="267875102" result="Passed" start-time="2026-11-02 08:28:20Z" end-time="2026-11-02 08:28:23Z" duration="2.923548" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1003" name="AuthoredRigHasValidSkinAndArticulatedClips(&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests.AuthoredRigHasValidSkinAndArticulatedClips(&quot;warrior&quot;)" methodname="AuthoredRigHasValidSkinAndArticulatedClips" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" seed="1058177479" result="Passed" start-time="2026-11-02 08:28:23Z" end-time="2026-11-02 08:28:23Z" duration="0.597784" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1004" name="AuthoredRigHasValidSkinAndArticulatedClips(&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests.AuthoredRigHasValidSkinAndArticulatedClips(&quot;mage&quot;)" methodname="AuthoredRigHasValidSkinAndArticulatedClips" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" seed="1482469272" result="Passed" start-time="2026-11-02 08:28:23Z" end-time="2026-11-02 08:28:24Z" duration="0.658790" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-case id="1008" name="CaptureActualSkinnedPosesAndAngles" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests.CaptureActualSkinnedPosesAndAngles" methodname="CaptureActualSkinnedPosesAndAngles" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" seed="309951234" result="Passed" start-time="2026-11-02 08:28:24Z" end-time="2026-11-02 08:29:04Z" duration="40.087070" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1006" name="IntegrationPreservesFallbackAndOriginalScene" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests.IntegrationPreservesFallbackAndOriginalScene" methodname="IntegrationPreservesFallbackAndOriginalScene" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" seed="661062527" result="Passed" start-time="2026-11-02 08:29:04Z" end-time="2026-11-02 08:29:05Z" duration="0.776210" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1007" name="RealMovementAcceptedCombatAndEquipment" fullname="Aethernia.Tests.Editor.AnimatedCharacterTests.RealMovementAcceptedCombatAndEquipment" methodname="RealMovementAcceptedCombatAndEquipment" classname="Aethernia.Tests.Editor.AnimatedCharacterTests" runstate="Runnable" seed="1878325166" result="Passed" start-time="2026-11-02 08:29:05Z" end-time="2026-11-02 08:29:57Z" duration="52.453538" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1009" name="AtomicReplacementTests" fullname="Aethernia.Tests.Editor.AtomicReplacementTests" classname="Aethernia.Tests.Editor.AtomicReplacementTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-02 08:29:58Z" end-time="2026-11-02 08:29:58Z" duration="0.440124" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1015" name="ExhaustedRetryKeepsBothFilesAndRemainsBounded" fullname="Aethernia.Tests.Editor.AtomicReplacementTests.ExhaustedRetryKeepsBothFilesAndRemainsBounded" methodname="ExhaustedRetryKeepsBothFilesAndRemainsBounded" classname="Aethernia.Tests.Editor.AtomicReplacementTests" runstate="Runnable" seed="306840952" result="Passed" start-time="2026-11-02 08:29:58Z" end-time="2026-11-02 08:29:58Z" duration="0.022281" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1010" name="NativeLockedDestinationRecoversAndLoadsNewState" fullname="Aethernia.Tests.Editor.AtomicReplacementTests.NativeLockedDestinationRecoversAndLoadsNewState" methodname="NativeLockedDestinationRecoversAndLoadsNewState" classname="Aethernia.Tests.Editor.AtomicReplacementTests" runstate="Runnable" seed="1202314619" result="Passed" start-time="2026-11-02 08:29:58Z" end-time="2026-11-02 08:29:58Z" duration="0.377870" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1016" name="PermanentPermissionErrorIsNotRetried" fullname="Aethernia.Tests.Editor.AtomicReplacementTests.PermanentPermissionErrorIsNotRetried" methodname="PermanentPermissionErrorIsNotRetried" classname="Aethernia.Tests.Editor.AtomicReplacementTests" runstate="Runnable" seed="1146490211" result="Passed" start-time="2026-11-02 08:29:58Z" end-time="2026-11-02 08:29:58Z" duration="0.001842" asserts="0">
+                <properties />
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1014" name="TransientFileErrorRetriesTheSameOperation" fullname="Aethernia.Tests.Editor.AtomicReplacementTests.TransientFileErrorRetriesTheSameOperation" classname="Aethernia.Tests.Editor.AtomicReplacementTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:29:58Z" end-time="2026-11-02 08:29:58Z" duration="0.032840" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1011" name="TransientFileErrorRetriesTheSameOperation(32)" fullname="Aethernia.Tests.Editor.AtomicReplacementTests.TransientFileErrorRetriesTheSameOperation(32)" methodname="TransientFileErrorRetriesTheSameOperation" classname="Aethernia.Tests.Editor.AtomicReplacementTests" runstate="Runnable" seed="762331044" result="Passed" start-time="2026-11-02 08:29:58Z" end-time="2026-11-02 08:29:58Z" duration="0.009355" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1012" name="TransientFileErrorRetriesTheSameOperation(33)" fullname="Aethernia.Tests.Editor.AtomicReplacementTests.TransientFileErrorRetriesTheSameOperation(33)" methodname="TransientFileErrorRetriesTheSameOperation" classname="Aethernia.Tests.Editor.AtomicReplacementTests" runstate="Runnable" seed="1486938976" result="Passed" start-time="2026-11-02 08:29:58Z" end-time="2026-11-02 08:29:58Z" duration="0.008852" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1013" name="TransientFileErrorRetriesTheSameOperation(1175)" fullname="Aethernia.Tests.Editor.AtomicReplacementTests.TransientFileErrorRetriesTheSameOperation(1175)" methodname="TransientFileErrorRetriesTheSameOperation" classname="Aethernia.Tests.Editor.AtomicReplacementTests" runstate="Runnable" seed="1569984388" result="Passed" start-time="2026-11-02 08:29:58Z" end-time="2026-11-02 08:29:58Z" duration="0.010238" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestFixture" id="1017" name="CampaignIntegrationTests" fullname="Aethernia.Tests.Editor.CampaignIntegrationTests" classname="Aethernia.Tests.Editor.CampaignIntegrationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-02 08:30:37Z" end-time="2026-11-02 08:30:52Z" duration="14.600724" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1018" name="DefeatKeepsEnemyOwnershipAndAllowsPaidTimeRecovery" fullname="Aethernia.Tests.Editor.CampaignIntegrationTests.DefeatKeepsEnemyOwnershipAndAllowsPaidTimeRecovery" methodname="DefeatKeepsEnemyOwnershipAndAllowsPaidTimeRecovery" classname="Aethernia.Tests.Editor.CampaignIntegrationTests" runstate="Runnable" seed="486001461" result="Passed" start-time="2026-11-02 08:29:58Z" end-time="2026-11-02 08:30:25Z" duration="26.990276" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="Timeout" value="600000" />
+                </properties>
+              </test-case>
+              <test-case id="1019" name="MageWithTwoCompanionsCanWinWithoutFullParty" fullname="Aethernia.Tests.Editor.CampaignIntegrationTests.MageWithTwoCompanionsCanWinWithoutFullParty" methodname="MageWithTwoCompanionsCanWinWithoutFullParty" classname="Aethernia.Tests.Editor.CampaignIntegrationTests" runstate="Runnable" seed="632424759" result="Passed" start-time="2026-11-02 08:30:25Z" end-time="2026-11-02 08:30:52Z" duration="26.638323" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="Timeout" value="600000" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1020" name="CharacterVisualTests" fullname="Aethernia.Tests.Editor.CharacterVisualTests" classname="Aethernia.Tests.Editor.CharacterVisualTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:31:40Z" end-time="2026-11-02 08:31:43Z" duration="3.573759" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1022" name="CatalogContainsMetricReplaceableModelsAndSharedEquipment" fullname="Aethernia.Tests.Editor.CharacterVisualTests.CatalogContainsMetricReplaceableModelsAndSharedEquipment" methodname="CatalogContainsMetricReplaceableModelsAndSharedEquipment" classname="Aethernia.Tests.Editor.CharacterVisualTests" runstate="Runnable" seed="1867936324" result="Passed" start-time="2026-11-02 08:30:52Z" end-time="2026-11-02 08:30:52Z" duration="0.587150" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1023" name="ClassEquipmentLoadMovementAndVisualReplacementStayConsistent" fullname="Aethernia.Tests.Editor.CharacterVisualTests.ClassEquipmentLoadMovementAndVisualReplacementStayConsistent" methodname="ClassEquipmentLoadMovementAndVisualReplacementStayConsistent" classname="Aethernia.Tests.Editor.CharacterVisualTests" runstate="Runnable" seed="1199427394" result="Passed" start-time="2026-11-02 08:30:52Z" end-time="2026-11-02 08:31:20Z" duration="28.176503" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="RoofOcclusionIsReproducedAndCutawayRestoresPresentation" fullname="Aethernia.Tests.Editor.CharacterVisualTests.RoofOcclusionIsReproducedAndCutawayRestoresPresentation" methodname="RoofOcclusionIsReproducedAndCutawayRestoresPresentation" classname="Aethernia.Tests.Editor.CharacterVisualTests" runstate="Runnable" seed="2083826601" result="Passed" start-time="2026-11-02 08:31:20Z" end-time="2026-11-02 08:31:43Z" duration="22.776513" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1024" name="ContextUiValidationTests" fullname="Aethernia.Tests.Editor.ContextUiValidationTests" classname="Aethernia.Tests.Editor.ContextUiValidationTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-02 08:32:02Z" end-time="2026-11-02 08:32:10Z" duration="7.997470" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1025" name="PagesPreserveActionsAndModesHaveReadableSeparateLayouts" fullname="Aethernia.Tests.Editor.ContextUiValidationTests.PagesPreserveActionsAndModesHaveReadableSeparateLayouts" methodname="PagesPreserveActionsAndModesHaveReadableSeparateLayouts" classname="Aethernia.Tests.Editor.ContextUiValidationTests" runstate="Runnable" seed="2073534757" result="Passed" start-time="2026-11-02 08:31:43Z" end-time="2026-11-02 08:32:10Z" duration="26.734293" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1026" name="DemoAdventureTests" fullname="Aethernia.Tests.Editor.DemoAdventureTests" classname="Aethernia.Tests.Editor.DemoAdventureTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-02 08:32:41Z" end-time="2026-11-02 08:33:24Z" duration="43.054674" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1027" name="CameraRelativeDiagonalIsNormalized" fullname="Aethernia.Tests.Editor.DemoAdventureTests.CameraRelativeDiagonalIsNormalized" methodname="CameraRelativeDiagonalIsNormalized" classname="Aethernia.Tests.Editor.DemoAdventureTests" runstate="Runnable" seed="1233047308" result="Passed" start-time="2026-11-02 08:32:10Z" end-time="2026-11-02 08:32:10Z" duration="0.011381" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1028" name="ThreeClassesFinishTutorialAndWalkWithRealInput" fullname="Aethernia.Tests.Editor.DemoAdventureTests.ThreeClassesFinishTutorialAndWalkWithRealInput" methodname="ThreeClassesFinishTutorialAndWalkWithRealInput" classname="Aethernia.Tests.Editor.DemoAdventureTests" runstate="Runnable" seed="205148952" result="Passed" start-time="2026-11-02 08:32:10Z" end-time="2026-11-02 08:33:24Z" duration="73.639116" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1029" name="DemoCollisionTests" fullname="Aethernia.Tests.Editor.DemoCollisionTests" classname="Aethernia.Tests.Editor.DemoCollisionTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-02 08:33:47Z" end-time="2026-11-02 08:33:56Z" duration="8.833714" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1030" name="WasdStopsAtPhysicalWallAndOptionsRemainReadable" fullname="Aethernia.Tests.Editor.DemoCollisionTests.WasdStopsAtPhysicalWallAndOptionsRemainReadable" methodname="WasdStopsAtPhysicalWallAndOptionsRemainReadable" classname="Aethernia.Tests.Editor.DemoCollisionTests" runstate="Runnable" seed="945845165" result="Passed" start-time="2026-11-02 08:33:24Z" end-time="2026-11-02 08:33:56Z" duration="32.146820" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1031" name="DemoRtsTests" fullname="Aethernia.Tests.Editor.DemoRtsTests" classname="Aethernia.Tests.Editor.DemoRtsTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-02 08:34:19Z" end-time="2026-11-02 08:35:29Z" duration="69.384458" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1032" name="PatrolUsesSameHeroAndRealOrdersForThreeClasses" fullname="Aethernia.Tests.Editor.DemoRtsTests.PatrolUsesSameHeroAndRealOrdersForThreeClasses" methodname="PatrolUsesSameHeroAndRealOrdersForThreeClasses" classname="Aethernia.Tests.Editor.DemoRtsTests" runstate="Runnable" seed="239685302" result="Passed" start-time="2026-11-02 08:33:56Z" end-time="2026-11-02 08:35:29Z" duration="92.650409" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1033" name="DemoSettlementTests" fullname="Aethernia.Tests.Editor.DemoSettlementTests" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-02 08:35:46Z" end-time="2026-11-02 08:36:07Z" duration="20.237992" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1039" name="ActualBuildingsProductionRecruitDeploymentAndContinue" fullname="Aethernia.Tests.Editor.DemoSettlementTests.ActualBuildingsProductionRecruitDeploymentAndContinue" methodname="ActualBuildingsProductionRecruitDeploymentAndContinue" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="759485133" result="Passed" start-time="2026-11-02 08:35:29Z" end-time="2026-11-02 08:36:06Z" duration="37.748907" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1034" name="CostsRequirementsAndInvalidPointsAreTransactional" fullname="Aethernia.Tests.Editor.DemoSettlementTests.CostsRequirementsAndInvalidPointsAreTransactional" methodname="CostsRequirementsAndInvalidPointsAreTransactional" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="697594764" result="Passed" start-time="2026-11-02 08:36:07Z" end-time="2026-11-02 08:36:07Z" duration="0.004652" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1035" name="ProductionNeedsActivationAndCyclesAreConsumedOnce" fullname="Aethernia.Tests.Editor.DemoSettlementTests.ProductionNeedsActivationAndCyclesAreConsumedOnce" methodname="ProductionNeedsActivationAndCyclesAreConsumedOnce" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="959957414" result="Passed" start-time="2026-11-02 08:36:07Z" end-time="2026-11-02 08:36:07Z" duration="0.002219" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1037" name="RecruitmentRequiresPaymentBarracksAndFiniteSlots" fullname="Aethernia.Tests.Editor.DemoSettlementTests.RecruitmentRequiresPaymentBarracksAndFiniteSlots" methodname="RecruitmentRequiresPaymentBarracksAndFiniteSlots" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="756045647" result="Passed" start-time="2026-11-02 08:36:07Z" end-time="2026-11-02 08:36:07Z" duration="0.002431" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1038" name="SaveLoadKeepsProductionRosterAndLegacyWorkshopWithoutOfflineGain" fullname="Aethernia.Tests.Editor.DemoSettlementTests.SaveLoadKeepsProductionRosterAndLegacyWorkshopWithoutOfflineGain" methodname="SaveLoadKeepsProductionRosterAndLegacyWorkshopWithoutOfflineGain" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="750996381" result="Passed" start-time="2026-11-02 08:36:07Z" end-time="2026-11-02 08:36:07Z" duration="0.038838" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1036" name="StorageUpgradeAndProductionAreIndependentOfFramePartition" fullname="Aethernia.Tests.Editor.DemoSettlementTests.StorageUpgradeAndProductionAreIndependentOfFramePartition" methodname="StorageUpgradeAndProductionAreIndependentOfFramePartition" classname="Aethernia.Tests.Editor.DemoSettlementTests" runstate="Runnable" seed="1427650608" result="Passed" start-time="2026-11-02 08:36:07Z" end-time="2026-11-02 08:36:07Z" duration="0.003390" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1040" name="EnvironmentValidationTests" fullname="Aethernia.Tests.Editor.EnvironmentValidationTests" classname="Aethernia.Tests.Editor.EnvironmentValidationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:36:26Z" end-time="2026-11-02 08:36:28Z" duration="1.822497" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1041" name="ExactEditorAndDeclaredPackagesAreAvailable" fullname="Aethernia.Tests.Editor.EnvironmentValidationTests.ExactEditorAndDeclaredPackagesAreAvailable" methodname="ExactEditorAndDeclaredPackagesAreAvailable" classname="Aethernia.Tests.Editor.EnvironmentValidationTests" runstate="Runnable" seed="461509171" result="Passed" start-time="2026-11-02 08:36:07Z" end-time="2026-11-02 08:36:07Z" duration="0.017013" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1043" name="OriginalSceneEntersAndExitsPlayMode" fullname="Aethernia.Tests.Editor.EnvironmentValidationTests.OriginalSceneEntersAndExitsPlayMode" methodname="OriginalSceneEntersAndExitsPlayMode" classname="Aethernia.Tests.Editor.EnvironmentValidationTests" runstate="Runnable" seed="1806224509" result="Passed" start-time="2026-11-02 08:36:07Z" end-time="2026-11-02 08:36:27Z" duration="20.861167" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1042" name="OriginalSceneHasNoMissingScriptsOrSerializedReferences" fullname="Aethernia.Tests.Editor.EnvironmentValidationTests.OriginalSceneHasNoMissingScriptsOrSerializedReferences" methodname="OriginalSceneHasNoMissingScriptsOrSerializedReferences" classname="Aethernia.Tests.Editor.EnvironmentValidationTests" runstate="Runnable" seed="520874311" result="Passed" start-time="2026-11-02 08:36:28Z" end-time="2026-11-02 08:36:28Z" duration="0.743201" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1044" name="ExpeditionIntegrationTests" fullname="Aethernia.Tests.Editor.ExpeditionIntegrationTests" classname="Aethernia.Tests.Editor.ExpeditionIntegrationTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-02 08:36:54Z" end-time="2026-11-02 08:37:46Z" duration="52.393032" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1045" name="PartyFollowsTravelsFightsAndRestoresWithoutDuplicates" fullname="Aethernia.Tests.Editor.ExpeditionIntegrationTests.PartyFollowsTravelsFightsAndRestoresWithoutDuplicates" methodname="PartyFollowsTravelsFightsAndRestoresWithoutDuplicates" classname="Aethernia.Tests.Editor.ExpeditionIntegrationTests" runstate="Runnable" seed="1786479215" result="Passed" start-time="2026-11-02 08:36:28Z" end-time="2026-11-02 08:37:46Z" duration="78.002569" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="Timeout" value="600000" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1046" name="ExpeditionRulesTests" fullname="Aethernia.Tests.Editor.ExpeditionRulesTests" classname="Aethernia.Tests.Editor.ExpeditionRulesTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:37:46Z" duration="0.087734" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1052" name="CompanionKnockoutIdsAndArmySelectionPersistWithoutMultiplication" fullname="Aethernia.Tests.Editor.ExpeditionRulesTests.CompanionKnockoutIdsAndArmySelectionPersistWithoutMultiplication" methodname="CompanionKnockoutIdsAndArmySelectionPersistWithoutMultiplication" classname="Aethernia.Tests.Editor.ExpeditionRulesTests" runstate="Runnable" seed="256940047" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:37:46Z" duration="0.051420" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1051" name="CultureFactionAndRaceAreIndependentAndArmyIsNotCappedAtThree" fullname="Aethernia.Tests.Editor.ExpeditionRulesTests.CultureFactionAndRaceAreIndependentAndArmyIsNotCappedAtThree" methodname="CultureFactionAndRaceAreIndependentAndArmyIsNotCappedAtThree" classname="Aethernia.Tests.Editor.ExpeditionRulesTests" runstate="Runnable" seed="105378705" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:37:46Z" duration="0.002424" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1049" name="DungeonRewardRequiresBothWinsAndCannotRepeatAcrossLoad" fullname="Aethernia.Tests.Editor.ExpeditionRulesTests.DungeonRewardRequiresBothWinsAndCannotRepeatAcrossLoad" methodname="DungeonRewardRequiresBothWinsAndCannotRepeatAcrossLoad" classname="Aethernia.Tests.Editor.ExpeditionRulesTests" runstate="Runnable" seed="1787332434" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:37:46Z" duration="0.006819" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1053" name="GroupInitiativeActionsMovementAndKnockoutsAreAuthoritative" fullname="Aethernia.Tests.Editor.ExpeditionRulesTests.GroupInitiativeActionsMovementAndKnockoutsAreAuthoritative" methodname="GroupInitiativeActionsMovementAndKnockoutsAreAuthoritative" classname="Aethernia.Tests.Editor.ExpeditionRulesTests" runstate="Runnable" seed="588681592" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:37:46Z" duration="0.005209" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1048" name="InvalidOrUnaffordableRecruitmentDoesNotCharge" fullname="Aethernia.Tests.Editor.ExpeditionRulesTests.InvalidOrUnaffordableRecruitmentDoesNotCharge" methodname="InvalidOrUnaffordableRecruitmentDoesNotCharge" classname="Aethernia.Tests.Editor.ExpeditionRulesTests" runstate="Runnable" seed="1992323531" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:37:46Z" duration="0.001505" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1050" name="OwnershipOnlyChangesOnWinAndOnlineBonusDoesNotDuplicate" fullname="Aethernia.Tests.Editor.ExpeditionRulesTests.OwnershipOnlyChangesOnWinAndOnlineBonusDoesNotDuplicate" methodname="OwnershipOnlyChangesOnWinAndOnlineBonusDoesNotDuplicate" classname="Aethernia.Tests.Editor.ExpeditionRulesTests" runstate="Runnable" seed="1084804247" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:37:46Z" duration="0.010703" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1047" name="RecruitmentHasRealCostsUniqueIdsAndThreeSeparatePartySlots" fullname="Aethernia.Tests.Editor.ExpeditionRulesTests.RecruitmentHasRealCostsUniqueIdsAndThreeSeparatePartySlots" methodname="RecruitmentHasRealCostsUniqueIdsAndThreeSeparatePartySlots" classname="Aethernia.Tests.Editor.ExpeditionRulesTests" runstate="Runnable" seed="1349840148" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:37:46Z" duration="0.002765" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1054" name="TerritorialStorageCapIsRespectedAndDefeatGivesNoBonus" fullname="Aethernia.Tests.Editor.ExpeditionRulesTests.TerritorialStorageCapIsRespectedAndDefeatGivesNoBonus" methodname="TerritorialStorageCapIsRespectedAndDefeatGivesNoBonus" classname="Aethernia.Tests.Editor.ExpeditionRulesTests" runstate="Runnable" seed="980825610" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:37:46Z" duration="0.001214" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1055" name="ExpeditionUiTests" fullname="Aethernia.Tests.Editor.ExpeditionUiTests" classname="Aethernia.Tests.Editor.ExpeditionUiTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-02 08:38:01Z" end-time="2026-11-02 08:38:06Z" duration="5.559308" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1056" name="WindowsAndCombatFitAndReceiveInput" fullname="Aethernia.Tests.Editor.ExpeditionUiTests.WindowsAndCombatFitAndReceiveInput" methodname="WindowsAndCombatFitAndReceiveInput" classname="Aethernia.Tests.Editor.ExpeditionUiTests" runstate="Runnable" seed="2020355506" result="Passed" start-time="2026-11-02 08:37:46Z" end-time="2026-11-02 08:38:06Z" duration="19.935354" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="Timeout" value="600000" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1057" name="FirstDemoTests" fullname="Aethernia.Tests.Editor.FirstDemoTests" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-02 08:38:58Z" end-time="2026-11-02 08:39:05Z" duration="6.428495" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1058" name="ActualTutorialDefeatOffersExplicitRetry" fullname="Aethernia.Tests.Editor.FirstDemoTests.ActualTutorialDefeatOffersExplicitRetry" methodname="ActualTutorialDefeatOffersExplicitRetry" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" seed="1615524948" result="Passed" start-time="2026-11-02 08:38:06Z" end-time="2026-11-02 08:38:43Z" duration="37.045638" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1060" name="FontAndProvisionalDataHaveRealSources" fullname="Aethernia.Tests.Editor.FirstDemoTests.FontAndProvisionalDataHaveRealSources" methodname="FontAndProvisionalDataHaveRealSources" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" seed="195235457" result="Passed" start-time="2026-11-02 08:38:43Z" end-time="2026-11-02 08:38:44Z" duration="0.634133" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1059" name="LegacyRoundtripDoesNotInventDemoProgress" fullname="Aethernia.Tests.Editor.FirstDemoTests.LegacyRoundtripDoesNotInventDemoProgress" methodname="LegacyRoundtripDoesNotInventDemoProgress" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" seed="452450820" result="Passed" start-time="2026-11-02 08:38:44Z" end-time="2026-11-02 08:38:44Z" duration="0.049038" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1062" name="MainMenuActionsLayoutsAndNewGame" fullname="Aethernia.Tests.Editor.FirstDemoTests.MainMenuActionsLayoutsAndNewGame" methodname="MainMenuActionsLayoutsAndNewGame" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" seed="982809548" result="Passed" start-time="2026-11-02 08:38:44Z" end-time="2026-11-02 08:39:05Z" duration="20.340481" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1061" name="SelectionSaveAndPreferencesAreSeparateAndCompatible" fullname="Aethernia.Tests.Editor.FirstDemoTests.SelectionSaveAndPreferencesAreSeparateAndCompatible" methodname="SelectionSaveAndPreferencesAreSeparateAndCompatible" classname="Aethernia.Tests.Editor.FirstDemoTests" runstate="Runnable" seed="1585799157" result="Passed" start-time="2026-11-02 08:39:05Z" end-time="2026-11-02 08:39:05Z" duration="0.014139" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1063" name="FoundationValidationTests" fullname="Aethernia.Tests.Editor.FoundationValidationTests" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-02 08:39:21Z" end-time="2026-11-02 08:39:23Z" duration="1.789707" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1071" name="HumanCapsuleFitsDoorButCannotFitNarrowGate" fullname="Aethernia.Tests.Editor.FoundationValidationTests.HumanCapsuleFitsDoorButCannotFitNarrowGate" methodname="HumanCapsuleFitsDoorButCannotFitNarrowGate" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" seed="201010645" result="Passed" start-time="2026-11-02 08:39:05Z" end-time="2026-11-02 08:39:05Z" duration="0.488611" asserts="0">
+                <properties />
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1070" name="ImportedPrefabsHaveMetricDimensions" fullname="Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-02 08:39:05Z" end-time="2026-11-02 08:39:08Z" duration="2.850927" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1064" name="ImportedPrefabsHaveMetricDimensions(&quot;ReferenceCube_1m&quot;,1,1,1)" fullname="Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(&quot;ReferenceCube_1m&quot;,1,1,1)" methodname="ImportedPrefabsHaveMetricDimensions" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" seed="1417508199" result="Passed" start-time="2026-11-02 08:39:05Z" end-time="2026-11-02 08:39:06Z" duration="0.507679" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1065" name="ImportedPrefabsHaveMetricDimensions(&quot;ReferenceHuman_180cm&quot;,0.6f,1.8f,0.6f)" fullname="Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(&quot;ReferenceHuman_180cm&quot;,0.6f,1.8f,0.6f)" methodname="ImportedPrefabsHaveMetricDimensions" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" seed="2008052403" result="Passed" start-time="2026-11-02 08:39:06Z" end-time="2026-11-02 08:39:06Z" duration="0.453672" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1066" name="ImportedPrefabsHaveMetricDimensions(&quot;ReferenceDoor_120x220cm&quot;,1.6f,2.4f,0.25f)" fullname="Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(&quot;ReferenceDoor_120x220cm&quot;,1.6f,2.4f,0.25f)" methodname="ImportedPrefabsHaveMetricDimensions" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" seed="1983255970" result="Passed" start-time="2026-11-02 08:39:06Z" end-time="2026-11-02 08:39:07Z" duration="0.498388" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1067" name="ImportedPrefabsHaveMetricDimensions(&quot;ReferenceWindow_100x120cm&quot;,1.4f,1.6f,0.25f)" fullname="Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(&quot;ReferenceWindow_100x120cm&quot;,1.4f,1.6f,0.25f)" methodname="ImportedPrefabsHaveMetricDimensions" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" seed="118823944" result="Passed" start-time="2026-11-02 08:39:07Z" end-time="2026-11-02 08:39:07Z" duration="0.445131" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1068" name="ImportedPrefabsHaveMetricDimensions(&quot;ReferenceHouse_6x8m&quot;,6,3.15f,8)" fullname="Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(&quot;ReferenceHouse_6x8m&quot;,6,3.15f,8)" methodname="ImportedPrefabsHaveMetricDimensions" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" seed="1272555455" result="Passed" start-time="2026-11-02 08:39:07Z" end-time="2026-11-02 08:39:07Z" duration="0.459638" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1069" name="ImportedPrefabsHaveMetricDimensions(&quot;ReferenceGround_40m&quot;,40,0.2f,40)" fullname="Aethernia.Tests.Editor.FoundationValidationTests.ImportedPrefabsHaveMetricDimensions(&quot;ReferenceGround_40m&quot;,40,0.2f,40)" methodname="ImportedPrefabsHaveMetricDimensions" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" seed="729314939" result="Passed" start-time="2026-11-02 08:39:07Z" end-time="2026-11-02 08:39:08Z" duration="0.443130" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-case id="1072" name="SandboxHasValidReferencesMaterialsAndGround" fullname="Aethernia.Tests.Editor.FoundationValidationTests.SandboxHasValidReferencesMaterialsAndGround" methodname="SandboxHasValidReferencesMaterialsAndGround" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" seed="12951343" result="Passed" start-time="2026-11-02 08:39:08Z" end-time="2026-11-02 08:39:08Z" duration="0.477445" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1073" name="SandboxRunsAndRendersWithoutErrors" fullname="Aethernia.Tests.Editor.FoundationValidationTests.SandboxRunsAndRendersWithoutErrors" methodname="SandboxRunsAndRendersWithoutErrors" classname="Aethernia.Tests.Editor.FoundationValidationTests" runstate="Runnable" seed="1146960524" result="Passed" start-time="2026-11-02 08:39:08Z" end-time="2026-11-02 08:39:23Z" duration="14.477388" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1074" name="HumanoidPipelineTests" fullname="Aethernia.Tests.Editor.HumanoidPipelineTests" classname="Aethernia.Tests.Editor.HumanoidPipelineTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-02 08:39:39Z" end-time="2026-11-02 08:39:42Z" duration="3.180869" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1075" name="EmptyPilotHasSevenUnanimatedStatesAndPreservesFallback" fullname="Aethernia.Tests.Editor.HumanoidPipelineTests.EmptyPilotHasSevenUnanimatedStatesAndPreservesFallback" methodname="EmptyPilotHasSevenUnanimatedStatesAndPreservesFallback" classname="Aethernia.Tests.Editor.HumanoidPipelineTests" runstate="Runnable" seed="1307764645" result="Passed" start-time="2026-11-02 08:39:23Z" end-time="2026-11-02 08:39:24Z" duration="0.886825" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1077" name="FiveVisualSlotsReadExistingEquipmentAndRoundTripSave" fullname="Aethernia.Tests.Editor.HumanoidPipelineTests.FiveVisualSlotsReadExistingEquipmentAndRoundTripSave" methodname="FiveVisualSlotsReadExistingEquipmentAndRoundTripSave" classname="Aethernia.Tests.Editor.HumanoidPipelineTests" runstate="Runnable" seed="2097288071" result="Passed" start-time="2026-11-02 08:39:24Z" end-time="2026-11-02 08:39:24Z" duration="0.595093" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1078" name="MissingAssetsLeaveMovementAndMonkFallbackFunctional" fullname="Aethernia.Tests.Editor.HumanoidPipelineTests.MissingAssetsLeaveMovementAndMonkFallbackFunctional" methodname="MissingAssetsLeaveMovementAndMonkFallbackFunctional" classname="Aethernia.Tests.Editor.HumanoidPipelineTests" runstate="Runnable" seed="463922266" result="Passed" start-time="2026-11-02 08:39:24Z" end-time="2026-11-02 08:39:41Z" duration="16.260653" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1076" name="NativeFbxImportsMetresAndRejectsNonHumanoidCandidate" fullname="Aethernia.Tests.Editor.HumanoidPipelineTests.NativeFbxImportsMetresAndRejectsNonHumanoidCandidate" methodname="NativeFbxImportsMetresAndRejectsNonHumanoidCandidate" classname="Aethernia.Tests.Editor.HumanoidPipelineTests" runstate="Runnable" seed="1533893805" result="Passed" start-time="2026-11-02 08:39:41Z" end-time="2026-11-02 08:39:42Z" duration="1.674682" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1079" name="LostCargoTests" fullname="Aethernia.Tests.Editor.LostCargoTests" classname="Aethernia.Tests.Editor.LostCargoTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-02 08:41:05Z" end-time="2026-11-02 08:41:12Z" duration="7.262183" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1080" name="FactsPersistWithoutSchemaChangeAndRewardsCannotRepeat" fullname="Aethernia.Tests.Editor.LostCargoTests.FactsPersistWithoutSchemaChangeAndRewardsCannotRepeat" methodname="FactsPersistWithoutSchemaChangeAndRewardsCannotRepeat" classname="Aethernia.Tests.Editor.LostCargoTests" runstate="Runnable" seed="1524117289" result="Passed" start-time="2026-11-02 08:39:42Z" end-time="2026-11-02 08:39:44Z" duration="1.889941" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1083" name="MageCompletesQuest" fullname="Aethernia.Tests.Editor.LostCargoTests.MageCompletesQuest" methodname="MageCompletesQuest" classname="Aethernia.Tests.Editor.LostCargoTests" runstate="Runnable" seed="429199335" result="Passed" start-time="2026-11-02 08:39:44Z" end-time="2026-11-02 08:40:05Z" duration="21.125554" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1081" name="MonkCompletesQuest" fullname="Aethernia.Tests.Editor.LostCargoTests.MonkCompletesQuest" methodname="MonkCompletesQuest" classname="Aethernia.Tests.Editor.LostCargoTests" runstate="Runnable" seed="597245769" result="Passed" start-time="2026-11-02 08:40:05Z" end-time="2026-11-02 08:40:33Z" duration="28.009466" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1084" name="UnrelatedVictoryAndCargoBeforeAcceptanceCannotCompleteMission" fullname="Aethernia.Tests.Editor.LostCargoTests.UnrelatedVictoryAndCargoBeforeAcceptanceCannotCompleteMission" methodname="UnrelatedVictoryAndCargoBeforeAcceptanceCannotCompleteMission" classname="Aethernia.Tests.Editor.LostCargoTests" runstate="Runnable" seed="1290013583" result="Passed" start-time="2026-11-02 08:40:33Z" end-time="2026-11-02 08:40:51Z" duration="17.149371" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1082" name="WarriorCompletesQuest" fullname="Aethernia.Tests.Editor.LostCargoTests.WarriorCompletesQuest" methodname="WarriorCompletesQuest" classname="Aethernia.Tests.Editor.LostCargoTests" runstate="Runnable" seed="1148684476" result="Passed" start-time="2026-11-02 08:40:51Z" end-time="2026-11-02 08:41:12Z" duration="21.379648" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1085" name="MedievalEnvironmentTests" fullname="Aethernia.Tests.Editor.MedievalEnvironmentTests" classname="Aethernia.Tests.Editor.MedievalEnvironmentTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-02 08:41:42Z" end-time="2026-11-02 08:41:55Z" duration="13.008661" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1087" name="DressingPreservesOriginalPhysicsAndBakedNavigation" fullname="Aethernia.Tests.Editor.MedievalEnvironmentTests.DressingPreservesOriginalPhysicsAndBakedNavigation" methodname="DressingPreservesOriginalPhysicsAndBakedNavigation" classname="Aethernia.Tests.Editor.MedievalEnvironmentTests" runstate="Runnable" seed="1220625679" result="Passed" start-time="2026-11-02 08:41:12Z" end-time="2026-11-02 08:41:13Z" duration="0.715526" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1088" name="IdleCameraDoesNotZoomWithoutWheelInput" fullname="Aethernia.Tests.Editor.MedievalEnvironmentTests.IdleCameraDoesNotZoomWithoutWheelInput" methodname="IdleCameraDoesNotZoomWithoutWheelInput" classname="Aethernia.Tests.Editor.MedievalEnvironmentTests" runstate="Runnable" seed="1572142001" result="Passed" start-time="2026-11-02 08:41:13Z" end-time="2026-11-02 08:41:26Z" duration="13.676866" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1086" name="LibraryHasSharedSupportedMaterialsAndMetricPrefabs" fullname="Aethernia.Tests.Editor.MedievalEnvironmentTests.LibraryHasSharedSupportedMaterialsAndMetricPrefabs" methodname="LibraryHasSharedSupportedMaterialsAndMetricPrefabs" classname="Aethernia.Tests.Editor.MedievalEnvironmentTests" runstate="Runnable" seed="328942581" result="Passed" start-time="2026-11-02 08:41:26Z" end-time="2026-11-02 08:41:28Z" duration="1.124204" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1089" name="QuarterNavigationAndPresentationWorkTogether" fullname="Aethernia.Tests.Editor.MedievalEnvironmentTests.QuarterNavigationAndPresentationWorkTogether" methodname="QuarterNavigationAndPresentationWorkTogether" classname="Aethernia.Tests.Editor.MedievalEnvironmentTests" runstate="Runnable" seed="609798099" result="Passed" start-time="2026-11-02 08:41:28Z" end-time="2026-11-02 08:41:55Z" duration="27.413573" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1090" name="MedievalHudTests" fullname="Aethernia.Tests.Editor.MedievalHudTests" classname="Aethernia.Tests.Editor.MedievalHudTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:42:38Z" end-time="2026-11-02 08:42:39Z" duration="0.980600" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1093" name="FourResolutionsContextModesAndWorldSpaceRemainReadable" fullname="Aethernia.Tests.Editor.MedievalHudTests.FourResolutionsContextModesAndWorldSpaceRemainReadable" methodname="FourResolutionsContextModesAndWorldSpaceRemainReadable" classname="Aethernia.Tests.Editor.MedievalHudTests" runstate="Runnable" seed="195908862" result="Passed" start-time="2026-11-02 08:41:55Z" end-time="2026-11-02 08:42:24Z" duration="29.214092" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1091" name="SkinUsesOneAtlasAndMetricWorldResourcesStaySeparate" fullname="Aethernia.Tests.Editor.MedievalHudTests.SkinUsesOneAtlasAndMetricWorldResourcesStaySeparate" methodname="SkinUsesOneAtlasAndMetricWorldResourcesStaySeparate" classname="Aethernia.Tests.Editor.MedievalHudTests" runstate="Runnable" seed="803564054" result="Passed" start-time="2026-11-02 08:42:24Z" end-time="2026-11-02 08:42:25Z" duration="0.523688" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1092" name="WindowsInventoryClassesAndSaveUseExistingStateAndSingleCommands" fullname="Aethernia.Tests.Editor.MedievalHudTests.WindowsInventoryClassesAndSaveUseExistingStateAndSingleCommands" methodname="WindowsInventoryClassesAndSaveUseExistingStateAndSingleCommands" classname="Aethernia.Tests.Editor.MedievalHudTests" runstate="Runnable" seed="95802979" result="Passed" start-time="2026-11-02 08:42:25Z" end-time="2026-11-02 08:42:39Z" duration="13.970523" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1094" name="MonkIdentityTests" fullname="Aethernia.Tests.Editor.MonkIdentityTests" classname="Aethernia.Tests.Editor.MonkIdentityTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:43:08Z" end-time="2026-11-02 08:43:12Z" duration="3.849053" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1097" name="CharacterPageCropAndMatchedWorldCapturesAreReadable" fullname="Aethernia.Tests.Editor.MonkIdentityTests.CharacterPageCropAndMatchedWorldCapturesAreReadable" methodname="CharacterPageCropAndMatchedWorldCapturesAreReadable" classname="Aethernia.Tests.Editor.MonkIdentityTests" runstate="Runnable" seed="1494116130" result="Passed" start-time="2026-11-02 08:42:39Z" end-time="2026-11-02 08:42:55Z" duration="16.469888" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1096" name="MonkSelectionInteractionEquipmentLoadAndRpgStillWork" fullname="Aethernia.Tests.Editor.MonkIdentityTests.MonkSelectionInteractionEquipmentLoadAndRpgStillWork" methodname="MonkSelectionInteractionEquipmentLoadAndRpgStillWork" classname="Aethernia.Tests.Editor.MonkIdentityTests" runstate="Runnable" seed="405653928" result="Passed" start-time="2026-11-02 08:42:55Z" end-time="2026-11-02 08:43:11Z" duration="15.625198" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1095" name="ProxyIsMetricLightAndKeepsOtherClassesAndOriginalArt" fullname="Aethernia.Tests.Editor.MonkIdentityTests.ProxyIsMetricLightAndKeepsOtherClassesAndOriginalArt" methodname="ProxyIsMetricLightAndKeepsOtherClassesAndOriginalArt" classname="Aethernia.Tests.Editor.MonkIdentityTests" runstate="Runnable" seed="1211211964" result="Passed" start-time="2026-11-02 08:43:11Z" end-time="2026-11-02 08:43:12Z" duration="0.754626" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1098" name="PhaseTwoValidationTests" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-11-02 08:45:00Z" end-time="2026-11-02 08:45:02Z" duration="1.952071" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1104" name="EnemyTurnFollowsACompletePathWithinThreeMetres" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.EnemyTurnFollowsACompletePathWithinThreeMetres" methodname="EnemyTurnFollowsACompletePathWithinThreeMetres" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="678948586" result="Passed" start-time="2026-11-02 08:43:12Z" end-time="2026-11-02 08:43:26Z" duration="14.352313" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1100" name="EnteringManagementStopsThePreviousHeroOrder" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.EnteringManagementStopsThePreviousHeroOrder" methodname="EnteringManagementStopsThePreviousHeroOrder" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="1776981678" result="Passed" start-time="2026-11-02 08:43:26Z" end-time="2026-11-02 08:43:40Z" duration="13.883575" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1106" name="ExplorationActionsAreModeGuardedAndHudKeepsSpecificFeedback" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.ExplorationActionsAreModeGuardedAndHudKeepsSpecificFeedback" methodname="ExplorationActionsAreModeGuardedAndHudKeepsSpecificFeedback" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="1798126586" result="Passed" start-time="2026-11-02 08:43:40Z" end-time="2026-11-02 08:43:54Z" duration="14.155599" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1101" name="FinishedRtsDoesNotLeakParticipantsIntoExplorationOrLoad" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.FinishedRtsDoesNotLeakParticipantsIntoExplorationOrLoad" methodname="FinishedRtsDoesNotLeakParticipantsIntoExplorationOrLoad" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="1548257675" result="Passed" start-time="2026-11-02 08:43:54Z" end-time="2026-11-02 08:44:15Z" duration="20.996079" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1110" name="InvalidInventoryAndProductionClockAreRejected" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:44:15Z" end-time="2026-11-02 08:44:17Z" duration="1.640932" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1107" name="InvalidInventoryAndProductionClockAreRejected(&quot;overflow&quot;)" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected(&quot;overflow&quot;)" methodname="InvalidInventoryAndProductionClockAreRejected" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="2015518975" result="Passed" start-time="2026-11-02 08:44:15Z" end-time="2026-11-02 08:44:16Z" duration="0.532792" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1108" name="InvalidInventoryAndProductionClockAreRejected(&quot;clock-behind&quot;)" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected(&quot;clock-behind&quot;)" methodname="InvalidInventoryAndProductionClockAreRejected" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="490225743" result="Passed" start-time="2026-11-02 08:44:16Z" end-time="2026-11-02 08:44:16Z" duration="0.565133" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1109" name="InvalidInventoryAndProductionClockAreRejected(&quot;clock-ahead&quot;)" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidInventoryAndProductionClockAreRejected(&quot;clock-ahead&quot;)" methodname="InvalidInventoryAndProductionClockAreRejected" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="113319230" result="Passed" start-time="2026-11-02 08:44:16Z" end-time="2026-11-02 08:44:17Z" duration="0.536502" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-case id="1105" name="InvalidLoadReportsFailureWithoutChangingWorldOrPosition" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.InvalidLoadReportsFailureWithoutChangingWorldOrPosition" methodname="InvalidLoadReportsFailureWithoutChangingWorldOrPosition" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="161921566" result="Passed" start-time="2026-11-02 08:44:17Z" end-time="2026-11-02 08:44:30Z" duration="13.340012" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1102" name="RtsRejectsBlockedDeploymentWithoutEnteringMode" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.RtsRejectsBlockedDeploymentWithoutEnteringMode" methodname="RtsRejectsBlockedDeploymentWithoutEnteringMode" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="1868619979" result="Passed" start-time="2026-11-02 08:44:30Z" end-time="2026-11-02 08:44:45Z" duration="14.889673" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1099" name="SceneHeroDefersNativeAgentUntilSurfaceHasLoaded" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.SceneHeroDefersNativeAgentUntilSurfaceHasLoaded" methodname="SceneHeroDefersNativeAgentUntilSurfaceHasLoaded" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="695944890" result="Passed" start-time="2026-11-02 08:44:45Z" end-time="2026-11-02 08:44:46Z" duration="0.530049" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1103" name="TacticalAttacksRespectWallsAndTurnCannotResetInTransit" fullname="Aethernia.Tests.Editor.PhaseTwoValidationTests.TacticalAttacksRespectWallsAndTurnCannotResetInTransit" methodname="TacticalAttacksRespectWallsAndTurnCannotResetInTransit" classname="Aethernia.Tests.Editor.PhaseTwoValidationTests" runstate="Runnable" seed="29004046" result="Passed" start-time="2026-11-02 08:44:46Z" end-time="2026-11-02 08:45:02Z" duration="15.908997" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1111" name="PlayableValidationTests" fullname="Aethernia.Tests.Editor.PlayableValidationTests" classname="Aethernia.Tests.Editor.PlayableValidationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:45:46Z" end-time="2026-11-02 08:45:50Z" duration="4.809900" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1112" name="CameraSelectionAndUiBlockWork" fullname="Aethernia.Tests.Editor.PlayableValidationTests.CameraSelectionAndUiBlockWork" methodname="CameraSelectionAndUiBlockWork" classname="Aethernia.Tests.Editor.PlayableValidationTests" runstate="Runnable" seed="2117674539" result="Passed" start-time="2026-11-02 08:45:02Z" end-time="2026-11-02 08:45:17Z" duration="14.855591" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1114" name="HudRendersAtTwoResolutionsAndDoesNotDuplicateListeners" fullname="Aethernia.Tests.Editor.PlayableValidationTests.HudRendersAtTwoResolutionsAndDoesNotDuplicateListeners" methodname="HudRendersAtTwoResolutionsAndDoesNotDuplicateListeners" classname="Aethernia.Tests.Editor.PlayableValidationTests" runstate="Runnable" seed="544111494" result="Passed" start-time="2026-11-02 08:45:17Z" end-time="2026-11-02 08:45:32Z" duration="15.694613" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1113" name="MovementAndInteractionCompleteTheExplorationLoop" fullname="Aethernia.Tests.Editor.PlayableValidationTests.MovementAndInteractionCompleteTheExplorationLoop" methodname="MovementAndInteractionCompleteTheExplorationLoop" classname="Aethernia.Tests.Editor.PlayableValidationTests" runstate="Runnable" seed="1842617537" result="Passed" start-time="2026-11-02 08:45:32Z" end-time="2026-11-02 08:45:50Z" duration="17.897720" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1115" name="ProductionInputTests" fullname="Aethernia.Tests.Editor.ProductionInputTests" classname="Aethernia.Tests.Editor.ProductionInputTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-02 08:46:05Z" end-time="2026-11-02 08:46:09Z" duration="3.093501" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1116" name="C02ClosesByPointerAndEscapeIncludingFocusedName" fullname="Aethernia.Tests.Editor.ProductionInputTests.C02ClosesByPointerAndEscapeIncludingFocusedName" methodname="C02ClosesByPointerAndEscapeIncludingFocusedName" classname="Aethernia.Tests.Editor.ProductionInputTests" runstate="Runnable" seed="867472072" result="Passed" start-time="2026-11-02 08:45:50Z" end-time="2026-11-02 08:46:09Z" duration="18.215166" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1117" name="ProductionVisualTests" fullname="Aethernia.Tests.Editor.ProductionVisualTests" classname="Aethernia.Tests.Editor.ProductionVisualTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-02 08:46:40Z" end-time="2026-11-02 08:46:43Z" duration="2.825137" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1119" name="NewProxiesAreMetricSharedAndKeepRecoveryAssets" fullname="Aethernia.Tests.Editor.ProductionVisualTests.NewProxiesAreMetricSharedAndKeepRecoveryAssets" methodname="NewProxiesAreMetricSharedAndKeepRecoveryAssets" classname="Aethernia.Tests.Editor.ProductionVisualTests" runstate="Runnable" seed="975937060" result="Passed" start-time="2026-11-02 08:46:09Z" end-time="2026-11-02 08:46:09Z" duration="0.059505" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1121" name="PortraitsEquipmentAndSaveRestoreAcrossAllClasses" fullname="Aethernia.Tests.Editor.ProductionVisualTests.PortraitsEquipmentAndSaveRestoreAcrossAllClasses" methodname="PortraitsEquipmentAndSaveRestoreAcrossAllClasses" classname="Aethernia.Tests.Editor.ProductionVisualTests" runstate="Runnable" seed="823611577" result="Passed" start-time="2026-11-02 08:46:09Z" end-time="2026-11-02 08:46:26Z" duration="17.441726" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1120" name="PortraitsUseAuthorizedOriginalSheetsAndCatalogMetadata" fullname="Aethernia.Tests.Editor.ProductionVisualTests.PortraitsUseAuthorizedOriginalSheetsAndCatalogMetadata" methodname="PortraitsUseAuthorizedOriginalSheetsAndCatalogMetadata" classname="Aethernia.Tests.Editor.ProductionVisualTests" runstate="Runnable" seed="2012385170" result="Passed" start-time="2026-11-02 08:46:26Z" end-time="2026-11-02 08:46:26Z" duration="0.318315" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1118" name="ThreeProxiesLoadAndRenderInPlayableScene" fullname="Aethernia.Tests.Editor.ProductionVisualTests.ThreeProxiesLoadAndRenderInPlayableScene" methodname="ThreeProxiesLoadAndRenderInPlayableScene" classname="Aethernia.Tests.Editor.ProductionVisualTests" runstate="Runnable" seed="832824935" result="Passed" start-time="2026-11-02 08:46:26Z" end-time="2026-11-02 08:46:43Z" duration="16.227192" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1122" name="TacticalCombatIntegrationTests" fullname="Aethernia.Tests.Editor.TacticalCombatIntegrationTests" classname="Aethernia.Tests.Editor.TacticalCombatIntegrationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:47:24Z" end-time="2026-11-02 08:48:24Z" duration="60.074613" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1124" name="EnemyPhaseRejectsDuplicatesAndMissingClipsNeverBlock" fullname="Aethernia.Tests.Editor.TacticalCombatIntegrationTests.EnemyPhaseRejectsDuplicatesAndMissingClipsNeverBlock" methodname="EnemyPhaseRejectsDuplicatesAndMissingClipsNeverBlock" classname="Aethernia.Tests.Editor.TacticalCombatIntegrationTests" runstate="Runnable" seed="1724816724" result="Passed" start-time="2026-11-02 08:46:43Z" end-time="2026-11-02 08:47:09Z" duration="25.862165" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1123" name="OriginalPcmAndUrpResourcesAreUsable" fullname="Aethernia.Tests.Editor.TacticalCombatIntegrationTests.OriginalPcmAndUrpResourcesAreUsable" methodname="OriginalPcmAndUrpResourcesAreUsable" classname="Aethernia.Tests.Editor.TacticalCombatIntegrationTests" runstate="Runnable" seed="1213803048" result="Passed" start-time="2026-11-02 08:47:09Z" end-time="2026-11-02 08:47:09Z" duration="0.748934" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1125" name="ThreeClassesCompleteRealStagedQuestWithEvidence" fullname="Aethernia.Tests.Editor.TacticalCombatIntegrationTests.ThreeClassesCompleteRealStagedQuestWithEvidence" methodname="ThreeClassesCompleteRealStagedQuestWithEvidence" classname="Aethernia.Tests.Editor.TacticalCombatIntegrationTests" runstate="Runnable" seed="1973549784" result="Passed" start-time="2026-11-02 08:47:09Z" end-time="2026-11-02 08:48:24Z" duration="74.326431" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1126" name="TacticalCombatRecordingTests" fullname="Aethernia.Tests.Editor.TacticalCombatRecordingTests" classname="Aethernia.Tests.Editor.TacticalCombatRecordingTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-02 08:48:37Z" end-time="2026-11-02 08:48:45Z" duration="7.945852" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1127" name="RealCombatVideoFramesAndNativeDsp" fullname="Aethernia.Tests.Editor.TacticalCombatRecordingTests.RealCombatVideoFramesAndNativeDsp" methodname="RealCombatVideoFramesAndNativeDsp" classname="Aethernia.Tests.Editor.TacticalCombatRecordingTests" runstate="Runnable" seed="706505447" result="Passed" start-time="2026-11-02 08:48:24Z" end-time="2026-11-02 08:48:45Z" duration="21.400114" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1128" name="TacticalCombatRulesTests" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.047644" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="ParameterizedMethod" id="1140" name="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.026027" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1137" name="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;warrior&quot;)" methodname="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1238414493" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.022786" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1138" name="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;monk&quot;)" methodname="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="84981090" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.000466" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1139" name="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.DiceAndDamagePreserveApprovedRulesAndRejectDuplicates(&quot;mage&quot;)" methodname="DiceAndDamagePreserveApprovedRulesAndRejectDuplicates" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="369811757" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.000284" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-case id="1141" name="GuardRecoveryAndWaitUseExistingResourcesOnce" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.GuardRecoveryAndWaitUseExistingResourcesOnce" methodname="GuardRecoveryAndWaitUseExistingResourcesOnce" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="770135840" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.005203" asserts="0">
+                <properties />
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1136" name="MeleeSelectsOnlyPermittedIntent" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.006374" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1129" name="MeleeSelectsOnlyPermittedIntent(True,True,True,True,True,False,Attack)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,True,True,True,False,Attack)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="792522931" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.001227" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1130" name="MeleeSelectsOnlyPermittedIntent(True,True,True,False,True,True,Approach)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,True,False,True,True,Approach)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="548322469" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.000421" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1131" name="MeleeSelectsOnlyPermittedIntent(True,True,True,True,False,True,Approach)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,True,True,False,True,Approach)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="661498699" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.000220" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1132" name="MeleeSelectsOnlyPermittedIntent(True,True,True,False,False,False,Wait)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,True,False,False,False,Wait)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1574177303" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.000211" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1133" name="MeleeSelectsOnlyPermittedIntent(False,True,True,True,True,True,Wait)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(False,True,True,True,True,True,Wait)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="708871816" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.000285" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1134" name="MeleeSelectsOnlyPermittedIntent(True,False,True,True,True,True,Wait)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,False,True,True,True,True,Wait)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="642761191" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.000251" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1135" name="MeleeSelectsOnlyPermittedIntent(True,True,False,True,True,True,Wait)" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.MeleeSelectsOnlyPermittedIntent(True,True,False,True,True,True,Wait)" methodname="MeleeSelectsOnlyPermittedIntent" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1940270510" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.000252" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-case id="1142" name="SuccessfulDamageAndGuardAreAppliedExactlyOnce" fullname="Aethernia.Tests.Editor.TacticalCombatRulesTests.SuccessfulDamageAndGuardAreAppliedExactlyOnce" methodname="SuccessfulDamageAndGuardAreAppliedExactlyOnce" classname="Aethernia.Tests.Editor.TacticalCombatRulesTests" runstate="Runnable" seed="1855992177" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:48:45Z" duration="0.002017" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1143" name="VerticalIntegrationTests" fullname="Aethernia.Tests.Editor.VerticalIntegrationTests" classname="Aethernia.Tests.Editor.VerticalIntegrationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:49:18Z" end-time="2026-11-02 08:49:26Z" duration="8.278616" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1145" name="ClassesConstructionDungeonAndSaveShareOneState" fullname="Aethernia.Tests.Editor.VerticalIntegrationTests.ClassesConstructionDungeonAndSaveShareOneState" methodname="ClassesConstructionDungeonAndSaveShareOneState" classname="Aethernia.Tests.Editor.VerticalIntegrationTests" runstate="Runnable" seed="1767592308" result="Passed" start-time="2026-11-02 08:48:45Z" end-time="2026-11-02 08:49:03Z" duration="17.725444" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1144" name="FinalSceneHasNoMissingSerializedReferences" fullname="Aethernia.Tests.Editor.VerticalIntegrationTests.FinalSceneHasNoMissingSerializedReferences" methodname="FinalSceneHasNoMissingSerializedReferences" classname="Aethernia.Tests.Editor.VerticalIntegrationTests" runstate="Runnable" seed="770601291" result="Passed" start-time="2026-11-02 08:49:03Z" end-time="2026-11-02 08:49:04Z" duration="0.708307" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1146" name="RpgVictoryEscalatesToRtsWhileCalendarIsPaused" fullname="Aethernia.Tests.Editor.VerticalIntegrationTests.RpgVictoryEscalatesToRtsWhileCalendarIsPaused" methodname="RpgVictoryEscalatesToRtsWhileCalendarIsPaused" classname="Aethernia.Tests.Editor.VerticalIntegrationTests" runstate="Runnable" seed="748575932" result="Passed" start-time="2026-11-02 08:49:04Z" end-time="2026-11-02 08:49:26Z" duration="22.425553" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1147" name="VerticalModelTests" fullname="Aethernia.Tests.Editor.VerticalModelTests" classname="Aethernia.Tests.Editor.VerticalModelTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-02 08:49:26Z" end-time="2026-11-02 08:49:26Z" duration="0.068255" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1149" name="EconomyConservesCostsAndProducesOnlyWithFood" fullname="Aethernia.Tests.Editor.VerticalModelTests.EconomyConservesCostsAndProducesOnlyWithFood" methodname="EconomyConservesCostsAndProducesOnlyWithFood" classname="Aethernia.Tests.Editor.VerticalModelTests" runstate="Runnable" seed="1143668948" result="Passed" start-time="2026-11-02 08:49:26Z" end-time="2026-11-02 08:49:26Z" duration="0.012268" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1148" name="InventoryEnforcesCapacityOwnershipAndConsumption" fullname="Aethernia.Tests.Editor.VerticalModelTests.InventoryEnforcesCapacityOwnershipAndConsumption" methodname="InventoryEnforcesCapacityOwnershipAndConsumption" classname="Aethernia.Tests.Editor.VerticalModelTests" runstate="Runnable" seed="1592874820" result="Passed" start-time="2026-11-02 08:49:26Z" end-time="2026-11-02 08:49:26Z" duration="0.003688" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1152" name="SaveRoundtripRejectsCorruptionAndUnknownVersions" fullname="Aethernia.Tests.Editor.VerticalModelTests.SaveRoundtripRejectsCorruptionAndUnknownVersions" methodname="SaveRoundtripRejectsCorruptionAndUnknownVersions" classname="Aethernia.Tests.Editor.VerticalModelTests" runstate="Runnable" seed="1285428520" result="Passed" start-time="2026-11-02 08:49:26Z" end-time="2026-11-02 08:49:26Z" duration="0.039606" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1150" name="TurnRulesLimitActionsMovementAndFinishDeterministically" fullname="Aethernia.Tests.Editor.VerticalModelTests.TurnRulesLimitActionsMovementAndFinishDeterministically" methodname="TurnRulesLimitActionsMovementAndFinishDeterministically" classname="Aethernia.Tests.Editor.VerticalModelTests" runstate="Runnable" seed="919915091" result="Passed" start-time="2026-11-02 08:49:26Z" end-time="2026-11-02 08:49:26Z" duration="0.007927" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1151" name="WinningInitiativeDoesNotGuaranteeAnEnemyHit" fullname="Aethernia.Tests.Editor.VerticalModelTests.WinningInitiativeDoesNotGuaranteeAnEnemyHit" methodname="WinningInitiativeDoesNotGuaranteeAnEnemyHit" classname="Aethernia.Tests.Editor.VerticalModelTests" runstate="Runnable" seed="994767256" result="Passed" start-time="2026-11-02 08:49:26Z" end-time="2026-11-02 08:49:26Z" duration="0.001122" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1153" name="VillageE07Tests" fullname="Aethernia.Tests.Editor.VillageE07Tests" classname="Aethernia.Tests.Editor.VillageE07Tests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-02 08:50:04Z" end-time="2026-11-02 08:50:38Z" duration="33.270118" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1158" name="ComparableViewsAndMissionUseRealGameCamera" fullname="Aethernia.Tests.Editor.VillageE07Tests.ComparableViewsAndMissionUseRealGameCamera" methodname="ComparableViewsAndMissionUseRealGameCamera" classname="Aethernia.Tests.Editor.VillageE07Tests" runstate="Runnable" seed="1300662371" result="Passed" start-time="2026-11-02 08:49:26Z" end-time="2026-11-02 08:49:50Z" duration="23.460399" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1157" name="DoorBehindBuildingForestAndReversibleCutawayStayNavigable" fullname="Aethernia.Tests.Editor.VillageE07Tests.DoorBehindBuildingForestAndReversibleCutawayStayNavigable" methodname="DoorBehindBuildingForestAndReversibleCutawayStayNavigable" classname="Aethernia.Tests.Editor.VillageE07Tests" runstate="Runnable" seed="1490126015" result="Passed" start-time="2026-11-02 08:49:50Z" end-time="2026-11-02 08:50:37Z" duration="46.985927" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1154" name="ReusableLibraryHasSharedUrpMaterialsAndMetricArchitecture" fullname="Aethernia.Tests.Editor.VillageE07Tests.ReusableLibraryHasSharedUrpMaterialsAndMetricArchitecture" methodname="ReusableLibraryHasSharedUrpMaterialsAndMetricArchitecture" classname="Aethernia.Tests.Editor.VillageE07Tests" runstate="Runnable" seed="1027590386" result="Passed" start-time="2026-11-02 08:50:37Z" end-time="2026-11-02 08:50:37Z" duration="0.179292" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1155" name="TerrainAndVegetationKeepFlatPlayableGroundAndAppropriatePhysics" fullname="Aethernia.Tests.Editor.VillageE07Tests.TerrainAndVegetationKeepFlatPlayableGroundAndAppropriatePhysics" methodname="TerrainAndVegetationKeepFlatPlayableGroundAndAppropriatePhysics" classname="Aethernia.Tests.Editor.VillageE07Tests" runstate="Runnable" seed="864701659" result="Passed" start-time="2026-11-02 08:50:37Z" end-time="2026-11-02 08:50:37Z" duration="0.023995" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1156" name="TransformedDemoPreservesOriginalPhysicsNavigationAndQuestReferences" fullname="Aethernia.Tests.Editor.VillageE07Tests.TransformedDemoPreservesOriginalPhysicsNavigationAndQuestReferences" methodname="TransformedDemoPreservesOriginalPhysicsNavigationAndQuestReferences" classname="Aethernia.Tests.Editor.VillageE07Tests" runstate="Runnable" seed="1564948164" result="Passed" start-time="2026-11-02 08:50:37Z" end-time="2026-11-02 08:50:38Z" duration="0.722887" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1159" name="VisualPolishTests" fullname="Aethernia.Tests.Editor.VisualPolishTests" classname="Aethernia.Tests.Editor.VisualPolishTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-02 08:50:55Z" end-time="2026-11-02 08:51:09Z" duration="14.893338" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1162" name="MenusClassesAndPanelsFitAndRetainCommands" fullname="Aethernia.Tests.Editor.VisualPolishTests.MenusClassesAndPanelsFitAndRetainCommands" methodname="MenusClassesAndPanelsFitAndRetainCommands" classname="Aethernia.Tests.Editor.VisualPolishTests" runstate="Runnable" seed="1158667484" result="Passed" start-time="2026-11-02 08:50:38Z" end-time="2026-11-02 08:51:08Z" duration="30.400543" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="Timeout" value="600000" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1161" name="SharedArtAndLibraryAreReplaceableAndComplete" fullname="Aethernia.Tests.Editor.VisualPolishTests.SharedArtAndLibraryAreReplaceableAndComplete" methodname="SharedArtAndLibraryAreReplaceableAndComplete" classname="Aethernia.Tests.Editor.VisualPolishTests" runstate="Runnable" seed="1136050393" result="Passed" start-time="2026-11-02 08:51:08Z" end-time="2026-11-02 08:51:08Z" duration="0.006207" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1160" name="VisualScenePreservesPhysicsAndOriginalRules" fullname="Aethernia.Tests.Editor.VisualPolishTests.VisualScenePreservesPhysicsAndOriginalRules" methodname="VisualScenePreservesPhysicsAndOriginalRules" classname="Aethernia.Tests.Editor.VisualPolishTests" runstate="Runnable" seed="207969909" result="Passed" start-time="2026-11-02 08:51:08Z" end-time="2026-11-02 08:51:09Z" duration="1.293647" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

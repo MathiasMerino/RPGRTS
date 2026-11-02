@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Failed(Child)" total="3" passed="2" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 07:19:15Z" end-time="2026-11-02 07:19:23Z" duration="8.7538346">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="125" result="Failed" site="Child" start-time="2026-11-02 07:19:15Z" end-time="2026-11-02 07:19:23Z" duration="8.753835" total="3" passed="2" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1163" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="125" result="Failed" site="Child" start-time="2026-11-02 07:19:15Z" end-time="2026-11-02 07:19:23Z" duration="8.554851" total="3" passed="2" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="17656" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1164" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="125" result="Failed" site="Child" start-time="2026-11-02 07:19:15Z" end-time="2026-11-02 07:19:23Z" duration="8.549196" total="3" passed="2" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1165" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="125" result="Failed" site="Child" start-time="2026-11-02 07:19:15Z" end-time="2026-11-02 07:19:23Z" duration="8.544774" total="3" passed="2" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1166" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="125" result="Failed" site="Child" start-time="2026-11-02 07:19:15Z" end-time="2026-11-02 07:19:23Z" duration="8.539879" total="3" passed="2" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1159" name="VisualPolishTests" fullname="Aethernia.Tests.Editor.VisualPolishTests" classname="Aethernia.Tests.Editor.VisualPolishTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-11-02 07:19:15Z" end-time="2026-11-02 07:19:23Z" duration="8.529260" total="3" passed="2" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1162" name="MenusClassesAndPanelsFitAndRetainCommands" fullname="Aethernia.Tests.Editor.VisualPolishTests.MenusClassesAndPanelsFitAndRetainCommands" methodname="MenusClassesAndPanelsFitAndRetainCommands" classname="Aethernia.Tests.Editor.VisualPolishTests" runstate="Runnable" seed="1338174790" result="Failed" start-time="2026-11-02 07:18:53Z" end-time="2026-11-02 07:19:22Z" duration="28.324469" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="Timeout" value="600000" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  SDF presentation: Personaje
+  Expected: False
+  But was:  True
+]]></message>
+                  <stack-trace><![CDATA[at Aethernia.Tests.Editor.VisualPolishTests.ValidateHud (UnityEngine.Camera camera, System.Int32 width, System.Int32 height) [0x00087] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\VisualPolishTests.cs:69
+at Aethernia.Tests.Editor.DemoCapture+<Save>d__0.MoveNext () [0x0020f] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\FirstDemoTests.cs:107
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1161" name="SharedArtAndLibraryAreReplaceableAndComplete" fullname="Aethernia.Tests.Editor.VisualPolishTests.SharedArtAndLibraryAreReplaceableAndComplete" methodname="SharedArtAndLibraryAreReplaceableAndComplete" classname="Aethernia.Tests.Editor.VisualPolishTests" runstate="Runnable" seed="1997182408" result="Passed" start-time="2026-11-02 07:19:22Z" end-time="2026-11-02 07:19:22Z" duration="0.007248" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1160" name="VisualScenePreservesPhysicsAndOriginalRules" fullname="Aethernia.Tests.Editor.VisualPolishTests.VisualScenePreservesPhysicsAndOriginalRules" methodname="VisualScenePreservesPhysicsAndOriginalRules" classname="Aethernia.Tests.Editor.VisualPolishTests" runstate="Runnable" seed="951885858" result="Passed" start-time="2026-11-02 07:19:22Z" end-time="2026-11-02 07:19:23Z" duration="1.443873" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

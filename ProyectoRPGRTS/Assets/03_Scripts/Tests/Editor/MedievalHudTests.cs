@@ -88,7 +88,8 @@ namespace Aethernia.Tests.Editor
             {
                 var corners=new Vector3[4];buttons[i].GetComponent<RectTransform>().GetWorldCorners(corners);var min=RectTransformUtility.WorldToScreenPoint(camera,corners[0]);var max=RectTransformUtility.WorldToScreenPoint(camera,corners[2]);rects[i]=Rect.MinMaxRect(min.x,min.y,max.x,max.y);
                 Assert.That(min.x,Is.GreaterThanOrEqualTo(0),buttons[i].name);Assert.That(min.y,Is.GreaterThanOrEqualTo(0),buttons[i].name);Assert.That(max.x,Is.LessThanOrEqualTo(width),buttons[i].name);Assert.That(max.y,Is.LessThanOrEqualTo(height),buttons[i].name);
-                Assert.That(max.y-min.y,Is.GreaterThanOrEqualTo(32*width/1280f),"Minimum usable target: "+buttons[i].name);
+                // Tolerancia subpixel de transformación; no permite reducir un píxel del objetivo.
+                Assert.That(max.y-min.y+.001f,Is.GreaterThanOrEqualTo(32*width/1280f),"Minimum usable target: "+buttons[i].name);
                 for(var j=0;j<i;j++)Assert.That(rects[i].Overlaps(rects[j]),Is.False,buttons[i].name+" overlaps "+buttons[j].name);
                 var pointer=new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current){position=(min+max)*.5f};
                 var hits=new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();UnityEngine.EventSystems.EventSystem.current.RaycastAll(pointer,hits);

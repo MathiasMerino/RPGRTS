@@ -5,7 +5,9 @@
     "Aethernia.Environment.Editor",
     "Unity.ugui",
     "Unity.TextMeshPro",
-    "Unity.AI.Navigation"
+    "Unity.AI.Navigation",
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.Universal.Runtime"
   ],
   "includePlatforms": [
     "Editor"

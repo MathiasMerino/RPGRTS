@@ -1,0 +1,450 @@
+[
+  {
+    "file": "Docs/Images/E16/Demo/warrior-Main.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\warrior-Main.png",
+    "sha256": "47cb206d7f3b85cdb453d20c7837d2c8212a26d0ab87a4142e69a9053b571ab4",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/warrior-Options.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\warrior-Options.png",
+    "sha256": "1bd6c28ad2732bcb813fca446e52061d2ec2c8a5f739c0ac5d3f69d8a09ee3ff",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/warrior-Rpg.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\warrior-Rpg.png",
+    "sha256": "92b2db93760808353840cfefc65ff87b4a079151d0f9a2b960aae81b500b4be7",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/warrior-Rts.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\warrior-Rts.png",
+    "sha256": "a23980fb24890114494d0082ff73d4fe80e1e2540999f1801fa3e87e350c9239",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/warrior-Camp.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\warrior-Camp.png",
+    "sha256": "a05bd9f377598443c7a570b616a69a02bd12621c84386c92084d49f2f2c287b3",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/warrior-Wasd.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\warrior-Wasd.png",
+    "sha256": "1a71d74132f188203ff6f7b73aac4bd79d907e32f3d1516301fcfa094ccf6724",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/warrior-Creation.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\warrior-Creation.png",
+    "sha256": "22648d4c5c184c43057c1216089547809036d67ea73b411a157022c493ac853d",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/warrior-Free.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\warrior-Free.png",
+    "sha256": "e431ab2aac4dd77cc47caf6bd8091b0bf084607872c5a430645fd39df7693575",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/monk-Creation.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\monk-Creation.png",
+    "sha256": "2591922b23da3acd93915d2dbb16a08071b716c229021f42781a30fe17e7f87f",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/monk-Free.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\monk-Free.png",
+    "sha256": "a01f696ea8b299bb9cf4a3cf5fec3547129e71f7ed5d875a1e0b70bf5d8e532a",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/mage-Creation.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\mage-Creation.png",
+    "sha256": "172af5baaec15bce35f56f98b185da44959dbb1ef7be3b29b874b55b525ab880",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Demo/mage-Free.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-090326\\Captures\\mage-Free.png",
+    "sha256": "5f2074e3e432153d02f03dac068e8336af07dde35495be60e606b495a99e11fb",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-Recruitment.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-Recruitment.png",
+    "sha256": "a7f2f6accd9ec1a2d15d32da213b8b7eb0346751ad90fcf39765d725b6508e71",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-Following.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-Following.png",
+    "sha256": "5a843d5c82faf71576317a6bc6375cc490acb5f1dbae9b13592df6bddb90a57f",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-Interior.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-Interior.png",
+    "sha256": "f24c4b25f10e4c61a920f515998e2d0ee0ed609196b206e1569cc528e20c7e35",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-GroupCombat.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-GroupCombat.png",
+    "sha256": "23d05f8b5911dcb0972015885ed20e826cc4c327c4e722497d3a57a99c5fd6bb",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-Reward.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-Reward.png",
+    "sha256": "fffbe0b839832eb492829a98d3d6f5aedf5be4c720ece4301b0aff3df8d89028",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-Army.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-Army.png",
+    "sha256": "a898a105c6af8a3a591804a0ff6fb6aea828db55a7b533967ae7660d2aa72ab2",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-RtsBattle.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-RtsBattle.png",
+    "sha256": "ece8dd9c1b6325e88724d99485f43b5fb80633450e6fda5f7a493f1324168ae1",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-Conquest.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-Conquest.png",
+    "sha256": "fe18da4e76d22540e7fb74a07ab4bac8f0ef827dd50d6b8c818e7fc181e7c974",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-ControlledResources.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-ControlledResources.png",
+    "sha256": "20b72d021aab5ba52f4bc036cc82dcf2eab99e3d2c7f6877e4c3b5e41e65ba2c",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/warrior-Continued.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\warrior-Continued.png",
+    "sha256": "d7b191c8605f31a10820e1fc51683739b73f5189a0e568f6087b50976af6b29d",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/monk-GroupCombat.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\monk-GroupCombat.png",
+    "sha256": "badc51e82dd7c3e72ccf050a9232c4f1b6007c1a1a3d7856e95ba9185654d18b",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Expedition/mage-GroupCombat.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-090535\\Captures\\mage-GroupCombat.png",
+    "sha256": "3013ef0727e6cd94d739eab2281ad88c508c9761ed24bb276f8d5c0fea0a0d41",
+    "kind": "Windows player r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Class-mage-1024.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Class-mage-1024.png",
+    "sha256": "f2e33ea0af0788cc91f5e3f818869ff1c4a4804e648b5a47f3489a3c568983b5",
+    "kind": "Unity Play Mode r3",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Class-mage-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Class-mage-1280.png",
+    "sha256": "130a60b728e60e4a8567ac4f3e13f51f7087fe6bfd62c1695cbfd238bd1f54d7",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Class-mage-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Class-mage-1920.png",
+    "sha256": "926ce20b9c65aea9dac2b568f4f303791f7dba1a7f702536cf4cf2aaf2cfbefd",
+    "kind": "Unity Play Mode r3",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Class-monk-1024.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Class-monk-1024.png",
+    "sha256": "83daeed969e65906b14af158ebe4a30e404b604ce1d6981bd8ceb29bbb240dfe",
+    "kind": "Unity Play Mode r3",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Class-monk-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Class-monk-1280.png",
+    "sha256": "3173ef4d23766ecd4947f7fb81907143f28715ac4d60e66ef7ab0960df1fd3b3",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Class-monk-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Class-monk-1920.png",
+    "sha256": "0f8d9437caa42f184165de102a6d26eec6b8064613560de7dac39dafd6cf92d6",
+    "kind": "Unity Play Mode r3",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Class-warrior-1024.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Class-warrior-1024.png",
+    "sha256": "16250cff8f503237f27a0328c83af917a94055adcc13e80661758e8fc5494b80",
+    "kind": "Unity Play Mode r3",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Class-warrior-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Class-warrior-1280.png",
+    "sha256": "5571d2eb76a28a5675e0eb5fda69e54faad60994cc1454b66256509d6e2b1bba",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Class-warrior-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Class-warrior-1920.png",
+    "sha256": "852ac6ba9ef28effba3dac0a8ddd756a68304179e66d425c0813cd2d146f9102",
+    "kind": "Unity Play Mode r3",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Dungeon-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Dungeon-1280.png",
+    "sha256": "9eb78444093193f6291f0197aaf40405e7aebb62eca3d340a49799ffb3ea77ac",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Group-1024.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Group-1024.png",
+    "sha256": "7c0f53e52715a8aca9e789af574275fa1acabc6956df2a6fadd12922e8579dd2",
+    "kind": "Unity Play Mode r3",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Group-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Group-1280.png",
+    "sha256": "3b2b535bb89363bb3e69df90ae63ed0dd5d415bf2e90b3da3262376a648f7ed2",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Group-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Group-1920.png",
+    "sha256": "a7103f873332191921abdc78530561064332cc7908007e5bf1cfd7cd5690fc31",
+    "kind": "Unity Play Mode r3",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Hud-Character-1024.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Hud-Character-1024.png",
+    "sha256": "602eab7b2465f8bf42d0a153ac7ae31586453037cfb9ebac3f1dceeb56f62224",
+    "kind": "Unity Play Mode r3",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Hud-Character-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Hud-Character-1280.png",
+    "sha256": "6b761c8855534a3848020310a758208f206ebf192e486ca92ff96dd0aae3c93a",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Hud-Character-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Hud-Character-1920.png",
+    "sha256": "766fc40cda83c24fefce50817d07f92673b4ca4c552b8560e1b174ffa7bf856c",
+    "kind": "Unity Play Mode r3",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Hud-Inventory-1024.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Hud-Inventory-1024.png",
+    "sha256": "adb3bd0cb57ba41adfeffa551f08320a52c01f05e2f7e7b8887ed4ca1d664654",
+    "kind": "Unity Play Mode r3",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Hud-Inventory-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Hud-Inventory-1280.png",
+    "sha256": "acc812e89e1b0ee8a0a7db7fce4898de783a2acaefc32fc5d3fd3b2ae85e93a8",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Hud-Inventory-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Hud-Inventory-1920.png",
+    "sha256": "4610621a6125c85668724dfc750cf1c97b78706022775d8438d013ac8de42333",
+    "kind": "Unity Play Mode r3",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Hud-Session-1024.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Hud-Session-1024.png",
+    "sha256": "11b26621cd3722f8459d4156079f526fa44879313d4dadc58cd058ec379f6b88",
+    "kind": "Unity Play Mode r3",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Hud-Session-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Hud-Session-1280.png",
+    "sha256": "6089d9120ac00fb8883f6ac6b101b0914ff55ca75228a90320d6c23580955cd0",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Hud-Session-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Hud-Session-1920.png",
+    "sha256": "5fef25e1687ad61d0a0786eb8d787132e8cf98791f826e26ac5d64dab3f4002c",
+    "kind": "Unity Play Mode r3",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Menu-1024.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Menu-1024.png",
+    "sha256": "2e1b1e78f0410e87075d7345dea9c6935e297582e0ef6da0973240d9848422ec",
+    "kind": "Unity Play Mode r3",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Menu-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Menu-1280.png",
+    "sha256": "a0f954acda99a5c557e9aa314df4e0cd141c74ad4d8aa710b802c6014167d48a",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Menu-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Menu-1920.png",
+    "sha256": "28a25fee8a1c9e9f24224acab82067de66564ab698330b68996de0110488c4b5",
+    "kind": "Unity Play Mode r3",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Options-1024.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Options-1024.png",
+    "sha256": "bcc71120f07987ffe67b472732315d46b9f3c0c605014c1f46481e60f32b3df6",
+    "kind": "Unity Play Mode r3",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Options-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Options-1280.png",
+    "sha256": "d535096467563cefca2be71343ecf9795e393d318494ff329049e68e01b08e70",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Options-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Options-1920.png",
+    "sha256": "992fedbb46c5107bdd61cbc2c3ca6b1ccca65fd7cb9ca484b0ebdf308be25a0d",
+    "kind": "Unity Play Mode r3",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E16/PlayMode/Village-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E16\\Captures\\Village-1280.png",
+    "sha256": "ecdef5c262091d8bc70c0d009581b3a087d6bc033fa4e59076fb3b4578764053",
+    "kind": "Unity Play Mode r3",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E16/Antes/Menu.png",
+    "source": "Auditoría inicial: Unity menú/selección y player E14 ruinas/RTS",
+    "sha256": "ff473fb1d5df483f76ab73a72b80f3ecd3b088e787f4987daa04ea11585ec4de",
+    "kind": "Anterior, encuadre y estado no necesariamente idénticos"
+  },
+  {
+    "file": "Docs/Images/E16/Antes/RTS.png",
+    "source": "Auditoría inicial: Unity menú/selección y player E14 ruinas/RTS",
+    "sha256": "b7e25d8e12f6c8ae3f43a0c1fc57b98cfc9cc7efea5deb71adf99c588e9f1130",
+    "kind": "Anterior, encuadre y estado no necesariamente idénticos"
+  },
+  {
+    "file": "Docs/Images/E16/Antes/Ruinas.png",
+    "source": "Auditoría inicial: Unity menú/selección y player E14 ruinas/RTS",
+    "sha256": "2d0af12121b166220d34ff20040782cc2d7685e3b65861595465e3fbaf9c9641",
+    "kind": "Anterior, encuadre y estado no necesariamente idénticos"
+  },
+  {
+    "file": "Docs/Images/E16/Antes/Seleccion.png",
+    "source": "Auditoría inicial: Unity menú/selección y player E14 ruinas/RTS",
+    "sha256": "875dcb11a9b60ee81be7df45bd8a82f9186c5a008d55c4a597873b265dfd16ae",
+    "kind": "Anterior, encuadre y estado no necesariamente idénticos"
+  }
+]

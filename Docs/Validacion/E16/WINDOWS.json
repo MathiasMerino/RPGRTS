@@ -1,0 +1,93 @@
+{
+  "revision": "r3",
+  "passedProcesses": 14,
+  "receipts": [
+    {
+      "kind": "Demo",
+      "file": "mage.json.resume.txt",
+      "result": "PASS: nuevo proceso: título -> Continuar, identidad/salud/equipo/edificios/ejército/progreso conservados, sin repetir prólogo; class=mage; seconds=2.69; allocatedBytes=176656081",
+      "sha256": "f7a58331edf5eea8d4f50038401c23c3573d67e03841f43924b89644c9c5ceaa"
+    },
+    {
+      "kind": "Demo",
+      "file": "mage.json.start.txt",
+      "result": "PASS: menú -> creación -> prólogo -> RPG legal -> WASD -> interacción -> RTS mismo héroe -> construcción con fondos iniciales -> activación/producción -> cuartel/recluta -> guardado; class=mage; seconds=33.83; allocatedBytes=178181849",
+      "sha256": "f8cea9dc11ba3de07df540565c79f04444e27d956e649e60755f6a02ac6f0d5d"
+    },
+    {
+      "kind": "Demo",
+      "file": "monk.json.resume.txt",
+      "result": "PASS: nuevo proceso: título -> Continuar, identidad/salud/equipo/edificios/ejército/progreso conservados, sin repetir prólogo; class=monk; seconds=2.11; allocatedBytes=176750623",
+      "sha256": "7086bf64966ec4d6f912f26ee4bcfabe804b2cb9ec65fe826f056e44762cb841"
+    },
+    {
+      "kind": "Demo",
+      "file": "monk.json.start.txt",
+      "result": "PASS: menú -> creación -> prólogo -> RPG legal -> WASD -> interacción -> RTS mismo héroe -> construcción con fondos iniciales -> activación/producción -> cuartel/recluta -> guardado; class=monk; seconds=31.20; allocatedBytes=177499317",
+      "sha256": "b656e1a656758a1fae14dbb8f50da3f21f31a05067330d3377f3dc6f2a6dbd12"
+    },
+    {
+      "kind": "Demo",
+      "file": "warrior.json.resume.txt",
+      "result": "PASS: nuevo proceso: título -> Continuar, identidad/salud/equipo/edificios/ejército/progreso conservados, sin repetir prólogo; class=warrior; seconds=2.29; allocatedBytes=176302250",
+      "sha256": "c42d921d11b9dd7ff5d845f3a49ed07a6d4ca5cd31671dabf249aaaf6dd0b44a"
+    },
+    {
+      "kind": "Demo",
+      "file": "warrior.json.start.txt",
+      "result": "PASS: menú -> creación -> prólogo -> RPG legal -> WASD -> interacción -> RTS mismo héroe -> construcción con fondos iniciales -> activación/producción -> cuartel/recluta -> guardado; class=warrior; seconds=30.94; allocatedBytes=177604050",
+      "sha256": "e3fb6036e3e5c5a274a10c84d8b70749214c34c3936461fcb6545408925a065c"
+    },
+    {
+      "kind": "Expedition",
+      "file": "mage.json.resume.txt",
+      "result": "PASS: nuevo proceso conserva héroe, grupo, reserva, ejército, territorios, recursos y recompensas sin duplicar; class=mage; seconds=1.50",
+      "sha256": "edbf11e8ae261523b833bca09a663a4555b7bbb5feb812ac5bf200d7ae160bad"
+    },
+    {
+      "kind": "Expedition",
+      "file": "mage.json.start.txt",
+      "result": "PASS: partida E13 real -> reclutamiento pagado -> seguimiento/WASD -> dos victorias RPG -> recompensa única -> granja/reclutas pagados -> selección/marcha -> conquista RTS real -> producción online -> guardado; class=mage; seconds=140.78",
+      "sha256": "f93a8850bd1c96a0efbb93fcc7f5690911de9fc2c8846155de46c2d3876298dd"
+    },
+    {
+      "kind": "Expedition",
+      "file": "monk.json.resume.txt",
+      "result": "PASS: nuevo proceso conserva héroe, grupo, reserva, ejército, territorios, recursos y recompensas sin duplicar; class=monk; seconds=1.72",
+      "sha256": "1463ab153ef4ebf914389b2924c6427b532973afded63bd049b1af843e974fb3"
+    },
+    {
+      "kind": "Expedition",
+      "file": "monk.json.start.txt",
+      "result": "PASS: partida E13 real -> reclutamiento pagado -> seguimiento/WASD -> dos victorias RPG -> recompensa única -> granja/reclutas pagados -> selección/marcha -> conquista RTS real -> producción online -> guardado; class=monk; seconds=139.23",
+      "sha256": "628b9f60ff47af12f607981d830e8904048c3d3aaa61dab8413a27bed547e84a"
+    },
+    {
+      "kind": "Expedition",
+      "file": "warrior.json.resume.txt",
+      "result": "PASS: nuevo proceso conserva héroe, grupo, reserva, ejército, territorios, recursos y recompensas sin duplicar; class=warrior; seconds=1.65",
+      "sha256": "facf17b092409b013ea847a693d15f343b7cbf2254dcd61239fc002fb7cdfbaf"
+    },
+    {
+      "kind": "Expedition",
+      "file": "warrior.json.start.txt",
+      "result": "PASS: partida E13 real -> reclutamiento pagado -> seguimiento/WASD -> dos victorias RPG -> recompensa única -> granja/reclutas pagados -> selección/marcha -> conquista RTS real -> producción online -> guardado; class=warrior; seconds=122.00",
+      "sha256": "094b6ac288b34c9f56f6b8ae50961337deb9f3f4aed5e26dc87215f65eac6051"
+    },
+    {
+      "kind": "Portable",
+      "file": "warrior.json.resume.txt",
+      "result": "PASS: nuevo proceso conserva héroe, grupo, reserva, ejército, territorios, recursos y recompensas sin duplicar; class=warrior; seconds=0.80",
+      "sha256": "18ddbb03e41e898ea6c2d554368976938569159884fc735eb4219906424bcd76"
+    },
+    {
+      "kind": "Portable",
+      "file": "warrior.json.start.txt",
+      "result": "PASS: partida E13 real -> reclutamiento pagado -> seguimiento/WASD -> dos victorias RPG -> recompensa única -> granja/reclutas pagados -> selección/marcha -> conquista RTS real -> producción online -> guardado; class=warrior; seconds=120.29",
+      "sha256": "d77cf683cebe69a3b713812251a98efb0697a7a756e7e920439ec17a3c3bb595"
+    }
+  ],
+  "gameplayInputs": "Partidas reales y acciones legales; slots aislados; sin alterar HP o fondos",
+  "fpsMeasured": false,
+  "gcProfiled": false
+}

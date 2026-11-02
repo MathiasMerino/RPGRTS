@@ -1,0 +1,9 @@
+{
+  "elapsedSeconds": 35.1770572,
+  "sampledPeakWorkingSetBytes": 826990592,
+  "measuredFps": false,
+  "class": "monk",
+  "sampleIntervalSeconds": 0.5,
+  "resume": false,
+  "measuredGc": false
+}

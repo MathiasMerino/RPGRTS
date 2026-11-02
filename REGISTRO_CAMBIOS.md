@@ -523,3 +523,31 @@ Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nue
 ### E14–E15 — publicación y cierre técnico
 - PR#6 abierto en borrador sobre feature/e10-e13-demo-jugable: https://github.com/MathiasMerino/RPGRTS/pull/6. Main/dev/default y PR1..5 conservados; sin merges ni push forzado. Historial desde c33e34d preservado.
 - E14-A/B/C, E15-A/B y EXP-QA completados técnicamente; EXP-H humano/arte/balance permanece pendiente. Cambios propios confirmados; Meshy ajeno sin versionar y excluido del PR. README/guía/entrega/recuperación actualizados.
+
+### E16 — auditoría mínima y autorización
+- Encargo visual leído; se revisaron dirección artística, resumen/checklist, UI/TMP/catálogos y autoría de expediciones. PR1..6 abiertos/borrador; snapshot y hash Meshy conservados. Rama nueva desde4efcd00, sin merges.
+- Plan acotado en Docs/E16_PULIDO_VISUAL.md: reutilizar tres hojas, pulir presentación modular en escena nueva y validar; no alterar reglas/guardar/rigs ni iniciar otra fase. No plugins necesarios.
+
+### E16 — menú, clases y presentación integrada
+- Perfil opcional, tres tarjetas/retratos de hojas existentes, atlas320×64 y9prefabs compartidos; UI histórica conserva bindings. HDR/URP regional, FXAA,3variantes de material y decoración sin colisiones nuevas.
+-6/6base y3/3focales PASS tras corregir recorte «Personaje», pivote, aviso y botones sobre ficha; firma física intacta.26capturasPlayMode en3resoluciones. Se corrigió iluminación demasiado oscura con relleno local moderado; no altera reglas o tiempo. BuildWindows en ejecución, aún no se declara validada.
+
+
+## 2026-11-02 — E16: correcciones observadas en QA
+
+- Captions del prefab adaptables al ancho real (botones grupales de 88–148 px), SDF legado sin doble dibujo, selección centrada y aviso de menú separado.
+- Barras de salud conservan su color sin el sprite oscuro de fondo. Separadores RTS restaurados en UTF-8; etiquetas del mundo E16 se dibujan detrás del HUD para no tapar órdenes.
+- Pase intermedio global: 124/125 por redondeo de altura 31.999939 frente a 32 px. Tolerancia explícita de 0.001 px en el test, sin reducir el botón. Se conservó el XML del fallo; comprobación dirigida posterior 7/7 y regresión repetida 125/125 PASS.
+- Doce procesos nativos GPU r2 PASS para tres clases, menús/RPG/RTS y expediciones/conquista/reinicio. Revisión final del orden de dibujo en curso; no confundir estos comprobantes intermedios con la aprobación humana o arte definitivo.
+
+- Tras el ajuste de capas: 9/10 dirigidas; el Mago perdió una patrulla del test histórico. Repetición aislada 1/1 PASS con las tres clases y sin cambios de reglas/recursos. Ambos XML conservados; variación del recorrido automático RTS registrada como limitación pendiente de estabilizar, sin ocultarla mediante reintentos o estadísticas nuevas.
+
+
+## 2026-11-02 — E16: build r3 y evidencia final
+
+- Menú y tres tarjetas de clase con hojas existentes; nueve prefabs, atlas compartido y SDF. HUD/ventanas y captions corregidos. Nueva escena AetherniaVisualPolish, atmósfera regional, variantes URP y decoración sin modificar física/reglas/escenas previas.
+- Build Unity6000.5.8f1 PASS (205,946,388bytes informados). Doce procesos GPU r3 PASS: tres clases, menú/creación/RPG/RTS/campamento y expedición/reclutamiento/ruinas/conquista, con reinicios. Dos procesos desde ZIP extraído PASS. Recibos, métricas y capturas exportados con origen/SHA:57PNG reales.
+- ZIP r3 de87,478,209bytes; SHA2568c3b39c6b2747d9ba9649740c6f862a604c2666b5ff272d10cb428c46ac29737. CRC y314archivos extraídos verificados;16ZIP anteriores intactos. Build y ZIP excluidos de Git; código/assets/evidencia incluidos.
+- Se revisaron capturas técnicamente; ninguna sesión manual humana nueva ni perfil FPS/GC. E16-HUM y variación RTS E16-QA-RTS siguen pendientes. GDD, originales PNG, Nav, versiones/paquetes, escenas anteriores y Meshy ajeno conservados. Guía/informe/checklist actualizados; publicación en borrador en preparación.
+
+- Publicación E16: [PR #7](https://github.com/MathiasMerino/RPGRTS/pull/7) en borrador sobre feature/e14-e15-expediciones-conquista; push normal, historial conservado. Main/dev y PR1..6 sin cambios, sin merges. Checklist técnico/documental E16 cerrado; valoración humana y variación del test RTS permanecen pendientes.

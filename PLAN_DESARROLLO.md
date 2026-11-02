@@ -1,6 +1,6 @@
 # Plan de desarrollo de Crónicas de Aethernia
 
-Actualizado: 2026-10-30, America/La_Paz. Estado: fase 3, primera iteración A/B/C1 entregada; D/E/C2 y evaluación humana F2-07 pendientes.
+Actualizado: 2026-11-02, America/La_Paz. Estado actual: E16, pulido visual autorizado sobre E14/E15. Informe y pruebas en Docs/E16_PULIDO_VISUAL.md; la aceptación estética humana y F2-07 siguen pendientes. Los apartados de diagnóstico y planificación siguientes conservan su contexto histórico. No iniciar E17 automáticamente.
 El usuario indicó «continua con el prompt» después de recibir este plan. Se continúa con la base técnica y sus verificaciones; las reglas y sistemas todavía pendientes de diseño mantienen sus decisiones abiertas.
 
 ## Avance verificado
