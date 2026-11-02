@@ -1,2 +1,3 @@
 Initial compile attempt: AlphaBenchmarkProbe referenced the Editor-only DemoCapture helper. Replaced with existing runtime DemoPlayerCapture; no authoring ran before compile failure. Final checks pending.
 Authoring then succeeded; targeted2/2PASS: three distinct real URP assets, low AO/post off, original renderer active, camera and pipeline switching, no save-state mutation. Native profiling/full regression pending.
+Native recorder alias discovery needed Unity.Profiling.LowLevel.Unsafe namespace; first compile failed before build and was corrected. No gameplay code changed.
