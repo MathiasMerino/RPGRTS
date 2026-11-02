@@ -32,7 +32,7 @@ namespace Aethernia
             var original=rules.Find(state.ClassId);var growth=rules.Progression?.Find(state.ClassId);
             if(state.ProgressionRevision!=1||growth==null)return original;
             var level=state.HeroLevel;var discipline=Rank(state,"discipline");var scores=new AttributeScores(growth.Primary,growth.Secondary,level);
-            var result=new ClassProfile(original.Id,original.Title,original.Health+(level-1)*growth.HealthPerLevel+discipline*2,original.Damage+(level>=3?1:0),original.Range,original.Speed);
+            var result=new ClassProfile(original.Id,original.Title,original.Health+(level-1)*growth.HealthPerLevel+discipline*2+(ItemCatalog.Find(state.Accessory,rules.Progression.Items)?.MaximumHealth??0),original.Damage+(level>=3?1:0),original.Range,original.Speed);
             result.Combat=new HeroCombatModifiers{Attributes=scores,Accuracy=scores.Modifier(growth.Primary),Defense=12+(state.ClassId=="monk"&&level>=3?1:0),GuardReduction=1+discipline+(state.ClassId=="warrior"&&level>=2?1:0),TechniqueId=growth.TechniqueId,TechniqueTitle=growth.TechniqueTitle,TechniqueDamage=growth.TechniqueDamage+Rank(state,"impact")*2,TechniqueAccuracy=growth.TechniqueAccuracy,TechniqueRange=growth.TechniqueRange,TechniqueUnlocked=level>=2,FocusCapacity=rules.Progression.FocusCapacity,TechniqueCost=rules.Progression.TechniqueCost,TechniqueCooldown=rules.Progression.TechniqueCooldown};return result;
         }
         public static bool Valid(PrototypeState state,PrototypeRules rules)

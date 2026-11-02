@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f929cc461cabc4abc607bfe8aecbce, type: 3}
   m_Name: ProgressionRules
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ProgressionRules
+  Items: {fileID: 11400000, guid: 0590396713f5c4a47ac9e3df2eafdea6, type: 2}
+  DungeonLoot:
+  - Id: forge-ore
+    Count: 1
+  - Id: pilgrim-charm
+    Count: 1
   ExperienceThresholds: 000000000c000000200000003c000000
   MaximumSkillRank: 2
   FocusCapacity: 2

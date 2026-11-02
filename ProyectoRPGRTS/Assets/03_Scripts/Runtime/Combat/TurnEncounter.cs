@@ -70,7 +70,7 @@ namespace Aethernia
             foreach (var renderer in enemy.GetComponentsInChildren<Renderer>()) renderer.sharedMaterial = enemyMaterial;
             TargetSelected=true;EnemySpawned?.Invoke(enemy,enemyVisualPrefab);
             Battle = new TurnBattle(session.HeroProfile, session.State.Health,
-                session.State.Weapon == "training-sword" ? 1 : 0, session.State.Armour == "cloth" ? 1 : 0, seed == 0 ? Environment.TickCount : seed,
+                HeroActionRules.WeaponBonus(session.State,session.Rules.Progression?.Items), EquipmentOperations.ArmourBonus(session.State,session.Rules.Progression?.Items), seed == 0 ? Environment.TickCount : seed,
                 Vector3.Distance(hero.transform.position, EnemyPosition) <= 1.9f && HasClearAttackLine(enemy, hero));
             session.SetMode(PrototypeMode.TurnCombat);
             Publish(Battle.LastEnemyResolution);

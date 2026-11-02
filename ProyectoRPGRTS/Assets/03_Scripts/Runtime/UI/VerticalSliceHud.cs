@@ -205,7 +205,7 @@ namespace Aethernia
                         b.Label.fontStyle=chosen?FontStyle.Bold:FontStyle.Normal;
                     }
                 }
-                if(id.StartsWith("class-")&&session.Rules.Progression!=null)visible=false;
+                if(session.Rules.Progression!=null&&(id.StartsWith("class-")||id.StartsWith("item-")||id=="sword"||id=="armour"||id=="ration"||id=="trade"))visible=false;
                 if(id=="technique")
                 {
                     var skill=session.HeroProfile.Combat;ready=ready&&skill!=null&&skill.TechniqueUnlocked&&director.Encounter.TechniqueFocus>=skill.TechniqueCost;

@@ -11,6 +11,10 @@ namespace Aethernia.Editor.Characters
         public const string Root="Assets/14_Progression";
         public const string ScenePath="Assets/01_Scenes/AetherniaProgressionDemo.unity";
         public const string RulesPath=Root+"/PrototypeRules.asset";
+        public static void Items()
+        {
+            var rules=AssetDatabase.LoadAssetAtPath<PrototypeRules>(RulesPath);var path=Root+"/Items.asset";var catalog=AssetDatabase.LoadAssetAtPath<ItemCatalog>(path);if(catalog==null){catalog=ScriptableObject.CreateInstance<ItemCatalog>();AssetDatabase.CreateAsset(catalog,path);}rules.Progression.Items=catalog;if(rules.Progression.DungeonLoot==null||rules.Progression.DungeonLoot.Length==0)rules.Progression.DungeonLoot=new[]{new ItemStack("forge-ore",1),new ItemStack("pilgrim-charm",1)};EditorUtility.SetDirty(rules.Progression);var scene=EditorSceneManager.OpenScene(ScenePath);var flow=Object.FindAnyObjectByType<DemoFlow>();var view=flow.GetComponent<ProgressionInventoryView>();if(view==null)view=flow.gameObject.AddComponent<ProgressionInventoryView>();view.Flow=flow;EditorUtility.SetDirty(view);EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();
+        }
         public static void TechniqueUi()
         {
             var scene=EditorSceneManager.OpenScene(ScenePath);var flow=Object.FindAnyObjectByType<DemoFlow>();var view=flow.GetComponent<ProgressionPanelView>();if(view==null)view=flow.gameObject.AddComponent<ProgressionPanelView>();view.Flow=flow;EditorUtility.SetDirty(view);var hud=Object.FindAnyObjectByType<VerticalSliceHud>();var data=new SerializedObject(hud);var bindings=data.FindProperty("bindings");

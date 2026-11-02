@@ -54,6 +54,11 @@ namespace Aethernia
         {var result=SettlementOperations.Upgrade(Flow.Session.State,Rules,Selected);Flow.Session.Say(result?"Nivel 2: mayor rendimiento/capacidad, misma huella.":"No se puede mejorar: comprueba instalación, nivel y recursos.");return result;}
         public bool Recruit(string role)
         {var result=SettlementOperations.Recruit(Flow.Session.State,Rules,role);Flow.Session.Say(result?"Recluta añadido al ejército persistente. Visita al capitán para desplegarlo.":"Reclutamiento rechazado: requiere cuartel, recursos y espacio (6).");return result;}
+        private bool WorkbenchReady()=>Flow.IsPlaying&&Flow.Session.Mode==PrototypeMode.Exploration&&!Flow.Session.Paused&&!Flow.Director.IsBusy&&Vector3.Distance(Flow.Director.Hero.transform.position,new Vector3(9,0,-10))<9;
+        public bool Forge(){var ok=WorkbenchReady()&&EquipmentOperations.Forge(Flow.Session.State);Flow.Session.Say(ok?"Arma de clase forjada: equípala desde Inventario.":"Forja: requiere campamento, taller2,8oro y mineral1.");return ok;}
+        public bool BuyVest(){var ok=WorkbenchReady()&&EquipmentOperations.BuyVest(Flow.Session.State);Flow.Session.Say(ok?"Chaleco adquirido; puedes equiparlo.":"Chaleco: campamento, taller,8oro/4madera y espacio.");return ok;}
+        public bool SellItem(string id){var ok=WorkbenchReady()&&EquipmentOperations.Sell(Flow.Session.State,id,Flow.Session.Rules);Flow.Session.Say(ok?"Objeto vendido. Recursos registrados.":"Venta: campamento y pieza sin equipar.");return ok;}
+        public bool SellWood(){var ok=WorkbenchReady()&&EquipmentOperations.SellWood(Flow.Session.State);Flow.Session.Say(ok?"Vendiste5madera por5oro. Ingresos del asentamiento disponibles para mejoras.":"Venta de madera: campamento y al menos5madera.");return ok;}
         private void LateUpdate()
         {
             if(panel==null)return;var state=Flow.Session.State;var available=Flow.IsPlaying&&state.Demo!=null&&state.Demo.Chapter>=DemoChapter.Settlement&&!Flow.Session.Paused;

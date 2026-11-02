@@ -17,17 +17,23 @@ namespace Aethernia
         private int displayedSecond;
         public PrototypeState State { get; private set; } = new PrototypeState();
         public PrototypeRules Rules => rules;
-        private PrototypeState profiledState;private ClassProfile cachedProfile;private int profiledLevel,profiledImpact,profiledDiscipline;private string profiledClass;
+        private PrototypeState profiledState;private ClassProfile cachedProfile;private int profiledLevel,profiledImpact,profiledDiscipline;private string profiledClass,profiledAccessory;
         public ClassProfile HeroProfile
         {
             get
             {
                 if(rules.Progression==null||State.ProgressionRevision==0)return rules.Find(State.ClassId);
                 var impact=ProgressionOperations.Rank(State,"impact");var discipline=ProgressionOperations.Rank(State,"discipline");
-                if(profiledState!=State||profiledLevel!=State.HeroLevel||profiledClass!=State.ClassId||profiledImpact!=impact||profiledDiscipline!=discipline||cachedProfile==null)
-                {profiledState=State;profiledLevel=State.HeroLevel;profiledClass=State.ClassId;profiledImpact=impact;profiledDiscipline=discipline;cachedProfile=ProgressionOperations.ResolveProfile(State,rules);}return cachedProfile;
+                if(profiledState!=State||profiledLevel!=State.HeroLevel||profiledClass!=State.ClassId||profiledImpact!=impact||profiledDiscipline!=discipline||profiledAccessory!=State.Accessory||cachedProfile==null)
+                {profiledState=State;profiledLevel=State.HeroLevel;profiledClass=State.ClassId;profiledImpact=impact;profiledDiscipline=discipline;profiledAccessory=State.Accessory;cachedProfile=ProgressionOperations.ResolveProfile(State,rules);}return cachedProfile;
             }
         }
+        public bool EquipItem(string id)
+        {if(Mode!=PrototypeMode.Exploration||Paused||!EquipmentOperations.Equip(State,id,rules))return false;cachedProfile=null;Say("Equipado: "+WorldOperations.ItemTitle(id));return true;}
+        public bool UnequipItem(ItemKind kind)
+        {if(Mode!=PrototypeMode.Exploration||Paused||!EquipmentOperations.Unequip(State,kind,rules))return false;cachedProfile=null;Say("Pieza retirada; bonificaciones recalculadas.");return true;}
+        public bool ClaimLoot()
+        {if(Mode!=PrototypeMode.Exploration||Paused||!EquipmentOperations.ClaimDungeonLoot(State,rules.Progression))return false;Say("Botín recibido: mineral y talismán. Úsalo en equipo o forja.");return true;}
         public string LastProgressionNotice {get;private set;}="";
         public int AwardForFact(string fact)
         {
@@ -93,6 +99,6 @@ namespace Aethernia
         }
         public bool HasFact(string id) => State.Facts.Contains(id);
         public bool RouteWorldClick(Vector3 point, Collider collider, bool primary) => WorldCommand != null && WorldCommand(point, collider, primary);
-        public void ReplaceState(PrototypeState state) { State = state;ProgressionOperations.Activate(State,rules.Progression);cachedProfile=null; Mode = PrototypeMode.Exploration; Say("Partida cargada; hechos y recursos restaurados."); }
+        public void ReplaceState(PrototypeState state) { State = state;ProgressionOperations.Activate(State,rules.Progression);EquipmentOperations.RegisterDungeonLoot(State);cachedProfile=null; Mode = PrototypeMode.Exploration; Say("Partida cargada; hechos y recursos restaurados."); }
     }
 }

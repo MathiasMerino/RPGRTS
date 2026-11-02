@@ -18,6 +18,8 @@ namespace Aethernia
     [CreateAssetMenu(menuName="Aethernia/Progression Rules")]
     public sealed class ProgressionRules:ScriptableObject
     {
+        public ItemCatalog Items;
+        public ItemStack[] DungeonLoot={new ItemStack("forge-ore",1),new ItemStack("pilgrim-charm",1)};
         public int[] ExperienceThresholds={0,12,32,60};
         public int MaximumSkillRank=2,FocusCapacity=2,TechniqueCost=1;
         public float TechniqueCooldown=3;

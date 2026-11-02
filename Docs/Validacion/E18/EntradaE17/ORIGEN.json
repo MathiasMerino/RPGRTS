@@ -1,0 +1,20 @@
+[
+  {
+    "file": "Docs/Validacion/E18/EntradaE17/warrior.json",
+    "source": "ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-182541\\warrior.json",
+    "sha256": "f15aee2155f3423ab0e15605d30205063cd11693d97476ec7296b6d277844b17",
+    "scope": "Actual final native E17 expedition save; migration fixture, not a new E18 dungeon completion."
+  },
+  {
+    "file": "Docs/Validacion/E18/EntradaE17/monk.json",
+    "source": "ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-182541\\monk.json",
+    "sha256": "1092ee8a4512795e37d0c17bca6caae225c93e474ed06c40c879ca8191011aba",
+    "scope": "Actual final native E17 expedition save; migration fixture, not a new E18 dungeon completion."
+  },
+  {
+    "file": "Docs/Validacion/E18/EntradaE17/mage.json",
+    "source": "ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-182541\\mage.json",
+    "sha256": "8c534e24e18605ed4d4fa4d985b6640972a2c7308a0d93c94c7b9e3a22b52008",
+    "scope": "Actual final native E17 expedition save; migration fixture, not a new E18 dungeon completion."
+  }
+]

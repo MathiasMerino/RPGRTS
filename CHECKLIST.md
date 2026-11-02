@@ -1135,14 +1135,14 @@ Encargo71c1a4f1 autoriza implementación secuencial con arte provisional. Depend
 - Pruebas / resultado: 16/17primer pase (4técnicas+12legacy PASS); fallo de fixture por referencia de estado anterior aContinuar corregido; controlador1/1 PASS tres clases RPG/RTS/save. UI1/1tres clases×720/1080, botones/puntos/guardar/límites/TMP/cierres y seis capturas reales. Reproducción de fixture/captura preservadas. Foco/acción/coste/objetivos/alcance/obstáculos/estados rechazados; no animaciones vacías.
 
 ### E18-GH — Equipo, inventario y botín
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: Recompensas / P1. Dependencias: E18-DEF.
 - Aceptación: Catálogo pequeño, efectos reales, botín configurable único y sin pérdida/duplicación por carga.
-- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Archivos: ItemCatalog/EquipmentOperations, ProgressionInventoryView, productores/combate/equipo/guardado; Items.asset y DungeonLoot; EquipmentLootTests; fixtures reales EntradaE17 con origen/SHA.
+- Pruebas / resultado: 14/14coreequipo/progresión, venta madera1/1 y UI1/1tresclases720/1080(save/Continue/botínmigrado/equip/upgradepagado/ventarecursos/forja), seis capturas reales inspeccionadas. Intermedios por fondos insuficientes y captionUI desbordada preservados/corregidos sin añadir recursos. Catálogo9; botín único pendiente all-or-nothing, no duplicación. Mazmorra E18 nueva se validará en ciclo final; fixture procede de ejecución E17 real.
 
 ### E18-IJK — Compañeros, economía y ejército
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Sistema / prioridad: Mundo / P1. Dependencias: E18-GH.
 - Aceptación: Roles útiles, grupo3 separado de ejército6, mejoras pagadas y persistentes y recursos no negativos.
 - Archivos: Docs/E18_PROGRESION.md; detalle al implementar.

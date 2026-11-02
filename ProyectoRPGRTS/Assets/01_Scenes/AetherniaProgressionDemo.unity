@@ -13549,6 +13549,7 @@ GameObject:
   - component: {fileID: 623395491}
   - component: {fileID: 623395492}
   - component: {fileID: 623395493}
+  - component: {fileID: 623395494}
   m_Layer: 0
   m_Name: E10-E13 Demo Flow
   m_TagString: Untagged
@@ -13692,6 +13693,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c08079dff3548447a6250ab3abc8a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ProgressionPanelView
+  Flow: {fileID: 623395484}
+--- !u!114 &623395494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623395483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829da55b0436604f83e42a51fcb7052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ProgressionInventoryView
   Flow: {fileID: 623395484}
 --- !u!1 &625129572
 GameObject:

@@ -228,7 +228,8 @@ namespace Aethernia
         {Soldier best=null;var distance=float.MaxValue;foreach(var s in soldiers)if(s.Team!=source.Team&&Health(s)>0){var d=Vector3.Distance(source.Unit.transform.position,s.Unit.transform.position);if(d<distance){distance=d;best=s;}}return best;}
         private void Strike(Soldier source,Soldier target,int techniqueBonus=0)
         {
-            var before=Health(target);var damage=source.Hero?HeroActionRules.AttackDamage(session.HeroProfile,HeroActionRules.WeaponBonus(session.State)):source.Damage;damage+=techniqueBonus;
+            var before=Health(target);var damage=source.Hero?HeroActionRules.AttackDamage(session.HeroProfile,HeroActionRules.WeaponBonus(session.State,session.Rules.Progression?.Items)):source.Damage;damage+=techniqueBonus;
+            if(target.Hero&&session.State.ProgressionRevision==1&&EquipmentOperations.ArmourBonus(session.State,session.Rules.Progression?.Items)>=2)damage=Math.Max(1,damage-1);
             var guarded=target.Guarding;var actual=Mathf.Min(before,HeroActionRules.GuardedDamage(damage,guarded,target.Hero?HeroActionRules.GuardReduction(session.HeroProfile):1));SetHealth(target,before-actual);source.AttackAt=Time.time+1;Trace("strike",source,target,actual);
             if(IncludesHero){source.Unit.Stop();source.Guarding=false;source.Animator?.SetGuarding(false);source.Animator?.TryPlay(CharacterMotion.Attack);target.Animator?.TryPlay(before-actual<=0?CharacterMotion.Defeat:CharacterMotion.Hit);Emit(source,new CombatResolution(++sequence,source.Team==0?CombatSide.Player:CombatSide.Enemy,CombatActionKind.Attack,hit:true,damage:actual,before:before,after:before-actual,guarded:guarded),target.Unit.transform.position);}
             target.Guarding=false;target.Animator?.SetGuarding(false);

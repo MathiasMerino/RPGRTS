@@ -23,7 +23,7 @@ namespace Aethernia
             if(id=="umbral-entry")return Travel(true);
             if(id=="umbral-exit")return Travel(false);
             if(id=="umbral-objective")
-            {var ok=ExpeditionOperations.RewardDungeon(Flow.Session.State,Rules);Flow.Session.Say(ok?"Ruinas completadas: +30oro, +15madera, +6alimento para tu asentamiento.":"Completa ambos encuentros; la recompensa se entrega una sola vez.");if(ok){Flow.Session.AwardForFact("umbral-reward");Flow.Director.Save(Flow.SlotPath);}return ok;}
+            {var ok=ExpeditionOperations.RewardDungeon(Flow.Session.State,Rules);Flow.Session.Say(ok?"Ruinas completadas: +30oro, +15madera, +6alimento para tu asentamiento.":"Completa ambos encuentros; la recompensa se entrega una sola vez.");if(ok){Flow.Session.AwardForFact("umbral-reward");EquipmentOperations.RegisterDungeonLoot(Flow.Session.State);Flow.Director.Save(Flow.SlotPath);}return ok;}
             if(id=="umbral-cache")
             {if(Flow.Session.HasFact(id))return false;Flow.Session.State.Gold=Math.Min(1000000,Flow.Session.State.Gold+5);Flow.Session.State.Facts.Add(id);Flow.Session.Say("Alijo opcional:5oro, registrado una sola vez.");return true;}
             if(id=="umbral-battle-1"||id=="umbral-battle-2")

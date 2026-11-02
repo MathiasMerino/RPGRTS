@@ -611,3 +611,7 @@ Progresión optativa en nueva escena/rules propios,4niveles, XP por hechos reale
 ## 2026-11-02 — E18-DEF técnicas y elección
 
 Tres técnicas con identificador/configuración, daño real,1acción/foco limitado por encuentro y cooldownRTS; misma progresión con adaptadores. Reusa ataque/animación/VFX y controles existentes. FichaPersonaje nueva vista dentro de ventana existente:6atributos, nivel/XP, requisitos, dos mejoras con puntos reales; sin gestorUI adicional, clases fijadas al progresar. Primer pase16/17 por fixture con referencia antigua, corregido yController1/1tresclasesRPG/RTS/save. UI1/1tresclasesa720/1080con6capturas; fallos auxiliares preservados. No nuevos modelos ni reglas definitivas. Continúa equipo/botín.
+
+## 2026-11-02 — E18-GH equipo y botín
+
+Nueve definiciones configurables compartidas, slots arma/armadura/accesorio, bonos reales separados y visuales E08 reutilizados. Botínruinas mineral+talismán pendiente/único seguro al llenarbolsa8. Forja8oro+mineral/taller2, chaleco8oro4madera y venta de excedentes colectivos5madera5oro en campamento; sin saldos negativos/arbitraje.14/14core+1/1venta+1/1UIpor3clases720/1080/save/Continue, seisPNGinspeccionadas. Fixtures reales E17 incluidas con origenSHA; no XP/recursos regalados. UIcaption desbordada y prueba sinfondos corregidas con transacción real. Continúan tropas/compañeros/balance/ciclo nuevo.
