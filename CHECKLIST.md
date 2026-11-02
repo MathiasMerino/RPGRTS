@@ -4,7 +4,7 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. Publicación en curso. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes, sin iniciar E17.
+- E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes, sin iniciar E17.
 
 - E14/E15: alcance piloto completado técnicamente; grupo/mazmorra, facciones/territorios y conquista conectados a E13.121/121 regresión,11/11 tras pulido y1/1UI final a dos resoluciones;20procesos Windows PASS; ZIP nuevo CRC/SHA/portable verificado,24PNG y2MP4 reales. Informe Docs/ENTREGA_E14_E15.md; EXP-H humano/arte/balance pendientes. [PR#6](https://github.com/MathiasMerino/RPGRTS/pull/6) abierto en borrador sobre PR5; sin merges.
 
@@ -1026,11 +1026,11 @@ Encargo posterior autoriza E16 sobre E14/E15; no inicia E17 ni aprueba arte defi
 - Pruebas / resultado: Una tarjeta seleccionada, raycast en centro de botones y capturas en tres resoluciones. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
 
 ### E16-QA — Regresión, Windows, capturas, build/ZIP y PR
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: presentación / P1. Dependencias: E16-L.
 - Aceptación: Obtener resultados reales, publicar PR draft sin merge; conservar main/dev/PR1..6, archivos ajenos y ZIP previos.
 - Archivos: Tests/Editor; Tools/Package-VisualPolish.py; Docs/Validacion/E16; Docs/Images/E16; informe/guía (rutas Unity relativas a ProyectoRPGRTS/Assets).
-- Pruebas / resultado: Ver informe final y comprobantes; regresión general y revisión final en curso. Cierre pendiente de QA final; evidencia intermedia conservada.
+- Pruebas / resultado:125/125 global; postcapas9/10 (Mago perdió patrulla) y repeticiónRTS1/1 sin cambios, conservando ambos XML.14procesos Windows r3 PASS,57PNG reales,314archivos portable/CRC/SHA y16ZIP previos intactos. PR#7draft sobre E14/E15 publicado y comprobado; main/dev/PR1..6 intactos. E16-HUM y E16-QA-RTS siguen pendientes; no garantía de determinismo ni aprobación humana. Evidencia en Docs/Validacion/E16 y guía/informe.
 
 ### E16-HUM — Evaluación estética humana
 - Estado: [ ] Pendiente.

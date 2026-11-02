@@ -1,0 +1,15 @@
+{
+  "url": "https://github.com/MathiasMerino/RPGRTS/pull/7",
+  "number": 7,
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "headBranch": "feature/e16-pulido-visual-ui",
+  "baseBranch": "feature/e14-e15-expediciones-conquista",
+  "baseSHA": "4efcd00a8fbd5a95f984fcf9f7bfddc5edf2b226",
+  "mainUnchanged": "5a2e3cef6707bd844cf728ea1adfff9c6d941002",
+  "devUnchanged": "742c04f6ac2afb8dfd3d0e56e3f2d45085c73a46",
+  "previousPRs1to6Unchanged": true,
+  "forcePush": false,
+  "automaticMerge": false
+}
