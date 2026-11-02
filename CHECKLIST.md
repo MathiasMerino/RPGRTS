@@ -4,6 +4,8 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
+- E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. Publicación en curso. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes, sin iniciar E17.
+
 - E14/E15: alcance piloto completado técnicamente; grupo/mazmorra, facciones/territorios y conquista conectados a E13.121/121 regresión,11/11 tras pulido y1/1UI final a dos resoluciones;20procesos Windows PASS; ZIP nuevo CRC/SHA/portable verificado,24PNG y2MP4 reales. Informe Docs/ENTREGA_E14_E15.md; EXP-H humano/arte/balance pendientes. [PR#6](https://github.com/MathiasMerino/RPGRTS/pull/6) abierto en borrador sobre PR5; sin merges.
 
 - Demo E10–E13: núcleo implementado y verificado técnicamente, regresión110/110 y6/6 posteriores al recorte visual; doce procesos Windows finales PASS (tres clases, con/sinGPU, crear/reiniciar/Continuar/opciones). Build/ZIP portable/evidencia aprobados; PR#5 abierto en borrador sobre E09: https://github.com/MathiasMerino/RPGRTS/pull/5. E14/E15 entregadas posteriormente (ver resumen); evaluación humana pendiente. Informe histórico: Docs/ENTREGA_E10_E13.md.
@@ -934,3 +936,112 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 - Aceptación: sesión humana de navegación, cámara, lectura de combate/objetivos, composición, balance de descanso/economía y conquista; registrar observaciones reales sin reemplazarlas por automatización.
 - Archivos: Docs/GUIA_EXPEDICIONES.md y futura acta humana; no modificar código antes de documentar hallazgos.
 - Pruebas / resultado: no realizada. La inspección técnica de capturas y los recorridos automatizados no constituyen aprobación humana.
+
+## FASE E16 — PULIDO VISUAL Y PRESENTACIÓN
+
+Encargo posterior autoriza E16 sobre E14/E15; no inicia E17 ni aprueba arte definitivo. Estados de ejecución técnica separados de valoración humana.
+
+### E16-A — Menú principal
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E14/E15.
+- Aceptación: Título, acciones existentes y aviso legibles; IDs de comandos conservados; menú en tres resoluciones.
+- Archivos: DemoFrontEnd.Visual.cs; Presentation.asset; ButtonNormal/Primary.prefab (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: VisualPolishTests; recorridos Windows inicio/Continuar/opciones. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-B — Selección centrada de tres clases
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-A.
+- Aceptación: Tres tarjetas proporcionadas, una selección explícita; nombre/linaje e inicio conservan reglas.
+- Archivos: DemoFrontEnd.Visual.cs; ClassCardView.cs; ClassCard.prefab (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: Capturas de las tres clases en tres resoluciones y creación nativa con las tres. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-F — Ilustraciones provisionales intercambiables
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-B.
+- Aceptación: Usar hojas existentes sin modificar PNG; preserveAspect y referencias por ClassId; distinguir Figura del retrato HUD E08.
+- Archivos: Presentation.asset; Portraits/*_Figure.asset; Docs/GUIA_E16.md (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: SharedArtAndLibraryAreReplaceableAndComplete; ART_SOURCE.json y conservación SHA. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-E — Biblioteca UI compartida
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-F.
+- Aceptación: Nueve prefabs, cinco regiones de atlas y tema SDF compartidos; botón/tarjeta usados realmente. Otros componentes preparados sin inventar funciones.
+- Archivos: Assets/12_VisualPolish/UI, Prefabs; DemoWidgets.cs (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: Inventario de prefabs/referencias y ejecución de menú, ventanas y combate grupal. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-C — HUD, ventanas, RPG y RTS
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-E.
+- Aceptación: Abrir/cerrar personaje, inventario y partida; conservar órdenes, vida legible, guardado y paneles contextuales.
+- Archivos: DemoWidgets.cs; DemoGuidance.cs; DemoSettlementPanel.cs; DemoRtsOverlay.cs; ExpeditionPanel.cs (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: VisualPolishTests, regresión y recorridos Windows; capturas HUD/RPG/grupo/RTS. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-D — Tipografía y escalado
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-C.
+- Aceptación: SDF existente sin doble Text; captions se adaptan al ancho; sin desbordamientos detectados en pantallas cubiertas a 1280×720/1920×1080/1024×768.
+- Archivos: LegacySdfPresenter.cs; DemoWidgets.cs; Tests/Editor/VisualPolishTests.cs (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: 29 capturas Play Mode; bounds/raycast/overflow; mínimo de navegación con tolerancia subpixel 0.001px. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-G — Aldea y composición
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-D.
+- Aceptación: Vegetación y props moderados con caminos/física existentes; no agrandar mapa ni introducir obstáculos.
+- Archivos: AetherniaVisualPolish.unity; VisualPolishBuilder.cs; GrassWarm.mat (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: Firma de todos los colliders igual a E14; WASD/interacciones nativas y capturas de aldea. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-H — Ruinas atmosféricas
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-G.
+- Aceptación: Piedra y marcadores coherentes, antorchas cálidas y lectura del grupo; mismas dos batallas/recompensa/salida.
+- Archivos: AetherniaVisualPolish.unity; DungeonStone/DungeonFloor.mat; TorchGlow.cs (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: Travel y capturas Play Mode; expedición nativa legal, vuelta/reinicio y conservación de Nav. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-I — Continuidad visual RTS
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-H.
+- Aceptación: Mismos materiales/props, barras por equipo y héroe reconocible; mantener patrulla/conquista y órdenes.
+- Archivos: AetherniaVisualPolish.unity; DemoRtsOverlay.cs (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: DemoSmoke/ExpeditionSmoke con tres clases y capturas; ninguna regla RTS modificada. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-J — Materiales y URP
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-I.
+- Aceptación: Tres variantes con texturas compartidas, URP Lit existente y posprocesado moderado; sin shaders pesados sin necesidad.
+- Archivos: Materials/*.mat; Grade.asset; VisualPolishBuilder.cs (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: Compilación Unity exacta y player GPU; paquetes y materiales originales intactos. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-K — Iluminación regional
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-J.
+- Aceptación: Exterior cálido/ruinas frías, cuatro antorchas y un relleno interior sin nuevas sombras puntuales; restauración al desactivar.
+- Archivos: RegionalAtmosphere.cs; TorchGlow.cs; AetherniaVisualPolish.unity (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: Travel y valor de luz interior en test; capturas ruinas/exterior y revisión técnica. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-L — Realce y respuesta visual
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-K.
+- Aceptación: Realce hover/foco y borde/texto de selección; conservar interacción uGUI sin animación compleja.
+- Archivos: ClassCardView.cs; DemoWidgets.cs; Prefabs/Button*.prefab (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: Una tarjeta seleccionada, raycast en centro de botones y capturas en tres resoluciones. Verificado en Unity exacto: regresión125/125 y pase dirigido posterior (UI/asentamientos aprobados). Capturas reales; valoración humana separada.
+
+### E16-QA — Regresión, Windows, capturas, build/ZIP y PR
+- Estado: [ ] En desarrollo.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-L.
+- Aceptación: Obtener resultados reales, publicar PR draft sin merge; conservar main/dev/PR1..6, archivos ajenos y ZIP previos.
+- Archivos: Tests/Editor; Tools/Package-VisualPolish.py; Docs/Validacion/E16; Docs/Images/E16; informe/guía (rutas Unity relativas a ProyectoRPGRTS/Assets).
+- Pruebas / resultado: Ver informe final y comprobantes; regresión general y revisión final en curso. Cierre pendiente de QA final; evidencia intermedia conservada.
+
+### E16-HUM — Evaluación estética humana
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: presentación / P1. Dependencias: E16-QA.
+- Aceptación: persona revisa claridad, comodidad, composición, seriedad del Monje, atmósfera y continuidad RPG/RTS; registrar observaciones.
+- Archivos: Docs/GUIA_E16.md y futura acta humana.
+- Pruebas / resultado: no realizada; las capturas inspeccionadas técnicamente y la automatización no equivalen a aprobación humana. Arte, rigs finales y balance permanecen pendientes.
+
+### E16-QA-RTS — Variación del recorrido automático de patrulla
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: QA RTS / P1. Dependencias: E16-QA.
+- Aceptación: identificar las condiciones de derrota del Mago y distinguir estabilidad del controlador de una estrategia automática ganadora; registrar estado y órdenes sin alterar salud/costes/balance para forzar el resultado.
+- Archivos: DemoRtsTests.cs (sin cambios E16); Docs/Validacion/E16/FOCAL_POST_CAPAS_INTERMEDIA.xml, RTS_REPETICION_1.xml; Docs/E16_PULIDO_VISUAL.md.
+- Pruebas / resultado: pasó en regresión125/125; perdió en un pase dirigido9/10; repetición aislada1/1 pasó las tres clases sin cambios. No se declara determinismo ni resolución de esta variación por el hecho de repetirla. Escena histórica sin perfil E16.

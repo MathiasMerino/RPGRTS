@@ -1,0 +1,1 @@
+PASS: partida E13 real -> reclutamiento pagado -> seguimiento/WASD -> dos victorias RPG -> recompensa única -> granja/reclutas pagados -> selección/marcha -> conquista RTS real -> producción online -> guardado; class=warrior; seconds=122.47

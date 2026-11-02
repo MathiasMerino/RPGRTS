@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "Demo",
+    "revision": "r2",
+    "passedProcesses": 6,
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\DemoQA\\GPU-20261102-082738"
+  },
+  {
+    "kind": "Expedition",
+    "revision": "r2",
+    "passedProcesses": 6,
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ExpeditionQA\\GPU-20261102-083040"
+  }
+]
