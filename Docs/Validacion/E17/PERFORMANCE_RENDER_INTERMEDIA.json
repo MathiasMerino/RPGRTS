@@ -1,0 +1,1111 @@
+{
+  "unity": "6000.5.8f1",
+  "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "driver": "Direct3D 12 [level 12.2]",
+  "os": "Windows 11  (10.0.26300)",
+  "status": "PASS",
+  "limitations": "Development batch player with explicit offscreen URP render requests including UI and live preview. CPU frame deltas include submissions, not display FPS or GPU time. Fixed paused village/menu/RTS, 2s warmup; no readback or capture during samples. No large-army extrapolation.",
+  "memoryMB": 16052,
+  "rows": [
+    {
+      "workload": "Paused village / real E13 state",
+      "quality": "Bajo",
+      "width": 1280,
+      "height": 720,
+      "frames": 667,
+      "renderSubmissions": 667,
+      "seconds": 3.0033734999999986,
+      "meanFrameMs": 4.50472219398935,
+      "p95FrameMs": 6.23880373314023,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 14.0,
+          "p95": 14.0,
+          "maximum": 14.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 252957.976011994,
+          "p95": 253006.0,
+          "maximum": 253006.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 1137.7391304347825,
+          "p95": 1090.0,
+          "maximum": 16564.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 4487588.005997001,
+          "p95": 6227400.0,
+          "maximum": 11517200.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused village / real E13 state",
+      "quality": "Medio",
+      "width": 1280,
+      "height": 720,
+      "frames": 552,
+      "renderSubmissions": 552,
+      "seconds": 3.0022586999999987,
+      "meanFrameMs": 5.439072825854806,
+      "p95FrameMs": 7.596995681524277,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 26.0,
+          "p95": 26.0,
+          "maximum": 26.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 574700.6014492754,
+          "p95": 574738.0,
+          "maximum": 574738.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 1147.6847826086957,
+          "p95": 1090.0,
+          "maximum": 16564.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 5421475.0,
+          "p95": 7584700.0,
+          "maximum": 10736900.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused village / real E13 state",
+      "quality": "Alto",
+      "width": 1280,
+      "height": 720,
+      "frames": 513,
+      "renderSubmissions": 513,
+      "seconds": 3.0030221000000026,
+      "meanFrameMs": 5.853797073092958,
+      "p95FrameMs": 8.092000149190426,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 28.0,
+          "p95": 28.0,
+          "maximum": 28.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 713587.0,
+          "p95": 713587.0,
+          "maximum": 713587.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 1152.0701754385964,
+          "p95": 1090.0,
+          "maximum": 16564.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 5836662.573099415,
+          "p95": 8089900.0,
+          "maximum": 14469800.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused village / real E13 state",
+      "quality": "Bajo",
+      "width": 1920,
+      "height": 1080,
+      "frames": 624,
+      "renderSubmissions": 624,
+      "seconds": 3.0011933999999982,
+      "meanFrameMs": 4.808356580608047,
+      "p95FrameMs": 6.887500174343586,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 14.0,
+          "p95": 14.0,
+          "maximum": 14.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 252902.0,
+          "p95": 252902.0,
+          "maximum": 252902.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 1141.0288461538462,
+          "p95": 1090.0,
+          "maximum": 16564.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 4794797.596153846,
+          "p95": 6877700.0,
+          "maximum": 10648200.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused village / real E13 state",
+      "quality": "Medio",
+      "width": 1920,
+      "height": 1080,
+      "frames": 474,
+      "renderSubmissions": 474,
+      "seconds": 3.004669799999995,
+      "meanFrameMs": 6.3387080005326855,
+      "p95FrameMs": 12.0779974386096,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 26.0,
+          "p95": 26.0,
+          "maximum": 26.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 574686.0,
+          "p95": 574686.0,
+          "maximum": 574686.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 1157.1772151898733,
+          "p95": 1090.0,
+          "maximum": 16564.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 6318992.616033755,
+          "p95": 12067900.0,
+          "maximum": 40289900.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused village / real E13 state",
+      "quality": "Alto",
+      "width": 1920,
+      "height": 1080,
+      "frames": 472,
+      "renderSubmissions": 472,
+      "seconds": 3.004401700000006,
+      "meanFrameMs": 6.365303797607894,
+      "p95FrameMs": 8.893700316548347,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 28.0,
+          "p95": 28.0,
+          "maximum": 28.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 713587.0,
+          "p95": 713587.0,
+          "maximum": 713587.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 1157.4618644067796,
+          "p95": 1090.0,
+          "maximum": 16564.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 6343002.754237288,
+          "p95": 8884000.0,
+          "maximum": 19125200.0
+        }
+      ]
+    },
+    {
+      "workload": "Main menu / animated 3D preview",
+      "quality": "Bajo",
+      "width": 1280,
+      "height": 720,
+      "frames": 427,
+      "renderSubmissions": 427,
+      "seconds": 3.0049689000000086,
+      "meanFrameMs": 7.037756437832703,
+      "p95FrameMs": 9.897101670503616,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 23.0,
+          "p95": 23.0,
+          "maximum": 23.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 449927.0,
+          "p95": 449927.0,
+          "maximum": 449927.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 186.53864168618267,
+          "p95": 148.0,
+          "maximum": 16604.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 7011281.264637003,
+          "p95": 9883100.0,
+          "maximum": 15816900.0
+        }
+      ]
+    },
+    {
+      "workload": "Main menu / animated 3D preview",
+      "quality": "Medio",
+      "width": 1280,
+      "height": 720,
+      "frames": 347,
+      "renderSubmissions": 347,
+      "seconds": 3.0017838999999924,
+      "meanFrameMs": 8.651210404449392,
+      "p95FrameMs": 11.941900476813316,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 41.0,
+          "p95": 41.0,
+          "maximum": 41.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 1013709.0,
+          "p95": 1013709.0,
+          "maximum": 1013709.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 195.4236311239193,
+          "p95": 148.0,
+          "maximum": 16604.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 8618954.755043227,
+          "p95": 11933600.0,
+          "maximum": 20484300.0
+        }
+      ]
+    },
+    {
+      "workload": "Main menu / animated 3D preview",
+      "quality": "Alto",
+      "width": 1280,
+      "height": 720,
+      "frames": 329,
+      "renderSubmissions": 329,
+      "seconds": 3.0047083999999984,
+      "meanFrameMs": 9.135733727977177,
+      "p95FrameMs": 12.936798855662346,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 42.0,
+          "p95": 42.0,
+          "maximum": 42.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 1172323.0,
+          "p95": 1172323.0,
+          "maximum": 1172323.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 198.01823708206686,
+          "p95": 148.0,
+          "maximum": 16604.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 9091876.291793313,
+          "p95": 12925400.0,
+          "maximum": 15509300.0
+        }
+      ]
+    },
+    {
+      "workload": "Main menu / animated 3D preview",
+      "quality": "Bajo",
+      "width": 1920,
+      "height": 1080,
+      "frames": 427,
+      "renderSubmissions": 427,
+      "seconds": 3.0014974999999993,
+      "meanFrameMs": 7.029378002583631,
+      "p95FrameMs": 9.377898648381233,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 23.0,
+          "p95": 23.0,
+          "maximum": 23.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 449927.0,
+          "p95": 449927.0,
+          "maximum": 449927.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 186.53864168618267,
+          "p95": 148.0,
+          "maximum": 16604.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 7007978.922716628,
+          "p95": 9371500.0,
+          "maximum": 13731400.0
+        }
+      ]
+    },
+    {
+      "workload": "Main menu / animated 3D preview",
+      "quality": "Medio",
+      "width": 1920,
+      "height": 1080,
+      "frames": 338,
+      "renderSubmissions": 338,
+      "seconds": 3.006132700000009,
+      "meanFrameMs": 8.89406776739031,
+      "p95FrameMs": 12.442495673894882,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 41.0,
+          "p95": 41.0,
+          "maximum": 41.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 1013709.0,
+          "p95": 1013709.0,
+          "maximum": 1013709.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 196.68639053254438,
+          "p95": 148.0,
+          "maximum": 16604.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 8851139.053254439,
+          "p95": 12436300.0,
+          "maximum": 18665900.0
+        }
+      ]
+    },
+    {
+      "workload": "Main menu / animated 3D preview",
+      "quality": "Alto",
+      "width": 1920,
+      "height": 1080,
+      "frames": 330,
+      "renderSubmissions": 330,
+      "seconds": 3.0054169,
+      "meanFrameMs": 9.108032420221152,
+      "p95FrameMs": 12.388301081955433,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 42.0,
+          "p95": 42.0,
+          "maximum": 42.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 1172323.0,
+          "p95": 1172323.0,
+          "maximum": 1172323.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 197.86666666666667,
+          "p95": 148.0,
+          "maximum": 16604.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 9072303.333333334,
+          "p95": 12377400.0,
+          "maximum": 17474700.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused RTS / real deployment and selection UI",
+      "quality": "Bajo",
+      "width": 1280,
+      "height": 720,
+      "frames": 400,
+      "renderSubmissions": 400,
+      "seconds": 3.004573899999997,
+      "meanFrameMs": 7.511424758704379,
+      "p95FrameMs": 9.652500972151756,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 17.0,
+          "p95": 17.0,
+          "maximum": 17.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 961985.97,
+          "p95": 962061.0,
+          "maximum": 962061.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 11640.705,
+          "p95": 11550.0,
+          "maximum": 27024.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 7484032.5,
+          "p95": 9643700.0,
+          "maximum": 15662400.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused RTS / real deployment and selection UI",
+      "quality": "Medio",
+      "width": 1280,
+      "height": 720,
+      "frames": 342,
+      "renderSubmissions": 342,
+      "seconds": 3.0086510999999945,
+      "meanFrameMs": 8.7979818702463,
+      "p95FrameMs": 11.635501869022846,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 27.0,
+          "p95": 27.0,
+          "maximum": 27.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 2252313.9356725146,
+          "p95": 2252495.0,
+          "maximum": 2252495.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 11645.947368421053,
+          "p95": 11550.0,
+          "maximum": 27024.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 8762600.292397661,
+          "p95": 11631100.0,
+          "maximum": 14362000.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused RTS / real deployment and selection UI",
+      "quality": "Alto",
+      "width": 1280,
+      "height": 720,
+      "frames": 334,
+      "renderSubmissions": 334,
+      "seconds": 3.0068299999999937,
+      "meanFrameMs": 9.003980235826827,
+      "p95FrameMs": 11.7419995367527,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 29.0,
+          "p95": 29.0,
+          "maximum": 29.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 2828736.0,
+          "p95": 2828736.0,
+          "maximum": 2828736.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 11658.62874251497,
+          "p95": 11550.0,
+          "maximum": 27024.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 8969897.005988024,
+          "p95": 11732900.0,
+          "maximum": 14808400.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused RTS / real deployment and selection UI",
+      "quality": "Bajo",
+      "width": 1920,
+      "height": 1080,
+      "frames": 392,
+      "renderSubmissions": 392,
+      "seconds": 3.0074045999999868,
+      "meanFrameMs": 7.672087770497084,
+      "p95FrameMs": 10.660700500011444,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 17.0,
+          "p95": 17.0,
+          "maximum": 17.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 961705.0,
+          "p95": 961705.0,
+          "maximum": 961705.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 11642.55612244898,
+          "p95": 11550.0,
+          "maximum": 27024.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 7646695.153061224,
+          "p95": 10656400.0,
+          "maximum": 32914000.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused RTS / real deployment and selection UI",
+      "quality": "Medio",
+      "width": 1920,
+      "height": 1080,
+      "frames": 348,
+      "renderSubmissions": 348,
+      "seconds": 3.0013489999999905,
+      "meanFrameMs": 8.625046283156536,
+      "p95FrameMs": 11.319699697196484,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 27.0,
+          "p95": 27.0,
+          "maximum": 27.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 2252221.0,
+          "p95": 2252221.0,
+          "maximum": 2252221.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 11654.258620689656,
+          "p95": 11550.0,
+          "maximum": 27024.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 8595935.632183908,
+          "p95": 11309700.0,
+          "maximum": 17369500.0
+        }
+      ]
+    },
+    {
+      "workload": "Paused RTS / real deployment and selection UI",
+      "quality": "Alto",
+      "width": 1920,
+      "height": 1080,
+      "frames": 338,
+      "renderSubmissions": 338,
+      "seconds": 3.004961899999998,
+      "meanFrameMs": 8.88963490614348,
+      "p95FrameMs": 11.74550037831068,
+      "counters": [
+        {
+          "name": "Draw Calls Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "Batches Count",
+          "unit": "count",
+          "available": false,
+          "mean": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        {
+          "name": "SetPass Calls Count",
+          "unit": "count",
+          "available": true,
+          "mean": 29.0,
+          "p95": 29.0,
+          "maximum": 29.0
+        },
+        {
+          "name": "Triangles Count",
+          "unit": "count",
+          "available": true,
+          "mean": 2828736.0,
+          "p95": 2828736.0,
+          "maximum": 2828736.0
+        },
+        {
+          "name": "GC Allocated In Frame",
+          "unit": "bytes",
+          "available": true,
+          "mean": 11657.343195266272,
+          "p95": 11550.0,
+          "maximum": 27024.0
+        },
+        {
+          "name": "Main Thread",
+          "unit": "nanoseconds",
+          "available": true,
+          "mean": 8853459.76331361,
+          "p95": 11739500.0,
+          "maximum": 14141200.0
+        }
+      ]
+    }
+  ],
+  "scopeNote": "Valid explicit-render intermediate; final refinement will resolve counter aliases and set offscreen target MSAA per quality."
+}

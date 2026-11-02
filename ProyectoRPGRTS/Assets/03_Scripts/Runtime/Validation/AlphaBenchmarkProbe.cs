@@ -12,8 +12,8 @@ namespace Aethernia
     // Explicit native benchmark only; absent from normal gameplay and smoke recordings.
     public sealed class AlphaBenchmarkProbe:MonoBehaviour
     {
-        [Serializable]private sealed class Metric{public string name,unit;public bool available;public double mean,p95,maximum;}
-        [Serializable]private sealed class Row{public string workload,quality;public int width,height,frames,renderSubmissions;public double seconds,meanFrameMs,p95FrameMs;public List<Metric> counters=new List<Metric>();}
+        [Serializable]private sealed class Metric{public string name,resolvedName,unit;public bool available;public double mean,p95,maximum;}
+        [Serializable]private sealed class Row{public string workload,quality;public int width,height,frames,renderSubmissions,targetMsaa;public double seconds,meanFrameMs,p95FrameMs;public List<Metric> counters=new List<Metric>();}
         [Serializable]private sealed class Report{public string unity,cpu,gpu,driver,os,status="RUNNING",limitations="Development batch player with explicit offscreen URP render requests including UI and live preview. CPU frame deltas include submissions, not display FPS or GPU time. Fixed paused village/menu/RTS, 2s warmup; no readback or capture during samples. No large-army extrapolation.";public int memoryMB;public List<Row> rows=new List<Row>();}
         private string output;
         private bool complete;
@@ -43,16 +43,26 @@ namespace Aethernia
                     if(renderTarget!=null){renderTarget.Release();Destroy(renderTarget);}renderTarget=new RenderTexture(Screen.width,Screen.height,24,RenderTextureFormat.DefaultHDR);renderTarget.Create();
                     for(var quality=0;quality<QualitySettings.names.Length;quality++)
                     {
-                        QualitySettings.SetQualityLevel(quality,true);QualitySettings.vSyncCount=0;Application.targetFrameRate=-1;var warm=Time.realtimeSinceStartup+2;while(Time.realtimeSinceStartup<warm)yield return null;
-                        var row=new Row{workload=workload==0?"Paused village / real E13 state":workload==1?"Main menu / animated 3D preview":"Paused RTS / real deployment and selection UI",quality=QualitySettings.names[quality],width=Screen.width,height=Screen.height};
-                        var recorders=new ProfilerRecorder[names.Length];var values=new List<double>[names.Length];var deltas=new List<double>(2048);
+                        QualitySettings.SetQualityLevel(quality,true);QualitySettings.vSyncCount=0;Application.targetFrameRate=-1;yield return null;
+                        var pipeline=QualitySettings.renderPipeline as UniversalRenderPipelineAsset;renderTarget.Release();renderTarget.antiAliasing=pipeline==null?1:pipeline.msaaSampleCount;renderTarget.Create();var warm=Time.realtimeSinceStartup+2;while(Time.realtimeSinceStartup<warm)yield return null;
+                        var row=new Row{workload=workload==0?"Paused village / real E13 state":workload==1?"Main menu / animated 3D preview":"Paused RTS / real deployment and selection UI",quality=QualitySettings.names[quality],width=Screen.width,height=Screen.height,targetMsaa=renderTarget.antiAliasing};
+                        var recorders=new ProfilerRecorder[names.Length];var resolved=new string[names.Length];var values=new List<double>[names.Length];var deltas=new List<double>(2048);var handles=new List<ProfilerRecorderHandle>();ProfilerRecorderHandle.GetAvailable(handles);
                         try
                         {
-                            for(var c=0;c<names.Length;c++){values[c]=new List<double>(2048);try{recorders[c]=ProfilerRecorder.StartNew(c<4?ProfilerCategory.Render:c==4?ProfilerCategory.Memory:ProfilerCategory.Internal,names[c],1);}catch(InvalidOperationException){recorders[c]=default;}}
+                            for(var c=0;c<names.Length;c++)
+                            {
+                                values[c]=new List<double>(2048);resolved[c]=names[c];try{recorders[c]=ProfilerRecorder.StartNew(c<4?ProfilerCategory.Render:c==4?ProfilerCategory.Memory:ProfilerCategory.Internal,names[c],1);}catch(InvalidOperationException){recorders[c]=default;}
+                                if(recorders[c].Valid)continue;
+                                foreach(var handle in handles)
+                                {
+                                    var description=ProfilerRecorderHandle.GetDescription(handle);if(description.Name!=names[c]&&description.Name!="Total "+names[c]&&description.Name!=names[c].Replace(" Count",""))continue;
+                                    recorders[c].Dispose();recorders[c]=ProfilerRecorder.StartNew(description.Category,description.Name,1);resolved[c]=description.Category.Name+"/"+description.Name;if(recorders[c].Valid)break;
+                                }
+                            }
                             var start=Time.realtimeSinceStartupAsDouble;var beforeSubmissions=submissions;
                             do{yield return null;deltas.Add(Time.unscaledDeltaTime*1000d);for(var c=0;c<names.Length;c++)if(recorders[c].Valid)values[c].Add(recorders[c].LastValue);}while((Time.realtimeSinceStartupAsDouble-start<3||deltas.Count<120)&&Time.realtimeSinceStartupAsDouble-start<12);
                             row.seconds=Time.realtimeSinceStartupAsDouble-start;row.frames=deltas.Count;row.renderSubmissions=submissions-beforeSubmissions;row.meanFrameMs=Mean(deltas);row.p95FrameMs=Percentile(deltas);
-                            for(var c=0;c<names.Length;c++){var v=values[c];var available=recorders[c].Valid&&v.Count>0;row.counters.Add(new Metric{name=names[c],unit=units[c],available=available,mean=available?Mean(v):0,p95=available?Percentile(v):0,maximum=available?v[v.Count-1]:0});}
+                            for(var c=0;c<names.Length;c++){var v=values[c];var available=recorders[c].Valid&&v.Count>0;row.counters.Add(new Metric{name=names[c],resolvedName=resolved[c],unit=units[c],available=available,mean=available?Mean(v):0,p95=available?Percentile(v):0,maximum=available?v[v.Count-1]:0});}
                         }
                         finally{foreach(var recorder in recorders)recorder.Dispose();}
                         if(row.renderSubmissions<row.frames-1||!row.counters.Exists(m=>m.available&&m.unit=="count"&&m.mean>0))throw new InvalidOperationException("No verified render work in performance row.");
