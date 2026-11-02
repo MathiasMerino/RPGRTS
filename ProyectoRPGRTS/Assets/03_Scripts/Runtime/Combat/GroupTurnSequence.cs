@@ -13,7 +13,7 @@ namespace Aethernia
         public int Health{get=>ReadHealth();set=>WriteHealth(value);}
         internal bool Guarding,Recovered;
     }
-    public sealed class GroupTurnSequence
+    public sealed partial class GroupTurnSequence
     {
         public readonly IReadOnlyList<TacticalCombatant> Members;
         private readonly Random random;private int index,sequence;
@@ -28,7 +28,7 @@ namespace Aethernia
         {
             random=new Random(seed);var list=members.ToList();if(list.Count<2||list.Count(x=>x.Hero)!=1||!list.Any(x=>x.Hostile)||list.Select(x=>x.Id).Distinct().Count()!=list.Count)throw new ArgumentException("Invalid tactical roster");
             foreach(var a in list)a.Initiative=random.Next(1,21)+(a.Profile.Id=="monk"?2:0);
-            Members=list.OrderByDescending(x=>x.Initiative).ThenBy(x=>x.Id,StringComparer.Ordinal).ToArray();
+            Members=list.OrderByDescending(x=>x.Initiative).ThenBy(x=>x.Id,StringComparer.Ordinal).ToArray();TechniqueFocus=Members.First(m=>m.Hero).Profile.Combat?.FocusCapacity??0;
             while(index<Members.Count-1&&Current.Health<=0)index++;
         }
         public bool Attack(TacticalCombatant target,float distance,bool clear)

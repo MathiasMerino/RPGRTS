@@ -188,7 +188,7 @@ namespace Aethernia
                 else if(id.StartsWith("item-")) {visible=exploring&&compactView.WindowOpen&&ActivePage==ExplorationPage.Inventory;ready=compactView.Inventory.Count(session.State,id.Substring(5))>0;}
                 else
                 {
-                    var action=id=="attack"||id=="guard"||id=="recover"||id=="end"||id=="approach";
+                    var action=id=="attack"||id=="guard"||id=="recover"||id=="end"||id=="approach"||id=="technique";
                     var war=id=="select-all"||id=="charge";
                     visible=session.Mode==PrototypeMode.TurnCombat?action||id=="escalate":session.Mode==PrototypeMode.Rts?war:exploring&&compactView.ActionVisible(id,ActivePage);
                     ready=action?director.Encounter.PlayerCanAct:
@@ -204,6 +204,12 @@ namespace Aethernia
                         b.Label.text=(chosen?"• ":"")+session.Rules.Find(id.Substring(6)).Title;
                         b.Label.fontStyle=chosen?FontStyle.Bold:FontStyle.Normal;
                     }
+                }
+                if(id.StartsWith("class-")&&session.Rules.Progression!=null)visible=false;
+                if(id=="technique")
+                {
+                    var skill=session.HeroProfile.Combat;ready=ready&&skill!=null&&skill.TechniqueUnlocked&&director.Encounter.TechniqueFocus>=skill.TechniqueCost;
+                    if(b.Label!=null)b.Label.text=skill==null||!skill.TechniqueUnlocked?"Técnica · Nv2":"Técnica · "+director.Encounter.TechniqueFocus;
                 }
                 b.Button.gameObject.SetActive(visible);b.Button.interactable=ready;
             }

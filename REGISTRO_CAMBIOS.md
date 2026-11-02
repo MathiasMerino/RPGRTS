@@ -607,3 +607,7 @@ Siete escenarios6/7; nuevo ensayo de retaguardia no garantiza victoria(Monje). C
 ## 2026-11-02 — E18-BC experiencia y atributos
 
 Progresión optativa en nueva escena/rules propios,4niveles, XP por hechos reales/ledger único y crédito migrado de completados antiguos. Derivados por clase/atributos/nivel y elecciones sin acumulación/curación por equipar/cargar; revisión aditiva del estadoVersion1. Primer RPG legal alcanza nivel2 en tres clases y conserva estado al Continuar. Primer pase18/19 por carpeta de captura ausente; corregido y7/7progresión PASS,12reglas tácticas anteriores aprobadas. Nulos/corrupción rechazados. Escenas/física/arte/versiones anteriores conservados. Continúan técnicas/UI/equipo y resto E18.
+
+## 2026-11-02 — E18-DEF técnicas y elección
+
+Tres técnicas con identificador/configuración, daño real,1acción/foco limitado por encuentro y cooldownRTS; misma progresión con adaptadores. Reusa ataque/animación/VFX y controles existentes. FichaPersonaje nueva vista dentro de ventana existente:6atributos, nivel/XP, requisitos, dos mejoras con puntos reales; sin gestorUI adicional, clases fijadas al progresar. Primer pase16/17 por fixture con referencia antigua, corregido yController1/1tresclasesRPG/RTS/save. UI1/1tresclasesa720/1080con6capturas; fallos auxiliares preservados. No nuevos modelos ni reglas definitivas. Continúa equipo/botín.

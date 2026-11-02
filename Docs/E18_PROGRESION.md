@@ -33,3 +33,9 @@ Siete escenarios6/7, XMLRTS_A_6_7.xml. La expectativa histórica de victoria se 
 ## BC — base verificada
 
 Escena AetherniaProgressionDemo y RootAssets/14_Progression, reglas compartidas optativas. Curva/fuentes/derivados descritos ya integrados, migración con crédito único por hechos válidos y ledger deXP. Datos guardadosVersion1aditivos, no reset ni curación al cargar.7/7progresión PASS tras arreglar carpeta de captura (18/19primer pasecon12reglas tácticas legacy PASS). Victoria real primer RPG/level2/aprenderDisciplina/save/Continue por tres clases, física igualE17y sin privados. Técnica tiene datos pero aún no ejecución/UI: DEF/MOQ pendientes.
+
+## DEF — técnicas verificadas
+
+Técnicas: power-strike/Golpe poderoso, focused-strike/Golpe concentrado, arcane-bolt/Proyectil arcano. Datos/costes/alcances descritos integrados; foco2repuesto por encuentro, coste1yunaacciónRPG o cooldown3sRTS con intervalo de ataque. MonjeRTS añade2daño en lugar de precisión de tirada, porque RTS no usa d20. Guardias/acciones existentes conservadas. Impacto y Disciplina dos alternativas hasta2rangos con1punto por niveltras1. Estado compartido y elecciones guardadas, sin respec gratuito.
+
+Ficha en ventanaPersonaje existente, requisitos/costes/estado/efectos/atributos/XP/puntos; mejora con botón real, sin segunda interfaz global. HeaderNv, técnica en pie RPGy panelRTS.4pruebas técnicas+12legacy en lote, controlador1/1tresclasesRPG/RTS/persistencia yUI1/1tresclasesa720/1080. Se conservan fallos de auxiliares (referencia preContinue y validador de menú usado en HUD) corregidos sin modificar efectos/aserciones. Capturas reales en Logs/E18/Captures/Skill-*.

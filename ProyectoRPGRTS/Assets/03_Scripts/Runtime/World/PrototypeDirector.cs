@@ -45,6 +45,7 @@ namespace Aethernia
         private void ClearEncounters(bool preserveAcceptedStrike = false) { encounter.Clear(preserveAcceptedStrike); rts.Clear(); }
         public bool Execute(string id)
         {
+            if(id=="technique")return session.Mode==PrototypeMode.TurnCombat?encounter.Technique():session.Mode==PrototypeMode.Rts&&rts.HeroAction("technique");
             if (id == "attack" && session.Mode == PrototypeMode.TurnCombat) { encounter.Attack(); return true; }
             if (id == "guard" && session.Mode == PrototypeMode.TurnCombat) { encounter.Guard(); return true; }
             if (id == "recover" && session.Mode == PrototypeMode.TurnCombat) { encounter.Recover(); return true; }

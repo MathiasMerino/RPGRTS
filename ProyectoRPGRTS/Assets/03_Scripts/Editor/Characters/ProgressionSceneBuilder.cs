@@ -11,6 +11,16 @@ namespace Aethernia.Editor.Characters
         public const string Root="Assets/14_Progression";
         public const string ScenePath="Assets/01_Scenes/AetherniaProgressionDemo.unity";
         public const string RulesPath=Root+"/PrototypeRules.asset";
+        public static void TechniqueUi()
+        {
+            var scene=EditorSceneManager.OpenScene(ScenePath);var flow=Object.FindAnyObjectByType<DemoFlow>();var view=flow.GetComponent<ProgressionPanelView>();if(view==null)view=flow.gameObject.AddComponent<ProgressionPanelView>();view.Flow=flow;EditorUtility.SetDirty(view);var hud=Object.FindAnyObjectByType<VerticalSliceHud>();var data=new SerializedObject(hud);var bindings=data.FindProperty("bindings");
+            for(var i=0;i<bindings.arraySize;i++)
+            {
+                var binding=bindings.GetArrayElementAtIndex(i);var id=binding.FindPropertyRelative("Id");if(id.stringValue!="escalate")continue;id.stringValue="technique";
+                var button=binding.FindPropertyRelative("Button").objectReferenceValue as UnityEngine.UI.Button;var label=button.GetComponentInChildren<UnityEngine.UI.Text>(true);label.text="Técnica";PrefabUtility.RecordPrefabInstancePropertyModifications(label);EditorUtility.SetDirty(label);
+            }
+            data.ApplyModifiedPropertiesWithoutUndo();PrefabUtility.RecordPrefabInstancePropertyModifications(hud);EditorUtility.SetDirty(hud);EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();
+        }
         public static void Create()
         {
             if(File.Exists(ScenePath)||File.Exists(RulesPath))throw new InvalidOperationException("Progression scene/assets exist; preserve them.");

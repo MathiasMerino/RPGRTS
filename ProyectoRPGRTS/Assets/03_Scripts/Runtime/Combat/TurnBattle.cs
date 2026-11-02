@@ -2,7 +2,7 @@ using System;
 
 namespace Aethernia
 {
-    public sealed class TurnBattle
+    public sealed partial class TurnBattle
     {
         public GroupTurnSequence Group { get; private set; }
         public static TurnBattle CreateGroup(System.Collections.Generic.IReadOnlyList<TacticalCombatant> members,int seed)
@@ -36,7 +36,7 @@ namespace Aethernia
         public string Message { get; private set; } = "Tu turno: moverte, atacar o defender; después Finalizar turno.";
         public TurnBattle(ClassProfile hero, int health, int weapon, int armour, int seed, bool enemyOpeningInReach = true)
         {
-            profile = hero; HeroHealth = health; weaponBonus = weapon; armourBonus = armour; random = new Random(seed);
+            profile = hero; HeroHealth = health; weaponBonus = weapon; armourBonus = armour; random = new Random(seed);TechniqueFocus=hero.Combat?.FocusCapacity??0;
             HeroInitiative = random.Next(1, 21) + (hero.Id == "monk" ? 2 : 0);
             EnemyInitiative = random.Next(1, 21);
             if (EnemyInitiative > HeroInitiative && enemyOpeningInReach) ResolveEnemyAttack(true);

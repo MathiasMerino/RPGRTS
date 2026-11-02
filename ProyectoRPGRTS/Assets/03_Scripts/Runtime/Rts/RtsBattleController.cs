@@ -13,7 +13,7 @@ namespace Aethernia
             public ExplorationUnit Unit;
             public int Team;
             public int Health = 10;
-            public float AttackAt;
+            public float AttackAt,SkillAt;
             public float OrderedUntil;
             public string Role="swordsman";
             public string RecruitId;
@@ -32,6 +32,8 @@ namespace Aethernia
         [SerializeField] private CombatFeedbackPresenter feedback;
         private ExplorationUnit sharedHero;
         private bool heroRecoveryUsed;
+        private int techniqueFocus;
+        public int TechniqueFocus=>IncludesHero?techniqueFocus:0;
         private int sequence;
         public bool IncludesHero=>sharedHero!=null;
         public RtsDemoRules DemoRules=>demoRules;
@@ -146,7 +148,7 @@ namespace Aethernia
             }
             hero.Stop();if(!hero.Warp(at.position)){Clear();session.SetMode(PrototypeMode.Exploration);return false;}
             sharedHero=hero;heroRecoveryUsed=false;sequence=0;hero.Select(true);
-            var profile=session.HeroProfile;var actor=hero.GetComponent<CharacterVisualPresenter>();
+            var profile=session.HeroProfile;techniqueFocus=profile.Combat?.FocusCapacity??0;var actor=hero.GetComponent<CharacterVisualPresenter>();
             var h=new Soldier{Unit=hero,Team=0,Hero=true,Role="hero",Range=profile.Range,Animator=actor.Model==null?null:actor.Model.GetComponent<HumanoidAnimationDriver>()};soldiers.Add(h);
             hero.GetComponent<CharacterCombatAnimationPresenter>().ExternallyControlled=true;
             Trace("begin",h);
@@ -224,9 +226,9 @@ namespace Aethernia
         }
         private Soldier Nearest(Soldier source)
         {Soldier best=null;var distance=float.MaxValue;foreach(var s in soldiers)if(s.Team!=source.Team&&Health(s)>0){var d=Vector3.Distance(source.Unit.transform.position,s.Unit.transform.position);if(d<distance){distance=d;best=s;}}return best;}
-        private void Strike(Soldier source,Soldier target)
+        private void Strike(Soldier source,Soldier target,int techniqueBonus=0)
         {
-            var before=Health(target);var damage=source.Hero?HeroActionRules.AttackDamage(session.HeroProfile,HeroActionRules.WeaponBonus(session.State)):source.Damage;
+            var before=Health(target);var damage=source.Hero?HeroActionRules.AttackDamage(session.HeroProfile,HeroActionRules.WeaponBonus(session.State)):source.Damage;damage+=techniqueBonus;
             var guarded=target.Guarding;var actual=Mathf.Min(before,HeroActionRules.GuardedDamage(damage,guarded,target.Hero?HeroActionRules.GuardReduction(session.HeroProfile):1));SetHealth(target,before-actual);source.AttackAt=Time.time+1;Trace("strike",source,target,actual);
             if(IncludesHero){source.Unit.Stop();source.Guarding=false;source.Animator?.SetGuarding(false);source.Animator?.TryPlay(CharacterMotion.Attack);target.Animator?.TryPlay(before-actual<=0?CharacterMotion.Defeat:CharacterMotion.Hit);Emit(source,new CombatResolution(++sequence,source.Team==0?CombatSide.Player:CombatSide.Enemy,CombatActionKind.Attack,hit:true,damage:actual,before:before,after:before-actual,guarded:guarded),target.Unit.transform.position);}
             target.Guarding=false;target.Animator?.SetGuarding(false);
@@ -243,6 +245,12 @@ namespace Aethernia
             var hero=soldiers.Find(s=>s.Hero);
             if(!Active||hero==null||!hero.Unit.IsSelected||Health(hero)<=0){if(action=="recover")Trace("recover-unavailable",hero);return false;}
             if(Time.time<hero.AttackAt){if(action=="recover")Trace("recover-cooldown",hero);return false;}
+            if(action=="technique")
+            {
+                var skill=session.HeroProfile.Combat;var target=hero.OrderedTarget!=null&&Health(hero.OrderedTarget)>0?hero.OrderedTarget:Nearest(hero);
+                if(skill==null||!skill.TechniqueUnlocked||techniqueFocus<skill.TechniqueCost||Time.time<hero.SkillAt||target==null||Vector3.Distance(hero.Unit.transform.position,target.Unit.transform.position)>skill.TechniqueRange||!ClearLine(hero,target))return false;
+                techniqueFocus-=skill.TechniqueCost;hero.SkillAt=Time.time+skill.TechniqueCooldown;Strike(hero,target,skill.TechniqueDamage+(session.State.ClassId=="monk"?2:0));session.Say(skill.TechniqueTitle+" · foco "+techniqueFocus);return true;
+            }
             if(action=="attack")
             {var target=hero.OrderedTarget!=null&&Health(hero.OrderedTarget)>0?hero.OrderedTarget:Nearest(hero);if(target==null||Vector3.Distance(hero.Unit.transform.position,target.Unit.transform.position)>hero.Range||!ClearLine(hero,target))return false;Strike(hero,target);return true;}
             if(action=="guard")
