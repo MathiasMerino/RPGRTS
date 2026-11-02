@@ -16,10 +16,15 @@ Base c33e34d/PR5 draft sin fusionar. Rama feature/e14-e15-expediciones-conquista
 
 E14-A estado/validación/reclutamiento; E14-B seguimiento y combate grupal; E14-C mazmorra/recompensa/UI e integración; E15-A facciones/territorios/producción; E15-B ejército seleccionado y conquista; QA focales/regresión/nativeWindows/reinicio/capturas/build/ZIP/PRdraftapiladohaciaE10–E13.
 
-## Estado inicial
+## Auditoría inicial (histórico)
 
-Auditoría acotada completa. PR1..5 open/draft, main/dev sin cambios; snapshot Logs/E14/github-before.json. Tres texturas E07 eliminadas localmente por proceso ajeno, conservadas sin sobrescribir; consulta asíncrona pendiente. FBXMonkMeshy ymeta ajenos preservados/nointegrados/nopublicados. No se abrirá Unity sobre eliminaciones pendientes sin resolver aislamiento/restauración. Puede avanzar código y pruebas puras antes de validar editor.
+Se comprobaron PR1..5 open/draft y main/dev sin cambios; snapshot Logs/E14/github-before.json. El usuario autorizó restaurar las tres texturas E07 eliminadas localmente: restauradas exactamente desdeGit. Meshy local preservado, sin integrar ni publicar. Se avanzó por datos, grupo, mazmorra, territorio y validación; los fallos intermedios se conservan como evidencia. Resultados finales y límites en ENTREGA_E14_E15.md, sin equivaler a aprobación humana.
 
-Ninguna tarea nueva declarada completada por compilar. Resultados/archivos/fallos se añadirán por bloque. Humanidad/arte/balance pendientes separados.
+## Integración observada
 
-Usuario autorizó restaurar las3texturasE07 desdeGit; restauradas exactamente, sin cambios restantes. Meshy intacto. Datos/controladores/UI/autoría iniciales escritos; todavía no verificados.
+- E14: prueba Play Mode de dos guardianías aprobada; mismos objetos de héroe/grupo, IDs/HP delegados al estado, sin almacén de salud paralelo. El seguimiento solo opera al explorar y se suspende en combate; RTS oculta compañeros. Regroup valida NavMesh antes de transición. Reservas persisten sin objetos duplicados.
+- Territorios: campamento conectado al paso, paso al puesto. El reclamo neutral requiere interacción cercana; conquistar requiere acceso por el paso y ejército preparado. RtsBattleController conserva motor/acciones, elimina aliados gratuitos de patrulla para esta conquista y despliega exclusivamente IDs seleccionados. La patrulla E12 permanece diferenciada por ContextId.
+- Economía: recompensa única → construcción/reclutamiento E13 → ejército → conquista → producción WorldOperations.Advance. El ciclo persistente impide duplicación/offline. Salud, equipo, oro, madera, alimento y reputación pertenecen a PrototypeState.
+- Escala: héroe1.8m, cápsula/radio existentes; ruinas24×16m, paredes3m y vanos centrales4m; columnas0.6×3m. Recorte frontal visual0.65m, collider3m conservado; suelo UV cada2m con material compartido. Cámara fija isométrica URP; ninguna textura/material externo nuevo. Ruinas, nombres y cifras siguen siendo provisionales.
+- Datos: formato aditivov1, listas ausentes normalizadas; HasDemoProgress conserva migración anterior. IDs únicos32hex, máximos3compañeros/6soldados/3territorios, roles/propietarios conocidos y pertenencia de selección validados. Guardar/cargar durante combate rechazado. Modelos y efectos comparten catálogo/presentación y no deciden daño.
+- Fallos conservados como evidencia: navegación detenida por destinos ocupados y primer timeout de grupo; corregidos antes del pase E14_INTEGRACION.xml. No se modificó salud/daño para lograr victorias. Fixtures unitarias y de derrota están separadas de recorridos Windows con partidas E13 auténticas.

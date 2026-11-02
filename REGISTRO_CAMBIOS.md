@@ -514,3 +514,8 @@ Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nue
 - Panel de grupo lateral; textos compactos completos, capa encima del HUD, cierre al abrir ficha/inventario/ayuda y adaptación4:3. Propietarios usan nombres de facción, marcadores actualizan propietario e instrucciones distinguen conquista/patrulla.
 - Cámara de combate centra al héroe; recorte de paredes frontales/divisiones cercanas evita ocultarlo. Colliders originales3m y SHA del NavMesh conservados. Nueva escena únicamente; no se regeneraron autorías históricas.
 - Regresión121/121 PASS; tras cambios de presentación11/11 focales PASS y1/1UI final con ocho vistas a1280×720/1024×768, límites/raycast/textos, ventanas históricas y héroe fuera del HUD. Build exacta recompilada; recorrido GPU final y portable en ejecución. Evaluación humana no realizada.
+
+### E14–E15 — build, evidencias y portable finales
+-20procesos Windows PASS:6headless,6GPU previos al pulido,6GPU finales y2desde ZIP extraído; Guerrero/Monje/Mago, economía pagada, dos victorias RPG, conquista real, producción y reinicio conservados. Los8procesos finales no presentan excepciones, agentes inválidos ni avisos JobTempAlloc observados en algunas ejecuciones anteriores.
+-22PNG nativos+2PNG Play Mode para geometríaUI;2clips continuos23.8s/8.1s conaudioDSP real y decodificación/SHA verificados. Captura12Hz no implica FPS medidos. NavMesh/GDD/escenas originales/paquetes intactos; escalas y colliders conservados.
+-ZIP nuevo87,458,324bytes, SHA256958df84773407fe81274c366588ba60e97b4fe19feca69763c37be38912baf36; CRC/extracción/SHA individual PASS,13ZIP anteriores intactos. Guía, partidas E13 reales y lanzadores separados incluidos. No autoriza arte final, balance o E16. Meshy ajeno sin incorporar.
