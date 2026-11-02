@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: ProgressionRules
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ProgressionRules
   Items: {fileID: 11400000, guid: 0590396713f5c4a47ac9e3df2eafdea6, type: 2}
+  Units: {fileID: 11400000, guid: 9636578bffb1edd45a6be54853bb4fad, type: 2}
+  DungeonHealthBonus: 4
+  DungeonDamageBonus: 1
   DungeonLoot:
   - Id: forge-ore
     Count: 1

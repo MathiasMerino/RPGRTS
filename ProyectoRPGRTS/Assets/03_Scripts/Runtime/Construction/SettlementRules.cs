@@ -20,6 +20,9 @@ namespace Aethernia
             new SettlementBlueprint("barracks","Cuartel",12,8),
             new SettlementBlueprint("warehouse","Almacén",10,5){Storage=100,Upgradeable=true}
         };
+        public RtsDemoRules Units;
+        public int GoldCost(string role)=>Units?.Find(role)?.RecruitGold>0?Units.Find(role).RecruitGold:RecruitGold;
+        public int FoodCost(string role)=>Units?.Find(role)?.RecruitFood>0?Units.Find(role).RecruitFood:RecruitFood;
         public int BaseStorage=200,RecruitGold=5,RecruitFood=2,MaximumRecruits=6,UpgradeGold=10,UpgradeWood=5;
         public SettlementBlueprint Find(string id)=>Array.Find(Blueprints,b=>b.Id==id);
         public static bool KnownBuilding(string id)=>id=="workshop"||id=="townhall"||id=="farm"||id=="barracks"||id=="warehouse";

@@ -49,7 +49,7 @@ namespace Aethernia
         {
             Flow.Front.Audio?.Play(won?FeedbackSound.Victory:FeedbackSound.Defeat,Vector3.zero,true);
             if(won)
-            {if(!Flow.Session.HasFact(encounterFact)){Flow.Session.State.Facts.Add(encounterFact);Flow.Session.AwardForFact(encounterFact);}Flow.Director.Execute("explore");Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);Party.Reconcile();Flow.Session.Say("Encuentro despejado. Continúa al objetivo o vuelve a descansar.");Flow.Director.Save(Flow.SlotPath);}
+            {if(!Flow.Session.HasFact(encounterFact)){Flow.Session.State.Facts.Add(encounterFact);Flow.Session.AwardForFact(encounterFact);TroopProgression.AwardCompanions(Flow.Session.State,encounterFact,Flow.Director.Encounter.Group.Members);}Flow.Director.Execute("explore");Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);Party.Reconcile();Flow.Session.Say("Encuentro despejado. Continúa al objetivo o vuelve a descansar.");Flow.Director.Save(Flow.SlotPath);}
             else Flow.Session.Say("El héroe cayó. Retirada segura disponible; nadie del grupo se borra permanentemente.");
         }
         public bool Retreat()
@@ -67,7 +67,7 @@ namespace Aethernia
             if(Flow.Session.State!=restingState){rest=null;yield break;}
             var state=Flow.Session.State;state.Health+=HeroActionRules.Recovery(state.Health,Flow.Session.HeroProfile.Health);
             if(state.Health>0)Flow.Director.Hero.GetComponentInChildren<HumanoidAnimationDriver>()?.SetDefeated(false);
-            foreach(var c in state.Companions)c.Health+=HeroActionRules.Recovery(c.Health,Party.Roles.Find(c.Role).Health);
+            foreach(var c in state.Companions)c.Health+=HeroActionRules.Recovery(c.Health,TroopProgression.Profile(c,Party.Roles.Find(c.Role)).Health);
             rest=null;Party.Reconcile();Flow.Session.Say("Descanso completado. Salud recuperada con el tiempo de juego; no hay muerte permanente de compañeros.");Flow.Director.Save(Flow.SlotPath);
         }
     }

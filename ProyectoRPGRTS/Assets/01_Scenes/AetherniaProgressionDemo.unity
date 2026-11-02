@@ -23043,7 +23043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.GameSession
   rules: {fileID: 11400000, guid: b26d66c9750435a4bb81a2a5fdc1da09, type: 2}
-  settlementRules: {fileID: 11400000, guid: f1885fa9e00353243bdd99fcf97688f9, type: 2}
+  settlementRules: {fileID: 11400000, guid: 826c6d2a08f50404ca1cc74b424ba177, type: 2}
 --- !u!114 &1013268300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30681,7 +30681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.TerritoryCampaign
   Flow: {fileID: 623395484}
   Party: {fileID: 1341457656}
-  Rules: {fileID: 11400000, guid: 13e619d01ca9a1f43b7da060e6a8aa15, type: 2}
+  Rules: {fileID: 11400000, guid: a35909dc4479093409f90ea46abe172a, type: 2}
 --- !u!114 &1341457655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30696,7 +30696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.DungeonExpedition
   Flow: {fileID: 623395484}
   Party: {fileID: 1341457656}
-  Rules: {fileID: 11400000, guid: 13e619d01ca9a1f43b7da060e6a8aa15, type: 2}
+  Rules: {fileID: 11400000, guid: a35909dc4479093409f90ea46abe172a, type: 2}
 --- !u!114 &1341457656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30710,7 +30710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.PartyWorld
   Flow: {fileID: 623395484}
-  Rules: {fileID: 11400000, guid: 13e619d01ca9a1f43b7da060e6a8aa15, type: 2}
+  Rules: {fileID: 11400000, guid: a35909dc4479093409f90ea46abe172a, type: 2}
   Feedback: {fileID: 2128498147}
 --- !u!4 &1341457657
 Transform:
@@ -44781,7 +44781,7 @@ MonoBehaviour:
   session: {fileID: 1013268299}
   template: {fileID: 8137802751456085368, guid: 62ab3f16cc83eeb499a5d6bf14367e1b, type: 3}
   hostile: {fileID: 2100000, guid: 7ff724946317c4f45bab239a431e0e02, type: 2}
-  demoRules: {fileID: 11400000, guid: 6bac13a22b5401f4dbf44378e572810f, type: 2}
+  demoRules: {fileID: 11400000, guid: 9636578bffb1edd45a6be54853bb4fad, type: 2}
   visuals: {fileID: 11400000, guid: 971f8925e968b394b96702a59a86808f, type: 2}
   feedback: {fileID: 2128498147}
 --- !u!114 &1907032371
@@ -44819,7 +44819,7 @@ MonoBehaviour:
   session: {fileID: 1013268299}
   hero: {fileID: 4400504113842201705}
   prefab: {fileID: 5638066673320286884, guid: c7e845a8765253c43ab1460fd653c2a9, type: 3}
-  settlement: {fileID: 11400000, guid: f1885fa9e00353243bdd99fcf97688f9, type: 2}
+  settlement: {fileID: 11400000, guid: 826c6d2a08f50404ca1cc74b424ba177, type: 2}
   blueprints:
   - Id: townhall
     Prefab: {fileID: 4427192835117541917, guid: 2a46bbe5b5e34ae429194e6d6912f120, type: 3}

@@ -35,8 +35,8 @@ namespace Aethernia
             upgrade=Button(panel,"Upgrade building","Mejorar",294,341,126,()=>Improve());
             Button(panel,"Explore","Explorar",432,341,126,()=>Flow.Director.Execute("explore"));
             row=0;foreach(var role in Flow.Director.Rts.DemoRules.Roles)
-            {var id=role.Id;recruits.Add(Button(panel,"Recruit "+id,role.Title,12+row++*184,396,170,()=>Recruit(id)));}
-            ui.Text(panel,"Recruitment rules","Reclutar: 5 oro + 2 alimento · requiere cuartel\nMejorar nivel 2: 10 oro + 5 madera · solo producción/almacén",12,447,546,45,16);
+            {var id=role.Id;recruits.Add(Button(panel,"Recruit "+id,role.Title+(Rules.Units!=null?" "+Rules.GoldCost(id)+"o/2a":""),12+row++*184,396,170,()=>Recruit(id)));}
+            ui.Text(panel,"Recruitment rules",(Rules.Units==null?"Reclutar: 5 oro + 2 alimento":"Costes por rol indicados arriba; requiere cuartel")+"\nMejorar nivel 2: 10 oro + 5 madera · producción/almacén",12,447,546,45,16);
         }
         private Button Button(Transform parent,string name,string caption,float x,float y,float width,Action action)
         {var b=ui.Button(parent,name,caption,x,y,width,38,()=>{Flow.Front.Audio?.Play(FeedbackSound.Select,Vector3.zero,true);action();});return b;}
@@ -69,7 +69,7 @@ namespace Aethernia
             var b=Selected;selectedLabel.text=b==null?"Ningún edificio seleccionado.":Rules.Find(b.Id).Title+" · nivel "+b.Level+(b.ProductionPaused?" · producción pausada":" · activo");
             activate.interactable=b!=null&&(Rules.Find(b.Id).FoodPerCycle>0||Rules.Find(b.Id).WoodPerCycle>0);upgrade.interactable=b!=null&&Rules.Find(b.Id).Upgradeable&&b.Level==1&&state.Gold>=Rules.UpgradeGold&&state.Wood>=Rules.UpgradeWood;
             activate.GetComponentInChildren<TMP_Text>().text=b!=null&&!b.ProductionPaused?"Pausar":"Activar";
-            foreach(var recruit in recruits)recruit.interactable=SettlementOperations.Has(state,"barracks")&&state.Gold>=Rules.RecruitGold&&state.Food>=Rules.RecruitFood&&state.Army.Count<Rules.MaximumRecruits;
+            for(var i=0;i<recruits.Count;i++){var role=Flow.Director.Rts.DemoRules.Roles[i].Id;recruits[i].interactable=SettlementOperations.Has(state,"barracks")&&state.Gold>=Rules.GoldCost(role)&&state.Food>=Rules.FoodCost(role)&&state.Army.Count<Rules.MaximumRecruits;}
         }
     }
 }

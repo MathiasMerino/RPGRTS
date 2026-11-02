@@ -19,7 +19,7 @@ namespace Aethernia
         private void OnDisable(){if(Flow!=null)Flow.Started-=Reconcile;Clear();}
         private void Clear(){foreach(var u in units.Values)if(u!=null){u.gameObject.SetActive(false);Destroy(u.gameObject);}units.Clear();}
         public bool Recruit(string role)
-        {var ok=AtCamp&&ExpeditionOperations.Recruit(Flow.Session.State,Rules,Roles,role);Flow.Session.Say(ok?"Compañero incorporado al grupo.":"No puedes incorporar: campamento, coste5oro/2alimento, rol único y máximo3.");if(ok)Reconcile();return ok;}
+        {var ok=AtCamp&&ExpeditionOperations.Recruit(Flow.Session.State,Rules,Roles,role);Flow.Session.Say(ok?"Compañero incorporado al grupo.":"No puedes incorporar: comprueba campamento, coste por rol, alimento2, rol único y máximo3.");if(ok)Reconcile();return ok;}
         public bool SetParty(string id,bool active)
         {var ok=AtCamp&&ExpeditionOperations.SetParty(Flow.Session.State,Rules,id,active);if(ok)Reconcile();return ok;}
         public void Reconcile()

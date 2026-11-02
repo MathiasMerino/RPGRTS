@@ -40,6 +40,7 @@ namespace Aethernia
             if(LegacyProbe){Front.Hide();IsPlaying=true;return;}
             var index=Array.IndexOf(args,"-aetherniaDemoSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaProgressionSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaSave");
             if(index>=0&&index+1<args.Length)SlotPath=args[index+1];
             Director.SavePathOverride=SlotPath;ShowMain();
@@ -105,15 +106,16 @@ namespace Aethernia
             if(Session.State.Demo==null||Session.State.Demo.Chapter!=DemoChapter.FirstCombat)return false;
             return Director.Encounter.BeginAt(Director.Hero.transform.position+Vector3.left*3,EncounterSeed);
         }
+        private void PrepareRetry(){if(Session.Rules.Progression!=null)Session.State.Health=Session.HeroProfile.Health;else Session.SelectClass(Session.State.ClassId);}
         public void RetryFirstCombat()
         {
-            Director.Execute("explore");Session.SelectClass(Session.State.ClassId);
+            Director.Execute("explore");PrepareRetry();
             Director.Hero.Warp(new Vector3(-10,0,1.4f));ActivateGame();BeginFirstCombat();
         }
         public void RetryCurrentEncounter()
         {
             if(Director.Rts.IncludesHero&&!Director.Rts.Active)
-            {Director.Execute("explore");Session.SelectClass(Session.State.ClassId);Resume();BeginPatrol();}
+            {Director.Execute("explore");PrepareRetry();Resume();BeginPatrol();}
             else RetryFirstCombat();
         }
         private bool? Interact(string id,string title)

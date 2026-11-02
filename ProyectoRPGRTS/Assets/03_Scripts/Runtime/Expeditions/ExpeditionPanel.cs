@@ -32,10 +32,10 @@ namespace Aethernia
             summary=ui.Text(panel,"State","",16,104,848,208,18);
             var i=0;foreach(var role in Party.Roles.Roles){var id=role.Id;Add(panel,"companion-"+id,"Incorporar "+role.Title,16+i*284,324,272,()=>Party.Recruit(id));i++;}
             for(i=0;i<3;i++){var index=i;Add(panel,"toggle-party-"+i,"Grupo / reserva "+(i+1),16+i*284,374,272,()=>ToggleCompanion(index));}
-            for(i=0;i<6;i++){var index=i;Add(panel,"army-"+i,"Unidad "+(i+1),16+(i%3)*284,324+(i/3)*50,272,()=>ToggleArmy(index));}
+            for(i=0;i<6;i++){var index=i;var advanced=Flow.Session.Rules.Progression!=null;Add(panel,"army-"+i,"Unidad "+(i+1),16+(i%3)*284,324+(i/3)*50,advanced?178:272,()=>ToggleArmy(index));if(advanced)Add(panel,"train-"+i,"Mejorar",200+(i%3)*284,324+(i/3)*50,88,()=>Train(index));}
             Add(panel,"march-crossing","Marchar al paso",16,324,272,()=>{Close();Territory.March("crossing");});Add(panel,"march-outpost","Marchar al puesto",300,324,272,()=>{Close();Territory.March("outpost");});
             Add(panel,"all-army","Preparar todo el ejército",584,324,280,()=>{foreach(var r in Flow.Session.State.Army)Territory.SelectSoldier(r.Id,true);});
-            ui.Text(panel,"Guide","Grupo:5oro/2alimento por rol único. Retirar conserva identidad/salud en reserva.\nWASD explora; E en entrada/encuentros/objetivo/salida. Descanso recupera4PV en10s.\nEjército se recluta desde Administrar campamento/cuartel; capacidad6 separada del grupo3.",16,432,848,62,16);
+            ui.Text(panel,"Guide",Flow.Session.Rules.Progression!=null?"Grupo: espada6/luchador5/arco7oro +2alimento. Un rol por compañero, máximo3.\nEntrenar ejército:8oro/3madera, cuartel+taller2; máximo6reclutas, sin curación.\nWASD/E:explorar/interactuar. Descanso4PV/10s. Retirar conserva identidad y salud.":"Grupo:5oro/2alimento por rol único. Reserva conserva identidad y salud.\nWASD explora; E interactúa. Descanso recupera4PV en10s.\nEjército requiere cuartel; capacidad6 separada del grupo3.",16,432,848,62,16);
             var combat=DemoWidgets.Rect(root.transform,"Group turn interface",920,92,344,500);groupCombat=combat.gameObject;ui.Surface(combat,new Color(.04f,.045f,.045f,1));
             combatText=ui.Text(combat,"Initiative and health","",16,12,312,280,16);
             Add(combat,"target-0","Guardián1",16,300,148,()=>Flow.Director.Encounter.SelectGroupTarget("enemy-0"));Add(combat,"target-1","Guardián2",180,300,148,()=>Flow.Director.Encounter.SelectGroupTarget("enemy-1"));
@@ -47,6 +47,7 @@ namespace Aethernia
         public void Open(){if(!Flow.IsPlaying||Flow.Session.Mode!=PrototypeMode.Exploration)return;Flow.ExistingHud.ClosePanels();Flow.Director.Hero.Stop();window.SetActive(true);Flow.Session.WorldUiOpen=true;}
         public void Close(){if(window!=null)window.SetActive(false);Flow.Session.WorldUiOpen=false;}
         private void ToggleCompanion(int i){var list=Flow.Session.State.Companions;if(i<list.Count)Party.SetParty(list[i].Id,!list[i].InParty);}
+        public bool Train(int i){var s=Flow.Session.State;var ok=Party.AtCamp&&!Flow.Director.IsBusy&&!Flow.Session.Paused&&i>=0&&i<s.Army.Count&&TroopProgression.Train(s,s.Army[i]);Flow.Session.Say(ok?"Unidad entrenada a nivel2: +2PV máximos y +1daño, sin curación.":"Entrenar requiere campamento, taller2, cuartel,8oro/3madera y unidad nivel1.");return ok;}
         private void ToggleArmy(int i){var s=Flow.Session.State;if(i<s.Army.Count)Territory.SelectSoldier(s.Army[i].Id,!s.ArmySelection.Contains(s.Army[i].Id));}
         private void Update(){if(Keyboard.current?.escapeKey.wasPressedThisFrame==true)Close();}
         private void OnDisable(){if(Flow!=null)Flow.Session.WorldUiOpen=false;}
@@ -59,16 +60,17 @@ namespace Aethernia
             if(window.activeSelf)
             {
                 var text=new StringBuilder();text.AppendLine("Oro "+s.Gold+" · Madera "+s.Wood+" · Alimento "+s.Food+" · Héroe "+s.Health+"PV");
-                if(tab==0){text.AppendLine("GRUPO · "+s.Companions.Count(c=>c.InParty)+"/3 acompañantes, más el héroe");foreach(var c in s.Companions){var p=Party.Roles.Find(c.Role);text.AppendLine(p.Title+" · "+c.Id.Substring(0,6)+" · "+c.Health+"/"+p.Health+"PV · daño"+p.Damage+" · alcance"+p.Range+"m · "+(c.InParty?"grupo":"reserva"));}text.AppendLine("Ruinas: entrada al oeste del campamento(4,−11). Dos encuentros y objetivo final.\nFondos iniciales escasos: cofre del poblado o misión El cargamento perdido.");}
-                if(tab==1){text.AppendLine("EJÉRCITO · "+s.ArmySelection.Count+"/6 preparados; compañeros RPG no se despliegan");for(var i=0;i<s.Army.Count;i++)text.AppendLine((s.ArmySelection.Contains(s.Army[i].Id)?"[X] ":"[ ] ")+Party.Roles.Find(s.Army[i].Role).Title+" · "+s.Army[i].Health+"PV · "+s.Army[i].Id.Substring(0,6));}
+                if(tab==0){text.AppendLine("GRUPO · "+s.Companions.Count(c=>c.InParty)+"/3 acompañantes, más el héroe");foreach(var c in s.Companions){var p=TroopProgression.Profile(c,Party.Roles.Find(c.Role));text.AppendLine(p.Title+" Nv"+c.Level+" XP"+c.Experience+"/8"+" · "+c.Id.Substring(0,6)+" · "+c.Health+"/"+p.Health+"PV · daño"+p.Damage+" · alcance"+p.Range+"m · "+(c.InParty?"grupo":"reserva"));}text.AppendLine("Ruinas: entrada al oeste del campamento(4,−11). Dos encuentros y objetivo final.\nFondos iniciales escasos: cofre del poblado o misión El cargamento perdido.");}
+                if(tab==1){text.AppendLine("EJÉRCITO · "+s.ArmySelection.Count+"/6 preparados; compañeros RPG no se despliegan");for(var i=0;i<s.Army.Count;i++)text.AppendLine((s.ArmySelection.Contains(s.Army[i].Id)?"[X] ":"[ ] ")+Party.Roles.Find(s.Army[i].Role).Title+" · "+s.Army[i].Health+"/"+TroopProgression.Profile(s.Army[i],Party.Roles.Find(s.Army[i].Role)).Health+"PV · Nv"+s.Army[i].Level+" · daño"+TroopProgression.Profile(s.Army[i],Party.Roles.Find(s.Army[i].Role)).Damage);}
                 if(tab==2){text.AppendLine("Raza: "+(Flow.Content.Lineages.FirstOrDefault(l=>l.Id==s.RaceId)?.Title??s.RaceId)+" · Cultura: "+(string.IsNullOrEmpty(s.CultureId)?"sin asignar":s.CultureId)+" · Reino: "+(string.IsNullOrEmpty(s.KingdomId)?"sin asignar":s.KingdomId));text.AppendLine("Facción voluntaria: "+Territory.FactionTitle(s.FactionId));foreach(var t in s.Territories)text.AppendLine(Territory.Rules.Find(t.Id).Title+" · "+Territory.FactionTitle(t.Owner)+" · "+(t.Secured?"asegurado":"sin asegurar"));text.AppendLine("Relaciones A:"+s.ReputationA+" B:"+s.ReputationB+" · paso/puesto: +1madera por ciclo cada uno.\n"+Territory.LastResult);}
                 summary.text=text.ToString();
                 foreach(var id in controls.Keys.Where(k=>k.StartsWith("companion-")||k.StartsWith("toggle-party-")))controls[id].gameObject.SetActive(tab==0);
                 foreach(var id in controls.Keys.Where(k=>k.StartsWith("army-")&&k!="army-tab"))controls[id].gameObject.SetActive(tab==1);
                 controls["march-crossing"].gameObject.SetActive(tab==2);controls["march-outpost"].gameObject.SetActive(tab==2);controls["all-army"].gameObject.SetActive(tab==2);
-                foreach(var role in Party.Roles.Roles)controls["companion-"+role.Id].interactable=Party.AtCamp&&s.Companions.Count<Party.Rules.MaximumCompanions&&!s.Companions.Any(c=>c.Role==role.Id)&&s.Gold>=Party.Rules.RecruitGold&&s.Food>=Party.Rules.RecruitFood;
+                foreach(var role in Party.Roles.Roles)controls["companion-"+role.Id].interactable=Party.AtCamp&&s.Companions.Count<Party.Rules.MaximumCompanions&&!s.Companions.Any(c=>c.Role==role.Id)&&s.Gold>=Party.Rules.GoldCost(role.Id)&&s.Food>=Party.Rules.FoodCost(role.Id);
                 for(var i=0;i<3;i++)controls["toggle-party-"+i].interactable=Party.AtCamp&&i<s.Companions.Count&&(s.Companions[i].InParty||s.Companions[i].Health>0);
                 for(var i=0;i<6;i++){var b=controls["army-"+i];b.interactable=i<s.Army.Count;b.GetComponentInChildren<TMP_Text>().text=i<s.Army.Count?(s.ArmySelection.Contains(s.Army[i].Id)?"[X] ":"[ ] ")+Party.Roles.Find(s.Army[i].Role).Title:"Sin recluta";}
+                for(var i=0;i<6;i++)if(controls.TryGetValue("train-"+i,out var train)){train.gameObject.SetActive(tab==1);train.interactable=Party.AtCamp&&i<s.Army.Count&&TroopProgression.CanTrain(s,s.Army[i]);}
                 controls["rest"].interactable=Party.AtCamp&&!Dungeon.Resting;
                 controls["all-army"].interactable=s.Army.Count>0;
             }
@@ -76,7 +78,7 @@ namespace Aethernia
             if(groupCombat.activeSelf)
             {
                 var g=e.Group;var t=new StringBuilder("RUINAS · RONDA "+g.Round+"\n"+(g.Finished?(g.Won?"VICTORIA":"DERROTA · retirada disponible"):(g.Current.Hostile?"ENEMIGO ACTUANDO":"TURNO: "+g.Current.Title))+"\n");
-                foreach(var a in g.Members)t.AppendLine((a==g.Current?"> ":"  ")+a.Title.Replace("Guardián del Umbral ","Guardián ")+" · "+a.Health+"/"+a.Profile.Health+"PV · ini"+a.Initiative+(a.Health<=0?" · KO":""));t.AppendLine("Objetivo: "+e.GroupTarget+"\nMovimiento "+g.MovementRemaining.ToString("0.#")+"m · "+(g.ActionAvailable?"acción disponible":"acción usada"));combatText.text=t.ToString();
+                foreach(var a in g.Members)t.AppendLine((a==g.Current?"> ":"  ")+a.Title.Replace("Guardián del Umbral ","Guardián ")+" · "+a.Health+"/"+a.Profile.Health+"PV · ini"+a.Initiative+(a.Health<=0?" · KO":""));t.AppendLine("Objetivo: "+(g.Members.FirstOrDefault(a=>a.Id==e.GroupTarget)?.Title??"sin objetivo")+"\nMovimiento "+g.MovementRemaining.ToString("0.#")+"m · "+(g.ActionAvailable?"acción disponible":"acción usada"));combatText.text=t.ToString();
                 foreach(var id in new[]{"group-approach","group-attack","group-guard","group-recover","group-end","target-0","target-1"})controls[id].interactable=!g.Finished&&!g.Current.Hostile;
                 var ready=!g.Finished&&!g.Current.Hostile&&!e.GroupUnit(g.Current.Id).IsMoving;
                 controls["group-approach"].interactable=ready&&g.MovementRemaining>.05f;

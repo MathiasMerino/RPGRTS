@@ -615,3 +615,7 @@ Tres técnicas con identificador/configuración, daño real,1acción/foco limita
 ## 2026-11-02 — E18-GH equipo y botín
 
 Nueve definiciones configurables compartidas, slots arma/armadura/accesorio, bonos reales separados y visuales E08 reutilizados. Botínruinas mineral+talismán pendiente/único seguro al llenarbolsa8. Forja8oro+mineral/taller2, chaleco8oro4madera y venta de excedentes colectivos5madera5oro en campamento; sin saldos negativos/arbitraje.14/14core+1/1venta+1/1UIpor3clases720/1080/save/Continue, seisPNGinspeccionadas. Fixtures reales E17 incluidas con origenSHA; no XP/recursos regalados. UIcaption desbordada y prueba sinfondos corregidas con transacción real. Continúan tropas/compañeros/balance/ciclo nuevo.
+
+## 2026-11-02 — E18 IJK/LN en validación
+
+Roles compartidos con costes distintos, progreso de participantes RPG y entrenamiento pagado del ejército; guardado aditivo. Cuatro pruebas puras militares y cuatro de balance PASS;720simulaciones separadas de jugabilidad. UI militar sigue fallando en auxiliar de localización, se conservanXML y no se cierra tarea. Ficha corregida para textoRTS3s, repeticiónUI tresclases720/1080PASS. Reintento tras derrota separado del bloqueo de cambio de clase, panelgrupo/XP integrados; validación nativa pendiente. Preparado compositorQA que reutiliza recorridos reales conXP/quest/forja/entrenamiento, sin premios artificiales.

@@ -17,6 +17,7 @@ namespace Aethernia
         {
             var args=Environment.GetCommandLineArgs();var index=Array.IndexOf(args,"-aetherniaDemoSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaProgressionSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaAlphaBenchmark");
             DemoPreferences.SessionStorageKey=index>=0&&index+1<args.Length?"Aethernia.Tests.NativeOptions."+args[index+1]:null;
         }
@@ -54,6 +55,7 @@ namespace Aethernia
             // La salida pasa por el botón que usa el jugador. El comprobante se escribe antes de cerrar.
             Click("quit");
         }
+        public IEnumerator Validate(string path,string id,bool resume){slot=path;return Run(id,resume);}
         private IEnumerator Run(string id,bool resume)
         {
             yield return null;yield return null;flow=FindAnyObjectByType<DemoFlow>();Require(flow!=null,"demo scene");d=flow.Director;
@@ -90,6 +92,8 @@ namespace Aethernia
                 while(d.Encounter.Battle!=null&&d.Encounter.Battle.Phase==TurnPhase.Enemy&&Time.realtimeSinceStartup<limit)yield return null;
             }
             Require(flow.Session.State.Demo.Chapter==DemoChapter.RoadToRts,"actual RPG victory");
+            if(flow.Session.Rules.Progression!=null)
+            {Require(flow.Session.State.HeroLevel==2&&flow.Session.State.Experience==12,"real first victory XP and level2");flow.ExistingHud.SelectPage(ExplorationPage.Character);yield return null;var sheet=flow.GetComponent<ProgressionPanelView>();Require(sheet.Discipline.interactable,"available skill choice");sheet.Discipline.onClick.Invoke();Require(ProgressionOperations.Rank(flow.Session.State,"discipline")==1,"persistent discipline choice");yield return Capture("Level2");flow.ExistingHud.ClosePanels();}
             var keyboard=InputSystem.AddDevice<Keyboard>();var background=InputSystem.settings.backgroundBehavior;
             try
             {
@@ -106,7 +110,7 @@ namespace Aethernia
             rts.SelectArea(Camera.main,new Rect(0,0,Screen.width,Screen.height),false);Require(rts.SelectedAllies==7,"rectangle selection");Require(rts.HeroAction("guard"),"real hero guard");Require(!rts.HeroAction("guard"),"cooldown rejection");
             Require(rts.Command(new Vector3(-10,0,13),null,false),"real move order");yield return Wait(.15f);
             var enemy=units.First(x=>x.Team==1).Unit;Require(rts.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false),"real attack order");yield return Wait(.4f);yield return Capture("Rts");
-            var deadline=Time.realtimeSinceStartup+60;while(rts.Active&&Time.realtimeSinceStartup<deadline){if(flow.Session.State.Health<flow.Session.Rules.Find(id).Health)rts.HeroAction("recover");yield return null;}
+            var deadline=Time.realtimeSinceStartup+60;while(rts.Active&&Time.realtimeSinceStartup<deadline){if(flow.Session.State.Health<flow.Session.HeroProfile.Health)rts.HeroAction("recover");if(flow.Session.Rules.Progression!=null)rts.HeroAction("technique");yield return null;}
             Require(flow.Session.State.Demo.Chapter==DemoChapter.Settlement&&hero.gameObject.activeInHierarchy,"actual RTS victory/camp");
             var panel=flow.GetComponent<DemoSettlementPanel>();Require(panel.SelectBlueprint("townhall")&&d.Construction.Place(new Vector3(12,0,-8)),"paid center placement");
             Require(panel.SelectBlueprint("workshop")&&d.Construction.Place(new Vector3(8,0,-13)),"paid workshop placement");yield return null;

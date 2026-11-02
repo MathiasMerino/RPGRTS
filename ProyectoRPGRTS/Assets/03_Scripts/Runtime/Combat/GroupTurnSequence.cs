@@ -40,6 +40,7 @@ namespace Aethernia
         }
         public bool Guard()
         {if(Finished||!ActionAvailable)return false;Current.Guarding=true;ActionAvailable=false;LastResolution=new CombatResolution(++sequence,Current.Hostile?CombatSide.Enemy:CombatSide.Player,CombatActionKind.Guard);return true;}
+        public bool TryEnemyRecovery(bool enabled)=>enabled&&Current.Hostile&&Current.Health*2<=Current.Profile.Health&&Recover();
         public bool Recover()
         {
             if(Finished||!ActionAvailable||Current.Recovered)return false;var amount=HeroActionRules.Recovery(Current.Health,Current.Profile.Health);if(amount<=0)return false;

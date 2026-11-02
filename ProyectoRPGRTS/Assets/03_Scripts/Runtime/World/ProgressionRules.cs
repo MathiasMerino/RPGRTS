@@ -19,6 +19,8 @@ namespace Aethernia
     public sealed class ProgressionRules:ScriptableObject
     {
         public ItemCatalog Items;
+        public RtsDemoRules Units;
+        public int DungeonHealthBonus=4,DungeonDamageBonus=1;
         public ItemStack[] DungeonLoot={new ItemStack("forge-ore",1),new ItemStack("pilgrim-charm",1)};
         public int[] ExperienceThresholds={0,12,32,60};
         public int MaximumSkillRank=2,FocusCapacity=2,TechniqueCost=1;

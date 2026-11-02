@@ -22,6 +22,7 @@ namespace Aethernia
     {
         public string Id,Role;
         public int Health=10;
+        public int Level=1,Experience;
         public bool InParty;
     }
     [Serializable] public sealed class PrototypeState

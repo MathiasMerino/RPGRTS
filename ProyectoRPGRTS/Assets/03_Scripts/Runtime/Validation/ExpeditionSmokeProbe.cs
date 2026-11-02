@@ -36,6 +36,7 @@ namespace Aethernia
             File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"PASS: "+(resume?"nuevo proceso conserva héroe, grupo, reserva, ejército, territorios, recursos y recompensas sin duplicar":"partida E13 real -> reclutamiento pagado -> seguimiento/WASD -> dos victorias RPG -> recompensa única -> granja/reclutas pagados -> selección/marcha -> conquista RTS real -> producción online -> guardado")+"; class="+S.ClassId+"; seconds="+(Time.realtimeSinceStartup-started).ToString("F2"));
             ClickFront("quit");
         }
+        public IEnumerator Validate(string path,bool continued){slot=path;resume=continued;return Run();}
         private IEnumerator Run()
         {
             yield return null;yield return null;flow=FindAnyObjectByType<DemoFlow>();party=FindAnyObjectByType<PartyWorld>();dungeon=FindAnyObjectByType<DungeonExpedition>();territory=FindAnyObjectByType<TerritoryCampaign>();panel=FindAnyObjectByType<ExpeditionPanel>();
@@ -54,6 +55,7 @@ namespace Aethernia
             // El jugador puede pausar el taller para reservar alimento para compañeros.
             var settlement=flow.GetComponent<DemoSettlementPanel>();Require(settlement.SelectBuilding(1)&&settlement.ToggleProduction(),"pause existing workshop through camp action");
             yield return Move(new Vector3(-3.4f,0,-5));Require(Find("reference-chest").TryInteract(D.Hero,flow.Session),"actual village chest funds");
+            if(flow.Session.Rules.Progression!=null){yield return Move(new Vector3(9,0,-10));yield return HealAtCamp();yield return CargoQuest();}
             yield return Move(new Vector3(9,0,-10));panel.Open();yield return null;
             foreach(var role in party.Roles.Roles){Click("companion-"+role.Id);yield return null;}
             Require(S.Companions.Count==3&&party.Units.Count==3,"three paid unique companions");yield return Capture("Recruitment");
@@ -64,17 +66,19 @@ namespace Aethernia
             yield return Move(new Vector3(76,0,-2));yield return Wait(.6f);Require(Find("umbral-battle-1").TryInteract(D.Hero,flow.Session),"first actual encounter");yield return Capture("GroupCombat");yield return Fight();
             yield return Move(new Vector3(84,0,-2));yield return Wait(.6f);Require(Find("umbral-battle-2").TryInteract(D.Hero,flow.Session),"second actual encounter");yield return Fight();
             yield return Move(new Vector3(89,0,3));var goldBefore=S.Gold;Require(Find("umbral-objective").TryInteract(D.Hero,flow.Session)&&S.Gold==goldBefore+30,"real objective reward");Require(!Find("umbral-objective").TryInteract(D.Hero,flow.Session),"unique reward");yield return Capture("Reward");
+            if(flow.Session.Rules.Progression!=null){Require(S.Companions.All(c=>c.Level==2&&c.Experience==8),"participating companions earn two real guardianies");Require(S.HeroLevel==4&&S.Experience==60,"bounded real progression cap");}
             yield return Move(new Vector3(71,0,-4));Require(Find("umbral-exit").TryInteract(D.Hero,flow.Session),"exit");yield return Move(new Vector3(9,0,-10));yield return HealAtCamp();
             Require(settlement.SelectBlueprint("farm")&&D.Construction.Place(new Vector3(11.5f,0,-14)),"farm paid with expedition resources");Require(settlement.SelectBuilding(S.Buildings.Count-1)&&settlement.ToggleProduction(),"activate farm");
             foreach(var role in party.Roles.Roles)Require(settlement.Recruit(role.Id),"paid military recruit "+role.Id);D.Execute("explore");yield return null;
+            if(flow.Session.Rules.Progression!=null)yield return UpgradeEquipmentAndArmy(settlement);
             panel.Open();Click("army-tab");yield return null;for(var i=0;i<S.Army.Count;i++){Click("army-"+i);yield return null;}
             Require(S.ArmySelection.Count==4&&S.Companions.Count==3,"separate persistent rosters");yield return Capture("Army");Click("territory-tab");yield return null;yield return Capture("TerritoriesBefore");panel.Close();
             Require(territory.March("crossing"),"actual march neutral");yield return Arrive(D.Hero);Require(Find("territory-crossing").TryInteract(D.Hero,flow.Session),"claim neutral on arrival");
             Require(territory.March("outpost"),"actual march enemy");yield return Arrive(D.Hero);Require(Find("territory-outpost").TryInteract(D.Hero,flow.Session),"real conquest start");
-            var rts=D.Rts;var units=new List<RtsUnitStatus>();rts.CopyStatus(units);Require(rts.ContextId=="conquest-outpost"&&units.Count==8&&units.Single(u=>u.Hero).Unit==D.Hero,"same hero + four paid soldiers vs three defenders");
+            var rts=D.Rts;var units=new List<RtsUnitStatus>();rts.CopyStatus(units);Require(rts.ContextId=="conquest-outpost"&&units.Count==5+territory.Rules.OutpostDefenders&&units.Single(u=>u.Hero).Unit==D.Hero,"same hero + four paid soldiers vs three defenders");
             rts.SelectArea(Camera.main,new Rect(0,0,Screen.width,Screen.height),false);Require(rts.SelectedAllies==5,"native multiple selection");yield return Capture("Selection");
             var foe=units.First(u=>u.Team==1).Unit;Require(rts.Command(foe.transform.position,foe.GetComponentInChildren<Collider>(),false),"attack order");yield return Wait(.5f);yield return Capture("RtsBattle");
-            var deadline=Time.realtimeSinceStartup+100;while(rts.Active&&Time.realtimeSinceStartup<deadline){if(S.Health<flow.Session.Rules.Find(S.ClassId).Health)rts.HeroAction("recover");yield return null;}
+            var deadline=Time.realtimeSinceStartup+100;while(rts.Active&&Time.realtimeSinceStartup<deadline){if(S.Health<flow.Session.HeroProfile.Health)rts.HeroAction("recover");if(flow.Session.Rules.Progression!=null)rts.HeroAction("technique");yield return null;}
             Require(!rts.Active&&S.Territories.Single(t=>t.Id=="outpost").Owner==S.FactionId&&S.Health>0,"real conquest victory");
             Require(S.Companions.Count==3&&S.Facts.Contains("umbral-outpost-conquered"),"companions not consumed by RTS");yield return Capture("Conquest");
             var wood=S.Wood;var cycle=S.ProductionCycle;deadline=Time.realtimeSinceStartup+12;while(S.ProductionCycle==cycle&&Time.realtimeSinceStartup<deadline)yield return null;Require(S.Wood==wood+2,"two territorial online bonuses, paused workshop");
@@ -83,11 +87,28 @@ namespace Aethernia
             yield return Move(new Vector3(9,0,-10));Require(party.SetParty(first,false),"reserve before restart");Require(D.Save(slot),"atomic final save");
             File.WriteAllText(slot+".identity.json",JsonUtility.ToJson(S,true));Require(flow.ReturnToTitle(),"save/title");yield return Capture("Saved");
         }
+        private IEnumerator CargoQuest()
+        {
+            var quest=FindAnyObjectByType<LostCargoController>();var view=quest.GetComponent<LostCargoView>();quest.EncounterSeed=42;
+            yield return Move(quest.Npc.transform.position+Vector3.back*1.1f);Require(quest.Npc.TryInteract(D.Hero,flow.Session),"NPC conversation");view.AcceptButton.onClick.Invoke();Require(LostCargoQuest.Stage(S)==CargoQuestStage.Accepted,"accept through dialogue");
+            yield return Move(quest.Cargo.transform.position+Vector3.back*1.6f);Require(quest.Cargo.TryInteract(D.Hero,flow.Session),"cargo encounter");var until=Time.realtimeSinceStartup+90;
+            while(D.Encounter.Battle!=null&&!D.Encounter.Battle.Finished&&Time.realtimeSinceStartup<until)
+            {var b=D.Encounter.Battle;if(b.Phase==TurnPhase.Enemy){yield return null;continue;}D.Encounter.Approach();yield return Arrive(D.Hero);if(b.HeroHealth<8&&!b.RecoveryUsed)D.Encounter.Recover();else if(!D.Encounter.Technique())D.Encounter.Attack();if(D.Encounter.Battle!=null&&!b.Finished)D.Execute("end");yield return null;}
+            Require(LostCargoQuest.Stage(S)==CargoQuestStage.Recovered,"actual cargo victory");yield return Move(quest.Npc.transform.position+Vector3.back*1.1f);Require(quest.Npc.TryInteract(D.Hero,flow.Session),"return to NPC");view.ClaimButton.onClick.Invoke();Require(LostCargoQuest.Stage(S)==CargoQuestStage.Completed&&S.Facts.Contains("xp-e18:lost-cargo-completed"),"actual quest reward and XP");view.CloseDialogue();yield return Capture("Quest");
+        }
+        private IEnumerator UpgradeEquipmentAndArmy(DemoSettlementPanel camp)
+        {
+            Require(camp.SelectBuilding(S.Buildings.FindIndex(b=>b.Id=="workshop"))&&camp.Improve(),"paid workshop2");
+            Require(camp.SellWood(),"territorial materials finance upgrades");
+            var inventory=flow.GetComponent<ProgressionInventoryView>();flow.ExistingHud.SelectPage(ExplorationPage.Inventory);yield return null;Require(inventory.Controls["loot"].interactable,"pending real dungeon loot");inventory.Controls["loot"].onClick.Invoke();Require(EquipmentOperations.Owns(S,"forge-ore")&&EquipmentOperations.Owns(S,"pilgrim-charm"),"loot delivery");
+            inventory.Select("pilgrim-charm");yield return null;inventory.Controls["equip"].onClick.Invoke();inventory.Controls["forge"].onClick.Invoke();var weapon=EquipmentOperations.AdvancedWeapon(S.ClassId);Require(EquipmentOperations.Owns(S,weapon)&&!EquipmentOperations.Owns(S,"forge-ore"),"paid class weapon forge");inventory.Select(weapon);yield return null;inventory.Controls["equip"].onClick.Invoke();Require(S.Weapon==weapon&&S.Accessory=="pilgrim-charm","new real equipment");yield return Capture("Equipment");flow.ExistingHud.ClosePanels();
+            panel.Open();Click("army-tab");yield return null;Require(panel.Controls["train-0"].interactable,"training requirements and cost available");panel.Controls["train-0"].onClick.Invoke();Require(S.Army[0].Level==2,"same army soldier trained");yield return Capture("Training");panel.Close();
+        }
         private IEnumerator HealAtCamp()
         {
-            var attempts=0;while((S.Health<flow.Session.Rules.Find(S.ClassId).Health||S.Companions.Any(c=>c.Health<party.Roles.Find(c.Role).Health))&&attempts++<8)
+            var attempts=0;while((S.Health<flow.Session.HeroProfile.Health||S.Companions.Any(c=>c.Health<TroopProgression.Profile(c,party.Roles.Find(c.Role)).Health))&&attempts++<8)
             {Require(dungeon.Rest(),"legal camp rest");while(dungeon.Resting)yield return null;}
-            Require(S.Health==flow.Session.Rules.Find(S.ClassId).Health,"rest completed with world time");
+            Require(S.Health==flow.Session.HeroProfile.Health,"rest completed with world time");
         }
         private IEnumerator Wasd()
         {
@@ -102,7 +123,7 @@ namespace Aethernia
             {
                 var g=e.Group;if(g.Current.Hostile){yield return null;continue;}var u=e.GroupUnit(g.Current.Id);if(u.IsMoving){yield return null;continue;}
                 var target=g.Members.Where(a=>a.Hostile&&a.Health>0).OrderBy(a=>Vector3.Distance(u.transform.position,e.GroupUnit(a.Id).transform.position)).First();e.SelectGroupTarget(target.Id);
-                if(g.ActionAvailable){if(g.Current.Health<g.Current.Profile.Health*.5f&&!g.Current.Recovered)e.GroupRecover();else{e.GroupApproach();yield return Arrive(u);if(!e.GroupAttack()&&g.ActionAvailable)e.GroupGuard();}}
+                if(g.ActionAvailable){if(g.Current.Health<g.Current.Profile.Health*.5f&&!g.Current.Recovered)e.GroupRecover();else{e.GroupApproach();yield return Arrive(u);if((!g.Current.Hero||flow.Session.Rules.Progression==null||!e.Technique())&&!e.GroupAttack()&&g.ActionAvailable)e.GroupGuard();}}
                 if(e.GroupActive)e.GroupEnd();yield return null;
             }
             Require(!e.GroupActive&&flow.Session.Mode==PrototypeMode.Exploration,"actual group win");Require(Math.Abs(S.WorldSeconds-clock)<.2,"strategic clock paused in combat");

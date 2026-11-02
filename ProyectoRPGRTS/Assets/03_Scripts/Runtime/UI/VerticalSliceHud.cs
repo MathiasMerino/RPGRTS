@@ -206,9 +206,10 @@ namespace Aethernia
                     }
                 }
                 if(session.Rules.Progression!=null&&(id.StartsWith("class-")||id.StartsWith("item-")||id=="sword"||id=="armour"||id=="ration"||id=="trade"))visible=false;
+                if(session.Rules.Progression!=null&&director.Encounter.InGroup&&(id=="attack"||id=="guard"||id=="recover"||id=="end"||id=="approach"))visible=false;
                 if(id=="technique")
                 {
-                    var skill=session.HeroProfile.Combat;ready=ready&&skill!=null&&skill.TechniqueUnlocked&&director.Encounter.TechniqueFocus>=skill.TechniqueCost;
+                    var skill=session.HeroProfile.Combat;if(director.Encounter.InGroup){var g=director.Encounter.Group;ready=!g.Finished&&g.Current.Hero&&g.ActionAvailable&&!director.Hero.IsMoving;}ready=ready&&skill!=null&&skill.TechniqueUnlocked&&director.Encounter.TechniqueFocus>=skill.TechniqueCost;
                     if(b.Label!=null)b.Label.text=skill==null||!skill.TechniqueUnlocked?"Técnica · Nv2":"Técnica · "+director.Encounter.TechniqueFocus;
                 }
                 b.Button.gameObject.SetActive(visible);b.Button.interactable=ready;

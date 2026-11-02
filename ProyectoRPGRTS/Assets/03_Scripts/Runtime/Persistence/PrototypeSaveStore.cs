@@ -23,8 +23,8 @@ namespace Aethernia
             if (s.Items.Any(i => i == null || !WorldOperations.KnownItem(i.Id) || i.Count <= 0 || i.Count > 8) || s.Items.Sum(i => (long)i.Count) > 8) return false;
             if (s.Items.Select(i => i.Id).Distinct().Count() != s.Items.Count) return false;
             if(!EquipmentOperations.Valid(s,rules))return false;
-            if(s.Army==null||s.Army.Count>6||s.Army.Any(r=>r==null||string.IsNullOrEmpty(r.Id)||r.Id.Length!=32||!r.Id.All(Uri.IsHexDigit)||!SettlementRules.KnownRole(r.Role)||r.Health<=0||r.Health>10)||s.Army.Select(r=>r.Id).Distinct().Count()!=s.Army.Count)return false;
-            if(!ExpeditionOperations.Valid(s))return false;
+            if(s.Army==null||s.Army.Count>6||s.Army.Any(r=>r==null||string.IsNullOrEmpty(r.Id)||r.Id.Length!=32||!r.Id.All(Uri.IsHexDigit)||!SettlementRules.KnownRole(r.Role)||!TroopProgression.Valid(s,r,rules.Progression,true))||s.Army.Select(r=>r.Id).Distinct().Count()!=s.Army.Count)return false;
+            if(!ExpeditionOperations.Valid(s,rules.Progression))return false;
             return s.Buildings.Count <= 32 && s.Buildings.All(b => b != null && SettlementRules.KnownBuilding(b.Id) && (s.Demo!=null||b.Id=="workshop") && b.Level>=1&&b.Level<=2 && Finite(b.Position.x) && Finite(b.Position.y) && Finite(b.Position.z) && Mathf.Abs(b.Position.y) <= 0.2f && Mathf.Abs(b.Position.x) <= 16 && Mathf.Abs(b.Position.z) <= 16);
         }
         private static bool Finite(float f) => !float.IsNaN(f) && !float.IsInfinity(f);
@@ -67,6 +67,7 @@ namespace Aethernia
                     if(candidate.Accessory==null)candidate.Accessory="";
                     if(candidate.Army==null)candidate.Army=new System.Collections.Generic.List<RecruitRecord>();
                     if(candidate.Companions==null)candidate.Companions=new System.Collections.Generic.List<RecruitRecord>();
+                    foreach(var r in candidate.Army.Concat(candidate.Companions))if(r!=null&&r.Level==0&&r.Experience==0)r.Level=1;
                     if(candidate.ArmySelection==null)candidate.ArmySelection=new System.Collections.Generic.List<string>();
                     if(candidate.Territories==null)candidate.Territories=new System.Collections.Generic.List<TerritoryRecord>();
                     if(string.IsNullOrEmpty(candidate.FactionId))candidate.FactionId="player-company";

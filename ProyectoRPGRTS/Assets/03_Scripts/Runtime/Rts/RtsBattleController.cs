@@ -144,7 +144,7 @@ namespace Aethernia
             {
                 var record=roster[i];var role=demoRules.Find(record.Role);if(role==null)continue;
                 var unit=Instantiate(template,reinforcements[i],Quaternion.identity).GetComponent<ExplorationUnit>();unit.name="Recluta "+role.Title;unit.Agent.speed=role.Speed;unit.Select(true);
-                var s=new Soldier{Unit=unit,Team=0,Health=record.Health,Maximum=role.Health,Damage=role.Damage,Range=role.Range,Role=role.Id,RecruitId=record.Id};BuildVisual(s,role);soldiers.Add(s);
+                var s=new Soldier{Unit=unit,Team=0,Health=record.Health,Maximum=TroopProgression.Profile(record,role).Health,Damage=TroopProgression.Profile(record,role).Damage,Range=role.Range,Role=role.Id,RecruitId=record.Id};BuildVisual(s,role);soldiers.Add(s);
             }
             hero.Stop();if(!hero.Warp(at.position)){Clear();session.SetMode(PrototypeMode.Exploration);return false;}
             sharedHero=hero;heroRecoveryUsed=false;sequence=0;hero.Select(true);

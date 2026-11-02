@@ -45,13 +45,13 @@ namespace Aethernia
             foreach(var c in session.State.Companions.Where(x=>x.InParty&&x.Health>0))
             {
                 if(!partyWorld.Units.TryGetValue(c.Id,out var unit)||Vector3.Distance(unit.transform.position,hero.transform.position)>12)continue;
-                unit.Stop();groupUnits.Add(c.Id,unit);members.Add(new TacticalCombatant{Id=c.Id,Title=partyWorld.Roles.Find(c.Role).Title,Profile=ExpeditionRules.RoleProfile(partyWorld.Roles.Find(c.Role)),ReadHealth=()=>c.Health,WriteHealth=value=>c.Health=value});
+                unit.Stop();groupUnits.Add(c.Id,unit);members.Add(new TacticalCombatant{Id=c.Id,Title=partyWorld.Roles.Find(c.Role).Title,Profile=TroopProgression.Profile(c,partyWorld.Roles.Find(c.Role)),ReadHealth=()=>c.Health,WriteHealth=value=>c.Health=value});
             }
             for(var i=0;i<2;i++)
             {
-                var role=partyWorld.Roles.Find(i==0?"swordsman":"archer");var record=new RecruitRecord{Health=role.Health};var unit=Instantiate(enemyPrefab,places[i],Quaternion.identity).GetComponent<ExplorationUnit>();unit.name="Guardián del Umbral "+i;
+                var role=partyWorld.Roles.Find(i==0?"swordsman":"archer");var enemyProfile=ExpeditionRules.RoleProfile(role);if(session.Rules.Progression!=null){enemyProfile.Health+=session.Rules.Progression.DungeonHealthBonus;enemyProfile.Damage+=session.Rules.Progression.DungeonDamageBonus;}var record=new RecruitRecord{Health=enemyProfile.Health};var unit=Instantiate(enemyPrefab,places[i],Quaternion.identity).GetComponent<ExplorationUnit>();unit.name="Guardián del Umbral "+(i+1);
                 unit.Agent.speed=role.Speed;SupportVisualFactory.Attach(unit,role,partyWorld.Flow.Front.Catalog,groupFeedback.SharedEffectMaterial);groupEnemies.Add(unit);var id="enemy-"+i;groupUnits.Add(id,unit);
-                members.Add(new TacticalCombatant{Id=id,Title=unit.name,Hostile=true,Profile=ExpeditionRules.RoleProfile(role),ReadHealth=()=>record.Health,WriteHealth=value=>record.Health=value});
+                members.Add(new TacticalCombatant{Id=id,Title=unit.name,Hostile=true,Profile=enemyProfile,ReadHealth=()=>record.Health,WriteHealth=value=>record.Health=value});
             }
             groupTarget="enemy-0";groupReported=false;groupBattle=TurnBattle.CreateGroup(members,seed==0?Environment.TickCount:seed);hero.GetComponent<CharacterCombatAnimationPresenter>().ExternallyControlled=true;
             session.SetMode(PrototypeMode.TurnCombat);GroupRefresh();return true;
@@ -125,7 +125,9 @@ namespace Aethernia
         {
             yield return new WaitForSeconds(.55f);
             if(!GroupActive){groupRoutine=null;yield break;}
-            var source=Group.Current;var u=GroupUnit(source.Id);var target=Group.Members.Where(a=>a.Hostile!=source.Hostile&&a.Health>0).OrderBy(a=>Vector3.Distance(u.transform.position,GroupUnit(a.Id).transform.position)).First();var v=GroupUnit(target.Id);
+            var source=Group.Current;var u=GroupUnit(source.Id);
+            if(Group.TryEnemyRecovery(session.Rules.Progression!=null)){GroupPresent(source,source);yield return new WaitForSeconds(.45f);groupRoutine=null;if(GroupActive)Group.EndTurn();GroupRefresh();yield break;}
+            var target=Group.Members.Where(a=>a.Hostile!=source.Hostile&&a.Health>0).OrderBy(a=>Vector3.Distance(u.transform.position,GroupUnit(a.Id).transform.position)).First();var v=GroupUnit(target.Id);
             if(Vector3.Distance(u.transform.position,v.transform.position)>source.Profile.Range||!HasClearAttackLine(u,v))
             {
                 var delta=v.transform.position-u.transform.position;delta.y=0;
@@ -133,6 +135,7 @@ namespace Aethernia
                 if(u.TryMoveTo(desired,3)){var until=Time.time+4;while(u.IsMoving&&Time.time<until)yield return null;u.Stop();}
             }
             if(Group.Attack(target,Vector3.Distance(u.transform.position,v.transform.position),HasClearAttackLine(u,v)))GroupPresent(source,target);
+            else if(session.Rules.Progression!=null&&Group.Guard())GroupPresent(source,source);
             yield return new WaitForSeconds(.45f);groupRoutine=null;
             if(GroupActive)Group.EndTurn();GroupRefresh();
         }
