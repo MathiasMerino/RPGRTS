@@ -1,0 +1,206 @@
+{
+    "Version": 1,
+    "Name": "Viajero warrior",
+    "ClassId": "warrior",
+    "RaceId": "human",
+    "HasDemoProgress": true,
+    "Demo": {
+        "Chapter": 6,
+        "IntroSeen": true,
+        "Produced": 7
+    },
+    "ProgressionRevision": 1,
+    "Experience": 60,
+    "HeroLevel": 4,
+    "Skills": [
+        {
+            "Id": "warrior-discipline",
+            "Rank": 1
+        }
+    ],
+    "Accessory": "pilgrim-charm",
+    "Health": 37,
+    "Gold": 1,
+    "Wood": 4,
+    "Food": 7,
+    "WorldSeconds": 177.08189392089845,
+    "ProductionCycle": 17,
+    "ReputationA": 0,
+    "ReputationB": -5,
+    "Weapon": "tempered-blade",
+    "Armour": "cloth",
+    "HeroPosition": {
+        "x": 8.895387649536133,
+        "y": 0.02500009536743164,
+        "z": -10.007080078125
+    },
+    "Facts": [
+        "demo-starter-kit",
+        "rpg-victory",
+        "xp-e18:rpg-victory",
+        "rts-victory",
+        "demo-camp-secured",
+        "xp-e18:demo-camp-secured",
+        "reference-chest",
+        "lost-cargo-accepted",
+        "lost-cargo-recovered",
+        "lost-cargo-completed",
+        "xp-e18:lost-cargo-completed",
+        "umbral-battle-1",
+        "xp-e18:umbral-battle-1",
+        "troop-e18:umbral-battle-1:6dcaeff92767449eb994817458a4fcc9",
+        "troop-e18:umbral-battle-1:661a5e198d684d4f8d3f051145f13419",
+        "troop-e18:umbral-battle-1:e77a50283e9940ae91a0e8560aa784f9",
+        "umbral-battle-2",
+        "xp-e18:umbral-battle-2",
+        "troop-e18:umbral-battle-2:6dcaeff92767449eb994817458a4fcc9",
+        "troop-e18:umbral-battle-2:661a5e198d684d4f8d3f051145f13419",
+        "troop-e18:umbral-battle-2:e77a50283e9940ae91a0e8560aa784f9",
+        "umbral-reward",
+        "xp-e18:umbral-reward",
+        "e18-loot-claimed",
+        "umbral-outpost-conquered",
+        "xp-e18:umbral-outpost-conquered"
+    ],
+    "Items": [
+        {
+            "Id": "ration",
+            "Count": 2
+        },
+        {
+            "Id": "training-sword",
+            "Count": 2
+        },
+        {
+            "Id": "cloth",
+            "Count": 2
+        },
+        {
+            "Id": "pilgrim-charm",
+            "Count": 1
+        },
+        {
+            "Id": "tempered-blade",
+            "Count": 1
+        }
+    ],
+    "Buildings": [
+        {
+            "Id": "townhall",
+            "Position": {
+                "x": 12.0,
+                "y": 0.0,
+                "z": -8.0
+            },
+            "Level": 1,
+            "ProductionPaused": false
+        },
+        {
+            "Id": "workshop",
+            "Position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 2,
+            "ProductionPaused": true
+        },
+        {
+            "Id": "barracks",
+            "Position": {
+                "x": 15.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": false
+        },
+        {
+            "Id": "farm",
+            "Position": {
+                "x": 11.5,
+                "y": 0.0,
+                "z": -14.0
+            },
+            "Level": 1,
+            "ProductionPaused": false
+        }
+    ],
+    "Army": [
+        {
+            "Id": "d964202287e7467a9d74e4320fd70f10",
+            "Role": "archer",
+            "Health": 10,
+            "Level": 2,
+            "Experience": 0,
+            "InParty": false
+        },
+        {
+            "Id": "d977d7196e47433d9c000a3b4d7b5e1f",
+            "Role": "swordsman",
+            "Health": 3,
+            "Level": 1,
+            "Experience": 0,
+            "InParty": false
+        },
+        {
+            "Id": "bd7f371196834696bab8feb4981384ec",
+            "Role": "archer",
+            "Health": 10,
+            "Level": 1,
+            "Experience": 0,
+            "InParty": false
+        }
+    ],
+    "Companions": [
+        {
+            "Id": "6dcaeff92767449eb994817458a4fcc9",
+            "Role": "swordsman",
+            "Health": 14,
+            "Level": 2,
+            "Experience": 8,
+            "InParty": false
+        },
+        {
+            "Id": "661a5e198d684d4f8d3f051145f13419",
+            "Role": "brawler",
+            "Health": 12,
+            "Level": 2,
+            "Experience": 8,
+            "InParty": true
+        },
+        {
+            "Id": "e77a50283e9940ae91a0e8560aa784f9",
+            "Role": "archer",
+            "Health": 12,
+            "Level": 2,
+            "Experience": 8,
+            "InParty": true
+        }
+    ],
+    "ArmySelection": [
+        "d964202287e7467a9d74e4320fd70f10",
+        "d977d7196e47433d9c000a3b4d7b5e1f",
+        "bd7f371196834696bab8feb4981384ec"
+    ],
+    "Territories": [
+        {
+            "Id": "camp",
+            "Owner": "player-company",
+            "Secured": true
+        },
+        {
+            "Id": "crossing",
+            "Owner": "player-company",
+            "Secured": true
+        },
+        {
+            "Id": "outpost",
+            "Owner": "player-company",
+            "Secured": true
+        }
+    ],
+    "CultureId": "",
+    "FactionId": "player-company",
+    "KingdomId": ""
+}

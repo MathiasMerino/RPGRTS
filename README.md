@@ -4,14 +4,18 @@ Prototipo académico de RPG isométrico y RTS desarrollado en Unity. Las mecáni
 
 ## Abrir para evaluar
 
-1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e17-art-pipeline-alpha-polish`; [PR#8 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/8), depende de E16 (PR #7), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
+1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e18-progresion-balance`; PR E18 en preparación, apilado sobre [E17/PR#8 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/8), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
 2. En Unity Hub, añadir **la carpeta `ProyectoRPGRTS/`**, situada dentro del repositorio.
 3. Abrir con **Unity 6000.5.8f1** y esperar a que importe los recursos y restaure los paquetes. La primera apertura necesita conexión para descargar las dependencias declaradas en `Packages/`.
-4. Abrir `Assets/01_Scenes/AetherniaAlphaCandidate.unity`, revisar Console y pulsar **Play**. Se conservan AetherniaVisualPolish, AetherniaExpeditions, AetherniaFirstDemo, AetherniaVillageDemo y PlayablePrototype. La UI E17 se comprueba a720p/1080p/1440p/4K; ver resultados y límites en el informe.
+4. Abrir `Assets/01_Scenes/AetherniaProgressionDemo.unity`, revisar Console y pulsar **Play**. Se conservan AetherniaAlphaCandidate, AetherniaVisualPolish, AetherniaExpeditions, AetherniaFirstDemo, AetherniaVillageDemo y PlayablePrototype. La progresión E18 se comprueba con las tres clases y UI a720p/1080p; ver resultados y límites en el informe.
 
 Código, modelos, materiales, escenas, prefabs, archivos `.meta`, configuración de Unity y dependencias permanecen incluidos. Las carpetas `Library`, `Temp`, `Logs`, `UserSettings` y las compilaciones se omiten mediante `.gitignore`; Unity puede regenerar sus cachés. No hace falta recibir esas carpetas del autor.
 
 ## Material para el docente
+
+- [E18: progresión, resultados y límites](Docs/ENTREGA_E18.md).
+- [Guía E18 para Unity/Windows](Docs/GUIA_E18.md), [parámetros de balance](Docs/E18_BALANCE.md) y [hoja de revisión humana pendiente](Docs/Validacion/E18/REVISION_HUMANA.md).
+- [Capturas E18](Docs/Images/E18) y [vídeos reales con audio](Docs/Videos/E18).
 
 - [E17: estado técnico y problemas conocidos](Docs/E17_ALFA.md).
 - [Guía de revisión E17](Docs/GUIA_ALFA_E17.md) y [comparación de12tipos de capturas reales](Docs/COMPARATIVA_E17.md).
@@ -25,7 +29,7 @@ Código, modelos, materiales, escenas, prefabs, archivos `.meta`, configuración
 - [Arquitectura](Docs/ARQUITECTURA.md) y [informe E07 con comparación y pruebas](Docs/E07_ALDEA_MEDIEVAL.md).
 - [Flujo de GitHub y ramas](Docs/GITHUB_FLUJO.md).
 
-E17 conserva la regresión142/143 y la verificación dirigida5/5 tras actualizar la expectativa histórica de fallback;14procesos Windows y18mediciones offscreen verificados,82PNG/2MP4 y ZIP con CRC/SHA. RTS automático, arte/UX/balance y evaluación humana siguen pendientes; consultar el informe E17.
+E18 conserva el registro de regresión174/176: un fallo visual corregido mediante4/4dirigidas posteriores y la tácticaRTS de reserva todavía pendiente. Ocho procesos Windows PASS (seis por las tres clases y dos desde ZIP extraído); ZIP nuevo CRC/SHA y18ZIPanteriores conservados. No es una regresión totalmente verde ni aprobación humana de balance/arte.
 
 E16 aprobó la regresión global125/125 y verificó presentación a tres resoluciones. Un recorrido dirigido posterior tuvo una derrota del Mago en RTS; el caso aislado volvió a pasar sin cambios. Esa variación y la evaluación humana siguen pendientes; ver evidencia y límites en el informe E16.
 

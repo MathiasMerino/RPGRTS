@@ -1,0 +1,1 @@
+PASS: E18 mage new process exact persistent state, no duplicate rewards; seconds=3.16; automatic duration is not human playtime

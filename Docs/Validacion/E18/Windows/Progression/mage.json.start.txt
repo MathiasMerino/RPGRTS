@@ -1,0 +1,1 @@
+PASS: E18 mage new game/intro/RPG/XP/level/skill/patrol/camp/quest/paid companions/two guardianies/companionXP/loot/workshop2/forge/equipment/paid army/training/conquest/territorial production/save/title; seconds=253.92; automatic duration is not human playtime

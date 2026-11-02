@@ -1,0 +1,17 @@
+{
+  "baseE17": "d7cacd7447c3ce3ef9e0427e57d4e14f6556a703",
+  "sourceRevision": "ae0051b27c6ae946625ccc1d69697e7f4bd33e0e",
+  "GDD_SHA256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "Unity": "6000.5.8f1",
+  "URP": "17.5.0",
+  "originalPrivateFilesPreserved": 3,
+  "privateAssetsTracked": 0,
+  "previousScenesModified": [],
+  "protectedVersionGddSettingsChanges": [],
+  "credentialPatternFindings": [],
+  "changedFilesAtOrAbove95MiB": [],
+  "scannedCommittedChangedFiles": 127,
+  "scope": "Static source audit. Runtime dependency/physics assertions and build validation are reported separately.",
+  "nativeGameplayRevision": "60d01b8136453b8b1b28b8c19af1ea79807406ec",
+  "finalDelta": "Custom visual binding fallback restored, only applied primary attribute shown, existing camp rest also heals surviving army; final directed4/4 and portable validation separate"
+}

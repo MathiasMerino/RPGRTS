@@ -639,3 +639,7 @@ General174/176: reservaRTS falló conGuerrero (incidencia abierta) y FiveVisualS
 ## 2026-11-02 — E18 cierre dirigido4/4
 
 LegacyFiveVisualSlots y equipoE18 PASS sin modificar aserciones; problema visual corregido. UIArmy comprueba entrenamiento sin curación, descanso real10s hasta máximo mejorado yHPpersistente trasContinue; ficha con atributo principal aplicado/derivados pasa3clases×720/1080. XML CIERRE_DIRIGIDO_4 conserva4/4. General174/176 previo se conserva, uno corregido por dirigida y RTS sin resolver; no afirmar nueva regresión totalmente verde. Se genera candidata final y resta verificar ZIP/portable/PR.
+
+## 2026-11-02 — E18 paquete y portable verificados
+
+Build finalae0051b,ZIP87.842.896bytes SHA bc6828e2fe78c0f3f1115aa020ab7a5cc4913cd81b15dcd71aef3a8963d5d72f,CRC/SHA por archivoPASS y18paquetes anteriores intactos. Dos procesos desde ZIP extraído completaronNueva partida→conquista yreinicioGuerrero; total8/8Windows con tresclases previas. Export49PNG/2MP4 reales, orígenes/revisiones separados(60d01b8coreNative/ae0051bfinalportable). General174/176 y4/4posteriores se comunican sin afirmar regresiónverde; RTSreserva/humano abiertos. PublicaciónPRdraft siguiente, sinmain/merges/arteprivado.

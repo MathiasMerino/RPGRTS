@@ -4,9 +4,9 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- E18 en desarrollo autorizado: XP/niveles/técnicas/equipo/botín verificados por bloques; compañeros/ejército/balance e integración bajo validación. Rama feature/e18-progresion-balance; incidencia E17-A-RTS y aprobación humana abiertas. No E19.
+- E18: A/BC/DEF/GH/IJK/LN/MOQ verificados; RSTUVen publicación. General174/176, regresión visual corregida4/4dirigidas finales;8/8procesosWindows,49PNG/2MP4,ZIPCRC/SHA/portable y18ZIPprevios intactos. Candidata con incidenciaRTS abierta, sin regresión totalmente verde ni aprobación humana. Informe Docs/ENTREGA_E18.md. No E19.
 
-- E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. No E18.
+- E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. E18 autorizada posteriormente.
 
 - E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes; E17 se autoriza posteriormente en su sección.
 
@@ -1158,14 +1158,14 @@ Encargo71c1a4f1 autoriza implementación secuencial con arte provisional. Depend
 - Pruebas / resultado: cuatrocasos PASS en IJK_LN_DEF.xml,720simulaciones: grupo360/360, solosGuerrero89/120/Monje86/120/Mago93/120; recuperación enemiga usa acción normal una vez. No geometría ni aprobación humana. Pruebas nativas de balance pendientes en MOQ/RSTUV; E17-A-RTS continúa abierto.
 
 ### E18-MOQ — Ciclo, interfaz y persistencia
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: Integración / P1. Dependencias: E18-LN.
 - Aceptación: Nueva partida→progresión→ruinas→mejora→conquista→guardar/reiniciar, migración segura y UI coherente.
-- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Archivos: ProgressionPanel/InventoryView, MedievalHudView, ModeTransitionView, DemoFlow, VerticalSliceHud, paneles y SaveStore; ProgressionIntegrationTests/SmokeProbe; Docs/GUIA_E18.md y Validacion/E18/CICLO_NATIVO.json.
+- Pruebas / resultado: MOQ_DIRIGIDA1/1PASS sobre fixture controlado; seis procesosWindows reales PASS (tresclases completas y tresreinicios, source60d01b8), incluyendo misión, reclutamiento, dosguardianías,XP/compañeros2,botín,forja/equipo,taller2,entrenamiento y conquista/producción. Sin recursos/salud inyectados. Regresión general y entrega todavía en RSTUV; duración/diversión humanas pendientes.
 
 ### E18-RSTUV — Validación, entrega y PR
-- Estado: [ ] Pendiente.
+- Estado: [ ] En desarrollo.
 - Sistema / prioridad: QA/build / P1. Dependencias: E18-MOQ.
 - Aceptación: Regresión/recorridos reales/tres clases, capturas/build/ZIP/guía y PRdraft, sin main/merges.
 - Archivos: Docs/E18_PROGRESION.md; detalle al implementar.

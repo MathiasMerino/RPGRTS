@@ -1,0 +1,86 @@
+{
+  "sourceRevision": "60d01b8136453b8b1b28b8c19af1ea79807406ec",
+  "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506",
+  "processesPassed": 6,
+  "humanDurationMeasured": false,
+  "rows": [
+    {
+      "class": "warrior",
+      "XP": 60,
+      "level": 4,
+      "health": 37,
+      "weapon": "tempered-blade",
+      "accessory": "pilgrim-charm",
+      "companionLevels": [
+        2,
+        2,
+        2
+      ],
+      "armyLevels": [
+        2,
+        1,
+        1
+      ],
+      "gold": 1,
+      "wood": 4,
+      "food": 7,
+      "territories": [
+        "camp",
+        "crossing",
+        "outpost"
+      ]
+    },
+    {
+      "class": "monk",
+      "XP": 60,
+      "level": 4,
+      "health": 13,
+      "weapon": "weighted-wraps",
+      "accessory": "pilgrim-charm",
+      "companionLevels": [
+        2,
+        2,
+        2
+      ],
+      "armyLevels": [
+        2,
+        1,
+        1
+      ],
+      "gold": 1,
+      "wood": 4,
+      "food": 7,
+      "territories": [
+        "camp",
+        "crossing",
+        "outpost"
+      ]
+    },
+    {
+      "class": "mage",
+      "XP": 60,
+      "level": 4,
+      "health": 24,
+      "weapon": "runic-focus",
+      "accessory": "pilgrim-charm",
+      "companionLevels": [
+        2,
+        2,
+        2
+      ],
+      "armyLevels": [
+        2,
+        1,
+        1
+      ],
+      "gold": 1,
+      "wood": 4,
+      "food": 7,
+      "territories": [
+        "camp",
+        "crossing",
+        "outpost"
+      ]
+    }
+  ]
+}

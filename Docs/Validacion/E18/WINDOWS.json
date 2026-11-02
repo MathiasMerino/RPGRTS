@@ -1,0 +1,66 @@
+{
+  "revision": "ae0051b27c6ae946625ccc1d69697e7f4bd33e0e",
+  "nativeGameplayRevision": "60d01b8136453b8b1b28b8c19af1ea79807406ec",
+  "passedProcesses": 8,
+  "receipts": [
+    {
+      "kind": "Progression",
+      "file": "mage.json.resume.txt",
+      "result": "PASS: E18 mage new process exact persistent state, no duplicate rewards; seconds=3.16; automatic duration is not human playtime",
+      "sha256": "a9df9c83ce00538948581c3e2bda0bdb951da17e47de038ce64afba59276325e",
+      "sourceRevision": "60d01b8136453b8b1b28b8c19af1ea79807406ec"
+    },
+    {
+      "kind": "Progression",
+      "file": "mage.json.start.txt",
+      "result": "PASS: E18 mage new game/intro/RPG/XP/level/skill/patrol/camp/quest/paid companions/two guardianies/companionXP/loot/workshop2/forge/equipment/paid army/training/conquest/territorial production/save/title; seconds=253.92; automatic duration is not human playtime",
+      "sha256": "349aeb84c0ceca7b18dc015c4ef23d9bf648b7b87e49645b3a51d3b7cf399838",
+      "sourceRevision": "60d01b8136453b8b1b28b8c19af1ea79807406ec"
+    },
+    {
+      "kind": "Progression",
+      "file": "monk.json.resume.txt",
+      "result": "PASS: E18 monk new process exact persistent state, no duplicate rewards; seconds=2.28; automatic duration is not human playtime",
+      "sha256": "aaa3e5dc0c1ed39f32dd3b5c7cc462dc75fc6d0af52f7e6efd244089fb64ed6c",
+      "sourceRevision": "60d01b8136453b8b1b28b8c19af1ea79807406ec"
+    },
+    {
+      "kind": "Progression",
+      "file": "monk.json.start.txt",
+      "result": "PASS: E18 monk new game/intro/RPG/XP/level/skill/patrol/camp/quest/paid companions/two guardianies/companionXP/loot/workshop2/forge/equipment/paid army/training/conquest/territorial production/save/title; seconds=258.83; automatic duration is not human playtime",
+      "sha256": "6fee97db229d0d7c943058ff12b17835de6688a75f68038ca1aa1bd378df6e7e",
+      "sourceRevision": "60d01b8136453b8b1b28b8c19af1ea79807406ec"
+    },
+    {
+      "kind": "Progression",
+      "file": "warrior.json.resume.txt",
+      "result": "PASS: E18 warrior new process exact persistent state, no duplicate rewards; seconds=2.57; automatic duration is not human playtime",
+      "sha256": "2dab071c92aa020ce7b42c648c45ae34d312d602f4217d26850417961aab865d",
+      "sourceRevision": "60d01b8136453b8b1b28b8c19af1ea79807406ec"
+    },
+    {
+      "kind": "Progression",
+      "file": "warrior.json.start.txt",
+      "result": "PASS: E18 warrior new game/intro/RPG/XP/level/skill/patrol/camp/quest/paid companions/two guardianies/companionXP/loot/workshop2/forge/equipment/paid army/training/conquest/territorial production/save/title; seconds=314.18; automatic duration is not human playtime",
+      "sha256": "4881cfa7022ecf3d525c5e2e0886c44979e3aca2ab6f65469dfba9170799d6d5",
+      "sourceRevision": "60d01b8136453b8b1b28b8c19af1ea79807406ec"
+    },
+    {
+      "kind": "Portable",
+      "file": "warrior.json.resume.txt",
+      "result": "PASS: E18 warrior new process exact persistent state, no duplicate rewards; seconds=1.89; automatic duration is not human playtime",
+      "sha256": "afb72731ef152a3d52945ba1775038d01249c76d6ef77f6107027008cb968e35",
+      "sourceRevision": "ae0051b27c6ae946625ccc1d69697e7f4bd33e0e"
+    },
+    {
+      "kind": "Portable",
+      "file": "warrior.json.start.txt",
+      "result": "PASS: E18 warrior new game/intro/RPG/XP/level/skill/patrol/camp/quest/paid companions/two guardianies/companionXP/loot/workshop2/forge/equipment/paid army/training/conquest/territorial production/save/title; seconds=232.03; automatic duration is not human playtime",
+      "sha256": "2a91b31a167a45e3e3002c4dbae1f2272caab66628f3bc76cd499939c5a6ff16",
+      "sourceRevision": "ae0051b27c6ae946625ccc1d69697e7f4bd33e0e"
+    }
+  ],
+  "fpsMeasured": false,
+  "humanPlaytimeMeasured": false,
+  "inputs": "New game, legal public player actions, isolated saves; no injected funds or health"
+}

@@ -1,0 +1,1 @@
+PASS: E18 monk new game/intro/RPG/XP/level/skill/patrol/camp/quest/paid companions/two guardianies/companionXP/loot/workshop2/forge/equipment/paid army/training/conquest/territorial production/save/title; seconds=258.83; automatic duration is not human playtime
