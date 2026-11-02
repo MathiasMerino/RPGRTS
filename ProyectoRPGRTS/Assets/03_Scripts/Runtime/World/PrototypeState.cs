@@ -22,6 +22,7 @@ namespace Aethernia
     {
         public string Id,Role;
         public int Health=10;
+        public bool InParty;
     }
     [Serializable] public sealed class PrototypeState
     {
@@ -47,5 +48,9 @@ namespace Aethernia
         public List<ItemStack> Items = new List<ItemStack> { new ItemStack("ration", 2) };
         public List<BuildingRecord> Buildings = new List<BuildingRecord>();
         public List<RecruitRecord> Army = new List<RecruitRecord>();
+        public List<RecruitRecord> Companions = new List<RecruitRecord>();
+        public List<string> ArmySelection = new List<string>();
+        public List<TerritoryRecord> Territories = new List<TerritoryRecord>();
+        public string CultureId = "", FactionId = "player-company", KingdomId = "";
     }
 }

@@ -49,6 +49,7 @@ namespace Aethernia
             if(state.Demo!=null&&settlement!=null)SettlementOperations.Produce(state,settlement,cycles);
             else{var produced = Math.Min(state.Food, cycles * state.Buildings.Count);state.Food -= produced; state.Wood += produced;}
             state.ProductionCycle = next;
+            if(state.Demo!=null&&settlement!=null)ExpeditionOperations.ProduceTerritories(state,settlement,cycles);
         }
         public static bool CompleteQuest(PrototypeState state)
         {
