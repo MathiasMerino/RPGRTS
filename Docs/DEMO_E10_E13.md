@@ -1,5 +1,7 @@
 # Primera demo integrada E10–E13
 
+Entrega consolidada y resultados finales en [ENTREGA_E10_E13.md](ENTREGA_E10_E13.md). Los checkpoints siguientes conservan el historial y sus fallos intermedios.
+
 Base66cf80f/E09, Unity6000.5.8f1/URP17.5.0. PR#1–#4 abiertos/borrador; main/dev intactas. Rama feature/e10-e13-demo-jugable desde E09, PR apilado hacia E09. GDD0.2 original preservado; §§2/3/5/12 consultados. Nuevo encargo autoriza implementar secuencialmente E10–E13; E14/E15 solo tras núcleo estable.
 
 ## Decisiones de alcance
@@ -90,3 +92,13 @@ Las opciones nativas revelaron Audio nulo en la instancia del prefab, referencia
 Recorridos finales Logs/DemoQA/{Headless,GPU}-20261102-010055: **12procesos PASS**, crear y cerrar/reabrir/Continuar para tres clases. Además del recorrido, verifica sliders reales y persistencia entre procesos de master.63/efectos.57/cámara14; calidad cambia/aplica/restaura y GPU confirma Screen1920x1080. Headless no comprueba pantalla física. Las claves PlayerPrefs de QA se aíslan por slot y eliminan tras resume; las preferencias personales se conservan. NativeSkip real para Mago y Next para otras clases; no se fuerzan vida/victoria/recursos.
 
 Regresión final110 en curso; cierre técnico/PR condicionados a su resultado fresco. La evaluación humana de pantalla completa, sonido percibido, controles, legibilidad, balance y arte continúa pendiente.
+
+
+## QA — Cierre global y recorte contextual
+
+Regresión completa **110/110 PASS**, cero omisiones, salida0, exacto6000.5.8f1; copia DEMO_REGRESION_110.xml. Después se aplicó un ajuste únicamente de presentación a las construcciones de campaña: RoofCutaway existente oculta/restituye el conjunto visual si tapa al héroe. Los objetos E07 agrupan techo/hastiales/vigas por material; retirar solo Slate dejaba el hastial Plaster encima. La nueva aceptación comprueba todo el conjunto, además de colliderbounds/enabled, NavMeshObstacle y economía/save/reclutas/despliegue: **6/6 PASS** posterior. El legado mantiene instanciación equivalente, sin recorte nuevo. No se declara esta comprobación como aprobación artística humana.
+
+Pruebas intermedias conservadas: cierre C#capturado antes de EnterPlayMode en fixture corregido sin cambiar aceptación, y Roof vacío en prefab con geometría agrupada. Una captura real reveló el hastial que aún ocultaba al actor y motivó la ampliación del recorte. Última build compilada; evidencia/player/paquete se renuevan antes de publicar.
+
+
+Cierre técnico:110/110 global+6/6 después del último recorte,12procesos finales Headless/GPU-20261102-014152 y2desdeZIPUnpackedCutaway (Headless-20261102-014556) PASS. Hero visible en captura final; sin aprobación humana inferida.18PNG, vídeo407frames codificados/33.917s/audioDSP RMS.002746; paquete306archivos87411924bytes/CRC/SHA por archivo,12ZIP anteriores intactos. Informe consolidado ENTREGA_E10_E13.md. Publicación/PR en cierre, main/dev no se fusionan.

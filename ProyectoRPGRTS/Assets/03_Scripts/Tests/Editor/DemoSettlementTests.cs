@@ -79,6 +79,16 @@ namespace Aethernia.Tests.Editor
             Assert.That(PrototypeSaveStore.Save(flow.SlotPath,Fixture(),flow.Session.Rules),Is.True);Assert.That(flow.Continue(),Is.True);var panel=flow.GetComponent<DemoSettlementPanel>();
             var ids=new[]{"townhall","workshop","barracks","farm","warehouse"};var points=new[]{new Vector3(12,0,-8),new Vector3(8,0,-13),new Vector3(15,0,-13),new Vector3(11.5f,0,-14),new Vector3(15.5f,0,-9)};
             for(var i=0;i<ids.Length;i++){Assert.That(panel.SelectBlueprint(ids[i]),Is.True);Assert.That(d.Construction.Place(points[i]),Is.True,"Colocación real "+ids[i]);}
+            flow.CameraRig.FocusOn(d.Hero.transform.position);flow.CameraRig.SetZoom(11);yield return null;yield return null;
+            var workshop=Object.FindObjectsByType<RoofCutaway>().Single(c=>Vector3.Distance(c.transform.position,new Vector3(8,0,-13))<.1f);
+            var blockers=workshop.GetComponentsInChildren<Collider>();var bounds=blockers.Select(c=>c.bounds).ToArray();
+            Assert.That(workshop.IsCutAway,Is.True,"Reproducir oclusión del héroe por cubierta y recortarla");
+            Assert.That(d.Construction.CanPlace(points[1]),Is.False,"Colisión persiste con cubierta oculta");
+            workshop.enabled=false;Assert.That(workshop.IsCutAway,Is.False);Assert.That(workshop.GetComponentsInChildren<Renderer>().All(r=>!r.forceRenderingOff),Is.True,"Restauración reversible de renderers");
+            workshop.enabled=true;yield return null;Assert.That(workshop.IsCutAway,Is.True);
+            Assert.That(workshop.GetComponentsInChildren<Renderer>().All(r=>!r.enabled||r.forceRenderingOff),Is.True,"También ocultar hastiales/vigas que cubren al héroe tras retirar tejas");
+            for(var i=0;i<blockers.Length;i++){Assert.That(blockers[i].enabled,Is.True);Assert.That(blockers[i].bounds,Is.EqualTo(bounds[i]));}
+            Assert.That(workshop.GetComponent<UnityEngine.AI.NavMeshObstacle>().enabled,Is.True);
             var gold=flow.Session.State.Gold;Assert.That(d.Construction.Place(points[0]),Is.False);Assert.That(flow.Session.State.Gold,Is.EqualTo(gold));yield return null;yield return null;
             Assert.That(panel.SelectBuilding(1),Is.True);Assert.That(panel.ToggleProduction(),Is.True);yield return DemoCapture.Save("Logs/E13/Captures/Camp-Construction-Fixture.png",1280,720);
             var limit=Time.realtimeSinceStartup+13;while(flow.Session.State.Demo.Produced==0&&Time.realtimeSinceStartup<limit)yield return null;

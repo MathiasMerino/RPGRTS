@@ -4,7 +4,7 @@ Actualizado: 2026-11-01, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- Demo E10–E13 en desarrollo: E10 editor3/3, E11 editor2/2 y E12 patrulla1/1 con tres clases verificadas; E13 focal6/6 y colisión/opciones1/1 PASS. Regresión102 y recorridos Windows/reinicio en curso. Escena nueva AetherniaFirstDemo, base E09 preservada; primera build compilada, entrega aún no aceptada ni revisión humana realizada. Recuperación: Docs/PROGRESO_DEMO.md.
+- Demo E10–E13: núcleo implementado y verificado técnicamente, regresión110/110 y6/6 posteriores al recorte visual; doce procesos Windows finales PASS (tres clases, con/sinGPU, crear/reiniciar/Continuar/opciones). Build/ZIP portable/evidencia aprobados; publicación PR en curso. E14/E15 y evaluación humana pendientes. Informe: Docs/ENTREGA_E10_E13.md.
 
 - E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. PR#4 abierto en borrador sobre E08: https://github.com/MathiasMerino/RPGRTS/pull/4. Informe Docs/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
 
@@ -819,46 +819,46 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 - Pruebas / resultado: GDD/hash y PR#1–#4 contrastados, base66cf80f limpia y rama/plan conservados; ningún merge.
 
 ### E10-B — Menú, tipografía y opciones
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E10-A.
 - Aceptación: Menú TMP real, derechos de fuente, español, opciones funcionales, guardado válido/ausente y cuatro resoluciones.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+- Pruebas / resultado: SDF/menú/opciones y cuatro resoluciones verificados en editor; sliders/calidad/resolución1920 y persistencia entre procesos en WindowsGPU PASS. ReferenciaAudio corregida y cubierta por aceptación. Evaluación humana pendiente.
 
 ### E11-A — Selección, prólogo y tutorial RPG
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E10-B.
 - Aceptación: Clase/linaje persistentes, prólogo omisible y encuentro legal con tres clases.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: focal E11 2/2, tres clases con combate/teclado real/cámara/animación/pausa/foco y save/continue PASS. Evidencia y límites en informe; humanos y build integral pendientes.
+- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/ENTREGA_E10_E13.md; revisión humana pendiente.
 
 ### E11-B — Exploración WASD
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E11-A.
 - Aceptación: Diagonal normalizada, colisiones, animación, cámara y UI/pausa sin conflictos RTS.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: focal E11 2/2, tres clases con combate/teclado real/cámara/animación/pausa/foco y save/continue PASS. Evidencia y límites en informe; humanos y build integral pendientes.
+- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/ENTREGA_E10_E13.md; revisión humana pendiente.
 
 ### E12 — RTS y héroe compartido
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E11-B.
 - Aceptación: Selección/órdenes/roles/acción real del mismo héroe, resultados y transición válidos.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: patrulla1/1 con las tres clases y reglas12/12; selección/grupos/órdenes/heroísmo/guardia/recuperación/victoria/slot real. Fallo Mago intermedio preservado; ajuste de detención por alcance, sin forzar vida/victoria. Build/regresión global/humanos pendientes.
+- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/ENTREGA_E10_E13.md; revisión humana pendiente.
 
 ### E13 — Asentamiento y economía
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E12.
 - Aceptación: Edificios funcionales/costes/producción/reclutas/guardado sin duplicación y juego libre.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado:6/6 editor, cinco edificios/costes/producción/ejército/upgrade/save/load y despliegue real con fixture explícita; no equivale al end-to-end narrativo. XML intermedio de espera de Update preservado. Windows/global/humanos pendientes.
+- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/ENTREGA_E10_E13.md; revisión humana pendiente.
 
 ### DEMO-QA — Validación y entrega E10–E13
 - Estado: [ ] En desarrollo.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E13.
 - Aceptación: Regresión, end-to-end/reinicio, capturas, Windows ejecutado, ZIP y PR apilado, Git limpio.
 - Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
+- Pruebas / resultado: 110/110 global+6/6 posteriores, Windows12procesos+2desdeZIPextraído y18PNG/vídeoDSP nativo PASS. ZIP306archivos/CRC/SHA correcto,12paquetes históricos intactos; publicación PR en cierre. ModeloMonkMeshy ajeno preservado sin seguimiento y fuera de commits.
 
 ### E14 — Compañeros y mazmorra (condicional)
 - Estado: [ ] Pendiente.

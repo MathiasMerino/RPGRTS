@@ -1,0 +1,158 @@
+[
+  {
+    "ClassId": "warrior",
+    "RaceId": "human",
+    "Health": 20,
+    "Gold": 8,
+    "Wood": 0,
+    "Food": 7,
+    "Demo": {
+      "Chapter": 6,
+      "IntroSeen": true,
+      "Produced": 1
+    },
+    "Buildings": [
+      {
+        "Id": "townhall",
+        "Position": {
+          "x": 12.0,
+          "y": 0.0,
+          "z": -8.0
+        },
+        "Level": 1,
+        "ProductionPaused": false
+      },
+      {
+        "Id": "workshop",
+        "Position": {
+          "x": 8.0,
+          "y": 0.0,
+          "z": -13.0
+        },
+        "Level": 1,
+        "ProductionPaused": false
+      },
+      {
+        "Id": "barracks",
+        "Position": {
+          "x": 15.0,
+          "y": 0.0,
+          "z": -13.0
+        },
+        "Level": 1,
+        "ProductionPaused": false
+      }
+    ],
+    "Army": [
+      {
+        "Id": "04f1842ebf52488d8eb436293c30b2eb",
+        "Role": "archer",
+        "Health": 10
+      }
+    ]
+  },
+  {
+    "ClassId": "monk",
+    "RaceId": "human",
+    "Health": 8,
+    "Gold": 8,
+    "Wood": 0,
+    "Food": 7,
+    "Demo": {
+      "Chapter": 6,
+      "IntroSeen": true,
+      "Produced": 1
+    },
+    "Buildings": [
+      {
+        "Id": "townhall",
+        "Position": {
+          "x": 12.0,
+          "y": 0.0,
+          "z": -8.0
+        },
+        "Level": 1,
+        "ProductionPaused": false
+      },
+      {
+        "Id": "workshop",
+        "Position": {
+          "x": 8.0,
+          "y": 0.0,
+          "z": -13.0
+        },
+        "Level": 1,
+        "ProductionPaused": false
+      },
+      {
+        "Id": "barracks",
+        "Position": {
+          "x": 15.0,
+          "y": 0.0,
+          "z": -13.0
+        },
+        "Level": 1,
+        "ProductionPaused": false
+      }
+    ],
+    "Army": [
+      {
+        "Id": "fa4f1b3c90b24337a955b00366ca8118",
+        "Role": "archer",
+        "Health": 10
+      }
+    ]
+  },
+  {
+    "ClassId": "mage",
+    "RaceId": "elf",
+    "Health": 5,
+    "Gold": 8,
+    "Wood": 0,
+    "Food": 7,
+    "Demo": {
+      "Chapter": 6,
+      "IntroSeen": true,
+      "Produced": 1
+    },
+    "Buildings": [
+      {
+        "Id": "townhall",
+        "Position": {
+          "x": 12.0,
+          "y": 0.0,
+          "z": -8.0
+        },
+        "Level": 1,
+        "ProductionPaused": false
+      },
+      {
+        "Id": "workshop",
+        "Position": {
+          "x": 8.0,
+          "y": 0.0,
+          "z": -13.0
+        },
+        "Level": 1,
+        "ProductionPaused": false
+      },
+      {
+        "Id": "barracks",
+        "Position": {
+          "x": 15.0,
+          "y": 0.0,
+          "z": -13.0
+        },
+        "Level": 1,
+        "ProductionPaused": false
+      }
+    ],
+    "Army": [
+      {
+        "Id": "e277b42df039412991b51e2897e4acd9",
+        "Role": "archer",
+        "Health": 10
+      }
+    ]
+  }
+]

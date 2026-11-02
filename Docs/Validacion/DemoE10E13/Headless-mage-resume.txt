@@ -1,0 +1,1 @@
+PASS: nuevo proceso: título -> Continuar, identidad/salud/equipo/edificios/ejército/progreso conservados, sin repetir prólogo; class=mage; seconds=0.62; allocatedBytes=133742243

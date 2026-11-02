@@ -35,7 +35,7 @@ namespace Aethernia
             {
                 var model=Template(SelectedBlueprint);
                 if(model==null||!CanPlace(point)||!SettlementOperations.Build(session.State,settlement,SelectedBlueprint,point)){session.Say("No se puede construir: comprueba terreno, centro, recursos y requisitos.");return false;}
-                placed.Add(Instantiate(model,point,Quaternion.identity));session.Say(settlement.Find(SelectedBlueprint).Title+" construido. Las instalaciones productivas requieren activación.");return true;
+                placed.Add(Spawn(model,point));session.Say(settlement.Find(SelectedBlueprint).Title+" construido. Las instalaciones productivas requieren activación.");return true;
             }
             if (prefab == null || !CanPlace(point) || !WorldOperations.BuildWorkshop(session.State, point))
             { session.Say("Colocación inválida o recursos insuficientes. Coste: 10 oro y 5 madera."); return false; }
@@ -56,7 +56,17 @@ namespace Aethernia
         {
             foreach (var go in placed) if (go != null) { go.SetActive(false); Destroy(go); }
             placed.Clear();
-            foreach (var record in session.State.Buildings) placed.Add(Instantiate(Template(record.Id)??prefab, record.Position, Quaternion.identity));
+            foreach (var record in session.State.Buildings) placed.Add(Spawn(Template(record.Id)??prefab,record.Position));
+        }
+        private GameObject Spawn(GameObject model,Vector3 position)
+        {
+            var instance=Instantiate(model,position,Quaternion.identity);
+            if(session.State.Demo==null)return instance;
+            // E07 agrupa cubierta, hastiales y vigas por material. Recortar el conjunto
+            // visual como la biblioteca original; conservar siempre su física.
+            var roofs=instance.GetComponentsInChildren<Renderer>();
+            if(roofs.Length>0)instance.AddComponent<RoofCutaway>().Configure(Camera.main,hero.transform,roofs);
+            return instance;
         }
     }
 }

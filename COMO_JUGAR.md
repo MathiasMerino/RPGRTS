@@ -8,7 +8,7 @@ La interfaz C02 incorpora un HUD medieval compacto sobre D01/E01/E02/E02-B. Arri
 
 ## Primera demo integrada E10–E13
 
-Escena nueva: `Assets/01_Scenes/AetherniaFirstDemo.unity`. Abrir con Unity **6000.5.8f1**, esperar la importación y pulsar Play. El ejecutable nuevo se prepara en `ProyectoRPGRTS/Builds/FirstDemoWindows/Aethernia.exe`; su verificación y empaquetado todavía están en curso. Las entregas anteriores descritas abajo conservan su propio comportamiento.
+Escena nueva: `Assets/01_Scenes/AetherniaFirstDemo.unity`. Abrir con Unity **6000.5.8f1**, esperar la importación y pulsar Play. El ejecutable nuevo se prepara en `ProyectoRPGRTS/Builds/FirstDemoWindows/Aethernia.exe`; la build y sus doce procesos Windows (crear/reiniciar por clase, con/sinGPU) están verificados; paquete Aethernia-E10-E13-Demo-Windows.zip preparado. Las entregas anteriores descritas abajo conservan su propio comportamiento.
 
 Nueva partida permite elegir Guerrero, Monje o Mago, nombre y linaje provisional. Los linajes no tienen bonificaciones ni modelos raciales diferentes. El prólogo puede continuarse u omitirse. El primer combate usa los turnos, alcance, movimiento limitado, guardia y recuperación existentes; esperar a TU TURNO y usar Acercarse antes de atacar si falta alcance. Una derrota ofrece un reintento explícito.
 
@@ -22,7 +22,7 @@ Para un recorrido económico inicial: centro en **(12,0,-8)**, taller en **(8,0,
 
 **P** abre pausa/opciones; Aplicar y volver reanuda. Guardar y volver al título conserva la sesión. F5/F9 y Menú guardan/cargan fuera del combate. Continuar restaura el progreso sin repetir el prólogo visto. El slot nuevo es `%USERPROFILE%/AppData/LocalLow/<Company>/<Product>/AetherniaPrototype/demo-v1.json` (la ruta exacta depende de PlayerSettings); la partida previa del prototipo se conserva en su slot `save-v1.json`. Nueva partida respalda el slot de demo antes de reemplazarlo.
 
-Guía de evaluación humana: [PRUEBA_MANUAL_DEMO](Docs/PRUEBA_MANUAL_DEMO.md). Informe y resultados: [DEMO_E10_E13](Docs/DEMO_E10_E13.md). Las comprobaciones automáticas no aprueban legibilidad subjetiva, diversión, balance ni arte final.
+Guía de evaluación humana: [PRUEBA_MANUAL_DEMO](Docs/PRUEBA_MANUAL_DEMO.md). Entrega y resultados: [ENTREGA_E10_E13](Docs/ENTREGA_E10_E13.md); registro técnico [DEMO_E10_E13](Docs/DEMO_E10_E13.md). Las comprobaciones automáticas no aprueban legibilidad subjetiva, diversión, balance ni arte final.
 
 ## Entrega E09 para revisión
 

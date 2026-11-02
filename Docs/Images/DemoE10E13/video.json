@@ -1,0 +1,15 @@
+{
+  "source": "ProyectoRPGRTS/Logs/DemoQA/GPU-20261102-014152/Recording",
+  "sourceFrames": 408,
+  "frames": 407,
+  "width": 1280,
+  "height": 720,
+  "captureStepHz": 12.0,
+  "durationSeconds": 33.916666666666664,
+  "measuredFps": false,
+  "nativeDspRms": 0.0027462450572526007,
+  "sha256": "cbde9df9d7e21b824e20c18e79312d59dab5bb21a5c772496b19fe239043b560",
+  "bytes": 5799331,
+  "continuousNativeWindows": true,
+  "aiCompositing": false
+}

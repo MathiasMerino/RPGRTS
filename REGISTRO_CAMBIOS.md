@@ -476,3 +476,16 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 - Opciones verificadas en nuevos procesos: master.63/efectos.57/cámara14/resolución1920x1080 y cambio/restauración de calidad. NativeKey de prueba separada, borrada tras continuar. Pantalla guardada se aplica al arrancar el player; índice del selector se sincroniza con la resolución cargada.
 - Prueba nativa detectó referencia Audio nula del prefab de menú: corregida como override en la escena nueva mediante Controls seguro y aceptación de referencia persistida. No se alteró la escena histórica. Los dos FAIL de resume anteriores se preservan.
 - Build actual y12procesos Windows finales PASS con tres clases, fondos normales, producción/recluta, guardado y reinicio; omitir prólogo probado con Mago. Capturas/video DSP nativos renovados; revisión humana no realizada. Regresión110 en curso, no se declara cerrada todavía.
+
+
+## 2026-11-01 — Regresión110 aprobada y visibilidad del campamento
+
+- Regresión global110/110 PASS, cero fallos/omisiones. XML DEMO_REGRESION_110.xml. No sumar los focales superpuestos como si fuesen casos distintos.
+- Captura real identificó edificio nuevo ocultando al avatar. WorldConstruction.Spawn reutiliza RoofCutaway para la campaña; oculta contextualmente el conjunto visual agrupado por materiales de E07 y lo restaura al dejar de interponerse. Física/colisiones/NavMeshObstacle quedan activos. Guardado legado conserva la ruta anterior equivalente.
+- Focal posterior6/6 PASS: oclusión/retirada de hastiales y vigas, restauración, bounds físicos, producción, reclutas, despliegue y carga. Primeros intentos preservados (fixture de cierre del IEnumerator y nodo Roof sin malla); captura nativa posterior detectó hastial aún visible y se amplió aceptación a todo el conjunto, sin cambiar reglas.
+- Build posterior correcta; repetición Windows final y actualización de paquete/evidencia en curso. Evaluación artística/humana sigue pendiente, al igual que E14/E15.
+
+
+## 2026-11-01 — Entrega técnica E10–E13 preparada
+
+110/110 global y6/6 posteriores al recorte final;12procesos Windows finales con/sinGPU y2desdeZIP extraído PASS. Captura confirma avatar visible con retiro contextual reversible del conjunto visual, física intacta.18PNG originales, MP4nativo33.917s con DSP real; sin simulación de poses ni benchmarkFPS. ZIP306archivos/87411924bytes/CRC y SHA individual PASS;12ZIP históricos conservados. GDD/hash, escenas históricas, paquetes y configuración de proyecto preservados tras finalizar Unity. Informe Docs/ENTREGA_E10_E13.md, guía humana/COMO_JUGAR y fuentes de evidencia actualizados. Publicación/PR en cierre; E14/E15 y revisiones humanas no iniciadas/completadas automáticamente.
