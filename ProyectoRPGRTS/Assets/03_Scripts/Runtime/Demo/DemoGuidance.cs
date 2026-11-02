@@ -10,9 +10,9 @@ namespace Aethernia
         private TMP_Text label;
         private void Start()
         {
-            var ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite);
+            var ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite,Flow.Front.Presentation);
             var rect=DemoWidgets.Rect(Flow.ExistingHud.transform,"Demo contextual guidance",16,218,350,112);panel=rect.gameObject;
-            DemoWidgets.Fill(rect,new Color(.035f,.043f,.046f,.94f),false);label=ui.Text(rect,"Guidance","",12,8,326,96,17);
+            ui.Surface(rect,new Color(.035f,.043f,.046f,.94f),false).raycastTarget=false;label=ui.Text(rect,"Guidance","",12,8,326,96,17);
         }
         private void LateUpdate()
         {

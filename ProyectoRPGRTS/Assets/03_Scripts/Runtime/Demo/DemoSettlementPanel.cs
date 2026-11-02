@@ -20,9 +20,9 @@ namespace Aethernia
         private DemoWidgets ui;
         private void Start()
         {
-            ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite);var root=Flow.ExistingHud.transform;
+            ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite,Flow.Front.Presentation);var root=Flow.ExistingHud.transform;
             manage=Button(root,"Manage camp","Administrar campamento",1000,235,264,Open);
-            panel=DemoWidgets.Rect(root,"Settlement management",456,98,570,496);DemoWidgets.Fill(panel,new Color(.035f,.043f,.046f,.97f));
+            panel=DemoWidgets.Rect(root,"Settlement management",456,98,570,496);ui.Surface(panel,new Color(.035f,.043f,.046f,.97f));
             ui.Text(panel,"Camp title","CAMPAMENTO · CONSTRUCCIÓN",12,10,546,32,23).color=ui.Gold;
             resources=ui.Text(panel,"Resources","",12,42,546,28,17);
             var row=0;foreach(var profile in Rules.Blueprints)
@@ -57,7 +57,8 @@ namespace Aethernia
         private void LateUpdate()
         {
             if(panel==null)return;var state=Flow.Session.State;var available=Flow.IsPlaying&&state.Demo!=null&&state.Demo.Chapter>=DemoChapter.Settlement&&!Flow.Session.Paused;
-            manage.gameObject.SetActive(available&&Flow.Session.Mode==PrototypeMode.Exploration);panel.gameObject.SetActive(available&&Flow.Session.Mode==PrototypeMode.Construction);if(!panel.gameObject.activeSelf)return;
+            var modal=Flow.Front.Presentation!=null&&(Flow.ExistingHud.CompactView.WindowOpen||Flow.ExistingHud.CompactView.HelpOpen);
+            manage.gameObject.SetActive(available&&!modal&&Flow.Session.Mode==PrototypeMode.Exploration);panel.gameObject.SetActive(available&&Flow.Session.Mode==PrototypeMode.Construction);if(!panel.gameObject.activeSelf)return;
             if(lastCount!=state.Buildings.Count){lastCount=state.Buildings.Count;selected=lastCount-1;}
             resources.text="Oro "+state.Gold+" · Madera "+state.Wood+" · Alimento "+state.Food+" · Cap. "+SettlementOperations.Capacity(state,Rules)+" · Ejército "+state.Army.Count+"/6";
             var b=Selected;selectedLabel.text=b==null?"Ningún edificio seleccionado.":Rules.Find(b.Id).Title+" · nivel "+b.Level+(b.ProductionPaused?" · producción pausada":" · activo");

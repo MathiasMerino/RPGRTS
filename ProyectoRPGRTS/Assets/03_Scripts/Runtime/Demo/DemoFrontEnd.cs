@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Aethernia
 {
     public enum DemoScreen { None, Main, Character, Intro, Options, Credits, Retry }
-    public sealed class DemoFrontEnd : MonoBehaviour
+    public sealed partial class DemoFrontEnd : MonoBehaviour
     {
         public DemoFlow Flow;
         public TMP_FontAsset Font;
@@ -31,7 +31,7 @@ namespace Aethernia
         private readonly Vector2Int[] resolutions={new Vector2Int(1280,720),new Vector2Int(1920,1080),new Vector2Int(2560,1440),new Vector2Int(3840,2160)};
         private void Awake()
         {
-            ui=new DemoWidgets(Font,Theme.ButtonSprite);Preferences=DemoPreferences.Load();Preferences.Apply(Audio,Flow.CameraRig,!Application.isEditor);
+            ui=new DemoWidgets(Font,Theme.ButtonSprite,Presentation);Preferences=DemoPreferences.Load();Preferences.Apply(Audio,Flow.CameraRig,!Application.isEditor);
             displayIndex=System.Array.FindIndex(resolutions,r=>r.x==Preferences.Width&&r.y==Preferences.Height);if(displayIndex<0)displayIndex=0;
             Build();
         }
@@ -49,6 +49,8 @@ namespace Aethernia
         {
             canvas=gameObject.GetComponent<Canvas>();if(canvas==null)canvas=gameObject.AddComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=30;
             var scaler=gameObject.AddComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(1280,720);scaler.matchWidthOrHeight=.5f;gameObject.AddComponent<GraphicRaycaster>();fade=gameObject.AddComponent<CanvasGroup>();
+            if(Presentation!=null)BuildPolishedMain();
+            else {
             var main=Panel(DemoScreen.Main,"Main menu");
             var slab=DemoWidgets.Rect(main,"Bronze frame",40,42,516,633);DemoWidgets.Fill(slab,new Color(.57f,.43f,.24f,.8f));
             DemoWidgets.Fill(DemoWidgets.Rect(slab,"Stone inset",2,2,512,629),new Color(.055f,.064f,.067f,.97f));
@@ -60,7 +62,9 @@ namespace Aethernia
             Add(main,"options","Opciones",72,461,218,ShowOptions);Add(main,"credits","Créditos",306,461,218,()=>Show(DemoScreen.Credits));
             Add(main,"quit","Salir",72,518,452,Quit);
             ui.Text(main,"Demo label","PRIMERA DEMO · RPG / RTS / ASENTAMIENTO",74,591,442,44,17).color=ui.Gold;
+            }
             notice=ui.Text(transform,"Status","",590,580,630,94,20);
+            if(Presentation!=null){notice.rectTransform.anchoredPosition=new Vector2(82,-646);notice.rectTransform.sizeDelta=new Vector2(556,60);notice.fontSize=17;canvas.pixelPerfect=true;scaler.screenMatchMode=CanvasScaler.ScreenMatchMode.Expand;}
             BuildCharacter();BuildIntro();BuildOptions();
             var credits=Panel(DemoScreen.Credits,"Credits");ui.Text(credits,"Credits text",Flow.Content.Credits,145,65,990,510,23);Add(credits,"credits-back","Volver",145,600,250,ShowMain);
             var retry=Panel(DemoScreen.Retry,"Defeat");ui.Text(retry,"Defeat title","La aventura continúa",210,175,860,65,36).color=ui.Gold;
@@ -70,6 +74,7 @@ namespace Aethernia
         }
         private void BuildCharacter()
         {
+            if(Presentation!=null){BuildPolishedCharacter();return;}
             var p=Panel(DemoScreen.Character,"Character creation");ui.Text(p,"Heading","ELIGE TU CAMINO",60,40,850,64,36).color=ui.Gold;
             ui.Text(p,"Name label","Nombre",60,123,300,30);NameInput=ui.Input(p,"Name","Viajero",60,160,540);
             var x=60f;foreach(var profile in Flow.Session.Rules.Classes){var id=profile.Id;Add(p,"class-"+id,profile.Title,x,230,170,()=>ChooseClass(id));x+=184;}
@@ -85,7 +90,7 @@ namespace Aethernia
         public void ChooseClass(string id){if(Flow.Session.Rules.Find(id)==null)return;ChosenClass=id;RefreshCharacter();}
         private void RefreshCharacter()
         {
-            if(classText==null)return;var profile=Flow.Session.Rules.Find(ChosenClass);classText.text=profile.Title+"\n"+Flow.Content.ClassDescription(ChosenClass)+"\n"+profile.Health+" PV · Alcance "+profile.Range.ToString("0.#")+" m";
+            if(classText==null)return;if(Presentation!=null){RefreshPolishedCharacter();return;}var profile=Flow.Session.Rules.Find(ChosenClass);classText.text=profile.Title+"\n"+Flow.Content.ClassDescription(ChosenClass)+"\n"+profile.Health+" PV · Alcance "+profile.Range.ToString("0.#")+" m";
             var entry=Catalog.FindEntry(ChosenClass);portrait.sprite=entry==null?null:entry.PortraitSprite;portrait.enabled=portrait.sprite!=null;
             var lineage=Flow.Content.Lineages[lineageIndex];lineageText.text=lineage.Title+" · provisional\n"+lineage.Description;
         }

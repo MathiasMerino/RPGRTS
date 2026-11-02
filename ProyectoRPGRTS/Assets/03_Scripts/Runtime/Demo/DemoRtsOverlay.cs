@@ -21,8 +21,8 @@ namespace Aethernia
         private void OnDisable(){ClearBars();}
         private void Start()
         {
-            ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite);canvas=Flow.ExistingHud.GetComponent<Canvas>();
-            panel=DemoWidgets.Rect(canvas.transform,"Hero RTS commands",456,98,570,124);DemoWidgets.Fill(panel,new Color(.035f,.043f,.046f,.96f));text=ui.Text(panel,"Group context","",12,6,546,56,18);
+            ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite,Flow.Front.Presentation);canvas=Flow.ExistingHud.GetComponent<Canvas>();
+            panel=DemoWidgets.Rect(canvas.transform,"Hero RTS commands",456,98,570,124);ui.Surface(panel,new Color(.035f,.043f,.046f,.96f));text=ui.Text(panel,"Group context","",12,6,546,56,18);
             attack=ui.Button(panel,"Hero attack","Atacar",12,72,170,42,()=>Order("attack"));guard=ui.Button(panel,"Hero guard","Guardia",196,72,170,42,()=>Order("guard"));recover=ui.Button(panel,"Hero recover","Recuperar",380,72,170,42,()=>Order("recover"));
             drag=DemoWidgets.Rect(canvas.transform,"Selection rectangle",0,0,0,0);DemoWidgets.Fill(drag,new Color(.70f,.63f,.36f,.18f),false);
         }
@@ -32,7 +32,7 @@ namespace Aethernia
             if(panel==null)return;var rts=Flow.Director.Rts;var show=Flow.IsPlaying&&rts.IncludesHero&&Flow.Session.Mode==PrototypeMode.Rts;panel.gameObject.SetActive(show);
             foreach(var b in bars.Values)b.Root.gameObject.SetActive(false);
             if(!show){ClearBars();drag.gameObject.SetActive(false);return;}
-            rts.CopyStatus(status);var selectedHero=false;
+            rts.CopyStatus(status);var selectedHero=false;var occupied=new List<Rect>();
             foreach(var unit in status)
             {
                 if(unit.Unit==null||unit.Health<=0)continue;
@@ -45,8 +45,10 @@ namespace Aethernia
                     bar=new Bar{Root=rect,Fill=fill,Label=ui.Text(rect,"Unit name","",0,0,150,22,15)};bars.Add(unit.Unit,bar);
                 }
                 var projected=Camera.main.WorldToScreenPoint(unit.Unit.transform.position+Vector3.up*2.05f);if(projected.z<=0)continue;
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,projected,canvas.renderMode==RenderMode.ScreenSpaceOverlay?null:canvas.worldCamera,out var local);bar.Root.anchoredPosition=local;bar.Root.gameObject.SetActive(true);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,projected,canvas.renderMode==RenderMode.ScreenSpaceOverlay?null:canvas.worldCamera,out var local);if(Flow.Front.Presentation!=null){var width=unit.Hero?140:48;var candidate=new Rect(local.x-width*.5f,local.y,width,30);for(var n=0;n<12&&occupied.Exists(r=>r.Overlaps(candidate));n++){local.y+=12;candidate.y=local.y;}occupied.Add(candidate);bar.Root.sizeDelta=new Vector2(width,32);bar.Label.rectTransform.sizeDelta=new Vector2(width,22);}
+                bar.Root.anchoredPosition=local;bar.Root.gameObject.SetActive(true);
                 bar.Fill.fillAmount=(float)unit.Health/unit.Maximum;var detailed=unit.Hero||(rts.SelectedAllies==1&&unit.Unit.IsSelected);bar.Label.text=(unit.Hero?"H脡ROE 路 ":unit.Team==0?"A ":"B ")+(detailed?unit.Role+" ":"")+unit.Health;
+                if(Flow.Front.Presentation!=null){bar.Label.rectTransform.sizeDelta=new Vector2(140,22);bar.Label.fontSize=14;bar.Label.enabled=detailed;bar.Label.text=unit.Hero?"H蒖OE "+unit.Health+"/"+unit.Maximum:unit.Role+" "+unit.Health;}
                 bar.Label.color=unit.Unit.IsSelected?ui.Gold:ui.Ink;
             }
             text.text=(rts.ContextId=="conquest-outpost"?"CONQUISTA":"PATRULLA")+" 路 "+rts.Allies+" aliados / "+rts.Enemies+" rivales 路 "+rts.SelectedAllies+" seleccionados\nCtrl+1/2/3: guardar grupo 路 1/2/3: seleccionar";
