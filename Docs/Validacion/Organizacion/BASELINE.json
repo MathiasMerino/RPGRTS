@@ -1,0 +1,30 @@
+{
+  "baseCommit": "33669f7a2d77d32b89886ce4f5669dfdf2811fa8",
+  "preexistingModifiedFiles": [
+    "ProyectoRPGRTS/ProjectSettings/QualitySettings.asset"
+  ],
+  "qualitySHA256": "62494399222dd3d2c992d4c9c41deecdeffd5e50fde962be46b7f38a0a09b916",
+  "assetsToMove": {
+    "Assets/Readme.asset": {
+      "dataSHA256": "6d098604e909b6a0e64fe5910c2719704864d49678bcf5413bd47b67e5490107",
+      "metaSHA256": "46c6b89ac1d47bd0c0d1a8b141ae3e32cd95d3e74c49381f0d9f942488c254ce"
+    },
+    "Assets/InputSystem_Actions.inputactions": {
+      "dataSHA256": "1c6cbb519d65ecfe19a29231735b7f54741a20ac1a8ad4f46a18e1bfb28a3c39",
+      "metaSHA256": "3b4e424a80f5b4fa76b6abd774884a24285eaa61f22ff9bb20e5ad505fd8b569"
+    }
+  },
+  "scenes": {
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaAlphaCandidate.unity": "edf36947a3926784d873f934d2f2f505532eada29d8867e63e7c43cda3c3f618",
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaExpeditions.unity": "60f15ba2dbeaf3cbb0426fe49cf65770928b2f11cc26b4d15ddf9322a4f2067b",
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaFirstDemo.unity": "6333c2001c769f47c9daaa489c8101e5a9a87fa68bf49b4e3c2d2aed2bc6c900",
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaProgressionDemo.unity": "020f0921f390a27f763d97e94ec9a04b354ca558e53e92e1d792a57ccbe8a8ba",
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaVillageDemo.unity": "b0c6653baf4a43719cb3af5df40fdfca352e44fdd153e5da3c557c732cfba6cd",
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaVisualPolish.unity": "0e8927fd4bd08ed5e0108ad850d8d8a7fe07b95b9a196084ba6d59e206951ba1",
+    "ProyectoRPGRTS/Assets/01_Scenes/PlayablePrototype.unity": "720b42d022669e70d017a92728726d2530e3eac72d6c45ee1ebebfe96fe20292",
+    "ProyectoRPGRTS/Assets/01_Scenes/SampleScene.unity": "07fce8b04804ddccb3026db5b43d8dc41ba138e49d50d36a5c24877081eacdca",
+    "ProyectoRPGRTS/Assets/01_Scenes/TechnicalSandbox.unity": "73972f083c3b8ca94536b10ff608c074b38e2ce7046f5729865ee3dad7d9befd"
+  },
+  "GDD_SHA256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "privateOriginalHashesPreserved": 3
+}

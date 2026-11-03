@@ -6,7 +6,7 @@ Fecha: 2026-10-30. Hito artístico E02-A solicitado por el usuario; seguimiento 
 
 Esta ficha prepara revisión y producción futura. No crea FBX, rig, texturas PBR, animaciones o un personaje nuevo en Unity. La apariencia E01 y la infraestructura E02 permanecen intactas.
 
-Actualización E02-B: el usuario autoriza usar esta propuesta **provisionalmente** en Unity. Se aplica un proxy estático de 1,78 m y la ilustración en la UI, conservando la variante E01 y la infraestructura E02. [Implementación, pruebas y límites](../../Docs/E02B_MONJE_PROVISIONAL.md). Esta actualización no sustituye la aprobación artística final pendiente ni modifica la condición de propuesta de la ficha.
+Actualización E02-B: el usuario autoriza usar esta propuesta **provisionalmente** en Unity. Se aplica un proxy estático de 1,78 m y la ilustración en la UI, conservando la variante E01 y la infraestructura E02. [Implementación, pruebas y límites](../../Docs/Historial/Etapas/E02B_MONJE_PROVISIONAL.md). Esta actualización no sustituye la aprobación artística final pendiente ni modifica la condición de propuesta de la ficha.
 
 ## 1. Concepto general y lectura de referencias
 
@@ -156,4 +156,4 @@ Todo continúa **PROPUESTO** hasta una respuesta explícita del usuario. La prep
 
 ## Seguimiento técnico E08 (2026-11-01)
 
-La hoja y esta propuesta conservan su carácter provisional. E08 prepara una representación 3D articulada original, con rig Generic, skin y clips nativos; no equivale a aprobación artística ni a un FBX final. Dimensiones, ficha de Monje/Guerrero/Mago, deformaciones, guía de sustitución y evidencia se mantienen en [E08_PERSONAJES_ANIMADOS](../../Docs/E08_PERSONAJES_ANIMADOS.md), evitando duplicar especificaciones. La variante estática anterior permanece recuperable.
+La hoja y esta propuesta conservan su carácter provisional. E08 prepara una representación 3D articulada original, con rig Generic, skin y clips nativos; no equivale a aprobación artística ni a un FBX final. Dimensiones, ficha de Monje/Guerrero/Mago, deformaciones, guía de sustitución y evidencia se mantienen en [E08_PERSONAJES_ANIMADOS](../../Docs/Historial/Etapas/E08_PERSONAJES_ANIMADOS.md), evitando duplicar especificaciones. La variante estática anterior permanece recuperable.

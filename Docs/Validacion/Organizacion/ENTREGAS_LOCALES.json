@@ -1,0 +1,84 @@
+{
+  "scope": "Solo carpetas intermedias/verificaciones; builds finales y ZIP conservados. Huellas por arbol antes/despues identicas.",
+  "moved": [
+    {
+      "from": "ProyectoRPGRTS/Builds/AlphaCandidateE17Windows-r1",
+      "files": 307,
+      "result": "PASS",
+      "treeSHA256": "9A0A496FE7A5CFEBB2CD9490BF31C46EFE7521BFB78533FE39E0979CAE665B4A",
+      "to": "ProyectoRPGRTS/Builds/Archivo/Intermedias/AlphaCandidateE17Windows-r1",
+      "bytes": 206698562
+    },
+    {
+      "from": "ProyectoRPGRTS/Builds/AlphaCandidateE17Windows-r2",
+      "files": 307,
+      "result": "PASS",
+      "treeSHA256": "F8B886ACCD4CB2CF52442FCFADEF4712E0BC9FF050820A7B37B0F0868324A288",
+      "to": "ProyectoRPGRTS/Builds/Archivo/Intermedias/AlphaCandidateE17Windows-r2",
+      "bytes": 206700470
+    },
+    {
+      "from": "ProyectoRPGRTS/Builds/PortableE14E15-20261102-055044",
+      "files": 314,
+      "result": "PASS",
+      "treeSHA256": "76BDBEAFA0620349A481114AD29FE6FFAD58DFC808BFFBF2927A13E889702222",
+      "to": "ProyectoRPGRTS/Builds/Archivo/Verificaciones/PortableE14E15-20261102-055044",
+      "bytes": 205797928
+    },
+    {
+      "from": "ProyectoRPGRTS/Builds/PortableE16-20261102-075738",
+      "files": 314,
+      "result": "PASS",
+      "treeSHA256": "08A2A2E34A99B42C4C4658700F6AD3307AE7C79B5AB0C39C7D90677B503B6E27",
+      "to": "ProyectoRPGRTS/Builds/Archivo/Verificaciones/PortableE16-20261102-075738",
+      "bytes": 205954710
+    },
+    {
+      "from": "ProyectoRPGRTS/Builds/PortableE16r2-20261102-082827",
+      "files": 314,
+      "result": "PASS",
+      "treeSHA256": "88CC966FE0BC70A8BEA2204F748DDE30C5EE22E838A8C2F81D832144A78C16CE",
+      "to": "ProyectoRPGRTS/Builds/Archivo/Verificaciones/PortableE16r2-20261102-082827",
+      "bytes": 205955413
+    },
+    {
+      "from": "ProyectoRPGRTS/Builds/PortableE16r3-20261102-090401",
+      "files": 314,
+      "result": "PASS",
+      "treeSHA256": "E4D9CB7443292B2E7D5221B509AE31141B7C5BF9C727F61124CDB349D5AD77CA",
+      "to": "ProyectoRPGRTS/Builds/Archivo/Verificaciones/PortableE16r3-20261102-090401",
+      "bytes": 205956292
+    },
+    {
+      "from": "ProyectoRPGRTS/Builds/PortableE17-20261102-183406",
+      "files": 315,
+      "result": "PASS",
+      "treeSHA256": "A6175B6C7E059A9ABE9454D472C5DE03D9F780ECA4F0493F662529214175DB87",
+      "to": "ProyectoRPGRTS/Builds/Archivo/Verificaciones/PortableE17-20261102-183406",
+      "bytes": 206503344
+    }
+  ],
+  "deletedFiles": 0,
+  "zipFilesPreserved": 19,
+  "zipSHA256": {
+    "Aethernia-E08-Personajes-Windows.zip": "ADBB3FE1C1FA701F62DBAAF5D165AAE532CE47E598D5B3874ECF4FB2B781591B",
+    "Aethernia-E16-Pulido-Visual-r3-Windows.zip": "8C3B39C6B2747D9BA9649740C6F862A604C2666B5FF272D10CB428C46AC29737",
+    "Aethernia-E16-Pulido-Visual-r2-Windows.zip": "5C949BAFC736C6A7F5426CFDD5774AB108B06D6C75D4158CA64936BCA269CF2B",
+    "Aethernia-Fase3-E02B-Windows.zip": "FD91DA79BF62154EB5569FBB90BF3863D667FD002BBC3DCDAD0EA400B6CE956D",
+    "Aethernia-E07-Aldea-Windows.zip": "967592477432B69635216EC85055892E9B9A5B96814BD3A73A736B073C33698A",
+    "Aethernia-E16-Pulido-Visual-Windows.zip": "40FD4A0922F0765E6111C0491DCE7AC650D40D2E53A3DBF9345BDC4CF41D6E16",
+    "Aethernia-E17-Alpha-Candidate-Windows.zip": "4C16177BC696334549EEBC942F21FC6EBCD63B151FAFAC79EB7D9910D4B6E87D",
+    "Aethernia-E09-Combate-Windows.zip": "11D3DB3E940F286EF79FF7C2F52DCEE3919F2A9ACCEE4A7226B68D9CF2C17A79",
+    "Aethernia-E18-Progresion-Windows.zip": "BC6828E2FE78C0F3F1115AA020AB7A5CC4913CD81B15DCD71AEF3A8963D5D72F",
+    "Aethernia-Fase3-E02-Windows.zip": "23A51DACED714B1FC4FE9E3E8B9202B5966DCB78F5C922B1B38DDF92B180A83C",
+    "Aethernia-E03-E06-Demo-Windows.zip": "B24C5E24EFF8D35F938629BC982E9F9970F3AFE14A462507205AB3AB801FA668",
+    "Aethernia-Fase3-E01-Windows.zip": "1FD5DD2BA203A288557F497C30DDEA607E955B17F59FE3369BF0B8AE14F6E61C",
+    "Aethernia-Fase3-UI-C1-Windows.zip": "DB2D6A04ACB149D24635E05E85CD656D4875A4B2627F93A5EE1E0A693A800D48",
+    "Aethernia-Fase3-D01-Windows.zip": "8E2262F981164205E658476D594AD03526C5128D04D6FBE821FAC33A1C736111",
+    "Aethernia-Prototipo-Windows.zip": "941B53550F5FD55E58ADA307B0DB01610E293176D1F6EC7B794EE24D64FD15D4",
+    "Aethernia-E14-E15-Expediciones-Windows.zip": "958DF84773407FE81274C366588BA60E97B4FE19FECA69763C37BE38912BAF36",
+    "Aethernia-Fase2-Windows.zip": "630B2C144C1F044D34BCF3395AB0BF03BDF68B1EF2EF21B66E934DB9CFEC22F2",
+    "Aethernia-Fase3-C02-Windows.zip": "2629012E4853500E12FBD495DBD1129452F2D80500F1C4B08D8EF2E00A8E734D",
+    "Aethernia-E10-E13-Demo-Windows.zip": "6C833B8DAB2BAC55CC67502EE9F607EAECAEA3494FD2837E4776B0673B81026E"
+  }
+}

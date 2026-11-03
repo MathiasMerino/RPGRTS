@@ -1,0 +1,9 @@
+# E17 — recuperación al cierre técnico
+
+Rama feature/e17-art-pipeline-alpha-polish desde E16 b0afdc2 (PR7 borrador). Runtime final08022860fc3f3af2c3066e02d6736cdcc573542d. A–F técnicos/documentales verificados; PR#8 abierto en borrador sobre E16. F marcado completado con evidencias reales. No E18, force, merges ni cambiosmain/dev.
+
+General142/143, XMLpreservado; único fallo expectativaE01cápsula incompatibleconE17keepcurrentválido. Pruebafortalecida modelo+estado y cápsula siambosinutilizables,5/5dirigidas. No143/143globalclaim. RTSbaseline4/5(9victorias/1derrotaHP0),14victoriastrazadasenregresión; pendienteA-RTSno cerrarporrepetir. Human/arte/balancependientes. Meshyprivadooriginalesintactos, sinUV0/rig,noRuntime/nopublicación.
+
+BuildAlpha final206493085bytes/72.39s.18medicionesoffscreenverificadasenLogs/E17/Benchmark-20261102-182140, sinFPSDisplay/GPU; primerosintentosconservados, inicialsinrendervalidacióninvalidada. DemoGPU6/6Logs/DemoQA/GPU-20261102-182337. ExpeditionGPU6/6Logs/ExpeditionQA/GPU-20261102-182541(RecordWarrior1483framesDSP). Portable2/2Logs/ExpeditionQA/GPU-20261102-183559.82PNG/2MP4exportados,FFmpegdecodePASS. ZIPAethernia-E17-Alpha-Candidate-Windows.zip87816123bytesSHA4c16177bc696334549eebc942f21fc6ebcd63b151fafac79eb7d9910d4b6e87d,CRC/perfilesSHA/extracciónPASS,17ZIPpreviosintactos. VERSIONesr1/r2buildconservadasnoZIP.
+
+Docs/Historial/Etapas/E17_ALFA.md,GUIA_ALFA_E17,COMPARATIVA_E17,Validacion/E17contienenevidencia. GDD/Source/paquetes/versiones/escenashistóricas yMeshyhashesintactos. NoSourceC#cambiado desdebuild;SoloURPBajo/Medio flagsstripnormalizadosporUnity. Entrega c477abc publicada; PR8draft https://github.com/MathiasMerino/RPGRTS/pull/8, main/dev/PR1..7intactos. Último paso de este cierre: commit/push de referencias y verificación HEAD/upstream limpio. Después revisión humana, no E18 automático.

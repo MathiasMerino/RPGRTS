@@ -9,3 +9,10 @@ UserSettings/
 *.csproj
 *.sln
 *.slnx
+
+# Historial y medios conservados: abrir por ruta cuando sean necesarios.
+/Docs/Historial/
+/Docs/Images/
+/Docs/Videos/
+/Docs/Validacion/
+/ProyectoRPGRTS/Builds/
