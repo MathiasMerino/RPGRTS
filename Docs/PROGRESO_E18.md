@@ -9,7 +9,7 @@ Código, validación y publicación terminados; [PR#9draft](https://github.com/M
 - ZIP Aethernia-E18-Progresion-Windows.zip87.842.896bytes, SHA bc6828e2fe78c0f3f1115aa020ab7a5cc4913cd81b15dcd71aef3a8963d5d72f; CRC/perfileSHA PASS,18ZIPprevios intactos. No repetir empaquetado ni sobrescribir archivos previos.
 - Últimos cambios: visualizar solo atributo principal aplicado, descansoE18incluye ejército superviviente para alcanzar máximo entrenado, fallback visual desconocido conserva bindings sin admitir ítems inválidos. Cuatro dirigidas y portable validan estos cambios; no quedó código pendiente de compilar.
 - SOURCE_AUDIT/GITHUB_PRE_PUBLICACION verifican GDD/versiones/escenas previas y main/dev/PR1..8; privadosMeshy/LocalOnly ignorados, treshashes originales intactos. No integrar/publicar esos recursos ni hacer merges/force/configglobal.
-- RSTUVcerrado como entrega técnica de candidata con incidenciaRTSabierta. PR#9draft publicado; último paso operativo: pushnormal de esta documentación y verificación final limpio/upstream/main/dev/PR1..8. No queda código o artefacto por crear. Humano sigue pendiente.
+- RSTUVcerrado como entrega técnica de candidata con incidenciaRTSabierta. PR#9draft publicado; verificaciones de main/dev/PR1..8/privados/ZIP/medios en REPOSITORIO_FINAL.json. La entrega se conserva mediante pushnormal; comprobar limpio/upstream antes de continuar. No queda código o artefacto por crear. Humano sigue pendiente.
 - Evaluación humana de duración25–45min/diversión/arte/×Escape no realizada. Hoja Docs/Validacion/E18/REVISION_HUMANA.md sin completar.
 
 El detalle histórico de desarrollo y fallos intermedios está conservado en Git, REGISTRO_CAMBIOS.md y XML de Validacion/E18; no rehacer auditorías ni generadores.
