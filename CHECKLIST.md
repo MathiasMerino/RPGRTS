@@ -4,6 +4,8 @@ Actualizado: 2026-11-03, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
+- UX-01: candidata técnica5468c38, escena AetherniaUx01Demo, [PR11draft](https://github.com/MathiasMerino/RPGRTS/pull/11) sobre E19.9/9dirigidas,3/3refinamiento,6/6Windows,37PNG/2MP4 yZIPCRC/SHA/20previosPASS. General202/206 (RTS histórico+3timeouts);3/3timeouts pasan en aislamiento, sin sustituir la general. UX-HUM/UX-GEN-TIMEOUT/UX-RTS-HIST abiertos; informe Docs/ENTREGA_UX01.md. Sin E20.
+
 - E19: candidata técnica en feature/e19-razas-civilizaciones sobre E18/PR9+organización5507425. Cuatro razas/12combinaciones y dos culturas piloto funcionales;21/21dirigidas,196/197general(único fallo RTS histórico),6/6procesosWindows,52PNG/2MP4 yZIPCRC/SHA/19previosPASS. Informe Docs/ENTREGA_E19.md. [PR#10draft](https://github.com/MathiasMerino/RPGRTS/pull/10); RTS-HIST y evaluación humana pendientes, sin E20.
 
 - ORG-01: organización local verificada,27documentos en Historial,7carpetas intermedias/verificaciones archivadas,19ZIP intactos;2assets movidos con GUID/.meta conservados,781recursos públicos inventariados y3/3pruebasUnity.9escenas/GDD/privados/calidad local previa sin cambios. Mapa Docs/ORGANIZACION_PROYECTO.md.
@@ -1212,20 +1214,22 @@ El encargo explícito autoriza implementación, validación, build y PR apilado.
 
 ## UX-01 — EXPERIENCIA PROGRESIVA
 
-Plan, dependencias y aceptación: Docs/UX01_EXPERIENCIA.md. Base E19 preservada.
+Base E19 conservada; rama feature/ux01-onboarding-camera-world, [PR11 draft](https://github.com/MathiasMerino/RPGRTS/pull/11) sobre PR10. Código/build5468c38. Sin E20 ni merges. Reglas y arte provisionales.
 
-| ID | Estado | Criterio / archivos / pruebas |
-|---|---|---|
-| UX-A | En desarrollo | Inicio seguro y misión; DemoFlow/DemoProgress; pruebas pendientes |
-| UX-B | En desarrollo | Cámara única y movimiento; IsometricCameraRig/DemoHeroMotor |
-| UX-C | En desarrollo | Interacción E y objetivo contextual; PlayerCommands/LostCargo |
-| UX-D | En desarrollo | HUD contextual y tres resoluciones |
-| UX-E | En desarrollo | Preparación y órdenes RTS reales |
-| UX-F | En desarrollo | Escenario y navegación independientes |
-| UX-G | En desarrollo | Persistencia aditiva y legado |
-| UX-H | En desarrollo | QA, evidencia, build y PR apilado |
-| UX-HUM | Pendiente | Revisión humana, no sustituible por automatización |
+| ID | Depende | Estado | Aceptación | Archivos principales | Pruebas / evidencia |
+|---|---|---|---|---|---|
+| UX-A | E19 | Completado y verificado | Inicio seguro, misión introduce RPG, victoria/recompensa única y regreso real | DemoFlow, DemoContent, LostCargoController, escena UX | DIRIGIDA_10: tres clases; Windows4raw+2portable |
+| UX-B | A | Completado y verificado | Un controlador suave por modo, zoom acotado, movimiento conservado y bloqueo modal | IsometricCameraRig, DemoHeroMotor, RaceVisualVariant, HumanoidVisualRig | Tres resoluciones en Play Mode,12variantes, bloqueo modal; WASD nativo |
+| UX-C | A | Completado y verificado | Un candidato E cercano válido, objetivo correcto, acciones sin duplicar recompensas | PlayerCommands, InteractionPoint, UxExperienceView | E real en Windows, API editor, misión y guardado; teclado independiente de ratón |
+| UX-D | B,C | Completado y verificado | HUD contextual, centro libre, guía ocultable y ventanas anteriores | UxExperienceView, MedievalHudView, VerticalSliceHud, DemoRtsOverlay, LostCargoView | PNG1280/1920/2560; revisión visual automatizada/agente, aceptación humana pendiente |
+| UX-E | A | Completado y verificado | Preparación sin daño, selección y dos llegadas reales, orden de ataque, victoria/derrota/reintento | RtsBattleController, RtsPreparation, DemoFlow, UxExperienceRoute | DIRIGIDA_10=9/9 con reintento explícito del Monje; seis procesos Windows; intentos conservados |
+| UX-F | B,E | Completado y verificado | Campo/camino legibles, terreno visual alineado con navegación, recursos compartidos | UxExperienceBuilder, escena y Assets/16_UX01; copias de dos fondos Grass, tres superficies UV | Aislamiento SurfaceIsolation; regresión de alturas de ambas mallas; DIRIGIDA_11=3/3 y Windows final |
+| UX-G | A,E | Completado y verificado | Estado aditivo; título/Continuar conserva formación; E19 avanzado no reinicia progreso | DemoProgress, PrototypeSaveStore, PrototypeDirector, DemoFlow | Posiciones/selección/salud sin duplicación; legado E13/E19; reinicios Windows y portable |
+| UX-H | A–G | Completado y verificado | Regresión general, entrega/evidencias completas y PR revisable | Herramientas QA/package/export, Docs/ENTREGA_UX01, GUIA_UX01 | Dirigidas9/9+3/3 separados; Windows6/6; ZIPCRC/SHA/20anterioresPASS; general202/206, cuatro fallos conservados |
+| UX-GEN-TIMEOUT | H | Pendiente | Investigar tres timeouts180s de la regresión sin ampliar límites o esconder el pase original | GENERAL.xml/json y comprobación aislada | 3/3aisladosPASS con mismo código/límites; causa del pase largo no confirmada |
+| UX-HUM | H | Pendiente | Evaluación real de comodidad, controles de ratón, claridad, diversión, balance y oclusión | GUIA_UX01 | No sustituida por automatización o inspección de imágenes |
+| UX-RTS-HIST | E19 | Pendiente | Resolver o aceptar con evidencia la expectativa histórica de reserva RTS | Prueba original conservada | E19 general196/197; no se altera su aserción ni se repite para pintar verde |
 
-UX01 inicial: escena/navegación generadas; referencia de escena1/1PASS dentro del pase diagnóstico1/2. Recorridos fallidos conservados en Docs/Validacion/UX01; no se declaran verificadas las mecánicas. Archivos: Runtime/Demo,UxExperienceView,IsometricCameraRig,PlayerCommands,InteractionPoint,RtsPreparation,PrototypeSaveStore,UxExperienceBuilder,UxExperienceTests y herramientas QA.
+Las pruebas del editor operan las API de motor/interactor/órdenes; Windows verifica WASD/E y ejecuta los mismos controladores reales. Clic/arrastre/Shift físicos y aceptación humana siguen pendientes. Las capturas son renders reales, sin componer poses; grabación12Hz no es una medición FPS.
 
-UX01 dirigido final8/8PASS: tres clases, guardado/Continuar en preparación RTS, legado avanzado E19, rig de12variantes y bloqueo modal. Evidencia DIRIGIDA_08_RESULTADO.xml. API de movimiento/interacción en editor; teclado real pendiente de player. No equivale a regresión global ni revisión humana.
+Fallos y diagnóstico anteriores conservados en Docs/Validacion/UX01: arnés tras recarga, teclado del editor, primera E nativa y derrotas legítimas del héroe. DIRIGIDA_10 incluye derrota del Monje en el primer intento y victoria mediante el botón Reintentar en el segundo. No se inyectaron salud/recursos ni se cambiaron estadísticas para lograrlo. Las tareas antiguas e historial26/26 se conservan arriba.

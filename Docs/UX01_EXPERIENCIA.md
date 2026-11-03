@@ -30,10 +30,12 @@ La escala racial provisional hacía que el contrato de rig rechazara modelos vá
 
 El editor comprueba el motor y el interactor mediante sus API: el teclado sintético no llega a su bucle de entrada en esta configuración. El player Windows verificará WASD/E reales por separado. Se conservan todos los resultados fallidos; el pase dirigido anterior fue6/7 con muerte legítima del Monje, aun con aliados supervivientes. El recorrido actual consume sólo raciones existentes, prioriza arqueros y utiliza Guardia/ataques legales, sin modificar estadísticas o condiciones de victoria.
 
-Cámara: exploración6.2m de semialtura, RPG7, RTS8.5, construcción10; zoom acotado, amortiguación0.18s, reposo tras2s de desplazamiento manual. Distancia de cámara45m. Un controlador escribe su transformación.
+Cámara: exploración6.2m de semialtura, RPG7, RTS9, construcción10; zoom acotado, amortiguación0.18s, reposo tras2s de desplazamiento manual. Distancia de cámara45m. Un controlador escribe su transformación.
 
 Escala: actor/cápsula1.8m, modelos raciales proporcionales; caminos4m, campo transitable40×30m con fondo visual64×60m, corredor de despliegue sin obstáculos, edificios y piezas anteriores en metros. Superficie de navegación UX con GUID propio y volumen limitado para no duplicar las ruinas E14. Materiales Grass/Earth y decoraciones públicas compartidas.
 
 ## Corrección de superficie visual
 
 El aislamiento de renderers identificó la malla Grass de E16 (altura hasta2.27m) sobre la navegación plana occidental: ocultaba cuerpos, incluso sin dibujar el suelo añadido y después de reiniciar el skin. Se conserva la prueba aislada en SurfaceIsolation, sin confundirla con un recorrido de jugador. WesternGround.asset es una copia pública exclusiva UX, aplanada a−0.04m sólo en campo/camino con transición suave; la malla E16 y las escenas originales quedan intactas. El colisionador occidental se limita a40×30m y el fondo visual cubre64×60m. Una prueba de regresión comprueba alturas de vértices del área y conserva colinas exteriores.
+
+Las dos mallas de fondo se modifican sólo mediante copias UX. Suelo y caminos reutilizan materiales Alpha con UV de2m, no materiales duplicados. Decorado de campamento reutiliza cobertizo, barril y caja públicos. El recorrido permite como máximo un reintento explícito si hay derrota, guarda ambos resultados y falla si el segundo tampoco vence; no garantiza una victoria ni cambia la prueba histórica.

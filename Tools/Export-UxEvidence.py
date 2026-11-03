@@ -15,6 +15,7 @@ def main():
             text=proof.read_text(encoding='utf-8-sig');assert text.startswith('PASS:'),proof
             receipts.append({'file':label+'/'+proof.name,'result':text,'sha256':shared.sha(proof),'revision':a.revision});shutil.copy2(proof,target/proof.name)
         for metrics in folder.glob('*.metrics.json'):shutil.copy2(metrics,target/metrics.name)
+        for proof in folder.glob('*.rts-attempts.details'):shutil.copy2(proof,target/proof.name)
         for log in folder.glob('*.log'):assert not re.search(r'Failed to create agent|Exception:|NullReferenceException|Assertion failed',log.read_text(encoding='utf-8-sig',errors='replace')),log
         if label=='Windows':
             for png in sorted((folder/'Captures').glob('*.png')):

@@ -10,6 +10,13 @@
 - E19 candidata:21/21dirigidas y6/6procesosWindows(4raw+2portable), general196/197(solo reservaRTSGuerrero falla;21E19PASS); 52PNG/2MP4, ZIPCRC/SHA/19previos yportable verificados. Incidencia RTS histórica reproducida y evaluación humana abiertas. E18 general174/176 con visual corregida después; no sumar pruebas dirigidas como regresión global.
 - Mapa actual `Docs/ORGANIZACION_PROYECTO.md`, índice `Docs/README.md`; detalle histórico de fases y límites en `Docs/Historial/CONTEXTO_ETAPAS.md`. No borrar recursos por antigüedad o por faltar en una única escena.
 
+## UX-01 — candidata técnica posterior a E19
+- Rama feature/ux01-onboarding-camera-world, PR11draft sobre E19/PR10; código/build5468c38. Nueva escena Assets/01_Scenes/AetherniaUx01Demo.unity y datos Assets/16_UX01; E19 y originales conservados. Informe/guía Docs/ENTREGA_UX01.md y GUIA_UX01.md. No E20 ni merges.
+- Dirigidas9/9, refinamiento3/3, Windows6/6(4raw+2portable),37PNG/2MP4; ZIPCRC/SHA/20previosPASS. General202/206: RTS histórico+3timeouts180s. Los3pasan aislados con mismos límites/código; no sustituir la general ni declarar causa/resolución confirmadas. UX-HUM, UX-GEN-TIMEOUT y UX-RTS-HIST abiertos.
+- BuildUx01→Builds/Ux01Windows; runner Invoke-ProgressionSmoke.ps1 -Phase UX01 con una raza por clase. No regenerar Ux01Scene. Refine es autoría acotada/idempotente, no arranque.
+- Primera misión segura activa RPG; RTS empieza en preparación y exige órdenes/llegadas reales. Guardado aditivo de preparación. Un reintento explícito puede ser necesario, queda registrado; no garantizan victoria las estrategias de prueba.
+- Dos fondos Grass E07 invadían visualmente el campo nuevo: copias WesternGround UX aplanadas localmente; materiales compartidos y mallas UV en metros. No modificar los originales para ocultar este problema.
+
 ## Alcance y método
 - Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.
 - Trabajar tareas acotadas, preservar trabajo existente y registrar ID/estado/aceptación/archivos/pruebas en CHECKLIST y REGISTRO después de cada actividad; conservar historial.

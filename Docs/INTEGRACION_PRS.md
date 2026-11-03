@@ -23,4 +23,4 @@ Bloqueos visibles: aprobación humana pendiente en todas las candidatas; inciden
 No iniciar otra fase o ampliar esta pila automáticamente. Primero revisar este inventario con el docente/usuario y acordar la integración. Este documento no otorga autorización para merges, protecciones, borrar ramas o cambiar main/dev.
 
 
-UX-01 fue autorizada expresamente después de E19: rama feature/ux01-onboarding-camera-world desde3e53508, base del futuro PR feature/e19-razas-civilizaciones (PR10). Orden: PR1→…→PR10→UX01; no hay fusiones automáticas ni cambios main/dev. Su comprobación independiente no sustituye la revisión pendiente de los antecedentes.
+UX-01 fue autorizada expresamente después de E19: rama feature/ux01-onboarding-camera-world desde3e53508, base del [PR11draft](https://github.com/MathiasMerino/RPGRTS/pull/11) feature/e19-razas-civilizaciones (PR10). Orden: PR1→…→PR10→UX01; no hay fusiones automáticas ni cambios main/dev. Su comprobación independiente no sustituye la revisión pendiente de los antecedentes.

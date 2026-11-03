@@ -1,0 +1,40 @@
+{
+  "run": {
+    "id": "2",
+    "testcasecount": "206",
+    "result": "Failed(Child)",
+    "total": "206",
+    "passed": "202",
+    "failed": "4",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-11-03 22:27:30Z",
+    "end-time": "2026-11-03 22:27:43Z",
+    "duration": "12.2079803"
+  },
+  "failures": [
+    {
+      "name": "Aethernia.Tests.Editor.E18RtsScenarioTests.ThreeClassesWithLegalBacklineOrdersAt30",
+      "message": "  warrior: victoria RTS real\n  Expected: Settlement\n  But was:  FirstRts\n",
+      "stack": "at Aethernia.Tests.Editor.DemoRtsTests+<Patrol>d__2.MoveNext () [0x00c45] in C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Assets\\03_Scripts\\Tests\\Editor\\DemoRtsTests.cs:70\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@1405238725ab\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\n"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.MissingAssetsLeaveMovementAndMonkFallbackFunctional",
+      "message": "Timeout value of 180000 ms was exceeded. If this is intended, increase the timeout value using a TimeoutAttribute.",
+      "stack": ""
+    },
+    {
+      "name": "Aethernia.Tests.Editor.UxExperienceTests.MageFullRoute",
+      "message": "Timeout value of 180000 ms was exceeded. If this is intended, increase the timeout value using a TimeoutAttribute.",
+      "stack": ""
+    },
+    {
+      "name": "Aethernia.Tests.Editor.UxExperienceTests.ModalWindowsBlockMotorCameraAndInteractor",
+      "message": "Timeout value of 180000 ms was exceeded. If this is intended, increase the timeout value using a TimeoutAttribute.",
+      "stack": ""
+    }
+  ]
+}

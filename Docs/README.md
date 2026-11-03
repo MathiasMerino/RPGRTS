@@ -26,3 +26,6 @@
 - [Flujo de GitHub](GITHUB_FLUJO.md). Las tareas y los cambios están en CHECKLIST.md y REGISTRO_CAMBIOS.md de la raíz.
 
 No confundir documentación histórica con autorización para crear fases nuevas. Arte provisional, modelos de respaldo y escenas de pruebas se conservan mientras tengan uso actual o de validación.
+
+
+UX-01: [Informe](ENTREGA_UX01.md) · [Guía de prueba](GUIA_UX01.md) · [Decisiones de experiencia](UX01_EXPERIENCIA.md).

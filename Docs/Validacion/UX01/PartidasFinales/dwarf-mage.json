@@ -1,0 +1,133 @@
+{
+    "Version": 1,
+    "Name": "Viajero mage",
+    "ClassId": "mage",
+    "RaceId": "dwarf",
+    "HasDemoProgress": true,
+    "Demo": {
+        "Chapter": 6,
+        "IntroSeen": true,
+        "Produced": 1,
+        "UxRevision": 1,
+        "UxPreparationStep": 3,
+        "UxFormation": [],
+        "UxSelected": []
+    },
+    "ProgressionRevision": 1,
+    "IdentityRevision": 1,
+    "Experience": 28,
+    "HeroLevel": 2,
+    "Skills": [
+        {
+            "Id": "mage-discipline",
+            "Rank": 1
+        }
+    ],
+    "Accessory": "",
+    "Health": 3,
+    "Gold": 26,
+    "Wood": 0,
+    "Food": 7,
+    "WorldSeconds": 31.311677932739259,
+    "ProductionCycle": 3,
+    "ReputationA": 0,
+    "ReputationB": 0,
+    "Weapon": "training-sword",
+    "Armour": "cloth",
+    "HeroPosition": {
+        "x": 9.0,
+        "y": 0.002500033937394619,
+        "z": -10.0
+    },
+    "Facts": [
+        "demo-starter-kit",
+        "lost-cargo-accepted",
+        "rpg-victory",
+        "xp-e18:rpg-victory",
+        "lost-cargo-recovered",
+        "lost-cargo-completed",
+        "xp-e18:lost-cargo-completed",
+        "rts-victory",
+        "demo-camp-secured",
+        "xp-e18:demo-camp-secured"
+    ],
+    "Items": [
+        {
+            "Id": "training-sword",
+            "Count": 1
+        },
+        {
+            "Id": "cloth",
+            "Count": 1
+        }
+    ],
+    "Buildings": [
+        {
+            "Id": "townhall",
+            "Position": {
+                "x": 12.0,
+                "y": 0.0,
+                "z": -8.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "frontier"
+        },
+        {
+            "Id": "workshop",
+            "Position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "frontier"
+        },
+        {
+            "Id": "barracks",
+            "Position": {
+                "x": 15.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "frontier"
+        }
+    ],
+    "Army": [
+        {
+            "Id": "4dcd27b68c58436098aa1bbafe3a19c7",
+            "Role": "archer",
+            "RaceId": "elf",
+            "CultureId": "frontier",
+            "Health": 10,
+            "Level": 1,
+            "Experience": 0,
+            "InParty": false
+        }
+    ],
+    "Companions": [],
+    "ArmySelection": [],
+    "Territories": [
+        {
+            "Id": "camp",
+            "Owner": "player-company",
+            "Secured": true
+        },
+        {
+            "Id": "crossing",
+            "Owner": "",
+            "Secured": false
+        },
+        {
+            "Id": "outpost",
+            "Owner": "faction-b",
+            "Secured": false
+        }
+    ],
+    "CultureId": "frontier",
+    "FactionId": "player-company",
+    "KingdomId": ""
+}
