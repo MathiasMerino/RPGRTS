@@ -56,7 +56,7 @@ namespace Aethernia
             var settlement=flow.GetComponent<DemoSettlementPanel>();Require(settlement.SelectBuilding(1)&&settlement.ToggleProduction(),"pause existing workshop through camp action");
             yield return Move(new Vector3(-3.4f,0,-5));Require(Find("reference-chest").TryInteract(D.Hero,flow.Session),"actual village chest funds");
             if(flow.Session.Rules.Progression!=null){yield return Move(new Vector3(9,0,-10));yield return HealAtCamp();yield return CargoQuest();}
-            yield return Move(new Vector3(9,0,-10));panel.Open();yield return null;
+            yield return Move(new Vector3(9,0,-10));panel.Open();Click("party-tab");yield return null;
             foreach(var role in party.Roles.Roles){Click("companion-"+role.Id);yield return null;}
             Require(S.Companions.Count==3&&party.Units.Count==3,"three paid unique companions");yield return Capture("Recruitment");
             var first=S.Companions[0].Id;Click("toggle-party-0");yield return null;Require(!S.Companions[0].InParty&&party.Units.Count==2,"reserve keeps identity");Click("toggle-party-0");yield return null;Require(S.Companions[0].Id==first&&party.Units.Count==3,"rejoin same companion");panel.Close();

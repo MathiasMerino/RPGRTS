@@ -670,3 +670,6 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 
 - Recorrido Windows inicial falló al reclutar desde Construcción: la nueva guardia del controlador aceptaba solo Exploración. Corregida para ambos modos en campamento, conservando rechazo fuera de alcance/combate/pausa; añadida comprobación real y21/21 dirigidas posteriores PASS. Fallo original conservado en NATIVO_INICIAL_RECLUTAMIENTO.txt.
 - La guarnición E19 de Forja usa formación configurable con Choque de forja; patrulla tutorial y escenas anteriores mantienen su pool original. Nueva build Windows exacta compilada para el recorrido final.
+
+## 2026-11-03 — E19, continuidad de QA nativo
+- Recorrido GPU a10829a superó prólogo/RPG/patrulla/campamento/misión y se detuvo antes de reclutar: el runner heredado suponía pestaña Grupo, pero recordaba Culturas. Se añade navegación explícita a Grupo, conservando aserciones de fondos, tres compañeros, combate y guardado. No se modifica el comportamiento de las ventanas para acomodar la prueba. Fallo original NATIVO_TAB_CULTURAS.txt conservado; grabación fallida parcial no se presenta como recorrido completado.
