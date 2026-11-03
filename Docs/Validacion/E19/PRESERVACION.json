@@ -1,0 +1,11 @@
+{
+  "sourceRevision": "a10829adbb9c1e0f785ae954b7c557fc57b6969b",
+  "privateFilesUnchanged": 3,
+  "privateTracked": false,
+  "qualityPreexistingSHA256": "62494399222dd3d2c992d4c9c41deecdeffd5e50fde962be46b7f38a0a09b916",
+  "qualityPreserved": true,
+  "originalGDD_SHA256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "sceneDiffAgainstRecovery5507425": "A\tProyectoRPGRTS/Assets/01_Scenes/AetherniaCivilizationsDemo.unity\nA\tProyectoRPGRTS/Assets/01_Scenes/AetherniaCivilizationsDemo.unity.meta",
+  "historicalScenesUnmodified": true,
+  "historicalZIP": 19
+}

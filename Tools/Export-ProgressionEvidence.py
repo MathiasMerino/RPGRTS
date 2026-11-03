@@ -1,4 +1,4 @@
-"""Exports real E18 player receipts and captures. No synthetic screenshots."""
+"""Exports real progression/civilization player receipts and captures. No synthetic screenshots."""
 import argparse,hashlib,importlib.util,json,re,shutil
 from pathlib import Path
 
@@ -20,7 +20,7 @@ def main():
         final=report/'PartidasFinales';final.mkdir(exist_ok=True)
         for role in (['human-warrior','dwarf-mage'] if args.phase=='E19' else ['warrior','monk','mage']):
             shutil.copy2(folder/(role+'.json'),final/(role+'.json'))
-            for view in (['Creation','Level2','Recruitment','GroupCombat','Equipment','Training','Conquest','Continued','PilotsBefore','CulturalBuildings','CulturalRecruitment','MulticulturalArmy','CulturalRts','PilotsAfter'] if args.phase=='E19' else ['Level2','Recruitment','GroupCombat','Equipment','Training','Conquest','Continued']):
+            for view in (['Creation','Level2','Recruitment','GroupCombat','Equipment','Training','Conquest','Continued','PilotsBefore','CulturalBuildings','CulturalRecruitment','MulticulturalArmy','CulturalRts','CulturalCasualties','PilotsAfter'] if args.phase=='E19' else ['Level2','Recruitment','GroupCombat','Equipment','Training','Conquest','Continued']):
                 p=folder/'Captures'/(role+'-'+view+'.png');assert p.is_file(),p;shared.copy_image(root,p,images/'Windows'/p.name,'Native Windows legal-action '+args.phase+' '+native_revision,captures)
         for view in ['Main','Creation','Rpg','Rts','Camp','Quest','Reward','Army','ControlledResources']:
             p=folder/'Captures'/(('human-warrior' if args.phase=='E19' else 'warrior')+'-'+view+'.png');assert p.is_file(),p;shared.copy_image(root,p,images/'Windows'/p.name,'Native Windows '+args.phase+' '+native_revision,captures)

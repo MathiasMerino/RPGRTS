@@ -1,0 +1,13 @@
+{
+  "codeAndDataCommit": "1e67333",
+  "scene": "Assets/01_Scenes/AetherniaCivilizationsDemo.unity",
+  "unity": "6000.5.8f1",
+  "urp": "17.5.0",
+  "preexistingUncommittedQualitySHA256": "62494399222dd3d2c992d4c9c41deecdeffd5e50fde962be46b7f38a0a09b916",
+  "qualityIncludedInCommit": false,
+  "archiveSHA256": "5ec0e6afeef3f5021c097f661a1e3f1b8c847ca81329212b5a5f36a9418a8c10",
+  "nativeSourceRevision": "1e67333",
+  "nativeProcessesPassed": 4,
+  "portableProcesses": "pending",
+  "humanApproved": false
+}

@@ -2,16 +2,19 @@
 
 Mantenimiento posterior a E18, no fase E19 ni cambio de mecánicas. Se conserva contenido útil, provisional, de respaldo y de validación. Los GUID de los assets movidos y la configuración gráfica local previa deben mantenerse.
 
+Nota E19: se añade `Assets/15_Civilizations` con datos opt-in y dos prefabs derivados, más AetherniaCivilizationsDemo. El inventario y las cifras de mantenimiento siguientes conservan su fecha/base5507425; no son un inventario nuevo de E19.
+
 ## Mapa principal
 
 | Carpeta | Función y conservación |
 |---|---|
-| `ProyectoRPGRTS/Assets/01_Scenes` | E18 y escenas de regresión; no eliminar las anteriores. |
+| `ProyectoRPGRTS/Assets/01_Scenes` | E19, E18 y escenas de regresión; no eliminar las anteriores. |
 | `02_Prefabs`, `06_Environment` | Biblioteca reutilizable de personajes, entorno y construcción. |
 | `03_Scripts/Runtime`, `Editor`, `Tests` | Lógica, autoría/mantenimiento y validación separadas. |
 | `04_Sprites`, `07_Characters`, `08_UI`, `09_Feedback` | Ilustraciones/modelos/clips provisionales, UI y efectos; siguen teniendo utilidad. |
 | `05_Docs` | GDD original; `PlantillaUnity/Readme.asset` conserva la referencia de plantilla. |
 | `10_Demo` a `14_Progression` | Capas de configuración/recursos de etapas. E18 reutiliza dependencias anteriores: no son carpetas descartables. |
+| `15_Civilizations` | Catálogo de razas/culturas E19, reglas compartidas y dos variantes de prefabs; modelos/materiales previos reutilizados. |
 | `Settings` | URP y configuración; `Input/InputSystem_Actions.inputactions` agrupa el asset de entrada conservando su GUID. |
 | `TextMesh Pro` | Recursos compartidos del paquete; se respeta su estructura. |
 | `LocalOnly`, `07_Characters/MonkMeshy` | Experimentos privados; se mantienen excluidos de Git y de la entrega pública. |
@@ -34,7 +37,7 @@ Se ejecutan con `AssetDatabase.MoveAsset`, manteniendo GUID y `.meta`. Las escen
 
 ## Compilaciones locales
 
-`ProyectoRPGRTS/Builds/ProgressionE18Windows` y el ZIP E18 siguen siendo la candidata actual. Todos los ZIP históricos y las builds finales permanecen en sus rutas previas. Solo las versiones intermedias E17-r1/r2 y cinco extracciones de verificación anteriores se archivan bajo `Builds/Archivo/Intermedias` y `Builds/Archivo/Verificaciones`.
+`ProyectoRPGRTS/Builds/CivilizationsE19Windows` contiene la candidata E19 en validación. `Builds/ProgressionE18Windows` y el ZIP E18 se conservan como entrega anterior. Todos los ZIP históricos y las builds finales permanecen en sus rutas previas. Solo las versiones intermedias E17-r1/r2 y cinco extracciones de verificación anteriores se archivan bajo `Builds/Archivo/Intermedias` y `Builds/Archivo/Verificaciones`.
 
 [ENTREGAS_LOCALES.json](Validacion/Organizacion/ENTREGAS_LOCALES.json) contiene el mapa de rutas y huellas de contenido antes/después. Los informes antiguos conservan sus rutas de ejecución como evidencia histórica; utilizar este mapa para localizar las copias archivadas. No se elimina contenido ni se promete ahorro de disco al archivar.
 

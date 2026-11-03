@@ -2,6 +2,9 @@
 
 ## Para jugar y evaluar ahora
 
+- [Guía E19](GUIA_E19.md), [identidad y culturas provisionales](E19_RAZAS_CULTURAS.md), [balance](E19_BALANCE.md) y [plan secuencial](PLAN_E19.md). Candidata en validación, evaluación humana pendiente.
+- [Plan de integración de PR apilados](INTEGRACION_PRS.md).
+
 - [Guía E18](GUIA_E18.md): Unity, escena, controles y recorrido.
 - [Entrega E18](ENTREGA_E18.md): estado real, pruebas y limitaciones.
 - [Balance provisional](E18_BALANCE.md) y [progresión](E18_PROGRESION.md).

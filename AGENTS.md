@@ -6,8 +6,8 @@
 - GDD original0.2: `ProyectoRPGRTS/Assets/05_Docs/GDD_GAMERPGTS.docx`; no sobrescribirlo. Lectura `Docs/GDD_LECTURA.md`, comprobar SHA si cambia el Word.
 - Clases Guerrero/Mago/Monje y reglas provisionales aprobadas en `Docs/ESPECIFICACION_PROTOTIPO.md`; hoja futura `Docs/PLAN_EXPANSION.md` sin producción automática.
 - Leer resumen CHECKLIST.md y secciones relacionadas del plan/GDD. Diferenciar confirmado, propuesto y pendiente; ejemplos del GDD no son requisitos.
-- Entrega actual E18: escena `Assets/01_Scenes/AetherniaProgressionDemo.unity`, datos `Assets/14_Progression`. Informe `Docs/ENTREGA_E18.md`, guía `Docs/GUIA_E18.md`, balance/progresión en Docs. PR#9draft sobre E17/PR8; E19 autorizada por encargo expreso, sin E20 ni merges automáticos.
-- E18: general174/176, fallo visual corregido4/4dirigidas posteriores;8procesosWindows,49PNG/2MP4 yZIPportable verificados. Incidencia E17-A-RTS y evaluación humana siguen pendientes: no declarar regresión completamente verde.
+- Candidata actual E19: escena `Assets/01_Scenes/AetherniaCivilizationsDemo.unity`, datos `Assets/15_Civilizations`. Informe `Docs/ENTREGA_E19.md`, guía `Docs/GUIA_E19.md`, razas/culturas y balance en Docs. Rama feature/e19-razas-civilizaciones sobre E18/PR9, sin E20 ni merges automáticos.
+- E19 en cierre:21/21dirigidas y4/4procesosWindows, general completa en ejecución; ZIPCRC/SHA/19previos y2MP4verificados, portable pendiente. Incidencia RTS histórica reproducida y evaluación humana abiertas. E18 general174/176 con visual corregida después; no sumar pruebas dirigidas como regresión global.
 - Mapa actual `Docs/ORGANIZACION_PROYECTO.md`, índice `Docs/README.md`; detalle histórico de fases y límites en `Docs/Historial/CONTEXTO_ETAPAS.md`. No borrar recursos por antigüedad o por faltar en una única escena.
 
 ## Alcance y método
@@ -22,9 +22,9 @@
 ## Validación y herramientas
 - Antes de cada tarea: git status, dependencias/aceptación y análisis; al finalizar revisar diff y registrar cambios importantes.
 - Preferencia: segundo plano con `Tools/Invoke-UnityValidation.ps1`, editor exacto y una sola instancia por proyecto. Revisar Console/referencias/Play Mode cuando corresponda.
-- E18: `-Mode BuildProgression` → `Builds/ProgressionE18Windows`; `Tools/Invoke-ProgressionSmoke.ps1` usa slots/preferencias aislados. Regresión `-Mode Vertical`, filtro `-TestFilter` para casos pertinentes.
+- E19: `-Mode BuildCivilizations` → `Builds/CivilizationsE19Windows`; `Tools/Invoke-ProgressionSmoke.ps1 -Phase E19 -Classes warrior,mage -Races human,dwarf -WithGraphics` usa slots/preferencias aislados. E18 conserva BuildProgression y valor predeterminado del runner. Regresión `-Mode Vertical`, filtro dirigido opcional.
 - PlayablePrototype y escenas E03–E17 se conservan para regresión. Guías antiguas en Docs/Historial y guías de compilaciones reutilizables en Docs.
-- No repetir generadores sobre assets existentes: ProgressionScene/Create, AlphaPipeline/Create, AlphaScene/Create, FirstDemo/Create, Village/Animated/Humanoid/MedievalHud/autorías de arte. Son autoría, no arranque.
+- No repetir generadores sobre assets existentes: Civilizations/Create, ProgressionScene/Create, AlphaPipeline/Create, AlphaScene/Create, FirstDemo/Create, Village/Animated/Humanoid/MedievalHud/autorías de arte. Son autoría, no arranque.
 - Visual Studio2026/Tools for Unity y paquete IDE Unity2.0.26 ya instalados. Instalar herramientas solo por necesidad concreta compatible.
 
 ## Git y contexto

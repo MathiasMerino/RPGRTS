@@ -1,6 +1,6 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
+Actualizado: 2026-11-03, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
 
 ## Resumen actual
 
@@ -1202,8 +1202,8 @@ El encargo explícito autoriza implementación, validación, build y PR apilado.
 | E19-A | Estabilidad / P0 | E18, ORG-01 | [x] Completado y verificado | Investigar y reproducir RTS, conservar aserciones; clasificar causa y verificar contratos | Docs/Validacion/E19/BASELINE.json, GITHUB_BASE.json; A_BASELINE.xml:1/2 aprobada; derrota RTS Monje reproducida, incidencia abierta sin alterar aserciones; A_DIAGNOSTICO.json |
 | E19-BCD | Identidad / P0 | A investigada | [x] Completado y verificado | Cuatro razas, 12 combinaciones, rasgos configurables, selección y persistencia sin duplicación | CivilizationCatalog/Operations, DemoFrontEnd, ProgressionOperations, SaveStore y escena E19:18/18, doce combinaciones UI y guardado repetido; BCD_EFG_18.xml. Primer pase17/18 detectó glifo sin soporte, corregido sin ignorar avisos. |
 | E19-EFGIJ | Culturas / P0 | BCD | [x] Completado y verificado | Cuatro familias de datos, dos pilotos con unidad y edificio útiles, costes/relaciones/reclutamiento reales | Catálogo compartido, Settlement/ExpeditionOperations, dos prefabs derivados, UI Culturas; DIRIGIDAS_21.xml 21/21 y PILOTOS_RTS_UI.xml: golpes reales2/4, costes/producción/pacto/conquista/legado. Recorridos integrales pendientes. |
-| E19-HKLMN | Integración / P0 | EFGIJ | [ ] Pendiente | Mismo héroe/habilidades, grupo3 y ejército6, conquista/producción, arte provisional sustituible | Previsto: escena E19 opt-in, presentadores; regresión y recorridos |
-| E19-OPQR | Calidad / P0 | Integración | [ ] Pendiente | Balance reproducible, UI varias resoluciones, migraciones seguras y regresión completa con fallos visibles | Previsto: pruebas y evidencias E19 |
-| E19-ST | Entrega / P0 | Calidad | [ ] Pendiente | Dos combinaciones con recorrido completo/reinicio, capturas reales, Windows y portable verificados | Previsto: guía y entrega E19, build y ZIP nuevos |
-| E19-U | Git / P0 | ST | [ ] Pendiente | Commits por bloques, PR sobre E18, plan verificable PR1..9; main/dev intactas | Previsto: Docs/INTEGRACION_PRS.md y API GitHub |
+| E19-HKLMN | Integración / P0 | EFGIJ | [x] Completado y verificado | Mismo héroe/habilidades, grupo3 y ejército6, conquista/producción, arte provisional sustituible | Escena AetherniaCivilizationsDemo y presentadores E08/E07 compartidos. CICLO_NATIVO.json:4/4procesos, Humano–Guerrero/Enano–Mago desde Nueva→RPG/grupo/mazmorra→construcción/RTS/conquista/pilotos→guardar/reinicio exacto; XP/equipo y salud compartidos. |
+| E19-OPQR | Calidad / P0 | Integración | [ ] En desarrollo | Balance reproducible, UI varias resoluciones, migraciones seguras y regresión completa con fallos visibles | Previsto: pruebas y evidencias E19 |
+| E19-ST | Entrega / P0 | Calidad | [ ] En desarrollo | Dos combinaciones con recorrido completo/reinicio, capturas reales, Windows y portable verificados | GUIA_E19, ENTREGA_E19 en cierre; build1e67333, ZIPCRC/SHA/19previos y2vídeosPASS. Portable por ejecutar. |
+| E19-U | Git / P0 | ST | [ ] En desarrollo | Commits por bloques, PR sobre E18, plan verificable PR1..9; main/dev intactas | Previsto: Docs/INTEGRACION_PRS.md y API GitHub |
 | E19-HUM | Evaluación humana / P1 | ST | [ ] Pendiente | Revisión del usuario: legibilidad, arte, diversión, balance y estabilidad prolongada | No se completa con pruebas automáticas |

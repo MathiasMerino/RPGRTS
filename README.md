@@ -4,10 +4,10 @@ Prototipo académico de RPG isométrico y RTS desarrollado en Unity. Las mecáni
 
 ## Abrir para evaluar
 
-1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e18-progresion-balance`; [PR#9 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/9), apilado sobre [E17/PR#8 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/8), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
+1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e19-razas-civilizaciones`, candidata E19 apilada sobre [E18/PR#9 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/9), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
 2. En Unity Hub, añadir **la carpeta `ProyectoRPGRTS/`**, situada dentro del repositorio.
 3. Abrir con **Unity 6000.5.8f1** y esperar a que importe los recursos y restaure los paquetes. La primera apertura necesita conexión para descargar las dependencias declaradas en `Packages/`.
-4. Abrir `Assets/01_Scenes/AetherniaProgressionDemo.unity`, revisar Console y pulsar **Play**. Se conservan AetherniaAlphaCandidate, AetherniaVisualPolish, AetherniaExpeditions, AetherniaFirstDemo, AetherniaVillageDemo y PlayablePrototype. La progresión E18 se comprueba con las tres clases y UI a720p/1080p; ver resultados y límites en el informe.
+4. Abrir `Assets/01_Scenes/AetherniaCivilizationsDemo.unity`, revisar Console y pulsar **Play**. Se conservan AetherniaProgressionDemo, AetherniaAlphaCandidate, AetherniaVisualPolish, AetherniaExpeditions, AetherniaFirstDemo, AetherniaVillageDemo y PlayablePrototype. La progresión E18 se comprueba con las tres clases y UI a720p/1080p; ver resultados y límites en el informe.
 
 Código, modelos, materiales, escenas, prefabs, archivos `.meta`, configuración de Unity y dependencias permanecen incluidos. Las carpetas `Library`, `Temp`, `Logs`, `UserSettings` y las compilaciones se omiten mediante `.gitignore`; Unity puede regenerar sus cachés. No hace falta recibir esas carpetas del autor.
 
@@ -16,6 +16,8 @@ Código, modelos, materiales, escenas, prefabs, archivos `.meta`, configuración
 [Mapa de carpetas y conservación de recursos](Docs/ORGANIZACION_PROYECTO.md) · [Índice de documentación](Docs/README.md) · [Historial por etapas](Docs/Historial/README.md). Los recursos provisionales y las escenas anteriores siguen disponibles.
 
 ## Material para el docente
+
+- [Guía E19](Docs/GUIA_E19.md), [razas/culturas y sustitución de arte](Docs/E19_RAZAS_CULTURAS.md), [balance provisional](Docs/E19_BALANCE.md) y [plan de integración de PR](Docs/INTEGRACION_PRS.md). E19 en validación, sin aprobación humana.
 
 - [E18: progresión, resultados y límites](Docs/ENTREGA_E18.md).
 - [Guía E18 para Unity/Windows](Docs/GUIA_E18.md), [parámetros de balance](Docs/E18_BALANCE.md) y [hoja de revisión humana pendiente](Docs/Validacion/E18/REVISION_HUMANA.md).

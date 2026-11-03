@@ -1,0 +1,28 @@
+[
+  {
+    "file": "Docs/Videos/E19/E19-Combate-RPG.mp4",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\CivilizationQA\\GPU-20261103-041927\\Recording",
+    "sha256": "241f0332431ff113a08464e5975263d04eac54027f7e2061bf0d9c95658f33ba",
+    "firstFrame": 0,
+    "lastFrame": 222,
+    "seconds": 18.583333333333332,
+    "nativeDSP": true,
+    "continuous": true,
+    "decodeVerified": true,
+    "captureStepHz": 12,
+    "measuredFps": false
+  },
+  {
+    "file": "Docs/Videos/E19/E19-Pilotos-RTS.mp4",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\CivilizationQA\\GPU-20261103-041927\\Recording",
+    "sha256": "8eda714954950c96f38d16113b37ece14fcaa8c49b6002225d365797ff205700",
+    "firstFrame": 4297,
+    "lastFrame": 4399,
+    "seconds": 8.583333333333334,
+    "nativeDSP": true,
+    "continuous": true,
+    "decodeVerified": true,
+    "captureStepHz": 12,
+    "measuredFps": false
+  }
+]
