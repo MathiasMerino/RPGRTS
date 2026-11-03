@@ -1,0 +1,33 @@
+{
+  "auditedPublishedContentCommit": "312722e3e5508f861ec1dd4ccb44dfd93f968d2a",
+  "gameAndBuildCommit": "1e67333",
+  "main": "5a2e3cef6707bd844cf728ea1adfff9c6d941002",
+  "dev": "742c04f6ac2afb8dfd3d0e56e3f2d45085c73a46",
+  "defaultBranch": "main",
+  "priorPRsUnchanged": 9,
+  "PR10": {
+    "url": "https://github.com/MathiasMerino/RPGRTS/pull/10",
+    "draft": true,
+    "base": "feature/e18-progresion-balance",
+    "head": "feature/e19-razas-civilizaciones",
+    "merged": false
+  },
+  "remoteRequiredFilesPresent": [
+    "Docs/ENTREGA_E19.md",
+    "Docs/GUIA_E19.md",
+    "Docs/INTEGRACION_PRS.md",
+    "Docs/Validacion/E19/GENERAL.xml",
+    "ProyectoRPGRTS/Assets/01_Scenes/AetherniaCivilizationsDemo.unity",
+    "ProyectoRPGRTS/Assets/15_Civilizations/Civilizations.asset"
+  ],
+  "remoteScreenshots": 52,
+  "remoteVideos": 2,
+  "privateTrackedFiles": 0,
+  "ownChangesCommittedAndPushed": true,
+  "localStatusPreserved": [
+    " M ProyectoRPGRTS/ProjectSettings/QualitySettings.asset"
+  ],
+  "preexistingQualityUnchanged": true,
+  "metadataCommitAfterThisAudit": true,
+  "humanApproved": false
+}

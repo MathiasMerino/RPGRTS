@@ -5,7 +5,8 @@
   "draft": true,
   "base": "feature/e18-progresion-balance",
   "head": "feature/e19-razas-civilizaciones",
-  "headSHA": "5ff1ec4b52daa7308795d6c784d3e3ce1f21fe7e",
   "gameCodeCommit": "1e67333",
-  "merged": false
+  "merged": false,
+  "headSHAAtCreation": "5ff1ec4b52daa7308795d6c784d3e3ce1f21fe7e",
+  "snapshotKind": "PR creation; current publication checked in REPOSITORIO_FINAL.json"
 }
