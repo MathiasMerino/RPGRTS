@@ -14,7 +14,7 @@ Plan revisable, sin ejecutar merges ni modificar ramas estables. Snapshot real: 
 | [#8](https://github.com/MathiasMerino/RPGRTS/pull/8) | feature/e17-art-pipeline-alpha-polish | feature/e16-pulido-visual-ui | PR7 |
 | [#9](https://github.com/MathiasMerino/RPGRTS/pull/9) | feature/e18-progresion-balance | feature/e17-art-pipeline-alpha-polish | PR8 |
 
-E19 depende de PR9 e incluye además5507425 (organización local autorizada, nunca publicado previamente en PR9). Este alcance se declara en su propio diff. No se reescribe ni publica la rama E18 para esconderlo.
+[E19/PR#10](https://github.com/MathiasMerino/RPGRTS/pull/10) está abierto en borrador sobre feature/e18-progresion-balance. E19 depende de PR9 e incluye además5507425 (organización local autorizada, nunca publicado previamente en PR9). Este alcance se declara en su propio diff. No se reescribe ni publica la rama E18 para esconderlo.
 
 Secuencia propuesta para revisión humana: revisar PR1→2→3→4→5→6→7→8→9→E19 en ese orden. Cada PR necesita inspección de diff, licencias/privados, aceptación jugable y evidencia. Antes de fusionar, actualizar contra su base y ejecutar las pruebas afectadas; si hay cambios/conflictos, verificarlos sin sobrescribir decisiones ajenas. Tras integrar un antecedente con aprobación explícita, retarget del siguiente a dev y nueva revisión de su diff efectivo. No hacer nueve merges ciegos ni squash/rebase destructivo para aplanar la historia.
 

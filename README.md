@@ -4,7 +4,7 @@ Prototipo académico de RPG isométrico y RTS desarrollado en Unity. Las mecáni
 
 ## Abrir para evaluar
 
-1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e19-razas-civilizaciones`, candidata E19 apilada sobre [E18/PR#9 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/9), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
+1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e19-razas-civilizaciones`, [PR#10 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/10), candidata E19 apilada sobre [E18/PR#9 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/9), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
 2. En Unity Hub, añadir **la carpeta `ProyectoRPGRTS/`**, situada dentro del repositorio.
 3. Abrir con **Unity 6000.5.8f1** y esperar a que importe los recursos y restaure los paquetes. La primera apertura necesita conexión para descargar las dependencias declaradas en `Packages/`.
 4. Abrir `Assets/01_Scenes/AetherniaCivilizationsDemo.unity`, revisar Console y pulsar **Play**. Se conservan AetherniaProgressionDemo, AetherniaAlphaCandidate, AetherniaVisualPolish, AetherniaExpeditions, AetherniaFirstDemo, AetherniaVillageDemo y PlayablePrototype. La progresión E18 se comprueba con las tres clases y UI a720p/1080p; ver resultados y límites en el informe.

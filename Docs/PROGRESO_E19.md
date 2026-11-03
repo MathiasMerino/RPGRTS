@@ -1,5 +1,9 @@
 # Continuidad E19
 
+Cierre técnico2026-11-03: E19 lista para revisión, PR#10draft https://github.com/MathiasMerino/RPGRTS/pull/10. Fuente juego/build1e67333;21/21dirigidas,196/197general(único fallo histórico RTSGuerrero),6/6Windows,52PNG/2MP4 yZIPCRC/SHA/19previos/portablePASS. No quedan implementaciones o artefactos autorizados por producir. Pendientes separados: RTS-HIST y evaluación humana, arte/lore/balance definitivos y dos culturas futuras. Sin E20 ni merges. Ajuste QualitySettings preexistente conservado sin commit.
+
+Los párrafos siguientes son puntos de recuperación históricos de esta misma ejecución; sus pendientes fueron resueltos salvo los identificados en el cierre.
+
 Rama feature/e19-razas-civilizaciones. Recuperación5507425, auditoría1be0be1, identidad/pilotos1b461b6,21pruebas/balance2eedfff, corrección reclutar en Construcción y guarnición Forja a10829a. Único cambio ajeno inicial: ProjectSettings/QualitySettings.asset; hash en Validacion/E19/BASELINE.json, conservar sin incluirlo en commits.
 
 A investigada: baseline1/2; derrota Monje a30FPS por arqueros8/11 alcanzando al héroe a reserva;0PV y resolución única. Visual histórica PASS. Prueba de victoria se conserva, incidencia abierta. BCD y dos pilotos verificados21/21 dirigidas, incluyendo RTS real golpes2/4 y reclutamiento desde Construcción.3600duelos de reglas, no experiencia humana. Arte Generic/prefabs derivados provisionales; GDD/privados/19ZIP/nueve escenas previas preservados.

@@ -23,9 +23,9 @@
 |17. Capturas|Creación12combinaciones, UI cultural720/1080 y capturas reales de dos circuitos Windows; selección, ficha, grupo, unidades, edificios, combate, conquista y control. 52PNG únicos en [manifiesto](Validacion/E19/CAPTURAS.json),6procesos en [WINDOWS.json](Validacion/E19/WINDOWS.json).|
 |18. Vídeos|Dos clips de cámara Game Windows y audioDSP original: RPG y última patrulla cultural. Paso fijo12Hz, no FPS medidos. Exportación/decodificación aprobadas,2MP4;4.510fotogramas continuos de origen,12Hz fijo.|
 |19. Build|Windowsx64 nueva en Builds/CivilizationsE19Windows; ZIP E19 y extracción CRC/per-file SHA verificados;19ZIP previos intactos. Portable2/2PASS desde extracción independiente. ZIP87858513bytes, SHA256`5ec0e6afeef3f5021c097f661a1e3f1b8c847ca81329212b5a5f36a9418a8c10`. [Integridad](Validacion/E19/PORTABLE.json).|
-|20. Rama|feature/e19-razas-civilizaciones; main/dev sin modificaciones autorizadas.|
+|20. Rama|feature/e19-razas-civilizaciones; main/dev intactas; rama publicada y sincronizada.|
 |21. Commits|1be0be1 auditoría;1b461b6 identidad/pilotos;2eedfff21pruebas/balance; a10829a reclutar Construcción/Forja;805eff9 navegación QA;1e67333 reposición pagada opcional en QA. Historial anterior conservado.|
-|22. Pull Request|Pendiente de publicar al terminar verificaciones; base E18/PR9.|
+|22. Pull Request|[PR#10 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/10) sobre E18/PR9, abierto sin fusionar.|
 |23. Integración|[Plan PR1..9](INTEGRACION_PRS.md): revisión secuencial, retarget posterior con aprobación; no fusiones automáticas ni ampliación ciega de la pila.|
 |24. Checklist|[CHECKLIST](../CHECKLIST.md), historial intacto; E19-HUM separado y pendiente.|
 |25. Pendientes|Aprobación humana, estabilidad/expectativa RTS histórica, arte racial/cultural final, dos culturas restantes, economía autónoma de facciones, futuras élites/comandantes. No son funciones terminadas.|
