@@ -17,7 +17,7 @@ Código, modelos, materiales, escenas, prefabs, archivos `.meta`, configuración
 
 ## Material para el docente
 
-- [Guía E19](Docs/GUIA_E19.md), [razas/culturas y sustitución de arte](Docs/E19_RAZAS_CULTURAS.md), [balance provisional](Docs/E19_BALANCE.md) y [plan de integración de PR](Docs/INTEGRACION_PRS.md). E19 en validación, sin aprobación humana.
+- [Guía E19](Docs/GUIA_E19.md), [razas/culturas y sustitución de arte](Docs/E19_RAZAS_CULTURAS.md), [balance provisional](Docs/E19_BALANCE.md) y [plan de integración de PR](Docs/INTEGRACION_PRS.md). [Entrega E19](Docs/ENTREGA_E19.md):196/197general(incidencia RTS histórica),6/6procesosWindows,52PNG/2MP4 yZIPportable verificados. Candidata sin aprobación humana.
 
 - [E18: progresión, resultados y límites](Docs/ENTREGA_E18.md).
 - [Guía E18 para Unity/Windows](Docs/GUIA_E18.md), [parámetros de balance](Docs/E18_BALANCE.md) y [hoja de revisión humana pendiente](Docs/Validacion/E18/REVISION_HUMANA.md).

@@ -678,3 +678,7 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 
 - Candidata1e67333:4/4procesos WindowsGPU desde Nueva hasta conquista/culturas y nuevo proceso/Continuar en Humano–Guerrero y Enano–Mago. Guardia/Forja atacan en ambos; ambos sobreviven en estos recorridos finales, rama de reposición no ejecutada aquí. Sin recursos/HP inyectados. Evidencia CICLO_NATIVO y partidas finales.
 - ZIP E19 nuevo87858513bytes, SHA5ec0e6afeef3f5021c097f661a1e3f1b8c847ca81329212b5a5f36a9418a8c10; CRC/per-file SHA/extracción/19ZIPprevios PASS. Dos vídeos Windows con DSP original exportados y decodificados. General completa en ejecución, portable pendiente; no se declara cierre ni aprobación humana todavía.
+
+- General completa1e67333:196/197,0omisiones,21casos E19PASS. Único fallo histórico ThreeClassesWithLegalBacklineOrdersAt30 con Guerrero; arquero8 termina con héroe0PV, recuperación única y resolución correcta. XML/resumen/CSV conservados; incidencia permanece abierta, no se repite para pintar verde. Tiempos agregados XML atraviesan recargas de dominio; no se presentan como duración real ni perfil de rendimiento.
+
+- Portable1e67333 extraído:2/2procesosGPU Enano–Mago desde Nueva hasta culturas/RTS/guardar y nuevo proceso/Continuar exacto. Total6/6Windows finales,52PNG únicos y2MP4 originales. Se corrige el exportador para no repetir el índice de captura Creation de E19. Scripts Python compilan. Evidencia WINDOWS/CAPTURAS/BUILD_PROVENANCE y guía/checklist actualizados; sólo publicación de PR pendiente, sin nuevas mecánicas.

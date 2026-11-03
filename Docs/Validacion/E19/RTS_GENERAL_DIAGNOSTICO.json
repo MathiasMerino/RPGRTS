@@ -1,0 +1,28 @@
+{
+  "summary": "class=warrior; requestedFrameCap=30; RPGseed=42; health=0; chapter=FirstRts; active=False; recoverAccepted=1; recoverCooldownRejected=31; strikes=71; rows=279",
+  "heroIncomingStrikesByActor": {
+    "8": 12
+  },
+  "terminal": {
+    "kind": "defeat",
+    "frame": "1202",
+    "time": "40.56619",
+    "delta": "0.03330",
+    "actor": "12",
+    "hero": "True",
+    "hp": "0",
+    "attackAt": "16.70145",
+    "selected": "True",
+    "recoveryUsed": "True",
+    "target": "-1",
+    "targetHp": "0",
+    "value": "0",
+    "x": "-15.0000",
+    "z": "9.5000",
+    "allies": "0",
+    "enemies": "1"
+  },
+  "classification": "Derrota legitima del heroe bajo estrategia de reserva. Resolucion y transicion verificadas antes de la asercion historica; expectativa de victoria no estable. No se ha probado corrupcion ni se debilita la prueba. Incidencia abierta.",
+  "e19CasesInFullRun": 21,
+  "e19CasesPassed": 21
+}

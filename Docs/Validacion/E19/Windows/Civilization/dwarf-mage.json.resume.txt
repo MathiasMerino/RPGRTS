@@ -1,0 +1,1 @@
+PASS: E19 dwarf/mage new process exact identity, skills, equipment, two cultural units/buildings and conquest retained without duplicate rewards; seconds=1.88; automated duration is not human playtime

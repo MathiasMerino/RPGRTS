@@ -22,7 +22,7 @@ def main():
             shutil.copy2(folder/(role+'.json'),final/(role+'.json'))
             for view in (['Creation','Level2','Recruitment','GroupCombat','Equipment','Training','Conquest','Continued','PilotsBefore','CulturalBuildings','CulturalRecruitment','MulticulturalArmy','CulturalRts','CulturalCasualties','PilotsAfter'] if args.phase=='E19' else ['Level2','Recruitment','GroupCombat','Equipment','Training','Conquest','Continued']):
                 p=folder/'Captures'/(role+'-'+view+'.png');assert p.is_file(),p;shared.copy_image(root,p,images/'Windows'/p.name,'Native Windows legal-action '+args.phase+' '+native_revision,captures)
-        for view in ['Main','Creation','Rpg','Rts','Camp','Quest','Reward','Army','ControlledResources']:
+        for view in (['Main','Rpg','Rts','Camp','Quest','Reward','Army','ControlledResources'] if args.phase=='E19' else ['Main','Creation','Rpg','Rts','Camp','Quest','Reward','Army','ControlledResources']):
             p=folder/'Captures'/(('human-warrior' if args.phase=='E19' else 'warrior')+'-'+view+'.png');assert p.is_file(),p;shared.copy_image(root,p,images/'Windows'/p.name,'Native Windows '+args.phase+' '+native_revision,captures)
     for p in sorted((project/('Logs/'+args.phase+'/Captures')).glob('*.png')):shared.copy_image(root,p,images/'PlayMode'/p.name,'Unity Play Mode '+args.phase+'; see directed XML and revision history',captures)
     shutil.copy2(project/('Logs/'+args.phase+'/build.txt'),report/'BUILD.txt')

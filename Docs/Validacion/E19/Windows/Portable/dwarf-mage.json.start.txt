@@ -1,0 +1,1 @@
+PASS: E19 dwarf/mage new game/race/class/intro/RPG/level/skill/WASD/quest/three companions/two guardianies/loot/forge/training/conquest/territorial production/two paid cultural buildings and units/real RTS deployment/save/title; seconds=331.88; automated duration is not human playtime

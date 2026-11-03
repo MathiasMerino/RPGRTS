@@ -2,7 +2,7 @@
 
 ## Para jugar y evaluar ahora
 
-- [Guía E19](GUIA_E19.md), [identidad y culturas provisionales](E19_RAZAS_CULTURAS.md), [balance](E19_BALANCE.md) y [plan secuencial](PLAN_E19.md). Candidata en validación, evaluación humana pendiente.
+- [Guía E19](GUIA_E19.md), [identidad y culturas provisionales](E19_RAZAS_CULTURAS.md), [balance](E19_BALANCE.md) y [plan secuencial](PLAN_E19.md). [Entrega E19](ENTREGA_E19.md):196/197general y6/6Windows,52PNG/2MP4,ZIPportable verificado; RTS histórico y evaluación humana pendientes.
 - [Plan de integración de PR apilados](INTEGRACION_PRS.md).
 
 - [Guía E18](GUIA_E18.md): Unity, escena, controles y recorrido.

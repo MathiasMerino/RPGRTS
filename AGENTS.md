@@ -7,7 +7,7 @@
 - Clases Guerrero/Mago/Monje y reglas provisionales aprobadas en `Docs/ESPECIFICACION_PROTOTIPO.md`; hoja futura `Docs/PLAN_EXPANSION.md` sin producción automática.
 - Leer resumen CHECKLIST.md y secciones relacionadas del plan/GDD. Diferenciar confirmado, propuesto y pendiente; ejemplos del GDD no son requisitos.
 - Candidata actual E19: escena `Assets/01_Scenes/AetherniaCivilizationsDemo.unity`, datos `Assets/15_Civilizations`. Informe `Docs/ENTREGA_E19.md`, guía `Docs/GUIA_E19.md`, razas/culturas y balance en Docs. Rama feature/e19-razas-civilizaciones sobre E18/PR9, sin E20 ni merges automáticos.
-- E19 en cierre:21/21dirigidas y4/4procesosWindows, general completa en ejecución; ZIPCRC/SHA/19previos y2MP4verificados, portable pendiente. Incidencia RTS histórica reproducida y evaluación humana abiertas. E18 general174/176 con visual corregida después; no sumar pruebas dirigidas como regresión global.
+- E19 candidata:21/21dirigidas y6/6procesosWindows(4raw+2portable), general196/197(solo reservaRTSGuerrero falla;21E19PASS); 52PNG/2MP4, ZIPCRC/SHA/19previos yportable verificados. Incidencia RTS histórica reproducida y evaluación humana abiertas. E18 general174/176 con visual corregida después; no sumar pruebas dirigidas como regresión global.
 - Mapa actual `Docs/ORGANIZACION_PROYECTO.md`, índice `Docs/README.md`; detalle histórico de fases y límites en `Docs/Historial/CONTEXTO_ETAPAS.md`. No borrar recursos por antigüedad o por faltar en una única escena.
 
 ## Alcance y método
