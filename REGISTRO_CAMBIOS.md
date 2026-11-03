@@ -709,3 +709,7 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 - General completa:202/206,0omisiones. Fallo RTS históricoGuerrero y3timeouts180s (fallbackHumanoid, rutaMagoUX y bloqueoModalUX). GENERAL.xml/json conservados; no se aumenta límite ni se declara todoverde. Se inicia una comprobación aislada única de esos3casos para separar repetición local de fallo funcional.
 
 - Aislamiento final: los3timeouts generales pasan3/3 en editor nuevo con mismo código y límites (TIMEOUTS_AISLADOS). No se reproduce la interrupción ni se confirma causa; general202/206 permanece intacta y UX-GEN-TIMEOUT abierta. Sin otra regresión general repetida ni modificaciones adicionales al juego. Entrega técnica con37PNG/2vídeos,6procesos Windows yZIPverificado; revisión humana y RTS histórico pendientes.
+
+## 2026-11-03 — UX2-A inicio
+
+Rama UX02 desde d56fa59;11PR abiertos, main/dev intactas. Snapshot Docs/Validacion/UX02/BASE.json:21ZIP y hashes GDD/calidad previa. Plan secuencial Docs/UX02_MUNDO.md. Calidad local ajena conservada sin stage; evaluación humana e incidencias UX01 abiertas. Sin cambios de jugabilidad en este checkpoint.

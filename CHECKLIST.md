@@ -1233,3 +1233,60 @@ Base E19 conservada; rama feature/ux01-onboarding-camera-world, [PR11 draft](htt
 Las pruebas del editor operan las API de motor/interactor/órdenes; Windows verifica WASD/E y ejecuta los mismos controladores reales. Clic/arrastre/Shift físicos y aceptación humana siguen pendientes. Las capturas son renders reales, sin componer poses; grabación12Hz no es una medición FPS.
 
 Fallos y diagnóstico anteriores conservados en Docs/Validacion/UX01: arnés tras recarga, teclado del editor, primera E nativa y derrotas legítimas del héroe. DIRIGIDA_10 incluye derrota del Monje en el primer intento y victoria mediante el botón Reintentar en el segundo. No se inyectaron salud/recursos ni se cambiaron estadísticas para lograrlo. Las tareas antiguas e historial26/26 se conservan arriba.
+
+## FASE UX-02 — MUNDO EXPLORABLE E INTEGRACIÓN
+
+### UX2-A — Auditoría de fallos, PR y protección del trabajo
+- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: UX01.
+- Aceptación: Auditoría de fallos, PR y protección del trabajo; detalles en Docs/UX02_MUNDO.md.
+- Archivos: previstos según bloque; todavía sin implementación validada.
+- Pruebas: pendientes; no equivalen a revisión humana.
+
+### UX2-B — Aldea/sendero/bifurcación/ruinas/campamento/puesto conectados y transitables
+- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: A.
+- Aceptación: Aldea/sendero/bifurcación/ruinas/campamento/puesto conectados y transitables; detalles en Docs/UX02_MUNDO.md.
+- Archivos: previstos según bloque; todavía sin implementación validada.
+- Pruebas: pendientes; no equivalen a revisión humana.
+
+### UX2-C — Cámara cercana única y oclusión reversible
+- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: B.
+- Aceptación: Cámara cercana única y oclusión reversible; detalles en Docs/UX02_MUNDO.md.
+- Archivos: previstos según bloque; todavía sin implementación validada.
+- Pruebas: pendientes; no equivalen a revisión humana.
+
+### UX2-D — Interacciones E con línea de visión, NPC/diálogo/funciones reales
+- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: B,C.
+- Aceptación: Interacciones E con línea de visión, NPC/diálogo/funciones reales; detalles en Docs/UX02_MUNDO.md.
+- Archivos: previstos según bloque; todavía sin implementación validada.
+- Pruebas: pendientes; no equivalen a revisión humana.
+
+### UX2-E — Descubrimientos y recompensas únicos persistentes, guía real
+- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: D.
+- Aceptación: Descubrimientos y recompensas únicos persistentes, guía real; detalles en Docs/UX02_MUNDO.md.
+- Archivos: previstos según bloque; todavía sin implementación validada.
+- Pruebas: pendientes; no equivalen a revisión humana.
+
+### UX2-F — RTS con selección/formación/órdenes/ataque explícito y feedback
+- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: B,D.
+- Aceptación: RTS con selección/formación/órdenes/ataque explícito y feedback; detalles en Docs/UX02_MUNDO.md.
+- Archivos: previstos según bloque; todavía sin implementación validada.
+- Pruebas: pendientes; no equivalen a revisión humana.
+
+### UX2-G — HUD tres resoluciones, guardado/Continuar/legado y ruinas/regreso
+- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: C–F.
+- Aceptación: HUD tres resoluciones, guardado/Continuar/legado y ruinas/regreso; detalles en Docs/UX02_MUNDO.md.
+- Archivos: previstos según bloque; todavía sin implementación validada.
+- Pruebas: pendientes; no equivalen a revisión humana.
+
+### UX2-H — Pruebas dirigidas/general, Windows/build/ZIP/capturas/vídeos/PR
+- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: B–G.
+- Aceptación: Pruebas dirigidas/general, Windows/build/ZIP/capturas/vídeos/PR; detalles en Docs/UX02_MUNDO.md.
+- Archivos: previstos según bloque; todavía sin implementación validada.
+- Pruebas: pendientes; no equivalen a revisión humana.
+
+### UX2-HUM — Revisión humana de comodidad, ritmo, diversión, balance y arte
+- Estado: [ ] Pendiente. Prioridad: P1. Dependencias: H.
+- Aceptación: Revisión humana de comodidad, ritmo, diversión, balance y arte; detalles en Docs/UX02_MUNDO.md.
+- Archivos: previstos según bloque; todavía sin implementación validada.
+- Pruebas: pendientes; no equivalen a revisión humana.
+
