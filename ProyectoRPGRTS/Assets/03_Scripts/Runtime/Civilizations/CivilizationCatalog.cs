@@ -56,6 +56,7 @@ namespace Aethernia
             new CulturalUnitDefinition("clanroad","orc","clanroad-heavy","Guerrero de clanes","warrior",16,3,1.4f,2.1f,10,3,"barracks","",false,"Línea pesada"),
             new CulturalUnitDefinition("clanroad","orc","clanroad-scout","Rastreador de clanes","monk",10,3,1.5f,3.3f,8,2,"barracks","",false,"Exploración")};
         public int TreatyGold=8,TreatyFood=3,ConquestReputationCost=5,TerritoryWoodPerCycle=1;
+        public string[] ConquestFormation={"swordsman","stonehall-striker","archer","swordsman"};
         public FactionRelation InitialRelationA=FactionRelation.Ally,InitialRelationB=FactionRelation.Hostile;
         public RaceDefinition Race(string id)=>Array.Find(Races,r=>r.Id==id);
         public CultureDefinition Culture(string id)=>Array.Find(Cultures,c=>c.Id==id);

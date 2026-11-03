@@ -667,3 +667,6 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 
 - E19 pilotos: combate Unity real de ambas unidades y UI720/1080 PASS;21/21 dirigidas tras añadir simulación3600duelos y políticas/producción configurables. Error inicial CS1061 del test de simulación corregido a UseTechnique; intento no ejecutado registrado. No se modifican los tests históricos RTS.
 - QA nativo reutiliza runners E18 y ventana cultural real para elección en campamento, sin fondos/HP inyectados. Compilación E19 en proceso; Unity genera temporalmente precarga InputSystem y metadatos PerformanceTestRun, que retira al terminar. Se excluyen esos metadatos regenerables del código fuente; ProjectSettings vuelve a su estado previo.
+
+- Recorrido Windows inicial falló al reclutar desde Construcción: la nueva guardia del controlador aceptaba solo Exploración. Corregida para ambos modos en campamento, conservando rechazo fuera de alcance/combate/pausa; añadida comprobación real y21/21 dirigidas posteriores PASS. Fallo original conservado en NATIVO_INICIAL_RECLUTAMIENTO.txt.
+- La guarnición E19 de Forja usa formación configurable con Choque de forja; patrulla tutorial y escenas anteriores mantienen su pool original. Nueva build Windows exacta compilada para el recorrido final.

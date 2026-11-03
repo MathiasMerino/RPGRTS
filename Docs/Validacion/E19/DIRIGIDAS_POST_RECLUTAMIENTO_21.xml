@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="21" result="Passed" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-03 03:54:03Z" end-time="2026-11-03 03:54:10Z" duration="7.2339236">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="197" result="Passed" start-time="2026-11-03 03:54:03Z" end-time="2026-11-03 03:54:10Z" duration="7.233924" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1254" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="197" result="Passed" start-time="2026-11-03 03:54:03Z" end-time="2026-11-03 03:54:10Z" duration="7.058330" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="2256" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1255" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="197" result="Passed" start-time="2026-11-03 03:54:03Z" end-time="2026-11-03 03:54:10Z" duration="7.048706" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1256" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="197" result="Passed" start-time="2026-11-03 03:54:03Z" end-time="2026-11-03 03:54:10Z" duration="7.041221" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1257" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="197" result="Passed" start-time="2026-11-03 03:54:03Z" end-time="2026-11-03 03:54:10Z" duration="7.033622" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1042" name="CivilizationTests" fullname="Aethernia.Tests.Editor.CivilizationTests" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" testcasecount="21" result="Passed" start-time="2026-11-03 03:54:03Z" end-time="2026-11-03 03:54:10Z" duration="7.018555" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1060" name="CatalogHasOnlyTwoEnabledPilotsAndUsesPublicSharedArt" fullname="Aethernia.Tests.Editor.CivilizationTests.CatalogHasOnlyTwoEnabledPilotsAndUsesPublicSharedArt" methodname="CatalogHasOnlyTwoEnabledPilotsAndUsesPublicSharedArt" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="2065718209" result="Passed" start-time="2026-11-03 03:53:16Z" end-time="2026-11-03 03:53:21Z" duration="4.662556" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1064" name="ConfigurablePoliticsAndYieldAffectActualTransactions" fullname="Aethernia.Tests.Editor.CivilizationTests.ConfigurablePoliticsAndYieldAffectActualTransactions" methodname="ConfigurablePoliticsAndYieldAffectActualTransactions" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1572641705" result="Passed" start-time="2026-11-03 03:53:21Z" end-time="2026-11-03 03:53:21Z" duration="0.019049" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1056" name="CulturalBuildingsProducePayAndRetainCultureWithoutDuplication" fullname="Aethernia.Tests.Editor.CivilizationTests.CulturalBuildingsProducePayAndRetainCultureWithoutDuplication" methodname="CulturalBuildingsProducePayAndRetainCultureWithoutDuplication" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="295659562" result="Passed" start-time="2026-11-03 03:53:21Z" end-time="2026-11-03 03:53:21Z" duration="0.015767" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1059" name="LegacyIdentityIsPreservedWithoutInventedCultureOrNewBonus" fullname="Aethernia.Tests.Editor.CivilizationTests.LegacyIdentityIsPreservedWithoutInventedCultureOrNewBonus" methodname="LegacyIdentityIsPreservedWithoutInventedCultureOrNewBonus" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="315465236" result="Passed" start-time="2026-11-03 03:53:21Z" end-time="2026-11-03 03:53:21Z" duration="0.034931" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1058" name="PactChangesAccessWithoutChangingOwnerRaceOrGeneratingResources" fullname="Aethernia.Tests.Editor.CivilizationTests.PactChangesAccessWithoutChangingOwnerRaceOrGeneratingResources" methodname="PactChangesAccessWithoutChangingOwnerRaceOrGeneratingResources" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1137618304" result="Passed" start-time="2026-11-03 03:53:21Z" end-time="2026-11-03 03:53:21Z" duration="0.003392" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1061" name="RealCreationAllTwelveCombinationsAndContinue" fullname="Aethernia.Tests.Editor.CivilizationTests.RealCreationAllTwelveCombinationsAndContinue" methodname="RealCreationAllTwelveCombinationsAndContinue" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="758519797" result="Passed" start-time="2026-11-03 03:53:21Z" end-time="2026-11-03 03:53:49Z" duration="28.294944" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1063" name="SeededBalanceSimulationRecordsTwelveCombinationsAtThreeLevels" fullname="Aethernia.Tests.Editor.CivilizationTests.SeededBalanceSimulationRecordsTwelveCombinationsAtThreeLevels" methodname="SeededBalanceSimulationRecordsTwelveCombinationsAtThreeLevels" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="295260749" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.067549" asserts="0">
+                <properties />
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1055" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.444853" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1043" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;warrior&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="258837416" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.048588" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1044" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;monk&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1192574377" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.030887" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1045" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;mage&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1243878280" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.036679" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1046" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;warrior&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1047414196" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.043587" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1047" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;monk&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1274812654" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.047009" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1048" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;mage&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="196182891" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.030873" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1049" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;warrior&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1162596539" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.030359" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1050" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;monk&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1547983373" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.030919" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1051" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;mage&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="831927325" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.030586" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1052" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;warrior&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1987603104" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.030140" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1053" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;monk&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="581455193" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.028839" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1054" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;mage&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="854004924" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:53:49Z" duration="0.046649" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-case id="1062" name="TwoPaidPilotsUseActualRtsDamageAndExistingUi" fullname="Aethernia.Tests.Editor.CivilizationTests.TwoPaidPilotsUseActualRtsDamageAndExistingUi" methodname="TwoPaidPilotsUseActualRtsDamageAndExistingUi" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="822523320" result="Passed" start-time="2026-11-03 03:53:49Z" end-time="2026-11-03 03:54:10Z" duration="20.539864" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1057" name="TwoPilotsNeedRealAccessAndResourcesAndRespectSeparateArmyLimit" fullname="Aethernia.Tests.Editor.CivilizationTests.TwoPilotsNeedRealAccessAndResourcesAndRespectSeparateArmyLimit" methodname="TwoPilotsNeedRealAccessAndResourcesAndRespectSeparateArmyLimit" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="807133892" result="Passed" start-time="2026-11-03 03:54:10Z" end-time="2026-11-03 03:54:10Z" duration="0.008227" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

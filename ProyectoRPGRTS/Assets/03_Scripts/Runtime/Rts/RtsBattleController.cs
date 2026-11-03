@@ -137,7 +137,7 @@ namespace Aethernia
             var index=0;
             foreach(var s in soldiers)
             {
-                var role=demoRules.Roles[index++%demoRules.Roles.Length];s.Role=role.Id;s.Range=role.Range;s.Damage=role.Damage;s.Maximum=role.Health;s.Health=role.Health;s.Unit.Agent.speed=role.Speed;
+                var formation=expedition?demoRules.Civilizations?.ConquestFormation:null;var role=formation!=null&&formation.Length>0?demoRules.Find(formation[index%formation.Length]):demoRules.Roles[index%demoRules.Roles.Length];index++;if(role==null){Clear();session.SetMode(PrototypeMode.Exploration);return false;}s.Role=role.Id;s.Range=role.Range;s.Damage=role.Damage;s.Maximum=role.Health;s.Health=role.Health;s.Unit.Agent.speed=role.Speed;
                 BuildVisual(s,role);
             }
             for(var i=0;i<roster.Count;i++)

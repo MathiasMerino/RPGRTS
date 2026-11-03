@@ -331,5 +331,10 @@ MonoBehaviour:
   TreatyFood: 3
   ConquestReputationCost: 5
   TerritoryWoodPerCycle: 1
+  ConquestFormation:
+  - swordsman
+  - stonehall-striker
+  - archer
+  - swordsman
   InitialRelationA: 0
   InitialRelationB: 2
