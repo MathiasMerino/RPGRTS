@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="18" result="Failed(Child)" total="18" passed="17" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-03 03:28:29Z" end-time="2026-11-03 03:28:34Z" duration="4.7866304">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="194" result="Failed" site="Child" start-time="2026-11-03 03:28:29Z" end-time="2026-11-03 03:28:34Z" duration="4.786630" total="18" passed="17" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1251" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="194" result="Failed" site="Child" start-time="2026-11-03 03:28:29Z" end-time="2026-11-03 03:28:34Z" duration="4.584803" total="18" passed="17" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="29868" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1252" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="194" result="Failed" site="Child" start-time="2026-11-03 03:28:29Z" end-time="2026-11-03 03:28:34Z" duration="4.578655" total="18" passed="17" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1253" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="194" result="Failed" site="Child" start-time="2026-11-03 03:28:29Z" end-time="2026-11-03 03:28:34Z" duration="4.570453" total="18" passed="17" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1254" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="194" result="Failed" site="Child" start-time="2026-11-03 03:28:29Z" end-time="2026-11-03 03:28:34Z" duration="4.564067" total="18" passed="17" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1042" name="CivilizationTests" fullname="Aethernia.Tests.Editor.CivilizationTests" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" testcasecount="18" result="Failed" site="Child" start-time="2026-11-03 03:28:29Z" end-time="2026-11-03 03:28:34Z" duration="4.551608" total="18" passed="17" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1060" name="CatalogHasOnlyTwoEnabledPilotsAndUsesPublicSharedArt" fullname="Aethernia.Tests.Editor.CivilizationTests.CatalogHasOnlyTwoEnabledPilotsAndUsesPublicSharedArt" methodname="CatalogHasOnlyTwoEnabledPilotsAndUsesPublicSharedArt" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1621213800" result="Passed" start-time="2026-11-03 03:28:04Z" end-time="2026-11-03 03:28:10Z" duration="5.186845" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1056" name="CulturalBuildingsProducePayAndRetainCultureWithoutDuplication" fullname="Aethernia.Tests.Editor.CivilizationTests.CulturalBuildingsProducePayAndRetainCultureWithoutDuplication" methodname="CulturalBuildingsProducePayAndRetainCultureWithoutDuplication" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1331897017" result="Passed" start-time="2026-11-03 03:28:10Z" end-time="2026-11-03 03:28:10Z" duration="0.025639" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1059" name="LegacyIdentityIsPreservedWithoutInventedCultureOrNewBonus" fullname="Aethernia.Tests.Editor.CivilizationTests.LegacyIdentityIsPreservedWithoutInventedCultureOrNewBonus" methodname="LegacyIdentityIsPreservedWithoutInventedCultureOrNewBonus" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1031666695" result="Passed" start-time="2026-11-03 03:28:10Z" end-time="2026-11-03 03:28:10Z" duration="0.045902" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1058" name="PactChangesAccessWithoutChangingOwnerRaceOrGeneratingResources" fullname="Aethernia.Tests.Editor.CivilizationTests.PactChangesAccessWithoutChangingOwnerRaceOrGeneratingResources" methodname="PactChangesAccessWithoutChangingOwnerRaceOrGeneratingResources" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="193786468" result="Passed" start-time="2026-11-03 03:28:10Z" end-time="2026-11-03 03:28:10Z" duration="0.008087" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1061" name="RealCreationAllTwelveCombinationsAndContinue" fullname="Aethernia.Tests.Editor.CivilizationTests.RealCreationAllTwelveCombinationsAndContinue" methodname="RealCreationAllTwelveCombinationsAndContinue" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="2048010956" result="Failed" start-time="2026-11-03 03:28:10Z" end-time="2026-11-03 03:28:33Z" duration="23.221012" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[Unhandled log message: '[Warning] The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].'. Use UnityEngine.TestTools.LogAssert.Expect]]></message>
+                  <stack-trace><![CDATA[TMPro.TextMeshProUGUI:SetArraySizes (TMPro.TMP_Text/TextProcessingElement[]) (at ./Library/PackageCache/com.unity.ugui@1c4864518158/Runtime/TMP/TextMeshProUGUI.cs:2012)
+TMPro.TMP_Text:ParseInputText () (at ./Library/PackageCache/com.unity.ugui@1c4864518158/Runtime/TMP/TMP_Text.cs:2063)
+TMPro.TextMeshProUGUI:OnPreRenderCanvas () (at ./Library/PackageCache/com.unity.ugui@1c4864518158/Runtime/TMP/TextMeshProUGUI.cs:2496)
+TMPro.TextMeshProUGUI:Rebuild (UnityEngine.UI.CanvasUpdate) (at ./Library/PackageCache/com.unity.ugui@1c4864518158/Runtime/TMP/TextMeshProUGUI.cs:229)
+UnityEngine.Canvas:ForceUpdateCanvases ()
+Aethernia.Tests.Editor.CivilizationTests/<Creation>d__14:MoveNext () (at Assets/03_Scripts/Tests/Editor/CivilizationTests.cs:54)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+The character with Unicode value \u25C6 was not found in the [AetherniaBodySDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1 in text object [Caption].
+]]></output>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1055" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:34Z" duration="0.558086" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1043" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;warrior&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1746817508" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.065276" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1044" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;monk&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="976644136" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.056512" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1045" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;human&quot;,&quot;mage&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1961837005" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.036892" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1046" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;warrior&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="5136667" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.051949" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1047" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;monk&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="744249356" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.034297" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1048" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;elf&quot;,&quot;mage&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="70628581" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.040803" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1049" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;warrior&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1426689581" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.032932" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1050" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;monk&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="280930612" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.041922" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1051" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;dwarf&quot;,&quot;mage&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="1289710197" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.065301" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1052" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;warrior&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;warrior&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="888014428" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:33Z" duration="0.042087" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1053" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;monk&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;monk&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="875197582" result="Passed" start-time="2026-11-03 03:28:33Z" end-time="2026-11-03 03:28:34Z" duration="0.047915" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1054" name="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;mage&quot;)" fullname="Aethernia.Tests.Editor.CivilizationTests.TwelveCombinationsHaveBoundedSharedTraitsAndStableSave(&quot;orc&quot;,&quot;mage&quot;)" methodname="TwelveCombinationsHaveBoundedSharedTraitsAndStableSave" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="258370157" result="Passed" start-time="2026-11-03 03:28:34Z" end-time="2026-11-03 03:28:34Z" duration="0.032427" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1057" name="TwoPilotsNeedRealAccessAndResourcesAndRespectSeparateArmyLimit" fullname="Aethernia.Tests.Editor.CivilizationTests.TwoPilotsNeedRealAccessAndResourcesAndRespectSeparateArmyLimit" methodname="TwoPilotsNeedRealAccessAndResourcesAndRespectSeparateArmyLimit" classname="Aethernia.Tests.Editor.CivilizationTests" runstate="Runnable" seed="175539644" result="Passed" start-time="2026-11-03 03:28:34Z" end-time="2026-11-03 03:28:34Z" duration="0.021997" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -29,7 +29,7 @@ namespace Aethernia
             var i=0;foreach(var c in state.Companions.Where(x=>x.InParty&&x.Health>0))
             {
                 if(!units.ContainsKey(c.Id)&&TrySlot(Flow.Director.Hero.transform.position,i,out var at))
-                {var role=Roles.Find(c.Role);var unit=Instantiate(Flow.Director.Rts.UnitTemplate,at,Quaternion.identity).GetComponent<ExplorationUnit>();unit.name=role.Title+" · "+c.Id.Substring(0,4);unit.Agent.speed=role.Speed;unit.Agent.avoidancePriority=80+i*5;SupportVisualFactory.Attach(unit,role,Flow.Front.Catalog,Feedback.SharedEffectMaterial);units.Add(c.Id,unit);}
+                {var role=Roles.Find(c.Role);var unit=Instantiate(Flow.Director.Rts.UnitTemplate,at,Quaternion.identity).GetComponent<ExplorationUnit>();unit.name=role.Title+" · "+c.Id.Substring(0,4);unit.Agent.speed=role.Speed;unit.Agent.avoidancePriority=80+i*5;SupportVisualFactory.Attach(unit,role,Flow.Front.Catalog,Feedback.SharedEffectMaterial,Roles.Civilizations,c.RaceId);units.Add(c.Id,unit);}
                 i++;
             }
         }

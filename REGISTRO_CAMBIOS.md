@@ -656,3 +656,11 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 ## 2026-11-02 — E19: auditoría y punto de recuperación
 - Rama feature/e19-razas-civilizaciones desde5507425; PR9 sigue abierto. Snapshot de ramas/PR y hashes en Docs/Validacion/E19. Cambio ajeno QualitySettings conservado aparte.
 - GDD0.2 consultado, sin Biblia Artística aprobada localizada; alcance/rasgos/pilotos provisionales en Docs/PLAN_E19.md. Iniciadas pruebas RTS y regresión visual E18 sin cambiar sus aserciones.
+
+- E19-A: repetición dirigida1/2. Visual histórica PASS; RTS pierde con Monje después de victoria Guerrero. Resultado y trazas conservados; incidencia táctica abierta, sin aserciones alteradas ni corrupción demostrada.
+
+
+## 2026-11-02 — E19 BCD y pilotos culturales
+- Catálogo SO opt-in: cuatro razas/todas las clases, rasgos pequeños calculados en perfil derivado; IdentityRevision y guardado aditivo, sin curación/reaplicación. UI Alpha ampliada con cuatro opciones y vista proporcional provisional.
+- Dos pilotos sobre economía/RTS existentes: guardia y choque, variantes de almacén/taller, costes/requisitos/relaciones/pacto/control territorial. Grupo3 y ejército6 separados; nuevas identidades de reclutas, legados conservados. Cuatro culturas/doce planes militares, solo dos unidades activadas. Dos prefabs derivados E07, sin materiales nuevos ni recursos privados.
+- Escena nueva AetherniaCivilizationsDemo, autoría única mediante CivilizationSceneBuilder: Unity exacto compila. Pruebas iniciales17/18 (glifo de selección no disponible), corregido; repetición18/18, doce combinaciones creación/Continuar y doce capturas reales. Combate real de pilotos y regresión completa pendientes.

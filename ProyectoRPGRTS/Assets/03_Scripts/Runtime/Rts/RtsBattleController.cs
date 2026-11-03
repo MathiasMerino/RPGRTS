@@ -156,7 +156,7 @@ namespace Aethernia
         }
         private void BuildVisual(Soldier s,RtsRoleProfile role)
         {
-            var model=SupportVisualFactory.Attach(s.Unit,role,visuals,feedback==null?null:feedback.SharedEffectMaterial);if(model==null)return;s.Visual=model.gameObject;s.Animator=s.Visual.GetComponent<HumanoidAnimationDriver>();
+            var model=SupportVisualFactory.Attach(s.Unit,role,visuals,feedback==null?null:feedback.SharedEffectMaterial,demoRules.Civilizations,string.IsNullOrEmpty(s.RecruitId)?null:session.State.Army.Find(r=>r.Id==s.RecruitId)?.RaceId);if(model==null)return;s.Visual=model.gameObject;s.Animator=s.Visual.GetComponent<HumanoidAnimationDriver>();
         }
         private bool RejectDeployment()
         { session.Say("Zona de despliegue RTS bloqueada. Se conserva el mundo; prueba en una partida con esa zona libre."); return false; }

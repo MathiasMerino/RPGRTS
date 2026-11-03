@@ -53,7 +53,7 @@ namespace Aethernia
         public bool Improve()
         {var result=SettlementOperations.Upgrade(Flow.Session.State,Rules,Selected);Flow.Session.Say(result?"Nivel 2: mayor rendimiento/capacidad, misma huella.":"No se puede mejorar: comprueba instalación, nivel y recursos.");return result;}
         public bool Recruit(string role)
-        {var result=SettlementOperations.Recruit(Flow.Session.State,Rules,role);Flow.Session.Say(result?"Recluta añadido al ejército persistente. Visita al capitán para desplegarlo.":"Reclutamiento rechazado: requiere cuartel, recursos y espacio (6).");return result;}
+        {if(Rules.Civilizations!=null&&!WorkbenchReady())return false;var result=SettlementOperations.Recruit(Flow.Session.State,Rules,role);Flow.Session.Say(result?"Recluta añadido al ejército persistente. Visita al capitán para desplegarlo.":"Reclutamiento rechazado: requiere cuartel, recursos y espacio (6).");return result;}
         private bool WorkbenchReady()=>Flow.IsPlaying&&Flow.Session.Mode==PrototypeMode.Exploration&&!Flow.Session.Paused&&!Flow.Director.IsBusy&&Vector3.Distance(Flow.Director.Hero.transform.position,new Vector3(9,0,-10))<9;
         public bool Forge(){var ok=WorkbenchReady()&&EquipmentOperations.Forge(Flow.Session.State);Flow.Session.Say(ok?"Arma de clase forjada: equípala desde Inventario.":"Forja: requiere campamento, taller2,8oro y mineral1.");return ok;}
         public bool BuyVest(){var ok=WorkbenchReady()&&EquipmentOperations.BuyVest(Flow.Session.State);Flow.Session.Say(ok?"Chaleco adquirido; puedes equiparlo.":"Chaleco: campamento, taller,8oro/4madera y espacio.");return ok;}
@@ -65,8 +65,8 @@ namespace Aethernia
             var modal=Flow.Front.Presentation!=null&&(Flow.ExistingHud.CompactView.WindowOpen||Flow.ExistingHud.CompactView.HelpOpen);
             manage.gameObject.SetActive(available&&!modal&&Flow.Session.Mode==PrototypeMode.Exploration);panel.gameObject.SetActive(available&&!modal&&Flow.Session.Mode==PrototypeMode.Construction);if(!panel.gameObject.activeSelf)return;
             if(lastCount!=state.Buildings.Count){lastCount=state.Buildings.Count;selected=lastCount-1;}
-            resources.text="Oro "+state.Gold+" · Madera "+state.Wood+" · Alimento "+state.Food+" · Cap. "+SettlementOperations.Capacity(state,Rules)+" · Ejército "+state.Army.Count+"/6";
-            var b=Selected;selectedLabel.text=b==null?"Ningún edificio seleccionado.":Rules.Find(b.Id).Title+" · nivel "+b.Level+(b.ProductionPaused?" · producción pausada":" · activo");
+            resources.text="Oro "+state.Gold+" · Madera "+state.Wood+" · Alimento "+state.Food+" · Cap. "+SettlementOperations.Capacity(state,Rules)+" · Ejército "+state.Army.Count+"/6"+(Rules.Civilizations!=null?" · "+Rules.Civilizations.Culture(state.CultureId)?.Title:"");
+            var b=Selected;selectedLabel.text=b==null?"Ningún edificio seleccionado.":Rules.Find(b.Id).Title+" · "+(Rules.Civilizations?.Culture(b.CultureId)?.Title??"común")+" · nivel "+b.Level+(b.ProductionPaused?" · producción pausada":" · activo");
             activate.interactable=b!=null&&(Rules.Find(b.Id).FoodPerCycle>0||Rules.Find(b.Id).WoodPerCycle>0);upgrade.interactable=b!=null&&Rules.Find(b.Id).Upgradeable&&b.Level==1&&state.Gold>=Rules.UpgradeGold&&state.Wood>=Rules.UpgradeWood;
             activate.GetComponentInChildren<TMP_Text>().text=b!=null&&!b.ProductionPaused?"Pausar":"Activar";
             for(var i=0;i<recruits.Count;i++){var role=Flow.Director.Rts.DemoRules.Roles[i].Id;recruits[i].interactable=SettlementOperations.Has(state,"barracks")&&state.Gold>=Rules.GoldCost(role)&&state.Food>=Rules.FoodCost(role)&&state.Army.Count<Rules.MaximumRecruits;}

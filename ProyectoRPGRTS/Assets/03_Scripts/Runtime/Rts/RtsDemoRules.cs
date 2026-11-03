@@ -14,12 +14,13 @@ namespace Aethernia
     [CreateAssetMenu(menuName="Aethernia/RTS Demo Rules")]
     public sealed class RtsDemoRules : ScriptableObject
     {
+        public CivilizationCatalog Civilizations;
         public RtsRoleProfile[] Roles={
             new RtsRoleProfile("swordsman","Espadachín","warrior",1.5f,2.5f),
             new RtsRoleProfile("brawler","Luchador","monk",1.3f,3.2f),
             new RtsRoleProfile("archer","Arquero","warrior",6,2.5f)
         };
-        public RtsRoleProfile Find(string id)=>Array.Find(Roles,x=>x.Id==id);
+        public RtsRoleProfile Find(string id)=>Array.Find(Roles,x=>x.Id==id)??Civilizations?.MilitaryRole(id);
     }
     public readonly struct RtsUnitStatus
     {

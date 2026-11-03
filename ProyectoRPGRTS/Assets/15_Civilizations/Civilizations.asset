@@ -1,0 +1,331 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5906cdc4b14324fafa0c79e4c73213, type: 3}
+  m_Name: Civilizations
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.CivilizationCatalog
+  Races:
+  - Id: human
+    Title: Humano
+    Description: Identidad provisional, independiente de cultura y lealtad.
+    Trait: "Resiliencia: +2 PV m\xE1ximos"
+    Appearance: "Rig Generic compartido; proporciones temporales, sin anatom\xEDa
+      racial definitiva."
+    VisualScale: {x: 1, y: 1, z: 1}
+    MaximumHealth: 2
+    Guard: 0
+    TechniqueDamage: 0
+    Speed: 0
+    Classes:
+    - warrior
+    - monk
+    - mage
+  - Id: elf
+    Title: Elfo
+    Description: Identidad provisional, independiente de cultura y lealtad.
+    Trait: "Paso \xE1gil: +0,2 m/s"
+    Appearance: "Rig Generic compartido; proporciones temporales, sin anatom\xEDa
+      racial definitiva."
+    VisualScale: {x: 0.94, y: 1.04, z: 0.94}
+    MaximumHealth: 0
+    Guard: 0
+    TechniqueDamage: 0
+    Speed: 0.2
+    Classes:
+    - warrior
+    - monk
+    - mage
+  - Id: dwarf
+    Title: Enano
+    Description: Identidad provisional, independiente de cultura y lealtad.
+    Trait: "Firmeza: +1 mitigaci\xF3n al defender"
+    Appearance: "Rig Generic compartido; proporciones temporales, sin anatom\xEDa
+      racial definitiva."
+    VisualScale: {x: 1.12, y: 0.84, z: 1.1}
+    MaximumHealth: 0
+    Guard: 1
+    TechniqueDamage: 0
+    Speed: 0
+    Classes:
+    - warrior
+    - monk
+    - mage
+  - Id: orc
+    Title: Orco
+    Description: Identidad provisional, independiente de cultura y lealtad.
+    Trait: "\xCDmpetu: +1 da\xF1o de t\xE9cnica (nivel2)"
+    Appearance: "Rig Generic compartido; proporciones temporales, sin anatom\xEDa
+      racial definitiva."
+    VisualScale: {x: 1.1, y: 1.02, z: 1.08}
+    MaximumHealth: 0
+    Guard: 0
+    TechniqueDamage: 1
+    Speed: 0
+    Classes:
+    - warrior
+    - monk
+    - mage
+  Cultures:
+  - Id: frontier
+    Title: Frontera
+    Description: "Tradici\xF3n provisional, abierta a todas las razas."
+    Architecture: "Madera y piedra; m\xF3dulos E07"
+    Technology: "T\xE9cnica local de almac\xE9n o taller"
+    Economy: "Capacidad log\xEDstica"
+    Faction: faction-a
+    Building: warehouse
+    Palette: {r: 0.4, g: 0.28, b: 0.16, a: 1}
+    Pilot: 1
+    StorageBonus: 20
+    WoodBonus: 0
+  - Id: sylvan
+    Title: Bosque
+    Description: "Tradici\xF3n provisional, abierta a todas las razas."
+    Architecture: "Madera y vegetaci\xF3n; propuesta"
+    Technology: Preparada como datos; no desbloqueada
+    Economy: Pendiente de piloto
+    Faction: faction-a
+    Building: 
+    Palette: {r: 0.25, g: 0.37, b: 0.29, a: 1}
+    Pilot: 0
+    StorageBonus: 0
+    WoodBonus: 0
+  - Id: stonehall
+    Title: Forja
+    Description: "Tradici\xF3n provisional, abierta a todas las razas."
+    Architecture: "Piedra y hierro; m\xF3dulos E07"
+    Technology: "T\xE9cnica local de almac\xE9n o taller"
+    Economy: "Recolecci\xF3n con alimento"
+    Faction: faction-b
+    Building: workshop
+    Palette: {r: 0.35, g: 0.37, b: 0.4, a: 1}
+    Pilot: 1
+    StorageBonus: 0
+    WoodBonus: 1
+  - Id: clanroad
+    Title: Clanes
+    Description: "Tradici\xF3n provisional, abierta a todas las razas."
+    Architecture: Madera, cuero y hierro; propuesta
+    Technology: Preparada como datos; no desbloqueada
+    Economy: Pendiente de piloto
+    Faction: faction-b
+    Building: 
+    Palette: {r: 0.42, g: 0.25, b: 0.2, a: 1}
+    Pilot: 0
+    StorageBonus: 0
+    WoodBonus: 0
+  Units:
+  - CultureId: frontier
+    RaceId: human
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: "Infanter\xEDa"
+    Behaviour: Avanza y combate cuerpo a cuerpo
+    Enabled: 0
+    Profile:
+      Id: frontier-sword
+      Title: Espada de frontera
+      VisualClass: warrior
+      Health: 12
+      Damage: 3
+      RecruitGold: 7
+      RecruitFood: 2
+      Range: 1.5
+      Speed: 2.5
+  - CultureId: frontier
+    RaceId: human
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: Distancia
+    Behaviour: Mantiene alcance; ataque a distancia
+    Enabled: 0
+    Profile:
+      Id: frontier-bow
+      Title: Ballestero de frontera
+      VisualClass: warrior
+      Health: 10
+      Damage: 2
+      RecruitGold: 8
+      RecruitFood: 2
+      Range: 6
+      Speed: 2.3
+  - CultureId: frontier
+    RaceId: human
+    Building: warehouse
+    AccessTerritory: 
+    TacticalRole: "L\xEDnea resistente"
+    Behaviour: Avanza y combate cuerpo a cuerpo
+    Enabled: 1
+    Profile:
+      Id: frontier-guard
+      Title: Guardia de frontera
+      VisualClass: warrior
+      Health: 16
+      Damage: 2
+      RecruitGold: 8
+      RecruitFood: 3
+      Range: 1.6
+      Speed: 2.2
+  - CultureId: sylvan
+    RaceId: elf
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: "Exploraci\xF3n"
+    Behaviour: Avanza y combate cuerpo a cuerpo
+    Enabled: 0
+    Profile:
+      Id: sylvan-scout
+      Title: Explorador del bosque
+      VisualClass: monk
+      Health: 10
+      Damage: 2
+      RecruitGold: 7
+      RecruitFood: 2
+      Range: 1.6
+      Speed: 3.4
+  - CultureId: sylvan
+    RaceId: elf
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: Distancia
+    Behaviour: Mantiene alcance; ataque a distancia
+    Enabled: 0
+    Profile:
+      Id: sylvan-bow
+      Title: Arquero del bosque
+      VisualClass: warrior
+      Health: 10
+      Damage: 2
+      RecruitGold: 9
+      RecruitFood: 2
+      Range: 7
+      Speed: 2.8
+  - CultureId: sylvan
+    RaceId: elf
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: Especialista
+    Behaviour: Avanza y combate cuerpo a cuerpo
+    Enabled: 0
+    Profile:
+      Id: sylvan-duelist
+      Title: Duelista del bosque
+      VisualClass: monk
+      Health: 12
+      Damage: 3
+      RecruitGold: 9
+      RecruitFood: 3
+      Range: 1.6
+      Speed: 3
+  - CultureId: stonehall
+    RaceId: dwarf
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: Defensa
+    Behaviour: Avanza y combate cuerpo a cuerpo
+    Enabled: 0
+    Profile:
+      Id: stonehall-defender
+      Title: Defensor de forja
+      VisualClass: warrior
+      Health: 18
+      Damage: 2
+      RecruitGold: 10
+      RecruitFood: 3
+      Range: 1.4
+      Speed: 1.9
+  - CultureId: stonehall
+    RaceId: dwarf
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: Distancia
+    Behaviour: Mantiene alcance; ataque a distancia
+    Enabled: 0
+    Profile:
+      Id: stonehall-shooter
+      Title: Tirador de forja
+      VisualClass: warrior
+      Health: 12
+      Damage: 3
+      RecruitGold: 10
+      RecruitFood: 3
+      Range: 5
+      Speed: 2
+  - CultureId: stonehall
+    RaceId: dwarf
+    Building: workshop
+    AccessTerritory: outpost
+    TacticalRole: "Da\xF1o cercano; menor alcance"
+    Behaviour: Avanza y combate cuerpo a cuerpo
+    Enabled: 1
+    Profile:
+      Id: stonehall-striker
+      Title: Choque de forja
+      VisualClass: warrior
+      Health: 12
+      Damage: 4
+      RecruitGold: 9
+      RecruitFood: 3
+      Range: 1.2
+      Speed: 2
+  - CultureId: clanroad
+    RaceId: orc
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: "Infanter\xEDa"
+    Behaviour: Avanza y combate cuerpo a cuerpo
+    Enabled: 0
+    Profile:
+      Id: clanroad-fighter
+      Title: Combatiente de clanes
+      VisualClass: monk
+      Health: 12
+      Damage: 3
+      RecruitGold: 7
+      RecruitFood: 3
+      Range: 1.4
+      Speed: 2.8
+  - CultureId: clanroad
+    RaceId: orc
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: "L\xEDnea pesada"
+    Behaviour: Avanza y combate cuerpo a cuerpo
+    Enabled: 0
+    Profile:
+      Id: clanroad-heavy
+      Title: Guerrero de clanes
+      VisualClass: warrior
+      Health: 16
+      Damage: 3
+      RecruitGold: 10
+      RecruitFood: 3
+      Range: 1.4
+      Speed: 2.1
+  - CultureId: clanroad
+    RaceId: orc
+    Building: barracks
+    AccessTerritory: 
+    TacticalRole: "Exploraci\xF3n"
+    Behaviour: Avanza y combate cuerpo a cuerpo
+    Enabled: 0
+    Profile:
+      Id: clanroad-scout
+      Title: Rastreador de clanes
+      VisualClass: monk
+      Health: 10
+      Damage: 3
+      RecruitGold: 8
+      RecruitFood: 2
+      Range: 1.5
+      Speed: 3.3
+  TreatyGold: 8
+  TreatyFood: 3

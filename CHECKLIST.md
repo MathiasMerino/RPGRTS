@@ -1199,9 +1199,9 @@ El encargo explícito autoriza implementación, validación, build y PR apilado.
 
 | ID | Sistema / prioridad | Dependencias | Estado | Aceptación | Archivos / pruebas / resultado |
 |---|---|---|---|---|---|
-| E19-A | Estabilidad / P0 | E18, ORG-01 | [ ] En desarrollo | Investigar y reproducir RTS, conservar aserciones; clasificar causa y verificar contratos | Docs/Validacion/E19/BASELINE.json, GITHUB_BASE.json; pruebas dirigidas en ejecución |
-| E19-BCD | Identidad / P0 | A investigada | [ ] Pendiente | Cuatro razas, 12 combinaciones, rasgos configurables, selección y persistencia sin duplicación | Previsto: catálogo, UI existente, guardado; pruebas de combinaciones y legado |
-| E19-EFGIJ | Culturas / P0 | BCD | [ ] Pendiente | Cuatro familias de datos, dos pilotos con unidad y edificio útiles, costes/relaciones/reclutamiento reales | Previsto: catálogo compartido, operaciones, UI; transacciones/RTS/guardado |
+| E19-A | Estabilidad / P0 | E18, ORG-01 | [x] Completado y verificado | Investigar y reproducir RTS, conservar aserciones; clasificar causa y verificar contratos | Docs/Validacion/E19/BASELINE.json, GITHUB_BASE.json; A_BASELINE.xml:1/2 aprobada; derrota RTS Monje reproducida, incidencia abierta sin alterar aserciones; A_DIAGNOSTICO.json |
+| E19-BCD | Identidad / P0 | A investigada | [x] Completado y verificado | Cuatro razas, 12 combinaciones, rasgos configurables, selección y persistencia sin duplicación | CivilizationCatalog/Operations, DemoFrontEnd, ProgressionOperations, SaveStore y escena E19:18/18, doce combinaciones UI y guardado repetido; BCD_EFG_18.xml. Primer pase17/18 detectó glifo sin soporte, corregido sin ignorar avisos. |
+| E19-EFGIJ | Culturas / P0 | BCD | [ ] En desarrollo | Cuatro familias de datos, dos pilotos con unidad y edificio útiles, costes/relaciones/reclutamiento reales | Previsto: catálogo compartido, operaciones, UI; transacciones/RTS/guardado |
 | E19-HKLMN | Integración / P0 | EFGIJ | [ ] Pendiente | Mismo héroe/habilidades, grupo3 y ejército6, conquista/producción, arte provisional sustituible | Previsto: escena E19 opt-in, presentadores; regresión y recorridos |
 | E19-OPQR | Calidad / P0 | Integración | [ ] Pendiente | Balance reproducible, UI varias resoluciones, migraciones seguras y regresión completa con fallos visibles | Previsto: pruebas y evidencias E19 |
 | E19-ST | Entrega / P0 | Calidad | [ ] Pendiente | Dos combinaciones con recorrido completo/reinicio, capturas reales, Windows y portable verificados | Previsto: guía y entrega E19, build y ZIP nuevos |

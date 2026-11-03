@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a35ab4f7014474d854ec9dd2c72986, type: 3}
+  m_Name: ExpeditionRules
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ExpeditionRules
+  Units: {fileID: 11400000, guid: 313daa267cf1e914cacfe79e29c8489a, type: 2}
+  MaximumCompanions: 3
+  RecruitGold: 5
+  RecruitFood: 2
+  RestSeconds: 10
+  DungeonGold: 30
+  DungeonWood: 15
+  DungeonFood: 6
+  OutpostDefenders: 4
+  Factions:
+  - Id: player-company
+    Title: "Compa\xF1\xEDa del campamento"
+    CultureId: 
+    KingdomId: 
+    Cultures:
+    - frontier
+    - sylvan
+    - stonehall
+    - clanroad
+    Roles:
+    - swordsman
+    - archer
+    - brawler
+  - Id: faction-a
+    Title: Liga de Frontera
+    CultureId: frontier
+    KingdomId: 
+    Cultures:
+    - frontier
+    - sylvan
+    Roles:
+    - swordsman
+    - archer
+    - brawler
+  - Id: faction-b
+    Title: "Guarnici\xF3n de Forja"
+    CultureId: stonehall
+    KingdomId: 
+    Cultures:
+    - stonehall
+    - clanroad
+    Roles:
+    - swordsman
+    - archer
+    - brawler
+  Territories:
+  - Id: camp
+    Title: Campamento
+    InitialOwner: player-company
+    ConnectedTo: 
+    Position: {x: 9, y: 0, z: -10}
+    WoodPerCycle: 0
+  - Id: crossing
+    Title: Paso del bosque
+    InitialOwner: 
+    ConnectedTo: camp
+    Position: {x: 11, y: 0, z: 8}
+    WoodPerCycle: 1
+  - Id: outpost
+    Title: Puesto del Umbral
+    InitialOwner: faction-b
+    ConnectedTo: crossing
+    Position: {x: -12, y: 0, z: -13}
+    WoodPerCycle: 1

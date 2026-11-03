@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f5eb16e266f3094bad02096644cd76c, type: 3}
+  m_Name: RtsRoles
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.RtsDemoRules
+  Civilizations: {fileID: 11400000, guid: daf8efabc0f71ed4582266c24d14643c, type: 2}
+  Roles:
+  - Id: swordsman
+    Title: "Espadach\xEDn"
+    VisualClass: warrior
+    Health: 12
+    Damage: 2
+    RecruitGold: 6
+    RecruitFood: 2
+    Range: 1.5
+    Speed: 2.5
+  - Id: brawler
+    Title: Luchador
+    VisualClass: monk
+    Health: 10
+    Damage: 3
+    RecruitGold: 5
+    RecruitFood: 2
+    Range: 1.3
+    Speed: 3.2
+  - Id: archer
+    Title: Arquero
+    VisualClass: warrior
+    Health: 10
+    Damage: 2
+    RecruitGold: 7
+    RecruitFood: 2
+    Range: 6
+    Speed: 2.3
