@@ -1,0 +1,5 @@
+FAIL: System.InvalidOperationException: Expedition smoke: expedition button companion-swordsman
+  at Aethernia.ExpeditionSmokeProbe.Require (System.Boolean value, System.String message) [0x00014] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\ExpeditionSmokeProbe.cs:138 
+  at Aethernia.ExpeditionSmokeProbe.Click (System.String id) [0x00012] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\ExpeditionSmokeProbe.cs:136 
+  at Aethernia.ExpeditionSmokeProbe+<Run>d__14.MoveNext () [0x00591] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\ExpeditionSmokeProbe.cs:60 
+  at Aethernia.CivilizationSmokeProbe+<Start>d__1.MoveNext () [0x00113] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\CivilizationSmokeProbe.cs:19 

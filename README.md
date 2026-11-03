@@ -4,29 +4,35 @@ Prototipo académico de RPG isométrico y RTS desarrollado en Unity. Las mecáni
 
 ## Abrir para evaluar
 
-1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e18-progresion-balance`; [PR#9 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/9), apilado sobre [E17/PR#8 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/8), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
+1. Descargar o clonar este repositorio. Para revisar esta entrega, seleccionar `feature/e19-razas-civilizaciones`, [PR#10 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/10), candidata E19 apilada sobre [E18/PR#9 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/9), sin presumir los PR anteriores fusionados. `dev` integra desarrollo y `main` contiene la última base estable aprobada.
 2. En Unity Hub, añadir **la carpeta `ProyectoRPGRTS/`**, situada dentro del repositorio.
 3. Abrir con **Unity 6000.5.8f1** y esperar a que importe los recursos y restaure los paquetes. La primera apertura necesita conexión para descargar las dependencias declaradas en `Packages/`.
-4. Abrir `Assets/01_Scenes/AetherniaProgressionDemo.unity`, revisar Console y pulsar **Play**. Se conservan AetherniaAlphaCandidate, AetherniaVisualPolish, AetherniaExpeditions, AetherniaFirstDemo, AetherniaVillageDemo y PlayablePrototype. La progresión E18 se comprueba con las tres clases y UI a720p/1080p; ver resultados y límites en el informe.
+4. Abrir `Assets/01_Scenes/AetherniaCivilizationsDemo.unity`, revisar Console y pulsar **Play**. Se conservan AetherniaProgressionDemo, AetherniaAlphaCandidate, AetherniaVisualPolish, AetherniaExpeditions, AetherniaFirstDemo, AetherniaVillageDemo y PlayablePrototype. La progresión E18 se comprueba con las tres clases y UI a720p/1080p; ver resultados y límites en el informe.
 
 Código, modelos, materiales, escenas, prefabs, archivos `.meta`, configuración de Unity y dependencias permanecen incluidos. Las carpetas `Library`, `Temp`, `Logs`, `UserSettings` y las compilaciones se omiten mediante `.gitignore`; Unity puede regenerar sus cachés. No hace falta recibir esas carpetas del autor.
 
+## Organización
+
+[Mapa de carpetas y conservación de recursos](Docs/ORGANIZACION_PROYECTO.md) · [Índice de documentación](Docs/README.md) · [Historial por etapas](Docs/Historial/README.md). Los recursos provisionales y las escenas anteriores siguen disponibles.
+
 ## Material para el docente
+
+- [Guía E19](Docs/GUIA_E19.md), [razas/culturas y sustitución de arte](Docs/E19_RAZAS_CULTURAS.md), [balance provisional](Docs/E19_BALANCE.md) y [plan de integración de PR](Docs/INTEGRACION_PRS.md). [Entrega E19](Docs/ENTREGA_E19.md):196/197general(incidencia RTS histórica),6/6procesosWindows,52PNG/2MP4 yZIPportable verificados. Candidata sin aprobación humana.
 
 - [E18: progresión, resultados y límites](Docs/ENTREGA_E18.md).
 - [Guía E18 para Unity/Windows](Docs/GUIA_E18.md), [parámetros de balance](Docs/E18_BALANCE.md) y [hoja de revisión humana pendiente](Docs/Validacion/E18/REVISION_HUMANA.md).
 - [Capturas E18](Docs/Images/E18) y [vídeos reales con audio](Docs/Videos/E18).
 
-- [E17: estado técnico y problemas conocidos](Docs/E17_ALFA.md).
-- [Guía de revisión E17](Docs/GUIA_ALFA_E17.md) y [comparación de12tipos de capturas reales](Docs/COMPARATIVA_E17.md).
+- [E17: estado técnico y problemas conocidos](Docs/Historial/Etapas/E17_ALFA.md).
+- [Guía de revisión E17](Docs/GUIA_ALFA_E17.md) y [comparación de12tipos de capturas reales](Docs/Historial/Etapas/COMPARATIVA_E17.md).
 - [Pipeline para sustituir los modelos provisionales](Docs/E17_PIPELINE_PERSONAJES.md).
-- [Pulido E16: cambios, capturas y pruebas](Docs/E16_PULIDO_VISUAL.md).
+- [Pulido E16: cambios, capturas y pruebas](Docs/Historial/Etapas/E16_PULIDO_VISUAL.md).
 - [Guía E16: Unity, build y sustitución del arte](Docs/GUIA_E16.md).
-- [Entrega E14–E15 con capturas, vídeos y pruebas](Docs/ENTREGA_E14_E15.md).
+- [Entrega E14–E15 con capturas, vídeos y pruebas](Docs/Historial/Etapas/ENTREGA_E14_E15.md).
 - [Guía actual de compañeros, mazmorra y conquista](Docs/GUIA_EXPEDICIONES.md). [Controles históricos](COMO_JUGAR.md) se conservan.
 - [Checklist e historial de tareas](CHECKLIST.md) y [registro de cambios](REGISTRO_CAMBIOS.md).
 - [GDD original](ProyectoRPGRTS/Assets/05_Docs/GDD_GAMERPGTS.docx) y [lectura consultable](Docs/GDD_LECTURA.md).
-- [Arquitectura](Docs/ARQUITECTURA.md) y [informe E07 con comparación y pruebas](Docs/E07_ALDEA_MEDIEVAL.md).
+- [Arquitectura](Docs/ARQUITECTURA.md) y [informe E07 con comparación y pruebas](Docs/Historial/Etapas/E07_ALDEA_MEDIEVAL.md).
 - [Flujo de GitHub y ramas](Docs/GITHUB_FLUJO.md).
 
 E18 conserva el registro de regresión174/176: un fallo visual corregido mediante4/4dirigidas posteriores y la tácticaRTS de reserva todavía pendiente. Ocho procesos Windows PASS (seis por las tres clases y dos desde ZIP extraído); ZIP nuevo CRC/SHA y18ZIPanteriores conservados. No es una regresión totalmente verde ni aprobación humana de balance/arte.

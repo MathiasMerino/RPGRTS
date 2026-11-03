@@ -1,0 +1,1 @@
+PASS Unity 6000.5.8f1; moved2asset/meta pairs with preserved GUID; dependencyGUIDs=578 unchanged; missingScripts=0; inventoriedPublicAssets=781; privateEntriesExcluded=7; no scenes saved, no gameplay or asset deletion.

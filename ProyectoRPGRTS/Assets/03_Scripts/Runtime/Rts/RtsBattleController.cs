@@ -137,7 +137,7 @@ namespace Aethernia
             var index=0;
             foreach(var s in soldiers)
             {
-                var role=demoRules.Roles[index++%demoRules.Roles.Length];s.Role=role.Id;s.Range=role.Range;s.Damage=role.Damage;s.Maximum=role.Health;s.Health=role.Health;s.Unit.Agent.speed=role.Speed;
+                var formation=expedition?demoRules.Civilizations?.ConquestFormation:null;var role=formation!=null&&formation.Length>0?demoRules.Find(formation[index%formation.Length]):demoRules.Roles[index%demoRules.Roles.Length];index++;if(role==null){Clear();session.SetMode(PrototypeMode.Exploration);return false;}s.Role=role.Id;s.Range=role.Range;s.Damage=role.Damage;s.Maximum=role.Health;s.Health=role.Health;s.Unit.Agent.speed=role.Speed;
                 BuildVisual(s,role);
             }
             for(var i=0;i<roster.Count;i++)
@@ -156,7 +156,7 @@ namespace Aethernia
         }
         private void BuildVisual(Soldier s,RtsRoleProfile role)
         {
-            var model=SupportVisualFactory.Attach(s.Unit,role,visuals,feedback==null?null:feedback.SharedEffectMaterial);if(model==null)return;s.Visual=model.gameObject;s.Animator=s.Visual.GetComponent<HumanoidAnimationDriver>();
+            var model=SupportVisualFactory.Attach(s.Unit,role,visuals,feedback==null?null:feedback.SharedEffectMaterial,demoRules.Civilizations,string.IsNullOrEmpty(s.RecruitId)?null:session.State.Army.Find(r=>r.Id==s.RecruitId)?.RaceId);if(model==null)return;s.Visual=model.gameObject;s.Animator=s.Visual.GetComponent<HumanoidAnimationDriver>();
         }
         private bool RejectDeployment()
         { session.Say("Zona de despliegue RTS bloqueada. Se conserva el mundo; prueba en una partida con esa zona libre."); return false; }

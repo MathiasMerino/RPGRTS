@@ -53,6 +53,7 @@ namespace Aethernia
             var s=Flow.Session.State;ExpeditionOperations.InitializeTerritories(s,Rules);var t=s.Territories.Find(x=>x.Id=="outpost");var access=s.Territories.Find(x=>x.Id=="crossing");
             if(!Flow.IsPlaying||Flow.Director.IsBusy||Flow.Session.Mode!=PrototypeMode.Exploration||t==null||t.Owner==s.FactionId||access?.Owner!=s.FactionId||Vector3.Distance(Flow.Director.Hero.transform.position,Rules.Find("outpost").Position)>2.2f)
             {Flow.Session.Say("Asegura el paso neutral y acércate al puesto enemigo.");return false;}
+            if(Flow.Session.Rules.Civilizations!=null&&CivilizationOperations.Relation(s,t.Owner,Flow.Session.Rules.Civilizations)!=FactionRelation.Hostile){Flow.Session.Say("No se ataca un puesto aliado o neutral; el pacto conserva su propietario.");return false;}
             if(s.ArmySelection.Count==0){Flow.Session.Say("Prepara al menos un recluta militar en la pestaña Ejército.");return false;}
             returnPoint=Flow.Director.Hero.transform.position;Flow.Director.Encounter.Clear();
             if(!Flow.Director.Rts.BeginExpedition(Flow.Director.Hero,s.ArmySelection,Rules.OutpostDefenders))return false;
@@ -61,7 +62,7 @@ namespace Aethernia
         private void Resolved(bool won)
         {
             if(pending==null||Flow.Director.Rts.ContextId!="conquest-outpost")return;var id=pending;pending=null;
-            var changed=ExpeditionOperations.Conquer(Flow.Session.State,id,won);if(changed)Flow.Session.AwardForFact("umbral-outpost-conquered");
+            var changed=ExpeditionOperations.Conquer(Flow.Session.State,id,won,Flow.Session.Rules.Civilizations);if(changed)Flow.Session.AwardForFact("umbral-outpost-conquered");
             LastResult=changed?"Victoria: puesto conquistado. +1madera/ciclo online, propietario persistente.":"Derrota: el puesto conserva su propietario. Bajas RTS registradas; compañeros RPG no desplegados.";
             Flow.Director.Execute("explore");Flow.Director.Hero.Warp(won?returnPoint:new Vector3(9,0,-10));Party.Regroup(Flow.Director.Hero.transform.position);
             Flow.CameraRig.SetRegion(Vector3.zero);Flow.CameraRig.SetZoom(11);Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);Flow.Session.Say(LastResult);Flow.Director.Save(Flow.SlotPath);

@@ -89,6 +89,7 @@ namespace Aethernia
             Add(p,"character-back","Volver",60,630,230,Flow.ShowMain);
             Add(p,"begin","Comenzar aventura",830,630,350,()=>Flow.StartNew(NameInput.text,ChosenClass,ChosenLineage));RefreshCharacter();
         }
+        public void ChooseRace(string id){var i=System.Array.FindIndex(Flow.Content.Lineages,r=>r.Id==id);if(i<0)return;lineageIndex=i;RefreshCharacter();foreach(var race in Flow.Content.Lineages)if(Controls.TryGetValue("race-"+race.Id,out var b))b.GetComponentInChildren<TMP_Text>().text=(race.Id==id?"[X] ":"")+race.Title;}
         public void ChooseClass(string id){if(Flow.Session.Rules.Find(id)==null)return;ChosenClass=id;RefreshCharacter();}
         private void RefreshCharacter()
         {

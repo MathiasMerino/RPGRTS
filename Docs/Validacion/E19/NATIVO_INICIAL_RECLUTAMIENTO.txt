@@ -1,0 +1,4 @@
+FAIL: System.InvalidOperationException: Demo smoke: paid recruit
+  at Aethernia.DemoSmokeProbe.Require (System.Boolean condition, System.String step) [0x00014] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\DemoSmokeProbe.cs:149 
+  at Aethernia.DemoSmokeProbe+<Run>d__9.MoveNext () [0x0134e] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\DemoSmokeProbe.cs:122 
+  at Aethernia.CivilizationSmokeProbe+<Start>d__1.MoveNext () [0x00113] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\CivilizationSmokeProbe.cs:19 

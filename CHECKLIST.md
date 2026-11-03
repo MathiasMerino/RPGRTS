@@ -1,26 +1,30 @@
 # Checklist de Crónicas de Aethernia
 
-Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
+Actualizado: 2026-11-03, America/La_Paz. Fase 3 autorizada mediante el prompt «Dirección artística, rediseño visual, personajes e interfaces reutilizables»; A/B/C1, D01, E01, infraestructura E02, propuesta artística E02-A e identidad provisional E02-B, más rediseño de interfaz C02.
 
 ## Resumen actual
 
-- E18: A/BC/DEF/GH/IJK/LN/MOQ verificados; RSTUVentregado como candidata, [PR#9draft](https://github.com/MathiasMerino/RPGRTS/pull/9) sobre E17. General174/176, regresión visual corregida4/4dirigidas finales;8/8procesosWindows,49PNG/2MP4,ZIPCRC/SHA/portable y18ZIPprevios intactos. Candidata con incidenciaRTS abierta, sin regresión totalmente verde ni aprobación humana. Informe Docs/ENTREGA_E18.md. No E19.
+- E19: candidata técnica en feature/e19-razas-civilizaciones sobre E18/PR9+organización5507425. Cuatro razas/12combinaciones y dos culturas piloto funcionales;21/21dirigidas,196/197general(único fallo RTS histórico),6/6procesosWindows,52PNG/2MP4 yZIPCRC/SHA/19previosPASS. Informe Docs/ENTREGA_E19.md. [PR#10draft](https://github.com/MathiasMerino/RPGRTS/pull/10); RTS-HIST y evaluación humana pendientes, sin E20.
 
-- E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. E18 autorizada posteriormente.
+- ORG-01: organización local verificada,27documentos en Historial,7carpetas intermedias/verificaciones archivadas,19ZIP intactos;2assets movidos con GUID/.meta conservados,781recursos públicos inventariados y3/3pruebasUnity.9escenas/GDD/privados/calidad local previa sin cambios. Mapa Docs/ORGANIZACION_PROYECTO.md.
 
-- E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes; E17 se autoriza posteriormente en su sección.
+- E18: A/BC/DEF/GH/IJK/LN/MOQ verificados; RSTUVentregado como candidata, [PR#9draft](https://github.com/MathiasMerino/RPGRTS/pull/9) sobre E17. General174/176, regresión visual corregida4/4dirigidas finales;8/8procesosWindows,49PNG/2MP4,ZIPCRC/SHA/portable y18ZIPprevios intactos. Candidata con incidenciaRTS abierta, sin regresión totalmente verde ni aprobación humana. Informe Docs/ENTREGA_E18.md. E19 autorizada posteriormente.
 
-- E14/E15: alcance piloto completado técnicamente; grupo/mazmorra, facciones/territorios y conquista conectados a E13.121/121 regresión,11/11 tras pulido y1/1UI final a dos resoluciones;20procesos Windows PASS; ZIP nuevo CRC/SHA/portable verificado,24PNG y2MP4 reales. Informe Docs/ENTREGA_E14_E15.md; EXP-H humano/arte/balance pendientes. [PR#6](https://github.com/MathiasMerino/RPGRTS/pull/6) abierto en borrador sobre PR5; sin merges.
+- E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/Historial/Etapas/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. E18 autorizada posteriormente.
 
-- Demo E10–E13: núcleo implementado y verificado técnicamente, regresión110/110 y6/6 posteriores al recorte visual; doce procesos Windows finales PASS (tres clases, con/sinGPU, crear/reiniciar/Continuar/opciones). Build/ZIP portable/evidencia aprobados; PR#5 abierto en borrador sobre E09: https://github.com/MathiasMerino/RPGRTS/pull/5. E14/E15 entregadas posteriormente (ver resumen); evaluación humana pendiente. Informe histórico: Docs/ENTREGA_E10_E13.md.
+- E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/Historial/Etapas/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes; E17 se autoriza posteriormente en su sección.
 
-- E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. PR#4 abierto en borrador sobre E08: https://github.com/MathiasMerino/RPGRTS/pull/4. Informe Docs/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
+- E14/E15: alcance piloto completado técnicamente; grupo/mazmorra, facciones/territorios y conquista conectados a E13.121/121 regresión,11/11 tras pulido y1/1UI final a dos resoluciones;20procesos Windows PASS; ZIP nuevo CRC/SHA/portable verificado,24PNG y2MP4 reales. Informe Docs/Historial/Etapas/ENTREGA_E14_E15.md; EXP-H humano/arte/balance pendientes. [PR#6](https://github.com/MathiasMerino/RPGRTS/pull/6) abierto en borrador sobre PR5; sin merges.
 
-- E08: tres humanoides provisionales con rigs Generic/skin y siete estados, integrados en demo; **73/73 regresión**, Windows/headless/GPU PASS, 49 PNG/tres MP4 y ZIP verificado. [PR #3](https://github.com/MathiasMerino/RPGRTS/pull/3) abierto en borrador sobre E07; arte final/retargeting Humanoid y sesión humana pendientes. Informe Docs/E08_PERSONAJES_ANIMADOS.md.
+- Demo E10–E13: núcleo implementado y verificado técnicamente, regresión110/110 y6/6 posteriores al recorte visual; doce procesos Windows finales PASS (tres clases, con/sinGPU, crear/reiniciar/Continuar/opciones). Build/ZIP portable/evidencia aprobados; PR#5 abierto en borrador sobre E09: https://github.com/MathiasMerino/RPGRTS/pull/5. E14/E15 entregadas posteriormente (ver resumen); evaluación humana pendiente. Informe histórico: Docs/Historial/Etapas/ENTREGA_E10_E13.md.
 
-- E07: aldea integrada, 33 prefabs, trece materiales nuevos y cinco albedos originales; **67/67 regresión**, 24 comparativas reales, build/recorridos headless-GPU PASS, captura del player y ZIP verificado. Informe Docs/E07_ALDEA_MEDIEVAL.md; aprobación humana/artística pendiente.
+- E09: combate por fases/IA melee y presentación integrada; **89/89 regresión**, Windows/headless/GPU PASS, 19PNG/vídeo con audioDSP real y ZIP verificado. PR#4 abierto en borrador sobre E08: https://github.com/MathiasMerino/RPGRTS/pull/4. Informe Docs/Historial/Etapas/E09_COMBATE_TACTICO.md; evaluación humana, arte/audio finales y F2-07 pendientes.
 
-- E03–E06: tres apariencias estáticas/retratos/equipo compartidos y misión integrada en AetherniaVillageDemo. **62/62 pruebas**, build Windows y dos recorridos independientes con las tres clases PASS. Informe Docs/E03_E06_PRODUCCION.md. Arte/rig/clips finales y confirmación humana pendientes.
+- E08: tres humanoides provisionales con rigs Generic/skin y siete estados, integrados en demo; **73/73 regresión**, Windows/headless/GPU PASS, 49 PNG/tres MP4 y ZIP verificado. [PR #3](https://github.com/MathiasMerino/RPGRTS/pull/3) abierto en borrador sobre E07; arte final/retargeting Humanoid y sesión humana pendientes. Informe Docs/Historial/Etapas/E08_PERSONAJES_ANIMADOS.md.
+
+- E07: aldea integrada, 33 prefabs, trece materiales nuevos y cinco albedos originales; **67/67 regresión**, 24 comparativas reales, build/recorridos headless-GPU PASS, captura del player y ZIP verificado. Informe Docs/Historial/Etapas/E07_ALDEA_MEDIEVAL.md; aprobación humana/artística pendiente.
+
+- E03–E06: tres apariencias estáticas/retratos/equipo compartidos y misión integrada en AetherniaVillageDemo. **62/62 pruebas**, build Windows y dos recorridos independientes con las tres clases PASS. Informe Docs/Historial/Etapas/E03_E06_PRODUCCION.md. Arte/rig/clips finales y confirmación humana pendientes.
 
 - Historial conservado: **26 de 26 tareas del alcance de prototipo y planificación aprobado**. La fase 2 se registra al final con estados independientes.
 - Fase 2: **6 de 7 tareas técnicas/documentales completadas y verificadas**; F2-07: usuario informa 7/8 comprobaciones humanas; X/ESC pendiente de confirmación tras el ajuste.
@@ -29,17 +33,17 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 - Build Windows de fase 2: compilada, recorridos independientes sin gráficos y con GPU aprobados, salida 0 y sin aviso de agente inválido/excepciones; ZIP portable verificado.
 - Reglas, clases y hoja de ruta fueron aprobadas por el usuario como prototipo. El juego comercial, continente, narrativa y arte finales no se declaran terminados.
 - Pendiente: evaluación humana de controles/diversión/balance (F2-07). Expansión compleja y siguiente iteración de arte/UX sujetas a propuesta.
-- Entrega previa D01: COMO_JUGAR.md, Docs/D01_ESCENARIO_MEDIEVAL.md, medidas y dirección artística; once prefabs, ocho materiales, ocho capturas reales y ZIP Windows D01. Informes y entregas anteriores conservados.
+- Entrega previa D01: COMO_JUGAR.md, Docs/Historial/Etapas/D01_ESCENARIO_MEDIEVAL.md, medidas y dirección artística; once prefabs, ocho materiales, ocho capturas reales y ZIP Windows D01. Informes y entregas anteriores conservados.
 
-- Entrega previa E01: Docs/E01_PERSONAJES.md (tres fichas, importación y resultados), cinco prefabs, catálogo/ocho materiales compartidos, siete capturas y ZIP Windows E01. F2-07 sigue pendiente.
+- Entrega previa E01: Docs/Historial/Etapas/E01_PERSONAJES.md (tres fichas, importación y resultados), cinco prefabs, catálogo/ocho materiales compartidos, siete capturas y ZIP Windows E01. F2-07 sigue pendiente.
 
 - E02: **infraestructura F3-E02 completada y verificada**, 46/46 pruebas y build/recorridos sin gráficos y con GPU aprobados. F3-E02-M (modelo/rig real) y F3-E02-A (clips/retargeting) pendientes. Guía/manifiesto: Docs/E02_IMPORTACION_HUMANOID.md. La alternativa E01 continúa activa.
 
 - E02-A artístico: ficha/hoja conceptual entregadas y revisadas en Documentacion/Personajes/MONJE_DISENO_BASE.md; diseño **PROPUESTO, sin aprobación artística**. F3-E02-ARTE-01 cerrada como documentación; F3-E02-ARTE-AP pendiente. No modelo/rig/animaciones nuevos ni cambios al juego.
 
-- E02-B posterior: **F3-E02-B completada y verificada**, nuevo proxy estático Monje 1,78 m y tarjeta de clase; alternativa original E01 conservada. **49/49 pruebas aprobadas**, incluidos tres casos de aceptación, build Windows y recorridos con/sin GPU aprobados. Siete capturas reales revisadas. Informe Docs/E02B_MONJE_PROVISIONAL.md. F3-E02-ARTE-AP, F3-E02-M, F3-E02-A de clips, F2-07 y C02 siguen pendientes. Los apartados anteriores describen sus entregas históricas; el permiso provisional E02-B no es aprobación artística final.
+- E02-B posterior: **F3-E02-B completada y verificada**, nuevo proxy estático Monje 1,78 m y tarjeta de clase; alternativa original E01 conservada. **49/49 pruebas aprobadas**, incluidos tres casos de aceptación, build Windows y recorridos con/sin GPU aprobados. Siete capturas reales revisadas. Informe Docs/Historial/Etapas/E02B_MONJE_PROVISIONAL.md. F3-E02-ARTE-AP, F3-E02-M, F3-E02-A de clips, F2-07 y C02 siguen pendientes. Los apartados anteriores describen sus entregas históricas; el permiso provisional E02-B no es aprobación artística final.
 
-- C02 nuevo brief: **F3-C02.1..6 completadas y verificadas**, HUD compacto, ficha compartida, inventario seleccionable, registro de hechos y contextos por modalidad. **52/52 pruebas**, 44 layouts/capturas a cuatro resoluciones, build y recorridos con/sin GPU PASS; trece capturas representativas. Informe Docs/C02_INTERFAZ_MEDIEVAL.md. F3-C02 histórico se conserva; minimapa, arte final y F2-07 siguen pendientes.
+- C02 nuevo brief: **F3-C02.1..6 completadas y verificadas**, HUD compacto, ficha compartida, inventario seleccionable, registro de hechos y contextos por modalidad. **52/52 pruebas**, 44 layouts/capturas a cuatro resoluciones, build y recorridos con/sin GPU PASS; trece capturas representativas. Informe Docs/Historial/Etapas/C02_INTERFAZ_MEDIEVAL.md. F3-C02 histórico se conserva; minimapa, arte final y F2-07 siguen pendientes.
 
 Estados permitidos: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
 Prioridades: P0 imprescindible para la siguiente fase; P1 prototipo vertical; P2 experimento/expansión.
@@ -111,14 +115,14 @@ La aceptación de una tarea de código exige compilación y prueba funcional; co
 - Aceptación: 1 unidad = 1 m; humano, puerta, ventana, calle y edificio coherentes; colliders y paso documentados.
 - Archivos: `Docs/ESCALA_REFERENCIA.md`, generador `ProyectoRPGRTS/Assets/03_Scripts/Editor/TechnicalSandboxBuilder.cs`, pruebas `FoundationValidationTests.cs`, seis prefabs en `02_Prefabs/ScaleReferences/`, materiales URP en `Assets/Settings/Development/` y sus `.meta`.
 - Pruebas: inspección de transform/importación, comparación con cubo de 1 m y pruebas de huecos.
-- Validación: dimensiones de los seis prefabs importados comprobadas; raíces a escala 1; collider humano de 1,80 m y diámetro 0,60 m, apoyado en Y=0; pasa por puerta y entrada de casa, pero queda bloqueado en hueco de 0,40 m. Referencias de ensayo documentadas; sin definir tamaños definitivos del GDD. Evidencia: `Docs/VALIDACION_BASE_TECNICA.md`.
+- Validación: dimensiones de los seis prefabs importados comprobadas; raíces a escala 1; collider humano de 1,80 m y diámetro 0,60 m, apoyado en Y=0; pasa por puerta y entrada de casa, pero queda bloqueado en hueco de 0,40 m. Referencias de ensayo documentadas; sin definir tamaños definitivos del GDD. Evidencia: `Docs/Historial/Validaciones/VALIDACION_BASE_TECNICA.md`.
 
 ### BAS-03 — Crear escena de pruebas independiente
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: Escenarios / P0. Dependencias: BAS-02.
 - Descripción: suelo, obstáculo y paso estrecho para ensayos; conservar SampleScene.
 - Aceptación: escena abre con URP correcto, escala coherente, colisiones y ausencia de referencias perdidas.
-- Archivos: `ProyectoRPGRTS/Assets/01_Scenes/TechnicalSandbox.unity`, sus prefabs/materiales y `.meta`, `ProjectSettings/SceneTemplateSettings.json` generado por Unity, informe `Docs/VALIDACION_BASE_TECNICA.md` y captura `Docs/Images/TechnicalSandbox.png`.
+- Archivos: `ProyectoRPGRTS/Assets/01_Scenes/TechnicalSandbox.unity`, sus prefabs/materiales y `.meta`, `ProjectSettings/SceneTemplateSettings.json` generado por Unity, informe `Docs/Historial/Validaciones/VALIDACION_BASE_TECNICA.md` y captura `Docs/Images/TechnicalSandbox.png`.
 - Pruebas: apertura, guardado, Play Mode y revisión visual del entorno.
 - Validación: escena creada/guardada por Unity; carga, Play Mode y salida comprobados, materiales URP soportados, suelo Y=0 y ausencia de referencias/scripts perdidos. Suite completa 12/12, cero fallos/omisiones, salida 0; captura GPU 1280×720 revisada visualmente sin materiales rosas ni recortes. SampleScene, GDD y paquetes conservados. Cámara fija de inspección; controles y navegación corresponden a tareas posteriores.
 
@@ -172,7 +176,7 @@ La aceptación de una tarea de código exige compilación y prueba funcional; co
 - Sistema / prioridad: Integración / P0. Dependencias: BAS-08.
 - Descripción: cerrar primer hito con recorrido cámara → selección → movimiento → interacción → feedback.
 - Aceptación: recorrido reproducible, sin errores de Console ni referencias rotas; build de prueba arranca; evidencia de cada criterio.
-- Archivos: BuildSmokeProbe, PlayablePrototypeBuilder, Tools/Invoke-PrototypeSmoke.ps1, build Windows e informe Docs/VALIDACION_PROTOTIPO.md. Rutas de código bajo ProyectoRPGRTS/Assets/03_Scripts/ y assets bajo Assets/.
+- Archivos: BuildSmokeProbe, PlayablePrototypeBuilder, Tools/Invoke-PrototypeSmoke.ps1, build Windows e informe Docs/Historial/Validaciones/VALIDACION_PROTOTIPO.md. Rutas de código bajo ProyectoRPGRTS/Assets/03_Scripts/ y assets bajo Assets/.
 - Pruebas: compilación Unity, Play Mode, build local y perfilado básico sin presupuesto inventado.
 - Validación: La base pasó 15/15 pruebas y su primera build arrancó sin editor, caminó e interactuó con salida 0. La regresión del prototipo completo pasó 23/23; cierre de build ampliada en VER-10.
 
@@ -264,7 +268,7 @@ La aceptación de una tarea de código exige compilación y prueba funcional; co
 - Sistema / prioridad: Integración/calidad / P1. Dependencias: VER-09.
 - Descripción: verificar elementos del GDD §10 en un recorrido y evaluar viabilidad de expansión.
 - Aceptación: región, tres clases, asentamiento, mazmorra, turnos, dos facciones, economía, construcción, RTS y misión persistente comprobados o alcance renegociado explícitamente.
-- Archivos: Docs/VALIDACION_PROTOTIPO.md, suite Vertical, build Windows y comprobante final del player. Rutas de código bajo ProyectoRPGRTS/Assets/03_Scripts/ y assets bajo Assets/.
+- Archivos: Docs/Historial/Validaciones/VALIDACION_PROTOTIPO.md, suite Vertical, build Windows y comprobante final del player. Rutas de código bajo ProyectoRPGRTS/Assets/03_Scripts/ y assets bajo Assets/.
 - Pruebas: compilación, build, regresión funcional, guardado, legibilidad y perfilado en hardware acordado.
 - Validación: 23/23 pruebas, capturas revisadas, build Windows compilada y recorrido completo del player con salida 0. Paquete portable creado. Incluye todos los elementos del prototipo vertical aprobado, con reglas y arte provisionales; no equivale a producción comercial completa.
 
@@ -311,7 +315,7 @@ Las 26 tareas anteriores son historial de la primera etapa y conservan sus resul
 - Sistema / prioridad: Dirección y QA / P0. Dependencias: VER-10, FUT-01.
 - Descripción: releer GDD, inspeccionar los doce sistemas, código, documentación y evidencia; repetir la suite base.
 - Aceptación: hash original intacto; estado Git conocido; matriz distingue automatización, inspección y comprobación humana pendiente.
-- Archivos: CHECKLIST.md, Docs/AUDITORIA_FASE_2.md, PLAN_DESARROLLO.md, REGISTRO_CAMBIOS.md.
+- Archivos: CHECKLIST.md, Docs/Historial/Validaciones/AUDITORIA_FASE_2.md, PLAN_DESARROLLO.md, REGISTRO_CAMBIOS.md.
 - Pruebas: hash, Git y Unity Vertical con 23 casos previos.
 - Resultado: fuentes/código revisados, hash y Git inicial comprobados. Base 23/23 Passed; cierre nativo -1073741819 registrado sin ocultarlo. Reproducción ampliada 23/32 con fallos esperados y un fallo del test identificado; evidencia y límites en AUDITORIA_FASE_2.md. La validación final con salida correcta corresponde a F2-05/F2-06.
 
@@ -347,7 +351,7 @@ Las 26 tareas anteriores son historial de la primera etapa y conservan sus resul
 - Sistema / prioridad: QA/arquitectura/arte / P1. Dependencias: F2-04.
 - Descripción: verificar consecuencias, pausa, equipo, construcción, producción y guardado; revisar proporciones, URP y capturas; evaluar transiciones ocasionales sin ampliarlas.
 - Aceptación: matriz de los doce sistemas con evidencia y límites; escenas conservadas, escala métrica; propuestas mayores separadas; capturas revisadas en dos resoluciones.
-- Archivos: Docs/AUDITORIA_FASE_2.md, Docs/Images/Fase2*, pruebas de fase 2, CHECKLIST.md.
+- Archivos: Docs/Historial/Validaciones/AUDITORIA_FASE_2.md, Docs/Images/Fase2*, pruebas de fase 2, CHECKLIST.md.
 - Pruebas: suite ampliada, inspección arquitectónica/geométrica, render GPU batch.
 - Resultado: regresión final 34/34, cero fallos/omisiones y salida 0 (Phase2-final-results.xml/log), incluido el ajuste de arranque. Cinco capturas revisadas; las tres que cambiaron tras repetir fueron inspeccionadas otra vez. Matriz de doce sistemas, escala/URP/referencias y propuestas verificadas dentro del alcance automático/visual. Sin sesión humana interactiva. Build/player corregidos se aceptan en F2-06.
 
@@ -365,7 +369,7 @@ Las 26 tareas anteriores son historial de la primera etapa y conservan sus resul
 - Sistema / prioridad: Experiencia jugable / P1. Dependencias: F2-06.
 - Descripción: probar ratón/teclado reales y valorar comprensión, ritmo, accesibilidad, balance y diversión.
 - Aceptación: registrar participante, hardware/resolución, recorrido, observaciones/fallos y decisión sobre siguiente iteración y escalada RPG/RTS.
-- Archivos: Docs/PRUEBA_MANUAL_FASE_2.md creado como guion; registro real de sesión pendiente.
+- Archivos: Docs/Historial/Validaciones/PRUEBA_MANUAL_FASE_2.md creado como guion; registro real de sesión pendiente.
 - Pruebas: sesión humana interactiva de los doce sistemas, sin sustituir por capturas o llamadas a métodos.
 - Resultado: no realizada; no se marca como completada.
 
@@ -378,7 +382,7 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Objetivo / descripción: contrastar fuentes, evidencia, herramientas y problemas visuales de la base.
 - Sistema / prioridad: Dirección/QA / P0. Dependencias: F2-06.
 - Aceptación: Git/evidencia conocidos, GDD intacto, captura real revisada y herramientas comprobadas.
-- Archivos: Docs/FASE3_ITERACION_1.md, CHECKLIST.md; tag local codex/fase3-base-cc9691d.
+- Archivos: Docs/Historial/Etapas/FASE3_ITERACION_1.md, CHECKLIST.md; tag local codex/fase3-base-cc9691d.
 - Pruebas: git status/log, hash GDD, XML 34/34, build/smokes de cc9691d, manifest/editor y catálogo de herramientas; inspección de captura.
 - Resultado / problemas: base limpia; CLI disponible y ninguna herramienta Unity/MCP expuesta en esta sesión. Ruido de acciones y ayuda estática identificados. No equivale a una evaluación humana.
 
@@ -414,7 +418,7 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Objetivo / descripción: mejorar suelo/camino, fachada y decorados reutilizables en una zona pequeña de la escena existente.
 - Sistema / prioridad: Entorno/arte / P1. Dependencias: F3-B01, F3-C01.
 - Aceptación: lenguaje material coherente, iluminación legible, huellas/escala conservadas, acceso a interacción y RTS; recuentos de geometría y revisión de render, sin afirmar FPS ni optimizar sin perfilado.
-- Archivos: PlayablePrototype.unity; once prefabs en Assets/02_Prefabs/Environment/Medieval; materiales/mapas/mallas en Assets/06_Environment/Medieval; autoría Editor/Environment; MedievalEnvironmentTests.cs, IsometricCameraRig.cs y lanzador; informe Docs/D01_ESCENARIO_MEDIEVAL.md, medidas/dirección artística, ocho capturas Docs/Images/D01-*.
+- Archivos: PlayablePrototype.unity; once prefabs en Assets/02_Prefabs/Environment/Medieval; materiales/mapas/mallas en Assets/06_Environment/Medieval; autoría Editor/Environment; MedievalEnvironmentTests.cs, IsometricCameraRig.cs y lanzador; informe Docs/Historial/Etapas/D01_ESCENARIO_MEDIEVAL.md, medidas/dirección artística, ocho capturas Docs/Images/D01-*.
 - Pruebas: biblioteca métrica y materiales URP; firmas físicas y hash NavMesh idénticos; recorrido de puerta/cofre/obstáculo; cámara quieta; regresión 39/39, salida 0 y ocho capturas comparativas revisadas. Build Windows 175.686.522 bytes, salida 0; smoke sin gráficos y con GPU aprobados (9,02 s / 7,16 s), sin excepciones ni agentes inválidos.
 - Resultado / problemas: once prefabs, ocho materiales y dieciséis mapas propios, sin descargas. Corregido zoom involuntario con rueda cero tras reproducción fallida; juntas/camino refinados. Checkpoint codex/d01-base-8197b5f; cero bloques originales de escena eliminados. Biblioteca visual sin física propia, techo opaco sin corte contextual; límites documentados. E/C2 y sesión humana F2-07 permanecen pendientes.
 
@@ -423,7 +427,7 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Objetivo / descripción: siluetas proporcionadas de Guerrero/Mago/Monje sustituibles por hijo visual; Pícaro conserva concepto documental.
 - Sistema / prioridad: Personajes/presentación / P1. Dependencias: F3-B01, F3-D01.
 - Aceptación: identidad por forma/material, lógica/collider/agente intactos, configuración compartida y reemplazo de malla sin editar daño/turnos.
-- Archivos: cinco prefabs Characters/Visuals; Assets/07_Characters/Provisional (catálogo, ocho materiales y veintiuna mallas); Runtime/Presentation (Catalog/Presenter/Model/RoofCutaway), CharacterVisualBuilder/Tests, escena y lanzador; Docs/E01_PERSONAJES.md, siete capturas, medidas/dirección/arquitectura/guías.
+- Archivos: cinco prefabs Characters/Visuals; Assets/07_Characters/Provisional (catálogo, ocho materiales y veintiuna mallas); Runtime/Presentation (Catalog/Presenter/Model/RoofCutaway), CharacterVisualBuilder/Tests, escena y lanzador; Docs/Historial/Etapas/E01_PERSONAJES.md, siete capturas, medidas/dirección/arquitectura/guías.
 - Pruebas: tres casos dirigidos aprobados; regresión final 42/42, cero fallos/omisiones, salida 0; dimensiones y fallback/reversibilidad, equipo real, clase/carga, paso/selección/colliders/combate y sistemas anteriores. Build 178.001.257 bytes/45,46 s, salida 0; player sin gráficos 7,50 s y con GPU 7,33 s, ambos PASS/salida 0.
 - Resultado / problemas: tres figuras métricas genéricas y reemplazables, sin reglas/guardado/controlador nuevos. Oclusión D01 reproducida y recorte de cubierta reversible; física/NavMesh y biblioteca D01 preservados. Siete capturas reales revisadas; fichas/importación documentadas. Checkpoint codex/e01-base-ca5ba35. No son modelos/animaciones finales; paredes/interiores no resueltos de forma general. F2-07 y C02 siguen pendientes.
 
@@ -432,7 +436,7 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Objetivo / descripción: comprobar compatibilidad de C1 con movimiento, interacción, clase, guardado, construcción y encuentros.
 - Sistema / prioridad: Integración / P0. Dependencias: F3-C01.
 - Aceptación: suite anterior conservada/adaptada al acceso contextual y nuevas pruebas funcionales; ausencia de referencias perdidas y estado guardado compatible.
-- Archivos: pruebas de editor/Play Mode y Docs/FASE3_ITERACION_1.md; evidencia Phase3-final-results.xml/log (local, excluida de Git).
+- Archivos: pruebas de editor/Play Mode y Docs/Historial/Etapas/FASE3_ITERACION_1.md; evidencia Phase3-final-results.xml/log (local, excluida de Git).
 - Pruebas: suite completa con Unity 6000.5.8f1; snapshot de layout en cuatro modos y dos resoluciones.
 - Resultado / problemas: repetición final 35/35, cero fallos/omisiones y salida 0 (8,33 s de casos, sin arranque/importación). Conserva 34 casos anteriores, con acceso a Personaje adaptado en la prueba de nombre. Mundo/reglas/guardado sin cambios; D/E requerirán integración propia.
 
@@ -498,7 +502,7 @@ Iteración actual: bloques A, B y primera mejora C1, con integración/validació
 - Descripción / sistema: prefab ligero de 1,78 m basado en concepto, materiales compartidos y referencia 2D en panel Personaje. Presentación/personajes/UI.
 - Prioridad / dependencias: P1; E01/E02 y propuesta E02-A, uso provisional autorizado por nuevo prompt.
 - Aceptación: silueta naranja asimétrica/rapada/pantalón/vendas legibles, física/estadísticas sin cambios, equipo y guardado compatibles, Guerrero/Mago intactos, UI 720p/1080p legible y capturas reales; sin FBX/rig/animaciones definitivos.
-- Archivos: prefab Characters/MonkProvisional/Monk_ConceptProxy, dos materiales/seis mallas/ilustración en 07_Characters/MonkProvisional; UI/ClassReferenceCard; MonkIdentityBuilder/MonkProxyGeometry/ClassReferenceCard/MonkIdentityTests; catálogo/HUD/escena y assembly de editor con cambios acotados; talla esperada actualizada en CharacterVisualTests; lanzador, informe Docs/E02B_MONJE_PROVISIONAL.md, siete Docs/Images/E02B-*, guías/arquitectura/escala/plan/registro.
+- Archivos: prefab Characters/MonkProvisional/Monk_ConceptProxy, dos materiales/seis mallas/ilustración en 07_Characters/MonkProvisional; UI/ClassReferenceCard; MonkIdentityBuilder/MonkProxyGeometry/ClassReferenceCard/MonkIdentityTests; catálogo/HUD/escena y assembly de editor con cambios acotados; talla esperada actualizada en CharacterVisualTests; lanzador, informe Docs/Historial/Etapas/E02B_MONJE_PROVISIONAL.md, siete Docs/Images/E02B-*, guías/arquitectura/escala/plan/registro.
 - Pruebas: dirigidas 3/3; regresión 49/49, cero fallos/omisiones, salida 0. Monje 1,78 m, 5.252 triángulos/10 renderers con equipo; URP, controles existentes/selección física, ruta real/cofre/inventario/equipo, guardado/carga, victoria RPG y UI 720p/1080p aprobados; Guerrero/Mago preservados. Siete capturas Play Mode GPU revisadas. Build Windows salida 0, recorridos nativos con/sin GPU PASS/salida 0. Logs/comprobantes E02B-* y ZIP Windows E02B verificados.
 - Resultado / problemas: identidad provisional integrada sin cambios de física/NavMesh/reglas/guardado v1. Checkpoint codex/e02-b-base-afa1e7e y alternativa E01/candidato E02 conservados. Anatomía/uniones/manos/paños simples; equipo genérico con posibles intersecciones y postura estática, sin rig/animación. Aprobación artística final, modelo/rig/clips reales y evaluación humana F2-07 siguen pendientes; no se cierra C02 ni se inicia otra fase.
 
@@ -512,7 +516,7 @@ El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C
 - Descripción / sistema: Auditoría visual; UI/UX.
 - Prioridad / dependencias: P1; ninguna.
 - Aceptación: Identificar referencias y componentes existentes, sin auditoría ajena al UI.
-- Archivos: Docs/C02_INTERFAZ_MEDIEVAL.md; referencias privadas en Documentacion/UI/C02.
+- Archivos: Docs/Historial/Etapas/C02_INTERFAZ_MEDIEVAL.md; referencias privadas en Documentacion/UI/C02.
 - Pruebas: lectura de GDD §12.5 con hash intacto, inspección de uGUI/prefabs/scripts y comparación visual de las tres referencias con capturas E02-B.
 - Resultado / problemas: auditoría de presentación completada; referencias no son evidencia Unity. Se conservan uGUI/controles y se concreta C02.2..6 sin mecánicas ficticias.
 
@@ -557,7 +561,7 @@ El nuevo brief redefine el alcance concreto de C02 en estas seis subtareas; F3-C
 - Descripción / sistema: Validación y entrega; UI/UX.
 - Prioridad / dependencias: P1; C02.4, C02.5.
 - Aceptación: Compilar, probar cuatro resoluciones y regresión, capturar, build/recorridos, Git y docs; F2-07 pendiente.
-- Archivos: MedievalHudTests; ContextUiValidationTests, MonkIdentityTests y PhaseTwoValidationTests adaptadas; SceneCapture; Docs/C02_INTERFAZ_MEDIEVAL.md, trece Images/C02-*, guías/plan/registro/AGENTS y ZIP C02.
+- Archivos: MedievalHudTests; ContextUiValidationTests, MonkIdentityTests y PhaseTwoValidationTests adaptadas; SceneCapture; Docs/Historial/Etapas/C02_INTERFAZ_MEDIEVAL.md, trece Images/C02-*, guías/plan/registro/AGENTS y ZIP C02.
 - Pruebas: 52/52, cero fallos/omisiones, salida 0; 44 layouts/raycasts/textos a 720p/900p/1080p/1440p. Build salida 0; recorridos nativos con/sin GPU PASS/salida 0; ZIP CRC/hashes y siete archivos históricos preservados. 278 metadatos/GUID íntegros; historial/GDD/mundo conservados.
 - Resultado / problemas: verificado técnicamente. Correcciones de serialización, texto y orden de dibujo documentadas; fuentes/modelos/arte provisionales y evaluación humana F2-07 pendientes. No minimapa o mecánicas nuevas.
 
@@ -653,7 +657,7 @@ Diseños autorizados para uso provisional. F2-07: usuario informa 7/8, cierre X/
 
 ## E07 — TRANSFORMACIÓN DE LA ALDEA (2026-10-31)
 
-Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada AetherniaVillageDemo. Plan y evidencia en Docs/E07_ALDEA_MEDIEVAL.md.
+Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada AetherniaVillageDemo. Plan y evidencia en Docs/Historial/Etapas/E07_ALDEA_MEDIEVAL.md.
 
 ### E07-P0 — Preparación y línea base
 - Estado: [x] Completado y verificado.
@@ -708,13 +712,13 @@ Dependencia Git: dab39c2/E03–E06, PR #1 sin fusionar. Escena integrada Aethern
 
 ## E08 — PERSONAJES ARTICULADOS (2026-10-31)
 
-Base E07/8f0108b, PR #1/#2 sin fusionar. Plan y evidencia en Docs/E08_PERSONAJES_ANIMADOS.md; aprobación artística/humana independiente.
+Base E07/8f0108b, PR #1/#2 sin fusionar. Plan y evidencia en Docs/Historial/Etapas/E08_PERSONAJES_ANIMADOS.md; aprobación artística/humana independiente.
 
 ### E08-01 — Auditoría y piloto de capacidad
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: personajes integrados / P1. Dependencias: E07.
 - Aceptación: Herramientas/recursos/PR revisados, piloto con skin y esqueleto real y límites documentados.
-- Archivos: AnimatedCharacterBuilder/NativeCharacterSkin, Docs/E08_PERSONAJES_ANIMADOS.md.
+- Archivos: AnimatedCharacterBuilder/NativeCharacterSkin, Docs/Historial/Etapas/E08_PERSONAJES_ANIMADOS.md.
 - Pruebas / resultado: Unity exacto compiló autoría, tres Avatares Generic válidos; casos de pesos/skin/BindPose y BakeMesh pasan. Sin Blender/bpy/modelos externos; FFmpeg local de Python verificado, sin instalación.
 
 ### E08-02 — Modelos, rigging y clips
@@ -749,7 +753,7 @@ Base E07/8f0108b, PR #1/#2 sin fusionar. Plan y evidencia en Docs/E08_PERSONAJES
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: personajes integrados / P1. Dependencias: E08-05.
 - Aceptación: Guías/fichas/checklist/registro actualizados, commits y PR apilado, repo limpio y humano pendiente.
-- Archivos: Docs/E08_PERSONAJES_ANIMADOS.md, E08_GITHUB.json, checklist/registro/plan/AGENTS/COMO_JUGAR/dirección/ficha Monje.
+- Archivos: Docs/Historial/Etapas/E08_PERSONAJES_ANIMADOS.md, E08_GITHUB.json, checklist/registro/plan/AGENTS/COMO_JUGAR/dirección/ficha Monje.
 - Pruebas / resultado: commits por bloques, rama feature/e08-personajes-animados publicada; PR #3 abierto/borrador/base E07 (https://github.com/MathiasMerino/RPGRTS/pull/3). main/dev y PR #1/#2 sin fusionar ni modificar; comprobación de sincronía/limpieza al cierre. Fichas, licencias, Generic/clips, importación futura, pruebas/build/evidencia y límites documentados. Humano/arte final pendientes; no E09.
 
 
@@ -757,19 +761,19 @@ Base E07/8f0108b, PR #1/#2 sin fusionar. Plan y evidencia en Docs/E08_PERSONAJES
 - Estado: [ ] Pendiente.
 - Sistema / prioridad: revisión jugable/arte / P1. Dependencias: E08-06.
 - Aceptación: el usuario revisa las tres clases en la aldea, lectura isométrica, proporciones, ropa, articulaciones, armas y acciones; aprobación explícita. F2-07/X/ESC y E07-H mantienen sus estados independientes.
-- Archivos: Docs/E08_PERSONAJES_ANIMADOS.md y evidencia E08; no se inventan resultados humanos.
+- Archivos: Docs/Historial/Etapas/E08_PERSONAJES_ANIMADOS.md y evidencia E08; no se inventan resultados humanos.
 - Pruebas / resultado: pendiente; las pruebas automáticas y la inspección técnica de capturas no sustituyen esa sesión.
 
 
 ## E09 — COMBATE TÁCTICO E IA (2026-11-01)
 
-Plan/evidencia única: Docs/E09_COMBATE_TACTICO.md. Historial anterior conservado.
+Plan/evidencia única: Docs/Historial/Etapas/E09_COMBATE_TACTICO.md. Historial anterior conservado.
 
 ### E09-01 — Auditoría dirigida y control de versiones
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: combate integrado / P1. Dependencias: E08.
 - Aceptación: PR, GDD, reglas, recursos y limitaciones contrastados; base E08 preservada.
-- Archivos: AGENTS/GDD/especificación leídos; Docs/E09_COMBATE_TACTICO.md; rama feature/e09-combate-rpg-ia.
+- Archivos: AGENTS/GDD/especificación leídos; Docs/Historial/Etapas/E09_COMBATE_TACTICO.md; rama feature/e09-combate-rpg-ia.
 - Pruebas / resultado: Git limpio inicial y PR #1/#2/#3 abiertos sin fusionar; SHA GDD coincide; reglas/recursos auditados. Base a7acaca preservada.
 
 ### E09-02 — Turnos, resultados e IA local
@@ -817,76 +821,76 @@ Plan/evidencia única: Docs/E09_COMBATE_TACTICO.md. Historial anterior conservad
 
 ## PRIMERA DEMO — E10–E15 (nuevo encargo)
 
-Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuevos provisionales.
+Plan/evidencia únicos: Docs/Historial/Etapas/DEMO_E10_E13.md. Historial intacto; datos/lore nuevos provisionales.
 
 ### E10-A — Auditoría y base Git
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E09.
 - Aceptación: Estado/PR/GDD/recursos contrastados y plan secuencial documentado.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
 - Pruebas / resultado: GDD/hash y PR#1–#4 contrastados, base66cf80f limpia y rama/plan conservados; ningún merge.
 
 ### E10-B — Menú, tipografía y opciones
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E10-A.
 - Aceptación: Menú TMP real, derechos de fuente, español, opciones funcionales, guardado válido/ausente y cuatro resoluciones.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
 - Pruebas / resultado: SDF/menú/opciones y cuatro resoluciones verificados en editor; sliders/calidad/resolución1920 y persistencia entre procesos en WindowsGPU PASS. ReferenciaAudio corregida y cubierta por aceptación. Evaluación humana pendiente.
 
 ### E11-A — Selección, prólogo y tutorial RPG
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E10-B.
 - Aceptación: Clase/linaje persistentes, prólogo omisible y encuentro legal con tres clases.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/ENTREGA_E10_E13.md; revisión humana pendiente.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/Historial/Etapas/ENTREGA_E10_E13.md; revisión humana pendiente.
 
 ### E11-B — Exploración WASD
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E11-A.
 - Aceptación: Diagonal normalizada, colisiones, animación, cámara y UI/pausa sin conflictos RTS.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/ENTREGA_E10_E13.md; revisión humana pendiente.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/Historial/Etapas/ENTREGA_E10_E13.md; revisión humana pendiente.
 
 ### E12 — RTS y héroe compartido
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E11-B.
 - Aceptación: Selección/órdenes/roles/acción real del mismo héroe, resultados y transición válidos.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/ENTREGA_E10_E13.md; revisión humana pendiente.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/Historial/Etapas/ENTREGA_E10_E13.md; revisión humana pendiente.
 
 ### E13 — Asentamiento y economía
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E12.
 - Aceptación: Edificios funcionales/costes/producción/reclutas/guardado sin duplicación y juego libre.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
-- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/ENTREGA_E10_E13.md; revisión humana pendiente.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Pruebas / resultado: regresión110/110 global PASS;6/6 tras ajuste visual de asentamiento. Doce procesos Windows finales PASS para tres clases, con/sinGPU, recorrido completo y nuevo proceso Continuar/opciones. Aceptación y archivos por sistema en Docs/Historial/Etapas/ENTREGA_E10_E13.md; revisión humana pendiente.
 
 ### DEMO-QA — Validación y entrega E10–E13
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: demo integrada / P1. Dependencias: E13.
 - Aceptación: Regresión, end-to-end/reinicio, capturas, Windows ejecutado, ZIP y PR apilado, cambios propios limpios/sincronizados y assets ajenos preservados/documentados.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
 - Pruebas / resultado: 110/110 global+6/6 posteriores, Windows12procesos+2desdeZIPextraído y18PNG/vídeoDSP nativo PASS. ZIP306archivos/CRC/SHA correcto,12paquetes históricos intactos; PR#5 draft abierto sobre E09 y feature publicada;main/dev/PR1..4 intactos. ModeloMonkMeshy ajeno preservado sin seguimiento y fuera de commits.
 
 ### E14 — Compañeros y mazmorra (condicional)
 - Estado: [ ] Pendiente.
 - Sistema / prioridad: demo integrada / P2. Dependencias: DEMO-QA.
 - Aceptación: Solo iniciar tras núcleo estable; grupo real y mazmorra verificables si se implementan.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
 - Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
 
 ### E15 — Territorio y conquista (condicional)
 - Estado: [ ] Pendiente.
 - Sistema / prioridad: demo integrada / P2. Dependencias: E14/núcleo estable.
 - Aceptación: Solo iniciar tras núcleo estable; propiedad/efecto RTS persistentes si se implementan.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
 - Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
 
 ### DEMO-H — Evaluación humana
 - Estado: [ ] Pendiente.
 - Sistema / prioridad: demo integrada / P1. Dependencias: DEMO-QA.
 - Aceptación: Usuario revisa controles/nitidez/experiencia; pendientes humanos anteriores separados.
-- Archivos: Docs/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
+- Archivos: Docs/Historial/Etapas/DEMO_E10_E13.md; implementación/evidencia se registran por bloque.
 - Pruebas / resultado: pendientes; código escrito no equivale a verificación humana.
 
 
@@ -895,14 +899,14 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 ### E14-A — Estado y reclutamiento de compañeros
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: expediciones / P1. Dependencias: DEMO-QA E10–E13.
-- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/Historial/Etapas/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
 - Archivos: PrototypeState, PrototypeSaveStore, ExpeditionRules, PartyWorld, GroupTurnSequence, TurnBattle y TurnEncounter.Group; tests ExpeditionRulesTests/ExpeditionIntegrationTests; escena AetherniaExpeditions.
 - Pruebas / resultado: 8/8 reglas puras aprobadas en E14_GRUPO_INTERMEDIO.xml; integración posterior recluta tres compañeros, conserva IDs y restaura sin duplicados en E14_INTEGRACION.xml. Evaluación humana pendiente en EXP-H.
 
 ### E14-B — Seguimiento y turnos de grupo
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: expediciones / P1. Dependencias: E14-A.
-- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/Historial/Etapas/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
 - Archivos: PrototypeState, PrototypeSaveStore, ExpeditionRules, PartyWorld, GroupTurnSequence, TurnBattle y TurnEncounter.Group; tests ExpeditionRulesTests/ExpeditionIntegrationTests; escena AetherniaExpeditions.
 - Pruebas / resultado: Prueba Play Mode E14_INTEGRACION.xml aprobada: seguimiento, NavMesh, dos combates con daño real e iniciativa y reloj estratégico detenido. Bloqueo de movimiento reproducido y corregido con cancelación por falta de progreso. Evaluación humana pendiente en EXP-H.
 
@@ -930,7 +934,7 @@ Plan/evidencia únicos: Docs/DEMO_E10_E13.md. Historial intacto; datos/lore nuev
 ### EXP-QA — Regresión, Windows, reinicio y publicación
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: expediciones / P1. Dependencias: E15-B.
-- Aceptación: criterios del encargo y decisiones provisionales en Docs/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
+- Aceptación: criterios del encargo y decisiones provisionales en Docs/Historial/Etapas/E14_E15_EXPEDICIONES.md, comprobados funcionalmente; humanos separados.
 - Archivos: Tools/Invoke-ExpeditionSmoke.ps1, Export-ExpeditionEvidence.py, Package-Expeditions.py; Runtime/Validation y Tests/Editor; Docs/Validacion/E14E15, Images/E14E15, Videos/E14E15 y entrega/guía.
 - Pruebas / resultado:121/121+11/11+1/1UI,20procesos Windows PASS;22PNG nativos+2UI,2MP4 conDSP/decodificación, ZIP CRC/SHA/extracción y13ZIP antiguos intactos. PR#6 publicado en borrador sobre feature/e10-e13-demo-jugable; main/dev y PR1..5 intactos. Evidencia GitHub en GITHUB.json; no intervención humana ejecutada.
 
@@ -1047,7 +1051,7 @@ Encargo posterior autoriza E16 sobre E14/E15; no inicia E17 ni aprueba arte defi
 - Estado: [ ] Pendiente.
 - Sistema / prioridad: QA RTS / P1. Dependencias: E16-QA.
 - Aceptación: identificar las condiciones de derrota del Mago y distinguir estabilidad del controlador de una estrategia automática ganadora; registrar estado y órdenes sin alterar salud/costes/balance para forzar el resultado.
-- Archivos: DemoRtsTests.cs (sin cambios E16); Docs/Validacion/E16/FOCAL_POST_CAPAS_INTERMEDIA.xml, RTS_REPETICION_1.xml; Docs/E16_PULIDO_VISUAL.md.
+- Archivos: DemoRtsTests.cs (sin cambios E16); Docs/Validacion/E16/FOCAL_POST_CAPAS_INTERMEDIA.xml, RTS_REPETICION_1.xml; Docs/Historial/Etapas/E16_PULIDO_VISUAL.md.
 - Pruebas / resultado: pasó en regresión125/125; perdió en un pase dirigido9/10; repetición aislada1/1 pasó las tres clases sin cambios. No se declara determinismo ni resolución de esta variación por el hecho de repetirla. Escena histórica sin perfil E16.
 
 ## FASE E17 — ESTABILIDAD Y CANDIDATA ALFA
@@ -1093,14 +1097,14 @@ Encargo posterior autoriza esta fase sobre E16; no E18.
 - Estado: [x] Completado y verificado.
 - Sistema / prioridad: alfa / P1. Dependencias: E17-E.
 - Aceptación: Regresión y recorridos Windows reales; capturas comparables, métricas disponibles, ZIP verificable, PRdraft y guía; no v1.0.
-- Archivos: AlphaQualityBuilder/Tests, AlphaGraphicsPolicy, AlphaBenchmarkProbe; perfiles Graphics, escena Alpha; herramientas de build/benchmark/export/ZIP; Docs/E17_ALFA.md, GUIA_ALFA_E17.md, COMPARATIVA_E17.md y Validacion/Images/Videos/E17.
+- Archivos: AlphaQualityBuilder/Tests, AlphaGraphicsPolicy, AlphaBenchmarkProbe; perfiles Graphics, escena Alpha; herramientas de build/benchmark/export/ZIP; Docs/Historial/Etapas/E17_ALFA.md, GUIA_ALFA_E17.md, COMPARATIVA_E17.md y Validacion/Images/Videos/E17.
 - Pruebas / resultado: general142/143, caso histórico fallback actualizado y fortalecido5/5dirigidas;2/2calidad. BuildPASS y14/14procesosWindows finales con tres clases/reinicios/ZIP.18medicionesoffscreen con render verificado (sin FPSDisplay/GPU; DrawCalls/Batches no obtenidos);82PNG/2MP4 reales. CRC/SHA/17ZIPprevios intactos. [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) abierto en borrador sobre E16; main/dev y PR1..7 intactos, sin merges/force. Primer perfilado sin render invalidado y conservado; humano/estrategiaRTS siguen abiertos.
 
 ### E17-HUM — Revisión humana/artística
 - Estado: [ ] Pendiente.
 - Sistema / prioridad: alfa / P1. Dependencias: E17-F.
 - Aceptación: Sesión del usuario y aprobación explícita; no sustituirla por automatización.
-- Archivos: Docs/E17_ALFA.md; detalle concreto por bloque al implementar.
+- Archivos: Docs/Historial/Etapas/E17_ALFA.md; detalle concreto por bloque al implementar.
 - Pruebas / resultado: pendientes; no basta compilar.
 
 
@@ -1177,3 +1181,30 @@ Encargo71c1a4f1 autoriza implementación secuencial con arte provisional. Depend
 - Aceptación: Usuario evalúa duración25–45min, diversión, dificultad y arte; no deducirla de automatización.
 - Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
 - Pruebas / resultado: pendientes; no basta compilar.
+
+## Mantenimiento — organización conservadora
+
+### ORG-01 — Carpetas, historial y recursos retenidos
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Mantenimiento / P1. Dependencias: entrega E18.
+- Descripción: ordenar informes antiguos y verificaciones intermedias, organizar archivos sueltos de Unity y catalogar recursos actuales/provisionales sin borrar mecánicas o arte útil.
+- Aceptación: GUID y bytes de assets movidos conservados, escenas/GDD/privados intactos, enlaces locales actualizados, ZIP anteriores preservados, carga/movimiento y progresión E18 verificados. No cambiar la calidad gráfica local preexistente ni publicar remotos automáticamente.
+- Archivos: Docs/ORGANIZACION_PROYECTO.md, Docs/Historial, índices; ProjectOrganization.cs; Tools/Invoke-UnityValidation.ps1; archivo local de Builds.
+- Pruebas / resultado: Unity6000.5.8f1,578GUIDdependencias actuales conservados,0scripts perdidos,2pares de datos/meta idénticos.3/3dirigidas: física/dependencias y RPG/movimiento/guardado/continuar/técnicasRPG/RTS por tresclases.781assets públicos inventariados,27docs reubicados con enlaces actualizados,7carpetas(2185archivos) archivadas conhuellasidénticas,19ZIP preservados.9escenas/GDD/privados3 yQualitySettingspreexistente conhashsin cambios.0eliminaciones; no se afirma regresióncompleta ni correcciónRTS.
+
+
+## FASE E19 — RAZAS Y CULTURAS PILOTO
+
+El encargo explícito autoriza implementación, validación, build y PR apilado. No autoriza E20, merges ni publicación de recursos privados. Todas las nuevas reglas culturales/raciales son propuestas ajustables.
+
+| ID | Sistema / prioridad | Dependencias | Estado | Aceptación | Archivos / pruebas / resultado |
+|---|---|---|---|---|---|
+| E19-A | Estabilidad / P0 | E18, ORG-01 | [x] Completado y verificado | Investigar y reproducir RTS, conservar aserciones; clasificar causa y verificar contratos | Docs/Validacion/E19/BASELINE.json, GITHUB_BASE.json; A_BASELINE.xml:1/2 aprobada; derrota RTS Monje reproducida, incidencia abierta sin alterar aserciones; A_DIAGNOSTICO.json |
+| E19-BCD | Identidad / P0 | A investigada | [x] Completado y verificado | Cuatro razas, 12 combinaciones, rasgos configurables, selección y persistencia sin duplicación | CivilizationCatalog/Operations, DemoFrontEnd, ProgressionOperations, SaveStore y escena E19:18/18, doce combinaciones UI y guardado repetido; BCD_EFG_18.xml. Primer pase17/18 detectó glifo sin soporte, corregido sin ignorar avisos. |
+| E19-EFGIJ | Culturas / P0 | BCD | [x] Completado y verificado | Cuatro familias de datos, dos pilotos con unidad y edificio útiles, costes/relaciones/reclutamiento reales | Catálogo compartido, Settlement/ExpeditionOperations, dos prefabs derivados, UI Culturas; DIRIGIDAS_21.xml 21/21 y PILOTOS_RTS_UI.xml: golpes reales2/4, costes/producción/pacto/conquista/legado. Recorridos integrales pendientes. |
+| E19-HKLMN | Integración / P0 | EFGIJ | [x] Completado y verificado | Mismo héroe/habilidades, grupo3 y ejército6, conquista/producción, arte provisional sustituible | Escena AetherniaCivilizationsDemo y presentadores E08/E07 compartidos. CICLO_NATIVO.json:4/4procesos, Humano–Guerrero/Enano–Mago desde Nueva→RPG/grupo/mazmorra→construcción/RTS/conquista/pilotos→guardar/reinicio exacto; XP/equipo y salud compartidos. |
+| E19-OPQR | Calidad / P0 | Integración | [x] Completado y verificado | Balance reproducible, UI varias resoluciones, migraciones seguras y regresión completa con fallos visibles | GENERAL.xml196/197,0omisiones;21E19PASS. Único fallo histórico RTS de reservaGuerrero, diagnóstico y CSV conservados; no es regresión verde. Balance3600duelos de reglas y UI720/1080; revisión humana pendiente. |
+| E19-ST | Entrega / P0 | Calidad | [x] Completado y verificado | Dos combinaciones con recorrido completo/reinicio, capturas reales, Windows y portable verificados | GUIA_E19/ENTREGA_E19; fuente1e67333.6/6procesosWindows(4raw+2portable),52PNG/2MP4reales. ZIPCRC/SHA/19previosPASS, extracción y ciclo/reinicio aprobados. Revisión humana pendiente. |
+| E19-U | Git / P0 | ST | [x] Completado y verificado | Commits por bloques, PR sobre E18, plan verificable PR1..9; main/dev intactas | Docs/INTEGRACION_PRS.md, commits por bloques y PR#10draft sobre E18/PR9; rama publicada. main/dev y PR1..9 verificados intactos; recursos privados excluidos, calidad local previa conservada aparte. |
+| E19-RTS-HIST | Estabilidad / P1 | E19-A, OPQR | [ ] Pendiente | Resolver o revisar con evidencia la expectativa histórica de victoria bajo reserva; conservar derrotas y comprobar temporizaciones | A_BASELINE.xml(Monje), GENERAL.xml(Guerrero), RTS_GENERAL/warrior.csv. No se alteran aserciones para obtener verde. |
+| E19-HUM | Evaluación humana / P1 | ST | [ ] Pendiente | Revisión del usuario: legibilidad, arte, diversión, balance y estabilidad prolongada | No se completa con pruebas automáticas |

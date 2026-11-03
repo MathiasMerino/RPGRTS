@@ -1,0 +1,169 @@
+{
+  "documentsMoved": 27,
+  "markdownFilesWithUpdatedLocationsOrLinks": 39,
+  "moves": [
+    {
+      "from": "Docs/ARCHIVOS_ENTREGA.md",
+      "to": "Docs/Historial/Etapas/ARCHIVOS_ENTREGA.md",
+      "beforeSHA256": "0ece81859569cb4cbfc5d3935f01362475ffc53425efec8537b840f23908f327",
+      "afterSHA256": "faf09cca696caa434d0f61344566b7b65e5ad483742fc8ca4c0c732bc1f8a3d9"
+    },
+    {
+      "from": "Docs/AUDITORIA_FASE_2.md",
+      "to": "Docs/Historial/Validaciones/AUDITORIA_FASE_2.md",
+      "beforeSHA256": "9782180bbbdb6395d87d381ba7da362d6f07b4dc05204c596eb1a9b78cbd2712",
+      "afterSHA256": "45a21b24bffa623e0e55672c1c106d07d2b252921c441e2e5747dc9d3b9b4c72"
+    },
+    {
+      "from": "Docs/C02_INTERFAZ_MEDIEVAL.md",
+      "to": "Docs/Historial/Etapas/C02_INTERFAZ_MEDIEVAL.md",
+      "beforeSHA256": "f394166b959df0443eb33c0fd4dd35d43ad440100bbfa52160498430406a1c2e",
+      "afterSHA256": "8d99c13ae0392a10d06660d3256436a554b9946d707673987179e9b1535c7596"
+    },
+    {
+      "from": "Docs/COMPARATIVA_E17.md",
+      "to": "Docs/Historial/Etapas/COMPARATIVA_E17.md",
+      "beforeSHA256": "ad507ab44d92c78ea721c0d169d49ffc22577daf98eec3fcdcefd327431f3170",
+      "afterSHA256": "2d0764bfa2bed7843a3db51b3dfa5c9c6a19c070e87aa8a35e5bcf460ccdb79d"
+    },
+    {
+      "from": "Docs/D01_ESCENARIO_MEDIEVAL.md",
+      "to": "Docs/Historial/Etapas/D01_ESCENARIO_MEDIEVAL.md",
+      "beforeSHA256": "d868442a62e0f8aae8b9598c5ae3d8a64fc5689f4e4008ee45712a2b3715c3dc",
+      "afterSHA256": "fab5c987c40dcb8d71b0466a0785fd7e5e4d3cc16967f0d3c67752d133a7824f"
+    },
+    {
+      "from": "Docs/DEMO_E10_E13.md",
+      "to": "Docs/Historial/Etapas/DEMO_E10_E13.md",
+      "beforeSHA256": "b2aca7fa83f728564289fb60606dd070d281198657904ef33a2cda21f174176d",
+      "afterSHA256": "b2aca7fa83f728564289fb60606dd070d281198657904ef33a2cda21f174176d"
+    },
+    {
+      "from": "Docs/E01_PERSONAJES.md",
+      "to": "Docs/Historial/Etapas/E01_PERSONAJES.md",
+      "beforeSHA256": "9745bfb97788a37df2a611326bbafa578b3e82366ae77cabb7336c5aef6353b4",
+      "afterSHA256": "c526de1088fd6cfb6eff30d00f1bbe2dd0c633ae467a4b6d351c871427d0cfc3"
+    },
+    {
+      "from": "Docs/E02B_MONJE_PROVISIONAL.md",
+      "to": "Docs/Historial/Etapas/E02B_MONJE_PROVISIONAL.md",
+      "beforeSHA256": "2bc266e0a72301f7fbb3b8750f529fc1cf816483e3b6258ef1123d9b76b181b1",
+      "afterSHA256": "e210aa2e23d41d7136854bde11767e4d9260fd0b2904d1cac1c9c123c890b4e6"
+    },
+    {
+      "from": "Docs/E03_E06_PRODUCCION.md",
+      "to": "Docs/Historial/Etapas/E03_E06_PRODUCCION.md",
+      "beforeSHA256": "b83b92341d83657e65a07acc21847d1c904ad57834d5d00e0a059883ee2636f5",
+      "afterSHA256": "c6ff462c9343a4b157ed969a69e356f963cb7ce94afab8e5d7285eea25263451"
+    },
+    {
+      "from": "Docs/E05_CARGAMENTO_PERDIDO.md",
+      "to": "Docs/Historial/Etapas/E05_CARGAMENTO_PERDIDO.md",
+      "beforeSHA256": "20e15b262b73b55221fa3bab4091061e2aed20b360dbf301f0acd8d10e8dbf8b",
+      "afterSHA256": "12ef1b12967fe6323403bbd3d134b15c286767081c2a7dee457c68e112b423a1"
+    },
+    {
+      "from": "Docs/E07_ALDEA_MEDIEVAL.md",
+      "to": "Docs/Historial/Etapas/E07_ALDEA_MEDIEVAL.md",
+      "beforeSHA256": "ecc4b8ae94da502a3a30987bcb9e94cbe4dd106b06486f443722da359cabbf4c",
+      "afterSHA256": "b72b46879c4679e8e1366512a4a27d5f10b118185123b71a5a0004bdd5e8ff8f"
+    },
+    {
+      "from": "Docs/E08_PERSONAJES_ANIMADOS.md",
+      "to": "Docs/Historial/Etapas/E08_PERSONAJES_ANIMADOS.md",
+      "beforeSHA256": "a3e705a8e4509972127cbbfe8b8e77d712d9b63d7a60b7bcce57a791db10ff2a",
+      "afterSHA256": "5e4f6fcbd0d0680692652d147f92bcac4a0c2cebe2b4982f30ec50c54094f0d6"
+    },
+    {
+      "from": "Docs/E09_COMBATE_TACTICO.md",
+      "to": "Docs/Historial/Etapas/E09_COMBATE_TACTICO.md",
+      "beforeSHA256": "f91acc3c32ba74ae473f6d3c98ab2f17d908916a5dfbed11b190c309e5a270e5",
+      "afterSHA256": "54c981b9909fa9f9b83f811d6f2175ded48cff0988f82eeb64d182855432b68b"
+    },
+    {
+      "from": "Docs/E14_E15_EXPEDICIONES.md",
+      "to": "Docs/Historial/Etapas/E14_E15_EXPEDICIONES.md",
+      "beforeSHA256": "90f4b83992c4f48dbb41bb1d3be8f5d3a62adaf359af9f2b7d6f98112d0a9e34",
+      "afterSHA256": "90f4b83992c4f48dbb41bb1d3be8f5d3a62adaf359af9f2b7d6f98112d0a9e34"
+    },
+    {
+      "from": "Docs/E16_PULIDO_VISUAL.md",
+      "to": "Docs/Historial/Etapas/E16_PULIDO_VISUAL.md",
+      "beforeSHA256": "7698eab9ab2797050eebf026203239063d0e5cae8cc4baa66fc62394b962a543",
+      "afterSHA256": "df3f3abe5d571a267b746dd99645459eaac6ee096720f30d12ef2ba523cd6e23"
+    },
+    {
+      "from": "Docs/E17_ALFA.md",
+      "to": "Docs/Historial/Etapas/E17_ALFA.md",
+      "beforeSHA256": "d844535b9a34f50251c906b3cb0ae769388e09c09d2349529e586cfee7020117",
+      "afterSHA256": "5a2c7ac1d909890051dd8b9d6fa07fc6b9ea47b07f4df08959a7279dde659d27"
+    },
+    {
+      "from": "Docs/ENTREGA_E10_E13.md",
+      "to": "Docs/Historial/Etapas/ENTREGA_E10_E13.md",
+      "beforeSHA256": "3038063c964a6230b48e77a5de48ad59c94446a10ec4dd69621fc120ace0542f",
+      "afterSHA256": "e461c49d60f31b0899ffb19297e55fe050d3ec74aab7d5d884b4779bf5295124"
+    },
+    {
+      "from": "Docs/ENTREGA_E14_E15.md",
+      "to": "Docs/Historial/Etapas/ENTREGA_E14_E15.md",
+      "beforeSHA256": "95ff4a1ecf0d1b3c42ab41beda0f751e52c8c7cdc43ab1f2c07deb7371fe6da3",
+      "afterSHA256": "c9f1a354145e5e87bc53736a21bd1f20a5c568d48cd9e1a4d742afe51adfb0cb"
+    },
+    {
+      "from": "Docs/FASE3_ITERACION_1.md",
+      "to": "Docs/Historial/Etapas/FASE3_ITERACION_1.md",
+      "beforeSHA256": "e6afd575849e2885a323c0c48889c58f09ce9baa55c7da51de0726512b9f6c71",
+      "afterSHA256": "567236dc9fc812eb0ea6da1bfd3ac41e1e2a9bd9fcc18b95410127f365cb013b"
+    },
+    {
+      "from": "Docs/PROGRESO_DEMO.md",
+      "to": "Docs/Historial/Seguimiento/PROGRESO_DEMO.md",
+      "beforeSHA256": "a05a75c2ea04f90e9581d78a09eae188c049fc8c0cd8747b890099fa5adea80e",
+      "afterSHA256": "3211f506346b61f693116fc3ca629b60b5906f8d694f3bc11a750b8d236caf12"
+    },
+    {
+      "from": "Docs/PROGRESO_E16.md",
+      "to": "Docs/Historial/Seguimiento/PROGRESO_E16.md",
+      "beforeSHA256": "d57bc0aa553c32ce323dd88ca8585a6e54a9efe3d9ba75dd873031963dd6599a",
+      "afterSHA256": "f753a391dfe4d6fecf10defc2daaf3333d16a24957fea125ecd096ff9124b652"
+    },
+    {
+      "from": "Docs/PROGRESO_E17.md",
+      "to": "Docs/Historial/Seguimiento/PROGRESO_E17.md",
+      "beforeSHA256": "aec355aeae8ce1d3447015ed5bccf5b4b66d62c3c9ac8ebf5d00498fa69b612e",
+      "afterSHA256": "11c32ec4e788ac2e10cb4b1451965fde0be186514699b45c2bfd3cdfc5a78eb0"
+    },
+    {
+      "from": "Docs/PROGRESO_EXPEDICIONES.md",
+      "to": "Docs/Historial/Seguimiento/PROGRESO_EXPEDICIONES.md",
+      "beforeSHA256": "bf8597a1539fb751495a873a8f724985fa922e8cf51908f573869ca84b0d0e14",
+      "afterSHA256": "1e85248918015b738d45938b4368372a3d0e0b9ef5dfa25c02d555178475695e"
+    },
+    {
+      "from": "Docs/PRUEBA_MANUAL_DEMO.md",
+      "to": "Docs/Historial/Validaciones/PRUEBA_MANUAL_DEMO.md",
+      "beforeSHA256": "bbd39fa66ea6f4e533cfe0ca06716f6d73c4404bf3538dc6ae71552309ab7b4f",
+      "afterSHA256": "bbd39fa66ea6f4e533cfe0ca06716f6d73c4404bf3538dc6ae71552309ab7b4f"
+    },
+    {
+      "from": "Docs/PRUEBA_MANUAL_FASE_2.md",
+      "to": "Docs/Historial/Validaciones/PRUEBA_MANUAL_FASE_2.md",
+      "beforeSHA256": "d7d11a1f8a9cc7fa3f4a9aff63bca520b9166224939d5a9c0c04814c6676f8c4",
+      "afterSHA256": "d7d11a1f8a9cc7fa3f4a9aff63bca520b9166224939d5a9c0c04814c6676f8c4"
+    },
+    {
+      "from": "Docs/VALIDACION_BASE_TECNICA.md",
+      "to": "Docs/Historial/Validaciones/VALIDACION_BASE_TECNICA.md",
+      "beforeSHA256": "a1bbe1567962fc160ec3607cae43b443aea8ad3912d12dbde404b804f4589910",
+      "afterSHA256": "e7d2457a6522c1fdec05927d2275cc0c2aefd7466effda487c8da405eb0ee2e0"
+    },
+    {
+      "from": "Docs/VALIDACION_PROTOTIPO.md",
+      "to": "Docs/Historial/Validaciones/VALIDACION_PROTOTIPO.md",
+      "beforeSHA256": "398487f6972ebc7e8cbc998798f9927e1752daa0e900fdc70dc2ca57533e0fe3",
+      "afterSHA256": "4a3503a1e28bd04b5c6d8ce79950907bb144c0400dca68caf6f4e4aa49922982"
+    }
+  ],
+  "scope": "Content retained; only locations/references updated. Evidence JSON/XML and gameplay sources untouched."
+}

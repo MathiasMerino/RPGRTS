@@ -1,0 +1,30 @@
+{
+  "sourceRevision": "1e67333ff9d4bfdf7ce420b0b463513e7088ab22",
+  "privateTrackedFiles": 0,
+  "textFilesScanned": 67,
+  "credentialPatternsFound": [],
+  "largestChangedFiles": [
+    {
+      "file": "ProyectoRPGRTS/Assets/01_Scenes/AetherniaCivilizationsDemo.unity",
+      "bytes": 1954033
+    },
+    {
+      "file": "CHECKLIST.md",
+      "bytes": 128262
+    },
+    {
+      "file": "REGISTRO_CAMBIOS.md",
+      "bytes": 112267
+    },
+    {
+      "file": "PLAN_DESARROLLO.md",
+      "bytes": 27551
+    },
+    {
+      "file": "ProyectoRPGRTS/ProjectSettings/ProjectSettings.asset",
+      "bytes": 25602
+    }
+  ],
+  "filesOver50MiB": [],
+  "scope": "Diff against recovery5507425; capture/video audit repeated before publication; structural scan, not a guarantee against every secret type."
+}

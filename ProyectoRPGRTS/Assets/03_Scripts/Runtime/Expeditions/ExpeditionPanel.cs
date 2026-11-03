@@ -9,7 +9,7 @@ using UnityEngine.UI;
 namespace Aethernia
 {
     // Ventana adicional: no sustituye ficha/inventario ni almacena datos de partida.
-    public sealed class ExpeditionPanel : MonoBehaviour
+    public sealed partial class ExpeditionPanel : MonoBehaviour
     {
         public DemoFlow Flow;public PartyWorld Party;public DungeonExpedition Dungeon;public TerritoryCampaign Territory;
         private GameObject window,groupCombat;private TMP_Text summary,combatText;private DemoWidgets ui;
@@ -28,7 +28,8 @@ namespace Aethernia
             var panel=DemoWidgets.Rect(root.transform,"Expedition window",384,92,880,500);window=panel.gameObject;ui.Surface(panel,new Color(.04f,.045f,.045f,1));
             ui.Text(panel,"Title","EXPEDICIONES · COMPAÑÍA DEL CAMPAMENTO",16,10,785,36,24).color=ui.Gold;
             Add(panel,"close","×",816,6,48,Close);
-            Add(panel,"party-tab","Grupo",16,52,204,()=>tab=0);Add(panel,"army-tab","Ejército",232,52,204,()=>tab=1);Add(panel,"territory-tab","Territorios",448,52,204,()=>tab=2);Add(panel,"rest","Descansar10s",664,52,200,()=>Dungeon.Rest());
+            if(Flow.Session.Rules.Civilizations!=null)BuildCultureTab(panel);
+            else {Add(panel,"party-tab","Grupo",16,52,204,()=>tab=0);Add(panel,"army-tab","Ejército",232,52,204,()=>tab=1);Add(panel,"territory-tab","Territorios",448,52,204,()=>tab=2);Add(panel,"rest","Descansar10s",664,52,200,()=>Dungeon.Rest());}
             summary=ui.Text(panel,"State","",16,104,848,208,18);
             var i=0;foreach(var role in Party.Roles.Roles){var id=role.Id;Add(panel,"companion-"+id,"Incorporar "+role.Title,16+i*284,324,272,()=>Party.Recruit(id));i++;}
             for(i=0;i<3;i++){var index=i;Add(panel,"toggle-party-"+i,"Grupo / reserva "+(i+1),16+i*284,374,272,()=>ToggleCompanion(index));}
@@ -63,7 +64,7 @@ namespace Aethernia
                 if(tab==0){text.AppendLine("GRUPO · "+s.Companions.Count(c=>c.InParty)+"/3 acompañantes, más el héroe");foreach(var c in s.Companions){var p=TroopProgression.Profile(c,Party.Roles.Find(c.Role));text.AppendLine(p.Title+" Nv"+c.Level+" XP"+c.Experience+"/8"+" · "+c.Id.Substring(0,6)+" · "+c.Health+"/"+p.Health+"PV · daño"+p.Damage+" · alcance"+p.Range+"m · "+(c.InParty?"grupo":"reserva"));}text.AppendLine("Ruinas: entrada al oeste del campamento(4,−11). Dos encuentros y objetivo final.\nFondos iniciales escasos: cofre del poblado o misión El cargamento perdido.");}
                 if(tab==1){text.AppendLine("EJÉRCITO · "+s.ArmySelection.Count+"/6 preparados; compañeros RPG no se despliegan");for(var i=0;i<s.Army.Count;i++)text.AppendLine((s.ArmySelection.Contains(s.Army[i].Id)?"[X] ":"[ ] ")+Party.Roles.Find(s.Army[i].Role).Title+" · "+s.Army[i].Health+"/"+TroopProgression.Profile(s.Army[i],Party.Roles.Find(s.Army[i].Role)).Health+"PV · Nv"+s.Army[i].Level+" · daño"+TroopProgression.Profile(s.Army[i],Party.Roles.Find(s.Army[i].Role)).Damage);}
                 if(tab==2){text.AppendLine("Raza: "+(Flow.Content.Lineages.FirstOrDefault(l=>l.Id==s.RaceId)?.Title??s.RaceId)+" · Cultura: "+(string.IsNullOrEmpty(s.CultureId)?"sin asignar":s.CultureId)+" · Reino: "+(string.IsNullOrEmpty(s.KingdomId)?"sin asignar":s.KingdomId));text.AppendLine("Facción voluntaria: "+Territory.FactionTitle(s.FactionId));foreach(var t in s.Territories)text.AppendLine(Territory.Rules.Find(t.Id).Title+" · "+Territory.FactionTitle(t.Owner)+" · "+(t.Secured?"asegurado":"sin asegurar"));text.AppendLine("Relaciones A:"+s.ReputationA+" B:"+s.ReputationB+" · paso/puesto: +1madera por ciclo cada uno.\n"+Territory.LastResult);}
-                summary.text=text.ToString();
+                summary.text=text.ToString();summary.gameObject.SetActive(tab!=3);if(cultureRoot!=null)cultureRoot.SetActive(tab==3);if(tab==3)RefreshCultureView();
                 foreach(var id in controls.Keys.Where(k=>k.StartsWith("companion-")||k.StartsWith("toggle-party-")))controls[id].gameObject.SetActive(tab==0);
                 foreach(var id in controls.Keys.Where(k=>k.StartsWith("army-")&&k!="army-tab"))controls[id].gameObject.SetActive(tab==1);
                 controls["march-crossing"].gameObject.SetActive(tab==2);controls["march-outpost"].gameObject.SetActive(tab==2);controls["all-army"].gameObject.SetActive(tab==2);

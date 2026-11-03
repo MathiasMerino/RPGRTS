@@ -36,7 +36,7 @@ namespace Aethernia
         private bool KeepCurrent()
         {
             if(Model==null||DisplayedClass!=session.State.ClassId||!CharacterVisualContract.CanUse(Model.gameObject,false,out _))return false;
-            visualRoot.gameObject.SetActive(true);if(legacyBody!=null)legacyBody.enabled=false;Model.ApplyEquipment(session.State);return true;
+            visualRoot.gameObject.SetActive(true);if(legacyBody!=null)legacyBody.enabled=false;Model.ApplyEquipment(session.State);RaceVisualVariant.Apply(Model.transform,session.Rules.Civilizations,session.State.RaceId);return true;
         }
         private void Refresh()
         {
@@ -62,7 +62,7 @@ namespace Aethernia
             visualRoot.gameObject.SetActive(true);
             if (legacyBody != null) legacyBody.enabled = false;
             DisplayedClass = session.State.ClassId;
-            if (Model != null) Model.ApplyEquipment(session.State);
+            if (Model != null) {Model.ApplyEquipment(session.State);RaceVisualVariant.Apply(Model.transform,session.Rules.Civilizations,session.State.RaceId);}
         }
     }
 }

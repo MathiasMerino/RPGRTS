@@ -21,6 +21,7 @@ namespace Aethernia
     public sealed class PrototypeRules : ScriptableObject
     {
         public ProgressionRules Progression;
+        public CivilizationCatalog Civilizations;
         public ClassProfile[] Classes = {
             new ClassProfile("warrior", "Guerrero", 24, 6, 1.8f, 3.2f),
             new ClassProfile("mage", "Mago", 16, 8, 6, 3.2f),

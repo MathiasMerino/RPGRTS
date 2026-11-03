@@ -1,0 +1,1 @@
+Intento inicial de simulación no ejecutado: CS1061 por usar Technique en lugar de la API existente UseTechnique de TurnBattle. Corregida la llamada del test, sin cambios de mecánica ni resultados antiguos presentados como nuevos. Repetición pendiente de registrar.

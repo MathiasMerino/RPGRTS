@@ -41,6 +41,7 @@ namespace Aethernia
             var index=Array.IndexOf(args,"-aetherniaDemoSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaProgressionSmoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaCivilizationSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaSave");
             if(index>=0&&index+1<args.Length)SlotPath=args[index+1];
             Director.SavePathOverride=SlotPath;ShowMain();
@@ -64,7 +65,7 @@ namespace Aethernia
         public bool StartNew(string name,string classId,string lineage)
         {
             var profile=Session.Rules.Find(classId);
-            if(profile==null||!DemoContent.KnownLineage(lineage)||Director.IsBusy)return false;
+            if(profile==null||!CivilizationOperations.KnownRace(Session.Rules,lineage)||(Session.Rules.Civilizations!=null&&!Session.Rules.Civilizations.Allows(lineage,classId))||Director.IsBusy)return false;
             try
             {
                 if(File.Exists(SlotPath))File.Copy(SlotPath,SlotPath+".backup-"+DateTime.UtcNow.ToString("yyyyMMdd-HHmmssfff"),false);
@@ -72,6 +73,7 @@ namespace Aethernia
             catch(IOException){Front.Notify("No se pudo respaldar la partida anterior. Se conserva y no se inicia otra encima.");return false;}
             catch(UnauthorizedAccessException){Front.Notify("No hay permiso para respaldar la partida. El archivo anterior se conserva.");return false;}
             var state=new PrototypeState{ClassId=classId,RaceId=lineage,Health=profile.Health,Demo=new DemoProgress(),HeroPosition=new Vector3(-10,0,1.4f)};
+            if(Session.Rules.Civilizations!=null){state.IdentityRevision=1;state.CultureId="frontier";ProgressionOperations.Activate(state,Session.Rules.Progression);state.Health=ProgressionOperations.ResolveProfile(state,Session.Rules).Health;}
             WorldOperations.AddItem(state,"training-sword",1);WorldOperations.AddItem(state,"cloth",1);
             WorldOperations.Equip(state,"training-sword");WorldOperations.Equip(state,"cloth");state.Facts.Add("demo-starter-kit");
             Director.Encounter.Clear();Director.Rts.Clear();Session.ReplaceState(state);Session.Rename(string.IsNullOrWhiteSpace(name)?"Viajero":name);

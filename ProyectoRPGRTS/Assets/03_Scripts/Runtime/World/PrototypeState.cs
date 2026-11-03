@@ -16,11 +16,13 @@ namespace Aethernia
         public Vector3 Position;
         public int Level=1;
         public bool ProductionPaused;
+        public string CultureId="";
         public BuildingRecord(string id, Vector3 position) { Id = id; Position = position; }
     }
     [Serializable] public sealed class RecruitRecord
     {
         public string Id,Role;
+        public string RaceId="",CultureId="";
         public int Health=10;
         public int Level=1,Experience;
         public bool InParty;
@@ -35,6 +37,7 @@ namespace Aethernia
         public bool HasDemoProgress;
         public DemoProgress Demo;
         public int ProgressionRevision;
+        public int IdentityRevision;
         public int Experience;
         public int HeroLevel=1;
         public List<SkillRank> Skills=new List<SkillRank>();

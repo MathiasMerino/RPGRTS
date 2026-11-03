@@ -18,6 +18,7 @@ namespace Aethernia
             var args=Environment.GetCommandLineArgs();var index=Array.IndexOf(args,"-aetherniaDemoSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaProgressionSmoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaCivilizationSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaAlphaBenchmark");
             DemoPreferences.SessionStorageKey=index>=0&&index+1<args.Length?"Aethernia.Tests.NativeOptions."+args[index+1]:null;
         }
@@ -79,7 +80,7 @@ namespace Aethernia
                 Require(flow.ReturnToTitle(),"save and title after continue");yield break;
             }
             Require(!File.Exists(slot),"fresh isolated slot required");flow.EncounterSeed=42;
-            Click("new");Click("class-"+id);if(id=="mage")Click("lineage");flow.Front.NameInput.text="Viajero "+id;
+            Click("new");Click("class-"+id);if(flow.Session.Rules.Civilizations!=null){var args=Environment.GetCommandLineArgs();var index=Array.IndexOf(args,"-demoRace");Click("race-"+(index>=0?args[index+1]:"human"));}else if(id=="mage")Click("lineage");flow.Front.NameInput.text="Viajero "+id;
             yield return Wait(.3f);yield return Capture("Creation");Click("begin");Require(flow.Session.State.ClassId==id,"chosen class");
             yield return Wait(.3f);yield return Capture("Intro");if(id=="mage")Click("skip");else for(var i=0;i<flow.Content.Intro.Length;i++)Click("next");yield return null;
             Require(flow.Session.Mode==PrototypeMode.TurnCombat,"RPG starts");var hero=d.Hero;var model=hero.GetComponent<CharacterVisualPresenter>().Model;
@@ -112,6 +113,7 @@ namespace Aethernia
             var enemy=units.First(x=>x.Team==1).Unit;Require(rts.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false),"real attack order");yield return Wait(.4f);yield return Capture("Rts");
             var deadline=Time.realtimeSinceStartup+60;while(rts.Active&&Time.realtimeSinceStartup<deadline){if(flow.Session.State.Health<flow.Session.HeroProfile.Health)rts.HeroAction("recover");if(flow.Session.Rules.Progression!=null)rts.HeroAction("technique");yield return null;}
             Require(flow.Session.State.Demo.Chapter==DemoChapter.Settlement&&hero.gameObject.activeInHierarchy,"actual RTS victory/camp");
+            if(flow.Session.Rules.Civilizations!=null){var args=Environment.GetCommandLineArgs();var index=Array.IndexOf(args,"-demoCulture");if(index>=0){var cultures=FindAnyObjectByType<ExpeditionPanel>();cultures.Open();cultures.Controls["culture-tab"].onClick.Invoke();yield return null;var button=cultures.Controls["culture-"+args[index+1]];Require(button.interactable,"culture available at real camp");button.onClick.Invoke();Require(flow.Session.State.CultureId==args[index+1],"explicit culture through existing UI");cultures.Close();}}
             var panel=flow.GetComponent<DemoSettlementPanel>();Require(panel.SelectBlueprint("townhall")&&d.Construction.Place(new Vector3(12,0,-8)),"paid center placement");
             Require(panel.SelectBlueprint("workshop")&&d.Construction.Place(new Vector3(8,0,-13)),"paid workshop placement");yield return null;
             Require(panel.SelectBuilding(1)&&panel.ToggleProduction(),"activate real workshop");yield return Capture("Camp");

@@ -1,0 +1,1 @@
+class=warrior; requestedFrameCap=30; RPGseed=42; health=0; chapter=FirstRts; active=False; recoverAccepted=1; recoverCooldownRejected=31; strikes=71; rows=279

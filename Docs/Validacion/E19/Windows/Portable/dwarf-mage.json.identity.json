@@ -1,0 +1,256 @@
+{
+    "Version": 1,
+    "Name": "Viajero mage",
+    "ClassId": "mage",
+    "RaceId": "dwarf",
+    "HasDemoProgress": true,
+    "Demo": {
+        "Chapter": 6,
+        "IntroSeen": true,
+        "Produced": 46
+    },
+    "ProgressionRevision": 1,
+    "IdentityRevision": 1,
+    "Experience": 60,
+    "HeroLevel": 4,
+    "Skills": [
+        {
+            "Id": "mage-discipline",
+            "Rank": 1
+        }
+    ],
+    "Accessory": "pilgrim-charm",
+    "Health": 26,
+    "Gold": 4,
+    "Wood": 8,
+    "Food": 2,
+    "WorldSeconds": 271.86407470703127,
+    "ProductionCycle": 27,
+    "ReputationA": 0,
+    "ReputationB": -5,
+    "Weapon": "runic-focus",
+    "Armour": "cloth",
+    "HeroPosition": {
+        "x": 9.0421142578125,
+        "y": 0.02500009536743164,
+        "z": -9.91407299041748
+    },
+    "Facts": [
+        "demo-starter-kit",
+        "rpg-victory",
+        "xp-e18:rpg-victory",
+        "rts-victory",
+        "demo-camp-secured",
+        "xp-e18:demo-camp-secured",
+        "reference-chest",
+        "lost-cargo-accepted",
+        "lost-cargo-recovered",
+        "lost-cargo-completed",
+        "xp-e18:lost-cargo-completed",
+        "umbral-battle-1",
+        "xp-e18:umbral-battle-1",
+        "troop-e18:umbral-battle-1:5df4b2869688492cbd2963dfcdd865bf",
+        "troop-e18:umbral-battle-1:2129e492ba594f0ab565f9712d03075e",
+        "troop-e18:umbral-battle-1:0f63254cde8647baa80a67378ea0eaee",
+        "umbral-battle-2",
+        "xp-e18:umbral-battle-2",
+        "troop-e18:umbral-battle-2:5df4b2869688492cbd2963dfcdd865bf",
+        "troop-e18:umbral-battle-2:2129e492ba594f0ab565f9712d03075e",
+        "troop-e18:umbral-battle-2:0f63254cde8647baa80a67378ea0eaee",
+        "umbral-reward",
+        "xp-e18:umbral-reward",
+        "e18-loot-claimed",
+        "umbral-outpost-conquered",
+        "xp-e18:umbral-outpost-conquered"
+    ],
+    "Items": [
+        {
+            "Id": "ration",
+            "Count": 2
+        },
+        {
+            "Id": "training-sword",
+            "Count": 2
+        },
+        {
+            "Id": "cloth",
+            "Count": 2
+        },
+        {
+            "Id": "pilgrim-charm",
+            "Count": 1
+        },
+        {
+            "Id": "runic-focus",
+            "Count": 1
+        }
+    ],
+    "Buildings": [
+        {
+            "Id": "townhall",
+            "Position": {
+                "x": 12.0,
+                "y": 0.0,
+                "z": -8.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "stonehall"
+        },
+        {
+            "Id": "workshop",
+            "Position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 2,
+            "ProductionPaused": true,
+            "CultureId": "stonehall"
+        },
+        {
+            "Id": "barracks",
+            "Position": {
+                "x": 15.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "stonehall"
+        },
+        {
+            "Id": "farm",
+            "Position": {
+                "x": 11.5,
+                "y": 0.0,
+                "z": -14.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "stonehall"
+        },
+        {
+            "Id": "warehouse",
+            "Position": {
+                "x": 6.0,
+                "y": 0.0,
+                "z": -6.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "frontier"
+        }
+    ],
+    "Army": [
+        {
+            "Id": "28e5e0b88538449faad3151fc3edbba9",
+            "Role": "archer",
+            "RaceId": "elf",
+            "CultureId": "frontier",
+            "Health": 10,
+            "Level": 2,
+            "Experience": 0,
+            "InParty": false
+        },
+        {
+            "Id": "322cf2079cbd436ebc16182bb6782032",
+            "Role": "swordsman",
+            "RaceId": "human",
+            "CultureId": "frontier",
+            "Health": 3,
+            "Level": 1,
+            "Experience": 0,
+            "InParty": false
+        },
+        {
+            "Id": "d868f5a8c1c5488db6eb337e31f08085",
+            "Role": "archer",
+            "RaceId": "elf",
+            "CultureId": "frontier",
+            "Health": 8,
+            "Level": 1,
+            "Experience": 0,
+            "InParty": false
+        },
+        {
+            "Id": "0f3e125837d94d588f501a05ad0643e1",
+            "Role": "frontier-guard",
+            "RaceId": "human",
+            "CultureId": "frontier",
+            "Health": 2,
+            "Level": 1,
+            "Experience": 0,
+            "InParty": false
+        },
+        {
+            "Id": "40e6c152b62c4b468d1d46afa4410569",
+            "Role": "stonehall-striker",
+            "RaceId": "dwarf",
+            "CultureId": "stonehall",
+            "Health": 4,
+            "Level": 1,
+            "Experience": 0,
+            "InParty": false
+        }
+    ],
+    "Companions": [
+        {
+            "Id": "5df4b2869688492cbd2963dfcdd865bf",
+            "Role": "swordsman",
+            "RaceId": "human",
+            "CultureId": "frontier",
+            "Health": 14,
+            "Level": 2,
+            "Experience": 8,
+            "InParty": false
+        },
+        {
+            "Id": "2129e492ba594f0ab565f9712d03075e",
+            "Role": "brawler",
+            "RaceId": "orc",
+            "CultureId": "frontier",
+            "Health": 12,
+            "Level": 2,
+            "Experience": 8,
+            "InParty": true
+        },
+        {
+            "Id": "0f63254cde8647baa80a67378ea0eaee",
+            "Role": "archer",
+            "RaceId": "elf",
+            "CultureId": "frontier",
+            "Health": 12,
+            "Level": 2,
+            "Experience": 8,
+            "InParty": true
+        }
+    ],
+    "ArmySelection": [
+        "28e5e0b88538449faad3151fc3edbba9",
+        "322cf2079cbd436ebc16182bb6782032",
+        "d868f5a8c1c5488db6eb337e31f08085",
+        "0f3e125837d94d588f501a05ad0643e1",
+        "40e6c152b62c4b468d1d46afa4410569"
+    ],
+    "Territories": [
+        {
+            "Id": "camp",
+            "Owner": "player-company",
+            "Secured": true
+        },
+        {
+            "Id": "crossing",
+            "Owner": "player-company",
+            "Secured": true
+        },
+        {
+            "Id": "outpost",
+            "Owner": "player-company",
+            "Secured": true
+        }
+    ],
+    "CultureId": "frontier",
+    "FactionId": "player-company",
+    "KingdomId": ""
+}

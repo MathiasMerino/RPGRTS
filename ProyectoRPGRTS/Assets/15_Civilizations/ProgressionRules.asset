@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f929cc461cabc4abc607bfe8aecbce, type: 3}
+  m_Name: ProgressionRules
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ProgressionRules
+  Items: {fileID: 11400000, guid: 0590396713f5c4a47ac9e3df2eafdea6, type: 2}
+  Units: {fileID: 11400000, guid: 313daa267cf1e914cacfe79e29c8489a, type: 2}
+  DungeonHealthBonus: 4
+  DungeonDamageBonus: 1
+  DungeonLoot:
+  - Id: forge-ore
+    Count: 1
+  - Id: pilgrim-charm
+    Count: 1
+  ExperienceThresholds: 000000000c000000200000003c000000
+  MaximumSkillRank: 2
+  FocusCapacity: 2
+  TechniqueCost: 1
+  TechniqueCooldown: 3
+  Classes:
+  - ClassId: warrior
+    TechniqueId: power-strike
+    TechniqueTitle: Golpe poderoso
+    Primary: 0
+    Secondary: 2
+    HealthPerLevel: 3
+    TechniqueDamage: 3
+    TechniqueAccuracy: 0
+    TechniqueRange: 1.8
+  - ClassId: monk
+    TechniqueId: focused-strike
+    TechniqueTitle: Golpe concentrado
+    Primary: 1
+    Secondary: 4
+    HealthPerLevel: 2
+    TechniqueDamage: 1
+    TechniqueAccuracy: 4
+    TechniqueRange: 2.2
+  - ClassId: mage
+    TechniqueId: arcane-bolt
+    TechniqueTitle: Proyectil arcano
+    Primary: 3
+    Secondary: 4
+    HealthPerLevel: 2
+    TechniqueDamage: 2
+    TechniqueAccuracy: 0
+    TechniqueRange: 8
+  Rewards:
+  - Fact: rpg-victory
+    Amount: 12
+  - Fact: demo-camp-secured
+    Amount: 8
+  - Fact: lost-cargo-completed
+    Amount: 8
+  - Fact: umbral-battle-1
+    Amount: 10
+  - Fact: umbral-battle-2
+    Amount: 10
+  - Fact: umbral-reward
+    Amount: 12
+  - Fact: umbral-outpost-conquered
+    Amount: 8

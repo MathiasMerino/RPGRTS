@@ -17,15 +17,15 @@ namespace Aethernia
         private int displayedSecond;
         public PrototypeState State { get; private set; } = new PrototypeState();
         public PrototypeRules Rules => rules;
-        private PrototypeState profiledState;private ClassProfile cachedProfile;private int profiledLevel,profiledImpact,profiledDiscipline;private string profiledClass,profiledAccessory;
+        private PrototypeState profiledState;private ClassProfile cachedProfile;private int profiledLevel,profiledImpact,profiledDiscipline;private string profiledClass,profiledAccessory,profiledRace;private int profiledIdentity;
         public ClassProfile HeroProfile
         {
             get
             {
                 if(rules.Progression==null||State.ProgressionRevision==0)return rules.Find(State.ClassId);
                 var impact=ProgressionOperations.Rank(State,"impact");var discipline=ProgressionOperations.Rank(State,"discipline");
-                if(profiledState!=State||profiledLevel!=State.HeroLevel||profiledClass!=State.ClassId||profiledImpact!=impact||profiledDiscipline!=discipline||profiledAccessory!=State.Accessory||cachedProfile==null)
-                {profiledState=State;profiledLevel=State.HeroLevel;profiledClass=State.ClassId;profiledImpact=impact;profiledDiscipline=discipline;profiledAccessory=State.Accessory;cachedProfile=ProgressionOperations.ResolveProfile(State,rules);}return cachedProfile;
+                if(profiledIdentity!=State.IdentityRevision||profiledRace!=State.RaceId||profiledState!=State||profiledLevel!=State.HeroLevel||profiledClass!=State.ClassId||profiledImpact!=impact||profiledDiscipline!=discipline||profiledAccessory!=State.Accessory||cachedProfile==null)
+                {profiledIdentity=State.IdentityRevision;profiledRace=State.RaceId;profiledState=State;profiledLevel=State.HeroLevel;profiledClass=State.ClassId;profiledImpact=impact;profiledDiscipline=discipline;profiledAccessory=State.Accessory;cachedProfile=ProgressionOperations.ResolveProfile(State,rules);}return cachedProfile;
             }
         }
         public bool EquipItem(string id)
@@ -86,7 +86,7 @@ namespace Aethernia
             if(AdditionalInteraction!=null)foreach(Func<string,string,bool?> handler in AdditionalInteraction.GetInvocationList())
             {var extra=handler(id,title);if(extra.HasValue)return extra.Value;}
             if (id == "portal-dungeon" || id == "portal-surface") return TravelRequested != null && TravelRequested(id);
-            if (id == "faction-b") { Say("Facción B: relación " + State.ReputationB + ". Las consecuencias se conservan en la partida."); return true; }
+            if (id == "faction-b") { if(rules.Civilizations!=null){var relation=CivilizationOperations.Relation(State,id,rules.Civilizations);Say("Guarnición de Forja · cultura "+rules.Civilizations.Culture("stonehall").Title+" · "+(relation==FactionRelation.Ally?"aliada":relation==FactionRelation.Hostile?"hostil":"neutral")+". Tu raza no determina esta relación.");}else Say("Facción B: relación " + State.ReputationB + ". Las consecuencias se conservan en la partida."); return true; }
             if (id == "market") { var traded = WorldOperations.Trade(State); Say(traded ? "Comercio: 5 oro por 2 madera." : "Oro insuficiente."); return traded; }
             if (State.Facts.Contains(id)) { Say("Ya has activado " + title + "."); return false; }
             if (id == "dungeon-objective") { WorldOperations.CompleteQuest(State); Say("Objetivo completado. Facción A +10; Facción B -5. Consecuencia persistente."); return true; }

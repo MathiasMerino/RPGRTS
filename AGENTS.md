@@ -1,72 +1,36 @@
 # Crónicas de Aethernia
 
 ## Contexto y fuentes
-- Responder en español. Raíz de trabajo y Git: esta carpeta. Proyecto Unity: `ProyectoRPGRTS/`.
-- Motor observado: Unity `6000.5.8f1`, C#, URP `17.5.0`; conservar versiones salvo necesidad demostrada.
-- Unity 6.5 exige APIs `EntityId`; evitar `GetInstanceID` y `objectReferenceInstanceIDValue` obsoletas. Usar la API actual y comprobar compilación con el editor exacto.
-- Fuente de diseño: `ProyectoRPGRTS/Assets/05_Docs/GDD_GAMERPGTS.docx`, versión 0.2. Preservar el original.
-- Prototipo aprobado: `Docs/ESPECIFICACION_PROTOTIPO.md`; clases Guerrero/Mago/Monje y reglas provisionales autorizadas. Hoja de ruta posterior aprobada en `Docs/PLAN_EXPANSION.md`, sin iniciar producción futura automáticamente.
-- Fase 3: A/B/C1, D01, E01/E02/E02-B y HUD C02; dirección en `Documentacion/DIRECCION_ARTISTICA.md`. F2-07 y recursos definitivos siguen pendientes; el registro UI usa hechos existentes. E14 añade compañeros; el minimapa sigue pendiente.
-- Lectura consultable: `Docs/GDD_LECTURA.md`; comprobar su SHA-256 contra el Word si cambia el GDD.
-- Leer primero el resumen de `CHECKLIST.md`; consultar el plan y las secciones del GDD relacionadas con la tarea.
-- El GDD es conceptual: distinguir confirmado, propuesto y pendiente. No convertir ejemplos en requisitos.
+- Responder en español. Raíz de trabajo/Git: esta carpeta; proyecto Unity: `ProyectoRPGRTS/`.
+- Unity6000.5.8f1, C#, URP17.5.0. Conservar versiones. Usar EntityId; no introducir GetInstanceID/objectReferenceInstanceIDValue obsoletos.
+- GDD original0.2: `ProyectoRPGRTS/Assets/05_Docs/GDD_GAMERPGTS.docx`; no sobrescribirlo. Lectura `Docs/GDD_LECTURA.md`, comprobar SHA si cambia el Word.
+- Clases Guerrero/Mago/Monje y reglas provisionales aprobadas en `Docs/ESPECIFICACION_PROTOTIPO.md`; hoja futura `Docs/PLAN_EXPANSION.md` sin producción automática.
+- Leer resumen CHECKLIST.md y secciones relacionadas del plan/GDD. Diferenciar confirmado, propuesto y pendiente; ejemplos del GDD no son requisitos.
+- Candidata actual E19: escena `Assets/01_Scenes/AetherniaCivilizationsDemo.unity`, datos `Assets/15_Civilizations`. Informe `Docs/ENTREGA_E19.md`, guía `Docs/GUIA_E19.md`, razas/culturas y balance en Docs. Rama feature/e19-razas-civilizaciones, PR#10draft sobre E18/PR9, sin E20 ni merges automáticos.
+- E19 candidata:21/21dirigidas y6/6procesosWindows(4raw+2portable), general196/197(solo reservaRTSGuerrero falla;21E19PASS); 52PNG/2MP4, ZIPCRC/SHA/19previos yportable verificados. Incidencia RTS histórica reproducida y evaluación humana abiertas. E18 general174/176 con visual corregida después; no sumar pruebas dirigidas como regresión global.
+- Mapa actual `Docs/ORGANIZACION_PROYECTO.md`, índice `Docs/README.md`; detalle histórico de fases y límites en `Docs/Historial/CONTEXTO_ETAPAS.md`. No borrar recursos por antigüedad o por faltar en una única escena.
 
 ## Alcance y método
-- Primera fase: diagnóstico y planificación. No programar mecánicas hasta que el usuario apruebe el plan.
-- Tras la aprobación, trabajar una tarea acotada del checklist, explicar el alcance, implementar y validar.
-- No desarrollar historia, reglas RPG completas ni varios sistemas grandes simultáneamente sin autorización.
-- Analizar antes de editar escenas, scripts o documentos. Respetar decisiones y trabajo existentes.
-- Actualizar el checklist y añadir entradas al registro después de cada actividad; conservar el historial.
-- Cada tarea registra ID, descripción, sistema, prioridad, dependencias, estado, aceptación, archivos, pruebas y resultado.
-- Estados: `[ ] Pendiente`, `[ ] En desarrollo`, `[ ] Bloqueado`, `[x] Completado y verificado`.
-- Código escrito no implica tarea completada: exigir compilación en Unity y comprobación de aceptación. Si falta, registrar validación pendiente.
-- Terminar con tareas terminadas, pendientes, problemas y siguiente actividad; no repetir todo el plan en cada respuesta.
-
-## Implementación futura
-- Aplicar SOLID con criterio: responsabilidades pequeñas y separación entre datos, lógica y presentación.
-- ScriptableObjects para configuración compartida; separar estado mutable de partida y guardado.
-- Usar interfaces y eventos donde aporten utilidad; liberar suscripciones y referencias.
-- Evitar gestores monolíticos, búsquedas repetidas, duplicación y capas preventivas sin necesidad.
-- Escala inicial: 1 unidad = 1 metro. Medidas provisionales y pruebas de paso/navegación en el plan.
-- UI actual: uGUI con prefabs/MedievalTheme compartidos y secciones Resumen/Personaje/Inventario/Partida; mantener separación por modo y justificar una migración.
-- Perfilado antes de optimización compleja. Pooling para creaciones frecuentes que lo justifiquen.
-- Conservar `.meta` y GUID; mover assets desde Unity o manteniendo su `.meta`.
-- No editar cachés ni proyectos C# generados. No copiar recursos o interfaces protegidos.
+- Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.
+- Trabajar tareas acotadas, preservar trabajo existente y registrar ID/estado/aceptación/archivos/pruebas en CHECKLIST y REGISTRO después de cada actividad; conservar historial.
+- Estados: Pendiente, En desarrollo, Bloqueado, Completado y verificado. Código que compila no demuestra aceptación ni revisión humana.
+- No sobrescribir cambios ajenos. Mantener separados datos compartidos, estado mutable, lógica y presentación; SOLID con criterio, interfaces/eventos útiles y suscripciones liberadas.
+- Escala1unidad=1metro; uGUI/estilos/prefabs compartidos, URP y modelos provisionales existentes. Sin nuevas dependencias o optimización compleja sin necesidad/mediciones.
+- Conservar `.meta`/GUID. Mover desde Unity o junto con `.meta`; no editar cachés/proyectos C# generados. No copiar recursos/interfaces protegidos.
+- Meshy y `Assets/LocalOnly` son experimentales privados: conservar/ignorar, no integrar ni publicar originales/derivados sin autorización.
 
 ## Validación y herramientas
-- Abrir `ProyectoRPGRTS/` con el editor exacto. Revisar Console, referencias, Play Mode y pruebas pertinentes.
-- Preferencia del usuario: validar en segundo plano mediante `Tools/Invoke-UnityValidation.ps1`; usar la ventana solo si una comprobación visual lo requiere. No iniciar dos instancias sobre el mismo proyecto.
-- Escena jugable: `Assets/01_Scenes/PlayablePrototype.unity`. Validación completa: modo `Vertical`; build: modo `Build`; ejecutar la build sin ventana con `Tools/Invoke-PrototypeSmoke.ps1`. No repetir los generadores sobre assets existentes.
-- E03–E06: demo `Assets/01_Scenes/AetherniaVillageDemo.unity`; build `BuildVillage`. Catálogo existente usa prefabs estáticos E03 y retratos de fuentes autorizadas; anteriores preservados. Misión/validación en Docs/E03_E06_PRODUCCION.md y Docs/E05_CARGAMENTO_PERDIDO.md. No repetir ProductionCharacters/ProductionPresentation/VillageDemo. F2-07 humano 7/8 informado, cierre X/ESC pendiente de confirmación.
-- E18: PR#9draft sobre E17/PR8, rama feature/e18-progresion-balance, escena AetherniaProgressionDemo y datos14_Progression. BuildProgression → Builds/ProgressionE18Windows; Invoke-ProgressionSmoke.ps1 usa slots aislados y recorridos nuevos/reinicio. No repetir ProgressionScene/Create. Informe Docs/ENTREGA_E18.md, guía Docs/GUIA_E18.md y reglas provisionales Docs/E18_PROGRESION.md. General174/176 y4/4dirigidas posteriores (visual corregido); 8procesosWindows/49PNG/2MP4/ZIPportable verificados; RTS/evaluación humana pendientes. No E19, Meshy ni merges automáticos.
-- E17: encargo posterior autorizado, rama feature/e17-art-pipeline-alpha-polish desde E16; A–E verificados; F técnico(PR#8draft sobre E16)142/143general+5/5compatibilidad,14procesosWindows,18medicionesoffscreen,82PNG/2MP4 yZIP verificados. Informe Docs/E17_ALFA.md, recuperación Docs/PROGRESO_E17.md. Escena AetherniaAlphaCandidate; BuildAlpha → Builds/AlphaCandidateE17Windows; guía Docs/GUIA_ALFA_E17.md. no repetir AlphaPipeline/Create ni AlphaScene/Create. Meshy y Assets/LocalOnly experimentales privados excluidos de Git; no publicar derivados ni activar en héroe sin aprobación. E17-A-RTS sigue pendiente; el encargo posterior autoriza E18.
-- E16: PR#7draft sobre E14/E15, encargo visual autorizado, rama feature/e16-pulido-visual-ui desde E14/E15; escena AetherniaVisualPolish, modo BuildVisualPolish → Builds/VisualPolishWindows. Informe Docs/E16_PULIDO_VISUAL.md y guía Docs/GUIA_E16.md; UI/perfil/prefabs en Assets/12_VisualPolish. No repetir VisualPolish/Create sobre assets existentes. Regresión125/125 y14procesos Windows r3 PASS; pase dirigido9/10 con derrotaMago, repeticiónRTS1/1: registrar variación, no garantizar determinismo. Arte/evaluación humana pendientes; el encargo posterior autoriza E17. Preservar modelos/PNG/Meshy del usuario.
-- E14–E15: PR#6 draft sobre E10–E13, núcleo técnico validado en rama feature/e14-e15-expediciones-conquista; entrega Docs/ENTREGA_E14_E15.md, guía y recuperación Docs/PROGRESO_EXPEDICIONES.md.121/121+11/11+1/1UI y20procesos Windows; humanos/arte/balance pendientes. Escena AetherniaExpeditions, BuildExpeditions y Tools/Invoke-ExpeditionSmoke.ps1. No repetir Expeditions/Create sobre recursos existentes. Esta limitación pertenecía a E14/E15; el encargo posterior autoriza E16. Meshy ajeno permanece sin integrar.
-- E10–E13: escena AetherniaFirstDemo, BuildFirstDemo → Builds/FirstDemoWindows; entrega Docs/ENTREGA_E10_E13.md, evidencia/recuperación Docs/PROGRESO_DEMO.md.110/110 global+6/6 tras recorte visual; evaluación humana pendiente; E14/E15 tienen entrega posterior. No repetir FirstDemo/TMP/autorías existentes. Probes Windows Tools/Invoke-DemoSmoke.ps1 usan slots/preferencias aislados.
-- E09: misma demo, turnos escalonados por RequestEndTurn, IA melee y presentación compartida en Assets/09_Feedback/CombatE09. Informe/guía Docs/E09_COMBATE_TACTICO.md; mantener daño autoritativo separado de animación/VFX/audio, balance/v1/Generic. Validar TacticalCombat* y player con -RequireTacticalE09. No repetir CombatE09 ni Generate-E09Audio sobre recursos existentes; audio/arte piloto y evaluación humana pendientes. PR#4 borrador sobre E08, no fusionar automáticamente.
-- E08: demo usa catálogo separado Assets/07_Characters/AnimatedE08 y prefabs E08 con rigs Generic/skin/clips originales; E02 sigue estricto Humanoid. Fuente C# en Editor/Characters/E08. Informe Docs/E08_PERSONAJES_ANIMADOS.md; no repetir AnimatedCharacters ni generar encima de assets. Animación cosmética sin root motion/daño. Proxies/escena original conservados; aprobación artística/humana pendiente. Validar AnimatedCharacterTests y player con -RequireAnimatedE08.
-- E07: misma AetherniaVillageDemo con raíz E07 Medieval Village; biblioteca en 06_Environment/VillageE07 y 02_Prefabs/Environment/VillageE07. Informe Docs/E07_ALDEA_MEDIEVAL.md. No repetir VillageE07Library/Nature/Transform/Refine; son autoría, no arranque. Mantener el área RTS y ruta de misión libres. PR apilado desde E03–E06 mientras #1 esté pendiente; no fusionar automáticamente.
-- D01: grupo visual `D01 Medieval Quarter`, once prefabs en `Assets/02_Prefabs/Environment/Medieval/`; física original conservada. Evidencia/límites en `Docs/D01_ESCENARIO_MEDIEVAL.md`. E01 añade recorte reversible de cubierta.
-- E01: VisualRoot conserva controlador/collider; catálogo `Assets/07_Characters/Provisional/ClassVisuals.asset`. Prefabs con CharacterVisualModel, sin agentes/colliders/Animator. Desactivar presentador recupera cápsula; RoofCutaway recupera techo al desactivarse.
-- E02: flujo nativo en Aethernia/Personajes/Importar Humanoid; plantilla vacía y perfil/grafo en Assets/07_Characters/Humanoid. Guía/manifiesto Docs/E02_IMPORTACION_HUMANOID.md. No hay modelo/Avatar/clips reales aprobados: E02-M/E02-A pendientes; no repetir HumanoidPipeline.
-- E02-B: Monje usa proxy estático de 1,78 m y tarjeta en Personaje; recursos propios en Assets/07_Characters/MonkProvisional, alternativa E01 preservada. Informe Docs/E02B_MONJE_PROVISIONAL.md. No repetir MonkIdentity; no es FBX/rig/animaciones finales ni aprobación humana.
-- C02: HUD compacto, ventanas por ×/ESC, Menú para actividades/guardado y Ayuda opcional. MedievalHudView/InventoryPanelView conservan comandos del HUD; atlas en Assets/08_UI/Medieval. Informe Docs/C02_INTERFAZ_MEDIEVAL.md. No repetir MedievalHud; afinación no es paso de arranque.
-- Antes de cada tarea: revisar `git status`, dependencias y criterios. Revisar el diff y registrar cambios importantes.
-- No sobrescribir cambios ajenos, publicar remotos sin autorización de la sesión ni modificar configuración global como parte de tareas locales.
-- Visual Studio Community 2026 y Tools for Unity ya instalados; paquete IDE Unity `2.0.26` presente.
-- Instalar herramientas solo para necesidades concretas y compatibles; no por supuesto ahorro de tokens.
+- Antes de cada tarea: git status, dependencias/aceptación y análisis; al finalizar revisar diff y registrar cambios importantes.
+- Preferencia: segundo plano con `Tools/Invoke-UnityValidation.ps1`, editor exacto y una sola instancia por proyecto. Revisar Console/referencias/Play Mode cuando corresponda.
+- E19: `-Mode BuildCivilizations` → `Builds/CivilizationsE19Windows`; `Tools/Invoke-ProgressionSmoke.ps1 -Phase E19 -Classes warrior,mage -Races human,dwarf -WithGraphics` usa slots/preferencias aislados. E18 conserva BuildProgression y valor predeterminado del runner. Regresión `-Mode Vertical`, filtro dirigido opcional.
+- PlayablePrototype y escenas E03–E17 se conservan para regresión. Guías antiguas en Docs/Historial y guías de compilaciones reutilizables en Docs.
+- No repetir generadores sobre assets existentes: Civilizations/Create, ProgressionScene/Create, AlphaPipeline/Create, AlphaScene/Create, FirstDemo/Create, Village/Animated/Humanoid/MedievalHud/autorías de arte. Son autoría, no arranque.
+- Visual Studio2026/Tools for Unity y paquete IDE Unity2.0.26 ya instalados. Instalar herramientas solo por necesidad concreta compatible.
 
-## GitHub, ramas y Pull Requests
-- Remoto `origin`: `https://github.com/MathiasMerino/RPGRTS.git`. Repositorio público; conservar el historial y revisar credenciales/archivos grandes antes de publicar.
-- `main`: versión estable, predeterminada en GitHub. Incorporar versiones futuras solo mediante PR `dev` → `main` con aprobación del usuario y evidencia de validación; compilar no equivale a aprobación humana.
-- `dev`: rama principal de desarrollo y rama local para continuar. Crear desde `dev` únicamente las ramas temporales necesarias: `feature/<descripcion>`, `fix/<descripcion>` o `test/<descripcion>`. Esta convención sustituye el prefijo histórico `codex/` para trabajo nuevo.
-- PR de una rama temporal → `dev`: explicar problema/resultado, alcance, pruebas ejecutadas y pendientes. Conservar commits mediante merge; no reescribir historia publicada ni usar push forzado. Tras publicar una versión en `main`, incorporar su avance en `dev` mediante fast-forward o merge normal cuando corresponda.
-- No publicar ramas históricas/checkpoints en bloque, borrar referencias previas, usar `push --force`, reinicializar Git ni modificar permisos/protecciones sin encargo explícito. Autenticarse con Git Credential Manager; nunca guardar tokens en archivos, URLs o commits. Si falta autenticación, pedir intervención del usuario.
-- La conexión inicial solicitada el 2026-10-31 autoriza publicar el estado `cacad54` y la documentación de conexión como base común de `main`/`dev`, conservando los 14 commits anteriores. No aprueba arte final ni cierra F2-07 o los demás pendientes del juego.
-
-## Contexto y búsquedas
-- Mantener este archivo breve; guardar detalles y evidencia en los documentos de seguimiento.
-- Usar `rg` por sistema. `.rgignore` excluye cachés, registros y generados; abrirlos expresamente para diagnóstico.
-- No recorrer `Library/`, `Temp/`, `Logs/`, `obj/`, `.vs/` ni paquetes completos en tareas ordinarias.
-- Reutilizar la lectura del GDD mientras coincida su hash y consultar secciones concretas.
-- Cargar solo skills e integraciones necesarias. No delegar ni crear subagentes salvo petición expresa del usuario.
+## Git y contexto
+- Origin `https://github.com/MathiasMerino/RPGRTS.git`; público. Revisar credenciales/archivos grandes antes de publicar.
+- main estable/predeterminada; dev integración; ramas temporales feature/*,fix/*,test/* desde dev o base apilada autorizada cuando la entrega anterior siga sin fusionar. Conservar commits/historial y documentar dependencia de PRs.
+- No publicar remotos en tareas locales sin autorización de la sesión; no merge, force push, reinicializar, borrar referencias, cambiar configuración global/protecciones o publicar recursos privados automáticamente.
+- PR→dev normalmente; dev→main solo con aprobación y evidencia. Autenticación GCM sin tokens en archivos/URLs/commits; si falta, pedir intervención.
+- Usar rg por sistema y .rgignore; no recorrer Library/Temp/Logs/obj/.vs/paquetes completos salvo diagnóstico dirigido. El historial/medios/evidencias se abren por ruta o con rg --no-ignore cuando hagan falta. Reutilizar lectura del GDD; cargar solo skills necesarias.
+- No delegar ni crear subagentes salvo petición expresa del usuario.

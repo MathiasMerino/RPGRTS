@@ -50,7 +50,7 @@ Unity generó seis prefabs con raíces a escala 1: cubo de 1 m, humano de 1,80 m
 
 El conjunto final aprobó 12/12 pruebas con salida 0 y ninguna omisión: regresión del entorno original, tamaños importados, colisiones de paso, referencias, materiales, suelo y Play Mode con render GPU. Se corrigió el SetUp de la prueba gráfica para soportar su reinvocación durante Play Mode antes de repetir el conjunto completo. La captura 1280×720 se revisó visualmente y se conservó en `Docs/Images/TechnicalSandbox.png`.
 
-Documentación: `Docs/ESCALA_REFERENCIA.md` y `Docs/VALIDACION_BASE_TECNICA.md`, además del plan y checklist actualizados. Se registró en AGENTS.md la preferencia de validación en segundo plano y el requisito EntityId de Unity 6.5. La comparación Git no detectó cambios de contenido en SampleScene, el GDD, los paquetes ni los ajustes preexistentes.
+Documentación: `Docs/ESCALA_REFERENCIA.md` y `Docs/Historial/Validaciones/VALIDACION_BASE_TECNICA.md`, además del plan y checklist actualizados. Se registró en AGENTS.md la preferencia de validación en segundo plano y el requisito EntityId de Unity 6.5. La comparación Git no detectó cambios de contenido en SampleScene, el GDD, los paquetes ni los ajustes preexistentes.
 
 Resultado acumulado: 8/26 tareas verificadas y 18 pendientes. La escena es un entorno técnico; no incorpora controles de cámara, selección/movimiento, navegación horneada, interacción, UI ni sistemas RPG/RTS completos. La build de integración se realizará en BAS-09. Siguiente tarea autorizada: BAS-04, cámara isométrica con desplazamiento y zoom.
 
@@ -82,7 +82,7 @@ Documentos entregados: COMO_JUGAR.md, ESPECIFICACION_PROTOTIPO.md, ARQUITECTURA.
 
 Tarea F2-01. El usuario autorizó auditoría de los doce sistemas, integración y mejoras pequeñas verificables, con propuestas previas para cambios grandes. Se conservan las 26 tareas anteriores. Se releyó el GDD íntegro mediante copia cuyo hash coincide con el Word, plan, registro, reglas/hoja de ruta y todos los scripts; Git limpio en c2da95a. Revisados XML 23/23, informe Build y comprobante smoke previos. Nueva repetición de base en curso.
 
-Se abre Docs/AUDITORIA_FASE_2.md y siete tareas secuenciales. Hallazgos a reproducir: participantes RTS residuales y órdenes del héroe al cambiar modo; movimiento enemigo RPG sin ruta; ataques sin bloqueo geométrico; fallos de carga sin explicación y validación de cantidades/ciclos. No se implementan sistemas nuevos ni se considera realizada una sesión humana por ejecutar pruebas automáticas.
+Se abre Docs/Historial/Validaciones/AUDITORIA_FASE_2.md y siete tareas secuenciales. Hallazgos a reproducir: participantes RTS residuales y órdenes del héroe al cambiar modo; movimiento enemigo RPG sin ruta; ataques sin bloqueo geométrico; fallos de carga sin explicación y validación de cantidades/ciclos. No se implementan sistemas nuevos ni se considera realizada una sesión humana por ejecutar pruebas automáticas.
 
 La repetición F2-01 produjo XML nuevo con 23/23 Passed (8,17 s de casos). El log confirma fin de pruebas, pero el proceso Unity devolvió -1073741819 durante el cierre nativo. Se conserva Phase2-baseline.log/XML; no se registra como ejecución integral con salida 0. Se añaden nueve regresiones de fase 2 antes de corregir, para reproducir modos, participantes residuales, geometría táctica, carga y validación extrema. Se prepara guion manual explícitamente pendiente.
 
@@ -231,7 +231,7 @@ ClassReferenceCard reutiliza panel Personaje/MedievalTheme y muestra recorte fro
 
 Unity exacto 6000.5.8f1: generación una sola vez salida 0; pruebas dirigidas 3/3 y regresión **49/49**, cero fallos/omisiones, salida 0 (casos 6,89 s, recargas excluidas). Verificados Monje/estadísticas, raycast y selección, ruta real/cofre/interacción, inventario/equipo, guardado aislado/carga, victoria RPG, URP/geometría y UI 720p/1080p. Siete capturas reales GPU revisadas, incluida comparación E01/E02-B con misma cámara/luz/posición; acercamiento 2,35 m solo durante captura, sin cambiar cámara guardada. Build 178.268.191 bytes, 53,44 s, salida 0; recorridos nativos sin gráficos 7,29 s y GPU RTX 3050 Laptop 7,87 s, ambos PASS/salida 0, sin excepciones/agente inválido. Sin errores/avisos C# en logs finales. Evidencia E02B-* conservada en Logs e imágenes en Docs/Images.
 
-ZIP Aethernia-Fase3-E02B-Windows.zip: 73.710.653 bytes, 305 entradas, CRC correcto, SHA-256 fd91da79bf62154eb5569fbb90bf3863d667fd002bbc3dcdad0ea400b6ce956d. Exe/DLL runtime/level0 iguales por hash a build probada; seis archivos históricos conservados. Checklist F3-E02-B completado como identidad **provisional**; guías/escala/arquitectura/plan/inventario y COMO_JUGAR actualizados. Informe único Docs/E02B_MONJE_PROVISIONAL.md con límites y sustitución futura.
+ZIP Aethernia-Fase3-E02B-Windows.zip: 73.710.653 bytes, 305 entradas, CRC correcto, SHA-256 fd91da79bf62154eb5569fbb90bf3863d667fd002bbc3dcdad0ea400b6ce956d. Exe/DLL runtime/level0 iguales por hash a build probada; seis archivos históricos conservados. Checklist F3-E02-B completado como identidad **provisional**; guías/escala/arquitectura/plan/inventario y COMO_JUGAR actualizados. Informe único Docs/Historial/Etapas/E02B_MONJE_PROVISIONAL.md con límites y sustitución futura.
 
 No se afirma escultura/rig/animaciones o arte final. Manos, articulaciones y paños simplificados; armadura genérica con posibles intersecciones; equipo en postura estática. Pruebas automáticas/revisión de capturas no son sesión humana. F3-E02-M, F3-E02-A (clips), F3-E02-ARTE-AP, F2-07 y C02 siguen pendientes; no se inicia otra fase. GDD, reglas/guardado v1, D01/E01, recursos E02, paquetes y ProjectSettings preservados; 259 metadatos/GUID sin faltantes/huérfanos/duplicados e historial previo de checklist intacto. Cambios locales en rama codex/e02-b-monk-proxy; sin publicación remota o configuración global.
 
@@ -256,7 +256,7 @@ Build Windows Succeeded/salida 0, 183.099.535 bytes y 39,44 s; recorridos indepe
 
 Atlas compartido SHA-256 7ba8dda76e69a8c5abebc881c770e412103251f519e9564862d734111e404693; recurso nativo editor ~11,21 MB, 95 Graphic totales incluyendo inactivos, un Canvas/cámara de juego. Franjas permanentes 23,29 % de pantalla; métricas no equivalen a FPS/GC/draw calls ni a rendimiento mejorado demostrado. Contraste base calculado 12,15:1 texto/madera y 9,55:1 pergamino/tinta, sin certificar todos los píxeles. 278 metadatos/GUID sin faltantes/huérfanos/duplicados; GDD/hash, modelos/materiales, física/NavMesh, mundo/guardado v1, prefabs UI históricos, paquetes y ProjectSettings intactos; historial previo del checklist conservado.
 
-C02.1..6 cerradas dentro del nuevo alcance autorizado. Informe único Docs/C02_INTERFAZ_MEDIEVAL.md, checklist/guías/plan/arquitectura/inventario/AGENTS actualizados. F3-C02 histórico no certifica minimapa ausente; F2-07, aprobación artística, personajes/rig/clips definitivos siguen pendientes. Siguiente recomendación: revisión humana de C02, sin iniciar otra fase. Commit local en codex/c02-medieval-ui, sin remotos, instalaciones o configuración global.
+C02.1..6 cerradas dentro del nuevo alcance autorizado. Informe único Docs/Historial/Etapas/C02_INTERFAZ_MEDIEVAL.md, checklist/guías/plan/arquitectura/inventario/AGENTS actualizados. F3-C02 histórico no certifica minimapa ausente; F2-07, aprobación artística, personajes/rig/clips definitivos siguen pendientes. Siguiente recomendación: revisión humana de C02, sin iniciar otra fase. Commit local en codex/c02-medieval-ui, sin remotos, instalaciones o configuración global.
 
 
 ## 2026-10-31 — Conexión de GitHub y ramas main/dev
@@ -300,7 +300,7 @@ F3-ARTE-MAG-01 completa como entrega artística propuesta, pendiente de revisió
 
 ## 2026-10-31 — Inicio producción E03–E06
 
-Brief adjunto autoriza provisionalmente las tres hojas originales y misión narrativa de ensayo. Git limpio, dev 742c04f sincronizado preservando tres commits artísticos, rama solicitada feature/e03-e06-personajes-vertical-slice. No hay rama F2-07 detectada; usuario informa 7/8 humanas, cierre X/ESC pendiente. GDD/hash intactos; inspección dirigida sin modelos humanoides ni herramientas de modelado expuestas. Plan/decisiones en Docs/E03_E06_PRODUCCION.md. Preservar recursos/escenas originales, código modular existente, Facts v1 y gestor C02.
+Brief adjunto autoriza provisionalmente las tres hojas originales y misión narrativa de ensayo. Git limpio, dev 742c04f sincronizado preservando tres commits artísticos, rama solicitada feature/e03-e06-personajes-vertical-slice. No hay rama F2-07 detectada; usuario informa 7/8 humanas, cierre X/ESC pendiente. GDD/hash intactos; inspección dirigida sin modelos humanoides ni herramientas de modelado expuestas. Plan/decisiones en Docs/Historial/Etapas/E03_E06_PRODUCCION.md. Preservar recursos/escenas originales, código modular existente, Facts v1 y gestor C02.
 
 
 ## 2026-10-31 — E03: tres representaciones provisionales
@@ -488,7 +488,7 @@ PR #1/#2 abiertos/borrador/no fusionados; rama feature/e08-personajes-animados d
 
 ## 2026-11-01 — Entrega técnica E10–E13 preparada
 
-110/110 global y6/6 posteriores al recorte final;12procesos Windows finales con/sinGPU y2desdeZIP extraído PASS. Captura confirma avatar visible con retiro contextual reversible del conjunto visual, física intacta.18PNG originales, MP4nativo33.917s con DSP real; sin simulación de poses ni benchmarkFPS. ZIP306archivos/87411924bytes/CRC y SHA individual PASS;12ZIP históricos conservados. GDD/hash, escenas históricas, paquetes y configuración de proyecto preservados tras finalizar Unity. Informe Docs/ENTREGA_E10_E13.md, guía humana/COMO_JUGAR y fuentes de evidencia actualizados. Publicación/PR en cierre; E14/E15 y revisiones humanas no iniciadas/completadas automáticamente.
+110/110 global y6/6 posteriores al recorte final;12procesos Windows finales con/sinGPU y2desdeZIP extraído PASS. Captura confirma avatar visible con retiro contextual reversible del conjunto visual, física intacta.18PNG originales, MP4nativo33.917s con DSP real; sin simulación de poses ni benchmarkFPS. ZIP306archivos/87411924bytes/CRC y SHA individual PASS;12ZIP históricos conservados. GDD/hash, escenas históricas, paquetes y configuración de proyecto preservados tras finalizar Unity. Informe Docs/Historial/Etapas/ENTREGA_E10_E13.md, guía humana/COMO_JUGAR y fuentes de evidencia actualizados. Publicación/PR en cierre; E14/E15 y revisiones humanas no iniciadas/completadas automáticamente.
 
 
 ## 2026-11-01 — Publicación E10–E13
@@ -498,7 +498,7 @@ Rama feature/e10-e13-demo-jugable publicada mediante push normal; PR#5 abierto d
 
 ## 2026-11-01 — Inicio E14–E15 autorizado
 
-Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nueva desdec33e34d, sin merges/main/dev. Plan/reglas provisionales y tareas dependientes en Docs/E14_E15_EXPEDICIONES.md yCHECKLIST. Eliminaciones locales ajenas de3texturas yFBXMeshy preservados; consulta pendiente, sin sobrescrituras. Se inicia estado/reclutamiento antes de sistemas dependientes.
+Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nueva desdec33e34d, sin merges/main/dev. Plan/reglas provisionales y tareas dependientes en Docs/Historial/Etapas/E14_E15_EXPEDICIONES.md yCHECKLIST. Eliminaciones locales ajenas de3texturas yFBXMeshy preservados; consulta pendiente, sin sobrescrituras. Se inicia estado/reclutamiento antes de sistemas dependientes.
 
 ### E14 — grupo y combate verificados (2026-11-02 UTC)
 - Restauradas por autorización expresa las tres texturas E07; FBX Meshy ajeno intacto. Estado aditivo de compañeros, roles existentes, reserva e identidades persistentes.
@@ -526,7 +526,7 @@ Auditoría acotada, GDD/hash yPR1..5 verificados (todosabiertos/draft). Rama nue
 
 ### E16 — auditoría mínima y autorización
 - Encargo visual leído; se revisaron dirección artística, resumen/checklist, UI/TMP/catálogos y autoría de expediciones. PR1..6 abiertos/borrador; snapshot y hash Meshy conservados. Rama nueva desde4efcd00, sin merges.
-- Plan acotado en Docs/E16_PULIDO_VISUAL.md: reutilizar tres hojas, pulir presentación modular en escena nueva y validar; no alterar reglas/guardar/rigs ni iniciar otra fase. No plugins necesarios.
+- Plan acotado en Docs/Historial/Etapas/E16_PULIDO_VISUAL.md: reutilizar tres hojas, pulir presentación modular en escena nueva y validar; no alterar reglas/guardar/rigs ni iniciar otra fase. No plugins necesarios.
 
 ### E16 — menú, clases y presentación integrada
 - Perfil opcional, tres tarjetas/retratos de hojas existentes, atlas320×64 y9prefabs compartidos; UI histórica conserva bindings. HDR/URP regional, FXAA,3variantes de material y decoración sin colisiones nuevas.
@@ -647,3 +647,40 @@ Build finalae0051b,ZIP87.842.896bytes SHA bc6828e2fe78c0f3f1115aa020ab7a5cc4913c
 ## 2026-11-02 — E18 publicada para revisión
 
 Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/MathiasMerino/RPGRTS/pull/9 sobre E17/PR8, sin merge/main/dev/configglobal. ChecklistRSTUV cerrado como entrega de candidata con incidenciaRTSabierta; humano pendiente. Informe,guía,49PNG/2MP4 yXML/manifiestos publicados; ZIPlocal disponible y18anteriores conservados. Se registra explícitamente general174/176 y4/4finales, no regresiónverde ni aprobación humana. NoE19.
+
+## 2026-11-02 — ORG-01 organización conservadora
+
+27informes/seguimientos/validaciones históricas agrupados en Docs/Historial, con referencias actualizadas e índices. AGENTSresumido y contexto completo archivado; filtros de búsqueda para evitar cargar medios/evidencia/historial sin necesidad. Dos archivos sueltos Unity movidos víaAssetDatabase con GUID/datos/meta idénticos: Readme→05_Docs/PlantillaUnity, InputSystem_Actions→Settings/Input. Inventario781assets públicos distingue dependencia actual y utilidad provisional/histórica, sin eliminación por antigüedad. Siete carpetas intermedias/verificaciones de Builds archivadas con huellas idénticas(2185archivos),19ZIP conservados y0archivos eliminados. ComprobaciónUnity578GUIDiguales/0scripts perdidos;3/3dirigidas de escena,física,movimiento,RPG,guardado/continuar y técnicasRPG/RTS por tresclasesPASS.9escenas/GDD/privados3 ycalidadlocalpreexistente permanecenidénticos. No se modifica gameplay ni publica remoto; incidenciaRTS/humanoE18 siguen pendientes.
+
+
+## 2026-11-02 — E19: auditoría y punto de recuperación
+- Rama feature/e19-razas-civilizaciones desde5507425; PR9 sigue abierto. Snapshot de ramas/PR y hashes en Docs/Validacion/E19. Cambio ajeno QualitySettings conservado aparte.
+- GDD0.2 consultado, sin Biblia Artística aprobada localizada; alcance/rasgos/pilotos provisionales en Docs/PLAN_E19.md. Iniciadas pruebas RTS y regresión visual E18 sin cambiar sus aserciones.
+
+- E19-A: repetición dirigida1/2. Visual histórica PASS; RTS pierde con Monje después de victoria Guerrero. Resultado y trazas conservados; incidencia táctica abierta, sin aserciones alteradas ni corrupción demostrada.
+
+
+## 2026-11-02 — E19 BCD y pilotos culturales
+- Catálogo SO opt-in: cuatro razas/todas las clases, rasgos pequeños calculados en perfil derivado; IdentityRevision y guardado aditivo, sin curación/reaplicación. UI Alpha ampliada con cuatro opciones y vista proporcional provisional.
+- Dos pilotos sobre economía/RTS existentes: guardia y choque, variantes de almacén/taller, costes/requisitos/relaciones/pacto/control territorial. Grupo3 y ejército6 separados; nuevas identidades de reclutas, legados conservados. Cuatro culturas/doce planes militares, solo dos unidades activadas. Dos prefabs derivados E07, sin materiales nuevos ni recursos privados.
+- Escena nueva AetherniaCivilizationsDemo, autoría única mediante CivilizationSceneBuilder: Unity exacto compila. Pruebas iniciales17/18 (glifo de selección no disponible), corregido; repetición18/18, doce combinaciones creación/Continuar y doce capturas reales. Combate real de pilotos y regresión completa pendientes.
+
+- E19 pilotos: combate Unity real de ambas unidades y UI720/1080 PASS;21/21 dirigidas tras añadir simulación3600duelos y políticas/producción configurables. Error inicial CS1061 del test de simulación corregido a UseTechnique; intento no ejecutado registrado. No se modifican los tests históricos RTS.
+- QA nativo reutiliza runners E18 y ventana cultural real para elección en campamento, sin fondos/HP inyectados. Compilación E19 en proceso; Unity genera temporalmente precarga InputSystem y metadatos PerformanceTestRun, que retira al terminar. Se excluyen esos metadatos regenerables del código fuente; ProjectSettings vuelve a su estado previo.
+
+- Recorrido Windows inicial falló al reclutar desde Construcción: la nueva guardia del controlador aceptaba solo Exploración. Corregida para ambos modos en campamento, conservando rechazo fuera de alcance/combate/pausa; añadida comprobación real y21/21 dirigidas posteriores PASS. Fallo original conservado en NATIVO_INICIAL_RECLUTAMIENTO.txt.
+- La guarnición E19 de Forja usa formación configurable con Choque de forja; patrulla tutorial y escenas anteriores mantienen su pool original. Nueva build Windows exacta compilada para el recorrido final.
+
+## 2026-11-03 — E19, continuidad de QA nativo
+- Recorrido GPU a10829a superó prólogo/RPG/patrulla/campamento/misión y se detuvo antes de reclutar: el runner heredado suponía pestaña Grupo, pero recordaba Culturas. Se añade navegación explícita a Grupo, conservando aserciones de fondos, tres compañeros, combate y guardado. No se modifica el comportamiento de las ventanas para acomodar la prueba. Fallo original NATIVO_TAB_CULTURAS.txt conservado; grabación fallida parcial no se presenta como recorrido completado.
+
+- GPU805eff9 completó campaña, mazmorra, forja, conquista y patrulla cultural con victoria. Guardia dio4golpes y Forja1; Forja murió legítimamente. El runner exigía supervivencia de ambos perfiles para guardado. Se amplía con regreso al campamento, producción/venta existentes y reemplazo pagado de bajas (ID nuevo, muertos siguen ausentes), antes de exigir ambos perfiles vivos en guardado. No cambia vida/daño/IA ni elimina aserciones históricas. Fallo original NATIVO_BAJA_FORJA.txt conservado.
+
+- Candidata1e67333:4/4procesos WindowsGPU desde Nueva hasta conquista/culturas y nuevo proceso/Continuar en Humano–Guerrero y Enano–Mago. Guardia/Forja atacan en ambos; ambos sobreviven en estos recorridos finales, rama de reposición no ejecutada aquí. Sin recursos/HP inyectados. Evidencia CICLO_NATIVO y partidas finales.
+- ZIP E19 nuevo87858513bytes, SHA5ec0e6afeef3f5021c097f661a1e3f1b8c847ca81329212b5a5f36a9418a8c10; CRC/per-file SHA/extracción/19ZIPprevios PASS. Dos vídeos Windows con DSP original exportados y decodificados. General completa en ejecución, portable pendiente; no se declara cierre ni aprobación humana todavía.
+
+- General completa1e67333:196/197,0omisiones,21casos E19PASS. Único fallo histórico ThreeClassesWithLegalBacklineOrdersAt30 con Guerrero; arquero8 termina con héroe0PV, recuperación única y resolución correcta. XML/resumen/CSV conservados; incidencia permanece abierta, no se repite para pintar verde. Tiempos agregados XML atraviesan recargas de dominio; no se presentan como duración real ni perfil de rendimiento.
+
+- Portable1e67333 extraído:2/2procesosGPU Enano–Mago desde Nueva hasta culturas/RTS/guardar y nuevo proceso/Continuar exacto. Total6/6Windows finales,52PNG únicos y2MP4 originales. Se corrige el exportador para no repetir el índice de captura Creation de E19. Scripts Python compilan. Evidencia WINDOWS/CAPTURAS/BUILD_PROVENANCE y guía/checklist actualizados; sólo publicación de PR pendiente, sin nuevas mecánicas.
+
+- E19 publicada en feature/e19-razas-civilizaciones; [PR#10draft](https://github.com/MathiasMerino/RPGRTS/pull/10) sobre E18/PR9, sin merges ni cambios main/dev. Informe26puntos, guía,52capturas/2vídeos,6comprobantes Windows, general196/197 y plan PR apilados disponibles. Cierre técnico de candidata; RTS-HIST y evaluación humana siguen abiertos. Calidad local ajena se conserva aparte.

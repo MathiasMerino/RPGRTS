@@ -1,0 +1,17 @@
+{
+  "sourceRevision": "1e67333",
+  "total": "197",
+  "passed": "196",
+  "failed": "1",
+  "skipped": "0",
+  "startTime": "2026-11-03 05:05:07Z",
+  "endTime": "2026-11-03 05:05:20Z",
+  "failures": [
+    {
+      "name": "Aethernia.Tests.Editor.E18RtsScenarioTests.ThreeClassesWithLegalBacklineOrdersAt30",
+      "result": "Failed",
+      "message": "  warrior: victoria RTS real\n  Expected: Settlement\n  But was:  FirstRts\n",
+      "stack": "at Aethernia.Tests.Editor.DemoRtsTests+<Patrol>d__2.MoveNext () [0x00c45] in C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Assets\\03_Scripts\\Tests\\Editor\\DemoRtsTests.cs:70\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@1405238725ab\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\n"
+    }
+  ]
+}

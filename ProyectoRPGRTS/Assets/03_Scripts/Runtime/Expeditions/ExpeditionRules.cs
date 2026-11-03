@@ -14,6 +14,7 @@ namespace Aethernia
     [Serializable] public sealed class FactionDefinition
     {
         public string Id,Title,CultureId,KingdomId;
+        public string[] Cultures=Array.Empty<string>();
         public string[] Roles={"swordsman","archer","brawler"};
         public FactionDefinition(string id,string title){Id=id;Title=title;CultureId="";KingdomId="";}
     }
@@ -47,8 +48,8 @@ namespace Aethernia
         public static bool Ready(PrototypeState s)=>s.Demo!=null&&s.Demo.Chapter>=DemoChapter.Settlement&&s.Facts.Contains("demo-camp-secured");
         public static bool Recruit(PrototypeState s,ExpeditionRules rules,RtsDemoRules roles,string role)
         {
-            var p=roles.Find(role);if(!Ready(s)||p==null||s.Companions.Count>=rules.MaximumCompanions||s.Companions.Any(c=>c.Role==role)||s.Gold<rules.GoldCost(role)||s.Food<rules.FoodCost(role))return false;
-            s.Gold-=rules.GoldCost(role);s.Food-=rules.FoodCost(role);s.Companions.Add(new RecruitRecord{Id=Guid.NewGuid().ToString("N"),Role=role,Health=p.Health,InParty=true});return true;
+            var p=roles.Find(role);if(!SettlementRules.KnownRole(role)||!Ready(s)||p==null||s.Companions.Count>=rules.MaximumCompanions||s.Companions.Any(c=>c.Role==role)||s.Gold<rules.GoldCost(role)||s.Food<rules.FoodCost(role))return false;
+            s.Gold-=rules.GoldCost(role);s.Food-=rules.FoodCost(role);s.Companions.Add(new RecruitRecord{Id=Guid.NewGuid().ToString("N"),Role=role,Health=p.Health,InParty=true});CivilizationOperations.IdentifyCompanion(s.Companions[s.Companions.Count-1],roles.Civilizations);return true;
         }
         public static bool SetParty(PrototypeState s,ExpeditionRules rules,string id,bool active)
         {
@@ -69,16 +70,16 @@ namespace Aethernia
         {
             InitializeTerritories(s,rules);var t=s.Territories.Find(x=>x.Id=="crossing");if(t==null||t.Owner!="")return false;t.Owner=s.FactionId;t.Secured=true;return true;
         }
-        public static bool Conquer(PrototypeState s,string id,bool actualWin)
+        public static bool Conquer(PrototypeState s,string id,bool actualWin,CivilizationCatalog civilizations=null)
         {
-            var t=s.Territories.Find(x=>x.Id==id);if(!actualWin||id!="outpost"||t==null||t.Owner==s.FactionId||s.Health<=0)return false;t.Owner=s.FactionId;t.Secured=true;if(!s.Facts.Contains("umbral-outpost-conquered"))s.Facts.Add("umbral-outpost-conquered");s.ReputationB=Math.Max(-1000,s.ReputationB-5);return true;
+            var t=s.Territories.Find(x=>x.Id==id);if(civilizations!=null&&CivilizationOperations.Relation(s,t?.Owner,civilizations)!=FactionRelation.Hostile)return false;if(!actualWin||id!="outpost"||t==null||t.Owner==s.FactionId||s.Health<=0)return false;t.Owner=s.FactionId;t.Secured=true;if(!s.Facts.Contains("umbral-outpost-conquered"))s.Facts.Add("umbral-outpost-conquered");s.ReputationB=Math.Max(-1000,s.ReputationB-(civilizations?.ConquestReputationCost??5));return true;
         }
         public static int Relation(PrototypeState s,string faction)=>faction=="faction-a"?s.ReputationA:faction=="faction-b"?s.ReputationB:0;
         public static void ProduceTerritories(PrototypeState s,SettlementRules storage,int cycles)
         {
             if(s.Territories==null||s.FactionId!="player-company"||storage==null)return;
             var per=s.Territories.Count(t=>t.Secured&&t.Owner==s.FactionId&&(t.Id=="crossing"||t.Id=="outpost"));
-            s.Wood=Math.Min(Math.Max(s.Wood,SettlementOperations.Capacity(s,storage)),s.Wood+per*cycles);
+            s.Wood=Math.Min(Math.Max(s.Wood,SettlementOperations.Capacity(s,storage)),s.Wood+per*(storage.Civilizations?.TerritoryWoodPerCycle??1)*cycles);
         }
         public static bool Valid(PrototypeState s,ProgressionRules progression=null)
         {

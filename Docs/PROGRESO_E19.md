@@ -1,0 +1,25 @@
+# Continuidad E19
+
+Cierre técnico2026-11-03: E19 lista para revisión, PR#10draft https://github.com/MathiasMerino/RPGRTS/pull/10. Fuente juego/build1e67333;21/21dirigidas,196/197general(único fallo histórico RTSGuerrero),6/6Windows,52PNG/2MP4 yZIPCRC/SHA/19previos/portablePASS. No quedan implementaciones o artefactos autorizados por producir. Pendientes separados: RTS-HIST y evaluación humana, arte/lore/balance definitivos y dos culturas futuras. Sin E20 ni merges. Ajuste QualitySettings preexistente conservado sin commit.
+
+Los párrafos siguientes son puntos de recuperación históricos de esta misma ejecución; sus pendientes fueron resueltos salvo los identificados en el cierre.
+
+Rama feature/e19-razas-civilizaciones. Recuperación5507425, auditoría1be0be1, identidad/pilotos1b461b6,21pruebas/balance2eedfff, corrección reclutar en Construcción y guarnición Forja a10829a. Único cambio ajeno inicial: ProjectSettings/QualitySettings.asset; hash en Validacion/E19/BASELINE.json, conservar sin incluirlo en commits.
+
+A investigada: baseline1/2; derrota Monje a30FPS por arqueros8/11 alcanzando al héroe a reserva;0PV y resolución única. Visual histórica PASS. Prueba de victoria se conserva, incidencia abierta. BCD y dos pilotos verificados21/21 dirigidas, incluyendo RTS real golpes2/4 y reclutamiento desde Construcción.3600duelos de reglas, no experiencia humana. Arte Generic/prefabs derivados provisionales; GDD/privados/19ZIP/nueve escenas previas preservados.
+
+Candidata de código actual805eff9, build Windows compilada con Unity6000.5.8f1 en Builds/CivilizationsE19Windows. Recorrido headless inicial2eedfff falló al exigir Exploración para botón de reclutamiento en Construcción; corregido y fallo conservado. Recorrido GPU final en ejecución: Tools/Invoke-ProgressionSmoke.ps1 -Phase E19 -Classes warrior,mage -Races human,dwarf -WithGraphics -Record. Carpeta Logs/CivilizationQA/GPU-20261103-040351. Acciones legales sin inyección de dinero/vida; guardado y preferencias aisladas. No editar C# mientras haya editor Unity de validación activo.
+
+Pendiente: terminar ambos recorridos y sus reinicios; corregir fallos reales si aparecen sin alterar aserciones históricas. Ejecutar regresión completa una vez estable (-Mode Vertical -TimeoutMinutes60, sin filtro). Conservar XML incluso con fallo históricoRTS. Exportar capturas/vídeos reales, partidas finales, build/ZIP E19 y validar portable (un combo con reinicio); hashes/CRC y19ZIP previos. Herramientas Package-VisualPolish.py --phase E19 y Export-ProgressionEvidence.py --phase E19 ya admiten dos combos. No repetir autoría Civilizations/Create, los assets existen.
+
+Después: ENTREGA_E19 con26puntos/resultados y limitaciones reales, guía/checklist/registro/índices/AGENTS actualizados, revisión diff/privados/calidad. Publicar rama y PR draft sobre feature/e18-progresion-balance con plan Docs/INTEGRACION_PRS.md; verificar main/dev y PR1..9 intactos. Sin merges, force push, recursos Meshy privados o E20. Evaluación humana siempre pendiente.
+
+Continuidad 2026-11-03: el primer GPU a10829a se detuvo al intentar compañero con Culturas seleccionada. Runner805eff9 abre explícitamente Grupo sin debilitar aserciones; nuevo GPU040351 ya alcanzó recompensa de mazmorra. Raw build y nueva ejecución usan805eff9. No hay editor activo mientras corre este player.
+
+805eff9 llegó a victoria multicultural con4golpes de guardia y1de Forja, pero murió Forja y el runner se detuvo por asumir supervivencia. 1e67333 amplía QA con reposición pagada/producción real, ID nuevo y verificación de que no reaparece el muerto. No cambia mecánicas ni victoria. Build nueva en ejecución; siguiente: GPU completo desde cero con dos combos, regresión general, portable/evidencia/PR.
+
+Build1e67333 terminada; GPU final en Logs/CivilizationQA/GPU-20261103-041927 (Humano/Guerrero y Enano/Mago, cada uno con reinicio). Fuente funcional congelada mientras se valida. Pendientes generales/portable/exportación/PR siguen vigentes.
+
+2026-11-03 00:48: dos combos1e67333 y dos reinicios4/4PASS. General sin filtro activa PID28336 (sesión96517); no editar C#. ZIP87858513bytes SHA5ec0e6afeef3f5021c097f661a1e3f1b8c847ca81329212b5a5f36a9418a8c10, CRC/per-file SHA/19ZIP previos PASS. Portable pendiente: Builds/PortableE19-20261103-044438/Aethernia.exe. Videos2exportados/decodificados, VIDEO_PROOF/TIMELINE/VIDEOS.json en Validacion/E19. No repetir export_video: conserva archivos existentes.
+
+Al terminar general: inspeccionar XML nuevo incluso si falla (puede requerir copia manual Vertical-results.xml→GENERAL.xml). Ejecutar un combo portable con reinicio: Invoke-ProgressionSmoke -Phase E19 -Classes mage -Races dwarf -WithGraphics -Executable portable. Luego Export-ProgressionEvidence.py --phase E19 --native GPU041927 --portable carpeta nueva --revision1e67333 (sin --recording, vídeos ya existen). Finales ya copiadas y ZIP empaquetado; no sobrescribir. Finalizar ENTREGA_E19/checklist/registro/AGENTS/índices, auditoría/commits/push/PRdraft sobre E18, main/dev/PR1..9 intactos.

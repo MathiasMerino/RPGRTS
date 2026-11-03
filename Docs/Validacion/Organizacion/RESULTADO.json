@@ -1,0 +1,13 @@
+{
+  "Unity": "6000.5.8f1",
+  "targetedTestsPassed": 3,
+  "targetedTestsTotal": 3,
+  "acceptance": "Escena/fisica/sin privados; nuevo RPG+movimiento+guardar/cargar por tres clases; controladores de tecnica RPG/RTS por tres clases",
+  "scenesIdentical": 9,
+  "GDDUnchanged": true,
+  "preexistingQualitySettingsPreserved": true,
+  "privateOriginalHashesPreserved": 3,
+  "runtimeGameplayScriptsChanged": false,
+  "remotePublished": false,
+  "remainingIssue": "E17-A-RTS e intervencion humana E18 siguen pendientes; no se afirma regresion completa."
+}

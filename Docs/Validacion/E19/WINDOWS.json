@@ -1,0 +1,52 @@
+{
+  "revision": "1e67333",
+  "nativeGameplayRevision": "1e67333",
+  "passedProcesses": 6,
+  "receipts": [
+    {
+      "kind": "Civilization",
+      "file": "dwarf-mage.json.resume.txt",
+      "result": "PASS: E19 dwarf/mage new process exact identity, skills, equipment, two cultural units/buildings and conquest retained without duplicate rewards; seconds=1.88; automated duration is not human playtime",
+      "sha256": "7becfbe145ed348d4f785527947bf5ef39bc0013df43e10c99aba1f8d69edb51",
+      "sourceRevision": "1e67333"
+    },
+    {
+      "kind": "Civilization",
+      "file": "dwarf-mage.json.start.txt",
+      "result": "PASS: E19 dwarf/mage new game/race/class/intro/RPG/level/skill/WASD/quest/three companions/two guardianies/loot/forge/training/conquest/territorial production/two paid cultural buildings and units/real RTS deployment/save/title; seconds=340.43; automated duration is not human playtime",
+      "sha256": "5db6682a5b1097aaed46fc7a14a50094fae192a5250afef491f815c3272c3b49",
+      "sourceRevision": "1e67333"
+    },
+    {
+      "kind": "Civilization",
+      "file": "human-warrior.json.resume.txt",
+      "result": "PASS: E19 human/warrior new process exact identity, skills, equipment, two cultural units/buildings and conquest retained without duplicate rewards; seconds=2.45; automated duration is not human playtime",
+      "sha256": "0cc798d9e311ba815151f8f7610c0ff3062e953fcd5b3df187d5434b6f3ef8a6",
+      "sourceRevision": "1e67333"
+    },
+    {
+      "kind": "Civilization",
+      "file": "human-warrior.json.start.txt",
+      "result": "PASS: E19 human/warrior new game/race/class/intro/RPG/level/skill/WASD/quest/three companions/two guardianies/loot/forge/training/conquest/territorial production/two paid cultural buildings and units/real RTS deployment/save/title; seconds=441.58; automated duration is not human playtime",
+      "sha256": "cbc84e776e2dfbc4d7119767b2015d60d3a3db04e1996d6e2c66365de3a63e49",
+      "sourceRevision": "1e67333"
+    },
+    {
+      "kind": "Portable",
+      "file": "dwarf-mage.json.resume.txt",
+      "result": "PASS: E19 dwarf/mage new process exact identity, skills, equipment, two cultural units/buildings and conquest retained without duplicate rewards; seconds=1.60; automated duration is not human playtime",
+      "sha256": "c3ccd347733cbe2d77d07aa4f771516aa03acdef023635c065df0f7ff69ee64a",
+      "sourceRevision": "1e67333"
+    },
+    {
+      "kind": "Portable",
+      "file": "dwarf-mage.json.start.txt",
+      "result": "PASS: E19 dwarf/mage new game/race/class/intro/RPG/level/skill/WASD/quest/three companions/two guardianies/loot/forge/training/conquest/territorial production/two paid cultural buildings and units/real RTS deployment/save/title; seconds=331.88; automated duration is not human playtime",
+      "sha256": "36471f78f90f5271819f29f6559baacd1a68cb65ea163b50b1d79401a95cfdbc",
+      "sourceRevision": "1e67333"
+    }
+  ],
+  "fpsMeasured": false,
+  "humanPlaytimeMeasured": false,
+  "inputs": "New game, legal public player actions, isolated saves; no injected funds or health"
+}

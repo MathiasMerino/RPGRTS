@@ -15,7 +15,7 @@ namespace Aethernia
         public string SelectedBlueprint { get; private set; }="workshop";
         public void ConfigureSettlement(SettlementRules rules,BuildingPrefabBinding[] visuals){settlement=rules;blueprints=visuals;}
         public bool SelectBlueprint(string id){if(settlement==null||settlement.Find(id)==null)return false;SelectedBlueprint=id;return true;}
-        private GameObject Template(string id){if(session.State.Demo!=null)foreach(var b in blueprints)if(b.Id==id)return b.Prefab;return id=="workshop"?prefab:null;}
+        private GameObject Template(string id,string culture=""){if(session.State.Demo!=null){foreach(var b in blueprints)if(b.Id==id&&!string.IsNullOrEmpty(culture)&&b.CultureId==culture)return b.Prefab;foreach(var b in blueprints)if(b.Id==id&&string.IsNullOrEmpty(b.CultureId))return b.Prefab;}return id=="workshop"?prefab:null;}
         public void Configure(GameSession game, ExplorationUnit actor, GameObject workshop) { session = game; hero = actor; prefab = workshop; }
         public bool CanPlace(Vector3 point, bool ignorePlaced = false)
         {
@@ -33,7 +33,7 @@ namespace Aethernia
         {
             if(session.State.Demo!=null&&settlement!=null)
             {
-                var model=Template(SelectedBlueprint);
+                var model=Template(SelectedBlueprint,session.State.CultureId);
                 if(model==null||!CanPlace(point)||!SettlementOperations.Build(session.State,settlement,SelectedBlueprint,point)){session.Say("No se puede construir: comprueba terreno, centro, recursos y requisitos.");return false;}
                 placed.Add(Spawn(model,point));session.Say(settlement.Find(SelectedBlueprint).Title+" construido. Las instalaciones productivas requieren activación.");return true;
             }
@@ -56,7 +56,7 @@ namespace Aethernia
         {
             foreach (var go in placed) if (go != null) { go.SetActive(false); Destroy(go); }
             placed.Clear();
-            foreach (var record in session.State.Buildings) placed.Add(Spawn(Template(record.Id)??prefab,record.Position));
+            foreach (var record in session.State.Buildings) placed.Add(Spawn(Template(record.Id,record.CultureId)??prefab,record.Position));
         }
         private GameObject Spawn(GameObject model,Vector3 position)
         {
