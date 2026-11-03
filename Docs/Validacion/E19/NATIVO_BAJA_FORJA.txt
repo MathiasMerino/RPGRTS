@@ -1,0 +1,4 @@
+FAIL: System.InvalidOperationException: E19 smoke: both pilots survive to persist
+  at Aethernia.CivilizationSmokeProbe.Require (System.Boolean value, System.String message) [0x00014] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\CivilizationSmokeProbe.cs:51 
+  at Aethernia.CivilizationSmokeProbe+<Pilots>d__3.MoveNext () [0x00b03] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\CivilizationSmokeProbe.cs:45 
+  at Aethernia.CivilizationSmokeProbe+<Start>d__1.MoveNext () [0x00113] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\CivilizationSmokeProbe.cs:19 

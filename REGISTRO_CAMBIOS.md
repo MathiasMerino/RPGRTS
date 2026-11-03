@@ -673,3 +673,5 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 
 ## 2026-11-03 — E19, continuidad de QA nativo
 - Recorrido GPU a10829a superó prólogo/RPG/patrulla/campamento/misión y se detuvo antes de reclutar: el runner heredado suponía pestaña Grupo, pero recordaba Culturas. Se añade navegación explícita a Grupo, conservando aserciones de fondos, tres compañeros, combate y guardado. No se modifica el comportamiento de las ventanas para acomodar la prueba. Fallo original NATIVO_TAB_CULTURAS.txt conservado; grabación fallida parcial no se presenta como recorrido completado.
+
+- GPU805eff9 completó campaña, mazmorra, forja, conquista y patrulla cultural con victoria. Guardia dio4golpes y Forja1; Forja murió legítimamente. El runner exigía supervivencia de ambos perfiles para guardado. Se amplía con regreso al campamento, producción/venta existentes y reemplazo pagado de bajas (ID nuevo, muertos siguen ausentes), antes de exigir ambos perfiles vivos en guardado. No cambia vida/daño/IA ni elimina aserciones históricas. Fallo original NATIVO_BAJA_FORJA.txt conservado.
