@@ -6,7 +6,7 @@
 - GDD original0.2: `ProyectoRPGRTS/Assets/05_Docs/GDD_GAMERPGTS.docx`; no sobrescribirlo. Lectura `Docs/GDD_LECTURA.md`, comprobar SHA si cambia el Word.
 - Clases Guerrero/Mago/Monje y reglas provisionales aprobadas en `Docs/ESPECIFICACION_PROTOTIPO.md`; hoja futura `Docs/PLAN_EXPANSION.md` sin producción automática.
 - Leer resumen CHECKLIST.md y secciones relacionadas del plan/GDD. Diferenciar confirmado, propuesto y pendiente; ejemplos del GDD no son requisitos.
-- Entrega actual E18: escena `Assets/01_Scenes/AetherniaProgressionDemo.unity`, datos `Assets/14_Progression`. Informe `Docs/ENTREGA_E18.md`, guía `Docs/GUIA_E18.md`, balance/progresión en Docs. PR#9draft sobre E17/PR8; no E19 ni merges automáticos.
+- Entrega actual E18: escena `Assets/01_Scenes/AetherniaProgressionDemo.unity`, datos `Assets/14_Progression`. Informe `Docs/ENTREGA_E18.md`, guía `Docs/GUIA_E18.md`, balance/progresión en Docs. PR#9draft sobre E17/PR8; E19 autorizada por encargo expreso, sin E20 ni merges automáticos.
 - E18: general174/176, fallo visual corregido4/4dirigidas posteriores;8procesosWindows,49PNG/2MP4 yZIPportable verificados. Incidencia E17-A-RTS y evaluación humana siguen pendientes: no declarar regresión completamente verde.
 - Mapa actual `Docs/ORGANIZACION_PROYECTO.md`, índice `Docs/README.md`; detalle histórico de fases y límites en `Docs/Historial/CONTEXTO_ETAPAS.md`. No borrar recursos por antigüedad o por faltar en una única escena.
 

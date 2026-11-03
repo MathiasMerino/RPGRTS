@@ -651,3 +651,8 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 ## 2026-11-02 — ORG-01 organización conservadora
 
 27informes/seguimientos/validaciones históricas agrupados en Docs/Historial, con referencias actualizadas e índices. AGENTSresumido y contexto completo archivado; filtros de búsqueda para evitar cargar medios/evidencia/historial sin necesidad. Dos archivos sueltos Unity movidos víaAssetDatabase con GUID/datos/meta idénticos: Readme→05_Docs/PlantillaUnity, InputSystem_Actions→Settings/Input. Inventario781assets públicos distingue dependencia actual y utilidad provisional/histórica, sin eliminación por antigüedad. Siete carpetas intermedias/verificaciones de Builds archivadas con huellas idénticas(2185archivos),19ZIP conservados y0archivos eliminados. ComprobaciónUnity578GUIDiguales/0scripts perdidos;3/3dirigidas de escena,física,movimiento,RPG,guardado/continuar y técnicasRPG/RTS por tresclasesPASS.9escenas/GDD/privados3 ycalidadlocalpreexistente permanecenidénticos. No se modifica gameplay ni publica remoto; incidenciaRTS/humanoE18 siguen pendientes.
+
+
+## 2026-11-02 — E19: auditoría y punto de recuperación
+- Rama feature/e19-razas-civilizaciones desde5507425; PR9 sigue abierto. Snapshot de ramas/PR y hashes en Docs/Validacion/E19. Cambio ajeno QualitySettings conservado aparte.
+- GDD0.2 consultado, sin Biblia Artística aprobada localizada; alcance/rasgos/pilotos provisionales en Docs/PLAN_E19.md. Iniciadas pruebas RTS y regresión visual E18 sin cambiar sus aserciones.

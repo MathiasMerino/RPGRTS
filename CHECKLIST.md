@@ -4,9 +4,11 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
+- E19: en desarrollo en feature/e19-razas-civilizaciones, apilada sobre E18/PR9 y el commit local de organización5507425. Auditoría dirigida, cuatro razas y dos culturas piloto funcionales; arte y reglas nuevos provisionales. Incidencia RTS y evaluación humana abiertas; plan Docs/PLAN_E19.md.
+
 - ORG-01: organización local verificada,27documentos en Historial,7carpetas intermedias/verificaciones archivadas,19ZIP intactos;2assets movidos con GUID/.meta conservados,781recursos públicos inventariados y3/3pruebasUnity.9escenas/GDD/privados/calidad local previa sin cambios. Mapa Docs/ORGANIZACION_PROYECTO.md.
 
-- E18: A/BC/DEF/GH/IJK/LN/MOQ verificados; RSTUVentregado como candidata, [PR#9draft](https://github.com/MathiasMerino/RPGRTS/pull/9) sobre E17. General174/176, regresión visual corregida4/4dirigidas finales;8/8procesosWindows,49PNG/2MP4,ZIPCRC/SHA/portable y18ZIPprevios intactos. Candidata con incidenciaRTS abierta, sin regresión totalmente verde ni aprobación humana. Informe Docs/ENTREGA_E18.md. No E19.
+- E18: A/BC/DEF/GH/IJK/LN/MOQ verificados; RSTUVentregado como candidata, [PR#9draft](https://github.com/MathiasMerino/RPGRTS/pull/9) sobre E17. General174/176, regresión visual corregida4/4dirigidas finales;8/8procesosWindows,49PNG/2MP4,ZIPCRC/SHA/portable y18ZIPprevios intactos. Candidata con incidenciaRTS abierta, sin regresión totalmente verde ni aprobación humana. Informe Docs/ENTREGA_E18.md. E19 autorizada posteriormente.
 
 - E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/Historial/Etapas/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. E18 autorizada posteriormente.
 
@@ -1189,3 +1191,19 @@ Encargo71c1a4f1 autoriza implementación secuencial con arte provisional. Depend
 - Aceptación: GUID y bytes de assets movidos conservados, escenas/GDD/privados intactos, enlaces locales actualizados, ZIP anteriores preservados, carga/movimiento y progresión E18 verificados. No cambiar la calidad gráfica local preexistente ni publicar remotos automáticamente.
 - Archivos: Docs/ORGANIZACION_PROYECTO.md, Docs/Historial, índices; ProjectOrganization.cs; Tools/Invoke-UnityValidation.ps1; archivo local de Builds.
 - Pruebas / resultado: Unity6000.5.8f1,578GUIDdependencias actuales conservados,0scripts perdidos,2pares de datos/meta idénticos.3/3dirigidas: física/dependencias y RPG/movimiento/guardado/continuar/técnicasRPG/RTS por tresclases.781assets públicos inventariados,27docs reubicados con enlaces actualizados,7carpetas(2185archivos) archivadas conhuellasidénticas,19ZIP preservados.9escenas/GDD/privados3 yQualitySettingspreexistente conhashsin cambios.0eliminaciones; no se afirma regresióncompleta ni correcciónRTS.
+
+
+## FASE E19 — RAZAS Y CULTURAS PILOTO
+
+El encargo explícito autoriza implementación, validación, build y PR apilado. No autoriza E20, merges ni publicación de recursos privados. Todas las nuevas reglas culturales/raciales son propuestas ajustables.
+
+| ID | Sistema / prioridad | Dependencias | Estado | Aceptación | Archivos / pruebas / resultado |
+|---|---|---|---|---|---|
+| E19-A | Estabilidad / P0 | E18, ORG-01 | [ ] En desarrollo | Investigar y reproducir RTS, conservar aserciones; clasificar causa y verificar contratos | Docs/Validacion/E19/BASELINE.json, GITHUB_BASE.json; pruebas dirigidas en ejecución |
+| E19-BCD | Identidad / P0 | A investigada | [ ] Pendiente | Cuatro razas, 12 combinaciones, rasgos configurables, selección y persistencia sin duplicación | Previsto: catálogo, UI existente, guardado; pruebas de combinaciones y legado |
+| E19-EFGIJ | Culturas / P0 | BCD | [ ] Pendiente | Cuatro familias de datos, dos pilotos con unidad y edificio útiles, costes/relaciones/reclutamiento reales | Previsto: catálogo compartido, operaciones, UI; transacciones/RTS/guardado |
+| E19-HKLMN | Integración / P0 | EFGIJ | [ ] Pendiente | Mismo héroe/habilidades, grupo3 y ejército6, conquista/producción, arte provisional sustituible | Previsto: escena E19 opt-in, presentadores; regresión y recorridos |
+| E19-OPQR | Calidad / P0 | Integración | [ ] Pendiente | Balance reproducible, UI varias resoluciones, migraciones seguras y regresión completa con fallos visibles | Previsto: pruebas y evidencias E19 |
+| E19-ST | Entrega / P0 | Calidad | [ ] Pendiente | Dos combinaciones con recorrido completo/reinicio, capturas reales, Windows y portable verificados | Previsto: guía y entrega E19, build y ZIP nuevos |
+| E19-U | Git / P0 | ST | [ ] Pendiente | Commits por bloques, PR sobre E18, plan verificable PR1..9; main/dev intactas | Previsto: Docs/INTEGRACION_PRS.md y API GitHub |
+| E19-HUM | Evaluación humana / P1 | ST | [ ] Pendiente | Revisión del usuario: legibilidad, arte, diversión, balance y estabilidad prolongada | No se completa con pruebas automáticas |
