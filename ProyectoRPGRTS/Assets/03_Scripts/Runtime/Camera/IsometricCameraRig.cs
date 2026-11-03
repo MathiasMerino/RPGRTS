@@ -14,6 +14,7 @@ namespace Aethernia
         [SerializeField] private float panSpeed = 12;
         [SerializeField] private Vector2 horizontalLimits = new Vector2(-18, 18);
         [SerializeField] private Vector2 verticalLimits = new Vector2(-18, 18);
+        public System.Func<bool> ModalOpen;
         private Camera view;
         public ExplorationUnit FollowTarget;
         private Vector3 smoothedFocus,followVelocity,lastHero;
@@ -28,7 +29,7 @@ namespace Aethernia
             if(mode!=previousMode)
             {
                 previousMode=mode;minimumSize=mode==PrototypeMode.Exploration?4.5f:6;maximumSize=mode==PrototypeMode.Exploration?11:18;
-                size=mode==PrototypeMode.Exploration?6.2f:mode==PrototypeMode.TurnCombat?7:mode==PrototypeMode.Construction?10:mode==PrototypeMode.Rts?10:13;
+                size=mode==PrototypeMode.Exploration?6.2f:mode==PrototypeMode.TurnCombat?7:mode==PrototypeMode.Construction?10:mode==PrototypeMode.Rts?8.5f:13;
                 manualUntil=0;
             }
             if(FollowTarget!=null&&mode==PrototypeMode.Exploration&&!InputSession.Paused&&Time.unscaledTime>manualUntil)
@@ -79,7 +80,7 @@ namespace Aethernia
 
         public void ApplyInput(Vector2 pan, float zoom, float deltaTime, bool blockedByUi)
         {
-            if (blockedByUi) return;
+            if (blockedByUi||(ModalOpen?.Invoke()??false)) return;
             var right = new Vector3(0.7071068f, 0, -0.7071068f);
             var forward = new Vector3(0.7071068f, 0, 0.7071068f);
             pan = Vector2.ClampMagnitude(pan, 1);
@@ -103,7 +104,7 @@ namespace Aethernia
             view.orthographic = true;
             view.orthographicSize = zoom;
             transform.rotation = Quaternion.Euler(35.26439f, 45, 0);
-            transform.position = point - transform.forward * (Ux?65:45);
+            transform.position = point - transform.forward * 45;
         }
     }
 }

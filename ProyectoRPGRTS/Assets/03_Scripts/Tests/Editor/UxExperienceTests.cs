@@ -30,6 +30,34 @@ namespace Aethernia.Tests.Editor
             Assert.That(old.Demo.UxRevision,Is.Zero);Assert.That(old.Demo.Chapter,Is.GreaterThanOrEqualTo(DemoChapter.Settlement));
             old.Demo.UxFormation=new[]{new Vector3(float.NaN,0,0)};Assert.That(PrototypeSaveStore.Valid(old,rules),Is.False);
         }
+        [Test]public void AllTwelveVisualVariantsKeepAnimationAndRejectAccidentalScale()
+        {
+            EditorSceneManager.OpenScene(UxExperienceBuilder.ScenePath);var flow=Object.FindAnyObjectByType<DemoFlow>();var catalog=flow.Director.Hero.GetComponent<CharacterVisualPresenter>().Catalog;
+            var parent=new GameObject("UX01 model contract fixture");
+            try{foreach(var cls in flow.Session.Rules.Classes)foreach(var race in flow.Session.Rules.Civilizations.Races)
+            {
+                Assert.That(CharacterVisualFactory.TryCreate(catalog,cls.Id,parent.transform,out var model,out _,out var reason),Is.True,reason);
+                try{RaceVisualVariant.Apply(model.transform,flow.Session.Rules.Civilizations,race.Id);Assert.That(model.GetComponent<HumanoidVisualRig>().IsUsable,Is.True,cls.Id+"/"+race.Id);Assert.That(CharacterVisualContract.CanUse(model.gameObject,true,out reason),Is.True,reason);model.transform.localScale*=2;Assert.That(CharacterVisualContract.CanUse(model.gameObject,true,out _),Is.False,"Unexpected scale is still rejected");}
+                finally{Object.DestroyImmediate(model.gameObject);}
+            }}finally{Object.DestroyImmediate(parent);}
+        }
+        [UnityTest]public IEnumerator ModalWindowsBlockMotorCameraAndInteractor()
+        {
+            EditorSceneManager.OpenScene(UxExperienceBuilder.ScenePath);yield return new EnterPlayMode();yield return null;yield return null;
+            var flow=Object.FindAnyObjectByType<DemoFlow>();flow.SlotPath="Logs/UX01/modal-"+Guid.NewGuid().ToString("N")+".json";Assert.That(flow.StartNew("Modal","warrior","human"),Is.True);flow.CompleteIntro();
+            var q=Object.FindAnyObjectByType<LostCargoController>();var commands=Object.FindAnyObjectByType<PlayerCommands>();Assert.That(flow.Director.Hero.TryMoveTo(q.Npc.transform.position+Vector3.back*1.1f),Is.True);yield return UxExperienceRoute.Arrive(flow.Director.Hero);Assert.That(commands.RefreshNearby(),Is.SameAs(q.Npc));
+            flow.ExistingHud.CompactView.Open();yield return null;var before=flow.Director.Hero.transform.position;var focus=flow.CameraRig.Focus;var zoom=flow.CameraRig.Size;
+            Assert.That(flow.GetComponent<DemoHeroMotor>().ApplyInput(Vector2.up,.1f,false),Is.False);Assert.That(commands.Interact(),Is.False);flow.CameraRig.ApplyInput(Vector2.right,1,.5f,false);Assert.That(flow.CameraRig.Focus,Is.EqualTo(focus));Assert.That(flow.CameraRig.Size,Is.EqualTo(zoom));Assert.That(flow.Director.Hero.transform.position,Is.EqualTo(before));flow.ExistingHud.ClosePanels();
+            LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
+        }
+        [UnityTest]public IEnumerator E19AdvancedSaveRetainsConnectedWorldAndCulturalArmy()
+        {
+            EditorSceneManager.OpenScene(UxExperienceBuilder.ScenePath);yield return new EnterPlayMode();yield return null;yield return null;
+            var flow=Object.FindAnyObjectByType<DemoFlow>();flow.SlotPath="Logs/UX01/legacy-"+Guid.NewGuid().ToString("N")+".json";
+            const string previous="../Docs/Validacion/E19/PartidasFinales/human-warrior.json";Assert.That(PrototypeSaveStore.Load(previous,flow.Session.Rules,out var old),Is.True);Assert.That(flow.Continue(previous),Is.True);flow.Pause();
+            var now=flow.Session.State;Assert.That(now.Health,Is.EqualTo(old.Health));Assert.That(now.HeroLevel,Is.EqualTo(old.HeroLevel));Assert.That(now.Companions.Count,Is.EqualTo(old.Companions.Count));Assert.That(now.Army.Count,Is.EqualTo(old.Army.Count));Assert.That(now.Territories.Count,Is.EqualTo(old.Territories.Count));Assert.That(now.Demo.Chapter,Is.EqualTo(DemoChapter.FreeExploration));Assert.That(now.Demo.UxRevision,Is.Zero);Assert.That(DemoFlow.CanVisitPatrol(flow.Session),Is.True);Assert.That(flow.Patrol.Available(flow.Session),Is.True);flow.Resume();
+            Assert.That(flow.BeginPatrol(),Is.True);var units=new System.Collections.Generic.List<RtsUnitStatus>();flow.Director.Rts.CopyStatus(units);Assert.That(units.Any(u=>u.Role=="Guardia de frontera"),Is.True);Assert.That(units.Any(u=>u.Role=="Choque de forja"),Is.True);Assert.That(flow.ReturnToTitle(),Is.True);LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
+        }
         [UnityTest]public IEnumerator WarriorFullRoute()=>Route("warrior","human");
         [UnityTest]public IEnumerator MonkFullRoute()=>Route("monk","elf");
         [UnityTest]public IEnumerator MageFullRoute()=>Route("mage","dwarf");
@@ -42,7 +70,7 @@ namespace Aethernia.Tests.Editor
         private static IEnumerator RunningRoute(string cls,string race)
         {
             var flow=Object.FindAnyObjectByType<DemoFlow>();Assert.That(flow,Is.Not.Null,"Missing flow in "+UnityEngine.SceneManagement.SceneManager.GetActiveScene().path+"; objects="+Object.FindObjectsByType<Transform>(FindObjectsInactive.Include).Length);Assert.That(flow.Director,Is.Not.Null,"Director binding");Directory.CreateDirectory("Logs/UX01/Captures");var slot="Logs/UX01/route-"+cls+"-"+Guid.NewGuid().ToString("N")+".json";flow.SlotPath=slot;flow.Director.SavePathOverride=slot;
-            yield return UxExperienceRoute.Run(flow,slot,cls,race,name=>Capture(flow,cls,name));
+            yield return UxExperienceRoute.Run(flow,slot,cls,race,name=>Capture(flow,cls,name),false);
             Assert.That(PrototypeSaveStore.Load(slot,flow.Session.Rules,out var before),Is.True);Assert.That(flow.Continue(),Is.True);flow.Pause();
             var after=flow.Session.State;Assert.That(after.RaceId,Is.EqualTo(race));Assert.That(after.ClassId,Is.EqualTo(cls));Assert.That(after.Health,Is.EqualTo(before.Health));Assert.That(after.Gold,Is.EqualTo(before.Gold));Assert.That(after.Army.Single().Id,Is.EqualTo(before.Army.Single().Id));Assert.That(after.Demo.Chapter,Is.EqualTo(DemoChapter.FreeExploration));Assert.That(LostCargoQuest.Stage(after),Is.EqualTo(CargoQuestStage.Completed));
             flow.Resume();LogAssert.NoUnexpectedReceived();

@@ -9,8 +9,8 @@ La build prevista es `ProyectoRPGRTS/Builds/Ux01Windows/Aethernia.exe`. Arranca 
 1. Explora primero la aldea: WASD, clic derecho para caminar, rueda para zoom; flechas o botón medio para desplazar la cámara. El seguimiento se recupera tras dejar de desplazarla.
 2. Sigue el marcador del habitante. Cerca aparece una única indicación E. Habla, acepta la misión y busca el arcón indicado.
 3. Recuperar el cargamento inicia el combate RPG. Selecciona al rival, acércate cuando haga falta y usa Atacar, Guardia o Recuperar. Una acción por turno; Fin de turno deja actuar al enemigo. Regresa al habitante para cobrar una sola recompensa.
-4. Sigue el camino al capitán del campo occidental. La patrulla comienza en preparación segura. Selecciona un aliado, después varios con Shift o arrastre. Da una orden con clic derecho al primer hito y espera la llegada; reagrupa en el segundo.
-5. Una vez visibles los rivales, coloca tus unidades y da clic derecho sobre un enemigo para iniciar el ataque. El combate y sus bajas son reales; el héroe conserva identidad y salud. Selecciónalo para utilizar sus acciones.
+4. Revisa tu salud y consume las raciones disponibles desde Inventario antes de seguir el camino al capitán del campo occidental. La patrulla comienza en preparación segura. Selecciona un aliado, después varios con Shift o arrastre. Da una orden con clic derecho al primer hito y espera la llegada; reagrupa en el segundo.
+5. Una vez visibles los rivales, coloca tus unidades y da clic derecho sobre un enemigo para iniciar el ataque. El combate y sus bajas son reales; el héroe conserva identidad y salud. Selecciónalo para utilizar Guardia, Recuperar y sus ataques; priorizar arqueros y actualizar órdenes ayuda a conservarlo vivo.
 6. Tras ganar, administra el campamento: centro, taller, producción, cuartel y reclutamiento emplean los recursos de la partida. Construye sobre suelo libre con clic derecho. Explorar cancela la colocación.
 7. F5 guarda fuera de combate hostil y durante preparación segura. F9 carga fuera del encuentro. P abre pausa/opciones. Regresa al título y usa Continuar para revisar persistencia. Los combates activos no se guardan.
 

@@ -19,12 +19,14 @@ namespace Aethernia
         private MedievalHudView hud;
         private bool guidance=true;
         private float nextRefresh;
+        private DemoHeroMotor motor;private LostCargoView dialogue;
         public string ObjectiveText=>objective==null?"":objective.text;
         public string PromptText=>prompt==null?"":prompt.text;
         public Vector3 ObjectivePosition { get; private set; }
         private void Start()
         {
-            hud=Flow.ExistingHud.CompactView;
+            hud=Flow.ExistingHud.CompactView;dialogue=Cargo.GetComponent<LostCargoView>();motor=Flow.GetComponent<DemoHeroMotor>();
+            System.Func<bool> blocked=()=>hud.WindowOpen||hud.HelpOpen||dialogue.DialogueOpen;Commands.ModalOpen=blocked;Flow.CameraRig.ModalOpen=blocked;motor.ModalOpen=blocked;
             var canvas=Flow.ExistingHud.transform;
             var ui=new DemoWidgets(Flow.Front.Font,Flow.Front.Theme.ButtonSprite,Flow.Front.Presentation);
             objectives=DemoWidgets.Rect(canvas,"UX Current objective",16,88,360,76);
@@ -39,7 +41,7 @@ namespace Aethernia
             markerRect=DemoWidgets.Rect(canvas,"UX Objective marker",0,0,100,44);markerRect.anchorMin=markerRect.anchorMax=new Vector2(.5f,.5f);markerRect.pivot=new Vector2(.5f,.5f);
             marker=ui.Text(markerRect,"Destination","◆",0,0,100,44,21);marker.alignment=TextAlignmentOptions.Center;marker.color=ui.Gold;
             var toggle=ui.Button(canvas,"UX Toggle guidance","Guía",0,0,76,32,()=>guidance=!guidance);
-            var tr=(RectTransform)toggle.transform;tr.anchorMin=tr.anchorMax=new Vector2(1,1);tr.anchoredPosition=new Vector2(-272,-20);
+            var tr=(RectTransform)toggle.transform;tr.anchorMin=tr.anchorMax=tr.pivot=new Vector2(1,1);tr.anchoredPosition=new Vector2(-236,-20);
             header=canvas.Find("Title Bar") as RectTransform;dock=canvas.Find("C02 Action Dock") as RectTransform;
             if(header!=null)
             {
@@ -71,7 +73,7 @@ namespace Aethernia
         private void LateUpdate()
         {
             if(hud==null)return;
-            var session=Flow.Session;var visible=Flow.IsPlaying&&!session.Paused&&!hud.WindowOpen&&!hud.HelpOpen&&!session.WorldUiOpen;
+            var session=Flow.Session;var visible=Flow.IsPlaying&&!session.Paused&&!hud.WindowOpen&&!hud.HelpOpen&&!session.WorldUiOpen&&!dialogue.DialogueOpen;
             var mode=session.Mode;var exploration=mode==PrototypeMode.Exploration;
             // Existing renderers refresh these rectangles; this is the single opt-in final layout.
             if(header!=null){Place(header,new Vector2(0,1),new Vector2(16,-12),new Vector2(1248,64));}
@@ -84,6 +86,7 @@ namespace Aethernia
             if(back!=null){Place(back,new Vector2(0,0),Vector2.zero,new Vector2(180,38));back.gameObject.SetActive(mode==PrototypeMode.Construction);}
             if(interaction!=null)interaction.gameObject.SetActive(false);
             if(session.LastMessage!=lastNotice){lastNotice=session.LastMessage;notice.text=lastNotice;noticeUntil=Time.unscaledTime+4;}
+            noticeRect.anchoredPosition=new Vector2(0,mode==PrototypeMode.Rts?112:72);
             noticeRect.gameObject.SetActive(visible&&Time.unscaledTime<noticeUntil);
             hud.Context.gameObject.SetActive(mode==PrototypeMode.Construction);
             hud.Hint.gameObject.SetActive(false);
@@ -109,6 +112,7 @@ namespace Aethernia
                 markerRect.anchoredPosition=local;marker.text="+ "+Vector3.Distance(Flow.Director.Hero.transform.position,ObjectivePosition).ToString("0")+" m";
             }
         }
+        private void OnDisable(){if(Commands!=null)Commands.ModalOpen=null;if(Flow!=null&&Flow.CameraRig!=null)Flow.CameraRig.ModalOpen=null;if(motor!=null)motor.ModalOpen=null;}
         private static string Verb(InteractionPoint point)=>point.FactId==LostCargoQuest.NpcId?"Hablar":point.FactId==LostCargoQuest.CargoId?"Recuperar":point.FactId=="demo-patrol"?"Preparar patrulla":point.FactId.StartsWith("portal-")?"Viajar":"Examinar";
         private void SetObjective()
         {
@@ -128,7 +132,7 @@ namespace Aethernia
             else if(mode==PrototypeMode.Construction)objective.text="Construye en terreno libre. Clic derecho.\nRecursos y costes visibles; Explorar cancela.";
             else if(quest!=CargoQuestStage.Completed&&(state.Demo==null||state.Demo.Chapter<DemoChapter.Settlement))objective.text="EL CARGAMENTO PERDIDO\n"+LostCargoQuest.Objective(state);
             else if(state.Demo!=null&&state.Demo.Chapter<DemoChapter.Settlement)
-            {ObjectivePosition=Flow.Patrol.transform.position;objective.text="LA PATRULLA\nHabla con el capitán y prepara las tropas.";}
+            {ObjectivePosition=Flow.Patrol.transform.position;objective.text="LA PATRULLA\nRevisa salud y raciones en Inventario.\nDespués, habla con el capitán.";}
             else
             {ObjectivePosition=new Vector3(9,0,-10);objective.text="CAMPAMENTO\nMenú → Construir: centro, taller y producción.\nDespués: compañeros, mazmorra y culturas.";if(state.Demo!=null&&state.Demo.Chapter==DemoChapter.FreeExploration)markerRect.gameObject.SetActive(false);}
         }

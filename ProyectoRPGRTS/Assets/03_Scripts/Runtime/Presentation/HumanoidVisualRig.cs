@@ -20,7 +20,7 @@ namespace Aethernia
             get
             {
                 if (animator == null || animator.avatar == null || !animator.avatar.isValid || (!animator.avatar.isHuman && !allowGeneric)) return false;
-                if (GetComponent<CharacterVisualModel>() == null || (transform.localScale - Vector3.one).sqrMagnitude > .0001f) return false;
+                if (GetComponent<CharacterVisualModel>() == null || !RaceVisualVariant.ValidScale(transform)) return false;
                 return body != null && body.sharedMesh != null && body.rootBone != null;
             }
         }

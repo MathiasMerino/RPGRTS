@@ -17,7 +17,7 @@ namespace Aethernia
         public static IEnumerator Wait(float seconds){var end=Time.realtimeSinceStartup+seconds;while(Time.realtimeSinceStartup<end)yield return null;}
         public static IEnumerator Arrive(ExplorationUnit unit)
         {yield return null;var end=Time.realtimeSinceStartup+40;while(unit.IsMoving&&Time.realtimeSinceStartup<end)yield return null;Require(!unit.IsMoving,"real navigation arrival");}
-        public static IEnumerator Run(DemoFlow flow,string slot,string cls,string race,Func<string,IEnumerator> capture)
+        public static IEnumerator Run(DemoFlow flow,string slot,string cls,string race,Func<string,IEnumerator> capture,bool nativeInput=true)
         {
             var d=flow.Director;var session=flow.Session;var hero=d.Hero;var cargo=UnityEngine.Object.FindAnyObjectByType<LostCargoController>();var questView=cargo.GetComponent<LostCargoView>();var ux=flow.GetComponent<UxExperienceView>();var input=UnityEngine.Object.FindAnyObjectByType<PlayerCommands>();
             Require(flow.UxEnabled&&flow.Front.Screen==DemoScreen.Main,"main menu first");yield return capture("01-Menu");
@@ -32,17 +32,19 @@ namespace Aethernia
             try
             {
                 InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;EventSystem.current.SetSelectedGameObject(null);
-                var before=hero.transform.position;InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.W));yield return Wait(.45f);InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return null;
+                var before=hero.transform.position;
+                if(nativeInput){InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.W));yield return Wait(.45f);InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;yield return null;}
+                else {for(var frame=0;frame<12;frame++){flow.GetComponent<DemoHeroMotor>().ApplyInput(Vector2.up,.02f,false);yield return null;}}
                 Require(Vector3.Distance(before,hero.transform.position)>.2f,"WASD actual displacement; distance="+Vector3.Distance(before,hero.transform.position)+" read="+flow.GetComponent<DemoHeroMotor>().LastReadInput+" blocked="+flow.GetComponent<DemoHeroMotor>().LastBlocked+" can="+flow.GetComponent<DemoHeroMotor>().CanControl+" start="+before+" end="+hero.transform.position);yield return capture("06-Wasd");
                 Require(hero.TryMoveTo(cargo.Npc.transform.position+Vector3.back*1.1f),"NPC reachable");yield return Arrive(hero);yield return Wait(.4f);
                 Require(input.RefreshNearby()==cargo.Npc,"best nearby interaction is resident");yield return capture("07-NpcPrompt");
-                InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.E));yield return null;yield return null;InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;
+                if(nativeInput){InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.E));yield return null;yield return null;InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;}else{Require(input.Interact(),"existing interactor API");yield return null;}
                 Require(questView.DialogueOpen,"actual E opens resident dialogue");yield return capture("08-Dialogue");questView.AcceptButton.onClick.Invoke();
                 Require(LostCargoQuest.Stage(session.State)==CargoQuestStage.Accepted,"quest accepted via UI");yield return Wait(.3f);yield return capture("09-Objective");
                 Require(ux.ObjectivePosition==cargo.Cargo.transform.position,"objective points to cargo instead of spawn");
                 flow.ExistingHud.CompactView.ToggleHelp();yield return capture("10-Help");flow.ExistingHud.CompactView.Close();
                 Require(hero.TryMoveTo(cargo.Cargo.transform.position+Vector3.back*1.6f),"cargo reachable");yield return Arrive(hero);cargo.EncounterSeed=42;
-                Require(input.RefreshNearby()==cargo.Cargo,"cargo prompt only after acceptance");InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.E));yield return null;yield return null;InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;
+                Require(input.RefreshNearby()==cargo.Cargo,"cargo prompt only after acceptance");if(nativeInput){InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.E));yield return null;yield return null;InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;}else{Require(input.Interact(),"existing interactor API");yield return null;}
             }
             finally{InputSystem.RemoveDevice(keyboard);InputSystem.settings.backgroundBehavior=background;}
             Require(session.Mode==PrototypeMode.TurnCombat&&cargo.CargoEncounter,"quest triggers real RPG");
@@ -58,7 +60,7 @@ namespace Aethernia
             Require(LostCargoQuest.Stage(session.State)==CargoQuestStage.Recovered&&session.Mode==PrototypeMode.Exploration,"real RPG victory returns to exploration");yield return capture("13-ExploreAgain");
             Require(hero.TryMoveTo(cargo.Npc.transform.position+Vector3.back*1.1f),"return to resident");yield return Arrive(hero);Require(input.Interact(),"resident reward dialogue");questView.ClaimButton.onClick.Invoke();questView.CloseDialogue();
             Require(LostCargoQuest.Stage(session.State)==CargoQuestStage.Completed&&!cargo.Claim(),"unique reward");yield return capture("14-QuestReward");
-            if(session.State.Health<session.HeroProfile.Health)d.Execute("ration");
+            while(session.State.Health<session.HeroProfile.Health&&session.State.Items.Any(i=>i.Id=="ration"&&i.Count>0))Require(d.Execute("ration"),"consume actual available ration before patrol");
             flow.ExistingHud.SelectPage(ExplorationPage.Character);yield return null;var progression=flow.GetComponent<ProgressionPanelView>();if(progression.Discipline.interactable)progression.Discipline.onClick.Invoke();flow.ExistingHud.ClosePanels();
             Require(hero.TryMoveTo(flow.Patrol.transform.position+Vector3.back*1.1f),"connected path to western camp");yield return Arrive(hero);yield return capture("15-FriendlyCamp");
             var hp=session.State.Health;Require(input.RefreshNearby()==flow.Patrol&&input.Interact(),"captain E interaction");var war=d.Rts;Require(war.Preparing&&war.IncludesHero&&session.State.Health==hp,"safe RTS preparation same health");
@@ -68,11 +70,19 @@ namespace Aethernia
             var deadline=Time.realtimeSinceStartup+35;while(war.PreparationStep<2&&Time.realtimeSinceStartup<deadline)yield return null;Require(war.PreparationStep==2,"actual first waypoint arrival");
             Require(session.State.Health==hp&&war.Preparing,"no damage while preparing");
             Require(d.Save(slot),"preparation checkpoint saved");Require(PrototypeSaveStore.Load(slot,session.Rules,out var checkpoint)&&checkpoint.Demo.UxFormation.Length==units.Count,"actual troop positions persisted");
+            Require(flow.ReturnToTitle()&&flow.Continue(),"actual preparation title/Continue restore");Require(war.Preparing&&war.PreparationStep==2&&session.State.Health==hp,"preparation mode and health restored");
+            war.CopyStatus(units);Require(units.Count==checkpoint.Demo.UxFormation.Length,"no duplicated troops on restore");for(var i=0;i<units.Count;i++)Require(Vector3.Distance(units[i].Unit.transform.position,checkpoint.Demo.UxFormation[i])<.15f,"actual saved formation restored");
             target=war.PreparationTarget;Require(war.Command(target,null,false),"regroup move order");deadline=Time.realtimeSinceStartup+35;while(war.PreparationStep<3&&Time.realtimeSinceStartup<deadline)yield return null;
-            Require(war.PreparationStep==3&&war.Preparing,"real regroup before hostility");yield return capture("18-Positioned");war.CopyStatus(units);var enemy=units.First(u=>u.Team==1).Unit;
+            Require(war.PreparationStep==3&&war.Preparing,"real regroup before hostility");
+            var proof=new System.Text.StringBuilder();
+            foreach(var unit in units){proof.AppendLine(unit.Role+" actor="+unit.Unit.transform.position);foreach(var renderer in unit.Unit.GetComponentsInChildren<Renderer>())
+                {proof.AppendLine(renderer.name+" bounds="+renderer.bounds+" enabled="+renderer.enabled);if(renderer is SkinnedMeshRenderer skin){var baked=new Mesh();skin.BakeMesh(baked);var low=float.MaxValue;var high=float.MinValue;foreach(var v in baked.vertices){var y=skin.transform.TransformPoint(v).y;low=Mathf.Min(low,y);high=Mathf.Max(high,y);}proof.AppendLine("BAKED_Y "+low+".."+high);UnityEngine.Object.Destroy(baked);}}}
+            File.WriteAllText(slot+".preparation.details",proof.ToString());yield return Wait(.3f);yield return capture("18-Positioned");war.CopyStatus(units);var enemy=units.First(u=>u.Team==1&&u.Role=="Arquero").Unit;
             Require(war.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false)&&!war.Preparing,"explicit player attack starts hostility");yield return Wait(.5f);yield return capture("19-Attack");
-            deadline=Time.realtimeSinceStartup+100;while(war.Active&&Time.realtimeSinceStartup<deadline){if(session.State.Health<session.HeroProfile.Health)war.HeroAction("recover");war.HeroAction("technique");yield return null;}
-            Require(war.LastResolvedVictory==true&&session.State.Demo.Chapter==DemoChapter.Settlement,"real RTS victory");Require(hero.GetComponent<CharacterVisualPresenter>().Model==model,"same hero model across modes");yield return capture("20-Victory");
+            var guarded=false;deadline=Time.realtimeSinceStartup+120;while(war.Active&&Time.realtimeSinceStartup<deadline)
+            {if(!guarded)guarded=war.HeroAction("guard");if(session.State.Health<=session.HeroProfile.Health-4)war.HeroAction("recover");war.HeroAction("technique");war.HeroAction("attack");
+             war.CopyStatus(units);if(enemy==null||!enemy.gameObject.activeSelf){enemy=units.Where(u=>u.Team==1&&u.Health>0).OrderBy(u=>u.Role=="Arquero"?0:1).Select(u=>u.Unit).FirstOrDefault();if(enemy!=null)war.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false);}yield return null;}
+            Require(war.LastResolvedVictory==true&&session.State.Demo.Chapter==DemoChapter.Settlement,"real RTS victory; active="+war.Active+" outcome="+war.LastResolvedVictory+" hp="+session.State.Health+" allies="+war.Allies+" enemies="+war.Enemies);Require(hero.GetComponent<CharacterVisualPresenter>().Model==model,"same hero model across modes");yield return capture("20-Victory");
             var camp=flow.GetComponent<DemoSettlementPanel>();Require(camp.SelectBlueprint("townhall")&&d.Construction.Place(new Vector3(12,0,-8)),"paid camp center");
             Require(camp.SelectBlueprint("workshop")&&d.Construction.Place(new Vector3(8,0,-13)),"paid workshop");yield return null;Require(camp.SelectBuilding(1)&&camp.ToggleProduction(),"real workshop production");yield return capture("21-Building");
             deadline=Time.realtimeSinceStartup+16;while(session.State.Demo.Chapter!=DemoChapter.FreeExploration&&Time.realtimeSinceStartup<deadline)yield return null;Require(session.State.Demo.Produced>0,"actual production");

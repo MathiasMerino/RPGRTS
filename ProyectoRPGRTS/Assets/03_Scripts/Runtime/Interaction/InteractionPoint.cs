@@ -12,7 +12,7 @@ namespace Aethernia
         {
             if(!game.Rules.UxExperience)return true;
             if(factId==LostCargoQuest.CargoId)return LostCargoQuest.Stage(game.State)==CargoQuestStage.Accepted;
-            if(factId=="demo-patrol")return game.State.Demo!=null&&game.State.Demo.Chapter>=DemoChapter.RoadToRts&&LostCargoQuest.Stage(game.State)==CargoQuestStage.Completed;
+            if(factId=="demo-patrol")return DemoFlow.CanVisitPatrol(game);
             if(factId==LostCargoQuest.NpcId)return true;
             return !game.HasFact(factId)||factId.StartsWith("portal-")||factId.StartsWith("settlement-");
         }

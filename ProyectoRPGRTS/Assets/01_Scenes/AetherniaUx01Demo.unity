@@ -1871,6 +1871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Window_100x120cm
       objectReference: {fileID: 0}
+    - target: {fileID: 8539142157622414082, guid: 801557f019d809c44a8a5526fd4f0283, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2511,7 +2515,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56ea0c55d60265f43bbdcd68d9ed4b2b, type: 2}
+  - {fileID: 2100000, guid: 77a0cb5149cb4844aad17652207d07be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5846,7 +5850,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56ea0c55d60265f43bbdcd68d9ed4b2b, type: 2}
+  - {fileID: 2100000, guid: 77a0cb5149cb4844aad17652207d07be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6971,7 +6975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &359007707
 Transform:
   m_ObjectHideFlags: 0
@@ -9543,7 +9547,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56ea0c55d60265f43bbdcd68d9ed4b2b, type: 2}
+  - {fileID: 2100000, guid: 77a0cb5149cb4844aad17652207d07be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10856,7 +10860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &493448995
 Transform:
   m_ObjectHideFlags: 0
@@ -12016,9 +12020,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
   m_SerializedVersion: 0
   m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_CollectObjects: 1
+  m_Size: {x: 132, y: 12, z: 64}
+  m_Center: {x: -2, y: 0, z: 0}
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -27170,6 +27174,10 @@ PrefabInstance:
     - target: {fileID: 281646198082021451, guid: 0f9b59b82e4c45f45be4f9983491161f, type: 3}
       propertyPath: m_Name
       value: ReferenceDoor_120x220cm
+      objectReference: {fileID: 0}
+    - target: {fileID: 281646198082021451, guid: 0f9b59b82e4c45f45be4f9983491161f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1781983653413966110, guid: 0f9b59b82e4c45f45be4f9983491161f, type: 3}
       propertyPath: m_Enabled
@@ -45740,8 +45748,8 @@ Transform:
   m_GameObject: {fileID: 1944746245}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34, y: -0.12, z: 0}
-  m_LocalScale: {x: 40, y: 0.24, z: 34}
+  m_LocalPosition: {x: -34, y: -0.14, z: 0}
+  m_LocalScale: {x: 64, y: 0.24, z: 60}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1663893765}
@@ -45771,7 +45779,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56ea0c55d60265f43bbdcd68d9ed4b2b, type: 2}
+  - {fileID: 2100000, guid: 89cf8e3082d5db240b2eb9c3c2b3fab0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -46953,7 +46961,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56ea0c55d60265f43bbdcd68d9ed4b2b, type: 2}
+  - {fileID: 2100000, guid: 77a0cb5149cb4844aad17652207d07be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -47465,6 +47473,10 @@ PrefabInstance:
     - target: {fileID: 2338245284707550735, guid: 8160f7c44918b7747922df958306d907, type: 3}
       propertyPath: m_Name
       value: Door_140x240cm
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338245284707550735, guid: 8160f7c44918b7747922df958306d907, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7592843285601976483, guid: 8160f7c44918b7747922df958306d907, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

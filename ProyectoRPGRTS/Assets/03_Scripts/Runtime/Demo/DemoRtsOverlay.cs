@@ -16,6 +16,7 @@ namespace Aethernia
         private Button attack,guard,recover,technique;
         private DemoWidgets ui;
         private Canvas canvas;
+        private readonly List<Rect> occupiedRects=new List<Rect>(24);
         public int LiveBars=>bars.Count;
         private void ClearBars(){foreach(var bar in bars.Values)if(bar.Root!=null)Destroy(bar.Root.gameObject);bars.Clear();}
         private void OnDisable(){ClearBars();}
@@ -31,6 +32,12 @@ namespace Aethernia
             }
             if(Flow.Session.Rules.Progression!=null)
             {panel.sizeDelta=new Vector2(344,222);technique=ui.Button(panel,"Hero technique","Técnica",12,164,320,42,()=>Order("technique"));}
+            if(Flow.UxEnabled)
+            {
+                panel.anchorMin=panel.anchorMax=panel.pivot=new Vector2(.5f,0);panel.anchoredPosition=new Vector2(90,12);panel.sizeDelta=new Vector2(584,84);
+                text.rectTransform.anchoredPosition=new Vector2(12,-4);text.rectTransform.sizeDelta=new Vector2(560,30);text.fontSize=16;
+                var buttons=new[]{attack,guard,recover,technique};for(var i=0;i<buttons.Length;i++)if(buttons[i]!=null){var rect=(RectTransform)buttons[i].transform;rect.anchoredPosition=new Vector2(12+i*142,-40);rect.sizeDelta=new Vector2(134,36);buttons[i].GetComponentInChildren<TMP_Text>().fontSize=15;}
+            }
             drag=DemoWidgets.Rect(canvas.transform,"Selection rectangle",0,0,0,0);DemoWidgets.Fill(drag,new Color(.70f,.63f,.36f,.18f),false);
         }
         private void Order(string action){if(!Flow.Director.Rts.HeroAction(action))Flow.Session.Say("Selecciona al héroe y espera su intervalo; comprueba alcance y recursos.");}
@@ -39,7 +46,7 @@ namespace Aethernia
             if(panel==null)return;var rts=Flow.Director.Rts;var show=Flow.IsPlaying&&rts.IncludesHero&&Flow.Session.Mode==PrototypeMode.Rts&&!Flow.ExistingHud.CompactView.HelpOpen;panel.gameObject.SetActive(show);
             foreach(var b in bars.Values)b.Root.gameObject.SetActive(false);
             if(!show){ClearBars();drag.gameObject.SetActive(false);return;}
-            rts.CopyStatus(status);var selectedHero=false;var occupied=Flow.Front.Presentation==null?null:new List<Rect>();
+            rts.CopyStatus(status);var selectedHero=false;occupiedRects.Clear();var occupied=Flow.Front.Presentation==null?null:occupiedRects;
             foreach(var unit in status)
             {
                 if(unit.Unit==null||unit.Health<=0)continue;
@@ -59,10 +66,11 @@ namespace Aethernia
                 bar.Label.color=unit.Unit.IsSelected?ui.Gold:ui.Ink;
             }
             text.text=(rts.ContextId=="conquest-outpost"?"CONQUISTA":"PATRULLA")+" · "+rts.Allies+" aliados / "+rts.Enemies+" rivales · "+rts.SelectedAllies+" seleccionados\nCtrl+1/2/3: guardar grupo · 1/2/3: seleccionar";
-            attack.interactable=guard.interactable=recover.interactable=rts.Active&&selectedHero&&!Flow.Session.Paused;
+            if(Flow.UxEnabled)text.text=(rts.Preparing?"PREPARACIÓN SEGURA":"BATALLA")+" · "+rts.SelectedAllies+" seleccionados · "+rts.Allies+" aliados";
+            attack.interactable=guard.interactable=recover.interactable=!rts.Preparing&&rts.Active&&selectedHero&&!Flow.Session.Paused;
             if(technique!=null)
             {
-                var skill=Flow.Session.HeroProfile.Combat;technique.interactable=rts.Active&&selectedHero&&!Flow.Session.Paused&&skill!=null&&skill.TechniqueUnlocked&&rts.TechniqueFocus>=skill.TechniqueCost;
+                var skill=Flow.Session.HeroProfile.Combat;technique.interactable=!rts.Preparing&&rts.Active&&selectedHero&&!Flow.Session.Paused&&skill!=null&&skill.TechniqueUnlocked&&rts.TechniqueFocus>=skill.TechniqueCost;
                 technique.GetComponentInChildren<TMP_Text>().text=skill==null||!skill.TechniqueUnlocked?"Técnica · requiere nivel2":skill.TechniqueTitle+" · foco "+rts.TechniqueFocus;
             }
             var input=Flow.GetComponent<DemoRtsInput>();drag.gameObject.SetActive(input!=null&&input.Dragging);

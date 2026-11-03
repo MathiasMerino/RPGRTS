@@ -8,7 +8,7 @@ namespace Aethernia
         {
             reason=null;
             if(prefab==null||prefab.GetComponent<CharacterVisualModel>()==null){reason="Missing CharacterVisualModel";return false;}
-            if((prefab.transform.localScale-Vector3.one).sqrMagnitude>.0001f){reason="Root must retain metre scale";return false;}
+            if(!RaceVisualVariant.ValidScale(prefab.transform)){reason="Root must retain metre scale";return false;}
             if(prefab.GetComponentInChildren<Collider>(true)!=null||prefab.GetComponentInChildren<Rigidbody>(true)!=null||prefab.GetComponentInChildren<NavMeshAgent>(true)!=null||prefab.GetComponentInChildren<ExplorationUnit>(true)!=null||prefab.GetComponentInChildren<GameSession>(true)!=null){reason="Visual contains gameplay or physics";return false;}
             var renderer=prefab.GetComponentInChildren<Renderer>(true);
             if(renderer==null||renderer.sharedMaterial==null){reason="Missing renderer/material";return false;}

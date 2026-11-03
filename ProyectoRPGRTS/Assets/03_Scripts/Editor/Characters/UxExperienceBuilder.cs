@@ -56,6 +56,12 @@ namespace Aethernia.Editor.Characters
             foreach(var name in new[]{"ReferenceWindow_100x120cm","ReferenceDoor_120x220cm","Narrow Gate - 0.40m clearance"})
             {var item=GameObject.Find(name);if(item!=null){item.SetActive(false);PrefabUtility.RecordPrefabInstancePropertyModifications(item);}}
             var surface=GameObject.Find("Baked Navigation").GetComponent<NavMeshSurface>();
+            foreach(var t in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include))
+                if((t.name=="Door_140x240cm"||t.name=="Window_100x120cm"||t.name=="Window ruin support"||t.name=="Old narrow gate posts")&&t.parent!=null&&t.parent.name=="Skins over original logical objects")
+                {t.gameObject.SetActive(false);PrefabUtility.RecordPrefabInstancePropertyModifications(t.gameObject);}
+            var soil=GameObject.Find("Muster soil 40x34m");soil.transform.position=new Vector3(-34,-.14f,0);soil.transform.localScale=new Vector3(64,.24f,60);soil.GetComponent<Renderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Grass.mat");
+            foreach(var name in new[]{"Village to camp path 4m","Staging path 4m","First move destination","Regroup destination"})GameObject.Find(name).GetComponent<Renderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Earth.mat");
+            surface.collectObjects=CollectObjects.Volume;surface.center=new Vector3(-2,0,0);surface.size=new Vector3(132,12,64);
             var saved=AssetDatabase.LoadAssetAtPath<UnityEngine.AI.NavMeshData>(Root+"/SurfaceNavigation.asset");surface.RemoveData();surface.navMeshData=null;surface.BuildNavMesh();var generated=surface.navMeshData;surface.RemoveData();EditorUtility.CopySerialized(generated,saved);surface.navMeshData=saved;surface.AddData();Object.DestroyImmediate(generated);EditorUtility.SetDirty(saved);PrefabUtility.RecordPrefabInstancePropertyModifications(surface);
             var flow=Object.FindAnyObjectByType<DemoFlow>();flow.CameraRig.FollowTarget=flow.Director.Hero;PrefabUtility.RecordPrefabInstancePropertyModifications(flow.CameraRig);
             EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();Debug.Log("UX01_REFINED diagnostic door/window/gate removed from new scene only; same navigation GUID.");

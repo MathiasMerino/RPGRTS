@@ -23,3 +23,13 @@ Archivos y resultados se incorporarán al checklist tras cada bloque. La inciden
 Se reutilizan DemoFlow, DemoProgress, LostCargoQuest, PlayerCommands, IsometricCameraRig, GameSession y RtsBattleController. El perfil UX es optativo y no crea otra partida ni otro gestor de modos. La misión del cargamento conserva sus hechos y recompensas. La preparación RTS reutiliza las mismas tropas y órdenes del encuentro real. El escenario y navegación nuevos se guardan aparte, sin regenerar E19.
 
 GitHub verificado: PR1–10 abiertos en borrador, sin fusionar; main/dev intactas. Rama UX sobre E19/PR10. QualitySettings es un cambio local anterior ajeno, SHA `62494399222dd3d2c992d4c9c41deecdeffd5e50fde962be46b7f38a0a09b916`; se conserva sin incluirlo en commits. Recursos privados excluidos.
+
+## Integración y QA en curso
+
+La escala racial provisional hacía que el contrato de rig rechazara modelos válidos al cambiar sus proporciones. Se admite únicamente la escala registrada por RaceVisualVariant; se siguen rechazando escalas accidentales y no cambian actores, colisiones ni assets originales.
+
+El editor comprueba el motor y el interactor mediante sus API: el teclado sintético no llega a su bucle de entrada en esta configuración. El player Windows verificará WASD/E reales por separado. Se conservan todos los resultados fallidos; el pase dirigido anterior fue6/7 con muerte legítima del Monje, aun con aliados supervivientes. El recorrido actual consume sólo raciones existentes, prioriza arqueros y utiliza Guardia/ataques legales, sin modificar estadísticas o condiciones de victoria.
+
+Cámara: exploración6.2m de semialtura, RPG7, RTS8.5, construcción10; zoom acotado, amortiguación0.18s, reposo tras2s de desplazamiento manual. Distancia de cámara45m. Un controlador escribe su transformación.
+
+Escala: actor/cápsula1.8m, modelos raciales proporcionales; caminos4m, campo transitable64×60m, corredor de despliegue sin obstáculos, edificios y piezas anteriores en metros. Superficie de navegación UX con GUID propio y volumen limitado para no duplicar las ruinas E14. Materiales Grass/Earth y decoraciones públicas compartidas.

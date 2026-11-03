@@ -11,6 +11,7 @@ namespace Aethernia
         [SerializeField] private GameSession session;
         public InteractionPoint Target { get; private set; }
         public ExplorationUnit Hero => hero;
+        public System.Func<bool> ModalOpen;
         public bool NearbyInteraction { get; set; }
         public bool ExternalRtsPointer { get; set; }
         private readonly Collider[] nearby=new Collider[24];
@@ -18,7 +19,7 @@ namespace Aethernia
         public InteractionPoint CurrentInteraction { get; private set; }
         public InteractionPoint RefreshNearby()
         {
-            if(session==null||hero==null||session.Mode!=PrototypeMode.Exploration||session.Paused||session.WorldUiOpen){CurrentInteraction=null;return null;}
+            if(session==null||hero==null||session.Mode!=PrototypeMode.Exploration||session.Paused||session.WorldUiOpen||(ModalOpen?.Invoke()??false)){CurrentInteraction=null;return null;}
             var count=Physics.OverlapSphereNonAlloc(hero.transform.position,2.2f,nearby,~0,QueryTriggerInteraction.Collide);
             InteractionPoint best=null;var score=float.MaxValue;
             for(var i=0;i<count;i++)
@@ -30,7 +31,7 @@ namespace Aethernia
         { view = camera; hero = unit; session = game; }
         private void Update()
         {
-            if(session.Paused||session.WorldUiOpen||session.Mode==PrototypeMode.MainMenu||session.Mode==PrototypeMode.CharacterCreation||session.Mode==PrototypeMode.Intro)return;
+            if((ModalOpen?.Invoke()??false)||session.Paused||session.WorldUiOpen||session.Mode==PrototypeMode.MainMenu||session.Mode==PrototypeMode.CharacterCreation||session.Mode==PrototypeMode.Intro)return;
             if(ExternalRtsPointer&&session.Mode==PrototypeMode.Rts)return;
             if(session.Rules.UxExperience&&Time.unscaledTime>=nextNearby){nextNearby=Time.unscaledTime+.1f;RefreshNearby();}
             var mouse = Mouse.current;
@@ -42,7 +43,7 @@ namespace Aethernia
         }
         public bool IssuePointer(Vector2 screenPoint, bool primary, bool blockedByUi)
         {
-            if (blockedByUi || !Physics.Raycast(view.ScreenPointToRay(screenPoint), out var hit, 150)) return false;
+            if (blockedByUi || (ModalOpen?.Invoke()??false) || !Physics.Raycast(view.ScreenPointToRay(screenPoint), out var hit, 150)) return false;
             if (session.Mode != PrototypeMode.Exploration) return session.RouteWorldClick(hit.point, hit.collider, primary);
             if (primary)
             {
@@ -60,7 +61,7 @@ namespace Aethernia
         }
         public bool Interact()
         {
-            if(session.Paused||session.Mode!=PrototypeMode.Exploration)return false;
+            if(session.Paused||session.WorldUiOpen||(ModalOpen?.Invoke()??false)||session.Mode!=PrototypeMode.Exploration)return false;
             if(session.Rules.UxExperience){var selected=RefreshNearby();return selected!=null&&selected.TryInteract(hero,session);}
             if(Target!=null&&(!NearbyInteraction||Vector3.Distance(Target.transform.position,hero.transform.position)<=2.2f))return Target.TryInteract(hero,session);
             if(!NearbyInteraction)return false;

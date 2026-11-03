@@ -1227,3 +1227,5 @@ Plan, dependencias y aceptación: Docs/UX01_EXPERIENCIA.md. Base E19 preservada.
 | UX-HUM | Pendiente | Revisión humana, no sustituible por automatización |
 
 UX01 inicial: escena/navegación generadas; referencia de escena1/1PASS dentro del pase diagnóstico1/2. Recorridos fallidos conservados en Docs/Validacion/UX01; no se declaran verificadas las mecánicas. Archivos: Runtime/Demo,UxExperienceView,IsometricCameraRig,PlayerCommands,InteractionPoint,RtsPreparation,PrototypeSaveStore,UxExperienceBuilder,UxExperienceTests y herramientas QA.
+
+UX01 dirigido final8/8PASS: tres clases, guardado/Continuar en preparación RTS, legado avanzado E19, rig de12variantes y bloqueo modal. Evidencia DIRIGIDA_08_RESULTADO.xml. API de movimiento/interacción en editor; teclado real pendiente de player. No equivale a regresión global ni revisión humana.

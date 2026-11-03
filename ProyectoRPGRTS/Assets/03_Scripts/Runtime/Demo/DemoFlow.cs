@@ -124,6 +124,8 @@ namespace Aethernia
             {Director.Execute("explore");PrepareRetry();Resume();BeginPatrol();}
             else RetryFirstCombat();
         }
+        public static bool CanVisitPatrol(GameSession game)
+        {var p=game.State.Demo;return p!=null&&p.Chapter>=DemoChapter.RoadToRts&&(!game.Rules.UxExperience||p.UxRevision!=1||p.Chapter>=DemoChapter.Settlement||LostCargoQuest.Stage(game.State)==CargoQuestStage.Completed);}
         private bool? Interact(string id,string title)
         {
             if(id!="demo-patrol")return null;
@@ -133,10 +135,10 @@ namespace Aethernia
         }
         public bool BeginPatrol()
         {
-            if(!IsPlaying||Director.IsBusy||Session.State.Demo==null||Session.State.Demo.Chapter<DemoChapter.RoadToRts)return false;
+            if(!IsPlaying||Director.IsBusy||!CanVisitPatrol(Session))return false;
             patrolReturn=Session.State.Demo.Chapter;Director.Encounter.Clear();
             if(!(UxEnabled?Director.Rts.BeginPreparation(Director.Hero):Director.Rts.BeginWithHero(Director.Hero)))return false;
-            if(patrolReturn<DemoChapter.Settlement)Session.State.Demo.Chapter=DemoChapter.FirstRts;CameraRig.SetRegion(Vector3.zero);CameraRig.SetZoom(8);CameraRig.FocusOn(UxEnabled?Director.Hero.transform.position:new Vector3(-9,0,13));return true;
+            if(patrolReturn<DemoChapter.Settlement)Session.State.Demo.Chapter=DemoChapter.FirstRts;CameraRig.SetRegion(Vector3.zero);CameraRig.SetZoom(8);CameraRig.FocusOn(UxEnabled?Director.Rts.ArenaOffset+new Vector3(-4,0,11):new Vector3(-9,0,13));return true;
         }
         private void RtsResolved(bool won)
         {
