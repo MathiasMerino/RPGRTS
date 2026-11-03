@@ -1,0 +1,36 @@
+using System.Collections;
+using System.IO;
+using System.Linq;
+using Aethernia.Editor.Characters;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.TestTools;
+using Object=UnityEngine.Object;
+
+namespace Aethernia.Tests.Editor
+{
+    // Fixture aislada de presentación, no evidencia de progreso ni victoria del jugador.
+    public sealed class UxSurfaceDiagnosticTests
+    {
+        [UnityTest]public IEnumerator GroundAndSkinIsolation()
+        {
+            EditorSceneManager.OpenScene(UxExperienceBuilder.ScenePath);yield return new EnterPlayMode();yield return null;yield return null;
+            var flow=Object.FindAnyObjectByType<DemoFlow>();flow.SlotPath="Logs/UX01/diagnostic.json";flow.StartNew("Diagnóstico","warrior","human");flow.CompleteIntro();flow.Director.Rts.BeginWithHero(flow.Director.Hero);flow.Session.Paused=true;
+            flow.CameraRig.SetRegion(Vector3.zero);flow.CameraRig.FocusOn(new Vector3(-38,0,2));flow.CameraRig.SetZoom(8.5f);yield return null;yield return null;
+            Directory.CreateDirectory("Logs/UX01/Diagnostic");var log=new System.Text.StringBuilder();
+            foreach(var renderer in Object.FindObjectsByType<Renderer>())
+                if(renderer.bounds.Contains(new Vector3(-46,renderer.bounds.center.y,3)))log.AppendLine(renderer.name+" position="+renderer.transform.position+" scale="+renderer.transform.lossyScale+" bounds="+renderer.bounds+" shader="+renderer.sharedMaterial?.shader.name+" queue="+renderer.sharedMaterial?.renderQueue);
+            File.WriteAllText("Logs/UX01/Diagnostic/renderers.txt",log.ToString());
+            yield return DemoCapture.Save("Logs/UX01/Diagnostic/01-normal.png",1280,720);
+            var surface=GameObject.Find("UX01 Western muster ground").GetComponentsInChildren<Renderer>();foreach(var renderer in surface)renderer.enabled=false;
+            yield return DemoCapture.Save("Logs/UX01/Diagnostic/02-without-surface.png",1280,720);
+            foreach(var renderer in surface)renderer.enabled=true;
+            foreach(var skin in Object.FindObjectsByType<SkinnedMeshRenderer>())skin.updateWhenOffscreen=true;
+            foreach(var driver in Object.FindObjectsByType<HumanoidAnimationDriver>()){driver.Rig.Animator.cullingMode=AnimatorCullingMode.AlwaysAnimate;driver.Rig.Animator.Rebind();driver.Rig.Animator.Update(0);}
+            yield return null;yield return null;yield return DemoCapture.Save("Logs/UX01/Diagnostic/03-rebound-skin.png",1280,720);
+            flow.Session.Paused=false;yield return new ExitPlayMode();
+        }
+        [UnityTearDown]public IEnumerator Cleanup(){if(EditorApplication.isPlaying)yield return new ExitPlayMode();}
+    }
+}

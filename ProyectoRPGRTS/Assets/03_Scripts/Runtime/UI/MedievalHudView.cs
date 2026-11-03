@@ -80,6 +80,7 @@ namespace Aethernia
                     text.Append("\nReputación A: ").Append(s.ReputationA).Append("     Reputación B: ").Append(s.ReputationB).Append("\nTalleres construidos: ").Append(s.Buildings.Count);
                     Body.text=text.ToString();
                 }
+                if(session.Rules.UxExperience&&page==ExplorationPage.Session)Body.text="PARTIDA\nF5: guardar · F9: cargar\nSe conservan personaje, equipo, recursos y progreso.\n\nGuarda fuera de combate hostil o durante la preparación segura de la patrulla.\nP: pausa y opciones. La construcción se introduce después de la patrulla.";
                 Inventory.Render(s);
             }
             if(session.Mode==PrototypeMode.Construction) Context.text="TALLER SELECCIONADO · 10 oro + 5 madera · 3 × 3 m · clic derecho: colocar · 10 s: 1 alimento → 1 madera";

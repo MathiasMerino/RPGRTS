@@ -14,7 +14,8 @@ namespace Aethernia
             if(factId==LostCargoQuest.CargoId)return LostCargoQuest.Stage(game.State)==CargoQuestStage.Accepted;
             if(factId=="demo-patrol")return DemoFlow.CanVisitPatrol(game);
             if(factId==LostCargoQuest.NpcId)return true;
-            return !game.HasFact(factId)||factId.StartsWith("portal-")||factId.StartsWith("settlement-");
+            if(factId=="reference-chest"||factId=="dungeon-objective"||factId=="umbral-cache"||factId=="umbral-objective"||factId.StartsWith("umbral-battle-"))return !game.HasFact(factId);
+            return true; // Repeatable trade/travel/recruitment is decided by its existing controller.
         }
         public string DisplayName => displayName;
         public string FactId => factId;

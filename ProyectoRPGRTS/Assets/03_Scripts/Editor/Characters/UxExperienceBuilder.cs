@@ -59,12 +59,48 @@ namespace Aethernia.Editor.Characters
             foreach(var t in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include))
                 if((t.name=="Door_140x240cm"||t.name=="Window_100x120cm"||t.name=="Window ruin support"||t.name=="Old narrow gate posts")&&t.parent!=null&&t.parent.name=="Skins over original logical objects")
                 {t.gameObject.SetActive(false);PrefabUtility.RecordPrefabInstancePropertyModifications(t.gameObject);}
-            var soil=GameObject.Find("Muster soil 40x34m");soil.transform.position=new Vector3(-34,-.14f,0);soil.transform.localScale=new Vector3(64,.24f,60);soil.GetComponent<Renderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Grass.mat");
+            var soil=GameObject.Find("Muster soil 40x34m");soil.transform.position=new Vector3(-34,-.14f,0);soil.transform.localScale=new Vector3(64,.24f,60);soil.GetComponent<BoxCollider>().size=new Vector3(40f/64,1,30f/60);soil.GetComponent<Renderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Grass.mat");
             foreach(var name in new[]{"Village to camp path 4m","Staging path 4m","First move destination","Regroup destination"})GameObject.Find(name).GetComponent<Renderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Earth.mat");
             surface.collectObjects=CollectObjects.Volume;surface.center=new Vector3(-2,0,0);surface.size=new Vector3(132,12,64);
+            foreach(var landscape in Object.FindObjectsByType<MeshFilter>().Where(f=>f.name=="Grass"&&f.GetComponent<Renderer>()!=null&&f.GetComponent<Renderer>().bounds.size.x>60))
+            {
+            var current=AssetDatabase.GetAssetPath(landscape.sharedMesh);
+            var terrainPath=current.StartsWith(Root+"/WesternGround")?current:Root+"/WesternGround-"+landscape.sharedMesh.name+".asset";
+            var flat=AssetDatabase.LoadAssetAtPath<Mesh>(terrainPath);
+            if(flat==null)
+            {
+                flat=Object.Instantiate(landscape.sharedMesh);flat.name="UX01 military ground and connecting path";var vertices=flat.vertices;
+                for(var i=0;i<vertices.Length;i++)
+                {
+                    var point=landscape.transform.TransformPoint(vertices[i]);
+                    var field=Mathf.Min(Mathf.InverseLerp(-64,-58,point.x),Mathf.InverseLerp(-13,-19,point.x),Mathf.InverseLerp(-24,-16,point.z),Mathf.InverseLerp(26,18,point.z));
+                    var road=Mathf.Min(Mathf.InverseLerp(-53,-49,point.x),Mathf.InverseLerp(-7,-11,point.x),Mathf.InverseLerp(-5,-.5f,point.z),Mathf.InverseLerp(8,3.5f,point.z));
+                    var blend=Mathf.SmoothStep(0,1,Mathf.Max(field,road));point.y=Mathf.Lerp(point.y,-.04f,blend);vertices[i]=landscape.transform.InverseTransformPoint(point);
+                }
+                flat.vertices=vertices;flat.RecalculateNormals();flat.RecalculateBounds();AssetDatabase.CreateAsset(flat,terrainPath);
+            }
+            landscape.sharedMesh=flat;PrefabUtility.RecordPrefabInstancePropertyModifications(landscape);EditorUtility.SetDirty(landscape);
+            }
+            var grassMaterial=Object.FindObjectsByType<MeshFilter>().First(f=>f.name=="Grass"&&f.GetComponent<Renderer>()!=null&&f.GetComponent<Renderer>().bounds.size.x>60).GetComponent<Renderer>().sharedMaterial;
+            var earthMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/13_AlphaCandidate/Materials/Earth_Alpha.mat")??AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Earth.mat");
+            TiledSurface(soil,"MusterFloorSurface",grassMaterial);TiledSurface(GameObject.Find("Village to camp path 4m"),"VillageRoadSurface",earthMaterial);TiledSurface(GameObject.Find("Staging path 4m"),"CampRoadSurface",earthMaterial);
+            var worldRoot=GameObject.Find("UX01 Western muster ground").transform;
+            if(worldRoot.Find("Camp dressing")==null)
+            {
+                var dressing=new GameObject("Camp dressing").transform;dressing.SetParent(worldRoot,false);
+                PlaceShared("OpenWoodshed_3x3m",dressing,new Vector3(-51,0,5));PlaceShared("Barrel_100cm",dressing,new Vector3(-50,0,1));PlaceShared("Crate_80cm",dressing,new Vector3(-52,0,-.5f));
+            }
             var saved=AssetDatabase.LoadAssetAtPath<UnityEngine.AI.NavMeshData>(Root+"/SurfaceNavigation.asset");surface.RemoveData();surface.navMeshData=null;surface.BuildNavMesh();var generated=surface.navMeshData;surface.RemoveData();EditorUtility.CopySerialized(generated,saved);surface.navMeshData=saved;surface.AddData();Object.DestroyImmediate(generated);EditorUtility.SetDirty(saved);PrefabUtility.RecordPrefabInstancePropertyModifications(surface);
             var flow=Object.FindAnyObjectByType<DemoFlow>();flow.CameraRig.FollowTarget=flow.Director.Hero;PrefabUtility.RecordPrefabInstancePropertyModifications(flow.CameraRig);
             EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();Debug.Log("UX01_REFINED diagnostic door/window/gate removed from new scene only; same navigation GUID.");
+        }
+        private static void PlaceShared(string name,Transform parent,Vector3 at)
+        {var path=AssetDatabase.FindAssets(name+" t:Prefab",new[]{"Assets/02_Prefabs"}).Select(AssetDatabase.GUIDToAssetPath).FirstOrDefault(p=>System.IO.Path.GetFileNameWithoutExtension(p)==name);if(path==null)throw new InvalidOperationException("Missing public environment prefab "+name);var instance=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(path),parent);instance.transform.position=at;PrefabUtility.RecordPrefabInstancePropertyModifications(instance.transform);}
+        private static void TiledSurface(GameObject node,string name,Material material)
+        {
+            var path=Root+"/"+name+".asset";var mesh=AssetDatabase.LoadAssetAtPath<Mesh>(path);
+            if(mesh==null){mesh=new Mesh{name=name};var v=new[]{new Vector3(-.5f,.5f,-.5f),new Vector3(.5f,.5f,-.5f),new Vector3(.5f,.5f,.5f),new Vector3(-.5f,.5f,.5f)};mesh.vertices=v;mesh.triangles=new[]{0,2,1,0,3,2};mesh.uv=v.Select(x=>{var w=node.transform.TransformPoint(x);return new Vector2(w.x*.5f,w.z*.5f);}).ToArray();mesh.RecalculateNormals();mesh.RecalculateTangents();mesh.RecalculateBounds();AssetDatabase.CreateAsset(mesh,path);}
+            node.GetComponent<MeshFilter>().sharedMesh=mesh;node.GetComponent<Renderer>().sharedMaterial=material;PrefabUtility.RecordPrefabInstancePropertyModifications(node.GetComponent<MeshFilter>());PrefabUtility.RecordPrefabInstancePropertyModifications(node.GetComponent<Renderer>());
         }
         public static void Build()
         {Directory.CreateDirectory("Builds/Ux01Windows");var report=UnityEditor.BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{ScenePath},locationPathName="Builds/Ux01Windows/Aethernia.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});if(report.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)throw new InvalidOperationException("UX01 build failed");Directory.CreateDirectory("Logs/UX01");File.WriteAllText("Logs/UX01/build.txt","PASS Unity "+Application.unityVersion+" bytes="+report.summary.totalSize);}

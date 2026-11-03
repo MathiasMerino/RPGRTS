@@ -1,0 +1,7 @@
+{
+  "number": 11,
+  "url": "https://github.com/MathiasMerino/RPGRTS/pull/11",
+  "draft": true,
+  "base": "feature/e19-razas-civilizaciones",
+  "head": "feature/ux01-onboarding-camera-world"
+}

@@ -24,7 +24,7 @@ def main():
                 if not slot.name.endswith('.identity.json') and not slot.name.endswith('.metrics.json'):shutil.copy2(slot,final/slot.name)
     for png in sorted((project/'Logs/UX01/Captures').glob('warrior-*.png')):
         if not png.name.endswith('-1280.png'):shared.copy_image(root,png,images/'Resoluciones'/png.name,'Unity Play Mode UX01; actual camera render at stated resolution',captures)
-    for name in ['human-warrior-Rpg.png','human-warrior-Rts.png']:
+    for name in ['human-warrior-Rpg.png','human-warrior-Rts.png','human-warrior-Quest.png']:
         source=root/'Docs/Images/E19/Windows'/name
         assert source.is_file(),source
         shared.copy_image(root,source,images/'Antes'/name,'E19 native Windows, different state/time; preserved original',captures)

@@ -14,6 +14,8 @@ namespace Aethernia
         public System.Func<bool> ModalOpen;
         public bool NearbyInteraction { get; set; }
         public bool ExternalRtsPointer { get; set; }
+        public int InteractKeyPresses { get; private set; }
+        public bool LastInteractBlocked { get; private set; }
         private readonly Collider[] nearby=new Collider[24];
         private float nextNearby;
         public InteractionPoint CurrentInteraction { get; private set; }
@@ -35,11 +37,10 @@ namespace Aethernia
             if(ExternalRtsPointer&&session.Mode==PrototypeMode.Rts)return;
             if(session.Rules.UxExperience&&Time.unscaledTime>=nextNearby){nextNearby=Time.unscaledTime+.1f;RefreshNearby();}
             var mouse = Mouse.current;
-            if (mouse == null || view == null) return;
             var blocked = UiInputGuard.BlocksWorldInput;
-            if (mouse.leftButton.wasPressedThisFrame || mouse.rightButton.wasPressedThisFrame)
+            if (mouse!=null&&view!=null&&(mouse.leftButton.wasPressedThisFrame || mouse.rightButton.wasPressedThisFrame))
                 IssuePointer(mouse.position.ReadValue(), mouse.leftButton.wasPressedThisFrame, blocked || UiInputGuard.HasUiAt(mouse.position.ReadValue()));
-            if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame && !blocked) Interact();
+            if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame){InteractKeyPresses++;LastInteractBlocked=blocked;if(!blocked)Interact();}
         }
         public bool IssuePointer(Vector2 screenPoint, bool primary, bool blockedByUi)
         {

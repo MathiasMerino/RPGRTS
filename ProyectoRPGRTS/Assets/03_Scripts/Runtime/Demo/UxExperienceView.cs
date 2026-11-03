@@ -95,7 +95,7 @@ namespace Aethernia
             hud.Feedback.transform.parent.gameObject.SetActive(false); // Objective/help owns one bounded notice surface.
             prompts.gameObject.SetActive(visible&&exploration);
             objectives.gameObject.SetActive(visible&&guidance);
-            markerRect.gameObject.SetActive(visible&&guidance&&(exploration||(mode==PrototypeMode.Rts&&Flow.Director.Rts.Preparing&&Flow.Director.Rts.PreparationStep<3)));
+            markerRect.gameObject.SetActive(visible&&guidance&&((exploration&&(session.State.Demo==null||session.State.Demo.Chapter<DemoChapter.FreeExploration))||(mode==PrototypeMode.Rts&&Flow.Director.Rts.Preparing&&Flow.Director.Rts.PreparationStep<3)));
             if(Time.unscaledTime>=nextRefresh)
             {
                 nextRefresh=Time.unscaledTime+.12f;

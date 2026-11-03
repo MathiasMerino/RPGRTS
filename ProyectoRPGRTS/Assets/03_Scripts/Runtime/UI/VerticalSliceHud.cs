@@ -173,7 +173,7 @@ namespace Aethernia
             var exploring=session.Mode==PrototypeMode.Exploration;
             if(nameInput!=null&&!nameInput.isFocused&&nameInput.text!=session.State.Name)nameInput.SetTextWithoutNotify(session.State.Name);
             compactView.Render(session,director,ActivePage);
-            if(controls!=null)controls.text=Help(session.Mode);
+            if(controls!=null)controls.text=session.Rules.UxExperience?UxHelp(session.Mode):Help(session.Mode);
             foreach(var b in bindings)
             {
                 var id=b.Id;var visible=true;var ready=true;
@@ -214,6 +214,7 @@ namespace Aethernia
                     if(b.Label!=null)b.Label.text=skill==null||!skill.TechniqueUnlocked?"Técnica · Nv2":"Técnica · "+director.Encounter.TechniqueFocus;
                 }
                 if(session.Rules.UxExperience&&(id=="mode-combat"||id=="mode-rts"||id=="escalate"||id=="charge"))visible=false;
+                if(session.Rules.UxExperience&&id=="mode-construct"&&session.State.Demo!=null&&session.State.Demo.UxRevision==1&&session.State.Demo.Chapter<DemoChapter.Settlement)visible=false;
                 b.Button.gameObject.SetActive(visible);b.Button.interactable=ready;
             }
         }
@@ -225,6 +226,12 @@ namespace Aethernia
             if (ActivePage == ExplorationPage.Character) return id.StartsWith("class-");
             if (ActivePage == ExplorationPage.Inventory) return id == "sword" || id == "armour" || id == "ration" || id == "trade";
             return ActivePage == ExplorationPage.Session && (id == "save" || id == "load");
+        }
+        private static string UxHelp(PrototypeMode mode)
+        {
+            if(mode==PrototypeMode.Exploration)return "EXPLORACIÓN\nWASD: caminar\nClic derecho: destino\nE: interacción cercana\nRueda: zoom\nFlechas / botón medio: cámara\nP: pausa · F5: guardar\nX / Escape: cerrar ventanas";
+            if(mode==PrototypeMode.Rts)return "PATRULLA Y RTS\nClic: seleccionar aliado\nShift / arrastre: varios\nClic derecho: mover o atacar\nPreparación: sin daño\nSigue los dos hitos\nHéroe: Guardia / Recuperar\nWASD / rueda: cámara";
+            return Help(mode);
         }
         private static string Help(PrototypeMode mode)
         {

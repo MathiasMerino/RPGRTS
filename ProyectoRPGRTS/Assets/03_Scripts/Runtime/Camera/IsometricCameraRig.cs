@@ -29,7 +29,7 @@ namespace Aethernia
             if(mode!=previousMode)
             {
                 previousMode=mode;minimumSize=mode==PrototypeMode.Exploration?4.5f:6;maximumSize=mode==PrototypeMode.Exploration?11:18;
-                size=mode==PrototypeMode.Exploration?6.2f:mode==PrototypeMode.TurnCombat?7:mode==PrototypeMode.Construction?10:mode==PrototypeMode.Rts?8.5f:13;
+                size=mode==PrototypeMode.Exploration?6.2f:mode==PrototypeMode.TurnCombat?7:mode==PrototypeMode.Construction?10:mode==PrototypeMode.Rts?9:13;
                 manualUntil=0;
             }
             if(FollowTarget!=null&&mode==PrototypeMode.Exploration&&!InputSession.Paused&&Time.unscaledTime>manualUntil)

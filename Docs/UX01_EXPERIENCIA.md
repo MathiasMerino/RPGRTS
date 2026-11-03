@@ -32,4 +32,8 @@ El editor comprueba el motor y el interactor mediante sus API: el teclado sinté
 
 Cámara: exploración6.2m de semialtura, RPG7, RTS8.5, construcción10; zoom acotado, amortiguación0.18s, reposo tras2s de desplazamiento manual. Distancia de cámara45m. Un controlador escribe su transformación.
 
-Escala: actor/cápsula1.8m, modelos raciales proporcionales; caminos4m, campo transitable64×60m, corredor de despliegue sin obstáculos, edificios y piezas anteriores en metros. Superficie de navegación UX con GUID propio y volumen limitado para no duplicar las ruinas E14. Materiales Grass/Earth y decoraciones públicas compartidas.
+Escala: actor/cápsula1.8m, modelos raciales proporcionales; caminos4m, campo transitable40×30m con fondo visual64×60m, corredor de despliegue sin obstáculos, edificios y piezas anteriores en metros. Superficie de navegación UX con GUID propio y volumen limitado para no duplicar las ruinas E14. Materiales Grass/Earth y decoraciones públicas compartidas.
+
+## Corrección de superficie visual
+
+El aislamiento de renderers identificó la malla Grass de E16 (altura hasta2.27m) sobre la navegación plana occidental: ocultaba cuerpos, incluso sin dibujar el suelo añadido y después de reiniciar el skin. Se conserva la prueba aislada en SurfaceIsolation, sin confundirla con un recorrido de jugador. WesternGround.asset es una copia pública exclusiva UX, aplanada a−0.04m sólo en campo/camino con transición suave; la malla E16 y las escenas originales quedan intactas. El colisionador occidental se limita a40×30m y el fondo visual cubre64×60m. Una prueba de regresión comprueba alturas de vértices del área y conserva colinas exteriores.

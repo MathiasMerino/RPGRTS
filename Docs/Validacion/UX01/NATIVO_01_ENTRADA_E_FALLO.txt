@@ -1,0 +1,4 @@
+FAIL: System.InvalidOperationException: UX01: actual E opens resident dialogue
+  at Aethernia.UxExperienceRoute.Require (System.Boolean ok, System.String step) [0x00014] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceRoute.cs:16 
+  at Aethernia.UxExperienceRoute+<Run>d__3.MoveNext () [0x008ba] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceRoute.cs:42 
+  at Aethernia.UxExperienceSmokeProbe+<Start>d__1.MoveNext () [0x00191] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceSmokeProbe.cs:21 

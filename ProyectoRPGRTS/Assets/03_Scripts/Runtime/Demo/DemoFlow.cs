@@ -138,7 +138,7 @@ namespace Aethernia
             if(!IsPlaying||Director.IsBusy||!CanVisitPatrol(Session))return false;
             patrolReturn=Session.State.Demo.Chapter;Director.Encounter.Clear();
             if(!(UxEnabled?Director.Rts.BeginPreparation(Director.Hero):Director.Rts.BeginWithHero(Director.Hero)))return false;
-            if(patrolReturn<DemoChapter.Settlement)Session.State.Demo.Chapter=DemoChapter.FirstRts;CameraRig.SetRegion(Vector3.zero);CameraRig.SetZoom(8);CameraRig.FocusOn(UxEnabled?Director.Rts.ArenaOffset+new Vector3(-4,0,11):new Vector3(-9,0,13));return true;
+            if(patrolReturn<DemoChapter.Settlement)Session.State.Demo.Chapter=DemoChapter.FirstRts;CameraRig.SetRegion(Vector3.zero);CameraRig.SetZoom(8);CameraRig.FocusOn(UxEnabled?Director.Rts.ArenaOffset+new Vector3(-2,0,13):new Vector3(-9,0,13));return true;
         }
         private void RtsResolved(bool won)
         {

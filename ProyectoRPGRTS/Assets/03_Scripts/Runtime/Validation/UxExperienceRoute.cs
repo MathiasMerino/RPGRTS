@@ -39,7 +39,7 @@ namespace Aethernia
                 Require(hero.TryMoveTo(cargo.Npc.transform.position+Vector3.back*1.1f),"NPC reachable");yield return Arrive(hero);yield return Wait(.4f);
                 Require(input.RefreshNearby()==cargo.Npc,"best nearby interaction is resident");yield return capture("07-NpcPrompt");
                 if(nativeInput){InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.E));yield return null;yield return null;InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;}else{Require(input.Interact(),"existing interactor API");yield return null;}
-                Require(questView.DialogueOpen,"actual E opens resident dialogue");yield return capture("08-Dialogue");questView.AcceptButton.onClick.Invoke();
+                Require(questView.DialogueOpen,"actual E opens resident dialogue; presses="+input.InteractKeyPresses+" blocked="+input.LastInteractBlocked+" mouse="+(Mouse.current!=null)+" modal="+(input.ModalOpen?.Invoke()??false));yield return capture("08-Dialogue");questView.AcceptButton.onClick.Invoke();
                 Require(LostCargoQuest.Stage(session.State)==CargoQuestStage.Accepted,"quest accepted via UI");yield return Wait(.3f);yield return capture("09-Objective");
                 Require(ux.ObjectivePosition==cargo.Cargo.transform.position,"objective points to cargo instead of spawn");
                 flow.ExistingHud.CompactView.ToggleHelp();yield return capture("10-Help");flow.ExistingHud.CompactView.Close();
@@ -79,14 +79,29 @@ namespace Aethernia
                 {proof.AppendLine(renderer.name+" bounds="+renderer.bounds+" enabled="+renderer.enabled);if(renderer is SkinnedMeshRenderer skin){var baked=new Mesh();skin.BakeMesh(baked);var low=float.MaxValue;var high=float.MinValue;foreach(var v in baked.vertices){var y=skin.transform.TransformPoint(v).y;low=Mathf.Min(low,y);high=Mathf.Max(high,y);}proof.AppendLine("BAKED_Y "+low+".."+high);UnityEngine.Object.Destroy(baked);}}}
             File.WriteAllText(slot+".preparation.details",proof.ToString());yield return Wait(.3f);yield return capture("18-Positioned");war.CopyStatus(units);var enemy=units.First(u=>u.Team==1&&u.Role=="Arquero").Unit;
             Require(war.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false)&&!war.Preparing,"explicit player attack starts hostility");yield return Wait(.5f);yield return capture("19-Attack");
-            var guarded=false;deadline=Time.realtimeSinceStartup+120;while(war.Active&&Time.realtimeSinceStartup<deadline)
+            var attempts=new List<string>();
+            for(var attempt=0;attempt<2;attempt++)
+            {
+                var guarded=false;deadline=Time.realtimeSinceStartup+120;while(war.Active&&Time.realtimeSinceStartup<deadline)
             {if(!guarded)guarded=war.HeroAction("guard");if(session.State.Health<=session.HeroProfile.Health-4)war.HeroAction("recover");war.HeroAction("technique");war.HeroAction("attack");
              war.CopyStatus(units);if(enemy==null||!enemy.gameObject.activeSelf){enemy=units.Where(u=>u.Team==1&&u.Health>0).OrderBy(u=>u.Role=="Arquero"?0:1).Select(u=>u.Unit).FirstOrDefault();if(enemy!=null)war.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false);}yield return null;}
+                attempts.Add("attempt="+(attempt+1)+" victory="+war.LastResolvedVictory+" hp="+session.State.Health+" allies="+war.Allies+" enemies="+war.Enemies);
+                if(war.LastResolvedVictory==true)break;
+                Require(!war.Active,"battle timed out, no automatic retry");
+                if(attempt==0)
+                {
+                    yield return capture("19B-ActualDefeat");Require(flow.Front.Screen==DemoScreen.Retry&&flow.Front.Controls["retry"].interactable,"explicit defeat retry screen");
+                    flow.Front.Controls["retry"].onClick.Invoke();yield return Wait(.4f);Require(war.Preparing&&session.State.Health==session.HeroProfile.Health,"existing paid-resource state retained; retry restores class health by existing rule");
+                    war.SelectAll();war.CopyStatus(units);enemy=units.First(u=>u.Team==1&&u.Role=="Arquero").Unit;Require(war.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false),"player starts retry attack");
+                }
+            }
+            File.WriteAllText(slot+".rts-attempts.details",string.Join("\n",attempts));
             Require(war.LastResolvedVictory==true&&session.State.Demo.Chapter==DemoChapter.Settlement,"real RTS victory; active="+war.Active+" outcome="+war.LastResolvedVictory+" hp="+session.State.Health+" allies="+war.Allies+" enemies="+war.Enemies);Require(hero.GetComponent<CharacterVisualPresenter>().Model==model,"same hero model across modes");yield return capture("20-Victory");
             var camp=flow.GetComponent<DemoSettlementPanel>();Require(camp.SelectBlueprint("townhall")&&d.Construction.Place(new Vector3(12,0,-8)),"paid camp center");
             Require(camp.SelectBlueprint("workshop")&&d.Construction.Place(new Vector3(8,0,-13)),"paid workshop");yield return null;Require(camp.SelectBuilding(1)&&camp.ToggleProduction(),"real workshop production");yield return capture("21-Building");
             deadline=Time.realtimeSinceStartup+16;while(session.State.Demo.Chapter!=DemoChapter.FreeExploration&&Time.realtimeSinceStartup<deadline)yield return null;Require(session.State.Demo.Produced>0,"actual production");
             Require(camp.SelectBlueprint("barracks")&&d.Construction.Place(new Vector3(15,0,-13)),"paid barracks");Require(camp.Recruit("archer"),"paid military recruit");d.Execute("explore");yield return Wait(.6f);yield return capture("22-Camp");
+            var previousZoom=flow.CameraRig.Size;flow.CameraRig.ApplyInput(Vector2.right,0,.1f,false);flow.CameraRig.FocusOn(Vector3.zero);flow.CameraRig.SetZoom(11);yield return Wait(.4f);yield return capture("24-WorldOverview");flow.CameraRig.SetZoom(previousZoom);flow.CameraRig.FocusOn(hero.transform.position);
             Require(d.Save(slot),"final save");File.WriteAllText(slot+".identity.json",JsonUtility.ToJson(session.State,true));Require(flow.ReturnToTitle(),"save and title");
         }
     }

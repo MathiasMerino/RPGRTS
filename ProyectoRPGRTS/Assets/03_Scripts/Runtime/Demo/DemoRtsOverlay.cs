@@ -71,7 +71,8 @@ namespace Aethernia
             if(technique!=null)
             {
                 var skill=Flow.Session.HeroProfile.Combat;technique.interactable=!rts.Preparing&&rts.Active&&selectedHero&&!Flow.Session.Paused&&skill!=null&&skill.TechniqueUnlocked&&rts.TechniqueFocus>=skill.TechniqueCost;
-                technique.GetComponentInChildren<TMP_Text>().text=skill==null||!skill.TechniqueUnlocked?"Técnica · requiere nivel2":skill.TechniqueTitle+" · foco "+rts.TechniqueFocus;
+                var title=Flow.UxEnabled?(Flow.Session.State.ClassId=="warrior"?"Golpe":Flow.Session.State.ClassId=="mage"?"Proyectil":"Ki"):skill?.TechniqueTitle;
+                technique.GetComponentInChildren<TMP_Text>().text=skill==null||!skill.TechniqueUnlocked?"Técnica · Nv2":title+" · "+rts.TechniqueFocus;
             }
             var input=Flow.GetComponent<DemoRtsInput>();drag.gameObject.SetActive(input!=null&&input.Dragging);
             if(input!=null&&input.Dragging)

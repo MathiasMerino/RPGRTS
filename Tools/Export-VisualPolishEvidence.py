@@ -56,7 +56,7 @@ def export_video(root,recording,evidence,videos,phase):
         for frame in frames[1:]:
             if frame!=end+1:runs.append((start,end));start=frame
             end=frame
-        runs.append((start,end));start,end=runs[-1] if phase=='E19' and mode=='Rts' else runs[0]
+        runs.append((start,end));start,end=runs[-1] if phase in ['E19','UX01'] and mode=='Rts' else runs[0]
         if phase=='E19' and mode=='Rts':name='Pilotos-RTS'
         start=max(0,start-(72 if mode=='TurnCombat' else 24));end=min(len(rows)-1,end+24);count=end-start+1;target=videos/(phase+'-'+name+'.mp4');assert not target.exists(),'Preserve existing videos'
         subprocess.run([encoder,'-loglevel','error','-framerate','12','-start_number',str(start),'-i',str(recording/'frame-%05d.jpg'),'-ss',str(start/12),'-i',str(recording/'Native-DSP.wav'),'-t',str(count/12),'-c:v','libx264','-crf','20','-pix_fmt','yuv420p','-r','12','-c:a','aac','-b:a','128k','-movflags','+faststart',str(target)],check=True,capture_output=True)
