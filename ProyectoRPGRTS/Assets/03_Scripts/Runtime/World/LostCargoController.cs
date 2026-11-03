@@ -50,7 +50,7 @@ namespace Aethernia
         {
             if(!cargoEncounter)return;cargoEncounter=false;
             if(won&&LostCargoQuest.Secure(session.State))
-            {director.Execute("explore");session.Say("Cargamento recuperado. Regresa al habitante para cobrar la recompensa.");}
+            {director.Execute("explore");session.Say("Cargamento recuperado. Regresa al habitante para cobrar la recompensa.");if(session.Rules.UxExperience)director.Save(director.ActiveSavePath);}
             else session.Say("No recuperaste la carga. Vuelve a explorar; la misión aceptada puede reintentarse.");
         }
     }

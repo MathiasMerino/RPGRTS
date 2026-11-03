@@ -1,0 +1,66 @@
+using System;
+using System.IO;
+using System.Linq;
+using Unity.AI.Navigation;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using Object=UnityEngine.Object;
+
+namespace Aethernia.Editor.Characters
+{
+    public static class UxExperienceBuilder
+    {
+        public const string Root="Assets/16_UX01",ScenePath="Assets/01_Scenes/AetherniaUx01Demo.unity";
+        public static void Create()
+        {
+            if(File.Exists(ScenePath)||AssetDatabase.IsValidFolder(Root))throw new InvalidOperationException("UX01 exists; do not regenerate.");
+            AlphaPipelineBuilder.Folder(Root);
+            var scene=EditorSceneManager.OpenScene(CivilizationSceneBuilder.ScenePath);
+            var flow=Object.FindAnyObjectByType<DemoFlow>();var original=flow.Session.Rules;
+            var rules=Object.Instantiate(original);rules.UxExperience=true;AssetDatabase.CreateAsset(rules,Root+"/PrototypeRules.asset");
+            var content=Object.Instantiate(flow.Content);content.Intro=new[]{"LA ALDEA DE FRONTERA\n\nLlegas a un camino tranquilo. Un habitante necesita recuperar sus provisiones. Explora primero y habla con él cuando estés preparado.\n\nRelato provisional de demostración."};AssetDatabase.CreateAsset(content,Root+"/DemoContent.asset");flow.Content=content;
+            foreach(var component in Object.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include))
+            {
+                if(component==null)continue;var data=new SerializedObject(component);var it=data.GetIterator();
+                while(it.NextVisible(true))if(it.propertyType==SerializedPropertyType.ObjectReference&&it.objectReferenceValue==original)it.objectReferenceValue=rules;
+                data.ApplyModifiedPropertiesWithoutUndo();PrefabUtility.RecordPrefabInstancePropertyModifications(component);
+            }
+            flow.CameraRig.FollowTarget=flow.Director.Hero;PrefabUtility.RecordPrefabInstancePropertyModifications(flow.CameraRig);
+            var view=flow.gameObject.AddComponent<UxExperienceView>();view.Flow=flow;view.Cargo=Object.FindAnyObjectByType<LostCargoController>();view.Commands=Object.FindAnyObjectByType<PlayerCommands>();
+            flow.Patrol.transform.position=new Vector3(-47,0,-.5f);PrefabUtility.RecordPrefabInstancePropertyModifications(flow.Patrol.transform);
+            var root=new GameObject("UX01 Western muster ground").transform;
+            var ground=GameObject.Find("ReferenceGround_40m").GetComponentInChildren<Renderer>().sharedMaterial;
+            var road=AssetDatabase.FindAssets("t:Material").Select(AssetDatabase.GUIDToAssetPath).FirstOrDefault(p=>p.EndsWith("/Soil.mat"))??AssetDatabase.FindAssets("t:Material").Select(AssetDatabase.GUIDToAssetPath).FirstOrDefault(p=>p.EndsWith("/Ground.mat"));
+            var pathMaterial=road==null?ground:AssetDatabase.LoadAssetAtPath<Material>(road);
+            Box(root,"Muster soil 40x34m",new Vector3(-34,-.12f,0),new Vector3(40,.24f,34),ground,true);
+            Box(root,"Village to camp path 4m",new Vector3(-29,.012f,1.5f),new Vector3(36,.025f,4),pathMaterial,false);
+            Box(root,"Staging path 4m",new Vector3(-45,.015f,-3.5f),new Vector3(4,.03f,10),pathMaterial,false);
+            var sign=GameObject.CreatePrimitive(PrimitiveType.Cylinder);sign.name="First move destination";sign.transform.SetParent(root);sign.transform.position=new Vector3(-42,.03f,-4);sign.transform.localScale=new Vector3(2,.025f,2);Object.DestroyImmediate(sign.GetComponent<Collider>());sign.GetComponent<Renderer>().sharedMaterial=pathMaterial;
+            var second=Object.Instantiate(sign,root);second.name="Regroup destination";second.transform.position=new Vector3(-39,.03f,2);
+            // Shared public prefabs only; clear 30x18m army corridor and 4m footpath.
+            var props=AssetDatabase.FindAssets("t:Prefab",new[]{"Assets/02_Prefabs"}).Select(AssetDatabase.GUIDToAssetPath).Where(p=>p.Contains("Barrel")||p.Contains("GrassClump")||p.Contains("GroundFern")).ToArray();
+            for(var i=0;i<props.Length&&i<12;i++)
+            {var instance=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(props[i]),root);instance.transform.position=new Vector3(-49+i*2.4f,0,-11);}
+            var surface=GameObject.Find("Baked Navigation").GetComponent<NavMeshSurface>();
+            surface.navMeshData=null;surface.collectObjects=CollectObjects.All;surface.useGeometry=UnityEngine.AI.NavMeshCollectGeometry.PhysicsColliders;surface.BuildNavMesh();AssetDatabase.CreateAsset(surface.navMeshData,Root+"/SurfaceNavigation.asset");PrefabUtility.RecordPrefabInstancePropertyModifications(surface);
+            var combat=Object.FindAnyObjectByType<CombatHudPanel>();var rect=(RectTransform)combat.Panel.transform;rect.anchorMin=rect.anchorMax=rect.pivot=new Vector2(1,1);rect.anchoredPosition=new Vector2(-20,-92);rect.sizeDelta=new Vector2(560,104);
+            foreach(var light in Object.FindObjectsByType<Light>())if(light.type==LightType.Directional){light.intensity=Mathf.Max(light.intensity,1.35f);light.shadowStrength=.7f;}
+            EditorSceneManager.SaveScene(scene,ScenePath,true);AssetDatabase.SaveAssets();Debug.Log("UX01_CREATED safe exploration, shared E19 identity, 1m units, separate navigation and muster ground.");
+        }
+        private static void Box(Transform parent,string name,Vector3 at,Vector3 scale,Material mat,bool collision)
+        {var node=GameObject.CreatePrimitive(PrimitiveType.Cube);node.name=name;node.transform.SetParent(parent);node.transform.position=at;node.transform.localScale=scale;node.GetComponent<Renderer>().sharedMaterial=mat;if(!collision)Object.DestroyImmediate(node.GetComponent<Collider>());}
+        public static void Refine()
+        {
+            var scene=EditorSceneManager.OpenScene(ScenePath);
+            foreach(var name in new[]{"ReferenceWindow_100x120cm","ReferenceDoor_120x220cm","Narrow Gate - 0.40m clearance"})
+            {var item=GameObject.Find(name);if(item!=null){item.SetActive(false);PrefabUtility.RecordPrefabInstancePropertyModifications(item);}}
+            var surface=GameObject.Find("Baked Navigation").GetComponent<NavMeshSurface>();
+            var saved=AssetDatabase.LoadAssetAtPath<UnityEngine.AI.NavMeshData>(Root+"/SurfaceNavigation.asset");surface.RemoveData();surface.navMeshData=null;surface.BuildNavMesh();var generated=surface.navMeshData;surface.RemoveData();EditorUtility.CopySerialized(generated,saved);surface.navMeshData=saved;surface.AddData();Object.DestroyImmediate(generated);EditorUtility.SetDirty(saved);PrefabUtility.RecordPrefabInstancePropertyModifications(surface);
+            var flow=Object.FindAnyObjectByType<DemoFlow>();flow.CameraRig.FollowTarget=flow.Director.Hero;PrefabUtility.RecordPrefabInstancePropertyModifications(flow.CameraRig);
+            EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();Debug.Log("UX01_REFINED diagnostic door/window/gate removed from new scene only; same navigation GUID.");
+        }
+        public static void Build()
+        {Directory.CreateDirectory("Builds/Ux01Windows");var report=UnityEditor.BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{ScenePath},locationPathName="Builds/Ux01Windows/Aethernia.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});if(report.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)throw new InvalidOperationException("UX01 build failed");Directory.CreateDirectory("Logs/UX01");File.WriteAllText("Logs/UX01/build.txt","PASS Unity "+Application.unityVersion+" bytes="+report.summary.totalSize);}
+    }
+}

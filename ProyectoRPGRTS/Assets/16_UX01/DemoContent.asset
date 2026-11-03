@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9b8d9d7c9281d45bb07b5b09e450fd, type: 3}
+  m_Name: DemoContent
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.DemoContent
+  Subtitle: "Un mundo de aventuras, ej\xE9rcitos y decisiones"
+  Intro:
+  - "LA ALDEA DE FRONTERA\n\nLlegas a un camino tranquilo. Un habitante necesita
+    recuperar sus provisiones. Explora primero y habla con \xE9l cuando est\xE9s
+    preparado.\n\nRelato provisional de demostraci\xF3n."
+  Lineages:
+  - Id: human
+    Title: Humano
+    Description: "Identidad provisional, independiente de cultura y lealtad. Resiliencia:
+      +2 PV m\xE1ximos"
+  - Id: elf
+    Title: Elfo
+    Description: "Identidad provisional, independiente de cultura y lealtad. Paso
+      \xE1gil: +0,2 m/s"
+  - Id: dwarf
+    Title: Enano
+    Description: "Identidad provisional, independiente de cultura y lealtad. Firmeza:
+      +1 mitigaci\xF3n al defender"
+  - Id: orc
+    Title: Orco
+    Description: "Identidad provisional, independiente de cultura y lealtad. \xCDmpetu:
+      +1 da\xF1o de t\xE9cnica (nivel2)"
+  VisualNotice: "E19: proporciones y arte provisionales; cultura y facci\xF3n independientes
+    de raza. Todas las clases disponibles."
+  NarrativeNotice: "Pr\xF3logo de demostraci\xF3n: narrativa provisional, revisable
+    y no can\xF3nica."
+  Credits: "CR\xD3NICAS DE AETHERNIA\nProyecto de Mathias Merino\n\nDesarrollo asistido
+    con Codex.\nMotor Unity 6000.5.8f1 \xB7 Universal Render Pipeline.\nEscenario,
+    materiales, personajes Generic, animaciones y efectos originales del proyecto.\nSonidos
+    originales sintetizados: banco E09.\nTipograf\xEDa Liberation Sans: SIL Open
+    Font License 1.1 (licencia incluida).\n\nArte, reglas nuevas y narrativa de esta
+    demo son provisionales. No se incorpor\xF3 m\xFAsica comercial ni assets externos
+    sin licencia."

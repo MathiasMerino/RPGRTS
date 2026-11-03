@@ -50,7 +50,7 @@ def export_video(root,recording,evidence,videos,phase):
     import subprocess,imageio_ffmpeg
     proof=(recording/'proof.txt').read_text(encoding='utf-8-sig');assert proof.startswith('PASS:'),proof
     rows=[line.split('|') for line in (recording/'timeline.txt').read_text(encoding='utf-8-sig').splitlines()];encoder=imageio_ffmpeg.get_ffmpeg_exe();videos.mkdir(parents=True,exist_ok=True);manifest=[]
-    for mode,name in ([('TurnCombat','Combate-RPG'),('Rts','Patrulla-RTS')] if phase in ['E18','E19'] else [('TurnCombat','Expedicion'),('Rts','Conquista')]):
+    for mode,name in ([('TurnCombat','Combate-RPG'),('Rts','Patrulla-RTS')] if phase in ['E18','E19','UX01'] else [('TurnCombat','Expedicion'),('Rts','Conquista')]):
         frames=[int(row[0]) for row in rows if row[3]==mode];assert frames,mode
         runs=[];start=end=frames[0]
         for frame in frames[1:]:

@@ -25,7 +25,7 @@ namespace Aethernia
         private void Claim(){Quest.Claim();Refresh();}
         private void Update(){if(open&&Keyboard.current!=null&&Keyboard.current.escapeKey.wasPressedThisFrame)CloseDialogue();}
         private void LateUpdate()
-        {if(Hud!=null)Tracker.SetActive(!open&&!Hud.CompactView.WindowOpen&&!Hud.CompactView.HelpOpen);}
+        {if(Hud!=null)Tracker.SetActive(!Session.Rules.UxExperience&&!open&&!Hud.CompactView.WindowOpen&&!Hud.CompactView.HelpOpen);}
         private void Refresh()
         {
             if(Session==null)return;if(Session.Mode!=PrototypeMode.Exploration)open=false;

@@ -54,7 +54,7 @@ namespace Aethernia
             if(Flow.IsPlaying&&lastDungeon!=InDungeon){lastDungeon=InDungeon;Show(lastDungeon?"LAS RUINAS DEL UMBRAL":"REGRESO AL CAMPAMENTO",true);}
             var visible=Flow.IsPlaying&&Flow.Front.Screen==DemoScreen.None;var modal=Flow.ExistingHud.CompactView.WindowOpen||Flow.ExistingHud.CompactView.HelpOpen;
             if(visible&&Flow.Session.LastProgressionNotice!=lastProgression){lastProgression=Flow.Session.LastProgressionNotice;if(!string.IsNullOrEmpty(lastProgression))Show(lastProgression,false);}
-            toast.alpha=visible&&!modal?Mathf.Clamp01((toastUntil-Time.unscaledTime)*3):0;
+            toast.alpha=visible&&!modal&&!Flow.UxEnabled?Mathf.Clamp01((toastUntil-Time.unscaledTime)*3):0;
             veil.color=new Color(0,0,0,visible?Mathf.Clamp01((fadeUntil-Time.unscaledTime)/.18f)*.18f:0);
         }
     }

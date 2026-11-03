@@ -20,6 +20,7 @@ namespace Aethernia
     [CreateAssetMenu(menuName = "Aethernia/Prototype Rules")]
     public sealed class PrototypeRules : ScriptableObject
     {
+        public bool UxExperience; // Opt-in: las escenas históricas mantienen sus reglas de entrada.
         public ProgressionRules Progression;
         public CivilizationCatalog Civilizations;
         public ClassProfile[] Classes = {

@@ -14,12 +14,25 @@ namespace Aethernia
         public bool NearbyInteraction { get; set; }
         public bool ExternalRtsPointer { get; set; }
         private readonly Collider[] nearby=new Collider[24];
+        private float nextNearby;
+        public InteractionPoint CurrentInteraction { get; private set; }
+        public InteractionPoint RefreshNearby()
+        {
+            if(session==null||hero==null||session.Mode!=PrototypeMode.Exploration||session.Paused||session.WorldUiOpen){CurrentInteraction=null;return null;}
+            var count=Physics.OverlapSphereNonAlloc(hero.transform.position,2.2f,nearby,~0,QueryTriggerInteraction.Collide);
+            InteractionPoint best=null;var score=float.MaxValue;
+            for(var i=0;i<count;i++)
+            {var candidate=nearby[i].GetComponentInParent<InteractionPoint>();if(candidate==null||!candidate.isActiveAndEnabled||!candidate.Available(session))continue;
+             var d=Vector3.Distance(hero.transform.position,candidate.transform.position);if(d>candidate.Reach)continue;var rank=d-(candidate==CurrentInteraction ? .25f : 0);if(rank<score){best=candidate;score=rank;}}
+            CurrentInteraction=best;return best;
+        }
         public void Configure(Camera camera, ExplorationUnit unit, GameSession game)
         { view = camera; hero = unit; session = game; }
         private void Update()
         {
             if(session.Paused||session.WorldUiOpen||session.Mode==PrototypeMode.MainMenu||session.Mode==PrototypeMode.CharacterCreation||session.Mode==PrototypeMode.Intro)return;
             if(ExternalRtsPointer&&session.Mode==PrototypeMode.Rts)return;
+            if(session.Rules.UxExperience&&Time.unscaledTime>=nextNearby){nextNearby=Time.unscaledTime+.1f;RefreshNearby();}
             var mouse = Mouse.current;
             if (mouse == null || view == null) return;
             var blocked = UiInputGuard.BlocksWorldInput;
@@ -48,6 +61,7 @@ namespace Aethernia
         public bool Interact()
         {
             if(session.Paused||session.Mode!=PrototypeMode.Exploration)return false;
+            if(session.Rules.UxExperience){var selected=RefreshNearby();return selected!=null&&selected.TryInteract(hero,session);}
             if(Target!=null&&(!NearbyInteraction||Vector3.Distance(Target.transform.position,hero.transform.position)<=2.2f))return Target.TryInteract(hero,session);
             if(!NearbyInteraction)return false;
             var count=Physics.OverlapSphereNonAlloc(hero.transform.position,2.2f,nearby,~0,QueryTriggerInteraction.Collide);InteractionPoint closest=null;var distance=float.MaxValue;

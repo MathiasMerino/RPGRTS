@@ -24,7 +24,7 @@ namespace Aethernia
             var ui=Flow.ExistingHud.CompactView;
             LastReadInput=input;LastBlocked=UiInputGuard.IsTyping||ui.WindowOpen||ui.HelpOpen||Flow.Session.WorldUiOpen;ApplyInput(input,Time.deltaTime,LastBlocked);
         }
-        private void LateUpdate(){if(CanControl&&Hero.IsMoving)Flow.CameraRig.FocusOn(Hero.transform.position);}
+        private void LateUpdate(){if(!Flow.UxEnabled&&CanControl&&Hero.IsMoving)Flow.CameraRig.FocusOn(Hero.transform.position);}
         public static Vector3 CameraRelative(Vector2 input,Transform camera)
         {
             input=Vector2.ClampMagnitude(input,1);var right=camera.right;right.y=0;var forward=camera.forward;forward.y=0;
@@ -34,7 +34,7 @@ namespace Aethernia
         {
             if(!CanControl||blocked||input.sqrMagnitude<.001f||seconds<=0||float.IsNaN(input.sqrMagnitude)||float.IsInfinity(input.sqrMagnitude)||float.IsNaN(seconds)||float.IsInfinity(seconds))
             {Hero.EndDirectControl();return false;}
-            var direction=CameraRelative(input,Flow.CameraRig.transform);var speed=Flow.Session.Rules.Find(Flow.Session.State.ClassId).Speed;
+            var direction=CameraRelative(input,Flow.CameraRig.transform);var speed=Flow.Session.HeroProfile.Speed;
             var displacement=direction*speed*Mathf.Min(seconds,.1f);var start=Hero.Agent.nextPosition;
             if(NavMesh.Raycast(start,start+displacement,out var obstacle,Hero.Agent.areaMask))
             {var planar=obstacle.position-start;planar.y=0;displacement=Vector3.ClampMagnitude(displacement,Mathf.Max(0,planar.magnitude-.025f));}

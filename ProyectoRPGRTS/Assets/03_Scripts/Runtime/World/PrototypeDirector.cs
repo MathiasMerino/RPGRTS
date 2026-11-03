@@ -94,8 +94,9 @@ namespace Aethernia
         }
         public bool Save(string path)
         {
-            if (IsBusy || session.Mode == PrototypeMode.TurnCombat || session.Mode == PrototypeMode.Rts)
+            if ((IsBusy&&!rts.Preparing) || session.Mode == PrototypeMode.TurnCombat || (session.Mode == PrototypeMode.Rts&&!rts.Preparing))
                 return Reject("No puedes guardar durante el modo de combate. Termina el encuentro y vuelve a Explorar.");
+            rts.CapturePreparation();
             session.State.HeroPosition = hero.transform.position;
             var result = PrototypeSaveStore.Save(path, session.State, session.Rules);
             session.Say(result ? "Partida guardada." : "No se pudo guardar; la partida actual se conserva."); return result;

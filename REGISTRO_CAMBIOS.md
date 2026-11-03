@@ -690,3 +690,9 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 ## 2026-11-03 — Directiva complementaria E19
 - Contrastada con la candidata existente: selección/progresión/grupo/mazmorra/reclutamiento/RTS/construcción/economía/conquista/guardado conectados en la escena E19, con evidencia nativa previa. Arte provisional y privados preservados; cadena de PR e incidencia RTS conservadas.
 - Control actual: SHA/CRC del ZIP y dos partidas incluidas con raza/clase, nivel4, ambos perfiles militares y puesto conquistado PASS; código/assets coinciden con1e67333, calidad previa intacta y rama sincronizada. No se ejecutaron pruebas Unity nuevas ni se reconstruyó la build: no hubo cambios funcionales. Resultados anteriores permanecen21/21dirigidas,196/197general y6/6Windows. E19-HUM/RTS-HIST pendientes; sin E20.
+
+
+## 2026-11-03 — UX-01 / inicio
+- Auditoría E19 y cadena PR1–10 confirmadas; rama feature/ux01-onboarding-camera-world desde3e53508. Cambio local QualitySettings preservado. Plan UX-A–H registrado; sin cambios main/dev ni modelos privados.
+
+- UX-A–G: implementación inicial optativa en escena nueva; entrada segura/quest RPG, cámara suave y velocidad derivada de raza, E cercano, HUD contextual y preparación RTS con hitos físicos/persistencia aditiva. Unity creó escena y nav propios sin errores. Primera referencia de escena PASS; recorridos iniciales conservados (arnés corregido tras recarga de dominio, después desplazamiento WASD no verificado). Capturas iniciales reales a3res; quitadas sólo de UX las piezas diagnósticas puerta/ventana/paso estrecho y refinados marcador/rótulos. Aceptación jugable todavía en desarrollo.

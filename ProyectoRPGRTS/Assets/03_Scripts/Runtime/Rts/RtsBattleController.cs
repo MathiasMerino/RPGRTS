@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 namespace Aethernia
 {
-    public sealed class RtsBattleController : MonoBehaviour
+    public sealed partial class RtsBattleController : MonoBehaviour
     {
         private sealed class Soldier
         {
@@ -66,7 +66,7 @@ namespace Aethernia
         private int Maximum(Soldier s)=>s.Hero?session.HeroProfile.Health:s.Maximum;
         private void SetHealth(Soldier s,int value)
         {if(s.Hero)session.State.Health=value;else{s.Health=value;if(!string.IsNullOrEmpty(s.RecruitId)){var record=session.State.Army.Find(x=>x.Id==s.RecruitId);if(record!=null)record.Health=value;}}}
-        public void CopyStatus(List<RtsUnitStatus> buffer){buffer.Clear();foreach(var s in soldiers)buffer.Add(new RtsUnitStatus(s.Unit,s.Hero?session.HeroProfile.Title:demoRules?.Find(s.Role)?.Title??s.Role,s.Team,Health(s),Maximum(s),s.Hero));}
+        public void CopyStatus(List<RtsUnitStatus> buffer){buffer.Clear();foreach(var s in soldiers)if(!Preparing||s.Team==0||s.Unit.gameObject.activeSelf)buffer.Add(new RtsUnitStatus(s.Unit,s.Hero?session.HeroProfile.Title:demoRules?.Find(s.Role)?.Title??s.Role,s.Team,Health(s),Maximum(s),s.Hero));}
         public void Clear()
         {
             Trace("clear");recoveryTraceFrame=-1;
@@ -76,7 +76,7 @@ namespace Aethernia
                     if(soldier.Hero){soldier.Unit.Stop();var p=soldier.Unit.GetComponent<CharacterCombatAnimationPresenter>();if(p!=null)p.ExternallyControlled=false;soldier.Animator?.SetGuarding(false);}
                     else{soldier.Unit.gameObject.SetActive(false);Destroy(soldier.Unit.gameObject);}
                 }
-            soldiers.Clear();sharedHero=null; Active = false;
+            soldiers.Clear();sharedHero=null; Active = false;Preparing=false;
         }
         public bool Begin(bool escalated = false)
         {
@@ -86,7 +86,7 @@ namespace Aethernia
             var path = new NavMeshPath();
             for (var team = 0; team < 2; team++) for (var i = 0; i < 6; i++)
             {
-                var requested = new Vector3(team == 0 ? -12 : -6, 0, 11 + i * 0.9f);
+                var requested = ArenaOffset+new Vector3(team == 0 ? -12 : (session.Rules.UxExperience?6:-6), 0, 11 + i * 0.9f);
                 if (!NavMesh.SamplePosition(requested, out var hit, 0.35f, NavMesh.AllAreas)) return RejectDeployment();
                 positions[team * 6 + i] = hit.position;
                 foreach (var blocker in Physics.OverlapCapsule(hit.position + Vector3.up * 0.35f, hit.position + Vector3.up * 1.45f, 0.29f, ~0, QueryTriggerInteraction.Ignore))
@@ -121,11 +121,11 @@ namespace Aethernia
             var reinforcements=new List<Vector3>();
             for(var i=0;i<roster.Count;i++)
             {
-                if(!NavMesh.SamplePosition(new Vector3(-10.5f,0,11+i*.9f),out var point,.35f,NavMesh.AllAreas))return RejectDeployment();
+                if(!NavMesh.SamplePosition(ArenaOffset+new Vector3(-10.5f,0,11+i*.9f),out var point,.35f,NavMesh.AllAreas))return RejectDeployment();
                 foreach(var block in Physics.OverlapCapsule(point.position+Vector3.up*.35f,point.position+Vector3.up*1.45f,.29f,~0,QueryTriggerInteraction.Ignore))if(block.GetComponentInParent<ExplorationUnit>()==null)return RejectDeployment();
                 reinforcements.Add(point.position);
             }
-            var requested=new Vector3(-13.3f,0,13.2f);
+            var requested=ArenaOffset+new Vector3(-13.3f,0,13.2f);
             if(!NavMesh.SamplePosition(requested,out var at, .5f,NavMesh.AllAreas))return RejectDeployment();
             foreach(var block in Physics.OverlapCapsule(at.position+Vector3.up*.35f,at.position+Vector3.up*1.45f,.29f,~0,QueryTriggerInteraction.Ignore))if(block.GetComponentInParent<ExplorationUnit>()==null)return RejectDeployment();
             if(!Begin())return false;
@@ -181,6 +181,7 @@ namespace Aethernia
             }
             var accepted = false; var index = 0;
             var explicitTarget=collider==null?null:soldiers.Find(s=>s.Team==1&&Health(s)>0&&collider.transform.IsChildOf(s.Unit.transform));
+            if(Preparing&&explicitTarget!=null&&!EngagePrepared())return false;
             foreach (var s in soldiers)
                 if (s.Team == 0 && Health(s) > 0 && s.Unit.IsSelected)
                 {s.OrderedTarget=explicitTarget;s.MoveOrder=IncludesHero&&explicitTarget==null; accepted |= s.Unit.TryMoveTo(point + new Vector3((index % 3 - 1) * 0.8f, 0, index++ / 3 * 0.8f)); s.OrderedUntil = Time.time + 3;Trace("command",s,explicitTarget); }
@@ -189,17 +190,18 @@ namespace Aethernia
         private void Update()
         {
             if (!Active || session.Paused || Time.time < nextTick) return;
+            if(Preparing){TickPreparation();return;}
             nextTick = Time.time + 0.2f;
             if(Diagnostic!=null)Trace("tick-start",soldiers.Find(s=>s.Hero));
             foreach (var s in soldiers)
             {
                 if (Health(s) <= 0) continue;
-                if(IncludesHero&&s.MoveOrder&&s.Unit.IsMoving&&Time.time<s.OrderedUntil)continue;s.MoveOrder=false;
+                if(IncludesHero&&s.MoveOrder&&s.Unit.IsMoving&&(session.Rules.UxExperience||Time.time<s.OrderedUntil))continue;s.MoveOrder=false;
                 Soldier target = s.OrderedTarget!=null&&Health(s.OrderedTarget)>0?s.OrderedTarget:null;var ordered=target!=null;var nearest=target==null?float.MaxValue:Vector3.Distance(s.Unit.transform.position,target.Unit.transform.position);
                 foreach (var other in soldiers)
                     if (!ordered&&Health(other) > 0 && other.Team != s.Team)
                     { var d = Vector3.Distance(s.Unit.transform.position, other.Unit.transform.position); if (d < nearest) { nearest = d; target = other; } }
-                if (target == null) continue;
+                if (target == null||(session.Rules.UxExperience&&!ordered&&nearest>8)) continue;
                 if (nearest <= s.Range && (!IncludesHero||ClearLine(s,target)))
                 {
                     if(IncludesHero)s.Unit.Stop();
@@ -243,6 +245,7 @@ namespace Aethernia
         {var classId=source.Hero?session.State.ClassId:source.Role=="archer"?"archer":source.Role=="brawler"?"monk":"warrior";var data=new CombatFeedback(-10,result,classId,source.Unit.transform.position,target);feedback?.PresentRealtime(data);ActionResolved?.Invoke(data);}
         public bool HeroAction(string action)
         {
+            if(Preparing)return false;
             var hero=soldiers.Find(s=>s.Hero);
             if(!Active||hero==null||!hero.Unit.IsSelected||Health(hero)<=0){if(action=="recover")Trace("recover-unavailable",hero);return false;}
             if(Time.time<hero.AttackAt){if(action=="recover")Trace("recover-cooldown",hero);return false;}

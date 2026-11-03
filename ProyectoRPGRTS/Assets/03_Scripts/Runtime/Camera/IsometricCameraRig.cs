@@ -15,6 +15,34 @@ namespace Aethernia
         [SerializeField] private Vector2 horizontalLimits = new Vector2(-18, 18);
         [SerializeField] private Vector2 verticalLimits = new Vector2(-18, 18);
         private Camera view;
+        public ExplorationUnit FollowTarget;
+        private Vector3 smoothedFocus,followVelocity,lastHero;
+        private float smoothedSize,manualUntil;
+        private PrototypeMode previousMode;
+        private bool smoothInitialized;
+        private bool Ux=>InputSession!=null&&InputSession.Rules.UxExperience;
+        private void LateUpdate()
+        {
+            if(!Ux)return;
+            var mode=InputSession.Mode;
+            if(mode!=previousMode)
+            {
+                previousMode=mode;minimumSize=mode==PrototypeMode.Exploration?4.5f:6;maximumSize=mode==PrototypeMode.Exploration?11:18;
+                size=mode==PrototypeMode.Exploration?6.2f:mode==PrototypeMode.TurnCombat?7:mode==PrototypeMode.Construction?10:mode==PrototypeMode.Rts?10:13;
+                manualUntil=0;
+            }
+            if(FollowTarget!=null&&mode==PrototypeMode.Exploration&&!InputSession.Paused&&Time.unscaledTime>manualUntil)
+            {
+                var point=FollowTarget.transform.position;var velocity=Time.unscaledDeltaTime>0?(point-lastHero)/Time.unscaledDeltaTime:Vector3.zero;
+                focus=point+Vector3.ClampMagnitude(velocity*.12f,.5f);focus.y=0;
+            }
+            if(FollowTarget!=null)lastHero=FollowTarget.transform.position;
+            focus.x=Mathf.Clamp(focus.x,horizontalLimits.x,horizontalLimits.y);focus.z=Mathf.Clamp(focus.z,verticalLimits.x,verticalLimits.y);
+            if(!smoothInitialized||Vector3.Distance(smoothedFocus,focus)>30){smoothedFocus=focus;smoothedSize=size;smoothInitialized=true;followVelocity=Vector3.zero;}
+            smoothedFocus=Vector3.SmoothDamp(smoothedFocus,focus,ref followVelocity,.18f,100,Time.unscaledDeltaTime);
+            smoothedSize=Mathf.Lerp(smoothedSize,size,1-Mathf.Exp(-10*Time.unscaledDeltaTime));
+            ApplyPose(smoothedFocus,smoothedSize);
+        }
         public Vector3 Focus => focus;
         public float Size => size;
         public float PanSpeed => panSpeed;
@@ -27,7 +55,7 @@ namespace Aethernia
         public void Configure(Vector3 centre) { focus = centre; view = GetComponent<Camera>(); Refresh(); }
         public void FocusOn(Vector3 point) { focus = new Vector3(point.x, 0, point.z); Refresh(); }
         public void SetRegion(Vector3 centre)
-        { horizontalLimits = new Vector2(centre.x - 18, centre.x + 18); verticalLimits = new Vector2(centre.z - 18, centre.z + 18); FocusOn(centre); }
+        { horizontalLimits = new Vector2(centre.x - 18, centre.x + 18); verticalLimits = new Vector2(centre.z - 18, centre.z + 18); if(Ux&&centre==Vector3.zero){horizontalLimits=new Vector2(-54,18);verticalLimits=new Vector2(-18,18);} FocusOn(centre); }
 
         private void Update()
         {
@@ -55,6 +83,7 @@ namespace Aethernia
             var right = new Vector3(0.7071068f, 0, -0.7071068f);
             var forward = new Vector3(0.7071068f, 0, 0.7071068f);
             pan = Vector2.ClampMagnitude(pan, 1);
+            if(pan.sqrMagnitude>.001f)manualUntil=Time.unscaledTime+2;
             focus += (right * pan.x + forward * pan.y) * (panSpeed * Mathf.Max(0, deltaTime));
             focus.x = Mathf.Clamp(focus.x, horizontalLimits.x, horizontalLimits.y);
             focus.z = Mathf.Clamp(focus.z, verticalLimits.x, verticalLimits.y);
@@ -65,10 +94,16 @@ namespace Aethernia
         private void Refresh()
         {
             if (view == null) view = GetComponent<Camera>();
+            if(Ux)return;
+            ApplyPose(focus,size);
+        }
+        private void ApplyPose(Vector3 point,float zoom)
+        {
+            if(view==null)view=GetComponent<Camera>();
             view.orthographic = true;
-            view.orthographicSize = size;
+            view.orthographicSize = zoom;
             transform.rotation = Quaternion.Euler(35.26439f, 45, 0);
-            transform.position = focus - transform.forward * 45;
+            transform.position = point - transform.forward * (Ux?65:45);
         }
     }
 }

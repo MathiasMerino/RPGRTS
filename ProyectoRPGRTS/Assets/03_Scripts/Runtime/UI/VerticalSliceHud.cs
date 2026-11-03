@@ -29,6 +29,7 @@ namespace Aethernia
         [SerializeField] private ClassReferenceCard classReference;
         [SerializeField] private MedievalHudView compactView;
         public MedievalHudView CompactView => compactView;
+        public Button FindControl(string id){foreach(var binding in bindings)if(binding.Id==id)return binding.Button;return null;}
         public void ConfigureCompact(MedievalHudView view,HudBinding[] extra)
         { compactView=view;var all=new HudBinding[bindings.Length+extra.Length];Array.Copy(bindings,all,bindings.Length);Array.Copy(extra,0,all,bindings.Length,extra.Length);bindings=all; }
         private float refreshAt;
@@ -212,6 +213,7 @@ namespace Aethernia
                     var skill=session.HeroProfile.Combat;if(director.Encounter.InGroup){var g=director.Encounter.Group;ready=!g.Finished&&g.Current.Hero&&g.ActionAvailable&&!director.Hero.IsMoving;}ready=ready&&skill!=null&&skill.TechniqueUnlocked&&director.Encounter.TechniqueFocus>=skill.TechniqueCost;
                     if(b.Label!=null)b.Label.text=skill==null||!skill.TechniqueUnlocked?"Técnica · Nv2":"Técnica · "+director.Encounter.TechniqueFocus;
                 }
+                if(session.Rules.UxExperience&&(id=="mode-combat"||id=="mode-rts"||id=="escalate"||id=="charge"))visible=false;
                 b.Button.gameObject.SetActive(visible);b.Button.interactable=ready;
             }
         }

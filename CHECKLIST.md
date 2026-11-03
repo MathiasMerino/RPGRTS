@@ -1208,3 +1208,22 @@ El encargo explícito autoriza implementación, validación, build y PR apilado.
 | E19-U | Git / P0 | ST | [x] Completado y verificado | Commits por bloques, PR sobre E18, plan verificable PR1..9; main/dev intactas | Docs/INTEGRACION_PRS.md, commits por bloques y PR#10draft sobre E18/PR9; rama publicada. main/dev y PR1..9 verificados intactos; recursos privados excluidos, calidad local previa conservada aparte. |
 | E19-RTS-HIST | Estabilidad / P1 | E19-A, OPQR | [ ] Pendiente | Resolver o revisar con evidencia la expectativa histórica de victoria bajo reserva; conservar derrotas y comprobar temporizaciones | A_BASELINE.xml(Monje), GENERAL.xml(Guerrero), RTS_GENERAL/warrior.csv. No se alteran aserciones para obtener verde. |
 | E19-HUM | Evaluación humana / P1 | ST | [ ] Pendiente | Revisión del usuario: legibilidad, arte, diversión, balance y estabilidad prolongada | No se completa con pruebas automáticas |
+
+
+## UX-01 — EXPERIENCIA PROGRESIVA
+
+Plan, dependencias y aceptación: Docs/UX01_EXPERIENCIA.md. Base E19 preservada.
+
+| ID | Estado | Criterio / archivos / pruebas |
+|---|---|---|
+| UX-A | En desarrollo | Inicio seguro y misión; DemoFlow/DemoProgress; pruebas pendientes |
+| UX-B | En desarrollo | Cámara única y movimiento; IsometricCameraRig/DemoHeroMotor |
+| UX-C | En desarrollo | Interacción E y objetivo contextual; PlayerCommands/LostCargo |
+| UX-D | En desarrollo | HUD contextual y tres resoluciones |
+| UX-E | En desarrollo | Preparación y órdenes RTS reales |
+| UX-F | En desarrollo | Escenario y navegación independientes |
+| UX-G | En desarrollo | Persistencia aditiva y legado |
+| UX-H | En desarrollo | QA, evidencia, build y PR apilado |
+| UX-HUM | Pendiente | Revisión humana, no sustituible por automatización |
+
+UX01 inicial: escena/navegación generadas; referencia de escena1/1PASS dentro del pase diagnóstico1/2. Recorridos fallidos conservados en Docs/Validacion/UX01; no se declaran verificadas las mecánicas. Archivos: Runtime/Demo,UxExperienceView,IsometricCameraRig,PlayerCommands,InteractionPoint,RtsPreparation,PrototypeSaveStore,UxExperienceBuilder,UxExperienceTests y herramientas QA.
