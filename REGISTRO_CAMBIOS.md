@@ -686,3 +686,7 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 - E19 publicada en feature/e19-razas-civilizaciones; [PR#10draft](https://github.com/MathiasMerino/RPGRTS/pull/10) sobre E18/PR9, sin merges ni cambios main/dev. Informe26puntos, guía,52capturas/2vídeos,6comprobantes Windows, general196/197 y plan PR apilados disponibles. Cierre técnico de candidata; RTS-HIST y evaluación humana siguen abiertos. Calidad local ajena se conserva aparte.
 
 - Verificación remota final:52PNG/2MP4, escena/catálogo/informe/guía/general presentes en GitHub; PR10draft abierto y no fusionado. main/dev/predeterminada main y nueve PR previos intactos. Árbol local sólo mantiene el ajuste QualitySettings previo con SHA idéntico, sin cambios propios pendientes. Metadatos de cierre añadidos por commit normal.
+
+## 2026-11-03 — Directiva complementaria E19
+- Contrastada con la candidata existente: selección/progresión/grupo/mazmorra/reclutamiento/RTS/construcción/economía/conquista/guardado conectados en la escena E19, con evidencia nativa previa. Arte provisional y privados preservados; cadena de PR e incidencia RTS conservadas.
+- Control actual: SHA/CRC del ZIP y dos partidas incluidas con raza/clase, nivel4, ambos perfiles militares y puesto conquistado PASS; código/assets coinciden con1e67333, calidad previa intacta y rama sincronizada. No se ejecutaron pruebas Unity nuevas ni se reconstruyó la build: no hubo cambios funcionales. Resultados anteriores permanecen21/21dirigidas,196/197general y6/6Windows. E19-HUM/RTS-HIST pendientes; sin E20.
