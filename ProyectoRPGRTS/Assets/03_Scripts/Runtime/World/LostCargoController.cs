@@ -37,6 +37,7 @@ namespace Aethernia
         public bool Claim()
         {
             if(!AtNpc()||!LostCargoQuest.Claim(session.State,out var ration))return false;
+            session.AwardForFact(LostCargoQuest.Completed);
             session.Say("Misión completada: 20 oro"+(ration?" y una ración.":". Inventario lleno: no se añade ración."));return true;
         }
         private bool AtNpc()

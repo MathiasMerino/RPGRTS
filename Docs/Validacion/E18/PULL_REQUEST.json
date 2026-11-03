@@ -1,0 +1,11 @@
+{
+  "number": 9,
+  "url": "https://github.com/MathiasMerino/RPGRTS/pull/9",
+  "state": "open",
+  "draft": true,
+  "head": "feature/e18-progresion-balance",
+  "base": "feature/e17-art-pipeline-alpha-polish",
+  "merged": false,
+  "createdHeadSHA": "f21fb7f9d33d0e51f28046e689b33171b90eb162",
+  "event": "created_as_draft"
+}

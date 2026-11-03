@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Failed(Child)" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 21:56:46Z" end-time="2026-11-02 21:56:47Z" duration="1.2417088">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:56:46Z" end-time="2026-11-02 21:56:47Z" duration="1.241709" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1229" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:56:46Z" end-time="2026-11-02 21:56:47Z" duration="1.063447" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="21392" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1230" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:56:46Z" end-time="2026-11-02 21:56:47Z" duration="1.053856" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1231" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:56:46Z" end-time="2026-11-02 21:56:47Z" duration="1.045052" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1232" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="175" result="Failed" site="Child" start-time="2026-11-02 21:56:46Z" end-time="2026-11-02 21:56:47Z" duration="1.036240" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1111" name="HeroTechniqueTests" fullname="Aethernia.Tests.Editor.HeroTechniqueTests" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-02 21:56:31Z" end-time="2026-11-02 21:56:33Z" duration="2.627965" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1118" name="SkillSheetUsesRealPointsAndFitsTwoResolutions" fullname="Aethernia.Tests.Editor.HeroTechniqueTests.SkillSheetUsesRealPointsAndFitsTwoResolutions" methodname="SkillSheetUsesRealPointsAndFitsTwoResolutions" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" seed="325468999" result="Passed" start-time="2026-11-02 21:56:12Z" end-time="2026-11-02 21:56:33Z" duration="21.354845" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1203" name="TroopProgressionTests" fullname="Aethernia.Tests.Editor.TroopProgressionTests" classname="Aethernia.Tests.Editor.TroopProgressionTests" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2026-11-02 21:56:46Z" end-time="2026-11-02 21:56:47Z" duration="0.991874" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1208" name="RealArmyUiTrainingAndOldSaveMigration" fullname="Aethernia.Tests.Editor.TroopProgressionTests.RealArmyUiTrainingAndOldSaveMigration" methodname="RealArmyUiTrainingAndOldSaveMigration" classname="Aethernia.Tests.Editor.TroopProgressionTests" runstate="Runnable" seed="1813452991" result="Failed" label="Error" start-time="2026-11-02 21:56:33Z" end-time="2026-11-02 21:56:47Z" duration="13.505936" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object]]></message>
+                  <stack-trace><![CDATA[  at Aethernia.Tests.Editor.TroopProgressionTests+<ArmyUi>d__12.MoveNext () [0x00295] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\TroopProgressionTests.cs:56 
+  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44 ]]></stack-trace>
+                </failure>
+                <output><![CDATA[E18_ARMY_UI: camp=E10-E13 Demo Flow units=RtsRoles
+Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -595,3 +595,55 @@ Build final fuente0802286, Unity6000.5.8f1,206493085bytes,72.39s(incremental; pr
 ## 2026-11-02 — Publicación E17
 
 [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) abierto en borrador sobre feature/e16-pulido-visual-ui (PR7 todavía abierto). Push normal de feature/e17-art-pipeline-alpha-polish; main/dev y PR1..7 comprobados contra snapshot inicial, intactos. F técnico/documental cerrado con sus resultados reales, E17-A-RTS y E17-HUM siguen pendientes; sin merges/force, sin Meshy/derivados publicados y sin E18.
+
+## 2026-11-02 — Inicio E18 autorizado
+
+PR8 sigue abierto/draft en d7cacd7; main/dev/PR1..8 snapshot. Rama feature/e18-progresion-balance desde E17. GDDhash y Meshy originales comprobados intactos. Primero diagnóstico RTS: comparar carga histórica con órdenes legales de reserva del héroe, sin cambiar reglas/aserciones existentes. Resto secuencial con arte provisional; no E19.
+
+## 2026-11-02 — E18-A diagnóstico RTS
+
+Siete escenarios6/7; nuevo ensayo de retaguardia no garantiza victoria(Monje). CSV/terminales y XML preservados, contratos de resolución/reintento comprobados. Sin cambios de salud/daño/reglas ni aserciones históricas. E17-A-RTS permanece abierto; no asumir táctica universal ganadora ni repetir hasta verde. Continúa progresión optativa E18.
+
+## 2026-11-02 — E18-BC experiencia y atributos
+
+Progresión optativa en nueva escena/rules propios,4niveles, XP por hechos reales/ledger único y crédito migrado de completados antiguos. Derivados por clase/atributos/nivel y elecciones sin acumulación/curación por equipar/cargar; revisión aditiva del estadoVersion1. Primer RPG legal alcanza nivel2 en tres clases y conserva estado al Continuar. Primer pase18/19 por carpeta de captura ausente; corregido y7/7progresión PASS,12reglas tácticas anteriores aprobadas. Nulos/corrupción rechazados. Escenas/física/arte/versiones anteriores conservados. Continúan técnicas/UI/equipo y resto E18.
+
+## 2026-11-02 — E18-DEF técnicas y elección
+
+Tres técnicas con identificador/configuración, daño real,1acción/foco limitado por encuentro y cooldownRTS; misma progresión con adaptadores. Reusa ataque/animación/VFX y controles existentes. FichaPersonaje nueva vista dentro de ventana existente:6atributos, nivel/XP, requisitos, dos mejoras con puntos reales; sin gestorUI adicional, clases fijadas al progresar. Primer pase16/17 por fixture con referencia antigua, corregido yController1/1tresclasesRPG/RTS/save. UI1/1tresclasesa720/1080con6capturas; fallos auxiliares preservados. No nuevos modelos ni reglas definitivas. Continúa equipo/botín.
+
+## 2026-11-02 — E18-GH equipo y botín
+
+Nueve definiciones configurables compartidas, slots arma/armadura/accesorio, bonos reales separados y visuales E08 reutilizados. Botínruinas mineral+talismán pendiente/único seguro al llenarbolsa8. Forja8oro+mineral/taller2, chaleco8oro4madera y venta de excedentes colectivos5madera5oro en campamento; sin saldos negativos/arbitraje.14/14core+1/1venta+1/1UIpor3clases720/1080/save/Continue, seisPNGinspeccionadas. Fixtures reales E17 incluidas con origenSHA; no XP/recursos regalados. UIcaption desbordada y prueba sinfondos corregidas con transacción real. Continúan tropas/compañeros/balance/ciclo nuevo.
+
+## 2026-11-02 — E18 IJK/LN en validación
+
+Roles compartidos con costes distintos, progreso de participantes RPG y entrenamiento pagado del ejército; guardado aditivo. Cuatro pruebas puras militares y cuatro de balance PASS;720simulaciones separadas de jugabilidad. UI militar sigue fallando en auxiliar de localización, se conservanXML y no se cierra tarea. Ficha corregida para textoRTS3s, repeticiónUI tresclases720/1080PASS. Reintento tras derrota separado del bloqueo de cambio de clase, panelgrupo/XP integrados; validación nativa pendiente. Preparado compositorQA que reutiliza recorridos reales conXP/quest/forja/entrenamiento, sin premios artificiales.
+
+## 2026-11-02 — E18 IJK/LN verificación dirigida
+
+UI militar1/1PASS tras identificar por IL la closure de captura perdida al entrar en Play Mode; captura trasladada al bucle posterior. El fixture requería además1madera: se espera producción territorial real, sin alterar fondos/costes. Cuatro pruebas puras y entrenamiento/UI/guardado a720/1080 completan IJK. LNcuatrocasos/720semillas PASS, CSVy parámetros publicados como simulación sin geometría. BuildWindows nueva generada; recorrido nativoWarrior ya superó patrulla/misión/reclutamiento, todavía en curso. E17-A-RTS/humano abiertos.
+
+## 2026-11-02 — E18 integración dirigida y primera build
+
+MOQdirigida1/1PASS: reintento explícito recupera salud sin cambiar clase/XP, seleccionar misma clase no cura, grupo muestra un juego de órdenes/nombres y técnica solo en turno propio; avisoXP no reaparece por cargar. Dos capturasGroup. Primera buildWindows PASS, primera ejecuciónWarrior superó patrulla, misión,3compañeros,2guardianías,botín,forja,entrenamiento y conquista, pero falló al esperar producción: checkpoint200,08s/ciclo20, siguiente210s, grabación fija12Hz tardó más de12s reales del watchdog. Se amplía solo watchdogQA E18 a30s y se exige ciclo avanzado y exactamente2madera por ciclo real. Reglasdeproducción10s/intactas, sin modificar expectativas RTS históricas. Comprobante fallido conservado, todavía no recorrido completoPASS.
+
+## 2026-11-02 — E18 ciclo nativo completo por tres clases
+
+Seis procesos Windows GPU PASS en run221506: Nueva partida→prólogo→RPG/XP/nivel/elección→patrulla→campamento/misión→compañeros→dosguardianías/XP→botín→taller2/forja/equipo→ejército/entrenamiento→conquista/producción→guardar/título, seguido de reinicio exacto por clase sin duplicación. Niveles4/XP60,compañeros2 y territorios conservados; salud final distintaWarrior37/Monk13/Mage24. Dos clips reales con audioDSP exportados y decodificados. MOQcerrado técnicamente; RSTUVregresión/portable/ZIP/PR y humano siguen abiertos.
+
+## 2026-11-02 — E18 regresión general y correcciones finales en validación
+
+General174/176: reservaRTS falló conGuerrero (incidencia abierta) y FiveVisualSlots falló al ocultar una vinculación visual personalizada desconocida para inventario. Se conserva XML íntegro/FALLOS_GENERALES, sin excluir ni modificar aserciones históricas. ItemCatalog.Visual ahora conserva ID visual desconocido para bindings locales; inventario/guardado siguen rechazándolo como ítem. Ficha muestra solo atributo principal efectivo y derivados; otros atributosGDD quedan como referencias, sin cifras sin aplicación. Descanso campamentoE18 recupera también ejército superviviente, haciendo aprovechable+2PVmáximos del entrenamiento sin curación instantánea; regla10s previa. Validación dirigida cuatrocasos y nueva build/portable pendientes, no afirmar regresión completaverde.
+
+## 2026-11-02 — E18 cierre dirigido4/4
+
+LegacyFiveVisualSlots y equipoE18 PASS sin modificar aserciones; problema visual corregido. UIArmy comprueba entrenamiento sin curación, descanso real10s hasta máximo mejorado yHPpersistente trasContinue; ficha con atributo principal aplicado/derivados pasa3clases×720/1080. XML CIERRE_DIRIGIDO_4 conserva4/4. General174/176 previo se conserva, uno corregido por dirigida y RTS sin resolver; no afirmar nueva regresión totalmente verde. Se genera candidata final y resta verificar ZIP/portable/PR.
+
+## 2026-11-02 — E18 paquete y portable verificados
+
+Build finalae0051b,ZIP87.842.896bytes SHA bc6828e2fe78c0f3f1115aa020ab7a5cc4913cd81b15dcd71aef3a8963d5d72f,CRC/SHA por archivoPASS y18paquetes anteriores intactos. Dos procesos desde ZIP extraído completaronNueva partida→conquista yreinicioGuerrero; total8/8Windows con tresclases previas. Export49PNG/2MP4 reales, orígenes/revisiones separados(60d01b8coreNative/ae0051bfinalportable). General174/176 y4/4posteriores se comunican sin afirmar regresiónverde; RTSreserva/humano abiertos. PublicaciónPRdraft siguiente, sinmain/merges/arteprivado.
+
+## 2026-11-02 — E18 publicada para revisión
+
+Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/MathiasMerino/RPGRTS/pull/9 sobre E17/PR8, sin merge/main/dev/configglobal. ChecklistRSTUV cerrado como entrega de candidata con incidenciaRTSabierta; humano pendiente. Informe,guía,49PNG/2MP4 yXML/manifiestos publicados; ZIPlocal disponible y18anteriores conservados. Se registra explícitamente general174/176 y4/4finales, no regresiónverde ni aprobación humana. NoE19.

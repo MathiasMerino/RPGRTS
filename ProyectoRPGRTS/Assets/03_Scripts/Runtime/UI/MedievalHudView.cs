@@ -35,11 +35,11 @@ namespace Aethernia
         }
         public void Render(GameSession session,PrototypeDirector director,ExplorationPage page)
         {
-            var s=session.State;var p=session.Rules.Find(s.ClassId);var exploring=session.Mode==PrototypeMode.Exploration;
-            HeroName.text=s.Name+" · "+p.Title;
+            var s=session.State;var p=session.HeroProfile;var exploring=session.Mode==PrototypeMode.Exploration;
+            HeroName.text=s.Name+" · "+p.Title+(s.ProgressionRevision==1?" · Nv"+s.HeroLevel:"");
             HealthLabel.text=s.Health+" / "+p.Health+" PV";
             HealthFill.fillAmount=Mathf.Clamp01((float)s.Health/p.Health);
-            Resources.text="ORO  "+s.Gold+"     MADERA  "+s.Wood+"     ALIMENTOS  "+s.Food+"\n"+(session.Mode==PrototypeMode.TurnCombat||session.Mode==PrototypeMode.Rts?"Reloj pausado":"Tiempo del mundo  "+(int)s.WorldSeconds+" s");
+            Resources.text="ORO  "+s.Gold+"     MADERA  "+s.Wood+"     ALIMENTOS  "+s.Food+"\n"+(session.Mode==PrototypeMode.TurnCombat||session.Mode==PrototypeMode.Rts?"Reloj pausado":"Tiempo del mundo  "+(int)s.WorldSeconds+" s")+(s.ProgressionRevision==1?" · XP "+s.Experience+"/"+session.Rules.Progression.MaximumExperience:"");
             var art=Catalog.FindEntry(p.Id);
             if(art!=null&&art.ReferenceArt!=null)
             { Portrait.texture=art.ReferenceArt;Portrait.uvRect=art.ReferenceUv;PortraitAspect.aspectRatio=art.ReferenceArt.width*art.ReferenceUv.width/(art.ReferenceArt.height*art.ReferenceUv.height); }

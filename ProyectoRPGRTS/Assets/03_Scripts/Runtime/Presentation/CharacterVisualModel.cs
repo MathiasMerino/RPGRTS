@@ -32,10 +32,11 @@ namespace Aethernia
         { animationDriver = GetComponent<HumanoidAnimationDriver>(); if (animationDriver != null) animationDriver.Bind(actor); }
         public void ApplyEquipment(PrototypeState state)
         {
-            if (trainingSword != null) trainingSword.SetActive(state.Weapon == "training-sword");
-            if (clothArmour != null) clothArmour.SetActive(state.Armour == "cloth");
+            var weapon=ItemCatalog.Visual(state.Weapon);var armour=ItemCatalog.Visual(state.Armour);
+            if (trainingSword != null) trainingSword.SetActive(weapon == "training-sword");
+            if (clothArmour != null) clothArmour.SetActive(armour == "cloth");
             foreach (var binding in bindings)
-                if (Owned(binding.Visual)) binding.Visual.SetActive(!string.IsNullOrEmpty(binding.ItemId) && binding.ItemId == (binding.Source == EquipmentStateSource.Weapon ? state.Weapon : state.Armour));
+                if (Owned(binding.Visual)) binding.Visual.SetActive(!string.IsNullOrEmpty(binding.ItemId) && binding.ItemId == (binding.Source == EquipmentStateSource.Weapon ? weapon : armour));
             if (animationDriver != null) animationDriver.SetDefeated(state.Health <= 0);
         }
     }

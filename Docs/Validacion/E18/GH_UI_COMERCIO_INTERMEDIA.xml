@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Failed(Child)" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 21:34:17Z" end-time="2026-11-02 21:34:20Z" duration="2.8672556">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="166" result="Failed" site="Child" start-time="2026-11-02 21:34:17Z" end-time="2026-11-02 21:34:20Z" duration="2.867256" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1217" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="166" result="Failed" site="Child" start-time="2026-11-02 21:34:17Z" end-time="2026-11-02 21:34:20Z" duration="2.647130" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="27912" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1218" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="166" result="Failed" site="Child" start-time="2026-11-02 21:34:17Z" end-time="2026-11-02 21:34:20Z" duration="2.634630" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1219" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="166" result="Failed" site="Child" start-time="2026-11-02 21:34:17Z" end-time="2026-11-02 21:34:20Z" duration="2.625391" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1220" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="166" result="Failed" site="Child" start-time="2026-11-02 21:34:17Z" end-time="2026-11-02 21:34:20Z" duration="2.616446" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1070" name="EquipmentLootTests" fullname="Aethernia.Tests.Editor.EquipmentLootTests" classname="Aethernia.Tests.Editor.EquipmentLootTests" runstate="Runnable" testcasecount="9" result="Failed" site="Child" start-time="2026-11-02 21:34:17Z" end-time="2026-11-02 21:34:20Z" duration="2.583514" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1080" name="RealE17MigrationLootForgeAndEquipmentThroughUi" fullname="Aethernia.Tests.Editor.EquipmentLootTests.RealE17MigrationLootForgeAndEquipmentThroughUi" methodname="RealE17MigrationLootForgeAndEquipmentThroughUi" classname="Aethernia.Tests.Editor.EquipmentLootTests" runstate="Runnable" seed="372095527" result="Failed" start-time="2026-11-02 21:33:55Z" end-time="2026-11-02 21:34:20Z" duration="24.565081" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Caption: Adquirir chaleco
+  Expected: False
+  But was:  True
+]]></message>
+                  <stack-trace><![CDATA[at Aethernia.Tests.Editor.EquipmentLootTests+<>c__DisplayClass12_0.<Inventory>b__1 (UnityEngine.Camera c, System.Int32 w, System.Int32 h) [0x00035] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\EquipmentLootTests.cs:62
+at Aethernia.Tests.Editor.DemoCapture+<Save>d__0.MoveNext () [0x0020f] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\FirstDemoTests.cs:107
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1078" name="WoodSaleHasNoNegativeResourcesOrTradeArbitrage" fullname="Aethernia.Tests.Editor.EquipmentLootTests.WoodSaleHasNoNegativeResourcesOrTradeArbitrage" methodname="WoodSaleHasNoNegativeResourcesOrTradeArbitrage" classname="Aethernia.Tests.Editor.EquipmentLootTests" runstate="Runnable" seed="1836818241" result="Passed" start-time="2026-11-02 21:34:20Z" end-time="2026-11-02 21:34:20Z" duration="0.022723" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

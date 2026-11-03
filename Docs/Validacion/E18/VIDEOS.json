@@ -1,0 +1,28 @@
+[
+  {
+    "file": "Docs/Videos/E18/E18-Combate-RPG.mp4",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Recording",
+    "sha256": "ed32c30cab45d22b45d5d824a259ad4eca5394e06a998fd1e5c4c2fca147c96d",
+    "firstFrame": 0,
+    "lastFrame": 225,
+    "seconds": 18.833333333333332,
+    "nativeDSP": true,
+    "continuous": true,
+    "decodeVerified": true,
+    "captureStepHz": 12,
+    "measuredFps": false
+  },
+  {
+    "file": "Docs/Videos/E18/E18-Patrulla-RTS.mp4",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Recording",
+    "sha256": "b6ff628ac3ddfe3db95b1216581d8dc9d1d32e32aba3d3f91987f4c3b39b7a0a",
+    "firstFrame": 224,
+    "lastFrame": 335,
+    "seconds": 9.333333333333334,
+    "nativeDSP": true,
+    "continuous": true,
+    "decodeVerified": true,
+    "captureStepHz": 12,
+    "measuredFps": false
+  }
+]

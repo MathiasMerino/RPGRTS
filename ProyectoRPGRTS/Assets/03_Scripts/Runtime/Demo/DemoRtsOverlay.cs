@@ -13,7 +13,7 @@ namespace Aethernia
         private readonly Dictionary<ExplorationUnit,Bar> bars=new Dictionary<ExplorationUnit,Bar>();
         private RectTransform panel,drag;
         private TMP_Text text;
-        private Button attack,guard,recover;
+        private Button attack,guard,recover,technique;
         private DemoWidgets ui;
         private Canvas canvas;
         public int LiveBars=>bars.Count;
@@ -29,6 +29,8 @@ namespace Aethernia
                 panel.anchoredPosition=new Vector2(920,-98);panel.sizeDelta=new Vector2(344,168);text.rectTransform.sizeDelta=new Vector2(320,96);text.fontSize=17;
                 var buttons=new[]{attack,guard,recover};for(var i=0;i<buttons.Length;i++){var rect=buttons[i].GetComponent<RectTransform>();rect.anchoredPosition=new Vector2(12+i*108,-112);rect.sizeDelta=new Vector2(104,42);buttons[i].GetComponentInChildren<TMP_Text>().fontSize=16;}
             }
+            if(Flow.Session.Rules.Progression!=null)
+            {panel.sizeDelta=new Vector2(344,222);technique=ui.Button(panel,"Hero technique","Técnica",12,164,320,42,()=>Order("technique"));}
             drag=DemoWidgets.Rect(canvas.transform,"Selection rectangle",0,0,0,0);DemoWidgets.Fill(drag,new Color(.70f,.63f,.36f,.18f),false);
         }
         private void Order(string action){if(!Flow.Director.Rts.HeroAction(action))Flow.Session.Say("Selecciona al héroe y espera su intervalo; comprueba alcance y recursos.");}
@@ -58,6 +60,11 @@ namespace Aethernia
             }
             text.text=(rts.ContextId=="conquest-outpost"?"CONQUISTA":"PATRULLA")+" · "+rts.Allies+" aliados / "+rts.Enemies+" rivales · "+rts.SelectedAllies+" seleccionados\nCtrl+1/2/3: guardar grupo · 1/2/3: seleccionar";
             attack.interactable=guard.interactable=recover.interactable=rts.Active&&selectedHero&&!Flow.Session.Paused;
+            if(technique!=null)
+            {
+                var skill=Flow.Session.HeroProfile.Combat;technique.interactable=rts.Active&&selectedHero&&!Flow.Session.Paused&&skill!=null&&skill.TechniqueUnlocked&&rts.TechniqueFocus>=skill.TechniqueCost;
+                technique.GetComponentInChildren<TMP_Text>().text=skill==null||!skill.TechniqueUnlocked?"Técnica · requiere nivel2":skill.TechniqueTitle+" · foco "+rts.TechniqueFocus;
+            }
             var input=Flow.GetComponent<DemoRtsInput>();drag.gameObject.SetActive(input!=null&&input.Dragging);
             if(input!=null&&input.Dragging)
             {

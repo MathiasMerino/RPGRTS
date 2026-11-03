@@ -61,7 +61,7 @@ namespace Aethernia
         private void Resolved(bool won)
         {
             if(pending==null||Flow.Director.Rts.ContextId!="conquest-outpost")return;var id=pending;pending=null;
-            var changed=ExpeditionOperations.Conquer(Flow.Session.State,id,won);
+            var changed=ExpeditionOperations.Conquer(Flow.Session.State,id,won);if(changed)Flow.Session.AwardForFact("umbral-outpost-conquered");
             LastResult=changed?"Victoria: puesto conquistado. +1madera/ciclo online, propietario persistente.":"Derrota: el puesto conserva su propietario. Bajas RTS registradas; compañeros RPG no desplegados.";
             Flow.Director.Execute("explore");Flow.Director.Hero.Warp(won?returnPoint:new Vector3(9,0,-10));Party.Regroup(Flow.Director.Hero.transform.position);
             Flow.CameraRig.SetRegion(Vector3.zero);Flow.CameraRig.SetZoom(11);Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);Flow.Session.Say(LastResult);Flow.Director.Save(Flow.SlotPath);

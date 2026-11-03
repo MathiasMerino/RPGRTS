@@ -127,7 +127,7 @@ namespace Aethernia
             var exploring = session.Mode == PrototypeMode.Exploration;
             if (explorationPages != null) explorationPages.SetActive(exploring);
             if (characterPanel != null) characterPanel.SetActive(exploring && ActivePage == ExplorationPage.Character);
-            var s = session.State; var profile = session.Rules.Find(s.ClassId);
+            var s = session.State; var profile = session.HeroProfile;
             if(classReference!=null) classReference.Refresh(exploring && ActivePage==ExplorationPage.Character,profile);
             if (nameInput != null && !nameInput.isFocused && nameInput.text != s.Name) nameInput.SetTextWithoutNotify(s.Name);
             stats.text = s.Name + " · " + profile.Title + "  |  Salud " + s.Health + "/" + profile.Health + "  |  Oro " + s.Gold + "  Madera " + s.Wood + "  Alimentos " + s.Food + "  |  Tiempo " + (int)s.WorldSeconds + " s";
@@ -188,14 +188,14 @@ namespace Aethernia
                 else if(id.StartsWith("item-")) {visible=exploring&&compactView.WindowOpen&&ActivePage==ExplorationPage.Inventory;ready=compactView.Inventory.Count(session.State,id.Substring(5))>0;}
                 else
                 {
-                    var action=id=="attack"||id=="guard"||id=="recover"||id=="end"||id=="approach";
+                    var action=id=="attack"||id=="guard"||id=="recover"||id=="end"||id=="approach"||id=="technique";
                     var war=id=="select-all"||id=="charge";
                     visible=session.Mode==PrototypeMode.TurnCombat?action||id=="escalate":session.Mode==PrototypeMode.Rts?war:exploring&&compactView.ActionVisible(id,ActivePage);
                     ready=action?director.Encounter.PlayerCanAct:
                         war?director.Rts.Active:id=="escalate"?!director.IsBusy&&session.HasFact("rpg-victory"):!director.IsBusy;
                     if(action&&id!="end"&&id!="approach"&&director.Encounter.Battle!=null)ready&=director.Encounter.Battle.ActionAvailable;
-                    if(id=="recover"&&director.Encounter.Battle!=null)ready&=!director.Encounter.Battle.RecoveryUsed&&session.State.Health<session.Rules.Find(session.State.ClassId).Health;
-                    if(id=="ration") ready&=compactView.Inventory.Count(session.State,"ration")>0&&session.State.Health<session.Rules.Find(session.State.ClassId).Health;
+                    if(id=="recover"&&director.Encounter.Battle!=null)ready&=!director.Encounter.Battle.RecoveryUsed&&session.State.Health<session.HeroProfile.Health;
+                    if(id=="ration") ready&=compactView.Inventory.Count(session.State,"ration")>0&&session.State.Health<session.HeroProfile.Health;
                     if(id=="sword"||id=="armour")ready&=compactView.Inventory.Count(session.State,id=="sword"?"training-sword":"cloth")>0;
                     if(id=="trade")ready&=session.State.Gold>=5;
                     if(id.StartsWith("class-")&&b.Label!=null)
@@ -204,6 +204,13 @@ namespace Aethernia
                         b.Label.text=(chosen?"• ":"")+session.Rules.Find(id.Substring(6)).Title;
                         b.Label.fontStyle=chosen?FontStyle.Bold:FontStyle.Normal;
                     }
+                }
+                if(session.Rules.Progression!=null&&(id.StartsWith("class-")||id.StartsWith("item-")||id=="sword"||id=="armour"||id=="ration"||id=="trade"))visible=false;
+                if(session.Rules.Progression!=null&&director.Encounter.InGroup&&(id=="attack"||id=="guard"||id=="recover"||id=="end"||id=="approach"))visible=false;
+                if(id=="technique")
+                {
+                    var skill=session.HeroProfile.Combat;if(director.Encounter.InGroup){var g=director.Encounter.Group;ready=!g.Finished&&g.Current.Hero&&g.ActionAvailable&&!director.Hero.IsMoving;}ready=ready&&skill!=null&&skill.TechniqueUnlocked&&director.Encounter.TechniqueFocus>=skill.TechniqueCost;
+                    if(b.Label!=null)b.Label.text=skill==null||!skill.TechniqueUnlocked?"Técnica · Nv2":"Técnica · "+director.Encounter.TechniqueFocus;
                 }
                 b.Button.gameObject.SetActive(visible);b.Button.interactable=ready;
             }

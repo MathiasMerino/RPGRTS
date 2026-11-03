@@ -1,0 +1,4 @@
+FAIL: System.InvalidOperationException: Expedition smoke: two territorial online bonuses, paused workshop
+  at Aethernia.ExpeditionSmokeProbe.Require (System.Boolean value, System.String message) [0x00014] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\ExpeditionSmokeProbe.cs:138 
+  at Aethernia.ExpeditionSmokeProbe+<Run>d__14.MoveNext () [0x012a3] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\ExpeditionSmokeProbe.cs:84 
+  at Aethernia.ProgressionSmokeProbe+<Start>d__1.MoveNext () [0x00108] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\ProgressionSmokeProbe.cs:20 

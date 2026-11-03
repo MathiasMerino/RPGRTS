@@ -22,6 +22,7 @@ namespace Aethernia
     {
         public string Id,Role;
         public int Health=10;
+        public int Level=1,Experience;
         public bool InParty;
     }
     [Serializable] public sealed class PrototypeState
@@ -33,6 +34,11 @@ namespace Aethernia
         // JsonUtility serializa clases anidadas por valor y no conserva null: presencia explícita.
         public bool HasDemoProgress;
         public DemoProgress Demo;
+        public int ProgressionRevision;
+        public int Experience;
+        public int HeroLevel=1;
+        public List<SkillRank> Skills=new List<SkillRank>();
+        public string Accessory="";
         public int Health = 24;
         public int Gold = 50;
         public int Wood = 20;

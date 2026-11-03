@@ -1,0 +1,1 @@
+PASS: E18 warrior new process exact persistent state, no duplicate rewards; seconds=1.89; automatic duration is not human playtime

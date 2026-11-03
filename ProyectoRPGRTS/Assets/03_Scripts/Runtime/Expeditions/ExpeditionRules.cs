@@ -27,6 +27,9 @@ namespace Aethernia
     [CreateAssetMenu(menuName="Aethernia/Expedition Rules")]
     public sealed class ExpeditionRules : ScriptableObject
     {
+        public RtsDemoRules Units;
+        public int GoldCost(string role)=>Units?.Find(role)?.RecruitGold>0?Units.Find(role).RecruitGold:RecruitGold;
+        public int FoodCost(string role)=>Units?.Find(role)?.RecruitFood>0?Units.Find(role).RecruitFood:RecruitFood;
         public int MaximumCompanions=3,RecruitGold=5,RecruitFood=2,RestSeconds=10;
         public int DungeonGold=30,DungeonWood=15,DungeonFood=6,OutpostDefenders=3;
         public FactionDefinition[] Factions={new FactionDefinition("player-company","Compañía del campamento"),new FactionDefinition("faction-a","Facción A"),new FactionDefinition("faction-b","Facción B")};
@@ -44,8 +47,8 @@ namespace Aethernia
         public static bool Ready(PrototypeState s)=>s.Demo!=null&&s.Demo.Chapter>=DemoChapter.Settlement&&s.Facts.Contains("demo-camp-secured");
         public static bool Recruit(PrototypeState s,ExpeditionRules rules,RtsDemoRules roles,string role)
         {
-            var p=roles.Find(role);if(!Ready(s)||p==null||s.Companions.Count>=rules.MaximumCompanions||s.Companions.Any(c=>c.Role==role)||s.Gold<rules.RecruitGold||s.Food<rules.RecruitFood)return false;
-            s.Gold-=rules.RecruitGold;s.Food-=rules.RecruitFood;s.Companions.Add(new RecruitRecord{Id=Guid.NewGuid().ToString("N"),Role=role,Health=p.Health,InParty=true});return true;
+            var p=roles.Find(role);if(!Ready(s)||p==null||s.Companions.Count>=rules.MaximumCompanions||s.Companions.Any(c=>c.Role==role)||s.Gold<rules.GoldCost(role)||s.Food<rules.FoodCost(role))return false;
+            s.Gold-=rules.GoldCost(role);s.Food-=rules.FoodCost(role);s.Companions.Add(new RecruitRecord{Id=Guid.NewGuid().ToString("N"),Role=role,Health=p.Health,InParty=true});return true;
         }
         public static bool SetParty(PrototypeState s,ExpeditionRules rules,string id,bool active)
         {
@@ -77,9 +80,9 @@ namespace Aethernia
             var per=s.Territories.Count(t=>t.Secured&&t.Owner==s.FactionId&&(t.Id=="crossing"||t.Id=="outpost"));
             s.Wood=Math.Min(Math.Max(s.Wood,SettlementOperations.Capacity(s,storage)),s.Wood+per*cycles);
         }
-        public static bool Valid(PrototypeState s)
+        public static bool Valid(PrototypeState s,ProgressionRules progression=null)
         {
-            if(s.Companions==null||s.ArmySelection==null||s.Territories==null||s.Companions.Count>3||s.Companions.Count(c=>c!=null&&c.InParty)>3||s.Companions.Any(c=>c==null||!ValidId(c.Id)||!SettlementRules.KnownRole(c.Role)||c.Health<0||c.Health>10))return false;
+            if(s.Companions==null||s.ArmySelection==null||s.Territories==null||s.Companions.Count>3||s.Companions.Count(c=>c!=null&&c.InParty)>3||s.Companions.Any(c=>c==null||!ValidId(c.Id)||!SettlementRules.KnownRole(c.Role)||!TroopProgression.Valid(s,c,progression,false)))return false;
             if(s.Companions.Select(c=>c.Id).Distinct().Count()!=s.Companions.Count||s.Companions.Select(c=>c.Role).Distinct().Count()!=s.Companions.Count||s.Companions.Any(c=>s.Army.Any(a=>a.Id==c.Id)))return false;
             if(s.ArmySelection.Count>6||s.ArmySelection.Distinct().Count()!=s.ArmySelection.Count||s.ArmySelection.Any(id=>s.Army.All(a=>a.Id!=id)))return false;
             if(s.Territories.Count>3||s.Territories.Any(t=>t==null||!ExpeditionRules.KnownTerritory(t.Id)||!ExpeditionRules.KnownFaction(t.Owner)||(t.Secured&&t.Owner!="player-company")))return false;

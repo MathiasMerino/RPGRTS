@@ -35,8 +35,8 @@ namespace Aethernia
             upgrade=Button(panel,"Upgrade building","Mejorar",294,341,126,()=>Improve());
             Button(panel,"Explore","Explorar",432,341,126,()=>Flow.Director.Execute("explore"));
             row=0;foreach(var role in Flow.Director.Rts.DemoRules.Roles)
-            {var id=role.Id;recruits.Add(Button(panel,"Recruit "+id,role.Title,12+row++*184,396,170,()=>Recruit(id)));}
-            ui.Text(panel,"Recruitment rules","Reclutar: 5 oro + 2 alimento · requiere cuartel\nMejorar nivel 2: 10 oro + 5 madera · solo producción/almacén",12,447,546,45,16);
+            {var id=role.Id;recruits.Add(Button(panel,"Recruit "+id,role.Title+(Rules.Units!=null?" "+Rules.GoldCost(id)+"o/2a":""),12+row++*184,396,170,()=>Recruit(id)));}
+            ui.Text(panel,"Recruitment rules",(Rules.Units==null?"Reclutar: 5 oro + 2 alimento":"Costes por rol indicados arriba; requiere cuartel")+"\nMejorar nivel 2: 10 oro + 5 madera · producción/almacén",12,447,546,45,16);
         }
         private Button Button(Transform parent,string name,string caption,float x,float y,float width,Action action)
         {var b=ui.Button(parent,name,caption,x,y,width,38,()=>{Flow.Front.Audio?.Play(FeedbackSound.Select,Vector3.zero,true);action();});return b;}
@@ -54,6 +54,11 @@ namespace Aethernia
         {var result=SettlementOperations.Upgrade(Flow.Session.State,Rules,Selected);Flow.Session.Say(result?"Nivel 2: mayor rendimiento/capacidad, misma huella.":"No se puede mejorar: comprueba instalación, nivel y recursos.");return result;}
         public bool Recruit(string role)
         {var result=SettlementOperations.Recruit(Flow.Session.State,Rules,role);Flow.Session.Say(result?"Recluta añadido al ejército persistente. Visita al capitán para desplegarlo.":"Reclutamiento rechazado: requiere cuartel, recursos y espacio (6).");return result;}
+        private bool WorkbenchReady()=>Flow.IsPlaying&&Flow.Session.Mode==PrototypeMode.Exploration&&!Flow.Session.Paused&&!Flow.Director.IsBusy&&Vector3.Distance(Flow.Director.Hero.transform.position,new Vector3(9,0,-10))<9;
+        public bool Forge(){var ok=WorkbenchReady()&&EquipmentOperations.Forge(Flow.Session.State);Flow.Session.Say(ok?"Arma de clase forjada: equípala desde Inventario.":"Forja: requiere campamento, taller2,8oro y mineral1.");return ok;}
+        public bool BuyVest(){var ok=WorkbenchReady()&&EquipmentOperations.BuyVest(Flow.Session.State);Flow.Session.Say(ok?"Chaleco adquirido; puedes equiparlo.":"Chaleco: campamento, taller,8oro/4madera y espacio.");return ok;}
+        public bool SellItem(string id){var ok=WorkbenchReady()&&EquipmentOperations.Sell(Flow.Session.State,id,Flow.Session.Rules);Flow.Session.Say(ok?"Objeto vendido. Recursos registrados.":"Venta: campamento y pieza sin equipar.");return ok;}
+        public bool SellWood(){var ok=WorkbenchReady()&&EquipmentOperations.SellWood(Flow.Session.State);Flow.Session.Say(ok?"Vendiste5madera por5oro. Ingresos del asentamiento disponibles para mejoras.":"Venta de madera: campamento y al menos5madera.");return ok;}
         private void LateUpdate()
         {
             if(panel==null)return;var state=Flow.Session.State;var available=Flow.IsPlaying&&state.Demo!=null&&state.Demo.Chapter>=DemoChapter.Settlement&&!Flow.Session.Paused;
@@ -64,7 +69,7 @@ namespace Aethernia
             var b=Selected;selectedLabel.text=b==null?"Ningún edificio seleccionado.":Rules.Find(b.Id).Title+" · nivel "+b.Level+(b.ProductionPaused?" · producción pausada":" · activo");
             activate.interactable=b!=null&&(Rules.Find(b.Id).FoodPerCycle>0||Rules.Find(b.Id).WoodPerCycle>0);upgrade.interactable=b!=null&&Rules.Find(b.Id).Upgradeable&&b.Level==1&&state.Gold>=Rules.UpgradeGold&&state.Wood>=Rules.UpgradeWood;
             activate.GetComponentInChildren<TMP_Text>().text=b!=null&&!b.ProductionPaused?"Pausar":"Activar";
-            foreach(var recruit in recruits)recruit.interactable=SettlementOperations.Has(state,"barracks")&&state.Gold>=Rules.RecruitGold&&state.Food>=Rules.RecruitFood&&state.Army.Count<Rules.MaximumRecruits;
+            for(var i=0;i<recruits.Count;i++){var role=Flow.Director.Rts.DemoRules.Roles[i].Id;recruits[i].interactable=SettlementOperations.Has(state,"barracks")&&state.Gold>=Rules.GoldCost(role)&&state.Food>=Rules.FoodCost(role)&&state.Army.Count<Rules.MaximumRecruits;}
         }
     }
 }

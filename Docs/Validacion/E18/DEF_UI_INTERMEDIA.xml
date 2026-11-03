@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 21:12:26Z" end-time="2026-11-02 21:12:28Z" duration="1.6947568">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="157" result="Failed" site="Child" start-time="2026-11-02 21:12:26Z" end-time="2026-11-02 21:12:28Z" duration="1.694757" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1206" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="157" result="Failed" site="Child" start-time="2026-11-02 21:12:26Z" end-time="2026-11-02 21:12:28Z" duration="1.474693" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="22416" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1207" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="157" result="Failed" site="Child" start-time="2026-11-02 21:12:26Z" end-time="2026-11-02 21:12:28Z" duration="1.464093" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1208" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="157" result="Failed" site="Child" start-time="2026-11-02 21:12:26Z" end-time="2026-11-02 21:12:28Z" duration="1.456441" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1209" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="157" result="Failed" site="Child" start-time="2026-11-02 21:12:26Z" end-time="2026-11-02 21:12:28Z" duration="1.449467" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1100" name="HeroTechniqueTests" fullname="Aethernia.Tests.Editor.HeroTechniqueTests" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" testcasecount="6" result="Failed" site="Child" start-time="2026-11-02 21:12:26Z" end-time="2026-11-02 21:12:28Z" duration="1.432778" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1107" name="SkillSheetUsesRealPointsAndFitsTwoResolutions" fullname="Aethernia.Tests.Editor.HeroTechniqueTests.SkillSheetUsesRealPointsAndFitsTwoResolutions" methodname="SkillSheetUsesRealPointsAndFitsTwoResolutions" classname="Aethernia.Tests.Editor.HeroTechniqueTests" runstate="Runnable" seed="861539119" result="Failed" start-time="2026-11-02 21:12:04Z" end-time="2026-11-02 21:12:28Z" duration="23.316605" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  new
+  Expected: less than or equal to 1281
+  But was:  6514.4248f
+]]></message>
+                  <stack-trace><![CDATA[at Aethernia.Tests.Editor.DemoCapture.Validate (Aethernia.DemoFrontEnd view, System.Int32 width, System.Int32 height, UnityEngine.Camera camera) [0x00146] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\FirstDemoTests.cs:124
+at Aethernia.Tests.Editor.DemoCapture+<Save>d__0.MoveNext () [0x001f2] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\FirstDemoTests.cs:106
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -29,8 +29,8 @@ namespace Aethernia
         }
         public static bool Recruit(PrototypeState state,SettlementRules rules,string role)
         {
-            if(!SettlementRules.KnownRole(role)||!Has(state,"barracks")||state.Army==null||state.Army.Count>=rules.MaximumRecruits||state.Gold<rules.RecruitGold||state.Food<rules.RecruitFood)return false;
-            state.Gold-=rules.RecruitGold;state.Food-=rules.RecruitFood;state.Army.Add(new RecruitRecord{Id=Guid.NewGuid().ToString("N"),Role=role,Health=10});return true;
+            if(!SettlementRules.KnownRole(role)||!Has(state,"barracks")||state.Army==null||state.Army.Count>=rules.MaximumRecruits||state.Gold<rules.GoldCost(role)||state.Food<rules.FoodCost(role))return false;
+            state.Gold-=rules.GoldCost(role);state.Food-=rules.FoodCost(role);state.Army.Add(new RecruitRecord{Id=Guid.NewGuid().ToString("N"),Role=role,Health=rules.Units?.Find(role)?.Health??10});return true;
         }
         public static void Produce(PrototypeState state,SettlementRules rules,int cycles)
         {

@@ -6,8 +6,8 @@ namespace Aethernia
 {
     public static class WorldOperations
     {
-        public static bool KnownItem(string id) => id == "training-sword" || id == "cloth" || id == "ration";
-        public static string ItemTitle(string id) => id == "training-sword" ? "espada" : id == "cloth" ? "túnica" : "ración";
+        public static bool KnownItem(string id) => ItemCatalog.Known(id);
+        public static string ItemTitle(string id) => id=="training-sword"?"espada":id=="cloth"?"túnica":id=="ration"?"ración":ItemCatalog.Find(id)?.Title??id;
         public static bool CanAdd(PrototypeState state, int count) => count > 0 && count <= 8 && state.Items.Sum(i => (long)i.Count) + count <= 8;
         public static bool AddItem(PrototypeState state, string id, int count)
         {
@@ -19,9 +19,8 @@ namespace Aethernia
         public static bool Equip(PrototypeState state, string id)
         {
             if (!state.Items.Any(i => i.Id == id && i.Count > 0)) return false;
-            if (id == "training-sword") state.Weapon = id;
-            else if (id == "cloth") state.Armour = id;
-            else return false;
+            var item=ItemCatalog.Find(id);if(item==null||(!string.IsNullOrEmpty(item.ClassId)&&item.ClassId!=state.ClassId))return false;
+            if(item.Kind==ItemKind.Weapon)state.Weapon=id;else if(item.Kind==ItemKind.Armour)state.Armour=id;else if(item.Kind==ItemKind.Accessory)state.Accessory=id;else return false;
             return true;
         }
         public static bool UseRation(PrototypeState state, int maxHealth)

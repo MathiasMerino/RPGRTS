@@ -1,0 +1,394 @@
+[
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Level2.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Level2.png",
+    "sha256": "6d74fd4f5d6523d5a0b47eb9b4d5f5590516e9d85dc45ab60b574e8dca9a573c",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Recruitment.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Recruitment.png",
+    "sha256": "b7d1a29afc3314ad4116e5f18196101c195a24adf5070aeb6baadf97fc1f5ea8",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-GroupCombat.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-GroupCombat.png",
+    "sha256": "d5db8507e4b9feb8b532fb52fc4ddbdcb6196aa05f782aa3d32603f0ed030148",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Equipment.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Equipment.png",
+    "sha256": "c1c5adfb89b733ccd89998ad7e9f40314ae4572070f6db6ce237abaa89942aca",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Training.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Training.png",
+    "sha256": "4f3c605f89170e5c564b7b90f316ab17264130385d04693f5bc6b8e42b867368",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Conquest.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Conquest.png",
+    "sha256": "ba62c1c9d71bada675685fc4a4de5c2e1f03153430a55c6324073fe761e6160f",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Continued.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Continued.png",
+    "sha256": "b272e816a18c7e661bb0d3d8e626d6433f0340a18cd5cd66898e8505a845a386",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/monk-Level2.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\monk-Level2.png",
+    "sha256": "27a4f228eb884a7dc0b618ce4bbd8191e18f32f9adcc8ef3b3b3e5c0a56d6b29",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/monk-Recruitment.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\monk-Recruitment.png",
+    "sha256": "a18a2f49aa5d829b14bca8441ffa04d5a5b57819069f18b8eecf496cd787e8ad",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/monk-GroupCombat.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\monk-GroupCombat.png",
+    "sha256": "f0e343aa52af68215fcf63f30040014b919b60ac655a8a5431bd11a2e410263e",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/monk-Equipment.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\monk-Equipment.png",
+    "sha256": "eaceb8160b221d43c9183d1f948d02455b0ee520a16d3a4959b4624692e6e9ab",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/monk-Training.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\monk-Training.png",
+    "sha256": "12dc7ba927a4cb405e72938caab7adcf16e3ddf739ef9204aaa26c4545c1be6d",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/monk-Conquest.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\monk-Conquest.png",
+    "sha256": "ba4cec22747103035d5803eddc201ddfdcfd1fc78521d8cceea633b1901dc638",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/monk-Continued.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\monk-Continued.png",
+    "sha256": "4485ec5f699e909632b2d39bb8236ae918dcce40564aa6f860852f5bf95c0674",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/mage-Level2.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\mage-Level2.png",
+    "sha256": "49c301df9e785ca8f99c2ab11ad9837f496de2155abdfd1ab8514bac6545c5b6",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/mage-Recruitment.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\mage-Recruitment.png",
+    "sha256": "4d9b56de05d45d5893b301fd4b370ef8b892e9570a30e8048baf93cc7a0ddc93",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/mage-GroupCombat.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\mage-GroupCombat.png",
+    "sha256": "e6a17e265f565e2b239ba987a7499088e0e663ce1718329c66c0d50a95adf1e8",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/mage-Equipment.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\mage-Equipment.png",
+    "sha256": "7b70501b31a29fc411ecab1d6259434af36b6130756e991a53a7b35a9ef3de76",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/mage-Training.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\mage-Training.png",
+    "sha256": "c6650313cd14582526cba57a073716f5d360308e61c20c786176e9ff46241c5c",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/mage-Conquest.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\mage-Conquest.png",
+    "sha256": "324b5c17744358d8069df44cec8cd281de6316123a5376d452bff63a0ccc88f0",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/mage-Continued.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\mage-Continued.png",
+    "sha256": "1f006a8c3d41f0b5d3fc5917d709d07c69db3e0a5a33257ee23d4e40fb0d2eee",
+    "kind": "Native Windows legal-action E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Main.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Main.png",
+    "sha256": "f0a4f9c2be87ebc61366f759a0e58ee31d0b5dd9c212aea5576eb7dd2dfe82cf",
+    "kind": "Native Windows E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Creation.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Creation.png",
+    "sha256": "cd0af144bd61d3070767cac61a067a0324e4d8b9e490e6d2508e528895c68172",
+    "kind": "Native Windows E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Rpg.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Rpg.png",
+    "sha256": "1dc011da5e8b77609b6983edfdff2cd0bc74a610a997a095757c2c575bf027de",
+    "kind": "Native Windows E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Rts.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Rts.png",
+    "sha256": "6aa179a1e8aa0801bfbaf2c7fe84b53a394f691d993aecd537f46778152da066",
+    "kind": "Native Windows E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Camp.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Camp.png",
+    "sha256": "e3f81980ef3e3ab714559e9ab1c303cc20bd623f6d4b92ec0c14c1fafe12b853",
+    "kind": "Native Windows E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Quest.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Quest.png",
+    "sha256": "541cf6f18807568fdc711f85c7a80002e5d76441897b5d62c804fabc6079f491",
+    "kind": "Native Windows E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Reward.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Reward.png",
+    "sha256": "a82dc7d4d3b225849f1ec175d43396420299b4304b9c3bc2c8962dc3ca6dc85f",
+    "kind": "Native Windows E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-Army.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-Army.png",
+    "sha256": "b9514949cffb6b80a3aeb44902e981a4660633cdf2c053acb73b80d3097ab348",
+    "kind": "Native Windows E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/Windows/warrior-ControlledResources.png",
+    "source": "ProyectoRPGRTS\\Logs\\ProgressionQA\\GPU-20261102-221506\\Captures\\warrior-ControlledResources.png",
+    "sha256": "1173e3beb3eff25262f104d19208e2a2cef2caa5d3bfe0828d1a149dab90a63f",
+    "kind": "Native Windows E18 60d01b8136453b8b1b28b8c19af1ea79807406ec",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Army-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Army-1280.png",
+    "sha256": "1df8006ec767097fcabd5a56ebf28de3cc09370ea15a076e8ce7a03d8e5b063e",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Army-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Army-1920.png",
+    "sha256": "17a97a5230a86da529e56af31f984b7a4a0de11a432a8a86c1bdb2f54fd0b7c5",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/BC-mage.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\BC-mage.png",
+    "sha256": "3698b1c46b912007b9343dc43c3d713e63184db87e17debec28c399f35767180",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/BC-monk.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\BC-monk.png",
+    "sha256": "6411ba955fe1fd01189c92b1e76175ebc1cd4f53b227cc2c110850d5fb39e29a",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/BC-warrior.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\BC-warrior.png",
+    "sha256": "301bd4261b27f51f10199916761ea4531c52075dcca46e37cd09505cc3531e68",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Group-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Group-1280.png",
+    "sha256": "89836f7d590c175f70ed37eea06d7975a6b444e30ebf0433f064804581dd020d",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Group-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Group-1920.png",
+    "sha256": "8a3dd719b83ff871ab516df7e7e197075c459ca7ddca055f2b2e008a570edfea",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Inventory-mage-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Inventory-mage-1280.png",
+    "sha256": "a8d9e452d2c5ef8be1cc9f5ab67bffcd47c6b69c7bf29181e876f5d2ae8917a3",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Inventory-mage-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Inventory-mage-1920.png",
+    "sha256": "bf38f2575575a748ac269c6f9bdbb8164cdd2be13c4416b686aa647ad43e8b78",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Inventory-monk-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Inventory-monk-1280.png",
+    "sha256": "4200aa876e3b9d0f669e2c0b8766265b5545f94fe4a6af425ff7ce911b571fff",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Inventory-monk-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Inventory-monk-1920.png",
+    "sha256": "e60775757e274b9d38bb55e0aa00a1fc6bc6b06c653add21bafc9f60abff9894",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Inventory-warrior-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Inventory-warrior-1280.png",
+    "sha256": "bb2d47a7d0d177cb4ee3f5c77757756f76ad8c2113717fe6238b35d6dbf90d77",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Inventory-warrior-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Inventory-warrior-1920.png",
+    "sha256": "8348c1f8b7a3b3010a7e7fb1804fb26f34ebdc9cc16027322e8f60212b7ff787",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Skill-mage-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Skill-mage-1280.png",
+    "sha256": "70a4c7c41afc39a05abc09db814c6812503f2734323948a1b7bac37130bb911c",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Skill-mage-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Skill-mage-1920.png",
+    "sha256": "ae0d077d1ce83913cc9d8db5d685eeb57d4ba6993fc4ee6b11d21f17d4129612",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Skill-monk-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Skill-monk-1280.png",
+    "sha256": "c82d0f5fb3ef3ca1424e34ac8c1f71991ea156daecfa04615d4692cf23ef6005",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Skill-monk-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Skill-monk-1920.png",
+    "sha256": "e38d509b792ca62d022ba0019faac99e65cc1378bbbfe61d1abc8c48b6051712",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Skill-warrior-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Skill-warrior-1280.png",
+    "sha256": "d4b6458abcda31cc9d18751d4692052eace674ff64b5330416c89a90e0bcf417",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/E18/PlayMode/Skill-warrior-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\E18\\Captures\\Skill-warrior-1920.png",
+    "sha256": "053563759c1d308bd4007261d902aa5203960e88a5563d2629f60d3f6bde56e6",
+    "kind": "Unity Play Mode E18; see directed XML and revision history",
+    "width": 1920,
+    "height": 1080
+  }
+]

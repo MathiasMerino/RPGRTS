@@ -1,0 +1,62 @@
+{
+  "main": "5a2e3cef6707bd844cf728ea1adfff9c6d941002",
+  "dev": "742c04f6ac2afb8dfd3d0e56e3f2d45085c73a46",
+  "prs": {
+    "1": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "dab39c2188817044dd1603dd48671ac6e319da96",
+      "base": "dev"
+    },
+    "2": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "8f0108b5209f3774d9409e83f4f6aa74ae2c03b0",
+      "base": "feature/e03-e06-personajes-vertical-slice"
+    },
+    "3": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "a7acaca98149dd495914bc7cf947b23ed0a4eab9",
+      "base": "feature/e07-aldea-medieval"
+    },
+    "4": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "66cf80f03f6b07de65e3f640ea72e3e6a38dd807",
+      "base": "feature/e08-personajes-animados"
+    },
+    "5": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "c33e34ded7f0c41ff4df43b322f6f9fac5917c77",
+      "base": "feature/e09-combate-rpg-ia"
+    },
+    "6": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "4efcd00a8fbd5a95f984fcf9f7bfddc5edf2b226",
+      "base": "feature/e10-e13-demo-jugable"
+    },
+    "7": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "b0afdc2ef4346729ed16350e65ea1bc8e9864701",
+      "base": "feature/e14-e15-expediciones-conquista"
+    },
+    "8": {
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head": "d7cacd7447c3ce3ef9e0427e57d4e14f6556a703",
+      "base": "feature/e16-pulido-visual-ui"
+    }
+  }
+}

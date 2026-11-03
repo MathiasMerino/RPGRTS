@@ -16,7 +16,7 @@ namespace Aethernia.Tests.Editor
     {
         private sealed class Counter{public int Guards,ResolutionCount;public bool? Result;public void Outcome(bool won){Result=won;ResolutionCount++;}public void Receive(CombatFeedback r){if(r.Result.Kind==CombatActionKind.Guard)Guards++;}}
         [UnityTest] public IEnumerator PatrolUsesSameHeroAndRealOrdersForThreeClasses()=>Patrol();
-        internal static IEnumerator Patrol(string[] order=null,int? frameCap=null,bool validateTerminalOnly=false)
+        internal static IEnumerator Patrol(string[] order=null,int? frameCap=null,bool validateTerminalOnly=false,bool protectHero=false)
         {
             EditorSceneManager.OpenScene(FirstDemoBuilder.ScenePath);yield return new EnterPlayMode();yield return null;yield return null;
             var flow=Object.FindAnyObjectByType<DemoFlow>();var d=flow.Director;
@@ -44,8 +44,16 @@ namespace Aethernia.Tests.Editor
                 rts.SelectArea(Camera.main,new Rect(0,0,Screen.width,Screen.height),false);Assert.That(rts.SelectedAllies,Is.EqualTo(7));var group=new List<ExplorationUnit>();rts.RememberGroup(group);rts.SelectUnit(ally.GetComponentInChildren<Collider>(),false);rts.SelectGroup(group,false);Assert.That(rts.SelectedAllies,Is.EqualTo(7));
                 Assert.That(rts.Command(new Vector3(-10,0,13),null,false),Is.True);yield return TacticalCombatIntegrationTests.Wait(.15f);Assert.That(rts.Command(foe.transform.position,foe.GetComponentInChildren<Collider>(),false),Is.True);
                 yield return TacticalCombatIntegrationTests.Wait(.4f);yield return DemoCapture.Save("Logs/E12/Captures/"+id+"-Patrol.png",1280,720);
-                var limit=Time.realtimeSinceStartup+45;while(rts.Active&&Time.realtimeSinceStartup<limit)
-                {if(flow.Session.State.Health<flow.Session.Rules.Find(id).Health)rts.HeroAction("recover");yield return null;}
+                var orderAt=0f;var limit=Time.realtimeSinceStartup+45;while(rts.Active&&Time.realtimeSinceStartup<limit)
+                {
+                    if(protectHero&&Time.time>=orderAt)
+                    {
+                        // Legal hold orders keep the vulnerable hero behind the advancing army.
+                        Assert.That(rts.SelectUnit(hero.GetComponentInChildren<Collider>(),false),Is.True);
+                        Assert.That(rts.Command(new Vector3(-14.2f,0,9.5f),null,false),Is.True);orderAt=Time.time+.6f;
+                    }
+                    if(flow.Session.State.Health<flow.Session.Rules.Find(id).Health)rts.HeroAction("recover");yield return null;
+                }
                 Assert.That(rts.Active,Is.False,"RTS debe terminar con combate real: "+id);
                 // Contrato de resolución bajo distintas temporizaciones; el caso histórico
                 // de victoria conserva sus aserciones y estrategia originales.

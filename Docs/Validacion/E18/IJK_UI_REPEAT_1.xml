@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 21:48:04Z" end-time="2026-11-02 21:48:06Z" duration="1.4547645">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="171" result="Failed" site="Child" start-time="2026-11-02 21:48:04Z" end-time="2026-11-02 21:48:06Z" duration="1.454765" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1223" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="171" result="Failed" site="Child" start-time="2026-11-02 21:48:05Z" end-time="2026-11-02 21:48:06Z" duration="1.248180" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="9072" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1224" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="171" result="Failed" site="Child" start-time="2026-11-02 21:48:05Z" end-time="2026-11-02 21:48:06Z" duration="1.237663" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1225" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="171" result="Failed" site="Child" start-time="2026-11-02 21:48:05Z" end-time="2026-11-02 21:48:06Z" duration="1.228553" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1226" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="171" result="Failed" site="Child" start-time="2026-11-02 21:48:05Z" end-time="2026-11-02 21:48:06Z" duration="1.216568" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1197" name="TroopProgressionTests" fullname="Aethernia.Tests.Editor.TroopProgressionTests" classname="Aethernia.Tests.Editor.TroopProgressionTests" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2026-11-02 21:48:05Z" end-time="2026-11-02 21:48:06Z" duration="1.201712" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1202" name="RealArmyUiTrainingAndOldSaveMigration" fullname="Aethernia.Tests.Editor.TroopProgressionTests.RealArmyUiTrainingAndOldSaveMigration" methodname="RealArmyUiTrainingAndOldSaveMigration" classname="Aethernia.Tests.Editor.TroopProgressionTests" runstate="Runnable" seed="867065965" result="Failed" label="Error" start-time="2026-11-02 21:47:44Z" end-time="2026-11-02 21:48:06Z" duration="21.738260" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object]]></message>
+                  <stack-trace><![CDATA[  at Aethernia.Tests.Editor.TroopProgressionTests+<ArmyUi>d__12.MoveNext () [0x001fe] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\TroopProgressionTests.cs:43 
+  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44 ]]></stack-trace>
+                </failure>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

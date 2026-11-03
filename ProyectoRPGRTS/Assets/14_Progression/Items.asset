@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0e40af3bf9b9a40956347bdec3ed4c, type: 3}
+  m_Name: Items
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.ItemCatalog
+  Entries:
+  - Id: training-sword
+    Title: Espada de entrenamiento
+    ClassId: 
+    VisualId: training-sword
+    Kind: 0
+    Damage: 1
+    Defense: 0
+    MaximumHealth: 0
+    SellGold: 1
+  - Id: cloth
+    Title: "T\xFAnica de tela"
+    ClassId: 
+    VisualId: cloth
+    Kind: 1
+    Damage: 0
+    Defense: 1
+    MaximumHealth: 0
+    SellGold: 1
+  - Id: ration
+    Title: "Raci\xF3n"
+    ClassId: 
+    VisualId: 
+    Kind: 3
+    Damage: 0
+    Defense: 0
+    MaximumHealth: 0
+    SellGold: 1
+  - Id: tempered-blade
+    Title: Hoja templada
+    ClassId: warrior
+    VisualId: training-sword
+    Kind: 0
+    Damage: 2
+    Defense: 0
+    MaximumHealth: 0
+    SellGold: 4
+  - Id: weighted-wraps
+    Title: Vendas lastradas
+    ClassId: monk
+    VisualId: 
+    Kind: 0
+    Damage: 2
+    Defense: 0
+    MaximumHealth: 0
+    SellGold: 4
+  - Id: runic-focus
+    Title: "Foco r\xFAnico"
+    ClassId: mage
+    VisualId: 
+    Kind: 0
+    Damage: 2
+    Defense: 0
+    MaximumHealth: 0
+    SellGold: 4
+  - Id: reinforced-vest
+    Title: Chaleco reforzado
+    ClassId: 
+    VisualId: cloth
+    Kind: 1
+    Damage: 0
+    Defense: 2
+    MaximumHealth: 0
+    SellGold: 3
+  - Id: pilgrim-charm
+    Title: "Talism\xE1n del peregrino"
+    ClassId: 
+    VisualId: 
+    Kind: 2
+    Damage: 0
+    Defense: 0
+    MaximumHealth: 2
+    SellGold: 3
+  - Id: forge-ore
+    Title: Mineral de forja
+    ClassId: 
+    VisualId: 
+    Kind: 4
+    Damage: 0
+    Defense: 0
+    MaximumHealth: 0
+    SellGold: 2

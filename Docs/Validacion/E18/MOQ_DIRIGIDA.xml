@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-02 22:11:01Z" end-time="2026-11-02 22:11:03Z" duration="2.0774875">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="176" result="Passed" start-time="2026-11-02 22:11:01Z" end-time="2026-11-02 22:11:03Z" duration="2.077488" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1231" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="176" result="Passed" start-time="2026-11-02 22:11:02Z" end-time="2026-11-02 22:11:03Z" duration="1.857085" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="28544" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1232" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="176" result="Passed" start-time="2026-11-02 22:11:02Z" end-time="2026-11-02 22:11:03Z" duration="1.846692" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1233" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="176" result="Passed" start-time="2026-11-02 22:11:02Z" end-time="2026-11-02 22:11:03Z" duration="1.836036" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1234" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="176" result="Passed" start-time="2026-11-02 22:11:02Z" end-time="2026-11-02 22:11:03Z" duration="1.825800" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1173" name="ProgressionIntegrationTests" fullname="Aethernia.Tests.Editor.ProgressionIntegrationTests" classname="Aethernia.Tests.Editor.ProgressionIntegrationTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-02 22:11:02Z" end-time="2026-11-02 22:11:03Z" duration="1.805287" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1174" name="RetryIsExplicitAndGroupUiHasOneCommandSet" fullname="Aethernia.Tests.Editor.ProgressionIntegrationTests.RetryIsExplicitAndGroupUiHasOneCommandSet" methodname="RetryIsExplicitAndGroupUiHasOneCommandSet" classname="Aethernia.Tests.Editor.ProgressionIntegrationTests" runstate="Runnable" seed="366043574" result="Passed" start-time="2026-11-02 22:10:40Z" end-time="2026-11-02 22:11:03Z" duration="23.499610" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

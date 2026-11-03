@@ -1,0 +1,1 @@
+PASS: E18 warrior new game/intro/RPG/XP/level/skill/patrol/camp/quest/paid companions/two guardianies/companionXP/loot/workshop2/forge/equipment/paid army/training/conquest/territorial production/save/title; seconds=232.03; automatic duration is not human playtime

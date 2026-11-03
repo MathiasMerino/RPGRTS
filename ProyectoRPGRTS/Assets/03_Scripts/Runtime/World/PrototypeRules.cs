@@ -8,6 +8,7 @@ namespace Aethernia
     {
         public string Id;
         public string Title;
+        [NonSerialized] public HeroCombatModifiers Combat;
         public int Health;
         public int Damage;
         public float Range;
@@ -19,6 +20,7 @@ namespace Aethernia
     [CreateAssetMenu(menuName = "Aethernia/Prototype Rules")]
     public sealed class PrototypeRules : ScriptableObject
     {
+        public ProgressionRules Progression;
         public ClassProfile[] Classes = {
             new ClassProfile("warrior", "Guerrero", 24, 6, 1.8f, 3.2f),
             new ClassProfile("mage", "Mago", 16, 8, 6, 3.2f),

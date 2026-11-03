@@ -205,3 +205,9 @@ E14 y E15 son extensiones condicionales de menor prioridad. Se prioriza cerrar y
 ## E14–E15 — Expediciones y conquista autorizadas
 
 Encargo posterior independiente desde c33e34d/PR5. Secuencia acotada E14-A/B/C → E15-A/B → EXP-QA, con EXP-H humano separado. Grupo/combate grupal/mazmorra y ejército/territorios/producción integrados al mismo estado. Detalles y reglas provisionales en Docs/E14_E15_EXPEDICIONES.md; resultados, límites y guía en Docs/ENTREGA_E14_E15.md y Docs/GUIA_EXPEDICIONES.md.121/121 regresión,11/11 focales,1/1UI final y20procesos Windows aprobados; ZIP/medios auténticos. PRdraft apilado hacia la rama E10–E13, sin fusiones automáticas. No iniciar E16: siguiente actividad es evaluación humana y balance, más perfilado/arte en línea separada.
+
+## E18 — Progresión integrada autorizada
+
+Encargo71c1a4f1 desdeE17d7cacd7/PR8draft, rama feature/e18-progresion-balance. SecuenciaA→BC→DEF→GH→IJK→LN→MOQ→RSTUV, humano separado. Escena AetherniaProgressionDemo y datos14_Progression optativos preservan escenas/arte/reglas anteriores. Curva acotada cuatro niveles, hechosXP únicos, técnicas/elecciones compartidas, catálogo pequeño/botín/forja, compañeros3/ejército6 con progreso y salud, economía/conquista/guardadoVersion1. Reglas de clase provisionales, sin reglamento completo ni generación de arte final.
+
+Informe Docs/ENTREGA_E18.md, progresión Docs/E18_PROGRESION.md, números Docs/E18_BALANCE.md y guía Docs/GUIA_E18.md. Seis procesosWindows completos/reinicios por tres clases y4/4dirigidas finales PASS; general174/176 original conservada con regresión visual corregida después y tácticaRTS aún abierta. Portable2/2 yZIPCRC/SHA/18entregas previas verificados; [PR#9draft](https://github.com/MathiasMerino/RPGRTS/pull/9) publicado sobre E17, sin merges. Evaluación humana de duración25–45min/diversión/arte/controles pendiente, sin medición automática ni esperas añadidas. No iniciar E19, integrar Meshy, fusionarPRs o modificar main/dev.

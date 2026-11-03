@@ -7,6 +7,7 @@ namespace Aethernia
     {
         public string Id,Title,VisualClass;
         public int Health=10,Damage=2;
+        public int RecruitGold,RecruitFood;
         public float Range=1.5f,Speed=2.5f;
         public RtsRoleProfile(string id,string title,string model,float range,float speed){Id=id;Title=title;VisualClass=model;Range=range;Speed=speed;}
     }

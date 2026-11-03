@@ -4,7 +4,9 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. No E18.
+- E18: A/BC/DEF/GH/IJK/LN/MOQ verificados; RSTUVentregado como candidata, [PR#9draft](https://github.com/MathiasMerino/RPGRTS/pull/9) sobre E17. General174/176, regresión visual corregida4/4dirigidas finales;8/8procesosWindows,49PNG/2MP4,ZIPCRC/SHA/portable y18ZIPprevios intactos. Candidata con incidenciaRTS abierta, sin regresión totalmente verde ni aprobación humana. Informe Docs/ENTREGA_E18.md. No E19.
+
+- E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. E18 autorizada posteriormente.
 
 - E16: doce tareas visuales A–L verificadas, nueve prefabs UI, menú/tarjetas/SDF y atmósfera URP en AetherniaVisualPolish. Regresión125/125; pase posterior9/10 y repeticiónRTS1/1, ambos conservados. Catorce procesos Windows r3 PASS,57PNG reales, ZIP CRC/SHA/portable y16ZIP anteriores intactos. [PR#7](https://github.com/MathiasMerino/RPGRTS/pull/7) abierto en borrador, sin merges;13tareas técnicas/documentales verificadas, dos pendientes separados. Informe Docs/E16_PULIDO_VISUAL.md; E16-HUM y E16-QA-RTS pendientes; E17 se autoriza posteriormente en su sección.
 
@@ -1108,3 +1110,70 @@ Encargo posterior autoriza esta fase sobre E16; no E18.
 - Aceptación: investigar supervivencia del héroe con trayectoria/temporización variables; conservar pruebas de victoria y pérdida, sin otorgar victorias o salud artificiales. No exigir una carga ganadora universal sin regla aprobada.
 - Archivos: evidencia RTS de Docs/Validacion/E17 y futura investigación dirigida.
 - Pruebas / resultado: derrota real Monje30reproducida conHP0/aliados5/enemigos0 y evento correcto; E16Mago sin traza histórica suficiente para demostrar causa única. No se cierra por reintento.
+
+## FASE E18 — PROGRESIÓN Y CICLO JUGABLE
+
+Encargo71c1a4f1 autoriza implementación secuencial con arte provisional. Dependencia E17/PR8 sin aprobación humana ni merge. No E19.
+
+### E18-A — Estabilidad RTS pendiente
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: RTS/QA / P1. Dependencias: E17.
+- Aceptación: Trazas/repeticiones y táctica de reserva con órdenes legales; conservar prueba de carga y no forzar victoria.
+- Archivos: DemoRtsTests, E18RtsScenarioTests; Docs/Validacion/E18/RTS_A*.
+- Pruebas / resultado: 7escenarios6/7: contratos/inicialización/resolución/reintento correctos; escenario nuevo de reserva pierde con Monje. Se conserva aserción de victoria y XML fallido; no se promete carga/táctica ganadora universal ni se declara resuelta E17-A-RTS. Continuar progresión independiente, balance a revisar.
+
+### E18-BC — Experiencia, niveles y atributos
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: RPG/estado / P1. Dependencias: E18-A.
+- Aceptación: Curva acotada configurable, efectos reales, fuentes únicas y derivación sin acumulación; tres clases.
+- Archivos: ProgressionRules/Operations, PrototypeState/Rules, GameSession, SaveStore, productores de recompensas, combate/perfiles; ProgressionSceneBuilder y ProgressionTests; Assets/14_Progression y AetherniaProgressionDemo.
+- Pruebas / resultado: 19focales18PASS/1fallo auxiliar carpeta de captura; corregido y7/7progresión PASS. XP real del primer RPG por tres clases, nivel2/estadísticas/aprendizaje/guardar/Continuar, curva/ledger/atributos, crédito antiguo único y datos corruptos. Física/dependencias iguales aE17. Habilidades ejecutables/UI de progresión siguen en DEF/MOQ.
+
+### E18-DEF — Habilidades y progresión común RPG/RTS
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Combate / P1. Dependencias: E18-BC.
+- Aceptación: Técnicas diferenciadas con coste/objetivo/feedback; elecciones persistentes y adaptadores por modalidad.
+- Archivos: HeroTechniques, TurnBattle/Group/Encounter, RTS/Director, ProgressionPanelView, HUD/Overlay; ProgressionSceneBuilder.TechniqueUi y HeroTechniqueTests.
+- Pruebas / resultado: 16/17primer pase (4técnicas+12legacy PASS); fallo de fixture por referencia de estado anterior aContinuar corregido; controlador1/1 PASS tres clases RPG/RTS/save. UI1/1tres clases×720/1080, botones/puntos/guardar/límites/TMP/cierres y seis capturas reales. Reproducción de fixture/captura preservadas. Foco/acción/coste/objetivos/alcance/obstáculos/estados rechazados; no animaciones vacías.
+
+### E18-GH — Equipo, inventario y botín
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Recompensas / P1. Dependencias: E18-DEF.
+- Aceptación: Catálogo pequeño, efectos reales, botín configurable único y sin pérdida/duplicación por carga.
+- Archivos: ItemCatalog/EquipmentOperations, ProgressionInventoryView, productores/combate/equipo/guardado; Items.asset y DungeonLoot; EquipmentLootTests; fixtures reales EntradaE17 con origen/SHA.
+- Pruebas / resultado: 14/14coreequipo/progresión, venta madera1/1 y UI1/1tresclases720/1080(save/Continue/botínmigrado/equip/upgradepagado/ventarecursos/forja), seis capturas reales inspeccionadas. Intermedios por fondos insuficientes y captionUI desbordada preservados/corregidos sin añadir recursos. Catálogo9; botín único pendiente all-or-nothing, no duplicación. Mazmorra E18 nueva se validará en ciclo final; fixture procede de ejecución E17 real.
+
+### E18-IJK — Compañeros, economía y ejército
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Mundo / P1. Dependencias: E18-GH.
+- Aceptación: Roles útiles, grupo3 separado de ejército6, mejoras pagadas y persistentes y recursos no negativos.
+- Archivos: TroopProgression, RecruitRecord, Settlement/ExpeditionOperations, SaveStore, PartyWorld, DungeonExpedition, RtsBattleController, paneles, datos14_Progression; Docs/E18_PROGRESION.md.
+- Pruebas / resultado: cuatrocasos puros PASS en IJK_INTERMEDIA; UI entrenamiento/migración/producción territorial/save/load720/1080 PASS IJK_UI_FINAL_1.xml. Fallos auxiliares previos conservados: closure perdida en recarga de dominio y madera insuficiente del fixture, sin alterar aserciones/costes. CapturasArmy reales. Recorrido nativo completo sigue en MOQ/RSTUV.
+
+### E18-LN — IA y balance
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Combate/datos / P1. Dependencias: E18-IJK.
+- Aceptación: Escenarios con semillas y parámetros/razones documentados; simulación separada de experiencia real.
+- Archivos: GroupTurnSequence, TurnEncounter.Group, ProgressionRules, ExpeditionRules E18, ProgressionBalanceTests; Docs/E18_BALANCE.md y Validacion/E18/balance-*.
+- Pruebas / resultado: cuatrocasos PASS en IJK_LN_DEF.xml,720simulaciones: grupo360/360, solosGuerrero89/120/Monje86/120/Mago93/120; recuperación enemiga usa acción normal una vez. No geometría ni aprobación humana. Pruebas nativas de balance pendientes en MOQ/RSTUV; E17-A-RTS continúa abierto.
+
+### E18-MOQ — Ciclo, interfaz y persistencia
+- Estado: [x] Completado y verificado.
+- Sistema / prioridad: Integración / P1. Dependencias: E18-LN.
+- Aceptación: Nueva partida→progresión→ruinas→mejora→conquista→guardar/reiniciar, migración segura y UI coherente.
+- Archivos: ProgressionPanel/InventoryView, MedievalHudView, ModeTransitionView, DemoFlow, VerticalSliceHud, paneles y SaveStore; ProgressionIntegrationTests/SmokeProbe; Docs/GUIA_E18.md y Validacion/E18/CICLO_NATIVO.json.
+- Pruebas / resultado: MOQ_DIRIGIDA1/1PASS sobre fixture controlado; seis procesosWindows reales PASS (tresclases completas y tresreinicios, source60d01b8), incluyendo misión, reclutamiento, dosguardianías,XP/compañeros2,botín,forja/equipo,taller2,entrenamiento y conquista/producción. Sin recursos/salud inyectados. Regresión general y entrega todavía en RSTUV; duración/diversión humanas pendientes.
+
+### E18-RSTUV — Validación, entrega y PR
+- Estado: [x] Completado y verificado como entrega técnica de candidata con incidenciaRTS abierta.
+- Sistema / prioridad: QA/build / P1. Dependencias: E18-MOQ.
+- Aceptación: Ejecutar regresión/recorridos reales/tres clases, entregar capturas/build/ZIP/guía y PRdraft, sin main/merges; comunicar fallos sin afirmar regresión totalmente verde.
+- Archivos: Docs/ENTREGA_E18.md, GUIA_E18.md, E18_BALANCE.md, Validacion/E18, Images/E18, Videos/E18; Tools/Export-ProgressionEvidence.py y Package-VisualPolish.py; raíz/registro actualizados.
+- Pruebas / resultado: general174/176 preservada; fallo visual corregido y4/4dirigidas finales. ReservaRTS volvió a perderGuerrero, incidencia E17-A-RTS abierta; no176/176 ni prueba excluida. Ocho procesosWindows finalesPASS (6core60d01b8+2portableae0051b),49PNG/2MP4reales,ZIP87.842.896bytes CRC/SHA/portablePASS y18ZIPprevios intactos. AuditoríaGDD/versiones/escenas/privadosPASS. [PR#9draft](https://github.com/MathiasMerino/RPGRTS/pull/9) sobre E17, sin merges. Evaluación humana separada.
+
+### E18-HUM — Sesión humana
+- Estado: [ ] Pendiente.
+- Sistema / prioridad: Evaluación / P1. Dependencias: E18-RSTUV.
+- Aceptación: Usuario evalúa duración25–45min, diversión, dificultad y arte; no deducirla de automatización.
+- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
+- Pruebas / resultado: pendientes; no basta compilar.
