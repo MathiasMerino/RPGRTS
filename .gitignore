@@ -86,3 +86,7 @@ Desktop.ini
 
 # Python tooling bytecode
 __pycache__/
+
+# Unity Performance Testing: metadatos regenerados por la compilacion, no contenido del juego.
+/ProyectoRPGRTS/Assets/Resources/PerformanceTestRun*.json
+/ProyectoRPGRTS/Assets/Resources/PerformanceTestRun*.json.meta

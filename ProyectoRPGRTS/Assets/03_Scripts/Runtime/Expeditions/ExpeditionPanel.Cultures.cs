@@ -28,7 +28,7 @@ namespace Aethernia
             cultureIdentity.text=CivilizationOperations.Identity(s,c)+" · facción: Compañía\nNuevas obras: "+(c.Culture(s.CultureId)?.Title??"comunes")+"; todas las razas admitidas.";
             foreach(var u in c.Units.Where(u=>u.Enabled))
             {var p=u.Profile;var requirement=CivilizationOperations.RecruitRequirement(s,Flow.Session.Settlement,p.Id);cultureUnits[p.Id].text=p.Title+" · "+p.RecruitGold+"o/"+p.RecruitFood+"a\n"+p.Health+"PV · daño"+p.Damage+" · "+p.Range+"m · "+p.Speed+"m/s\n"+requirement;controls["culture-recruit-"+p.Id].interactable=Party.AtCamp&&requirement=="Disponible";}
-            cultureRelations.text="Frontera/A: "+RelationTitle(CivilizationOperations.Relation(s,"faction-a"))+" · Forja/B: "+RelationTitle(CivilizationOperations.Relation(s,"faction-b"))+"\nAlmacén Frontera: +20 capacidad/nivel. Taller Forja: +1madera/nivel/ciclo; consume alimento.\nBosque y Clanes: datos, todavía no jugables.";
+            cultureRelations.text="Frontera/A: "+RelationTitle(CivilizationOperations.Relation(s,"faction-a",c))+" · Forja/B: "+RelationTitle(CivilizationOperations.Relation(s,"faction-b",c))+"\nAlmacén Frontera: +20 capacidad/nivel. Taller Forja: +1madera/nivel/ciclo; consume alimento.\nBosque y Clanes: datos, todavía no jugables.";
             controls["culture-treaty"].interactable=Party.AtCamp&&!s.Facts.Contains(CivilizationOperations.Pact)&&!s.Territories.Any(t=>t.Id=="outpost"&&t.Owner==s.FactionId)&&SettlementOperations.Has(s,"townhall")&&s.Gold>=c.TreatyGold&&s.Food>=c.TreatyFood;
             foreach(var id in new[]{"frontier","stonehall"})controls["culture-"+id].interactable=Party.AtCamp&&s.CultureId!=id;
         }

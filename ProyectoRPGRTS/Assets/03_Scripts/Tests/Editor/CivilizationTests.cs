@@ -72,6 +72,24 @@ namespace Aethernia.Tests.Editor
             Assert.That(flow.Session.State.RaceId,Is.EqualTo("elf"));Assert.That(flow.Session.State.ClassId,Is.EqualTo("monk"));d.Execute("explore");Assert.That(d.Save(flow.SlotPath),Is.True,PrototypeSaveStore.LastWriteFailure);LogAssert.NoUnexpectedReceived();yield return new ExitPlayMode();
         }
         private void RequirePact(PrototypeState s){Assert.That(CivilizationOperations.Treaty(s,catalog),Is.True);}
+
+        [Test]public void SeededBalanceSimulationRecordsTwelveCombinationsAtThreeLevels()
+        {
+            Directory.CreateDirectory("Logs/E19");var csv=new System.Text.StringBuilder("race,class,level,seeds,wins,meanRemainingHP,meanRounds,kind\n");
+            foreach(var race in catalog.Races)foreach(var cls in rules.Classes)foreach(var level in new[]{1,2,4})
+            {var s=Fixture(race.Id,cls.Id);s.HeroLevel=level;var profile=ProgressionOperations.ResolveProfile(s,rules);var wins=0;var health=0;var rounds=0;
+                for(var seed=1;seed<=100;seed++)
+                {var battle=new TurnBattle(profile,profile.Health,1,1,seed);while(!battle.Finished&&battle.Round<40){if(battle.HeroHealth<profile.Health/2&&!battle.RecoveryUsed)battle.Recover();else if(battle.Round%4==0)battle.Guard();else if(!battle.UseTechnique(1))battle.Attack(1);battle.EndTurn(true);}Assert.That(battle.Finished,Is.True);wins+=battle.Won?1:0;health+=battle.HeroHealth;rounds+=battle.Round;}
+                csv.AppendFormat(System.Globalization.CultureInfo.InvariantCulture,"{0},{1},{2},100,{3},{4:F2},{5:F2},pure_rules_not_native_or_human\n",race.Id,cls.Id,level,wins,health/100f,rounds/100f);
+            }
+            File.WriteAllText("Logs/E19/BALANCE.csv",csv.ToString());
+        }
+
+        [Test]public void ConfigurablePoliticsAndYieldAffectActualTransactions()
+        {
+            var config=Object.Instantiate(catalog);var storage=Object.Instantiate(settlement);storage.Civilizations=config;
+            try{var s=Fixture();config.InitialRelationB=FactionRelation.Neutral;Assert.That(CivilizationOperations.Relation(s,"faction-b",config),Is.EqualTo(FactionRelation.Neutral));Assert.That(ExpeditionOperations.Conquer(s,"outpost",true,config),Is.False);config.InitialRelationB=FactionRelation.Hostile;config.ConquestReputationCost=2;config.TerritoryWoodPerCycle=3;Assert.That(ExpeditionOperations.Conquer(s,"outpost",true,config),Is.True);Assert.That(s.ReputationB,Is.EqualTo(-2));var wood=s.Wood;ExpeditionOperations.ProduceTerritories(s,storage,1);Assert.That(s.Wood,Is.EqualTo(wood+3));}finally{Object.DestroyImmediate(config);Object.DestroyImmediate(storage);}
+        }
         [UnityTearDown]public IEnumerator Cleanup(){if(EditorApplication.isPlaying)yield return new ExitPlayMode();}
     }
 }

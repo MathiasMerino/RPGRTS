@@ -9,8 +9,8 @@ namespace Aethernia
         public const string Pact="e19-pact-faction-b";
         public static bool KnownRace(PrototypeRules rules,string id)=>rules.Civilizations!=null?rules.Civilizations.Race(id)!=null:DemoContent.KnownLineage(id);
         public static string Identity(PrototypeState s,CivilizationCatalog c)=>c==null?"":(c.Race(s.RaceId)?.Title??s.RaceId)+" · "+(c.Culture(s.CultureId)?.Title??(string.IsNullOrEmpty(s.CultureId)?"cultura sin registrar":s.CultureId));
-        public static FactionRelation Relation(PrototypeState s,string faction)
-        {if(faction==s.FactionId||faction=="faction-a"&&s.ReputationA>=0||faction=="faction-b"&&s.Facts.Contains(Pact))return FactionRelation.Ally;if(string.IsNullOrEmpty(faction))return FactionRelation.Neutral;return faction=="faction-b"||faction=="faction-a"&&s.ReputationA<0?FactionRelation.Hostile:FactionRelation.Neutral;}
+        public static FactionRelation Relation(PrototypeState s,string faction,CivilizationCatalog catalog=null)
+        {if(faction==s.FactionId||faction=="faction-b"&&s.Facts.Contains(Pact))return FactionRelation.Ally;if(faction=="faction-a")return s.ReputationA<0?FactionRelation.Hostile:catalog?.InitialRelationA??FactionRelation.Ally;if(faction=="faction-b")return catalog?.InitialRelationB??FactionRelation.Hostile;return FactionRelation.Neutral;}
         public static bool ChooseCulture(PrototypeState s,CivilizationCatalog c,string id)
         {if(c?.Culture(id)?.Pilot!=true||s.CultureId==id)return false;s.CultureId=id;return true;}
         public static bool Treaty(PrototypeState s,CivilizationCatalog c)
@@ -21,7 +21,7 @@ namespace Aethernia
             if(!ExpeditionOperations.Ready(s))return "Campamento asegurado";
             if(!SettlementOperations.Has(s,"barracks"))return "Requiere cuartel";
             if(!s.Buildings.Any(b=>b.Id==u.Building&&b.CultureId==u.CultureId))return "Requiere "+rules.Find(u.Building).Title+" de "+c.Culture(u.CultureId).Title;
-            if(!string.IsNullOrEmpty(u.AccessTerritory)&&!s.Territories.Any(t=>t.Id==u.AccessTerritory&&t.Owner==s.FactionId&&t.Secured)&&Relation(s,c.Culture(u.CultureId).Faction)!=FactionRelation.Ally)return "Conquista el puesto o acuerda un pacto";
+            if(!string.IsNullOrEmpty(u.AccessTerritory)&&!s.Territories.Any(t=>t.Id==u.AccessTerritory&&t.Owner==s.FactionId&&t.Secured)&&Relation(s,c.Culture(u.CultureId).Faction,c)!=FactionRelation.Ally)return "Conquista el puesto o acuerda un pacto";
             if(s.Army.Count>=rules.MaximumRecruits)return "Ejército completo (6)";
             if(s.Gold<u.Profile.RecruitGold||s.Food<u.Profile.RecruitFood)return "Recursos insuficientes";
             return "Disponible";

@@ -72,14 +72,14 @@ namespace Aethernia
         }
         public static bool Conquer(PrototypeState s,string id,bool actualWin,CivilizationCatalog civilizations=null)
         {
-            var t=s.Territories.Find(x=>x.Id==id);if(civilizations!=null&&CivilizationOperations.Relation(s,t?.Owner)!=FactionRelation.Hostile)return false;if(!actualWin||id!="outpost"||t==null||t.Owner==s.FactionId||s.Health<=0)return false;t.Owner=s.FactionId;t.Secured=true;if(!s.Facts.Contains("umbral-outpost-conquered"))s.Facts.Add("umbral-outpost-conquered");s.ReputationB=Math.Max(-1000,s.ReputationB-5);return true;
+            var t=s.Territories.Find(x=>x.Id==id);if(civilizations!=null&&CivilizationOperations.Relation(s,t?.Owner,civilizations)!=FactionRelation.Hostile)return false;if(!actualWin||id!="outpost"||t==null||t.Owner==s.FactionId||s.Health<=0)return false;t.Owner=s.FactionId;t.Secured=true;if(!s.Facts.Contains("umbral-outpost-conquered"))s.Facts.Add("umbral-outpost-conquered");s.ReputationB=Math.Max(-1000,s.ReputationB-(civilizations?.ConquestReputationCost??5));return true;
         }
         public static int Relation(PrototypeState s,string faction)=>faction=="faction-a"?s.ReputationA:faction=="faction-b"?s.ReputationB:0;
         public static void ProduceTerritories(PrototypeState s,SettlementRules storage,int cycles)
         {
             if(s.Territories==null||s.FactionId!="player-company"||storage==null)return;
             var per=s.Territories.Count(t=>t.Secured&&t.Owner==s.FactionId&&(t.Id=="crossing"||t.Id=="outpost"));
-            s.Wood=Math.Min(Math.Max(s.Wood,SettlementOperations.Capacity(s,storage)),s.Wood+per*cycles);
+            s.Wood=Math.Min(Math.Max(s.Wood,SettlementOperations.Capacity(s,storage)),s.Wood+per*(storage.Civilizations?.TerritoryWoodPerCycle??1)*cycles);
         }
         public static bool Valid(PrototypeState s,ProgressionRules progression=null)
         {

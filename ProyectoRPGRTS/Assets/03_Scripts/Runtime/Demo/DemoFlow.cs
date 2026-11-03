@@ -65,7 +65,7 @@ namespace Aethernia
         public bool StartNew(string name,string classId,string lineage)
         {
             var profile=Session.Rules.Find(classId);
-            if(profile==null||!CivilizationOperations.KnownRace(Session.Rules,lineage)||Director.IsBusy)return false;
+            if(profile==null||!CivilizationOperations.KnownRace(Session.Rules,lineage)||(Session.Rules.Civilizations!=null&&!Session.Rules.Civilizations.Allows(lineage,classId))||Director.IsBusy)return false;
             try
             {
                 if(File.Exists(SlotPath))File.Copy(SlotPath,SlotPath+".backup-"+DateTime.UtcNow.ToString("yyyyMMdd-HHmmssfff"),false);

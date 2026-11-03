@@ -329,3 +329,7 @@ MonoBehaviour:
       Speed: 3.3
   TreatyGold: 8
   TreatyFood: 3
+  ConquestReputationCost: 5
+  TerritoryWoodPerCycle: 1
+  InitialRelationA: 0
+  InitialRelationB: 2

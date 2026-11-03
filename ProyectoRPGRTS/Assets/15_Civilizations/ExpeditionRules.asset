@@ -35,6 +35,8 @@ MonoBehaviour:
     - swordsman
     - archer
     - brawler
+    - frontier-guard
+    - stonehall-striker
   - Id: faction-a
     Title: Liga de Frontera
     CultureId: frontier
@@ -46,6 +48,7 @@ MonoBehaviour:
     - swordsman
     - archer
     - brawler
+    - frontier-guard
   - Id: faction-b
     Title: "Guarnici\xF3n de Forja"
     CultureId: stonehall
@@ -57,6 +60,7 @@ MonoBehaviour:
     - swordsman
     - archer
     - brawler
+    - stonehall-striker
   Territories:
   - Id: camp
     Title: Campamento
