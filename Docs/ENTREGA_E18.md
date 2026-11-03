@@ -39,6 +39,6 @@ ZIP Windows x64 local `ProyectoRPGRTS/Builds/Aethernia-E18-Progresion-Windows.zi
 
 [Hoja humana pendiente](Validacion/E18/REVISION_HUMANA.md): duración25–45min como meta, diversión, dificultad, legibilidad,×/Escape y dirección artística. Las duraciones automáticas no miden una sesión humana. No se agregaron esperas para inflar duración. Arte E08 provisional, sin inventario individual de compañeros, narrativa definitiva, árbol extenso o múltiples dificultades.
 
-Commits por bloques desdee6ca1a1 hasta fuente finalae0051b; historial previo preservado. PRdraft de entrega pendiente de publicación sobre `feature/e17-art-pipeline-alpha-polish`. Main/dev yPR1..8 conservan estado/SHA; sin force/merge/configuración global ni publicación de recursos privados.
+Commits por bloques desdee6ca1a1 hasta fuente finalae0051b; historial previo preservado. [PR#9 en borrador](https://github.com/MathiasMerino/RPGRTS/pull/9) publicado sobre `feature/e17-art-pipeline-alpha-polish`, abierto y sin merge. Main/dev yPR1..8 conservan estado/SHA; sin force/merge/configuración global ni publicación de recursos privados.
 
 Siguiente actividad recomendada: revisión humana guiada y priorizar problemas concretos observados, especialmente táctica/claridad RTS. Cualquier fase nueva requiere autorización; E19 no iniciada.

@@ -643,3 +643,7 @@ LegacyFiveVisualSlots y equipoE18 PASS sin modificar aserciones; problema visual
 ## 2026-11-02 — E18 paquete y portable verificados
 
 Build finalae0051b,ZIP87.842.896bytes SHA bc6828e2fe78c0f3f1115aa020ab7a5cc4913cd81b15dcd71aef3a8963d5d72f,CRC/SHA por archivoPASS y18paquetes anteriores intactos. Dos procesos desde ZIP extraído completaronNueva partida→conquista yreinicioGuerrero; total8/8Windows con tresclases previas. Export49PNG/2MP4 reales, orígenes/revisiones separados(60d01b8coreNative/ae0051bfinalportable). General174/176 y4/4posteriores se comunican sin afirmar regresiónverde; RTSreserva/humano abiertos. PublicaciónPRdraft siguiente, sinmain/merges/arteprivado.
+
+## 2026-11-02 — E18 publicada para revisión
+
+Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/MathiasMerino/RPGRTS/pull/9 sobre E17/PR8, sin merge/main/dev/configglobal. ChecklistRSTUV cerrado como entrega de candidata con incidenciaRTSabierta; humano pendiente. Informe,guía,49PNG/2MP4 yXML/manifiestos publicados; ZIPlocal disponible y18anteriores conservados. Se registra explícitamente general174/176 y4/4finales, no regresiónverde ni aprobación humana. NoE19.

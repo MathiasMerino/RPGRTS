@@ -4,7 +4,7 @@ Actualizado: 2026-11-02, America/La_Paz. Fase 3 autorizada mediante el prompt «
 
 ## Resumen actual
 
-- E18: A/BC/DEF/GH/IJK/LN/MOQ verificados; RSTUVen publicación. General174/176, regresión visual corregida4/4dirigidas finales;8/8procesosWindows,49PNG/2MP4,ZIPCRC/SHA/portable y18ZIPprevios intactos. Candidata con incidenciaRTS abierta, sin regresión totalmente verde ni aprobación humana. Informe Docs/ENTREGA_E18.md. No E19.
+- E18: A/BC/DEF/GH/IJK/LN/MOQ verificados; RSTUVentregado como candidata, [PR#9draft](https://github.com/MathiasMerino/RPGRTS/pull/9) sobre E17. General174/176, regresión visual corregida4/4dirigidas finales;8/8procesosWindows,49PNG/2MP4,ZIPCRC/SHA/portable y18ZIPprevios intactos. Candidata con incidenciaRTS abierta, sin regresión totalmente verde ni aprobación humana. Informe Docs/ENTREGA_E18.md. No E19.
 
 - E17: A–F técnicos/documentales verificados; [PR#8](https://github.com/MathiasMerino/RPGRTS/pull/8) borrador sobre E16. General142/143 (única expectativa histórica fallback fortalecida y verificada5/5dirigidas),14procesosWindows PASS,18medicionesoffscreen con render real (sinFPSDisplay/GPU),82PNG/2MP4,ZIPCRC/SHA/portable y17ZIPprevios intactos. Informe Docs/E17_ALFA.md; E17-HUM y E17-A-RTS abiertos. E18 autorizada posteriormente.
 
@@ -1165,11 +1165,11 @@ Encargo71c1a4f1 autoriza implementación secuencial con arte provisional. Depend
 - Pruebas / resultado: MOQ_DIRIGIDA1/1PASS sobre fixture controlado; seis procesosWindows reales PASS (tresclases completas y tresreinicios, source60d01b8), incluyendo misión, reclutamiento, dosguardianías,XP/compañeros2,botín,forja/equipo,taller2,entrenamiento y conquista/producción. Sin recursos/salud inyectados. Regresión general y entrega todavía en RSTUV; duración/diversión humanas pendientes.
 
 ### E18-RSTUV — Validación, entrega y PR
-- Estado: [ ] En desarrollo.
+- Estado: [x] Completado y verificado como entrega técnica de candidata con incidenciaRTS abierta.
 - Sistema / prioridad: QA/build / P1. Dependencias: E18-MOQ.
-- Aceptación: Regresión/recorridos reales/tres clases, capturas/build/ZIP/guía y PRdraft, sin main/merges.
-- Archivos: Docs/E18_PROGRESION.md; detalle al implementar.
-- Pruebas / resultado: pendientes; no basta compilar.
+- Aceptación: Ejecutar regresión/recorridos reales/tres clases, entregar capturas/build/ZIP/guía y PRdraft, sin main/merges; comunicar fallos sin afirmar regresión totalmente verde.
+- Archivos: Docs/ENTREGA_E18.md, GUIA_E18.md, E18_BALANCE.md, Validacion/E18, Images/E18, Videos/E18; Tools/Export-ProgressionEvidence.py y Package-VisualPolish.py; raíz/registro actualizados.
+- Pruebas / resultado: general174/176 preservada; fallo visual corregido y4/4dirigidas finales. ReservaRTS volvió a perderGuerrero, incidencia E17-A-RTS abierta; no176/176 ni prueba excluida. Ocho procesosWindows finalesPASS (6core60d01b8+2portableae0051b),49PNG/2MP4reales,ZIP87.842.896bytes CRC/SHA/portablePASS y18ZIPprevios intactos. AuditoríaGDD/versiones/escenas/privadosPASS. [PR#9draft](https://github.com/MathiasMerino/RPGRTS/pull/9) sobre E17, sin merges. Evaluación humana separada.
 
 ### E18-HUM — Sesión humana
 - Estado: [ ] Pendiente.
