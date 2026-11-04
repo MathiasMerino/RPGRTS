@@ -1,0 +1,10 @@
+Provisional bow position=(-45.64, 0.91, 2.86) scale=(1.00, 1.00, 1.00) bounds=Center: (-45.74, 0.88, 2.86), Extents: (0.90, 1.17, 0.70) shader=Universal Render Pipeline/Particles/Unlit queue=3000
+Provisional bow position=(-45.64, 0.91, 2.86) scale=(1.00, 1.00, 1.00) bounds=Center: (-45.64, 0.91, 2.86), Extents: (0.80, 1.14, 0.70) shader=Universal Render Pipeline/Particles/Unlit queue=3000
+Selection Indicator position=(-46.00, 0.02, 2.80) scale=(0.90, 0.01, 0.90) bounds=Center: (-46.00, 0.02, 2.80), Extents: (0.45, 0.01, 0.45) shader=Universal Render Pipeline/Lit queue=2000
+Muster soil 40x34m position=(-34.00, -0.14, 0.00) scale=(64.00, 0.24, 60.00) bounds=Center: (-34.00, -0.14, 0.00), Extents: (32.00, 0.12, 30.00) shader=Universal Render Pipeline/Lit queue=2000
+Village to camp path 4m position=(-29.00, 0.01, 1.50) scale=(36.00, 0.03, 4.00) bounds=Center: (-29.00, 0.01, 1.50), Extents: (18.00, 0.01, 2.00) shader=Universal Render Pipeline/Lit queue=2000
+Grass position=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) bounds=Center: (-8.00, 1.44, 0.00), Extents: (52.00, 0.83, 60.00) shader=Aethernia/Alpha/MedievalSurface queue=2000
+Height 1.80m - diameter 0.60m position=(-46.00, 0.90, 2.80) scale=(0.60, 0.90, 0.60) bounds=Center: (-46.00, 0.90, 2.80), Extents: (0.30, 0.90, 0.30) shader=Universal Render Pipeline/Lit queue=2000
+monk_SkinnedBodyAndClothing position=(-46.00, 0.00, 1.90) scale=(1.00, 1.00, 1.00) bounds=Center: (-46.00, 1.84, 1.90), Extents: (1.25, 1.20, 1.25) shader=Universal Render Pipeline/Lit queue=2000
+warrior_SkinnedBodyAndClothing position=(-46.00, 0.00, 3.70) scale=(1.00, 1.00, 1.00) bounds=Center: (-46.00, 1.84, 3.70), Extents: (1.25, 1.20, 1.25) shader=Universal Render Pipeline/Lit queue=2000
+warrior_SkinnedBodyAndClothing position=(-46.00, 0.00, 2.80) scale=(1.00, 1.00, 1.00) bounds=Center: (-46.00, 1.84, 2.80), Extents: (1.25, 1.20, 1.25) shader=Universal Render Pipeline/Lit queue=2000

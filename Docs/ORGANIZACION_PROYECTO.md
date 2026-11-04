@@ -59,3 +59,9 @@ Evidencia del mantenimiento en [Validacion/Organizacion](Validacion/Organizacion
 -9escenas, GDD, originales privados y cambio gráfico previo conservados.
 
 Archivo de instrucciones raíz resumido; el contexto completo anterior está en Historial. .rgignore aparta historial/medios/evidencias de búsquedas generales; abrirlos por ruta o usar rg --no-ignore cuando sean necesarios. No se han ocultado de Git ni retirado de la entrega.
+
+
+## UX-01
+- Escena adicional: Assets/01_Scenes/AetherniaUx01Demo.unity. Datos/mallas de autoría en Assets/16_UX01; catálogo, modelos y materiales de E19/E07/E17 compartidos.
+- Informe/guía: Docs/ENTREGA_UX01.md y GUIA_UX01.md. Evidencia: Docs/Validacion/UX01, Images/UX01 y Videos/UX01.
+- Build: Builds/Ux01Windows; ZIP Aethernia-UX01-Experiencia-Windows.zip, independiente de las veinte entregas anteriores. No regenerar escenas previas.

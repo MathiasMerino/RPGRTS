@@ -26,7 +26,7 @@ namespace Aethernia
         }
         private void Interact()
         {
-            if (commands.Target == null) session.Say("Selecciona un objeto cercano del escenario.");
+            if (!session.Rules.UxExperience&&commands.Target == null) session.Say("Selecciona un objeto cercano del escenario.");
             else commands.Interact();
         }
         private void Refresh()

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="7" result="Failed(Child)" total="7" passed="6" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-03 17:32:38Z" end-time="2026-11-03 17:33:41Z" duration="63.5169746">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="204" result="Failed" site="Child" start-time="2026-11-03 17:32:38Z" end-time="2026-11-03 17:33:41Z" duration="63.516975" total="7" passed="6" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1262" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="204" result="Failed" site="Child" start-time="2026-11-03 17:32:38Z" end-time="2026-11-03 17:33:41Z" duration="63.188819" total="7" passed="6" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="23688" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1263" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="204" result="Failed" site="Child" start-time="2026-11-03 17:32:38Z" end-time="2026-11-03 17:33:41Z" duration="63.171681" total="7" passed="6" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1264" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="204" result="Failed" site="Child" start-time="2026-11-03 17:32:38Z" end-time="2026-11-03 17:33:41Z" duration="63.156471" total="7" passed="6" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1265" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="204" result="Failed" site="Child" start-time="2026-11-03 17:32:38Z" end-time="2026-11-03 17:33:41Z" duration="63.141019" total="7" passed="6" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1234" name="UxExperienceTests" fullname="Aethernia.Tests.Editor.UxExperienceTests" classname="Aethernia.Tests.Editor.UxExperienceTests" runstate="Runnable" testcasecount="7" result="Failed" site="Child" start-time="2026-11-03 17:32:38Z" end-time="2026-11-03 17:33:41Z" duration="63.115900" total="7" passed="6" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1237" name="AllTwelveVisualVariantsKeepAnimationAndRejectAccidentalScale" fullname="Aethernia.Tests.Editor.UxExperienceTests.AllTwelveVisualVariantsKeepAnimationAndRejectAccidentalScale" methodname="AllTwelveVisualVariantsKeepAnimationAndRejectAccidentalScale" classname="Aethernia.Tests.Editor.UxExperienceTests" runstate="Runnable" seed="1972044512" result="Passed" start-time="2026-11-03 17:29:17Z" end-time="2026-11-03 17:29:21Z" duration="3.494827" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1241" name="MageFullRoute" fullname="Aethernia.Tests.Editor.UxExperienceTests.MageFullRoute" methodname="MageFullRoute" classname="Aethernia.Tests.Editor.UxExperienceTests" runstate="Runnable" seed="859887489" result="Passed" start-time="2026-11-03 17:29:21Z" end-time="2026-11-03 17:30:48Z" duration="87.354144" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1238" name="ModalWindowsBlockMotorCameraAndInteractor" fullname="Aethernia.Tests.Editor.UxExperienceTests.ModalWindowsBlockMotorCameraAndInteractor" methodname="ModalWindowsBlockMotorCameraAndInteractor" classname="Aethernia.Tests.Editor.UxExperienceTests" runstate="Runnable" seed="2026396088" result="Passed" start-time="2026-11-03 17:30:48Z" end-time="2026-11-03 17:31:12Z" duration="23.957403" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1240" name="MonkFullRoute" fullname="Aethernia.Tests.Editor.UxExperienceTests.MonkFullRoute" methodname="MonkFullRoute" classname="Aethernia.Tests.Editor.UxExperienceTests" runstate="Runnable" seed="451381582" result="Failed" label="Error" start-time="2026-11-03 17:31:12Z" end-time="2026-11-03 17:32:13Z" duration="60.382633" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <failure>
+                  <message><![CDATA[System.InvalidOperationException : UX01: real RTS victory; active=False outcome=False hp=0 allies=2 enemies=0]]></message>
+                  <stack-trace><![CDATA[  at Aethernia.UxExperienceRoute.Require (System.Boolean ok, System.String step) [0x00014] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceRoute.cs:16 
+  at Aethernia.UxExperienceRoute+<Run>d__3.MoveNext () [0x01986] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceRoute.cs:85 
+  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44 ]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1236" name="SaveRejectsInvalidPreparationAndReadsLegacyWithoutStartingTutorial" fullname="Aethernia.Tests.Editor.UxExperienceTests.SaveRejectsInvalidPreparationAndReadsLegacyWithoutStartingTutorial" methodname="SaveRejectsInvalidPreparationAndReadsLegacyWithoutStartingTutorial" classname="Aethernia.Tests.Editor.UxExperienceTests" runstate="Runnable" seed="1993279124" result="Passed" start-time="2026-11-03 17:32:13Z" end-time="2026-11-03 17:32:13Z" duration="0.017241" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1235" name="ScenePreservesE19AndUsesPublicDependencies" fullname="Aethernia.Tests.Editor.UxExperienceTests.ScenePreservesE19AndUsesPublicDependencies" methodname="ScenePreservesE19AndUsesPublicDependencies" classname="Aethernia.Tests.Editor.UxExperienceTests" runstate="Runnable" seed="533424343" result="Passed" start-time="2026-11-03 17:32:13Z" end-time="2026-11-03 17:32:19Z" duration="5.963034" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1239" name="WarriorFullRoute" fullname="Aethernia.Tests.Editor.UxExperienceTests.WarriorFullRoute" methodname="WarriorFullRoute" classname="Aethernia.Tests.Editor.UxExperienceTests" runstate="Runnable" seed="1925884076" result="Passed" start-time="2026-11-03 17:32:19Z" end-time="2026-11-03 17:33:41Z" duration="82.893355" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

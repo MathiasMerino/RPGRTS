@@ -1,0 +1,17 @@
+{
+  "gameplayRevision": "5468c389e63c2e27bb79139f3878a04c24a73283",
+  "unexpectedSourceChangedSinceBuild": [],
+  "generatedFontCacheDifference": true,
+  "fontRestoredToVersionControlledBaseline": true,
+  "qualitySha256": "62494399222dd3d2c992d4c9c41deecdeffd5e50fde962be46b7f38a0a09b916",
+  "qualityBaselineUnchanged": true,
+  "privateUnchanged": true,
+  "previous20ArchivesUnchanged": true,
+  "executableUnchanged": true,
+  "captures": 37,
+  "uniqueCaptureHashes": 37,
+  "videos": 2,
+  "mediaHashPass": true,
+  "mainDevUnchanged": true,
+  "gddSHA256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661"
+}

@@ -34,5 +34,9 @@ namespace Aethernia
         public DemoChapter Chapter=DemoChapter.Intro;
         public bool IntroSeen;
         public int Produced;
+        public int UxRevision;
+        public int UxPreparationStep;
+        public Vector3[] UxFormation;
+        public bool[] UxSelected;
     }
 }

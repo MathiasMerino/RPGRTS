@@ -1,0 +1,106 @@
+{
+  "base": "3e53508512cbf92309bed38f533a7bdd587a9d59",
+  "quality_sha256": "62494399222dd3d2c992d4c9c41deecdeffd5e50fde962be46b7f38a0a09b916",
+  "archives": [
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E03-E06-Demo-Windows.zip",
+      "bytes": 77833297,
+      "sha256": "b24c5e24eff8d35f938629bc982e9f9970f3afe14a462507205ab3ab801fa668"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E07-Aldea-Windows.zip",
+      "bytes": 83358761,
+      "sha256": "967592477432b69635216ec85055892e9b9a5b96814bd3a73a736b073c33698a"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E08-Personajes-Windows.zip",
+      "bytes": 86334027,
+      "sha256": "adbb3fe1c1fa701f62dbaaf5d165aae532ce47e598d5b3874ecf4fb2b781591b"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E09-Combate-Windows.zip",
+      "bytes": 86756445,
+      "sha256": "11d3db3e940f286ef79ff7c2f52dcee3919f2a9accee4a7226b68d9cf2c17a79"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E10-E13-Demo-Windows.zip",
+      "bytes": 87411924,
+      "sha256": "6c833b8dab2bac55cc67502ee9f607eaecaea3494fd2837e4776b0673b81026e"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E14-E15-Expediciones-Windows.zip",
+      "bytes": 87458324,
+      "sha256": "958df84773407fe81274c366588ba60e97b4fe19feca69763c37be38912baf36"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E16-Pulido-Visual-r2-Windows.zip",
+      "bytes": 87477788,
+      "sha256": "5c949bafc736c6a7f5426cfdd5774ab108b06d6c75d4158ca64936bca269cf2b"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E16-Pulido-Visual-r3-Windows.zip",
+      "bytes": 87478209,
+      "sha256": "8c3b39c6b2747d9ba9649740c6f862a604c2666b5ff272d10cb428c46ac29737"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E16-Pulido-Visual-Windows.zip",
+      "bytes": 87477612,
+      "sha256": "40fd4a0922f0765e6111c0491dce7ac650d40d2e53a3dbf9345bdc4cf41d6e16"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E17-Alpha-Candidate-Windows.zip",
+      "bytes": 87816123,
+      "sha256": "4c16177bc696334549eebc942f21fc6ebcd63b151fafac79eb7d9910d4b6e87d"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E18-Progresion-Windows.zip",
+      "bytes": 87842896,
+      "sha256": "bc6828e2fe78c0f3f1115aa020ab7a5cc4913cd81b15dcd71aef3a8963d5d72f"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-E19-Culturas-Windows.zip",
+      "bytes": 87858513,
+      "sha256": "5ec0e6afeef3f5021c097f661a1e3f1b8c847ca81329212b5a5f36a9418a8c10"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-Fase2-Windows.zip",
+      "bytes": 69566729,
+      "sha256": "630b2c144c1f044d34bcf3395ab0bf03bdf68b1ef2ef21b66e934db9cfec22f2"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-Fase3-C02-Windows.zip",
+      "bytes": 77005206,
+      "sha256": "2629012e4853500e12fbd495dbd1129452f2d80500f1c4b08d8ef2e00a8e734d"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-Fase3-D01-Windows.zip",
+      "bytes": 72545489,
+      "sha256": "8e2262f981164205e658476d594ad03526c5128d04d6fbe821fac33a1c736111"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-Fase3-E01-Windows.zip",
+      "bytes": 73584566,
+      "sha256": "1fd5dd2ba203a288557f497c30ddea607e955b17f59fe3369bf0b8ae14f6e61c"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-Fase3-E02-Windows.zip",
+      "bytes": 73589346,
+      "sha256": "23a51daced714b1fc4fe9e3e8b9202b5966dcb78f5c922b1b38ddf92b180a83c"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-Fase3-E02B-Windows.zip",
+      "bytes": 73710653,
+      "sha256": "fd91da79bf62154eb5569fbb90bf3863d667fd002bbc3dcdad0ea400b6ce956d"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-Fase3-UI-C1-Windows.zip",
+      "bytes": 69570489,
+      "sha256": "db2d6a04acb149d24635e05e85cd656d4875a4b2627f93a5ee1e0a693a800d48"
+    },
+    {
+      "path": "ProyectoRPGRTS\\Builds\\Aethernia-Prototipo-Windows.zip",
+      "bytes": 71065469,
+      "sha256": "941b53550f5fd55e58ada307b0db01610e293176d1f6ec7b794ee24d64fd15d4"
+    }
+  ]
+}

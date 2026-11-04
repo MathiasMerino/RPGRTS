@@ -1,0 +1,36 @@
+{
+  "run": {
+    "id": "2",
+    "testcasecount": "3",
+    "result": "Passed",
+    "total": "3",
+    "passed": "3",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-11-03 22:34:10Z",
+    "end-time": "2026-11-03 22:34:13Z",
+    "duration": "3.3114776"
+  },
+  "scope": "Same code and limits; fresh editor; does not replace GENERAL.xml",
+  "cases": [
+    {
+      "name": "Aethernia.Tests.Editor.HumanoidPipelineTests.MissingAssetsLeaveMovementAndMonkFallbackFunctional",
+      "result": "Passed",
+      "duration": "12.731450"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.UxExperienceTests.MageFullRoute",
+      "result": "Passed",
+      "duration": "74.001820"
+    },
+    {
+      "name": "Aethernia.Tests.Editor.UxExperienceTests.ModalWindowsBlockMotorCameraAndInteractor",
+      "result": "Passed",
+      "duration": "13.013689"
+    }
+  ]
+}

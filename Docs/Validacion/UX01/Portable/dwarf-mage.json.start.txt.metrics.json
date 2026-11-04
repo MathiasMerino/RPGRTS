@@ -1,0 +1,10 @@
+{
+  "phase": "UX01",
+  "race": "dwarf",
+  "measuredFps": false,
+  "elapsedSeconds": 67.6457328,
+  "sampledPeakWorkingSetBytes": 807079936,
+  "measuredGc": false,
+  "resume": false,
+  "class": "mage"
+}

@@ -16,7 +16,7 @@ namespace Aethernia
         }
         private void LateUpdate()
         {
-            if(panel==null)return;var state=Flow.Session.State;var visible=Flow.IsPlaying&&!Flow.LegacyProbe&&state.Demo!=null&&!Flow.ExistingHud.CompactView.WindowOpen&&!Flow.ExistingHud.CompactView.HelpOpen;
+            if(panel==null)return;var state=Flow.Session.State;var visible=!Flow.UxEnabled&&Flow.IsPlaying&&!Flow.LegacyProbe&&state.Demo!=null&&!Flow.ExistingHud.CompactView.WindowOpen&&!Flow.ExistingHud.CompactView.HelpOpen;
             panel.SetActive(visible);if(!visible)return;
             var text="";var battle=Flow.Director.Encounter.Battle;
             if(Flow.Session.Mode==PrototypeMode.Rts)text=(Flow.Director.Rts.ContextId=="conquest-outpost"?"CONQUISTA DEL PUESTO":"DIRIGE LA PATRULLA")+"\nClic o arrastre: seleccionar. Shift: añadir. Clic derecho: mover/atacar. Selecciona tu héroe para usar Guardia o Recuperar.";

@@ -21,3 +21,6 @@ Secuencia propuesta para revisión humana: revisar PR1→2→3→4→5→6→7�
 Bloqueos visibles: aprobación humana pendiente en todas las candidatas; incidencia de estrategia RTS reproducida en E19-A. Las pruebas generales anteriores no se convierten en verdes por aprobar pruebas dirigidas posteriores. Resolver o aceptar expresamente estas limitaciones antes de promover dev→main. Main se reserva para versión aprobada con build identificada, regresión completa revisada, prueba humana y plan de recuperación mediante Git.
 
 No iniciar otra fase o ampliar esta pila automáticamente. Primero revisar este inventario con el docente/usuario y acordar la integración. Este documento no otorga autorización para merges, protecciones, borrar ramas o cambiar main/dev.
+
+
+UX-01 fue autorizada expresamente después de E19: rama feature/ux01-onboarding-camera-world desde3e53508, base del [PR11draft](https://github.com/MathiasMerino/RPGRTS/pull/11) feature/e19-razas-civilizaciones (PR10). Orden: PR1→…→PR10→UX01; no hay fusiones automáticas ni cambios main/dev. Su comprobación independiente no sustituye la revisión pendiente de los antecedentes.
