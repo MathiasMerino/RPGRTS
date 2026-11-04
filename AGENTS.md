@@ -17,6 +17,11 @@
 - Primera misión segura activa RPG; RTS empieza en preparación y exige órdenes/llegadas reales. Guardado aditivo de preparación. Un reintento explícito puede ser necesario, queda registrado; no garantizan victoria las estrategias de prueba.
 - Dos fondos Grass E07 invadían visualmente el campo nuevo: copias WesternGround UX aplanadas localmente; materiales compartidos y mallas UV en metros. No modificar los originales para ocultar este problema.
 
+## E20 — candidata de guerra táctica
+- Rama feature/e20-tactical-warfare, PR13 borrador sobre UX02/PR12 ca95205. Escena Assets/01_Scenes/AetherniaE20Warfare.unity y datos Assets/18_E20. BuildE20 → Builds/E20Windows. Código de build 8989762. Guía Docs/GUIA_E20.md e informe Docs/ENTREGA_E20.md.
+- Piloto activa mando táctico en conquista del puesto, sobre héroe, facciones, ejército y guardado existentes. La patrulla anterior conserva sus reglas y su incidencia abierta. Mago y Monje completaron la ruta Windows y Continuar; Guerrero se detuvo en patrulla heredada. Separar las dirigidas, Windows y general de la revisión humana. Sin E21 ni fusiones.
+- No repetir AuthorE20 sobre assets ya guardados. Runner Invoke-ProgressionSmoke.ps1 -Phase E20 con raza por clase. La grabación opcional sólo captura el piloto. El player oculto mide iteraciones de Unity, no FPS jugables si no hay render automático.
+
 ## Alcance y método
 - Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.
 - Trabajar tareas acotadas, preservar trabajo existente y registrar ID/estado/aceptación/archivos/pruebas en CHECKLIST y REGISTRO después de cada actividad; conservar historial.

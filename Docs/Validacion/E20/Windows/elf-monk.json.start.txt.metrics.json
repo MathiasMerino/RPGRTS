@@ -1,0 +1,10 @@
+{
+  "phase": "E20",
+  "measuredFps": false,
+  "sampledPeakWorkingSetBytes": 814657536,
+  "race": "elf",
+  "measuredGc": false,
+  "class": "monk",
+  "elapsedSeconds": 203.6378087,
+  "resume": false
+}

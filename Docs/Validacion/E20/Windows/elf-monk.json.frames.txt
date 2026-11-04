@@ -1,0 +1,1 @@
+RTS deployment | 4+4 units | 1280x720 | NVIDIA GeForce RTX 3050 Laptop GPU | 120 engine frames, 0 URP main camera renders | 431.16 engine Hz | 0.00 camera renders/s | 3.45 ms p95 engine frame | hidden Windows smoke; no GPU presentation, GC or scalability benchmark
