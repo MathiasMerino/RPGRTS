@@ -18,6 +18,7 @@ namespace Aethernia
         private RectTransform objectives,prompts,markerRect;
         private RectTransform header,dock;
         private MedievalHudView hud;
+        private WorldExploration world;
         private bool guidance=true;
         private float nextRefresh;
         private DemoHeroMotor motor;private LostCargoView dialogue;
@@ -26,6 +27,7 @@ namespace Aethernia
         public Vector3 ObjectivePosition { get; private set; }
         private void Start()
         {
+            world=Flow.GetComponent<WorldExploration>();
             hud=Flow.ExistingHud.CompactView;dialogue=Cargo.GetComponent<LostCargoView>();motor=Flow.GetComponent<DemoHeroMotor>();
             System.Func<bool> blocked=()=>hud.WindowOpen||hud.HelpOpen||dialogue.DialogueOpen;Commands.ModalOpen=blocked;Flow.CameraRig.ModalOpen=blocked;motor.ModalOpen=blocked;
             var canvas=Flow.ExistingHud.transform;
@@ -100,7 +102,8 @@ namespace Aethernia
             hud.Feedback.transform.parent.gameObject.SetActive(false); // Objective/help owns one bounded notice surface.
             prompts.gameObject.SetActive(visible&&exploration);
             objectives.gameObject.SetActive(visible&&guidance);
-            markerRect.gameObject.SetActive(visible&&guidance&&((exploration&&(session.State.Demo==null||session.State.Demo.Chapter<DemoChapter.FreeExploration))||(mode==PrototypeMode.Rts&&Flow.Director.Rts.Preparing&&Flow.Director.Rts.PreparationStep<3)));
+            markerRect.gameObject.SetActive(visible&&guidance&&((exploration&&(session.Rules.FrontierCampaign?FrontierChapter.Step(session.State)!=FrontierStep.Free:
+                session.State.Demo==null||session.State.Demo.Chapter<DemoChapter.FreeExploration))||(mode==PrototypeMode.Rts&&Flow.Director.Rts.Preparing&&Flow.Director.Rts.PreparationStep<3)));
             if(Time.unscaledTime>=nextRefresh)
             {
                 nextRefresh=Time.unscaledTime+.12f;
@@ -141,6 +144,13 @@ namespace Aethernia
                 
             }
             else if(mode==PrototypeMode.Construction)objective.text="Construye en terreno libre. Clic derecho.\nRecursos y costes visibles; Explorar cancela.";
+            else if(Flow.Session.Rules.FrontierCampaign)
+            {
+                var step=FrontierChapter.Step(state);
+                var inside=Flow.Director.Hero.transform.position.x>65;
+                ObjectivePosition=world.CampaignTarget(step,inside,ObjectivePosition);
+                objective.text=FrontierChapter.Heading(step)+"\n"+FrontierChapter.Objective(state,inside);
+            }
             else if(quest!=CargoQuestStage.Completed&&(state.Demo==null||state.Demo.Chapter<DemoChapter.Settlement))objective.text="EL CARGAMENTO PERDIDO\n"+LostCargoQuest.Objective(state);
             else if(state.Demo!=null&&state.Demo.Chapter<DemoChapter.Settlement)
             {ObjectivePosition=Flow.Patrol.transform.position;objective.text="LA PATRULLA\nRevisa salud y raciones en Inventario.\nDespués, habla con el capitán.";}
