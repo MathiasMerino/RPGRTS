@@ -21,6 +21,9 @@ La primera pasada y la final dieron 4/4 pruebas dirigidas. La escena conserva la
 - Windows x64 generado con Unity 6000.5.8f1 desde la copia independiente. ZIP con CRC y SHA por archivo comprobados. Se conservaron 27 ZIP anteriores. [Manifiesto](Validacion/ARTENV01/PORTABLE.json)
 - Biblioteca de 21 prefabs y 18 mallas originales, con 39.566 triángulos únicos entre estas mallas. La suma excluye las instancias en escena y los recursos heredados. [Mallas](Validacion/ARTENV01/MALLAS.csv)
 - 18 cargas fuera de pantalla, 4.332 envíos URP, RTX 3050 Laptop GPU. En Alto a 1080p el P95 fue 12,54 ms en aldea pausada, 19,81 ms en menú y 25,56 ms en preparación RTS. El contador medio SetPass subió de 21 a 30 en aldea y preparación frente al informe histórico de E23. Las dos sesiones usaron archivos de guardado distintos, por lo que el aumento de tiempo no aísla el coste del arte. Quedan pendientes el perfilado comparativo controlado y los FPS presentados. [Mediciones](Validacion/ARTENV01/PERFORMANCE.json)
-- Regresión general y recorrido Windows en curso. La evaluación artística humana queda pendiente.
+- 6/6 procesos Windows desde el ZIP, con Guerrero, Mago y Monje. El recorrido E23 se ejecutó contra el binario de arte. Incluye los tres cierres, guardado, recarga y granja de nivel 2. El máximo muestreado por proceso de inicio quedó entre 781 y 787 MiB de conjunto de trabajo. [Recorridos](Validacion/ARTENV01/WINDOWS.json)
+- Regresión general en curso. La evaluación artística humana queda pendiente.
+
+Para la siguiente revisión, priorizar la legibilidad de los accesos con distintas distancias de cámara, los bordes del terreno y el coste de materiales antes de ampliar los kits a conjuntos culturales completos.
 
 [Guía](GUIA_ART_ENV_01.md) · [Capturas comparativas](Images/ARTENV01) · [PR #18](https://github.com/MathiasMerino/RPGRTS/pull/18)

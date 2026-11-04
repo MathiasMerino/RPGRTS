@@ -1,0 +1,112 @@
+{
+  "source": "1069136",
+  "packageSHA256": "d446c942464cc822a87332e7b6f4d3503c5b466aac7a06d00e4ddcaf6c9e755d",
+  "nativeProcessesPassed": 6,
+  "screenshotCount": 224,
+  "runner": "E23 scenario and receipts, executed against the ART-ENV-01 ZIP binary",
+  "cases": [
+    {
+      "identity": "human-warrior",
+      "ending": "conquista",
+      "processes": {
+        "start": {
+          "receipt": "PASS: E23 human/warrior capítulo warrior, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=381.42",
+          "metrics": {
+            "resume": false,
+            "phase": "E23",
+            "race": "human",
+            "class": "warrior",
+            "sampledPeakWorkingSetBytes": 825376768,
+            "measuredGc": false,
+            "elapsedSeconds": 385.2373456,
+            "measuredFps": false
+          }
+        },
+        "resume": {
+          "receipt": "PASS: E23 human/warrior new process Continue exact identity, health, resources, buildings, army and quests; seconds=1.87",
+          "metrics": {
+            "resume": true,
+            "phase": "E23",
+            "race": "human",
+            "class": "warrior",
+            "sampledPeakWorkingSetBytes": 785616896,
+            "measuredGc": false,
+            "elapsedSeconds": 5.0186432,
+            "measuredFps": false
+          }
+        }
+      },
+      "builtFarm": true,
+      "outpostOwner": "player-company"
+    },
+    {
+      "identity": "dwarf-mage",
+      "ending": "pacto",
+      "processes": {
+        "start": {
+          "receipt": "PASS: E23 dwarf/mage capítulo mage, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=286.45",
+          "metrics": {
+            "resume": false,
+            "phase": "E23",
+            "race": "dwarf",
+            "class": "mage",
+            "sampledPeakWorkingSetBytes": 818737152,
+            "measuredGc": false,
+            "elapsedSeconds": 289.2501993,
+            "measuredFps": false
+          }
+        },
+        "resume": {
+          "receipt": "PASS: E23 dwarf/mage new process Continue exact identity, health, resources, buildings, army and quests; seconds=1.85",
+          "metrics": {
+            "resume": true,
+            "phase": "E23",
+            "race": "dwarf",
+            "class": "mage",
+            "sampledPeakWorkingSetBytes": 833368064,
+            "measuredGc": false,
+            "elapsedSeconds": 5.0768714,
+            "measuredFps": false
+          }
+        }
+      },
+      "builtFarm": true,
+      "outpostOwner": "faction-b"
+    },
+    {
+      "identity": "elf-monk",
+      "ending": "independiente",
+      "processes": {
+        "start": {
+          "receipt": "PASS: E23 elf/monk capítulo monk, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=308.15",
+          "metrics": {
+            "resume": false,
+            "phase": "E23",
+            "race": "elf",
+            "class": "monk",
+            "sampledPeakWorkingSetBytes": 818618368,
+            "measuredGc": false,
+            "elapsedSeconds": 312.151204,
+            "measuredFps": false
+          }
+        },
+        "resume": {
+          "receipt": "PASS: E23 elf/monk new process Continue exact identity, health, resources, buildings, army and quests; seconds=1.77",
+          "metrics": {
+            "resume": true,
+            "phase": "E23",
+            "race": "elf",
+            "class": "monk",
+            "sampledPeakWorkingSetBytes": 847122432,
+            "measuredGc": false,
+            "elapsedSeconds": 6.5007271,
+            "measuredFps": false
+          }
+        }
+      },
+      "builtFarm": true,
+      "outpostOwner": "faction-b"
+    }
+  ],
+  "humanReview": "pending"
+}
