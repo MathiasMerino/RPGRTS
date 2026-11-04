@@ -12,7 +12,7 @@ namespace Aethernia
     public sealed partial class ExpeditionPanel : MonoBehaviour
     {
         public DemoFlow Flow;public PartyWorld Party;public DungeonExpedition Dungeon;public TerritoryCampaign Territory;
-        private GameObject window,groupCombat;private TMP_Text summary,combatText;private DemoWidgets ui;
+        private GameObject window,groupCombat;private TMP_Text summary,combatText,firstTargetLabel;private DemoWidgets ui;
         private RectTransform layer;
         private readonly Dictionary<string,Button> controls=new Dictionary<string,Button>();
         public IReadOnlyDictionary<string,Button> Controls=>controls;
@@ -40,6 +40,7 @@ namespace Aethernia
             var combat=DemoWidgets.Rect(root.transform,"Group turn interface",920,92,344,500);groupCombat=combat.gameObject;ui.Surface(combat,new Color(.04f,.045f,.045f,1));
             combatText=ui.Text(combat,"Initiative and health","",16,12,312,280,16);
             Add(combat,"target-0","Guardián1",16,300,148,()=>Flow.Director.Encounter.SelectGroupTarget("enemy-0"));Add(combat,"target-1","Guardián2",180,300,148,()=>Flow.Director.Encounter.SelectGroupTarget("enemy-1"));
+            firstTargetLabel=controls["target-0"].GetComponentInChildren<TMP_Text>();
             Add(combat,"group-approach","Acercarse",16,350,100,()=>Flow.Director.Encounter.GroupApproach());Add(combat,"group-attack","Atacar",128,350,100,()=>Flow.Director.Encounter.GroupAttack());Add(combat,"group-guard","Guardia",240,350,88,()=>Flow.Director.Encounter.GroupGuard());Add(combat,"group-recover","Recuperar",16,396,148,()=>Flow.Director.Encounter.GroupRecover());Add(combat,"group-end","Fin de turno",180,396,148,()=>Flow.Director.Encounter.GroupEnd());
             Add(combat,"retreat","Retirada al campamento",16,446,312,()=>Dungeon.Retreat());window.SetActive(false);groupCombat.SetActive(false);
         }
@@ -86,6 +87,12 @@ namespace Aethernia
                 controls["group-attack"].interactable=controls["group-guard"].interactable=ready&&g.ActionAvailable;
                 controls["group-recover"].interactable=ready&&g.ActionAvailable&&!g.Current.Recovered&&g.Current.Health<g.Current.Profile.Health;
                 for(var i=0;i<2;i++)controls["target-"+i].interactable=!g.Finished&&!g.Current.Hostile&&g.Members.Any(a=>a.Id=="enemy-"+i&&a.Health>0);
+                if(Flow.Session.Rules.IntegratedAlpha)
+                {
+                    var hasSecondTarget=g.Members.Any(a=>a.Id=="enemy-1");
+                    controls["target-1"].gameObject.SetActive(hasSecondTarget);
+                    firstTargetLabel.text=hasSecondTarget?"Guardián 1":"Centinela";
+                }
                 controls["retreat"].gameObject.SetActive(g.Finished&&!g.Won);
             }
             if(window.activeSelf||groupCombat.activeSelf)layer.SetAsLastSibling();

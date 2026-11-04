@@ -25,6 +25,7 @@ namespace Aethernia
         public bool TacticalWarfare;
         public bool FrontierCampaign;
         public bool LivingWorld;
+        public bool IntegratedAlpha;
         public ProgressionRules Progression;
         public CivilizationCatalog Civilizations;
         public ClassProfile[] Classes = {

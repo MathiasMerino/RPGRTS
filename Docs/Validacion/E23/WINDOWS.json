@@ -1,0 +1,156 @@
+{
+  "source": "79b0504",
+  "platform": "Windows x64",
+  "extractedOutsideProject": true,
+  "processesPassed": 6,
+  "cases": [
+    {
+      "identity": "human-warrior",
+      "ending": "conquista",
+      "campaignGuardianCompanions": 3,
+      "optionalSentryCompanions": 0,
+      "patrol": [
+        "attempt=1 victory=True hp=27 allies=0 enemies=0"
+      ],
+      "result": {
+        "start": "PASS: E23 human/warrior capítulo warrior, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=357.31",
+        "resume": "PASS: E23 human/warrior new process Continue exact identity, health, resources, buildings, army and quests; seconds=1.40"
+      },
+      "hero": {
+        "Health": 34,
+        "HeroLevel": 4,
+        "Experience": 60,
+        "RaceId": "human",
+        "ClassId": "warrior"
+      },
+      "outpostOwner": "player-company",
+      "contractClaims": [
+        "e22-contract-completed:recovery",
+        "e22-contract-completed:survey",
+        "e22-contract-completed:watch"
+      ],
+      "settlement": [
+        {
+          "Id": "townhall",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "workshop",
+          "Level": 1,
+          "ProductionPaused": true
+        },
+        {
+          "Id": "barracks",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "farm",
+          "Level": 2,
+          "ProductionPaused": false
+        }
+      ]
+    },
+    {
+      "identity": "dwarf-mage",
+      "ending": "pacto",
+      "campaignGuardianCompanions": 3,
+      "optionalSentryCompanions": 1,
+      "patrol": [
+        "attempt=1 victory=True hp=18 allies=0 enemies=0"
+      ],
+      "result": {
+        "start": "PASS: E23 dwarf/mage capítulo mage, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=285.39",
+        "resume": "PASS: E23 dwarf/mage new process Continue exact identity, health, resources, buildings, army and quests; seconds=1.40"
+      },
+      "hero": {
+        "Health": 24,
+        "HeroLevel": 4,
+        "Experience": 60,
+        "RaceId": "dwarf",
+        "ClassId": "mage"
+      },
+      "outpostOwner": "faction-b",
+      "contractClaims": [
+        "e22-contract-completed:recovery",
+        "e22-contract-completed:survey",
+        "e22-contract-completed:watch"
+      ],
+      "settlement": [
+        {
+          "Id": "townhall",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "workshop",
+          "Level": 1,
+          "ProductionPaused": true
+        },
+        {
+          "Id": "barracks",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "farm",
+          "Level": 2,
+          "ProductionPaused": false
+        }
+      ]
+    },
+    {
+      "identity": "elf-monk",
+      "ending": "independiente",
+      "campaignGuardianCompanions": 3,
+      "optionalSentryCompanions": 2,
+      "patrol": [
+        "attempt=1 victory=True hp=8 allies=0 enemies=0"
+      ],
+      "result": {
+        "start": "PASS: E23 elf/monk capítulo monk, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=306.17",
+        "resume": "PASS: E23 elf/monk new process Continue exact identity, health, resources, buildings, army and quests; seconds=1.31"
+      },
+      "hero": {
+        "Health": 28,
+        "HeroLevel": 4,
+        "Experience": 60,
+        "RaceId": "elf",
+        "ClassId": "monk"
+      },
+      "outpostOwner": "faction-b",
+      "contractClaims": [
+        "e22-contract-completed:recovery",
+        "e22-contract-completed:survey",
+        "e22-contract-completed:watch"
+      ],
+      "settlement": [
+        {
+          "Id": "townhall",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "workshop",
+          "Level": 1,
+          "ProductionPaused": true
+        },
+        {
+          "Id": "barracks",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "farm",
+          "Level": 2,
+          "ProductionPaused": false
+        }
+      ]
+    }
+  ],
+  "capturedPng": 224,
+  "magePositioning": "seed=42 withdrawals=4 hp=16/18",
+  "type": "Automated native smoke with real menus and controllers",
+  "humanReview": "pending"
+}

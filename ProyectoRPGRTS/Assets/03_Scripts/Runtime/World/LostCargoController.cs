@@ -8,6 +8,7 @@ namespace Aethernia
         [SerializeField]private PrototypeDirector director;
         [SerializeField]private InteractionPoint npc,cargo;
         [SerializeField]private LostCargoView view;
+        private PlayerCommands commands;
         private bool cargoEncounter;
         public GameSession Session=>session;
         public InteractionPoint Npc=>npc;
@@ -18,6 +19,7 @@ namespace Aethernia
         {session=game;director=control;npc=villager;cargo=load;view=presentation;}
         private void OnEnable(){if(session==null)return;session.AdditionalInteraction+=Interact;director.Encounter.Resolved+=Resolved;}
         private void OnDisable(){if(session==null)return;session.AdditionalInteraction-=Interact;director.Encounter.Resolved-=Resolved;}
+        private void Start(){if(session!=null&&session.Rules.IntegratedAlpha)commands=FindAnyObjectByType<PlayerCommands>();}
         private bool? Interact(string id,string title)
         {
             if(id==LostCargoQuest.NpcId){view.ShowDialogue();session.Say("Habitante de la aldea: conversación abierta.");return true;}
@@ -38,12 +40,14 @@ namespace Aethernia
         {
             if(!AtNpc()||!LostCargoQuest.Claim(session.State,out var ration))return false;
             session.AwardForFact(LostCargoQuest.Completed);
+            if(session.Rules.IntegratedAlpha)director.Save(director.ActiveSavePath);
             session.Say("Misión completada: 20 oro"+(ration?" y una ración.":". Inventario lleno: no se añade ración."));return true;
         }
         private bool AtNpc()
         {
             if(session.Mode!=PrototypeMode.Exploration||director.IsBusy)return false;
-            if(Vector3.Distance(director.Hero.transform.position,npc.transform.position)<=2.2f)return true;
+            if(Vector3.Distance(director.Hero.transform.position,npc.transform.position)<=npc.Reach&&
+                (!session.Rules.IntegratedAlpha||(commands!=null&&commands.HasInteractionSight(npc))))return true;
             session.Say("Acércate al habitante para conversar.");return false;
         }
         private void Resolved(bool won)

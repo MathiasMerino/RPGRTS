@@ -1,0 +1,8 @@
+{
+  "total": 5,
+  "passed": 4,
+  "failed": 1,
+  "case": "Aethernia.Tests.Editor.IntegratedAlphaTests.PromptsAndContractGuidanceUseTheRealWorld",
+  "message": "new\n  Expected: less than or equal to 1281\n  But was:  16158.6309f",
+  "cause": "La llamada reutilizó el validador de menús ocultos en una prueba del tablón."
+}
