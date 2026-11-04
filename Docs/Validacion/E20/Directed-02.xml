@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="6" result="Failed(Child)" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-04 04:01:00Z" end-time="2026-11-04 04:01:30Z" duration="29.7459694">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="219" result="Failed" site="Child" start-time="2026-11-04 04:01:00Z" end-time="2026-11-04 04:01:30Z" duration="29.745969" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1281" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="219" result="Failed" site="Child" start-time="2026-11-04 04:01:00Z" end-time="2026-11-04 04:01:30Z" duration="29.651770" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="12748" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1282" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="219" result="Failed" site="Child" start-time="2026-11-04 04:01:00Z" end-time="2026-11-04 04:01:30Z" duration="29.644787" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1283" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="219" result="Failed" site="Child" start-time="2026-11-04 04:01:00Z" end-time="2026-11-04 04:01:30Z" duration="29.638600" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1284" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="219" result="Failed" site="Child" start-time="2026-11-04 04:01:00Z" end-time="2026-11-04 04:01:30Z" duration="29.633166" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1228" name="TacticalWarfareTests" fullname="Aethernia.Tests.Editor.TacticalWarfareTests" classname="Aethernia.Tests.Editor.TacticalWarfareTests" runstate="Runnable" testcasecount="6" result="Failed" site="Child" start-time="2026-11-04 04:01:00Z" end-time="2026-11-04 04:01:30Z" duration="29.624163" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1233" name="CandidateKeepsUx02NavigationAndPublicSystems" fullname="Aethernia.Tests.Editor.TacticalWarfareTests.CandidateKeepsUx02NavigationAndPublicSystems" methodname="CandidateKeepsUx02NavigationAndPublicSystems" classname="Aethernia.Tests.Editor.TacticalWarfareTests" runstate="Runnable" seed="235404503" result="Passed" start-time="2026-11-04 04:00:23Z" end-time="2026-11-04 04:00:25Z" duration="1.636383" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1234" name="LegacySaveDeploysPaidArmyAndConquersWithSameHero" fullname="Aethernia.Tests.Editor.TacticalWarfareTests.LegacySaveDeploysPaidArmyAndConquersWithSameHero" methodname="LegacySaveDeploysPaidArmyAndConquersWithSameHero" classname="Aethernia.Tests.Editor.TacticalWarfareTests" runstate="Runnable" seed="1275761584" result="Failed" start-time="2026-11-04 04:00:25Z" end-time="2026-11-04 04:00:54Z" duration="28.879569" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  paid archer
+  Expected: True
+  But was:  False
+]]></message>
+                  <stack-trace><![CDATA[at Aethernia.Tests.Editor.TacticalWarfareTests+<LegacySaveDeploysPaidArmyAndConquersWithSameHero>d__2.MoveNext () [0x0016b] in <workspace>\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\TacticalWarfareTests.cs:64
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1235" name="RetreatKeepsTerritoryAndSavePreservesOriginalOwnership" fullname="Aethernia.Tests.Editor.TacticalWarfareTests.RetreatKeepsTerritoryAndSavePreservesOriginalOwnership" methodname="RetreatKeepsTerritoryAndSavePreservesOriginalOwnership" classname="Aethernia.Tests.Editor.TacticalWarfareTests" runstate="Runnable" seed="553330338" result="Passed" start-time="2026-11-04 04:00:54Z" end-time="2026-11-04 04:01:30Z" duration="36.311206" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1232" name="SlotsRemainDistinctAndCentredForSmallArmies" fullname="Aethernia.Tests.Editor.TacticalWarfareTests.SlotsRemainDistinctAndCentredForSmallArmies" classname="Aethernia.Tests.Editor.TacticalWarfareTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-04 04:01:30Z" end-time="2026-11-04 04:01:30Z" duration="0.008729" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1229" name="SlotsRemainDistinctAndCentredForSmallArmies(Line)" fullname="Aethernia.Tests.Editor.TacticalWarfareTests.SlotsRemainDistinctAndCentredForSmallArmies(Line)" methodname="SlotsRemainDistinctAndCentredForSmallArmies" classname="Aethernia.Tests.Editor.TacticalWarfareTests" runstate="Runnable" seed="347803512" result="Passed" start-time="2026-11-04 04:01:30Z" end-time="2026-11-04 04:01:30Z" duration="0.006164" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1230" name="SlotsRemainDistinctAndCentredForSmallArmies(Column)" fullname="Aethernia.Tests.Editor.TacticalWarfareTests.SlotsRemainDistinctAndCentredForSmallArmies(Column)" methodname="SlotsRemainDistinctAndCentredForSmallArmies" classname="Aethernia.Tests.Editor.TacticalWarfareTests" runstate="Runnable" seed="27038212" result="Passed" start-time="2026-11-04 04:01:30Z" end-time="2026-11-04 04:01:30Z" duration="0.000188" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1231" name="SlotsRemainDistinctAndCentredForSmallArmies(Compact)" fullname="Aethernia.Tests.Editor.TacticalWarfareTests.SlotsRemainDistinctAndCentredForSmallArmies(Compact)" methodname="SlotsRemainDistinctAndCentredForSmallArmies" classname="Aethernia.Tests.Editor.TacticalWarfareTests" runstate="Runnable" seed="9074798" result="Passed" start-time="2026-11-04 04:01:30Z" end-time="2026-11-04 04:01:30Z" duration="0.000125" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

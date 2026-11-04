@@ -78,7 +78,11 @@ namespace Aethernia
             if(name=="04-SafeVillage")yield return Explore(flow,capture);
             if(nativeInput&&name=="16-Selection")yield return MouseOrders(flow,capture,false);
             if(nativeInput&&name=="18-Positioned")yield return MouseOrders(flow,capture,true);
-            if(name=="22-Camp")yield return CampAndRuins(flow,capture);
+            if(name=="22-Camp")
+            {
+                yield return CampAndRuins(flow,capture);
+                if(flow.Session.Rules.TacticalWarfare)yield return TacticalWarfareRoute.FromCamp(flow,capture);
+            }
         }
         private static IEnumerator MouseFrame(Mouse mouse,Vector2 point,ushort buttons)
         {InputSystem.QueueStateEvent(mouse,new MouseState{position=point,buttons=buttons});yield return null;yield return null;}

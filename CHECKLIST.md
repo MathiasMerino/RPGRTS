@@ -1298,3 +1298,18 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 - Aceptación: el guardia se desplaza y su driver observa velocidad y estado Walk; enlace reconstruido en runtime, no sólo durante autoría.
 - Archivos: VillageNpcActivity.cs y WorldExplorationRoute.cs.
 - Pruebas: DIRIGIDA_FINAL. Desplazamiento real, ObservedSpeed y parámetro Walk. Validación incluida en el recorrido Windows.
+
+
+## FASE E20 — GUERRA TÁCTICA, EJÉRCITO Y CONQUISTA
+
+| ID | Prioridad / depende de | Estado | Criterio de aceptación | Archivos y pruebas |
+|---|---|---|---|---|
+| E20-00 | P0 · UX02 | Completado y verificado | Base ca95205, PR1–12 abiertos en borrador, configuración y GDD intactos | Plan y reporte E20; consulta GitHub y SHA de QualitySettings/GDD |
+| E20-AE | P0 · 00 | Completado y verificado | Selección y grupos, órdenes incompatibles se reemplazan, tres formaciones y posturas, héroe compartido y respuesta acotada de defensores | `RtsTactics.cs`, `RtsBattleController.cs`, `DemoRtsInput.cs`; 8/8 en general, 1/1 adicional de 7 aliados |
+| E20-FL | P0 · AE | Completado y verificado | Piloto alcanzable desde el mundo, mando explícito, resultado real y continuidad de reclutas, economía, territorio y guardado | `AetherniaE20Warfare`, `18_E20`, `TerritoryCampaign.cs`, HUD y guía E20; recorrido editor/Windows |
+| E20-M | P1 · FL | En desarrollo | Rutas separadas hasta el límite del piloto y medición interactiva de FPS y GC | Tres formaciones reales con 7 aliados; ciclos y memoria Windows. FPS y GC pendientes |
+| E20-N | P0 · 00 | En desarrollo | Conservar prueba y evidencia de reserva RTS heredada, distinguir piloto de incidencia histórica | `E18RtsScenarioTests`, `Validacion/UX02/RTS_HIST_GENERAL.*`; E20 220/221, traza `RTS_HISTORICO.csv` |
+| E20-OP | P0 · FL | Completado y verificado | Guardado anterior compatible; tras derrota/retirada no cambia territorio; Continue restaura consecuencias de una victoria | `TacticalWarfareTests`, `TacticalWarfareRoute.cs`; dirigidas y general |
+| E20-QU | P0 · OP | Completado y verificado | Recorrido completo, build x64, capturas, ZIP comprobado, commits y PR borrador sobre PR12, con incidencia Windows separada | `Invoke-UnityValidation.ps1`, `Invoke-ProgressionSmoke.ps1`, `Docs/Validacion/E20` |
+| E20-WIN-HER | P0 · QU | En desarrollo | Repetir desde Nueva partida con Guerrero y desde el ZIP; asegurar el paso de la patrulla heredada | `Validacion/E20/WINDOWS.json`; Guerrero y dos inicios desde ZIP fallaron antes del piloto; Continuar desde ZIP pasó |
+| E20-HUM | P1 · QU | Pendiente | Aceptación humana de claridad, ritmo, dificultad y utilidad de maniobras | `Docs/GUIA_E20.md` |

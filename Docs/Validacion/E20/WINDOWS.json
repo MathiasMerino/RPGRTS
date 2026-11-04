@@ -1,0 +1,59 @@
+{
+  "source": "89897629df821f92b37b9d1f223e18c9b4a32a79",
+  "processes": [
+    {
+      "path": "Windows/dwarf-mage.json.resume.txt",
+      "result": "PASS",
+      "sourceSha256": "4e5d543b0ae88223db99c77d29f02959ed25229d0d534de8efdaca054df4164c",
+      "exportedSha256": "4e5d543b0ae88223db99c77d29f02959ed25229d0d534de8efdaca054df4164c"
+    },
+    {
+      "path": "Windows/dwarf-mage.json.start.txt",
+      "result": "PASS",
+      "sourceSha256": "80e85861c98e22d00d1ac440f939511941048fa688bc5c7b15e46ff6cdb880da",
+      "exportedSha256": "80e85861c98e22d00d1ac440f939511941048fa688bc5c7b15e46ff6cdb880da"
+    },
+    {
+      "path": "Windows/human-warrior.json.start.txt",
+      "result": "FAIL",
+      "sourceSha256": "12d76aea3339f2db240aff73a877e08bf35579c84901fa15621fcbeee8177ca6",
+      "exportedSha256": "71242d0d31a26b33f03d336a969ef626c77741bbd9b3fa9c6f74da0a499b4d9c"
+    },
+    {
+      "path": "Windows/elf-monk.json.resume.txt",
+      "result": "PASS",
+      "sourceSha256": "76d343d906c2510d279a52fda75da86f03d54917ede4a4c5c8e96407bc2c0d82",
+      "exportedSha256": "76d343d906c2510d279a52fda75da86f03d54917ede4a4c5c8e96407bc2c0d82"
+    },
+    {
+      "path": "Windows/elf-monk.json.start.txt",
+      "result": "PASS",
+      "sourceSha256": "2500dfb32e03d41afc4afa2750a7e261e228a272f4fc1cdcc114c2bfbf5f0566",
+      "exportedSha256": "2500dfb32e03d41afc4afa2750a7e261e228a272f4fc1cdcc114c2bfbf5f0566"
+    },
+    {
+      "path": "PortablePrimerIntento/dwarf-mage.json.start.txt",
+      "result": "FAIL",
+      "case": "extracted-new-1",
+      "sourceSha256": "87f491045634773cd8f4b9142cc9d840442947cd1a70f29ff12d54cd9e66d959",
+      "exportedSha256": "97e0b324dffbdb85ba953fff065716137653f7dbd01cbd2228bdc863e020d1c2"
+    },
+    {
+      "path": "PortableSegundoIntento/dwarf-mage.json.start.txt",
+      "result": "FAIL",
+      "case": "extracted-new-2",
+      "sourceSha256": "87f491045634773cd8f4b9142cc9d840442947cd1a70f29ff12d54cd9e66d959",
+      "exportedSha256": "97e0b324dffbdb85ba953fff065716137653f7dbd01cbd2228bdc863e020d1c2"
+    },
+    {
+      "path": "Portable/dwarf-mage.json.resume.txt",
+      "result": "PASS",
+      "case": "extracted-continue-known-save",
+      "sourceSha256": "9a1a2a8cb22250ab770af83d1e91343fcb29ecd3d32fbf376538a6e4097f659f",
+      "exportedSha256": "9a1a2a8cb22250ab770af83d1e91343fcb29ecd3d32fbf376538a6e4097f659f"
+    }
+  ],
+  "passed": 5,
+  "failed": 3,
+  "humanEvaluation": "Pending"
+}

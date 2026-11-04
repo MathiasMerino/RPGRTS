@@ -88,7 +88,7 @@ namespace Aethernia
             if(back!=null){Place(back,new Vector2(0,0),Vector2.zero,new Vector2(180,38));back.gameObject.SetActive(mode==PrototypeMode.Construction);}
             if(interaction!=null)interaction.gameObject.SetActive(false);
             if(session.LastMessage!=lastNotice){lastNotice=session.LastMessage;notice.text=lastNotice;noticeUntil=Time.unscaledTime+4;}
-            noticeRect.anchoredPosition=new Vector2(0,mode==PrototypeMode.Rts?112:72);
+            noticeRect.anchoredPosition=new Vector2(0,mode==PrototypeMode.Rts?(Flow.Director.Rts.TacticalBattle?178:112):72);
             noticeRect.gameObject.SetActive(visible&&Time.unscaledTime<noticeUntil);
             hud.Context.gameObject.SetActive(mode==PrototypeMode.Construction);
             hud.Hint.gameObject.SetActive(false);
@@ -128,7 +128,11 @@ namespace Aethernia
             else if(mode==PrototypeMode.Rts)
             {
                 var war=Flow.Director.Rts;ObjectivePosition=war.PreparationTarget;
-                objective.text=!war.Preparing?"Combate RTS · Selección y clic derecho.\nSelecciona al héroe para sus acciones.":war.PreparationStep==0?"Preparación segura · Selecciona UN aliado.":war.PreparationStep==1?"Shift o arrastre: selecciona varios.\nClic derecho al primer hito; espera llegada.":war.PreparationStep==2?"Reagrupa varias unidades en el segundo hito.\nLas órdenes requieren llegada real.":"Rivales al este · Coloca tus tropas.\nClic derecho sobre un rival inicia el ataque.";
+                if(war.TacticalBattle)
+                    objective.text=war.TacticalDeployment
+                        ? "DEFENSA DEL PASO FRONTERIZO\nReconoce el terreno y despliega tropas.\nConfirma la ofensiva cuando estés listo."
+                        : "DEFENSA DEL PASO FRONTERIZO\nDerrota a los defensores para conquistar.\nAlt + clic derecho: avance ofensivo.";
+                else objective.text=!war.Preparing?"Combate RTS · Selección y clic derecho.\nSelecciona al héroe para sus acciones.":war.PreparationStep==0?"Preparación segura · Selecciona UN aliado.":war.PreparationStep==1?"Shift o arrastre: selecciona varios.\nClic derecho al primer hito; espera llegada.":war.PreparationStep==2?"Reagrupa varias unidades en el segundo hito.\nLas órdenes requieren llegada real.":"Rivales al este · Coloca tus tropas.\nClic derecho sobre un rival inicia el ataque.";
                 
             }
             else if(mode==PrototypeMode.Construction)objective.text="Construye en terreno libre. Clic derecho.\nRecursos y costes visibles; Explorar cancela.";

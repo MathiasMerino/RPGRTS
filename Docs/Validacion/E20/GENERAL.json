@@ -1,0 +1,48 @@
+{
+  "source": "89897629df821f92b37b9d1f223e18c9b4a32a79",
+  "unity": "6000.5.8f1",
+  "rawXmlSHA256": "dc4d4448c232a4f97fe9a1d1d80b26ab47d96aa12ff39a1b926a775a8c342c1e",
+  "total": 221,
+  "passed": 220,
+  "failed": 1,
+  "failures": [
+    {
+      "name": "Aethernia.Tests.Editor.E18RtsScenarioTests.ThreeClassesWithLegalBacklineOrdersAt30",
+      "message": "  warrior: victoria RTS real\n  Expected: Settlement\n  But was:  FirstRts\n"
+    }
+  ],
+  "tacticalTests": [
+    {
+      "name": "ArenaCoverBlocksSightAndThreePassagesAreNavigable",
+      "result": "Passed"
+    },
+    {
+      "name": "CandidateKeepsUx02NavigationAndPublicSystems",
+      "result": "Passed"
+    },
+    {
+      "name": "EnemyFireDefeatsWoundedHeroWithoutTransferringTheOutpost",
+      "result": "Passed"
+    },
+    {
+      "name": "LegacySaveDeploysPaidArmyAndConquersWithSameHero",
+      "result": "Passed"
+    },
+    {
+      "name": "RetreatKeepsTerritoryAndSavePreservesOriginalOwnership",
+      "result": "Passed"
+    },
+    {
+      "name": "SlotsRemainDistinctAndCentredForSmallArmies(Line)",
+      "result": "Passed"
+    },
+    {
+      "name": "SlotsRemainDistinctAndCentredForSmallArmies(Column)",
+      "result": "Passed"
+    },
+    {
+      "name": "SlotsRemainDistinctAndCentredForSmallArmies(Compact)",
+      "result": "Passed"
+    }
+  ]
+}

@@ -45,6 +45,7 @@ namespace Aethernia
             if(index<0)index=Array.IndexOf(args,"-aetherniaCivilizationSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaUx01Smoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaUx02Smoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaE20Smoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaSave");
             if(index>=0&&index+1<args.Length)SlotPath=args[index+1];
             Director.SavePathOverride=SlotPath;ShowMain();
@@ -161,7 +162,7 @@ namespace Aethernia
             Session.Say("Camino despejado. Explora con WASD; busca la señal de patrulla al norte de la aldea. E: interactuar.");
             Director.Save(SlotPath);
         }
-        public void Pause(){Session.Paused=true;Time.timeScale=0;Director.Hero.Stop();ExistingHud.gameObject.SetActive(false);}
+        public void Pause(){Session.Paused=true;Time.timeScale=0;if(!Director.Rts.TacticalBattle)Director.Hero.Stop();ExistingHud.gameObject.SetActive(false);}
         public void Resume(){Time.timeScale=1;Session.Paused=false;if(IsPlaying)ExistingHud.gameObject.SetActive(true);Front.Hide();}
         public bool ReturnToTitle()
         {

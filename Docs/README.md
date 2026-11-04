@@ -2,6 +2,8 @@
 
 ## Para jugar y evaluar ahora
 
+- [Entrega E20](ENTREGA_E20.md) y [guía de juego E20](GUIA_E20.md) para el piloto Defensa del paso fronterizo.
+
 - [UX-02: entrega y resultados](ENTREGA_UX02.md), [guía de juego/revisión](GUIA_UX02.md) y [mundo/decisiones/dimensiones](UX02_MUNDO.md). Candidata con evaluación humana pendiente, PR12draft sobre UX01.
 
 - [Guía E19](GUIA_E19.md), [identidad y culturas provisionales](E19_RAZAS_CULTURAS.md), [balance](E19_BALANCE.md) y [plan secuencial](PLAN_E19.md). [Entrega E19](ENTREGA_E19.md):196/197general y6/6Windows,52PNG/2MP4,ZIPportable verificado; RTS histórico y evaluación humana pendientes.

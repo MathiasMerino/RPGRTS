@@ -1,0 +1,4 @@
+FAIL: System.InvalidOperationException: UX01: real RTS victory; active=False outcome=False hp=0 allies=0 enemies=6
+  at Aethernia.UxExperienceRoute.Require (System.Boolean ok, System.String step) [0x00014] in <workspace>\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceRoute.cs:16
+  at Aethernia.UxExperienceRoute+<Run>d__3.MoveNext () [0x01dc9] in <workspace>\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceRoute.cs:101
+  at Aethernia.WorldExplorationSmokeProbe+<Start>d__1.MoveNext () [0x001c2] in <workspace>\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationSmokeProbe.cs:22

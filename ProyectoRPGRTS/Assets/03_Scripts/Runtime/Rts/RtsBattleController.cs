@@ -21,6 +21,12 @@ namespace Aethernia
             public int Damage=2,Maximum=10;
             public bool Hero,Guarding,MoveOrder;
             public Soldier OrderedTarget;
+            public TacticalOrder Order;
+            public RtsStance Stance = RtsStance.Defensive;
+            public Vector3 Post;
+            public Vector3 Destination;
+            public float RepathAt;
+            public bool Deployed;
             public GameObject Visual;
             public HumanoidAnimationDriver Animator;
         }
@@ -76,7 +82,7 @@ namespace Aethernia
                     if(soldier.Hero){soldier.Unit.Stop();var p=soldier.Unit.GetComponent<CharacterCombatAnimationPresenter>();if(p!=null)p.ExternallyControlled=false;soldier.Animator?.SetGuarding(false);}
                     else{soldier.Unit.gameObject.SetActive(false);Destroy(soldier.Unit.gameObject);}
                 }
-            soldiers.Clear();sharedHero=null; Active = false;Preparing=false;
+            soldiers.Clear();sharedHero=null; Active = false;Preparing=false;ResetTactics();
         }
         public bool Begin(bool escalated = false)
         {
@@ -151,7 +157,13 @@ namespace Aethernia
             var profile=session.HeroProfile;techniqueFocus=profile.Combat?.FocusCapacity??0;var actor=hero.GetComponent<CharacterVisualPresenter>();
             var h=new Soldier{Unit=hero,Team=0,Hero=true,Role="hero",Range=profile.Range,Animator=actor.Model==null?null:actor.Model.GetComponent<HumanoidAnimationDriver>()};soldiers.Add(h);
             hero.GetComponent<CharacterCombatAnimationPresenter>().ExternallyControlled=true;
+            if(TacticalBattle)OpenTacticalDeployment();
             Trace("begin",h);
+            if(TacticalBattle)
+            {
+                session.Say("Defensa del paso fronterizo · despliega tropas y confirma la ofensiva.");
+                return true;
+            }
             session.Say((expedition?"Conquista del puesto.":"La patrulla necesita tu mando.")+" Arrastra para seleccionar; clic derecho para mover o atacar. Tu héroe conserva vida y equipo.");return true;
         }
         private void BuildVisual(Soldier s,RtsRoleProfile role)
@@ -167,14 +179,15 @@ namespace Aethernia
         }
         public bool SelectUnit(Collider collider,bool additive)
         {
-            if(!Active||collider==null)return false;var selected=collider.GetComponentInParent<ExplorationUnit>();var found=false;
+            if(!Active||(!TacticalBattle&&collider==null))return false;var selected=collider==null?null:collider.GetComponentInParent<ExplorationUnit>();var found=false;
             foreach(var s in soldiers)if(s.Team==0&&Health(s)>0){var match=s.Unit==selected;found|=match;s.Unit.Select(match||(additive&&s.Unit.IsSelected));}return found;
         }
         public void RememberGroup(List<ExplorationUnit> group){group.Clear();foreach(var s in soldiers)if(s.Team==0&&Health(s)>0&&s.Unit.IsSelected)group.Add(s.Unit);}
-        public void SelectGroup(List<ExplorationUnit> group,bool additive){foreach(var s in soldiers)if(s.Team==0&&s.Unit!=null)s.Unit.Select(Health(s)>0&&(group.Contains(s.Unit)||(additive&&s.Unit.IsSelected)));}
+        public void SelectGroup(List<ExplorationUnit> group,bool additive){group.RemoveAll(unit=>unit==null||!soldiers.Exists(s=>s.Unit==unit&&s.Team==0&&Health(s)>0));foreach(var s in soldiers)if(s.Team==0&&s.Unit!=null)s.Unit.Select(Health(s)>0&&(group.Contains(s.Unit)||(additive&&s.Unit.IsSelected)));}
         public bool Command(Vector3 point, Collider collider, bool primary)
         {
             if (!Active) return false;
+            if(TacticalBattle&&!primary)return TacticalCommand(point,collider,false);
             if(session.Rules.WorldExploration&&!primary)return WorldCommand(point,collider);
             if (primary)
             {
@@ -192,6 +205,7 @@ namespace Aethernia
         {
             if (!Active || session.Paused || Time.time < nextTick) return;
             if(Preparing){TickPreparation();return;}
+            if(TacticalBattle){TickTactics();return;}
             nextTick = Time.time + 0.2f;
             if(Diagnostic!=null)Trace("tick-start",soldiers.Find(s=>s.Hero));
             foreach (var s in soldiers)
@@ -210,21 +224,23 @@ namespace Aethernia
                 }
                 else if ((nearest > s.Range || (IncludesHero&&!ClearLine(s,target))) && Time.time >= s.OrderedUntil) s.Unit.TryMoveTo(session.Rules.WorldExploration?AttackPosition(s,target):target.Unit.transform.position);
             }
-            if (Allies == 0 || Enemies == 0)
-            {
-                Active = false;
-                session.State.Army.RemoveAll(s=>s.Health<=0);
-                session.State.ArmySelection.RemoveAll(id=>session.State.Army.All(s=>s.Id!=id));
-                foreach (var soldier in soldiers) if (soldier.Unit != null && soldier.Health > 0) soldier.Unit.Stop();
-                var victory=Won;LastResolvedVictory=victory;
-                if (victory && !session.HasFact("rts-victory")) session.State.Facts.Add("rts-victory");
-                session.Say(victory ? "Victoria RTS registrada en la partida." : "Derrota RTS; puedes reiniciar la prueba.");
-                Trace(victory?"victory":"defeat",soldiers.Find(s=>s.Hero));
-                Resolved?.Invoke(victory);
-            }
+            if (Allies == 0 || Enemies == 0) FinishBattle();
         }
-        private static bool ClearLine(Soldier source,Soldier target)
+        private void FinishBattle()
         {
+            Active = false;
+            session.State.Army.RemoveAll(s=>s.Health<=0);
+            session.State.ArmySelection.RemoveAll(id=>session.State.Army.All(s=>s.Id!=id));
+            foreach (var soldier in soldiers) if (soldier.Unit != null && soldier.Health > 0) soldier.Unit.Stop();
+            var victory=Won;LastResolvedVictory=victory;
+            if (victory && !session.HasFact("rts-victory")) session.State.Facts.Add("rts-victory");
+            session.Say(victory ? "Victoria RTS registrada en la partida." : "Derrota RTS; puedes reiniciar la prueba.");
+            Trace(victory?"victory":"defeat",soldiers.Find(s=>s.Hero));
+            Resolved?.Invoke(victory);
+        }
+        private bool ClearLine(Soldier source,Soldier target)
+        {
+            if(TacticalBattle)return TacticalLine(source,target);
             return !Physics.Linecast(source.Unit.transform.position+Vector3.up*.9f,target.Unit.transform.position+Vector3.up*.9f,out var hit,~0,QueryTriggerInteraction.Ignore)||hit.transform.IsChildOf(target.Unit.transform);
         }
         private Soldier Nearest(Soldier source)
@@ -239,27 +255,27 @@ namespace Aethernia
             if(Health(target)<=0)
             {
                 if(target.Visual!=null){var model=target.Visual;model.transform.SetParent(null,true);if(target.Animator!=null){var a=target.Animator.Rig.Animator;target.Animator.enabled=false;a.enabled=true;a.SetBool("Defeated",true);}model.AddComponent<CombatTransient>().Configure(1.4f);target.Visual=null;}
-                if(!target.Hero)target.Unit.gameObject.SetActive(false);else session.Say("Tu héroe ha caído; la patrulla aún combate.");
+                if(!target.Hero){target.Unit.Select(false);target.Unit.gameObject.SetActive(false);}else{target.Unit.Stop();target.Unit.Select(false);session.Say(TacticalBattle?"Tu héroe ha caído.":"Tu héroe ha caído; la patrulla aún combate.");}
             }
         }
         private void Emit(Soldier source,CombatResolution result,Vector3 target)
         {var classId=source.Hero?session.State.ClassId:source.Role=="archer"?"archer":source.Role=="brawler"?"monk":"warrior";var data=new CombatFeedback(-10,result,classId,source.Unit.transform.position,target);feedback?.PresentRealtime(data);ActionResolved?.Invoke(data);}
         public bool HeroAction(string action)
         {
-            if(Preparing)return false;
+            if(Preparing||(TacticalBattle&&(TacticalDeployment||session.Paused||session.WorldUiOpen)))return false;
             var hero=soldiers.Find(s=>s.Hero);
             if(!Active||hero==null||!hero.Unit.IsSelected||Health(hero)<=0){if(action=="recover")Trace("recover-unavailable",hero);return false;}
             if(Time.time<hero.AttackAt){if(action=="recover")Trace("recover-cooldown",hero);return false;}
             if(action=="technique")
             {
-                var skill=session.HeroProfile.Combat;var target=hero.OrderedTarget!=null&&Health(hero.OrderedTarget)>0?hero.OrderedTarget:Nearest(hero);
+                var skill=session.HeroProfile.Combat;var target=HeroTarget(hero,skill?.TechniqueRange??0);
                 if(skill==null||!skill.TechniqueUnlocked||techniqueFocus<skill.TechniqueCost||Time.time<hero.SkillAt||target==null||Vector3.Distance(hero.Unit.transform.position,target.Unit.transform.position)>skill.TechniqueRange||!ClearLine(hero,target))return false;
                 techniqueFocus-=skill.TechniqueCost;hero.SkillAt=Time.time+skill.TechniqueCooldown;Strike(hero,target,skill.TechniqueDamage+(session.State.ClassId=="monk"?2:0));session.Say(skill.TechniqueTitle+" · foco "+techniqueFocus);return true;
             }
             if(action=="attack")
-            {var target=hero.OrderedTarget!=null&&Health(hero.OrderedTarget)>0?hero.OrderedTarget:Nearest(hero);if(target==null||Vector3.Distance(hero.Unit.transform.position,target.Unit.transform.position)>hero.Range||!ClearLine(hero,target))return false;Strike(hero,target);return true;}
+            {var target=HeroTarget(hero,hero.Range);if(target==null||Vector3.Distance(hero.Unit.transform.position,target.Unit.transform.position)>hero.Range||!ClearLine(hero,target))return false;Strike(hero,target);return true;}
             if(action=="guard")
-            {hero.Guarding=true;hero.AttackAt=Time.time+1;hero.Animator?.SetGuarding(true);Emit(hero,new CombatResolution(++sequence,CombatSide.Player,CombatActionKind.Guard),hero.Unit.transform.position);return true;}
+            {if(TacticalBattle)SetPost(hero,TacticalOrder.Hold);hero.Guarding=true;hero.AttackAt=Time.time+1;hero.Animator?.SetGuarding(true);Emit(hero,new CombatResolution(++sequence,CombatSide.Player,CombatActionKind.Guard),hero.Unit.transform.position);return true;}
             if(action!="recover"||heroRecoveryUsed)return false;var recovered=HeroActionRules.Recovery(Health(hero),Maximum(hero));if(recovered<=0)return false;
             var before=Health(hero);SetHealth(hero,before+recovered);heroRecoveryUsed=true;hero.AttackAt=Time.time+1;Trace("recover-accepted",hero,value:recovered);Emit(hero,new CombatResolution(++sequence,CombatSide.Player,CombatActionKind.Recover,healing:recovered,before:before,after:before+recovered),hero.Unit.transform.position);return true;
         }

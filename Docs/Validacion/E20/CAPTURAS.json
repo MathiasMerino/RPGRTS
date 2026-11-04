@@ -1,0 +1,107 @@
+[
+  {
+    "path": "Docs/Images/E20/Windows/mage-02-Creation.png",
+    "sha256": "10ad8b9244fe275e44e83271fab49db2a6c63c801a6ca6c1f194ccf71ff3b653",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-23-Continued.png",
+    "sha256": "a32443535d87e730c9e186ffa4dedd00082dee09d55e611edd642481c21d4f18",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-T01-Army.png",
+    "sha256": "7850cef4aa8225a8628c45d1c186359cdc91a759c1a37f400fca681142d2881f",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-T02-Deployment.png",
+    "sha256": "ae4efcae084f9e9f6b4c66a9697b2bae29c3153b7464dad3ab689d3430638e31",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-T03-LineMove.png",
+    "sha256": "7258371f9d6419947bcbafa62ea85735d4f6314f19d496ce8c0b0a84a66f01be",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-T04-Compact.png",
+    "sha256": "a5ea706516ef4ef08c071d7e1d7e124632497e2c2fe925ad5b89a6cc50d06264",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-T05-AttackMove.png",
+    "sha256": "e746f29049c6c4ee0ac5a23fcbaa201c927f06ec3268b7dfa23eaf579fced234",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-T06-HeroTechnique.png",
+    "sha256": "2bb58182f3631dbf4ad9305e6c927c777dc078dee58cf9a67d8d6374de15313e",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-T07-Conquered.png",
+    "sha256": "846e44e2c518ff4a7967961221075f539f57bb43780ff0772e793e3c2fca61b2",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-T08-Return.png",
+    "sha256": "27e5cdfa08b70c8d0ddb2eca61028657a31dfa8d8694f1aff354db7fa74a02e8",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/mage-W09-TradeDialogue.png",
+    "sha256": "230bb5b67c4115ede29c971d789add2c17120481cc5357452f154d5eeee6d241",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/warrior-02-Creation.png",
+    "sha256": "d6a6521bb6888ea0c23fdbe597f72080cda4a47a6df679dc71a34635a4014a1a",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/monk-02-Creation.png",
+    "sha256": "67b12cfa000ed028a5188dc57861c0374f388db5a4cee215691a17c13101ae48",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/monk-23-Continued.png",
+    "sha256": "6f8b9d2e4d7be48c4960c4412677ac50f742f0051124c76b06966ea70a215a80",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/monk-T05-AttackMove.png",
+    "sha256": "b6f42d8310622b637e9b1ea7563c9ea0ae76c107a1d7693394a6537a52f0616a",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/monk-T06-HeroTechnique.png",
+    "sha256": "fefdeed05b91c6886c9fc75948b2ff8e1f356bfee8c17ff5194d82ce4f78f015",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Windows/monk-T07-Conquered.png",
+    "sha256": "348081e12f923fc1244af7e75aa1c3937d3e6053855f36c80e9c8b42f9ca1083",
+    "source": "Windows x64 actual game camera at 1280x720; automated play; 89897629df821f92b37b9d1f223e18c9b4a32a79"
+  },
+  {
+    "path": "Docs/Images/E20/Portable/mage-23-Continued.png",
+    "sha256": "9819c9ba20ecdb6284adb86b46d98ddc9ffda6b2f88aad9bf7d0eee212e60608",
+    "source": "Extracted Windows x64 player, Continue from validated E20 save, actual 1280x720 Game camera"
+  },
+  {
+    "path": "Docs/Images/E20/Editor/Seven-Line.png",
+    "sha256": "e7dafba52ae4b70f6dc4f29dbb64012b39195e3f1e2403a5936fde1fdeebd9c2",
+    "source": "Unity Editor Play Mode, six paid recruits and the RPG hero at their NavMesh destinations, 1280x720"
+  },
+  {
+    "path": "Docs/Images/E20/Editor/Seven-Column.png",
+    "sha256": "e74047f833c6a0f3188986ab5b0d4cacaec2b6335923f75d1de2562b06a8122d",
+    "source": "Unity Editor Play Mode, six paid recruits and the RPG hero at their NavMesh destinations, 1280x720"
+  },
+  {
+    "path": "Docs/Images/E20/Editor/Seven-Compact.png",
+    "sha256": "56dc1a59bcf55dc7e33d3cd0886567c49c54de95d153d9b10fb07c809a133461",
+    "source": "Unity Editor Play Mode, six paid recruits and the RPG hero at their NavMesh destinations, 1280x720"
+  }
+]
