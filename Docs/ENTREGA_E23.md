@@ -14,13 +14,18 @@ Escena `Assets/01_Scenes/AetherniaE23IntegratedAlpha.unity`. Build Windows x64 `
 
 - E22 cerró 230/230 en regresión y 8/8 procesos Windows, con tres cierres y recarga. El fallo visual del segundo botón pasó a E23. [Informe E22](ENTREGA_E22.md)
 - E23 pasó 5/5 dirigidas después de corregir el alcance de la prueba de interfaz. El primer intento obtuvo 4/5 porque el validador del tablón también inspeccionó el menú oculto. Se verificaron los botones y etiquetas del tablón a 1280×720, 1920×1080 y 2560×1440. Esta prueba cubre el tablón. [Prueba dirigida](Validacion/E23/Dirigidas.xml)
-- ZIP comprobado con CRC y SHA‑256 por archivo y verificado de nuevo tras extraerlo fuera del proyecto. Se conservaron los 26 ZIP históricos. La regresión y el recorrido nativo están en curso. [Manifiesto](Validacion/E23/PORTABLE.json)
+- ZIP comprobado con CRC y SHA‑256 por archivo y verificado de nuevo tras extraerlo fuera del proyecto. Se conservaron los 26 ZIP históricos. [Manifiesto](Validacion/E23/PORTABLE.json)
+- 6/6 procesos del ZIP externo. Guerrero humano conquistó, Mago enano pactó y Monje elfo cerró por cuenta propia. Cada uno completó los tres encargos, compró y vendió, mejoró la granja y continuó desde un nuevo proceso. [Recorridos](Validacion/E23/WINDOWS.json)
+- Las dos guardianías originales se ganaron con tres acompañantes. El centinela se ganó con cero, uno y dos, y su panel mostró un solo objetivo. El inicio de la guardianía original con cero a tres está cubierto por la prueba histórica. Queda abierta su victoria con grupos de cero a dos.
+- El Mago volvió a terminar el primer combate con 16/18 PV después de cuatro retiradas con semilla 42. Quedan pendientes más semillas, estrategias y evaluación humana.
+- 224 capturas de los recorridos. La selección incluye inventario, ficha y diario, y el antes y después del centinela. [Capturas Windows](Images/E23/Windows) · [Tablón en tres resoluciones](Images/E23/Layout)
+- Regresión general y grabación de la candidata en curso.
 
 ## Rendimiento medido
 
 Perfilado en un i5‑12450H con RTX 3050 Laptop GPU, desde la extracción externa y con un guardado real de E22. Se completaron 18 combinaciones de calidad y resolución con 9.705 solicitudes de render URP fuera de pantalla. El rótulo E13 del JSON pertenece a la sonda reutilizada.
 
-| Carga · Alto 1080p | Intervalo CPU medio | P95 | P95 de asignación GC |
+| Carga · Alto 1080p | Intervalo medio de frame del proceso | P95 | P95 de asignación GC |
 |---|---:|---:|---:|
 | Aldea en pausa | 4,43 ms | 6,43 ms | 1.156 B |
 | Menú con vista previa | 7,83 ms | 14,01 ms | 1.618 B |
