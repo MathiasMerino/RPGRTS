@@ -811,3 +811,7 @@ Rama `feature/e22-living-world` desde E21 `78695c1`. Escena E22 con tablón, dos
 Se recuperó la regresión E22 con 230/230 y se abrió su PR #16 sobre #15. E23 parte de `df1b719` y reutiliza escenario, materiales, progreso y guardados. Se ajustaron cámara de ruinas, botones del centinela, guía de encargos, avisos contextuales y persistencia al cobrar el cargamento. Dirigidas 5/5, con un intento previo 4/5 por aplicar el validador de menús al menú oculto al comprobar el tablón. El segundo intento conserva las comprobaciones sobre los controles visibles.
 
 Build Windows `79b0504`, CRC y SHA por archivo, 26 ZIP anteriores conservados y 8/8 procesos desde extracción externa. Los tres cierres y Continuar pasaron. General 232/232, dirigida posterior 1/1, 224 capturas de la ruta principal, vídeo RTS y 18 combinaciones de perfilado URP. El Guerrero ganó ambas guardianías con uno, dos y tres acompañantes y perdió la primera en solitario con semilla 42. El PR #17 se mantiene en borrador sobre #16. Revisión humana pendiente.
+
+## 2026-11-04 — ART-ENV-01, pasada ambiental
+
+Se trabajó desde E23 `eff3fdb` con respaldo de los cambios locales y una copia independiente de Unity. La candidata agrega cubiertas, fachadas, mercado, vegetación, portada, empalizada y variantes visuales de asentamiento. La biblioteca incluye módulos culturales de estudio y mapas originales. La verificación distingue comparativas de Unity, recorridos Windows y aprobación humana.

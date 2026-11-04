@@ -1363,3 +1363,13 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 | E23-COMPOSICIÓN | P5 · INT | Completado y verificado | Guerrero, semilla 42, ambas guardianías ganadas con 1–3. Solo perdió la primera y se retiró. Centinela ganado con 0–2. `GuardianCompositionTests.cs`, `GUARDIANIAS.csv`. |
 | E23-BALANCE | P9 · COMPOSICIÓN | Pendiente | Viabilidad en solitario, balance con otras semillas y estrategias y medición de combate activo. |
 | E23-HUM | P12 · QA | Pendiente | Usabilidad, ritmo, calidad artística y rendimiento presentado requieren revisión humana. |
+
+## ART-ENV-01 — ALDEA Y BIBLIOTECA AMBIENTAL
+
+| ID | Prioridad y dependencia | Estado | Aceptación y evidencia |
+|---|---|---|---|
+| ART-ENV-00 | P0 · E23 | Completado y verificado | Base E23 `eff3fdb`, PR #17 sobre #16. Respaldo SHA de archivos locales y autoría en worktree separado. |
+| ART-ENV-ALDEA | P1–P5 · 00 | En desarrollo | Cubiertas, fachada, mercado, camino, vegetación y materiales integrados. `FrontierWorldArt.cs`, `FrontierArtMesh.cs`, escena candidata y prefabs. Primeras dirigidas 4/4. |
+| ART-ENV-ZONAS | P6–P10 · ALDEA | En desarrollo | Portada, campamento, puesto, dos decoraciones construibles y módulos culturales piloto. Escena jugable y escena de estudio. |
+| ART-ENV-QA | P11–P12 · ZONAS | En desarrollo | Comparativas con cámara equivalente, referencia física, build, regresión y pruebas Windows. `FrontierWorldArtTests.cs`. |
+| ART-ENV-HUM | P12 · QA | Pendiente | Legibilidad, composición, identidad cultural y valoración artística humana. |

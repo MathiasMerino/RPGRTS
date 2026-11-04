@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-04 22:09:00Z" end-time="2026-11-04 22:09:01Z" duration="1.7218896">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="237" result="Passed" start-time="2026-11-04 22:09:00Z" end-time="2026-11-04 22:09:01Z" duration="1.721890" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1305" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/.codex/worktrees/art-env-validation/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="237" result="Passed" start-time="2026-11-04 22:09:00Z" end-time="2026-11-04 22:09:01Z" duration="1.566111" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="19368" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1306" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="237" result="Passed" start-time="2026-11-04 22:09:00Z" end-time="2026-11-04 22:09:01Z" duration="1.561899" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1307" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="237" result="Passed" start-time="2026-11-04 22:09:00Z" end-time="2026-11-04 22:09:01Z" duration="1.559231" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1308" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="237" result="Passed" start-time="2026-11-04 22:09:00Z" end-time="2026-11-04 22:09:01Z" duration="1.556661" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1141" name="FrontierWorldArtTests" fullname="Aethernia.Tests.Editor.FrontierWorldArtTests" classname="Aethernia.Tests.Editor.FrontierWorldArtTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-04 22:09:00Z" end-time="2026-11-04 22:09:01Z" duration="1.548578" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1143" name="BaselineCapturedInUnity" fullname="Aethernia.Tests.Editor.FrontierWorldArtTests.BaselineCapturedInUnity" methodname="BaselineCapturedInUnity" classname="Aethernia.Tests.Editor.FrontierWorldArtTests" runstate="Runnable" seed="469571808" result="Passed" start-time="2026-11-04 22:08:16Z" end-time="2026-11-04 22:08:35Z" duration="18.317933" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1144" name="CandidateCapturedAndVillageRoutesReachable" fullname="Aethernia.Tests.Editor.FrontierWorldArtTests.CandidateCapturedAndVillageRoutesReachable" methodname="CandidateCapturedAndVillageRoutesReachable" classname="Aethernia.Tests.Editor.FrontierWorldArtTests" runstate="Runnable" seed="119107409" result="Passed" start-time="2026-11-04 22:08:35Z" end-time="2026-11-04 22:08:51Z" duration="16.197082" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1142" name="CandidateKeepsNavigationAndPublicGameplayReferences" fullname="Aethernia.Tests.Editor.FrontierWorldArtTests.CandidateKeepsNavigationAndPublicGameplayReferences" methodname="CandidateKeepsNavigationAndPublicGameplayReferences" classname="Aethernia.Tests.Editor.FrontierWorldArtTests" runstate="Runnable" seed="1663108955" result="Passed" start-time="2026-11-04 22:08:51Z" end-time="2026-11-04 22:08:53Z" duration="1.649111" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1145" name="CulturalStudyCapturedInUnity" fullname="Aethernia.Tests.Editor.FrontierWorldArtTests.CulturalStudyCapturedInUnity" methodname="CulturalStudyCapturedInUnity" classname="Aethernia.Tests.Editor.FrontierWorldArtTests" runstate="Runnable" seed="1006651027" result="Passed" start-time="2026-11-04 22:08:53Z" end-time="2026-11-04 22:09:01Z" duration="8.651602" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
