@@ -1,0 +1,5 @@
+FAIL: System.InvalidOperationException: UX01: UX02 existing companion formation enabled
+  at Aethernia.UxExperienceRoute.Require (System.Boolean ok, System.String step) [0x00014] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceRoute.cs:16 
+  at Aethernia.WorldExplorationRoute.Check (System.Boolean result, System.String name) [0x00000] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationRoute.cs:13 
+  at Aethernia.WorldExplorationRoute+<CampAndRuins>d__4.MoveNext () [0x002b4] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationRoute.cs:57 
+  at Aethernia.WorldExplorationSmokeProbe+<Start>d__1.MoveNext () [0x00191] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationSmokeProbe.cs:21 

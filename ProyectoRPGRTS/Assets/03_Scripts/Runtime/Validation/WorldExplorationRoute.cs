@@ -54,7 +54,8 @@ namespace Aethernia
             yield return Use(flow,"ux02-store",capture,"W10-SharedStorage");Check(world.DialogueOpen,"storage reports actual world resources");world.Close();
             yield return Use(flow,"ux02-recruiter",capture,"W11-Recruiter");var party=UnityEngine.Object.FindAnyObjectByType<PartyWorld>();gold=s.State.Gold;
             world.ConfirmButton.onClick.Invoke();Check(s.State.Companions.Count==1&&s.State.Gold==gold-party.Rules.GoldCost("swordsman"),"real paid companion recruitment");
-            Check(party.SetParty(s.State.Companions.Single().Id,true),"existing companion formation enabled");yield return capture("W12-CompanionCamp");
+            var companion=s.State.Companions.Single();Check(companion.InParty&&party.Units.ContainsKey(companion.Id),"recruit joins real formation by existing rule");
+            Check(party.SetParty(companion.Id,false)&&!companion.InParty&&party.SetParty(companion.Id,true)&&companion.InParty,"existing companion reserve and formation toggles");yield return capture("W12-CompanionCamp");
             yield return Use(flow,"umbral-entry",capture,"W13-RuinsAccess");var dungeon=UnityEngine.Object.FindAnyObjectByType<DungeonExpedition>();
             Check(dungeon.Inside&&s.Mode==PrototypeMode.Exploration&&!flow.Director.IsBusy,"existing dungeon entrance without auto battle");yield return UxExperienceRoute.Wait(.5f);yield return capture("W14-InsideRuins");
             var before=s.State.Companions.Single().Health;

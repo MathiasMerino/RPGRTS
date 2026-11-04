@@ -741,3 +741,7 @@ Primera build0e96f06: Windows detecta tres agentes de NPC activos antes de regis
 ## 2026-11-03 — UX2-H Windows segundo intento
 
 Build53a5704: cero errores de agente; pasan comprobaciones nativas de navegación/patrulla del guardia, selección simple y Shift. El destino sintético(767,90) queda sobre el panel RTS y se rechaza correctamente; recibo conservado WindowsIntento02. Se convierte ese rechazo en comprobación explícita y se elige suelo visible para el ensayo de desplazamiento; no se modifica el bloqueo de UI ni reglas del juego. Nueva build de validación necesaria.
+
+## 2026-11-03 — UX2-H Windows tercer intento
+
+Build5edd245 verifica WASD/E, guardia móvil, selección simple/Shift/rectángulo, bloqueo UI, movimiento y ataque por InputSystem real, RPG y victoria RTS al primer intento con14PV; también centro/taller/producción/cuartel/recluta militar, puerta y comercio. Falla después una expectativa del arnés: el compañero ya se incorpora activo por regla existente y SetParty(true) rechaza cambios redundantes. Ahora comprueba estado activo, reserva y reactivación con APIs reales. Evidencia parcial preservada WindowsIntento03; aún no es pase completo. Se compactan barras RTS ancladas a cada unidad, sin apilarlas varios metros arriba; sólo presentación UX02.
