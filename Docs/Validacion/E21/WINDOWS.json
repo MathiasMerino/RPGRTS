@@ -1,0 +1,71 @@
+{
+  "source": "df03c7a3ddbbf1daa34c862a381461c0222bc0db",
+  "processes": [
+    {
+      "path": "Windows/human-warrior.json.resume.txt",
+      "mode": "Windows",
+      "result": "PASS",
+      "sourceSha256": "c31305e4b72434b0673927369b89e4a335f59f91a41fb2b73099391c1c3f86fa",
+      "exportedSha256": "c31305e4b72434b0673927369b89e4a335f59f91a41fb2b73099391c1c3f86fa"
+    },
+    {
+      "path": "Windows/human-warrior.json.start.txt",
+      "mode": "Windows",
+      "result": "PASS",
+      "sourceSha256": "e97ed2c5cd40266e8c561674558add7b1cee1bd626244f3ac683b9ec1119d5a3",
+      "exportedSha256": "e97ed2c5cd40266e8c561674558add7b1cee1bd626244f3ac683b9ec1119d5a3"
+    },
+    {
+      "path": "Portable/dwarf-mage.json.resume.txt",
+      "mode": "Portable",
+      "result": "PASS",
+      "sourceSha256": "0def613dbf0000195489471f535b279e1e5d917ca663f811922c608c0dbf2174",
+      "exportedSha256": "0def613dbf0000195489471f535b279e1e5d917ca663f811922c608c0dbf2174"
+    },
+    {
+      "path": "Portable/dwarf-mage.json.start.txt",
+      "mode": "Portable",
+      "result": "PASS",
+      "sourceSha256": "3c7752f534ebd92bd31c777b78b820ca8676803a115cb4fdb2f7b9906195a14a",
+      "exportedSha256": "3c7752f534ebd92bd31c777b78b820ca8676803a115cb4fdb2f7b9906195a14a"
+    },
+    {
+      "path": "Portable/elf-monk.json.resume.txt",
+      "mode": "Portable",
+      "result": "PASS",
+      "sourceSha256": "16952e94c17bd6e9d1ec20d3956af501bc907710102234fda9663b6a9d3bb99e",
+      "exportedSha256": "16952e94c17bd6e9d1ec20d3956af501bc907710102234fda9663b6a9d3bb99e"
+    },
+    {
+      "path": "Portable/elf-monk.json.start.txt",
+      "mode": "Portable",
+      "result": "PASS",
+      "sourceSha256": "b08e31ddb262a4276bf8450547adc44c3d047e26c1983a66fc66853e43f66ae2",
+      "exportedSha256": "b08e31ddb262a4276bf8450547adc44c3d047e26c1983a66fc66853e43f66ae2"
+    },
+    {
+      "path": "Portable/human-warrior.json.resume.txt",
+      "mode": "Portable",
+      "result": "PASS",
+      "sourceSha256": "2ff6a8f189e488c20a342c991d224b766d4423fb2875e02e3a1c34d7e2cdb115",
+      "exportedSha256": "2ff6a8f189e488c20a342c991d224b766d4423fb2875e02e3a1c34d7e2cdb115"
+    },
+    {
+      "path": "Portable/human-warrior.json.start.txt",
+      "mode": "Portable",
+      "result": "PASS",
+      "sourceSha256": "7cb3924669cdf970e8eb78a589660ca69e2dc3402ef6438328504a3ac6353f9a",
+      "exportedSha256": "7cb3924669cdf970e8eb78a589660ca69e2dc3402ef6438328504a3ac6353f9a"
+    },
+    {
+      "path": "PortableRecording/human-warrior.json.start.txt",
+      "mode": "PortableRecording",
+      "result": "FAIL",
+      "sourceSha256": "5680ac95a73caca0d9fa1673e367ebeaf3c75741613ee19b8b9c845c07f6b035",
+      "exportedSha256": "f04406a3e4b818f8a7b4d9bfb52f8cef1d158013afdc58cc92ef3b73a7fe7550"
+    }
+  ],
+  "passed": 8,
+  "failed": 1,
+  "humanEvaluation": "Pending"
+}

@@ -2,6 +2,8 @@
 
 ## Para jugar y evaluar ahora
 
+- [Entrega E21](ENTREGA_E21.md), [capítulo](CAPITULO_E21.md) y [guía](GUIA_E21.md).
+
 - [Entrega E20.1](ENTREGA_E201.md) y [guía de la candidata alfa](GUIA_E201.md).
 
 - [Entrega E20](ENTREGA_E20.md) y [guía de juego E20](GUIA_E20.md) para el piloto Defensa del paso fronterizo.

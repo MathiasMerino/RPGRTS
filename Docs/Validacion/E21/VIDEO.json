@@ -1,0 +1,10 @@
+{
+  "path": "Docs/Videos/E21/Puesto-del-Umbral.mp4",
+  "frames": 157,
+  "captureHz": 12,
+  "captureSeconds": 13.083333333333334,
+  "source": "df03c7a3ddbbf1daa34c862a381461c0222bc0db",
+  "sha256": "481e6403a86a89e167e74621a4ff6855723714b0787937790d2c218f7f48236f",
+  "proof": "PASS: 157 continuous native Windows Game camera frames at fixed capture step12Hz; audio DSP samples=1255424 channels=2 rate=48000 rms=0.000667 peak=0.012349. Capture step is not measured FPS. Gameplay actions are those of the explicit demo smoke; no pose sampling or fabricated results.",
+  "smokeOutcome": "FAIL: the battle was won, but the hero technique was not executed in the recorded run"
+}

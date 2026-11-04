@@ -1,0 +1,8 @@
+stage,time_s,class,race,hp,max_hp,attack,guard,level,xp,gold,wood,food
+04-SafeVillage,2.65,warrior,human,26,26,7,1,1,0,50,20,10
+11-FirstRpg,41.86,warrior,human,26,26,7,1,1,0,58,23,10
+13-ExploreAgain,52.68,warrior,human,17,29,7,2,2,12,58,23,10
+18-Positioned,94.33,warrior,human,29,31,7,3,2,20,78,23,13
+20-Victory,101.06,warrior,human,31,31,7,3,2,28,78,23,13
+22-Camp,106.50,warrior,human,31,31,7,3,2,28,34,3,10
+T02-Deployment,245.98,warrior,human,37,37,8,3,4,60,20,16,18

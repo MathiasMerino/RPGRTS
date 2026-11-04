@@ -1,0 +1,10 @@
+{
+  "elapsedSeconds": 4.2979748,
+  "race": "elf",
+  "measuredGc": false,
+  "measuredFps": false,
+  "sampledPeakWorkingSetBytes": 835723264,
+  "phase": "E21",
+  "resume": true,
+  "class": "monk"
+}

@@ -1,0 +1,104 @@
+{
+  "dwarf-mage": {
+    "facts": [
+      "e21-road-clue",
+      "e21-road-repair",
+      "umbral-battle-1",
+      "umbral-battle-2",
+      "umbral-reward",
+      "e21-dossier-delivered",
+      "umbral-outpost-conquered",
+      "e21-chapter-complete"
+    ],
+    "territories": [
+      {
+        "Id": "camp",
+        "Owner": "player-company",
+        "Secured": true
+      },
+      {
+        "Id": "crossing",
+        "Owner": "player-company",
+        "Secured": true
+      },
+      {
+        "Id": "outpost",
+        "Owner": "player-company",
+        "Secured": true
+      }
+    ],
+    "reputationA": 0,
+    "companions": 3,
+    "heroLevel": 4,
+    "class": "mage",
+    "race": "dwarf"
+  },
+  "elf-monk": {
+    "facts": [
+      "e21-road-clue",
+      "e21-road-report",
+      "umbral-battle-1",
+      "umbral-battle-2",
+      "umbral-reward",
+      "e21-dossier-delivered",
+      "umbral-outpost-conquered",
+      "e21-chapter-complete"
+    ],
+    "territories": [
+      {
+        "Id": "camp",
+        "Owner": "player-company",
+        "Secured": true
+      },
+      {
+        "Id": "crossing",
+        "Owner": "player-company",
+        "Secured": true
+      },
+      {
+        "Id": "outpost",
+        "Owner": "player-company",
+        "Secured": true
+      }
+    ],
+    "reputationA": 5,
+    "companions": 3,
+    "heroLevel": 4,
+    "class": "monk",
+    "race": "elf"
+  },
+  "human-warrior": {
+    "facts": [
+      "e21-road-clue",
+      "e21-road-report",
+      "umbral-battle-1",
+      "umbral-battle-2",
+      "umbral-reward",
+      "e21-dossier-delivered",
+      "umbral-outpost-conquered",
+      "e21-chapter-complete"
+    ],
+    "territories": [
+      {
+        "Id": "camp",
+        "Owner": "player-company",
+        "Secured": true
+      },
+      {
+        "Id": "crossing",
+        "Owner": "player-company",
+        "Secured": true
+      },
+      {
+        "Id": "outpost",
+        "Owner": "player-company",
+        "Secured": true
+      }
+    ],
+    "reputationA": 5,
+    "companions": 3,
+    "heroLevel": 4,
+    "class": "warrior",
+    "race": "human"
+  }
+}

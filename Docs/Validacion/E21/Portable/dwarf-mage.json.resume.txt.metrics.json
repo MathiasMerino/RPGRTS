@@ -1,0 +1,10 @@
+{
+  "elapsedSeconds": 3.8022585,
+  "race": "dwarf",
+  "measuredGc": false,
+  "measuredFps": false,
+  "sampledPeakWorkingSetBytes": 823164928,
+  "phase": "E21",
+  "resume": true,
+  "class": "mage"
+}
