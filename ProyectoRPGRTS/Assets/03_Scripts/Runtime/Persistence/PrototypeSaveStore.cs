@@ -22,7 +22,7 @@ namespace Aethernia
             if (!Finite(s.WorldSeconds) || s.WorldSeconds < 0 || s.WorldSeconds / 10 >= int.MaxValue || s.ProductionCycle != Mathf.FloorToInt(s.WorldSeconds / 10)) return false;
             if (s.Facts == null || s.Items == null || s.Buildings == null || s.Facts.Count != s.Facts.Distinct().Count()) return false;
             if (s.Facts.Any(f => string.IsNullOrWhiteSpace(f) || f.Length > 128)) return false;
-            if(!ProgressionOperations.Valid(s,rules)||!CivilizationOperations.Valid(s,rules))return false;
+            if(!ProgressionOperations.Valid(s,rules)||!CivilizationOperations.Valid(s,rules)||!FrontierChapter.Valid(s))return false;
             if (s.Items.Any(i => i == null || !WorldOperations.KnownItem(i.Id) || i.Count <= 0 || i.Count > 8) || s.Items.Sum(i => (long)i.Count) > 8) return false;
             if (s.Items.Select(i => i.Id).Distinct().Count() != s.Items.Count) return false;
             if(!EquipmentOperations.Valid(s,rules))return false;
