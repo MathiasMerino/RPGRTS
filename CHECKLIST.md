@@ -1249,10 +1249,10 @@ Fallos y diagnóstico anteriores conservados en Docs/Validacion/UX01: arnés tra
 - Pruebas: pendientes; no equivalen a revisión humana.
 
 ### UX2-C — Cámara cercana única y oclusión reversible
-- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: B.
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: B.
 - Aceptación: Cámara cercana única y oclusión reversible; detalles en Docs/UX02_MUNDO.md.
-- Archivos: previstos según bloque; todavía sin implementación validada.
-- Pruebas: pendientes; no equivalen a revisión humana.
+- Archivos: IsometricCameraRig.cs, DemoHeroMotor.cs, WorldExplorationTests.cs.
+- Pruebas: DIRIGIDA_05,7/7; seguimiento cercano5.4m, vista del héroe y bloqueo modal; oclusión real de árbol restaura renderers/materiales/colisiones. Techos/muros heredados conservados; comodidad y juego manual pendientes.
 
 ### UX2-D — Interacciones E con línea de visión, NPC/diálogo/funciones reales
 - Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: B,C.

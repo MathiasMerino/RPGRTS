@@ -721,3 +721,7 @@ Escena AetherniaUx02World sobre UX01 y datos propios Assets/17_UX02, originales 
 QA en desarrollo: DIRIGIDA_01(1/6) reveló EnterPlayMode anidado en arnés, corregido; DIRIGIDA_02(2/6) reveló árbol bloqueando camino y glifos inexistentes, corregidos sin ignorar logs; DIRIGIDA_03(5/7) y04(6/7) detectaron conflicto de propiedad WorldUiOpen, corregido en ExpeditionPanel/Motor. La interfaz de expediciones no libera diálogos ajenos. Carga directa distingue región80 de mazmorra. El caso de resolución/closures de pruebas se separa del gameplay. Todos los XML se conservan.
 
 Inspección de PNG real detectó UV métricos incompatibles con máscara Alpha: nuevas cintas reutilizan Earth Lit, otros recursos nuevos reutilizan materiales Alpha/viento existentes. Corrección de codificación en cuatro fuentes tocadas y datos UX02 mediante autoría dirigida. No se declara aprobación humana ni toda la regresión verde.
+
+## 2026-11-03 — UX2-C cámara verificada técnicamente
+
+Perfil de exploración5.4m sobre el único rig UX01, límites ampliados sólo para la frontera UX02; RPG/RTS/construcción conservan perfiles. Bloqueo WorldUiOpen y corrección de región80 en carga directa de ruinas. DIRIGIDA_05:7/7, incluido seguimiento, tres resoluciones y recorte/restauración real de árbol sin editar física o materiales. Comodidad/oclusión humana sigue pendiente.
