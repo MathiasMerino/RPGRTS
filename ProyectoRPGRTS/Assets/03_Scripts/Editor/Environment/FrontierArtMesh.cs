@@ -69,23 +69,38 @@ namespace Aethernia.Editor.Environment
             if(across.sqrMagnitude<.001f)across=Vector3.right;
             var mid=Vector3.Lerp(a,b,.42f);var ridge=mid+Vector3.up*lift;
             var l=mid-across.normalized*width;var r=mid+across.normalized*width;
-            Face(material,a,l,ridge);Face(material,ridge,l,b);
-            Face(material,a,ridge,r);Face(material,r,ridge,b);
+            Face(material,a,ridge,l);Face(material,ridge,b,l);
+            Face(material,a,r,ridge);Face(material,r,b,ridge);
         }
 
         public void Save(Transform root,string name,string path,bool shadows=true)
         {
-            var mesh=new Mesh{name=name,indexFormat=vertices.Count>65535?IndexFormat.UInt32:IndexFormat.UInt16};
-            mesh.SetVertices(vertices);mesh.SetUVs(0,uv);
-            mesh.subMeshCount=indices.Count;
-            var slot=0;foreach(var list in indices.Values)mesh.SetTriangles(list,slot++);
-            mesh.RecalculateNormals();mesh.RecalculateTangents();mesh.RecalculateBounds();
+            var mesh=Create(name);
             AssetDatabase.CreateAsset(mesh,path);
             root.gameObject.AddComponent<MeshFilter>().sharedMesh=mesh;
             var renderer=root.gameObject.AddComponent<MeshRenderer>();
             renderer.sharedMaterials=indices.Keys.ToArray();
             if(!shadows)renderer.shadowCastingMode=ShadowCastingMode.Off;
             GameObjectUtility.SetStaticEditorFlags(root.gameObject,StaticEditorFlags.BatchingStatic);
+        }
+
+        public void UpdateAsset(string path)
+        {
+            var existing=AssetDatabase.LoadAssetAtPath<Mesh>(path);
+            var updated=Create(existing.name);
+            EditorUtility.CopySerialized(updated,existing);
+            Object.DestroyImmediate(updated);
+            EditorUtility.SetDirty(existing);
+        }
+
+        private Mesh Create(string name)
+        {
+            var mesh=new Mesh{name=name,indexFormat=vertices.Count>65535?IndexFormat.UInt32:IndexFormat.UInt16};
+            mesh.SetVertices(vertices);mesh.SetUVs(0,uv);
+            mesh.subMeshCount=indices.Count;
+            var slot=0;foreach(var list in indices.Values)mesh.SetTriangles(list,slot++);
+            mesh.RecalculateNormals();mesh.RecalculateTangents();mesh.RecalculateBounds();
+            return mesh;
         }
     }
 }

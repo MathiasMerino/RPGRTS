@@ -17,7 +17,7 @@ namespace Aethernia.Editor.Environment
         public const string Library="Assets/06_Environment/ArtEnv01";
         public const string Study="Assets/01_Scenes/AetherniaArtEnv01Study.unity";
         private static readonly Quaternion Q=Quaternion.identity;
-        private static Material oak,lightOak,stone,lightStone,plaster,iron,glass;
+        private static Material oak,lightOak,stone,lightStone,iron,glass;
         private static Material[] slate,clay,canvas,plants;
 
         public static void Author()
@@ -118,11 +118,195 @@ namespace Aethernia.Editor.Environment
             File.WriteAllText("Logs/ARTENV01/build.txt","PASS "+Application.unityVersion+" "+report.summary.totalSize+" bytes");
         }
 
+        public static void Polish()
+        {
+            var scene=EditorSceneManager.OpenScene(Candidate);
+            SetMaps("Arcilla", "Teja de arcilla", "Teja cocida oscura","Pizarra húmeda","Pizarra gris");
+            SetMaps("Lona", "Lona cáñamo", "Lona roja de almagre","Helecho verde","Carex oliva","Brote ocre");
+            SetTint("Teja de arcilla",new Color(.72f,.43f,.30f));
+            SetTint("Teja cocida oscura",new Color(.58f,.34f,.26f));
+            SetTint("Pizarra húmeda",new Color(.44f,.51f,.56f));
+            SetTint("Pizarra gris",new Color(.52f,.59f,.63f));
+            SetTint("Helecho verde",new Color(.35f,.48f,.23f));
+            SetTint("Carex oliva",new Color(.46f,.51f,.22f));
+            SetTint("Brote ocre",new Color(.57f,.47f,.25f));
+            var root=GameObject.Find("ART-ENV-01 · frontera").transform;
+            if(root.Find("Luz de mercado")==null)
+            {
+                Accent(root,"Luz de mercado",new Vector3(1.15f,2.25f,-9.05f),3.5f,1.18f);
+                Accent(root,"Luz de posada",new Vector3(-1.1f,2.3f,8.62f),4.1f,1.35f);
+                Accent(root,"Luz del umbral",new Vector3(-17.3f,1.8f,-17.6f),3.9f,.86f);
+                var flow=Object.FindAnyObjectByType<DemoFlow>();
+                var arch=root.Cast<Transform>().Single(t=>t.name=="Ruinas_Portada_Dovelas"&&t.position.x<0);
+                arch.position=new Vector3(-16,0,-16.65f);
+                var cut=arch.gameObject.AddComponent<RoofCutaway>();
+                cut.Configure(flow.CameraRig.GetComponent<Camera>(),flow.Director.Hero.transform,arch.GetComponentsInChildren<Renderer>());
+                foreach(var stonework in root.Cast<Transform>().Where(t=>t.name=="Sendero_Adoquin_Desgastado"))
+                {
+                    if(Mathf.Abs(stonework.position.x+2.6f)<.1f)stonework.position=new Vector3(-5.8f,0,-5.6f);
+                    if(Mathf.Abs(stonework.position.x-2.4f)<.1f)stonework.position=new Vector3(4.5f,0,-5.5f);
+                }
+
+                oak=VillageE07Materials.Load("DarkOak");lightOak=VillageE07Materials.Load("AgedOak");
+                var cloth=AssetDatabase.LoadAssetAtPath<Material>(Library+"/Materials/Lona cáñamo.mat");
+                var shelter=Prefab("Campamento_Tienda_De_Guardia",draft=>GuardTent(draft,cloth));
+                Place(shelter,root,new Vector3(-49,0,-8.1f),22);
+                Place(shelter,root,new Vector3(-27.5f,0,11.9f),-12);
+            }
+            EditorSceneManager.MarkSceneDirty(scene);
+            if(!EditorSceneManager.SaveScene(scene))throw new InvalidOperationException("ART-ENV-01 polish could not save the scene.");
+            AssetDatabase.SaveAssets();
+        }
+
+        private static void SetTint(string name,Color color)
+        {
+            var material=AssetDatabase.LoadAssetAtPath<Material>(Library+"/Materials/"+name+".mat");
+            material.SetColor("_BaseColor",color);
+            EditorUtility.SetDirty(material);
+        }
+
+        private static void GuardTent(FrontierArtMesh mesh,Material cloth)
+        {
+            const int cuts=10;
+            foreach(var side in new[]{-1,1})
+            {
+                Vector3 Profile(float t,float z)=>new(side*t*1.72f,2.35f-1.35f*t-.14f*Mathf.Sin(t*Mathf.PI),z);
+                for(var i=0;i<cuts;i++)
+                {
+                    var a=i/(float)cuts;var b=(i+1)/(float)cuts;
+                    mesh.Face(cloth,Profile(a,-1.7f),Profile(b,-1.65f),Profile(b,1.65f),Profile(a,1.7f));
+                }
+                foreach(var z in new[]{-1.55f,1.55f})
+                {
+                    var foot=new Vector3(side*1.60f,0,z);
+                    mesh.Beam(oak,foot,Profile(1,z),.11f,.12f);
+                    mesh.Beam(lightOak,Profile(.9f,z),new Vector3(side*2.15f,.08f,z*1.04f),.04f,.04f);
+                }
+            }
+            mesh.Beam(oak,new Vector3(0,2.33f,-1.78f),new Vector3(0,2.33f,1.78f),.14f,.15f);
+            foreach(var z in new[]{-1.52f,1.52f})
+                mesh.Beam(oak,new Vector3(0,0,z),new Vector3(0,2.36f,z),.14f,.14f);
+        }
+
+        public static void DressSettlement()
+        {
+            var scene=EditorSceneManager.OpenScene(Candidate);
+            var construction=Object.FindAnyObjectByType<WorldConstruction>();
+            var serialized=new SerializedObject(construction);
+            var bindings=serialized.FindProperty("blueprints");
+            oak=VillageE07Materials.Load("DarkOak");lightOak=VillageE07Materials.Load("AgedOak");
+            stone=VillageE07Materials.Load("GreyStone");
+            plants=new[]{"Helecho verde","Carex oliva","Brote ocre"}
+                .Select(name=>AssetDatabase.LoadAssetAtPath<Material>(Library+"/Materials/"+name+".mat")).ToArray();
+            RefreshMesh("Bosque_Borde_Helechos_Y_Carex",Foliage);
+            RefreshMesh("Piloto_Elfico_Arco_Vivo",Elven);
+            var leaf=plants[1];
+            var farm=Prefab("Asentamiento_Surcos_De_Granja",draft=>FarmDress(draft,leaf),false);
+            var workshop=Prefab("Asentamiento_Banco_De_Taller",WorkshopDress);
+            var variants=new Dictionary<GameObject,GameObject>();
+            for(var i=0;i<bindings.arraySize;i++)
+            {
+                var binding=bindings.GetArrayElementAtIndex(i);
+                var id=binding.FindPropertyRelative("Id").stringValue;
+                if(id!="farm"&&id!="workshop")continue;
+                var reference=binding.FindPropertyRelative("Prefab");
+                if(reference.objectReferenceValue is not GameObject original)continue;
+                if(!variants.TryGetValue(original,out var variant))
+                {
+                    var instance=(GameObject)PrefabUtility.InstantiatePrefab(original);
+                    try
+                    {
+                        V.Place(id=="farm"?farm:workshop,instance.transform,Vector3.zero);
+                        variant=PrefabUtility.SaveAsPrefabAsset(instance,Library+"/Prefabs/"+original.name+"_Art.prefab");
+                        variants.Add(original,variant);
+                    }
+                    finally{Object.DestroyImmediate(instance);}
+                }
+                reference.objectReferenceValue=variant;
+            }
+            if(variants.Count==0)throw new InvalidOperationException("No settlement visual binding was changed.");
+            serialized.ApplyModifiedPropertiesWithoutUndo();
+            PrefabUtility.RecordPrefabInstancePropertyModifications(construction);
+            EditorSceneManager.MarkSceneDirty(scene);
+            EditorSceneManager.SaveScene(scene);
+            AssetDatabase.SaveAssets();
+        }
+
+        private static void RefreshMesh(string name,Action<FrontierArtMesh> sculpt)
+        {
+            var draft=new FrontierArtMesh();
+            sculpt(draft);
+            draft.UpdateAsset(Library+"/Meshes/"+name+".asset");
+        }
+
+        private static void FarmDress(FrontierArtMesh mesh,Material leaf)
+        {
+            var soil=VillageE07Materials.Load("Earth");
+            for(var row=0;row<4;row++)
+            {
+                var z=-1.04f+row*.52f;
+                mesh.Block(soil,new Vector3(0,.067f,z),new Vector3(2.42f,.105f,.32f),.045f,Q);
+                for(var i=0;i<7;i++)
+                {
+                    var stem=new Vector3(-.99f+i*.33f,.12f,z);
+                    mesh.Leaf(leaf,stem,stem+new Vector3(.13f,.27f,.10f),.063f,.028f);
+                    mesh.Leaf(leaf,stem,stem+new Vector3(-.11f,.30f,-.11f),.060f,.028f);
+                }
+            }
+        }
+
+        private static void WorkshopDress(FrontierArtMesh mesh)
+        {
+            for(var i=0;i<5;i++)
+                mesh.Block(i%2==0?lightOak:oak,new Vector3(.88f,.63f,-1.31f+i*.079f),new Vector3(.92f,.11f,.072f),.016f,Q);
+            foreach(var x in new[]{.49f,1.29f})
+                mesh.Beam(oak,new Vector3(x,.05f,-1.17f),new Vector3(x,.62f,-1.17f),.11f,.12f);
+            mesh.Block(stone,new Vector3(.96f,.744f,-1.16f),new Vector3(.22f,.13f,.16f),.033f,Q);
+            mesh.Beam(lightOak,new Vector3(.59f,.71f,-1.25f),new Vector3(.78f,.72f,-1.05f),.048f,.05f);
+        }
+
+        private static void SetMaps(string surface,params string[] materials)
+        {
+            var color=LoadTexture(surface+"_Albedo",false);
+            var normal=LoadTexture(surface+"_Normal",true);
+            foreach(var name in materials)
+            {
+                var material=AssetDatabase.LoadAssetAtPath<Material>(Library+"/Materials/"+name+".mat");
+                material.SetTexture("_BaseMap",color);
+                material.SetTexture("_BumpMap",normal);
+                material.SetFloat("_BumpScale",.22f);
+                material.EnableKeyword("_NORMALMAP");
+                EditorUtility.SetDirty(material);
+            }
+        }
+
+        private static Texture2D LoadTexture(string name,bool normal)
+        {
+            var path=Library+"/Textures/"+name+".png";
+            if(AssetImporter.GetAtPath(path) is not TextureImporter importer)
+                throw new InvalidOperationException("Missing original surface texture "+path);
+            importer.textureType=normal?TextureImporterType.NormalMap:TextureImporterType.Default;
+            importer.sRGBTexture=!normal;
+            importer.wrapMode=TextureWrapMode.Repeat;
+            importer.mipmapEnabled=true;
+            importer.filterMode=FilterMode.Trilinear;
+            importer.SaveAndReimport();
+            return AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+        }
+
+        private static void Accent(Transform parent,string name,Vector3 point,float range,float intensity)
+        {
+            var node=V.Group(parent,name);node.position=point;
+            var light=node.gameObject.AddComponent<Light>();
+            light.type=LightType.Point;light.shadows=LightShadows.None;
+            light.color=new Color(1,.65f,.33f);light.range=range;light.intensity=intensity;
+        }
+
         private static void LoadPalette()
         {
             oak=VillageE07Materials.Load("DarkOak");lightOak=VillageE07Materials.Load("AgedOak");
             stone=VillageE07Materials.Load("GreyStone");lightStone=VillageE07Materials.Load("WarmStone");
-            plaster=VillageE07Materials.Load("Plaster");iron=VillageE07Materials.Load("Iron");glass=VillageE07Materials.Load("EmberGlass");
+            iron=VillageE07Materials.Load("Iron");glass=VillageE07Materials.Load("EmberGlass");
             var baseSlate=VillageE07Materials.Load("Slate");
             slate=new[]{Tint(baseSlate,"Pizarra húmeda",new Color(.41f,.47f,.52f)),Tint(baseSlate,"Pizarra gris",new Color(.51f,.56f,.59f))};
             clay=new[]{Tint(baseSlate,"Teja de arcilla",new Color(.64f,.39f,.29f)),Tint(baseSlate,"Teja cocida oscura",new Color(.47f,.29f,.22f))};
