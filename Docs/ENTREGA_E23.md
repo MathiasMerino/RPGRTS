@@ -14,8 +14,20 @@ Escena `Assets/01_Scenes/AetherniaE23IntegratedAlpha.unity`. Build Windows x64 `
 
 - E22 cerró 230/230 en regresión y 8/8 procesos Windows, con tres cierres y recarga. El fallo visual del segundo botón pasó a E23. [Informe E22](ENTREGA_E22.md)
 - E23 pasó 5/5 dirigidas después de corregir el alcance de la prueba de interfaz. El primer intento obtuvo 4/5 porque el validador del tablón también inspeccionó el menú oculto. Se verificaron los botones y etiquetas del tablón a 1280×720, 1920×1080 y 2560×1440. Esta prueba cubre el tablón. [Prueba dirigida](Validacion/E23/Dirigidas.xml)
-- Regresión general, prueba del ZIP y perfilado en curso. La evaluación humana de balance, oclusión, ritmo, nitidez y fluidez presentada queda pendiente.
+- ZIP comprobado con CRC y SHA‑256 por archivo y verificado de nuevo tras extraerlo fuera del proyecto. Se conservaron los 26 ZIP históricos. La regresión y el recorrido nativo están en curso. [Manifiesto](Validacion/E23/PORTABLE.json)
+
+## Rendimiento medido
+
+Perfilado en un i5‑12450H con RTX 3050 Laptop GPU, desde la extracción externa y con un guardado real de E22. Se completaron 18 combinaciones de calidad y resolución con 9.705 solicitudes de render URP fuera de pantalla. El rótulo E13 del JSON pertenece a la sonda reutilizada.
+
+| Carga · Alto 1080p | Intervalo CPU medio | P95 | P95 de asignación GC |
+|---|---:|---:|---:|
+| Aldea en pausa | 4,43 ms | 6,43 ms | 1.156 B |
+| Menú con vista previa | 7,83 ms | 14,01 ms | 1.618 B |
+| Preparación RTS en pausa | 7,27 ms | 10,59 ms | 11.044 B |
+
+La medición incluye solicitudes de render. Quedan pendientes GPU frame time, FPS presentados, mazmorra en movimiento, combate activo y construcción. La evaluación humana de balance, oclusión, ritmo, nitidez y fluidez presentada queda pendiente. [Datos](Validacion/E23/PERFORMANCE.json)
 
 El guardado v1 de E22 se conserva. La compilación usa la configuración local existente de antialiasing de calidad media, que queda fuera de los commits. No se añadieron dependencias de arte.
 
-[Guía](GUIA_E23.md) · [Notas](NOTAS_E23.md) · [Integración](INTEGRACION_E23.md)
+[Guía](GUIA_E23.md) · [Notas](NOTAS_E23.md) · [Integración](INTEGRACION_E23.md) · [PR #17](https://github.com/MathiasMerino/RPGRTS/pull/17)

@@ -20,6 +20,6 @@ La revisión inicial encontró los PR #1 a #15 abiertos en borrador. Todas las b
 | #14 | #13 | Estabilización E20.1 | Repetir la patrulla histórica con cadencias representativas. |
 | #15 | #14 | Campaña E21 | Revisar decisiones, ruinas y cierre. |
 | [#16](https://github.com/MathiasMerino/RPGRTS/pull/16) | #15 | Mundo libre, borrador | Revisar 230/230 y los recorridos Windows. |
-| E23 | E22 | Alfa y consolidación | Revisar pruebas, ZIP y usabilidad. |
+| [#17](https://github.com/MathiasMerino/RPGRTS/pull/17) | #16 | Alfa y consolidación, borrador | Revisar pruebas, ZIP y usabilidad. |
 
 Los solapamientos afectan UI, controladores y escenas. Al aprobar cada antecedente, comprueba su ascendencia en `dev` y el diff efectivo del siguiente PR antes de actualizar su destino. Confirma referencias y GUID en Unity si un cambio toca escenas o prefabs. La rama E23 contiene ya toda la pila por ascendencia y permite probar la combinación. La integración a `dev` y la promoción a `main` requieren su propia aprobación.
