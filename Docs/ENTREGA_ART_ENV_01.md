@@ -20,10 +20,22 @@ La primera pasada y la final dieron 4/4 pruebas dirigidas. La escena conserva la
 
 - Windows x64 generado con Unity 6000.5.8f1 desde la copia independiente. ZIP con CRC y SHA por archivo comprobados. Se conservaron 27 ZIP anteriores. [Manifiesto](Validacion/ARTENV01/PORTABLE.json)
 - Biblioteca de 21 prefabs y 18 mallas originales, con 39.566 triángulos únicos entre estas mallas. La suma excluye las instancias en escena y los recursos heredados. [Mallas](Validacion/ARTENV01/MALLAS.csv)
-- 18 cargas fuera de pantalla, 4.332 envíos URP, RTX 3050 Laptop GPU. En Alto a 1080p el P95 fue 12,54 ms en aldea pausada, 19,81 ms en menú y 25,56 ms en preparación RTS. El contador medio SetPass subió de 21 a 30 en aldea y preparación frente al informe histórico de E23. Las dos sesiones usaron archivos de guardado distintos, por lo que el aumento de tiempo no aísla el coste del arte. Quedan pendientes el perfilado comparativo controlado y los FPS presentados. [Mediciones](Validacion/ARTENV01/PERFORMANCE.json)
+- Primera medición de 18 cargas fuera de pantalla y 4.332 envíos URP en una RTX 3050 Laptop GPU. En Alto a 1080p el P95 fue 12,54 ms en aldea pausada, 19,81 ms en menú y 25,56 ms en preparación RTS. [Medición inicial](Validacion/ARTENV01/PERFORMANCE.json)
 - 6/6 procesos Windows desde el ZIP, con Guerrero, Mago y Monje. El recorrido E23 se ejecutó contra el binario de arte. Incluye los tres cierres, guardado, recarga y granja de nivel 2. El máximo muestreado por proceso de inicio quedó entre 781 y 787 MiB de conjunto de trabajo. [Recorridos](Validacion/ARTENV01/WINDOWS.json)
 - La grabación añadió 2/2 procesos aprobados y 142 fotogramas de la cámara durante el RTS. Se conservaron la comparación de la portada y las capturas de construcción en el player. [Vídeo](Videos/ARTENV01/Puesto-del-Umbral.mp4) · [Registro de captura](Validacion/ARTENV01/GRABACION.txt)
-- Regresión general en curso. La evaluación artística humana queda pendiente.
+- Regresión general de 237 casos. Pasaron 235. Una comparación histórica falló por LF/CRLF en la copia de Git y una revisión local de Meshy quedó omitida por ausencia del modelo privado. El caso de física pasó 1/1 al recuperar los bytes exactos del archivo de referencia en el worktree. La evaluación artística humana queda pendiente. [Resultado original](Validacion/ARTENV01/GENERAL.json) · [Repetición aislada](Validacion/ARTENV01/REPETICION_FISICA.xml)
+
+## Comparación de rendimiento
+
+Se repitieron 18 cargas por versión con el mismo guardado E23, ejecutando los dos players por separado. Los intervalos incluyen envíos de render fuera de pantalla. FPS presentados y combate activo quedan pendientes.
+
+| Alto, 1080p | E23 P95 | ART-ENV-01 P95 | SetPass medios E23 → ART |
+|---|---:|---:|---:|
+| Aldea en pausa | 11,81 ms | 12,34 ms | 21 → 30 |
+| Menú | 23,21 ms | 23,53 ms | 41 → 56 |
+| Preparación RTS | 20,31 ms | 21,28 ms | 21 → 30 |
+
+[Control E23](Validacion/ARTENV01/Control-E23.json) · [Control ART-ENV-01](Validacion/ARTENV01/Control-ARTENV01.json)
 
 Para la siguiente revisión, priorizar la legibilidad de los accesos con distintas distancias de cámara, los bordes del terreno y el coste de materiales antes de ampliar los kits a conjuntos culturales completos.
 

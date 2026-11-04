@@ -815,3 +815,5 @@ Build Windows `79b0504`, CRC y SHA por archivo, 26 ZIP anteriores conservados y 
 ## 2026-11-04 — ART-ENV-01, pasada ambiental
 
 Se trabajó desde E23 `eff3fdb` con respaldo de los cambios locales y una copia independiente de Unity. La candidata agrega cubiertas, fachadas, mercado, vegetación, portada, empalizada y variantes visuales de asentamiento. La biblioteca incluye módulos culturales de estudio y mapas originales. La verificación distingue comparativas de Unity, recorridos Windows y aprobación humana.
+
+Build `1069136`, 21 prefabs y 18 mallas originales. ZIP con CRC/SHA y 27 previos conservados. Windows 8/8, vídeo de 142 fotogramas y dirigidas 4/4. General 235 aprobadas, 1 fallo de fin de línea LF/CRLF y 1 omitida de Meshy. El caso de física pasó al repetirlo con los bytes exactos del repositorio. PR #18 en borrador sobre #17.

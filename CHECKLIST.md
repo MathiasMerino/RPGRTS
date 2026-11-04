@@ -1369,7 +1369,7 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 | ID | Prioridad y dependencia | Estado | Aceptación y evidencia |
 |---|---|---|---|
 | ART-ENV-00 | P0 · E23 | Completado y verificado | Base E23 `eff3fdb`, PR #17 sobre #16. Respaldo SHA de archivos locales y autoría en worktree separado. |
-| ART-ENV-ALDEA | P1–P5 · 00 | En desarrollo | Cubiertas, fachada, mercado, camino, vegetación y materiales integrados. `FrontierWorldArt.cs`, `FrontierArtMesh.cs`, escena candidata y prefabs. Primeras dirigidas 4/4. |
-| ART-ENV-ZONAS | P6–P10 · ALDEA | En desarrollo | Portada, campamento, puesto, dos decoraciones construibles y módulos culturales piloto. Escena jugable y escena de estudio. |
-| ART-ENV-QA | P11–P12 · ZONAS | En desarrollo | Comparativas con cámara equivalente, referencia física, build, regresión y pruebas Windows. `FrontierWorldArtTests.cs`. |
+| ART-ENV-ALDEA | P1–P5 · 00 | Completado y verificado | Cubiertas, fachada, mercado, camino, vegetación y materiales integrados. `FrontierWorldArt.cs`, `FrontierArtMesh.cs`, escena candidata y prefabs. Dirigidas 4/4 y comparativas. |
+| ART-ENV-ZONAS | P6–P10 · ALDEA | Completado y verificado | Portada, campamento, puesto, dos decoraciones construibles y tres módulos culturales piloto. Escena jugable y estudio. Capturas Windows de ruinas, conquista y granja. |
+| ART-ENV-QA | P11–P12 · ZONAS | Completado y verificado | Build, ZIP, Windows 8/8 y comparación URP. General 235 aprobadas, 1 fallo de fin de línea, 1 omitida privada. Repetición del caso histórico 1/1 con bytes de Git. `Docs/Validacion/ARTENV01`. |
 | ART-ENV-HUM | P12 · QA | Pendiente | Legibilidad, composición, identidad cultural y valoración artística humana. |
