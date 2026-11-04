@@ -1359,6 +1359,7 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 | E23-00 | P0/P2 · E22 | Completado y verificado | E22 230/230 recuperada, PR #16 sobre #15, 15 bases previas comprobadas. `Docs/INTEGRACION_E23.md` y `GITHUB_BASE.json`. |
 | E23-INT | P1/P3–P6 · 00 | Completado y verificado | Escena sobre sistemas E22. Dirigidas 5/5. Windows 6/6, tres cierres, guardado, conquista, contratos, comercio y mejora. `LivingWorldRoute.cs`, `WINDOWS.json`. |
 | E23-UX | P7/P8 · INT | Completado y verificado | Verbos E contextuales, encuadre de mazmorra, guía de encargos y pista del Mago. Tablón verificado a 720p, 1080p y 1440p. Comparativa del centinela. `UxExperienceView.cs`, `IsometricCameraRig.cs`, `IntegratedAlphaTests.cs`. |
-| E23-QA | P9–P12 · INT | En desarrollo | Regresión, Windows desde ZIP, perfilado y evidencia. `Docs/Validacion/E23` y `Docs/GUIA_E23.md`. |
-| E23-COMPOSICIÓN | P5 · INT | Pendiente | Victoria de las dos guardianías originales con cero, uno y dos acompañantes. Inicio 0–3 verificado históricamente, centinela opcional 0–2 ganado en E23. |
+| E23-QA | P9–P12 · INT | Completado y verificado | General 232/232, Windows 8/8, ZIP externo CRC/SHA, 18 combinaciones URP, capturas y vídeo. PR #17 sobre #16. `Docs/Validacion/E23` y `Docs/GUIA_E23.md`. |
+| E23-COMPOSICIÓN | P5 · INT | Completado y verificado | Guerrero, semilla 42, ambas guardianías ganadas con 1–3. Solo perdió la primera y se retiró. Centinela ganado con 0–2. `GuardianCompositionTests.cs`, `GUARDIANIAS.csv`. |
+| E23-BALANCE | P9 · COMPOSICIÓN | Pendiente | Viabilidad en solitario, balance con otras semillas y estrategias y medición de combate activo. |
 | E23-HUM | P12 · QA | Pendiente | Usabilidad, ritmo, calidad artística y rendimiento presentado requieren revisión humana. |

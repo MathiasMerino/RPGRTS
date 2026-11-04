@@ -1,0 +1,24 @@
+{
+  "source": "79b0504",
+  "unity": "6000.5.8f1",
+  "mode": "Vertical, all editor fixtures including Play Mode flows",
+  "results": {
+    "total": "232",
+    "passed": "232",
+    "failed": "0",
+    "skipped": "0",
+    "inconclusive": "0",
+    "result": "Passed"
+  },
+  "finishedUtc": "2026-11-04 21:14:01Z",
+  "candidateCases": [
+    {
+      "name": "CandidateUsesTheLivingWorldWithoutPrivateDependencies",
+      "result": "Passed"
+    },
+    {
+      "name": "PromptsAndContractGuidanceUseTheRealWorld",
+      "result": "Passed"
+    }
+  ]
+}
