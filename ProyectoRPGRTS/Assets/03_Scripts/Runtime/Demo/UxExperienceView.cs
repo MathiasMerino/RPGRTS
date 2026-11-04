@@ -113,7 +113,7 @@ namespace Aethernia
             }
         }
         private void OnDisable(){if(Commands!=null)Commands.ModalOpen=null;if(Flow!=null&&Flow.CameraRig!=null)Flow.CameraRig.ModalOpen=null;if(motor!=null)motor.ModalOpen=null;}
-        private static string Verb(InteractionPoint point)=>point.FactId==LostCargoQuest.NpcId?"Hablar":point.FactId==LostCargoQuest.CargoId?"Recuperar":point.FactId=="demo-patrol"?"Preparar patrulla":point.FactId.StartsWith("portal-")?"Viajar":"Examinar";
+        private static string Verb(InteractionPoint point)=>point.TryGetComponent<WorldInteractable>(out var world)?world.Action:point.FactId==LostCargoQuest.NpcId?"Hablar":point.FactId==LostCargoQuest.CargoId?"Recuperar":point.FactId=="demo-patrol"?"Hablar":point.FactId=="umbral-entry"?"Entrar":point.FactId=="umbral-exit"?"Regresar":point.FactId.StartsWith("portal-")?"Viajar":"Examinar";
         private void SetObjective()
         {
             var state=Flow.Session.State;var mode=Flow.Session.Mode;var quest=LostCargoQuest.Stage(state);
@@ -134,7 +134,7 @@ namespace Aethernia
             else if(state.Demo!=null&&state.Demo.Chapter<DemoChapter.Settlement)
             {ObjectivePosition=Flow.Patrol.transform.position;objective.text="LA PATRULLA\nRevisa salud y raciones en Inventario.\nDespués, habla con el capitán.";}
             else
-            {ObjectivePosition=new Vector3(9,0,-10);objective.text="CAMPAMENTO\nMenú → Construir: centro, taller y producción.\nDespués: compañeros, mazmorra y culturas.";if(state.Demo!=null&&state.Demo.Chapter==DemoChapter.FreeExploration)markerRect.gameObject.SetActive(false);}
+            {ObjectivePosition=new Vector3(9,0,-10);objective.text="CAMPAMENTO\nMenú → Construir: centro, taller y producción.\nDespués: compañeros, mazmorra y culturas.";if(state.Demo!=null&&state.Demo.Chapter==DemoChapter.FreeExploration){markerRect.gameObject.SetActive(false);if(Flow.Session.Rules.WorldExploration)objective.text="EXPLORACIÓN LIBRE\nSendero y ruinas al sur del cruce.\nGrupo, comercio y culturas disponibles.";}}
         }
     }
 }

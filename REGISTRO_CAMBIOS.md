@@ -729,3 +729,7 @@ Perfil de exploración5.4m sobre el único rig UX01, límites ampliados sólo pa
 ## 2026-11-03 — UX2-F órdenes RTS verificadas por API
 
 El controlador existente valida toda la formación antes de aceptar una orden: sin seleccionados, NaN, aliado como objetivo o destino inaccesible se rechazan sin activar hostilidad. Separación1.2m y posiciones de aproximación según alcance, conservando daño/salud/roles. DemoRtsInput respeta ventanas modales. DIRIGIDA_05 verifica hitos/llegadas/ataque explícito. Entrada de dispositivo y resultado Windows todavía pendientes. Incidencia histórica de reserva sin cambios.
+
+## 2026-11-03 — UX2-B/HUD refinamiento visual
+
+Cintas continuas Catmull-Rom eliminan huecos triangulares en curvas, UV en metros y Earth Lit compartido; árboles/props nuevos reutilizan Alpha/ShaderGraph y viento0.035 existentes con bounds conservadores. Sin materiales/dependencias nuevos. HUD de exploración libre deja de pedir edificios ya terminados y RTS confirma órdenes aceptadas. DIRIGIDA_05 aprobó7/7 antes del ajuste puramente visual; regresión general y Windows finales comprobarán la candidata completa.

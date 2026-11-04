@@ -95,7 +95,7 @@ namespace Aethernia.Editor.Characters
         }
         private static void Road(string name,Vector3[] points,float halfWidth)
         {
-            var mesh=Aethernia.Editor.Environment.VillageE07Nature.Road(points,halfWidth,.023f);AssetDatabase.CreateAsset(mesh,Root+"/"+name.Replace(" ","")+".asset");
+            var mesh=Ribbon(points,halfWidth);AssetDatabase.CreateAsset(mesh,Root+"/"+name.Replace(" ","")+".asset");
             var node=new GameObject(name,typeof(MeshFilter),typeof(MeshRenderer));node.transform.SetParent(world);node.GetComponent<MeshFilter>().sharedMesh=mesh;
             node.GetComponent<Renderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/13_AlphaCandidate/Materials/Earth_Alpha.mat");
         }
@@ -179,6 +179,9 @@ namespace Aethernia.Editor.Characters
             // Estas cintas tienen UV en metros. El shader Alpha exige UV normalizados para su máscara;
             // reutilizar Earth Lit evita convertir la mayor parte del camino en hierba o estirar el albedo.
             foreach(var name in new[]{"Forest main road","Ruins branch","Village return loop"})worldRoot.Find(name).GetComponent<Renderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Earth.mat");
+            RepairRoad(worldRoot,"Forest main road",new[]{new Vector3(-12,0,1.5f),new Vector3(-19,0,1),new Vector3(-25,0,-2),new Vector3(-33,0,-3),new Vector3(-41,0,-2),new Vector3(-47,0,-.5f)},1.9f);
+            RepairRoad(worldRoot,"Ruins branch",new[]{new Vector3(-25,0,-2),new Vector3(-26,0,-8),new Vector3(-22,0,-13),new Vector3(-16,0,-16)},1.75f);
+            RepairRoad(worldRoot,"Village return loop",new[]{new Vector3(-16,0,-16),new Vector3(-10,0,-17),new Vector3(-9,0,-11)},1.75f);
             foreach(var tree in Object.FindObjectsByType<RoofCutaway>())
             {
                 var p=tree.transform.position;
@@ -205,6 +208,33 @@ namespace Aethernia.Editor.Characters
         {
             if(string.IsNullOrEmpty(value)||(!value.Contains("\u00c3")&&!value.Contains("\u00e2")&&!value.Contains("\u00c2")))return value;
             try{return new System.Text.UTF8Encoding(false,true).GetString(System.Text.Encoding.GetEncoding(1252).GetBytes(value));}catch(System.Text.DecoderFallbackException){return value;}
+        }
+        private static void RepairRoad(Transform root,string name,Vector3[] points,float halfWidth)
+        {
+            var mesh=root.Find(name).GetComponent<MeshFilter>().sharedMesh;var fresh=Ribbon(points,halfWidth);
+            EditorUtility.CopySerialized(fresh,mesh);Object.DestroyImmediate(fresh);EditorUtility.SetDirty(mesh);
+        }
+        private static Mesh Ribbon(Vector3[] points,float halfWidth)
+        {
+            var centres=new List<Vector3>();
+            for(var s=0;s<points.Length-1;s++)
+            {
+                var a=points[Mathf.Max(0,s-1)];var b=points[s];var c=points[s+1];var d=points[Mathf.Min(points.Length-1,s+2)];
+                var steps=Mathf.CeilToInt(Vector3.Distance(b,c)/.4f);
+                for(var j=0;j<steps;j++)
+                {var t=(float)j/steps;centres.Add(.5f*((2*b)+(-a+c)*t+(2*a-5*b+4*c-d)*t*t+(-a+3*b-3*c+d)*t*t*t));}
+            }
+            centres.Add(points.Last());var vertices=new List<Vector3>();var uv=new List<Vector2>();var triangles=new List<int>();var distance=0f;
+            for(var i=0;i<centres.Count;i++)
+            {
+                if(i>0)distance+=Vector3.Distance(centres[i],centres[i-1]);
+                var tangent=(centres[Mathf.Min(centres.Count-1,i+1)]-centres[Mathf.Max(0,i-1)]).normalized;var side=Vector3.Cross(Vector3.up,tangent);
+                var width=halfWidth*(.94f+Mathf.PerlinNoise(centres[i].x*.9f+13,centres[i].z*.9f+11)*.12f);
+                vertices.Add(centres[i]-side*width+Vector3.up*.023f);vertices.Add(centres[i]+side*width+Vector3.up*.023f);
+                uv.Add(new Vector2(0,distance*.5f));uv.Add(new Vector2(width,distance*.5f));var n=i*2;
+                if(i>0)triangles.AddRange(new[]{n-2,n,n-1,n-1,n,n+1});
+            }
+            return V.Mesh("UX02 continuous metric road",vertices,triangles,uv);
         }
     }
 }

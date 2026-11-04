@@ -13,6 +13,7 @@ namespace Aethernia
         private readonly Dictionary<ExplorationUnit,Bar> bars=new Dictionary<ExplorationUnit,Bar>();
         private RectTransform panel,drag;
         private TMP_Text text;
+        private TMP_Text orderText;
         private Button attack,guard,recover,technique;
         private DemoWidgets ui;
         private Canvas canvas;
@@ -39,13 +40,15 @@ namespace Aethernia
                 var buttons=new[]{attack,guard,recover,technique};for(var i=0;i<buttons.Length;i++)if(buttons[i]!=null){var rect=(RectTransform)buttons[i].transform;rect.anchoredPosition=new Vector2(12+i*142,-40);rect.sizeDelta=new Vector2(134,36);buttons[i].GetComponentInChildren<TMP_Text>().fontSize=15;}
             }
             drag=DemoWidgets.Rect(canvas.transform,"Selection rectangle",0,0,0,0);DemoWidgets.Fill(drag,new Color(.70f,.63f,.36f,.18f),false);
+            if(Flow.Session.Rules.WorldExploration){orderText=ui.Text(canvas.transform,"RTS accepted order","",900,90,360,42,16);orderText.alignment=TextAlignmentOptions.TopRight;orderText.gameObject.SetActive(false);}
         }
         private void Order(string action){if(!Flow.Director.Rts.HeroAction(action))Flow.Session.Say("Selecciona al héroe y espera su intervalo; comprueba alcance y recursos.");}
         private void LateUpdate()
         {
             if(panel==null)return;var rts=Flow.Director.Rts;var show=Flow.IsPlaying&&rts.IncludesHero&&Flow.Session.Mode==PrototypeMode.Rts&&!Flow.ExistingHud.CompactView.HelpOpen;panel.gameObject.SetActive(show);
             foreach(var b in bars.Values)b.Root.gameObject.SetActive(false);
-            if(!show){ClearBars();drag.gameObject.SetActive(false);return;}
+            if(!show){ClearBars();drag.gameObject.SetActive(false);if(orderText!=null)orderText.gameObject.SetActive(false);return;}
+            if(orderText!=null){orderText.gameObject.SetActive(Time.unscaledTime-rts.LastOrderAt<2.5f);orderText.text="Orden: "+rts.LastOrderText;}
             rts.CopyStatus(status);var selectedHero=false;occupiedRects.Clear();var occupied=Flow.Front.Presentation==null?null:occupiedRects;
             foreach(var unit in status)
             {
