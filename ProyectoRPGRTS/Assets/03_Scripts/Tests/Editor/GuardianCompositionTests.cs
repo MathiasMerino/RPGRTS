@@ -115,4 +115,3 @@ namespace Aethernia.Tests.Editor
         [UnityTearDown] public IEnumerator Exit(){if(EditorApplication.isPlaying)yield return new ExitPlayMode();}
     }
 }
-
