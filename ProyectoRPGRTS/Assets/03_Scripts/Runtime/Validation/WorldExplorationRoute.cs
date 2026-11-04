@@ -99,7 +99,10 @@ namespace Aethernia
                 InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;
                 if(!attack)
                 {
-                    var before=allies[0].Unit.transform.position;var target=war.PreparationTarget+Vector3.back*3.5f;var at=(Vector2)camera.WorldToScreenPoint(target);
+                    var blockedAt=(Vector2)camera.WorldToScreenPoint(war.PreparationTarget+Vector3.back*3.5f);
+                    if(UiInputGuard.HasUiAt(blockedAt)){var stamp=war.LastOrderAt;yield return MouseFrame(mouse,blockedAt,2);yield return MouseFrame(mouse,blockedAt,0);Check(war.LastOrderAt==stamp&&war.Preparing,"native UI panel correctly blocks world order");}
+                    var before=allies[0].Unit.transform.position;var target=war.PreparationTarget+Vector3.forward*4;var at=(Vector2)camera.WorldToScreenPoint(target);
+                    Check(!UiInputGuard.HasUiAt(at),"synthetic move target is visible ground outside UI");
                     yield return MouseFrame(mouse,at,2);yield return MouseFrame(mouse,at,0);end=Time.realtimeSinceStartup+4;
                     while(Vector3.Distance(allies[0].Unit.transform.position,before)<=.15f&&Time.realtimeSinceStartup<end)yield return null;
                     var hit=Physics.Raycast(camera.ScreenPointToRay(at),out var pointerHit,150)?pointerHit.collider.name+" "+pointerHit.point:"none";

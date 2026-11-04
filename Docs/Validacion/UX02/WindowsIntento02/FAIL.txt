@@ -1,0 +1,5 @@
+FAIL: System.InvalidOperationException: UX01: UX02 native right mouse actual movement without hostility; moved=0 lastOrder= selected=2 pointer=(767.28, 90.56) hit=Muster soil 40x34m (-41.98, -0.02, -7.48) ui=True
+  at Aethernia.UxExperienceRoute.Require (System.Boolean ok, System.String step) [0x00014] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceRoute.cs:16 
+  at Aethernia.WorldExplorationRoute.Check (System.Boolean result, System.String name) [0x00000] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationRoute.cs:13 
+  at Aethernia.WorldExplorationRoute+<MouseOrders>d__8.MoveNext () [0x00587] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationRoute.cs:106 
+  at Aethernia.WorldExplorationSmokeProbe+<Start>d__1.MoveNext () [0x00191] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationSmokeProbe.cs:21 

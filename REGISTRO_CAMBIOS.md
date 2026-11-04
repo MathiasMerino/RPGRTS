@@ -737,3 +737,7 @@ Cintas continuas Catmull-Rom eliminan huecos triangulares en curvas, UV en metro
 ## 2026-11-03 — UX2-H primer Windows y corrección de arranque
 
 Primera build0e96f06: Windows detecta tres agentes de NPC activos antes de registrar NavMesh y una comprobación de desplazamiento con ratón que falla. Recibo, errores y huella preservados en WindowsIntento01; no se declara aprobado. Las tres instancias UX02 se serializan deshabilitadas y se habilitan por ExplorationUnit.Start tras Awake de superficies, igual que el héroe. UI proyectada se calcula después de la cámara mediante órdenes100/550/600 para evitar barras desplazadas en transiciones. La prueba de ratón espera estabilización del encuadre y desplazamiento observado con límite, registra hit/UI/orden si falla; sin cambiar reglas ni simular victoria. Guardia se verifica por movimiento real, no sólo existencia. Se oculta la cinta visual UX01 superpuesta al sendero nuevo; física original conservada.
+
+## 2026-11-03 — UX2-H Windows segundo intento
+
+Build53a5704: cero errores de agente; pasan comprobaciones nativas de navegación/patrulla del guardia, selección simple y Shift. El destino sintético(767,90) queda sobre el panel RTS y se rechaza correctamente; recibo conservado WindowsIntento02. Se convierte ese rechazo en comprobación explícita y se elige suelo visible para el ensayo de desplazamiento; no se modifica el bloqueo de UI ni reglas del juego. Nueva build de validación necesaria.
