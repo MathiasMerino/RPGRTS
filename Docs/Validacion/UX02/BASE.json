@@ -1,0 +1,113 @@
+{
+  "head": "d56fa5903696b6dfb85040d0f7a2f46b7a18c6fa",
+  "status": "M ProyectoRPGRTS/ProjectSettings/QualitySettings.asset",
+  "defaultBranch": "main",
+  "prs": [
+    {
+      "number": 11,
+      "draft": true,
+      "head": "feature/ux01-onboarding-camera-world",
+      "sha": "d56fa5903696b6dfb85040d0f7a2f46b7a18c6fa",
+      "base": "feature/e19-razas-civilizaciones"
+    },
+    {
+      "number": 10,
+      "draft": true,
+      "head": "feature/e19-razas-civilizaciones",
+      "sha": "3e53508512cbf92309bed38f533a7bdd587a9d59",
+      "base": "feature/e18-progresion-balance"
+    },
+    {
+      "number": 9,
+      "draft": true,
+      "head": "feature/e18-progresion-balance",
+      "sha": "33669f7a2d77d32b89886ce4f5669dfdf2811fa8",
+      "base": "feature/e17-art-pipeline-alpha-polish"
+    },
+    {
+      "number": 8,
+      "draft": true,
+      "head": "feature/e17-art-pipeline-alpha-polish",
+      "sha": "d7cacd7447c3ce3ef9e0427e57d4e14f6556a703",
+      "base": "feature/e16-pulido-visual-ui"
+    },
+    {
+      "number": 7,
+      "draft": true,
+      "head": "feature/e16-pulido-visual-ui",
+      "sha": "b0afdc2ef4346729ed16350e65ea1bc8e9864701",
+      "base": "feature/e14-e15-expediciones-conquista"
+    },
+    {
+      "number": 6,
+      "draft": true,
+      "head": "feature/e14-e15-expediciones-conquista",
+      "sha": "4efcd00a8fbd5a95f984fcf9f7bfddc5edf2b226",
+      "base": "feature/e10-e13-demo-jugable"
+    },
+    {
+      "number": 5,
+      "draft": true,
+      "head": "feature/e10-e13-demo-jugable",
+      "sha": "c33e34ded7f0c41ff4df43b322f6f9fac5917c77",
+      "base": "feature/e09-combate-rpg-ia"
+    },
+    {
+      "number": 4,
+      "draft": true,
+      "head": "feature/e09-combate-rpg-ia",
+      "sha": "66cf80f03f6b07de65e3f640ea72e3e6a38dd807",
+      "base": "feature/e08-personajes-animados"
+    },
+    {
+      "number": 3,
+      "draft": true,
+      "head": "feature/e08-personajes-animados",
+      "sha": "a7acaca98149dd495914bc7cf947b23ed0a4eab9",
+      "base": "feature/e07-aldea-medieval"
+    },
+    {
+      "number": 2,
+      "draft": true,
+      "head": "feature/e07-aldea-medieval",
+      "sha": "8f0108b5209f3774d9409e83f4f6aa74ae2c03b0",
+      "base": "feature/e03-e06-personajes-vertical-slice"
+    },
+    {
+      "number": 1,
+      "draft": true,
+      "head": "feature/e03-e06-personajes-vertical-slice",
+      "sha": "dab39c2188817044dd1603dd48671ac6e319da96",
+      "base": "dev"
+    }
+  ],
+  "stable": {
+    "refs/heads/dev": "742c04f6ac2afb8dfd3d0e56e3f2d45085c73a46",
+    "refs/heads/main": "5a2e3cef6707bd844cf728ea1adfff9c6d941002"
+  },
+  "qualitySHA256": "62494399222dd3d2c992d4c9c41deecdeffd5e50fde962be46b7f38a0a09b916",
+  "gddSHA256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "archives": {
+    "Aethernia-E03-E06-Demo-Windows.zip": "b24c5e24eff8d35f938629bc982e9f9970f3afe14a462507205ab3ab801fa668",
+    "Aethernia-E07-Aldea-Windows.zip": "967592477432b69635216ec85055892e9b9a5b96814bd3a73a736b073c33698a",
+    "Aethernia-E08-Personajes-Windows.zip": "adbb3fe1c1fa701f62dbaaf5d165aae532ce47e598d5b3874ecf4fb2b781591b",
+    "Aethernia-E09-Combate-Windows.zip": "11d3db3e940f286ef79ff7c2f52dcee3919f2a9accee4a7226b68d9cf2c17a79",
+    "Aethernia-E10-E13-Demo-Windows.zip": "6c833b8dab2bac55cc67502ee9f607eaecaea3494fd2837e4776b0673b81026e",
+    "Aethernia-E14-E15-Expediciones-Windows.zip": "958df84773407fe81274c366588ba60e97b4fe19feca69763c37be38912baf36",
+    "Aethernia-E16-Pulido-Visual-r2-Windows.zip": "5c949bafc736c6a7f5426cfdd5774ab108b06d6c75d4158ca64936bca269cf2b",
+    "Aethernia-E16-Pulido-Visual-r3-Windows.zip": "8c3b39c6b2747d9ba9649740c6f862a604c2666b5ff272d10cb428c46ac29737",
+    "Aethernia-E16-Pulido-Visual-Windows.zip": "40fd4a0922f0765e6111c0491dce7ac650d40d2e53a3dbf9345bdc4cf41d6e16",
+    "Aethernia-E17-Alpha-Candidate-Windows.zip": "4c16177bc696334549eebc942f21fc6ebcd63b151fafac79eb7d9910d4b6e87d",
+    "Aethernia-E18-Progresion-Windows.zip": "bc6828e2fe78c0f3f1115aa020ab7a5cc4913cd81b15dcd71aef3a8963d5d72f",
+    "Aethernia-E19-Culturas-Windows.zip": "5ec0e6afeef3f5021c097f661a1e3f1b8c847ca81329212b5a5f36a9418a8c10",
+    "Aethernia-Fase2-Windows.zip": "630b2c144c1f044d34bcf3395ab0bf03bdf68b1ef2ef21b66e934db9cfec22f2",
+    "Aethernia-Fase3-C02-Windows.zip": "2629012e4853500e12fbd495dbd1129452f2d80500f1c4b08d8ef2e00a8e734d",
+    "Aethernia-Fase3-D01-Windows.zip": "8e2262f981164205e658476d594ad03526c5128d04d6fbe821fac33a1c736111",
+    "Aethernia-Fase3-E01-Windows.zip": "1fd5dd2ba203a288557f497c30ddea607e955b17f59fe3369bf0b8ae14f6e61c",
+    "Aethernia-Fase3-E02-Windows.zip": "23a51daced714b1fc4fe9e3e8b9202b5966dcb78f5c922b1b38ddf92b180a83c",
+    "Aethernia-Fase3-E02B-Windows.zip": "fd91da79bf62154eb5569fbb90bf3863d667fd002bbc3dcdad0ea400b6ce956d",
+    "Aethernia-Fase3-UI-C1-Windows.zip": "db2d6a04acb149d24635e05e85cd656d4875a4b2627f93a5ee1e0a693a800d48",
+    "Aethernia-Prototipo-Windows.zip": "941b53550f5fd55e58ada307b0db01610e293176d1f6ec7b794ee24d64fd15d4",
+    "Aethernia-UX01-Experiencia-Windows.zip": "689f162ecb1ebd24d7d9609beee3dea7a95bd17161ffb284d17fc7f0bf4c3483"
+  }
+}

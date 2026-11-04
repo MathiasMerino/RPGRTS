@@ -26,11 +26,27 @@ namespace Aethernia
             InteractionPoint best=null;var score=float.MaxValue;
             for(var i=0;i<count;i++)
             {var candidate=nearby[i].GetComponentInParent<InteractionPoint>();if(candidate==null||!candidate.isActiveAndEnabled||!candidate.Available(session))continue;
-             var d=Vector3.Distance(hero.transform.position,candidate.transform.position);if(d>candidate.Reach)continue;var rank=d-(candidate==CurrentInteraction ? .25f : 0);if(rank<score){best=candidate;score=rank;}}
+             var d=Vector3.Distance(hero.transform.position,candidate.transform.position);if(d>candidate.Reach)continue;
+             if(session.Rules.WorldExploration&&!HasInteractionSight(candidate))continue;
+             var direction=candidate.transform.position-hero.transform.position;direction.y=0;
+             var focus=session.Rules.WorldExploration?Vector3.Dot(hero.transform.forward,direction.normalized)*.18f:0;
+             var rank=d-(candidate==CurrentInteraction ? .25f : 0)-focus-(candidate==Target ? .1f : 0);if(rank<score){best=candidate;score=rank;}}
             CurrentInteraction=best;return best;
         }
         public void Configure(Camera camera, ExplorationUnit unit, GameSession game)
         { view = camera; hero = unit; session = game; }
+        private readonly RaycastHit[] sightHits=new RaycastHit[32];
+        public bool HasInteractionSight(InteractionPoint point)
+        {
+            if(point==null||hero==null)return false;
+            var start=hero.transform.position+Vector3.up;var end=point.transform.position+Vector3.up;
+            var direction=end-start;var distance=direction.magnitude;if(distance<.01f)return true;
+            var count=Physics.RaycastNonAlloc(start,direction/distance,sightHits,distance,~0,QueryTriggerInteraction.Ignore);
+            if(count==sightHits.Length)return false; // Una consulta saturada no autoriza atravesar geometría no examinada.
+            for(var i=0;i<count;i++)
+            {var t=sightHits[i].transform;if(t.IsChildOf(hero.transform)||t.IsChildOf(point.transform)||point.transform.IsChildOf(t))continue;return false;}
+            return true;
+        }
         private void Update()
         {
             if((ModalOpen?.Invoke()??false)||session.Paused||session.WorldUiOpen||session.Mode==PrototypeMode.MainMenu||session.Mode==PrototypeMode.CharacterCreation||session.Mode==PrototypeMode.Intro)return;

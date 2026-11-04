@@ -116,7 +116,7 @@ namespace Aethernia
             if (!hero.Warp(loaded.HeroPosition)) return Reject("No se pudo cargar: posición del personaje fuera de terreno navegable. La partida actual se conserva.");
             ClearEncounters(); hero.Stop();
             session.ReplaceState(loaded); construction.Restore();
-            cameraRig.SetRegion(loaded.HeroPosition.x > 30 ? new Vector3(50, 0, 0) : Vector3.zero);
+            cameraRig.SetRegion(loaded.HeroPosition.x > 65 ? new Vector3(80,0,0) : loaded.HeroPosition.x > 30 ? new Vector3(50, 0, 0) : Vector3.zero);
             return true;
         }
         private bool Reject(string reason) { session.Say(reason); return false; }

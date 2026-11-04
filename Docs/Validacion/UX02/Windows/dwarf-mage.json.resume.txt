@@ -1,0 +1,1 @@
+PASS: UX02 dwarf/mage new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints; seconds=0.83

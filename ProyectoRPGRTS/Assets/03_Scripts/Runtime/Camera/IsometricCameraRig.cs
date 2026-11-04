@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 namespace Aethernia
 {
     [RequireComponent(typeof(Camera))]
+    [DefaultExecutionOrder(100)]
     public sealed class IsometricCameraRig : MonoBehaviour
     {
         [SerializeField] private Vector3 focus;
@@ -29,7 +30,7 @@ namespace Aethernia
             if(mode!=previousMode)
             {
                 previousMode=mode;minimumSize=mode==PrototypeMode.Exploration?4.5f:6;maximumSize=mode==PrototypeMode.Exploration?11:18;
-                size=mode==PrototypeMode.Exploration?6.2f:mode==PrototypeMode.TurnCombat?7:mode==PrototypeMode.Construction?10:mode==PrototypeMode.Rts?9:13;
+                size=mode==PrototypeMode.Exploration?(InputSession.Rules.WorldExploration?5.4f:6.2f):mode==PrototypeMode.TurnCombat?7:mode==PrototypeMode.Construction?10:mode==PrototypeMode.Rts?9:13;
                 manualUntil=0;
             }
             if(FollowTarget!=null&&mode==PrototypeMode.Exploration&&!InputSession.Paused&&Time.unscaledTime>manualUntil)
@@ -56,7 +57,7 @@ namespace Aethernia
         public void Configure(Vector3 centre) { focus = centre; view = GetComponent<Camera>(); Refresh(); }
         public void FocusOn(Vector3 point) { focus = new Vector3(point.x, 0, point.z); Refresh(); }
         public void SetRegion(Vector3 centre)
-        { horizontalLimits = new Vector2(centre.x - 18, centre.x + 18); verticalLimits = new Vector2(centre.z - 18, centre.z + 18); if(Ux&&centre==Vector3.zero){horizontalLimits=new Vector2(-54,18);verticalLimits=new Vector2(-18,18);} FocusOn(centre); }
+        { horizontalLimits = new Vector2(centre.x - 18, centre.x + 18); verticalLimits = new Vector2(centre.z - 18, centre.z + 18); if(Ux&&centre==Vector3.zero){horizontalLimits=new Vector2(-54,18);verticalLimits=new Vector2(-18,18);if(InputSession.Rules.WorldExploration){horizontalLimits=new Vector2(-56,22);verticalLimits=new Vector2(-23,22);}} FocusOn(centre); }
 
         private void Update()
         {
@@ -80,7 +81,7 @@ namespace Aethernia
 
         public void ApplyInput(Vector2 pan, float zoom, float deltaTime, bool blockedByUi)
         {
-            if (blockedByUi||(ModalOpen?.Invoke()??false)) return;
+            if (blockedByUi||(ModalOpen?.Invoke()??false)||(InputSession!=null&&InputSession.Rules.WorldExploration&&InputSession.WorldUiOpen)) return;
             var right = new Vector3(0.7071068f, 0, -0.7071068f);
             var forward = new Vector3(0.7071068f, 0, 0.7071068f);
             pan = Vector2.ClampMagnitude(pan, 1);

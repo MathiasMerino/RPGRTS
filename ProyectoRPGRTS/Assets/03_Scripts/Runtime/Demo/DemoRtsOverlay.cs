@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 namespace Aethernia
 {
+    [DefaultExecutionOrder(600)]
     public sealed class DemoRtsOverlay : MonoBehaviour
     {
         public DemoFlow Flow;
@@ -13,6 +14,7 @@ namespace Aethernia
         private readonly Dictionary<ExplorationUnit,Bar> bars=new Dictionary<ExplorationUnit,Bar>();
         private RectTransform panel,drag;
         private TMP_Text text;
+        private TMP_Text orderText;
         private Button attack,guard,recover,technique;
         private DemoWidgets ui;
         private Canvas canvas;
@@ -39,13 +41,15 @@ namespace Aethernia
                 var buttons=new[]{attack,guard,recover,technique};for(var i=0;i<buttons.Length;i++)if(buttons[i]!=null){var rect=(RectTransform)buttons[i].transform;rect.anchoredPosition=new Vector2(12+i*142,-40);rect.sizeDelta=new Vector2(134,36);buttons[i].GetComponentInChildren<TMP_Text>().fontSize=15;}
             }
             drag=DemoWidgets.Rect(canvas.transform,"Selection rectangle",0,0,0,0);DemoWidgets.Fill(drag,new Color(.70f,.63f,.36f,.18f),false);
+            if(Flow.Session.Rules.WorldExploration){orderText=ui.Text(canvas.transform,"RTS accepted order","",900,90,360,42,16);orderText.alignment=TextAlignmentOptions.TopRight;orderText.gameObject.SetActive(false);}
         }
         private void Order(string action){if(!Flow.Director.Rts.HeroAction(action))Flow.Session.Say("Selecciona al héroe y espera su intervalo; comprueba alcance y recursos.");}
         private void LateUpdate()
         {
             if(panel==null)return;var rts=Flow.Director.Rts;var show=Flow.IsPlaying&&rts.IncludesHero&&Flow.Session.Mode==PrototypeMode.Rts&&!Flow.ExistingHud.CompactView.HelpOpen;panel.gameObject.SetActive(show);
             foreach(var b in bars.Values)b.Root.gameObject.SetActive(false);
-            if(!show){ClearBars();drag.gameObject.SetActive(false);return;}
+            if(!show){ClearBars();drag.gameObject.SetActive(false);if(orderText!=null)orderText.gameObject.SetActive(false);return;}
+            if(orderText!=null){orderText.gameObject.SetActive(Time.unscaledTime-rts.LastOrderAt<2.5f);orderText.text="Orden: "+rts.LastOrderText;}
             rts.CopyStatus(status);var selectedHero=false;occupiedRects.Clear();var occupied=Flow.Front.Presentation==null?null:occupiedRects;
             foreach(var unit in status)
             {
@@ -53,13 +57,13 @@ namespace Aethernia
                 if(unit.Hero&&unit.Unit.IsSelected)selectedHero=true;
                 if(!bars.TryGetValue(unit.Unit,out var bar))
                 {
-                    var barWidth=unit.Hero?80:44;var rect=DemoWidgets.Rect(canvas.transform,"RTS health",0,0,barWidth,32);rect.anchorMin=rect.anchorMax=new Vector2(.5f,.5f);rect.pivot=new Vector2(.5f,0);if(Flow.Front.Presentation!=null)rect.SetAsFirstSibling();
-                    DemoWidgets.Fill(DemoWidgets.Rect(rect,"Track",0,23,barWidth,6),new Color(.06f,.06f,.05f),false);
-                    var fill=DemoWidgets.Fill(DemoWidgets.Rect(rect,"Health",0,23,barWidth,6),unit.Team==0?new Color(.43f,.65f,.32f):new Color(.70f,.27f,.20f),false);fill.sprite=Flow.Front.Presentation==null?Flow.Front.Theme.ButtonSprite:null;fill.type=Image.Type.Filled;fill.fillMethod=Image.FillMethod.Horizontal;
-                    bar=new Bar{Root=rect,Fill=fill,Label=ui.Text(rect,"Unit name","",0,0,150,22,15)};bars.Add(unit.Unit,bar);
+                    var compact=Flow.Session.Rules.WorldExploration;var barWidth=unit.Hero?80:compact?34:44;var rect=DemoWidgets.Rect(canvas.transform,"RTS health",0,0,barWidth,compact?22:32);rect.anchorMin=rect.anchorMax=new Vector2(.5f,.5f);rect.pivot=new Vector2(.5f,0);if(Flow.Front.Presentation!=null)rect.SetAsFirstSibling();
+                    DemoWidgets.Fill(DemoWidgets.Rect(rect,"Track",0,compact?16:23,barWidth,compact?5:6),new Color(.06f,.06f,.05f),false);
+                    var fill=DemoWidgets.Fill(DemoWidgets.Rect(rect,"Health",0,compact?16:23,barWidth,compact?5:6),unit.Team==0?new Color(.43f,.65f,.32f):new Color(.70f,.27f,.20f),false);fill.sprite=Flow.Front.Presentation==null?Flow.Front.Theme.ButtonSprite:null;fill.type=Image.Type.Filled;fill.fillMethod=Image.FillMethod.Horizontal;
+                    bar=new Bar{Root=rect,Fill=fill,Label=ui.Text(rect,"Unit name","",0,0,150,compact?16:22,compact?13:15)};bars.Add(unit.Unit,bar);
                 }
                 var projected=Camera.main.WorldToScreenPoint(unit.Unit.transform.position+Vector3.up*2.05f);if(projected.z<=0)continue;
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,projected,canvas.renderMode==RenderMode.ScreenSpaceOverlay?null:canvas.worldCamera,out var local);if(Flow.Front.Presentation!=null){var width=unit.Hero?140:48;var candidate=new Rect(local.x-width*.5f,local.y,width,30);for(var n=0;n<12&&occupied.Exists(r=>r.Overlaps(candidate));n++){local.y+=12;candidate.y=local.y;}occupied.Add(candidate);bar.Root.sizeDelta=new Vector2(width,32);bar.Label.rectTransform.sizeDelta=new Vector2(140,22);}
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,projected,canvas.renderMode==RenderMode.ScreenSpaceOverlay?null:canvas.worldCamera,out var local);if(Flow.Front.Presentation!=null){var width=unit.Hero?140:48;var candidate=new Rect(local.x-width*.5f,local.y,width,30);if(!Flow.Session.Rules.WorldExploration){for(var n=0;n<12&&occupied.Exists(r=>r.Overlaps(candidate));n++){local.y+=12;candidate.y=local.y;}occupied.Add(candidate);}bar.Root.sizeDelta=new Vector2(Flow.Session.Rules.WorldExploration?(unit.Hero?80:34):width,Flow.Session.Rules.WorldExploration?22:32);bar.Label.rectTransform.sizeDelta=new Vector2(140,Flow.Session.Rules.WorldExploration?16:22);}
                 bar.Root.anchoredPosition=local;bar.Root.gameObject.SetActive(true);
                 bar.Fill.fillAmount=(float)unit.Health/unit.Maximum;var detailed=unit.Hero||(rts.SelectedAllies==1&&unit.Unit.IsSelected);bar.Label.text=(unit.Hero?"HÉROE · ":unit.Team==0?"A ":"B ")+(detailed?unit.Role+" ":"")+unit.Health;
                 if(Flow.Front.Presentation!=null){bar.Label.fontSize=14;bar.Label.enabled=detailed;bar.Label.text=unit.Hero?"HÉROE "+unit.Health+"/"+unit.Maximum:unit.Role+" "+unit.Health;}

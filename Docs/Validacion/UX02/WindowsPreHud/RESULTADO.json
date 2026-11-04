@@ -1,0 +1,11 @@
+{
+  "revision": "eb79c332ffbba064e65c18058e892d310dd9d69c",
+  "passedProcesses": 6,
+  "classes": [
+    "human-warrior",
+    "dwarf-mage",
+    "elf-monk"
+  ],
+  "fullCircuitAndNewProcessContinue": true,
+  "notFinalHudBuild": true
+}

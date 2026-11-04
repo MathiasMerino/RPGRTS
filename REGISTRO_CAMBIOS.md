@@ -709,3 +709,55 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 - General completa:202/206,0omisiones. Fallo RTS históricoGuerrero y3timeouts180s (fallbackHumanoid, rutaMagoUX y bloqueoModalUX). GENERAL.xml/json conservados; no se aumenta límite ni se declara todoverde. Se inicia una comprobación aislada única de esos3casos para separar repetición local de fallo funcional.
 
 - Aislamiento final: los3timeouts generales pasan3/3 en editor nuevo con mismo código y límites (TIMEOUTS_AISLADOS). No se reproduce la interrupción ni se confirma causa; general202/206 permanece intacta y UX-GEN-TIMEOUT abierta. Sin otra regresión general repetida ni modificaciones adicionales al juego. Entrega técnica con37PNG/2vídeos,6procesos Windows yZIPverificado; revisión humana y RTS histórico pendientes.
+
+## 2026-11-03 — UX2-A inicio
+
+Rama UX02 desde d56fa59;11PR abiertos, main/dev intactas. Snapshot Docs/Validacion/UX02/BASE.json:21ZIP y hashes GDD/calidad previa. Plan secuencial Docs/UX02_MUNDO.md. Calidad local ajena conservada sin stage; evaluación humana e incidencias UX01 abiertas. Sin cambios de jugabilidad en este checkpoint.
+
+## 2026-11-03 — UX2-B/C/D/E integración del mundo
+
+Escena AetherniaUx02World sobre UX01 y datos propios Assets/17_UX02, originales conservados. Sendero principal, bifurcación a ruinas, bucle y campamento; mismos interiores y economía. Tres NPC de servicio con rig compartido, guardia en ruta corta y presentación única del habitante/capitán. Interacciones de señal/alijo/madera/puerta/almacén, hechos únicos persistentes y diálogos modales. Cámara y RTS se validan en bloques siguientes.
+
+QA en desarrollo: DIRIGIDA_01(1/6) reveló EnterPlayMode anidado en arnés, corregido; DIRIGIDA_02(2/6) reveló árbol bloqueando camino y glifos inexistentes, corregidos sin ignorar logs; DIRIGIDA_03(5/7) y04(6/7) detectaron conflicto de propiedad WorldUiOpen, corregido en ExpeditionPanel/Motor. La interfaz de expediciones no libera diálogos ajenos. Carga directa distingue región80 de mazmorra. El caso de resolución/closures de pruebas se separa del gameplay. Todos los XML se conservan.
+
+Inspección de PNG real detectó UV métricos incompatibles con máscara Alpha: nuevas cintas reutilizan Earth Lit, otros recursos nuevos reutilizan materiales Alpha/viento existentes. Corrección de codificación en cuatro fuentes tocadas y datos UX02 mediante autoría dirigida. No se declara aprobación humana ni toda la regresión verde.
+
+## 2026-11-03 — UX2-C cámara verificada técnicamente
+
+Perfil de exploración5.4m sobre el único rig UX01, límites ampliados sólo para la frontera UX02; RPG/RTS/construcción conservan perfiles. Bloqueo WorldUiOpen y corrección de región80 en carga directa de ruinas. DIRIGIDA_05:7/7, incluido seguimiento, tres resoluciones y recorte/restauración real de árbol sin editar física o materiales. Comodidad/oclusión humana sigue pendiente.
+
+## 2026-11-03 — UX2-F órdenes RTS verificadas por API
+
+El controlador existente valida toda la formación antes de aceptar una orden: sin seleccionados, NaN, aliado como objetivo o destino inaccesible se rechazan sin activar hostilidad. Separación1.2m y posiciones de aproximación según alcance, conservando daño/salud/roles. DemoRtsInput respeta ventanas modales. DIRIGIDA_05 verifica hitos/llegadas/ataque explícito. Entrada de dispositivo y resultado Windows todavía pendientes. Incidencia histórica de reserva sin cambios.
+
+## 2026-11-03 — UX2-B/HUD refinamiento visual
+
+Cintas continuas Catmull-Rom eliminan huecos triangulares en curvas, UV en metros y Earth Lit compartido; árboles/props nuevos reutilizan Alpha/ShaderGraph y viento0.035 existentes con bounds conservadores. Sin materiales/dependencias nuevos. HUD de exploración libre deja de pedir edificios ya terminados y RTS confirma órdenes aceptadas. DIRIGIDA_05 aprobó7/7 antes del ajuste puramente visual; regresión general y Windows finales comprobarán la candidata completa.
+
+## 2026-11-03 — UX2-H primer Windows y corrección de arranque
+
+Primera build0e96f06: Windows detecta tres agentes de NPC activos antes de registrar NavMesh y una comprobación de desplazamiento con ratón que falla. Recibo, errores y huella preservados en WindowsIntento01; no se declara aprobado. Las tres instancias UX02 se serializan deshabilitadas y se habilitan por ExplorationUnit.Start tras Awake de superficies, igual que el héroe. UI proyectada se calcula después de la cámara mediante órdenes100/550/600 para evitar barras desplazadas en transiciones. La prueba de ratón espera estabilización del encuadre y desplazamiento observado con límite, registra hit/UI/orden si falla; sin cambiar reglas ni simular victoria. Guardia se verifica por movimiento real, no sólo existencia. Se oculta la cinta visual UX01 superpuesta al sendero nuevo; física original conservada.
+
+## 2026-11-03 — UX2-H Windows segundo intento
+
+Build53a5704: cero errores de agente; pasan comprobaciones nativas de navegación/patrulla del guardia, selección simple y Shift. El destino sintético(767,90) queda sobre el panel RTS y se rechaza correctamente; recibo conservado WindowsIntento02. Se convierte ese rechazo en comprobación explícita y se elige suelo visible para el ensayo de desplazamiento; no se modifica el bloqueo de UI ni reglas del juego. Nueva build de validación necesaria.
+
+## 2026-11-03 — UX2-H Windows tercer intento
+
+Build5edd245 verifica WASD/E, guardia móvil, selección simple/Shift/rectángulo, bloqueo UI, movimiento y ataque por InputSystem real, RPG y victoria RTS al primer intento con14PV; también centro/taller/producción/cuartel/recluta militar, puerta y comercio. Falla después una expectativa del arnés: el compañero ya se incorpora activo por regla existente y SetParty(true) rechaza cambios redundantes. Ahora comprueba estado activo, reserva y reactivación con APIs reales. Evidencia parcial preservada WindowsIntento03; aún no es pase completo. Se compactan barras RTS ancladas a cada unidad, sin apilarlas varios metros arriba; sólo presentación UX02.
+
+## 2026-11-03 — UX2-H circuito completo de tres clases
+
+Buildeb79c33:6/6procesosWindows, humano/Guerrero, enano/Mago, elfo/Monje; circuito completo y nuevo proceso/Continuar. Incluye dispositivos sintéticos W/E/ratón simple/Shift/rectángulo/mover/atacar, NPC/patrulla, hallazgos únicos, RPG/RTS auténticos, construcción/producción/ejército, comercio, puerta, compañero/reserva/grupo, ruinas/regreso y persistencia. Recibos preservados WindowsPreHud. Capturas revelan aviso legado duplicado y selección grupal tapada parcialmente; la última corrección centraliza visibilidad del aviso y regreso de construcción, y coloca Seleccionar todo fuera del panel RTS. Prueba de layout a tres resoluciones añadida; todavía falta build final, regresión y portable.
+
+## 2026-11-03 — UX2-ANIM detectado antes del cierre
+
+Revisión de HumanoidAnimationDriver confirma que actor no está serializado: la llamada de autoría BindActor no basta en el player para mover la animación del guardia. Se registra corrección de arranque acotada y aserción de ObservedSpeed/IsMoving sobre agente real; se deja terminar el pase general activo antes de tocar scripts para evitar mezclar versiones dentro de una ejecución.
+
+## 2026-11-03 — UX2-H general y corrección localizada UX2-ANIM
+
+General a2b2b69:212/213,0omisiones,7/7UX02; único fallo RTS histórico, Guerrero0PV/FirstRts/recuperación1. Los tres timeouts previos pasan dentro de esta ejecución completa, sin cambiar límites; causa anterior sin confirmar. GENERAL.xml/json y traza conservados. VillageNpcActivity.Start vuelve a enlazar el driver al actor real y fija paso1.4m/s sólo en NPC nuevos. La ruta comprueba movimiento y parámetro Locomotion=Walk con rig válido. Por alcance local exclusivo de la escena nueva, la candidata posterior se verifica con toda su suite dirigida y Windows; la general se atribuye a a2b2b69, no se suman pases.
+
+## 2026-11-03 — Entrega técnica UX‑02
+
+La build `c5db7ff` pasó 7/7 dirigidas y 8/8 procesos Windows con gráficos. El ZIP extraído completó el recorrido y Continuar con Mago enano. Verificados el CRC, SHA por archivo, las 1 826 entradas de build y los 21 ZIP previos. La evidencia reúne 59 PNG y 2 MP4. La general de `a2b2b69` queda en 212/213. Los tres timeouts previos aprobaron en ese pase. Siguen abiertos el fallo histórico RTS y la evaluación humana. Se registra el recorte del HUD en la captura del cruce. El PR #12 se apila sobre UX‑01. Consulta Docs/ENTREGA_UX02.md para la guía y los comprobantes.

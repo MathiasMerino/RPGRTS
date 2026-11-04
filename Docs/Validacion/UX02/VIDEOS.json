@@ -1,0 +1,28 @@
+[
+  {
+    "file": "Docs/Videos/UX02/UX02-Combate-RPG.mp4",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Recording",
+    "sha256": "e0cf9c9770a5a664d5d7f4ddc946b758f4372bac8fd515307a6bb7312b3ee215",
+    "firstFrame": 564,
+    "lastFrame": 832,
+    "seconds": 22.416666666666668,
+    "nativeDSP": true,
+    "continuous": true,
+    "decodeVerified": true,
+    "captureStepHz": 12,
+    "measuredFps": false
+  },
+  {
+    "file": "Docs/Videos/UX02/UX02-Patrulla-RTS.mp4",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Recording",
+    "sha256": "861dff8602fdec6b80a480f6ed95e0f4d55d04418c791bc95698f0678071c06d",
+    "firstFrame": 991,
+    "lastFrame": 1279,
+    "seconds": 24.083333333333332,
+    "nativeDSP": true,
+    "continuous": true,
+    "decodeVerified": true,
+    "captureStepHz": 12,
+    "measuredFps": false
+  }
+]

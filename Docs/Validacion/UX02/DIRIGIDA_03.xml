@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="7" result="Failed(Child)" total="7" passed="5" failed="2" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-04 01:08:35Z" end-time="2026-11-04 01:08:42Z" duration="7.4112939">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="213" result="Failed" site="Child" start-time="2026-11-04 01:08:35Z" end-time="2026-11-04 01:08:42Z" duration="7.411294" total="7" passed="5" failed="2" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1273" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="213" result="Failed" site="Child" start-time="2026-11-04 01:08:35Z" end-time="2026-11-04 01:08:42Z" duration="7.203803" total="7" passed="5" failed="2" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="24816" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1274" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="213" result="Failed" site="Child" start-time="2026-11-04 01:08:35Z" end-time="2026-11-04 01:08:42Z" duration="7.193914" total="7" passed="5" failed="2" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1275" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="213" result="Failed" site="Child" start-time="2026-11-04 01:08:35Z" end-time="2026-11-04 01:08:42Z" duration="7.184850" total="7" passed="5" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1276" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="213" result="Failed" site="Child" start-time="2026-11-04 01:08:35Z" end-time="2026-11-04 01:08:42Z" duration="7.175022" total="7" passed="5" failed="2" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1265" name="WorldExplorationTests" fullname="Aethernia.Tests.Editor.WorldExplorationTests" classname="Aethernia.Tests.Editor.WorldExplorationTests" runstate="Runnable" testcasecount="7" result="Failed" site="Child" start-time="2026-11-04 01:08:35Z" end-time="2026-11-04 01:08:42Z" duration="7.158051" total="7" passed="5" failed="2" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1271" name="ActualWoodlandOcclusionRestoresVisibilityAndKeepsPhysicsMaterials" fullname="Aethernia.Tests.Editor.WorldExplorationTests.ActualWoodlandOcclusionRestoresVisibilityAndKeepsPhysicsMaterials" methodname="ActualWoodlandOcclusionRestoresVisibilityAndKeepsPhysicsMaterials" classname="Aethernia.Tests.Editor.WorldExplorationTests" runstate="Runnable" seed="479334087" result="Passed" start-time="2026-11-04 01:06:42Z" end-time="2026-11-04 01:06:58Z" duration="16.244675" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1272" name="ContextualDialogueAndCameraRemainReadableAtThreeResolutions" fullname="Aethernia.Tests.Editor.WorldExplorationTests.ContextualDialogueAndCameraRemainReadableAtThreeResolutions" methodname="ContextualDialogueAndCameraRemainReadableAtThreeResolutions" classname="Aethernia.Tests.Editor.WorldExplorationTests" runstate="Runnable" seed="45907899" result="Failed" label="Error" start-time="2026-11-04 01:06:58Z" end-time="2026-11-04 01:07:15Z" duration="17.279436" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <failure>
+                  <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object]]></message>
+                  <stack-trace><![CDATA[  at Aethernia.Tests.Editor.WorldExplorationTests+<ContextualDialogueAndCameraRemainReadableAtThreeResolutions>d__9.MoveNext () [0x000e7] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Tests\Editor\WorldExplorationTests.cs:79 
+  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44 ]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1267" name="ForestLoopDiscoveriesRewardsAndModalControls" fullname="Aethernia.Tests.Editor.WorldExplorationTests.ForestLoopDiscoveriesRewardsAndModalControls" methodname="ForestLoopDiscoveriesRewardsAndModalControls" classname="Aethernia.Tests.Editor.WorldExplorationTests" runstate="Runnable" seed="143167630" result="Failed" label="Error" start-time="2026-11-04 01:07:15Z" end-time="2026-11-04 01:07:45Z" duration="29.967485" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <failure>
+                  <message><![CDATA[System.InvalidOperationException : UX01: UX02 sign information modal]]></message>
+                  <stack-trace><![CDATA[  at Aethernia.UxExperienceRoute.Require (System.Boolean ok, System.String step) [0x00014] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\UxExperienceRoute.cs:16 
+  at Aethernia.WorldExplorationRoute.Check (System.Boolean result, System.String name) [0x00000] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationRoute.cs:11 
+  at Aethernia.WorldExplorationRoute+<Explore>d__3.MoveNext () [0x001ce] in C:\Users\Mathy\Desktop\PROYECTO GAME\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationRoute.cs:33 
+  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@1405238725ab\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44 ]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1268" name="InteractionCannotPassThroughWallAndFocusIsStable" fullname="Aethernia.Tests.Editor.WorldExplorationTests.InteractionCannotPassThroughWallAndFocusIsStable" methodname="InteractionCannotPassThroughWallAndFocusIsStable" classname="Aethernia.Tests.Editor.WorldExplorationTests" runstate="Runnable" seed="181853811" result="Passed" start-time="2026-11-04 01:07:45Z" end-time="2026-11-04 01:08:04Z" duration="18.440453" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1269" name="LegacyDungeonEnterReturnAndSaveRetainSharedWorld" fullname="Aethernia.Tests.Editor.WorldExplorationTests.LegacyDungeonEnterReturnAndSaveRetainSharedWorld" methodname="LegacyDungeonEnterReturnAndSaveRetainSharedWorld" classname="Aethernia.Tests.Editor.WorldExplorationTests" runstate="Runnable" seed="84121436" result="Passed" start-time="2026-11-04 01:08:04Z" end-time="2026-11-04 01:08:25Z" duration="20.894687" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1270" name="SafeFormationRequiresSelectionAndExplicitValidAttack" fullname="Aethernia.Tests.Editor.WorldExplorationTests.SafeFormationRequiresSelectionAndExplicitValidAttack" methodname="SafeFormationRequiresSelectionAndExplicitValidAttack" classname="Aethernia.Tests.Editor.WorldExplorationTests" runstate="Runnable" seed="582814108" result="Passed" start-time="2026-11-04 01:08:25Z" end-time="2026-11-04 01:08:41Z" duration="16.337637" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1266" name="SceneReusesSystemsAndPublicAssetsWithOwnNavigation" fullname="Aethernia.Tests.Editor.WorldExplorationTests.SceneReusesSystemsAndPublicAssetsWithOwnNavigation" methodname="SceneReusesSystemsAndPublicAssetsWithOwnNavigation" classname="Aethernia.Tests.Editor.WorldExplorationTests" runstate="Runnable" seed="842934534" result="Passed" start-time="2026-11-04 01:08:41Z" end-time="2026-11-04 01:08:42Z" duration="1.093048" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

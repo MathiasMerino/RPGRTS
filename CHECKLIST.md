@@ -1233,3 +1233,68 @@ Base E19 conservada; rama feature/ux01-onboarding-camera-world, [PR11 draft](htt
 Las pruebas del editor operan las API de motor/interactor/órdenes; Windows verifica WASD/E y ejecuta los mismos controladores reales. Clic/arrastre/Shift físicos y aceptación humana siguen pendientes. Las capturas son renders reales, sin componer poses; grabación12Hz no es una medición FPS.
 
 Fallos y diagnóstico anteriores conservados en Docs/Validacion/UX01: arnés tras recarga, teclado del editor, primera E nativa y derrotas legítimas del héroe. DIRIGIDA_10 incluye derrota del Monje en el primer intento y victoria mediante el botón Reintentar en el segundo. No se inyectaron salud/recursos ni se cambiaron estadísticas para lograrlo. Las tareas antiguas e historial26/26 se conservan arriba.
+
+## FASE UX-02 — MUNDO EXPLORABLE E INTEGRACIÓN
+
+Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://github.com/MathiasMerino/RPGRTS/pull/12). Dirigidas 7/7 y Windows 8/8. Regresión general 212/213 en `a2b2b69`. Revisión humana y fallo histórico RTS abiertos.
+
+### UX2-A — Auditoría de fallos, PR y protección del trabajo
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: UX01.
+- Aceptación: Auditoría de fallos, PR y protección del trabajo; detalles en Docs/UX02_MUNDO.md.
+- Archivos: Docs/UX02_MUNDO.md, Docs/Validacion/UX02/BASE.json, INCIDENCIAS_INICIALES.json y RTS_HEREDADO.csv.
+- Pruebas:11PR y heads main/dev comprobados por API;21ZIP y hashes calidad/GDD; privados conservados. Traza histórica demuestra derrota real, no victoria garantizada. Los tres timeouts no se reprodujeron en la general UX‑02. Su causa y la evaluación humana siguen pendientes.
+
+### UX2-B — Aldea/sendero/bifurcación/ruinas/campamento/puesto conectados y transitables
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: A.
+- Aceptación: Aldea/sendero/bifurcación/ruinas/campamento/puesto conectados y transitables; detalles en Docs/UX02_MUNDO.md.
+- Archivos: Assets/01_Scenes/AetherniaUx02World.unity, Assets/17_UX02 y WorldExplorationRoute.cs.
+- Pruebas: DIRIGIDA_FINAL y recorridos Windows. Aldea, sendero, cruce, campamento y regreso desde las ruinas sobre navegación real.
+
+### UX2-C — Cámara cercana única y oclusión reversible
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: B.
+- Aceptación: Cámara cercana única y oclusión reversible; detalles en Docs/UX02_MUNDO.md.
+- Archivos: IsometricCameraRig.cs, DemoHeroMotor.cs, WorldExplorationTests.cs.
+- Pruebas: DIRIGIDA_05,7/7; seguimiento cercano5.4m, vista del héroe y bloqueo modal; oclusión real de árbol restaura renderers/materiales/colisiones. Techos/muros heredados conservados; comodidad y juego manual pendientes.
+
+### UX2-D — Interacciones E con línea de visión, NPC/diálogo/funciones reales
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: B,C.
+- Aceptación: Interacciones E con línea de visión, NPC/diálogo/funciones reales; detalles en Docs/UX02_MUNDO.md.
+- Archivos: WorldExploration.cs, VillageNpcActivity.cs, PlayerCommands.cs y ExplorationHud.cs.
+- Pruebas: DIRIGIDA_FINAL y Windows. E contextual, alcance, línea de visión, bloqueo modal, roles y guardia con locomoción ligada al agente.
+
+### UX2-E — Descubrimientos y recompensas únicos persistentes, guía real
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: D.
+- Aceptación: Descubrimientos y recompensas únicos persistentes, guía real; detalles en Docs/UX02_MUNDO.md.
+- Archivos: WorldExploration.cs y WorldExplorationRoute.cs.
+- Pruebas: DIRIGIDA_FINAL y Windows. Hechos y recompensas únicas, puerta, comercio y persistencia tras Continuar.
+
+### UX2-F — RTS con selección/formación/órdenes/ataque explícito y feedback
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: B,D.
+- Aceptación: RTS con selección/formación/órdenes/ataque explícito y feedback; detalles en Docs/UX02_MUNDO.md.
+- Archivos: RtsBattleController.cs, RtsWorldOrders.cs, DemoRtsInput.cs; preparación heredada conservada.
+- Pruebas: DIRIGIDA_05,7/7: formación con destinos válidos, llegada real, selección múltiple, NaN/destino inaccesible rechazados, cero daño en preparación; orden sin selección no activa hostilidad. Ratón sintético en Input System y victoria completa verificados en Windows; revisión humana pendiente.
+
+### UX2-G — HUD tres resoluciones, guardado/Continuar/legado y ruinas/regreso
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: C–F.
+- Aceptación: HUD tres resoluciones, guardado/Continuar/legado y ruinas/regreso; detalles en Docs/UX02_MUNDO.md.
+- Archivos: UxExperienceView.cs, DemoRtsOverlay.cs, PrototypeDirector.cs y WorldExplorationTests.cs.
+- Pruebas: DIRIGIDA_FINAL. HUD a 720p, 1080p y 1440p, legado, guardado y vuelta de ruinas. Carga en proceso nuevo verificada en Windows. La guía recoge el recorte observado en una captura del HUD de exploración.
+
+### UX2-H — Pruebas dirigidas/general, Windows/build/ZIP/capturas/vídeos/PR
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: B–G.
+- Aceptación: Pruebas dirigidas/general, Windows/build/ZIP/capturas/vídeos/PR; detalles en Docs/UX02_MUNDO.md.
+- Archivos: Docs/ENTREGA_UX02.md, GUIA_UX02.md, Validacion/UX02, Images/UX02 y Videos/UX02. PR #12 sobre UX‑01.
+- Pruebas: 7/7 dirigidas y 8/8 procesos Windows en c5db7ff. General 212/213 en a2b2b69, antes del enlace localizado de animación. Fallo RTS histórico abierto. ZIP con CRC/SHA, 21 previos verificados, 59 PNG y 2 MP4.
+
+### UX2-HUM — Revisión humana de comodidad, ritmo, diversión, balance y arte
+- Estado: [ ] Pendiente. Prioridad: P1. Dependencias: H.
+- Aceptación: Revisión humana de comodidad, ritmo, diversión, balance y arte; detalles en Docs/UX02_MUNDO.md.
+- Archivos: Docs/GUIA_UX02.md.
+- Pruebas: revisión humana pendiente. La guía incluye el recorte observado del HUD de exploración.
+
+
+### UX2-ANIM — Enlace de locomoción de NPC al iniciar
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: D.
+- Aceptación: el guardia se desplaza y su driver observa velocidad y estado Walk; enlace reconstruido en runtime, no sólo durante autoría.
+- Archivos: VillageNpcActivity.cs y WorldExplorationRoute.cs.
+- Pruebas: DIRIGIDA_FINAL. Desplazamiento real, ObservedSpeed y parámetro Walk. Validación incluida en el recorrido Windows.

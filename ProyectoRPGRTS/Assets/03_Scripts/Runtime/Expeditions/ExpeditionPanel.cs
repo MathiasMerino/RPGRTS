@@ -45,13 +45,13 @@ namespace Aethernia
         }
         private Button Add(Transform parent,string id,string title,float x,float y,float width,UnityEngine.Events.UnityAction action)
         {var b=ui.Button(parent,id,title,x,y,width,40,()=>{Flow.Front.Audio?.Play(FeedbackSound.Select,Vector3.zero,true);action();});if(width<180)b.GetComponentInChildren<TMP_Text>().fontSize=16;controls.Add(id,b);return b;}
-        public void Open(){if(!Flow.IsPlaying||Flow.Session.Mode!=PrototypeMode.Exploration)return;Flow.ExistingHud.ClosePanels();Flow.Director.Hero.Stop();window.SetActive(true);Flow.Session.WorldUiOpen=true;}
-        public void Close(){if(window!=null)window.SetActive(false);Flow.Session.WorldUiOpen=false;}
+        public void Open(){if(!Flow.IsPlaying||Flow.Session.Mode!=PrototypeMode.Exploration||Flow.Session.WorldUiOpen)return;Flow.ExistingHud.ClosePanels();Flow.Director.Hero.Stop();window.SetActive(true);Flow.Session.WorldUiOpen=true;}
+        public void Close(){var owned=window!=null&&window.activeSelf;if(window!=null)window.SetActive(false);if(owned)Flow.Session.WorldUiOpen=false;}
         private void ToggleCompanion(int i){var list=Flow.Session.State.Companions;if(i<list.Count)Party.SetParty(list[i].Id,!list[i].InParty);}
         public bool Train(int i){var s=Flow.Session.State;var ok=Party.AtCamp&&!Flow.Director.IsBusy&&!Flow.Session.Paused&&i>=0&&i<s.Army.Count&&TroopProgression.Train(s,s.Army[i]);Flow.Session.Say(ok?"Unidad entrenada a nivel2: +2PV máximos y +1daño, sin curación.":"Entrenar requiere campamento, taller2, cuartel,8oro/3madera y unidad nivel1.");return ok;}
         private void ToggleArmy(int i){var s=Flow.Session.State;if(i<s.Army.Count)Territory.SelectSoldier(s.Army[i].Id,!s.ArmySelection.Contains(s.Army[i].Id));}
         private void Update(){if(Keyboard.current?.escapeKey.wasPressedThisFrame==true)Close();}
-        private void OnDisable(){if(Flow!=null)Flow.Session.WorldUiOpen=false;}
+        private void OnDisable(){if(Flow!=null)Close();}
         private void LateUpdate()
         {
             if(window==null)return;var s=Flow.Session.State;var e=Flow.Director.Encounter;var available=Flow.IsPlaying&&ExpeditionOperations.Ready(s)&&Flow.Session.Mode==PrototypeMode.Exploration&&!Flow.Session.Paused;
@@ -61,7 +61,7 @@ namespace Aethernia
             if(window.activeSelf)
             {
                 var text=new StringBuilder();text.AppendLine("Oro "+s.Gold+" · Madera "+s.Wood+" · Alimento "+s.Food+" · Héroe "+s.Health+"PV");
-                if(tab==0){text.AppendLine("GRUPO · "+s.Companions.Count(c=>c.InParty)+"/3 acompañantes, más el héroe");foreach(var c in s.Companions){var p=TroopProgression.Profile(c,Party.Roles.Find(c.Role));text.AppendLine(p.Title+" Nv"+c.Level+" XP"+c.Experience+"/8"+" · "+c.Id.Substring(0,6)+" · "+c.Health+"/"+p.Health+"PV · daño"+p.Damage+" · alcance"+p.Range+"m · "+(c.InParty?"grupo":"reserva"));}text.AppendLine("Ruinas: entrada al oeste del campamento(4,−11). Dos encuentros y objetivo final.\nFondos iniciales escasos: cofre del poblado o misión El cargamento perdido.");}
+                if(tab==0){text.AppendLine("GRUPO · "+s.Companions.Count(c=>c.InParty)+"/3 acompañantes, más el héroe");foreach(var c in s.Companions){var p=TroopProgression.Profile(c,Party.Roles.Find(c.Role));text.AppendLine(p.Title+" Nv"+c.Level+" XP"+c.Experience+"/8"+" · "+c.Id.Substring(0,6)+" · "+c.Health+"/"+p.Health+"PV · daño"+p.Damage+" · alcance"+p.Range+"m · "+(c.InParty?"grupo":"reserva"));}text.AppendLine(Flow.Session.Rules.WorldExploration?"Ruinas: rama sur del sendero, desde el cruce. Dos encuentros y objetivo final.\nComercio y hallazgos comparten tus recursos.":"Ruinas: entrada al oeste del campamento(4,−11). Dos encuentros y objetivo final.\nFondos iniciales escasos: cofre del poblado o misión El cargamento perdido.");}
                 if(tab==1){text.AppendLine("EJÉRCITO · "+s.ArmySelection.Count+"/6 preparados; compañeros RPG no se despliegan");for(var i=0;i<s.Army.Count;i++)text.AppendLine((s.ArmySelection.Contains(s.Army[i].Id)?"[X] ":"[ ] ")+Party.Roles.Find(s.Army[i].Role).Title+" · "+s.Army[i].Health+"/"+TroopProgression.Profile(s.Army[i],Party.Roles.Find(s.Army[i].Role)).Health+"PV · Nv"+s.Army[i].Level+" · daño"+TroopProgression.Profile(s.Army[i],Party.Roles.Find(s.Army[i].Role)).Damage);}
                 if(tab==2){text.AppendLine("Raza: "+(Flow.Content.Lineages.FirstOrDefault(l=>l.Id==s.RaceId)?.Title??s.RaceId)+" · Cultura: "+(string.IsNullOrEmpty(s.CultureId)?"sin asignar":s.CultureId)+" · Reino: "+(string.IsNullOrEmpty(s.KingdomId)?"sin asignar":s.KingdomId));text.AppendLine("Facción voluntaria: "+Territory.FactionTitle(s.FactionId));foreach(var t in s.Territories)text.AppendLine(Territory.Rules.Find(t.Id).Title+" · "+Territory.FactionTitle(t.Owner)+" · "+(t.Secured?"asegurado":"sin asegurar"));text.AppendLine("Relaciones A:"+s.ReputationA+" B:"+s.ReputationB+" · paso/puesto: +1madera por ciclo cada uno.\n"+Territory.LastResult);}
                 summary.text=text.ToString();summary.gameObject.SetActive(tab!=3);if(cultureRoot!=null)cultureRoot.SetActive(tab==3);if(tab==3)RefreshCultureView();

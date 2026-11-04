@@ -8,6 +8,7 @@ namespace Aethernia
     public sealed class DungeonExpedition : MonoBehaviour
     {
         public DemoFlow Flow;public PartyWorld Party;public ExpeditionRules Rules;
+        public Vector3 SurfaceReturn=new Vector3(4,0,-11);
         private string encounterFact;
         private Coroutine rest;
         public bool Resting=>rest!=null;
@@ -37,12 +38,12 @@ namespace Aethernia
         public bool Travel(bool enter)
         {
             if(Flow.Director.IsBusy||Flow.Session.Mode!=PrototypeMode.Exploration||Flow.Session.State.Health<=0||rest!=null)return false;
-            var destination=enter?new Vector3(71,0,-4):new Vector3(4,0,-11);
+            var destination=enter?new Vector3(71,0,-4):SurfaceReturn;
             if(!NavMesh.SamplePosition(destination,out var at,.5f,NavMesh.AllAreas))return false;
             // Validate formation slots before moving any member.
             var count=0;foreach(var c in Flow.Session.State.Companions)if(c.InParty&&c.Health>0){if(!PartyWorld.TrySlot(at.position,count++,out _))return false;}
             Flow.Director.Encounter.Clear();Flow.Director.Hero.Stop();if(!Flow.Director.Hero.Warp(at.position))return false;Party.Regroup(at.position);
-            Flow.CameraRig.SetRegion(enter?new Vector3(80,0,0):Vector3.zero);Flow.CameraRig.SetZoom(9);Flow.CameraRig.FocusOn(at.position);
+            Flow.CameraRig.SetRegion(enter?new Vector3(80,0,0):Vector3.zero);Flow.CameraRig.SetZoom(Flow.Session.Rules.WorldExploration?5.4f:9);Flow.CameraRig.FocusOn(at.position);
             Flow.Session.Say(enter?"Las Ruinas del Umbral · escenario provisional. Dos guardianías, alijo opcional, objetivo y salida.":"Regreso al campamento. El grupo conserva salud, identidad y recursos.");Flow.Director.Save(Flow.SlotPath);return true;
         }
         private void Resolved(bool won)

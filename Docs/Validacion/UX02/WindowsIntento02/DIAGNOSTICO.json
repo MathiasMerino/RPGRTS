@@ -1,0 +1,7 @@
+{
+  "revision": "53a5704",
+  "invalidAgentErrors": 0,
+  "guardAndNavigationChecksReached": true,
+  "nativeSingleAndShiftSelectionPassed": true,
+  "reason": "Projected fixture ground point was inside RTS UI (767.28,90.56), correctly rejected; use a visible unblocked point and preserve explicit UI rejection check."
+}

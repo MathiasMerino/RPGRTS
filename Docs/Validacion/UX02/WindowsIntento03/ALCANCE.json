@@ -1,0 +1,8 @@
+{
+  "revision": "5edd245",
+  "nativeMouseSingleShiftRectangleMoveAttack": "PASS before failure",
+  "RPG_RTS_Construction_Production_Trade": "PASS before failure",
+  "companionPaidRecruitment": "PASS; default InParty=true",
+  "fixtureError": "SetParty(id,true) correctly rejects an already active companion; validate real reserve/activate toggles instead.",
+  "notACompleteRoute": true
+}
