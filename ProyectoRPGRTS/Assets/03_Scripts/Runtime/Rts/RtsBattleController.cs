@@ -285,10 +285,10 @@ namespace Aethernia
             if(Preparing||(TacticalBattle&&(TacticalDeployment||session.Paused||session.WorldUiOpen)))return false;
             var hero=soldiers.Find(s=>s.Hero);
             if(!Active||hero==null||!hero.Unit.IsSelected||Health(hero)<=0){if(action=="recover")Trace("recover-unavailable",hero);return false;}
-            if(Time.time<hero.AttackAt){if(action=="recover")Trace("recover-cooldown",hero);return false;}
+            if(Time.time<hero.AttackAt&&!(session.Rules.LivingWorld&&action=="technique")){if(action=="recover")Trace("recover-cooldown",hero);return false;}
             if(action=="technique")
             {
-                var skill=session.HeroProfile.Combat;var target=HeroTarget(hero,skill?.TechniqueRange??0);
+                var skill=session.HeroProfile.Combat;var target=HeroTarget(hero,skill?.TechniqueRange??0,session.Rules.LivingWorld);
                 if(skill==null||!skill.TechniqueUnlocked||techniqueFocus<skill.TechniqueCost||Time.time<hero.SkillAt||target==null||Vector3.Distance(hero.Unit.transform.position,target.Unit.transform.position)>skill.TechniqueRange||!ClearLine(hero,target))return false;
                 techniqueFocus-=skill.TechniqueCost;hero.SkillAt=Time.time+skill.TechniqueCooldown;Strike(hero,target,skill.TechniqueDamage+(session.State.ClassId=="monk"?2:0));session.Say(skill.TechniqueTitle+" · foco "+techniqueFocus);return true;
             }
