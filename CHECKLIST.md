@@ -1320,9 +1320,9 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 | ID | Prioridad / depende de | Estado | Aceptación y evidencia |
 |---|---|---|---|
 | E201-00 | P1 · E20 | Completado y verificado | Base c89801c, PR #13 sobre #12 y cambios locales de calidad conservados. |
-| E201-RTS | P1 · 00 | En desarrollo | Reproducir el fallo histórico, corregir objetivos bloqueados y mantener condiciones de victoria. `RtsPatrolCombat.cs`, prueba original a 30 FPS. |
-| E201-HUD | P4 · 00 | En desarrollo | Una superficie contextual de interacción visible y clicable a 720p, 1080p y 1440p. `UxExperienceView.cs`, `ExplorationHud.cs`, `AlphaStabilizationTests.cs`. |
-| E201-RUTA | P2–P7 · RTS/HUD | En desarrollo | Tres partidas nuevas y reinicios, conquista, persistencia, balance registrado. Recorridos Windows automatizados. |
+| E201-RTS | P1 · 00 | Completado y verificado | Reproducir el fallo histórico, corregir objetivos bloqueados y mantener condiciones de victoria. `RtsPatrolCombat.cs`, prueba original a 30 FPS de 0/1 a 1/1. |
+| E201-HUD | P4 · 00 | Completado y verificado | Una superficie contextual de interacción visible y clicable a 720p, 1080p y 1440p. `UxExperienceView.cs`, `ExplorationHud.cs`, `AlphaStabilizationTests.cs`. Clic y tres capturas verificados. |
+| E201-RUTA | P2–P7 · RTS/HUD | Completado y verificado | Tres partidas nuevas y reinicios, conquista, persistencia, balance registrado. 8/8 procesos Windows, incluidos 6/6 desde el ZIP. Margen bajo del Mago en RPG bajo evaluación humana. |
 | E201-REND | P8 · RUTA | Pendiente | Perfilado con render URP comprobado. Separar tiempos, GC, llamadas de dibujo y límites de medición. |
 | E201-ENT | P9–P11 · RUTA | En desarrollo | Build x64 y ZIP, regresión, capturas, guía, commits y PR apilado. |
 | E201-HUM | P11 · ENT | Pendiente | Revisión humana de balance, cámara, HUD, ritmo y rendimiento. |

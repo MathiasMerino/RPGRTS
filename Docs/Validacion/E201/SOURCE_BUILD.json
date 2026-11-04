@@ -1,0 +1,14 @@
+{
+  "source": "f9da1b3154910bba7c3e76bee732dc1f2a136d3b",
+  "scene": "AetherniaE20Warfare.unity",
+  "engine": "6000.5.8f1",
+  "target": "StandaloneWindows64",
+  "build": "PASS Unity 6000.5.8f1 bytes=206932014 seconds=26.980874",
+  "hashes": {
+    "ProyectoRPGRTS/Builds/E201Windows/Aethernia.exe": "0fb7bc201bdef9341359db95c319b489c1c46d2f70a081bc548f46bf03df4c90",
+    "ProyectoRPGRTS/Builds/E201Windows/Aethernia_Data/Managed/Aethernia.Runtime.dll": "49122143bca8fb30611543184104bfe1a149aa0e13c72b04b97df137d7118b98",
+    "ProyectoRPGRTS/ProjectSettings/QualitySettings.asset": "62494399222dd3d2c992d4c9c41deecdeffd5e50fde962be46b7f38a0a09b916",
+    "ProyectoRPGRTS/Assets/05_Docs/GDD_GAMERPGTS.docx": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661"
+  },
+  "preconfiguredSavesOrLaunchers": false
+}

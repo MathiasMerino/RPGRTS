@@ -1,0 +1,1 @@
+PASS: E20.1 human/warrior new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints; despliegue, órdenes, técnica, conquista y producción territorial; seconds=0.70

@@ -29,3 +29,6 @@ UX-02 autorizada posteriormente: rama feature/ux02-world-exploration desde d56fa
 
 
 E20 se apila en [PR #13](https://github.com/MathiasMerino/RPGRTS/pull/13), borrador con cabeza `feature/e20-tactical-warfare` y base `feature/ux02-world-exploration` (PR #12, ca95205). Se verificaron los doce antecedentes abiertos en borrador. Revisión secuencial PR1→…→PR12→PR13. E20 conserva la condición de candidata técnica y requiere revisión humana.
+
+
+E20.1 está en [PR #14](https://github.com/MathiasMerino/RPGRTS/pull/14), borrador con cabeza `fix/e20-1-alpha-stabilization` y base `feature/e20-tactical-warfare` (PR #13, c89801c). El orden hacia `dev` es PR1→PR2→PR3→PR4→PR5→PR6→PR7→PR8→PR9→PR10/E19→PR11/UX‑01→PR12/UX‑02→PR13/E20→PR14/E20.1. Para cada uno, revisar la diferencia contra su base y sus pruebas. Tras aprobación explícita e integración del antecedente, comprobar su historia en `dev`, ajustar la base del siguiente y repetir la verificación del diff. Si el método de integración aplana commits, preparar un plan de historial con el usuario antes de cambiar la pila. La promoción `dev` → `main` requiere revisión y aprobación propias.

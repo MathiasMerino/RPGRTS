@@ -1,0 +1,10 @@
+stage,time_s,class,race,hp,max_hp,attack,guard,level,xp,gold,wood,food
+04-SafeVillage,2.00,mage,dwarf,16,16,9,2,1,0,50,20,10
+11-FirstRpg,40.90,mage,dwarf,16,16,9,2,1,0,58,23,10
+13-ExploreAgain,54.66,mage,dwarf,2,18,9,2,2,12,58,23,10
+18-Positioned,76.53,mage,dwarf,14,20,9,3,2,20,78,23,10
+20-Victory,82.52,mage,dwarf,18,20,9,3,2,28,78,23,10
+22-Camp,87.86,mage,dwarf,18,20,9,3,2,28,34,3,7
+T02-Deployment,158.37,mage,dwarf,20,20,9,3,2,28,2,6,5
+T07-Conquered,168.35,mage,dwarf,18,22,10,3,3,36,2,6,5
+T08-Return,183.80,mage,dwarf,18,22,10,3,3,36,2,8,7

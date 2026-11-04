@@ -2,7 +2,7 @@
 
 Extrae el ZIP en una carpeta y abre **Aethernia.exe**. Pulsa **Nueva partida** y elige Guerrero, Monje o Mago. En el editor usa Unity 6000.5.8f1, abre `Assets/01_Scenes/AetherniaE20Warfare.unity` y pulsa Play.
 
-1. Camina con WASD. Acércate al habitante y pulsa **E** o el aviso de interacción centrado. Acepta el cargamento, completa el combate por turnos y entrega la recompensa al habitante.
+1. Camina con WASD. Acércate al habitante y pulsa **E** o el aviso de interacción centrado. Acepta el cargamento, completa el combate por turnos y entrega la recompensa al habitante. Con el Mago, selecciona al rival y comprueba su alcance antes de usar Acercarse.
 2. Sigue el camino al capitán. En la preparación, selecciona un aliado, amplía la selección y ordena desplazamientos a los dos hitos. Clic derecho sobre un enemigo confirma el ataque. Si colocas al héroe en reserva, vigila que quede fuera de alcance de los arqueros.
 3. Tras la victoria, funda el campamento, activa la producción y construye el cuartel. Descansa si el héroe quedó herido. En Ejército, elige los reclutas que vas a desplegar.
 4. Asegura el Paso del bosque y marcha al Puesto del Umbral. Despliega al grupo y confirma la ofensiva. Usa **F** para centrar la selección, **Ctrl + 1–3** para guardar grupos, **1–3** para recuperarlos y **Alt + clic derecho** para avanzar atacando.

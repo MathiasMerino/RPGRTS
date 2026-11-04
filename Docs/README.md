@@ -2,6 +2,8 @@
 
 ## Para jugar y evaluar ahora
 
+- [Entrega E20.1](ENTREGA_E201.md) y [guía de la candidata alfa](GUIA_E201.md).
+
 - [Entrega E20](ENTREGA_E20.md) y [guía de juego E20](GUIA_E20.md) para el piloto Defensa del paso fronterizo.
 
 - [UX-02: entrega y resultados](ENTREGA_UX02.md), [guía de juego/revisión](GUIA_UX02.md) y [mundo/decisiones/dimensiones](UX02_MUNDO.md). Candidata con evaluación humana pendiente, PR12draft sobre UX01.
