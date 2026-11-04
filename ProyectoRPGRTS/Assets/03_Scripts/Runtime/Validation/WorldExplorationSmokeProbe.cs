@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Aethernia
 {
@@ -25,22 +26,35 @@ namespace Aethernia
         }
         private static IEnumerator Capture(DemoFlow flow,string slot,string cls,string name)
         {
-            if(name=="T02-Deployment"&&SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null)
+            if(name=="T02-Deployment" && SystemInfo.graphicsDeviceType!=GraphicsDeviceType.Null &&
+                Array.IndexOf(Environment.GetCommandLineArgs(),"-demoRecord")<0)
             {
                 const int frames=120;
                 var samples=new double[frames];
-                var last=Time.realtimeSinceStartupAsDouble;
-                for(var i=0;i<frames;i++)
+                var camera=Camera.main;
+                var renders=0;
+                void CountRender(ScriptableRenderContext context,Camera rendered)
                 {
-                    yield return null;
-                    var now=Time.realtimeSinceStartupAsDouble;
-                    samples[i]=now-last;
-                    last=now;
+                    if(rendered==camera)renders++;
                 }
+                RenderPipelineManager.endCameraRendering+=CountRender;
+                try
+                {
+                    var last=Time.realtimeSinceStartupAsDouble;
+                    for(var i=0;i<frames;i++)
+                    {
+                        yield return null;
+                        var now=Time.realtimeSinceStartupAsDouble;
+                        samples[i]=now-last;
+                        last=now;
+                    }
+                }
+                finally{RenderPipelineManager.endCameraRendering-=CountRender;}
                 Array.Sort(samples);
+                var elapsed=samples.Sum();
                 var rts=flow.Director.Rts;
                 File.WriteAllText(slot+".frames.txt",FormattableString.Invariant(
-                    $"RTS deployment | {rts.Allies}+{rts.Enemies} units | {Screen.width}x{Screen.height} | {SystemInfo.graphicsDeviceName} | {frames} frames | {frames/samples.Sum():F2} FPS mean | {samples[113]*1000:F2} ms p95 | non-interactive Windows smoke; no GC or scalability benchmark"));
+                    $"RTS deployment | {rts.Allies}+{rts.Enemies} units | {Screen.width}x{Screen.height} | {SystemInfo.graphicsDeviceName} | {frames} engine frames, {renders} URP main camera renders | {frames/elapsed:F2} engine Hz | {renders/elapsed:F2} camera renders/s | {samples[113]*1000:F2} ms p95 engine frame | hidden Windows smoke; no GPU presentation, GC or scalability benchmark"));
             }
             yield return DemoPlayerCapture.Save(Path.Combine(Path.GetDirectoryName(slot),"Captures",cls+"-"+name+".png"));
         }

@@ -20,6 +20,8 @@ namespace Aethernia
             var rts=Flow.Director.Rts;var active=rts.Active&&rts.IncludesHero&&!Flow.Session.Paused;if(pointer!=null)pointer.ExternalRtsPointer=rts.IncludesHero;
             if(Flow.Session.Rules.WorldExploration&&(Flow.Session.WorldUiOpen||Flow.ExistingHud.CompactView.WindowOpen||Flow.ExistingHud.CompactView.HelpOpen))active=false;
             if(!active){Dragging=false;DefendArmed=false;if(!rts.IncludesHero)foreach(var group in groups)group.Clear();return;}
+            if(rts.TacticalBattle)
+                foreach(var group in groups)group.RemoveAll(unit=>unit==null||!unit.isActiveAndEnabled);
             var mouse=Mouse.current;var key=Keyboard.current;var additive=key!=null&&(key.leftShiftKey.isPressed||key.rightShiftKey.isPressed);
             if(key!=null&&!UiInputGuard.IsTyping)
             {
