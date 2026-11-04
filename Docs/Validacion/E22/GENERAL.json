@@ -1,0 +1,14 @@
+{
+  "source": "69da1b0",
+  "unity": "6000.5.8f1",
+  "invocation": "Tools/Invoke-UnityValidation.ps1 -Mode Vertical",
+  "results": {
+    "total": "230",
+    "passed": "230",
+    "failed": "0",
+    "skipped": "0",
+    "inconclusive": "0",
+    "result": "Passed"
+  },
+  "finishedUtc": "2026-11-04 15:31:57Z"
+}
