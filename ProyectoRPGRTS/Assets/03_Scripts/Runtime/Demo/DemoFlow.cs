@@ -152,7 +152,7 @@ namespace Aethernia
             Director.Execute("explore");Session.State.Demo.Chapter=DemoChapter.Settlement;
             if(!Session.HasFact("demo-camp-secured")){Session.State.Facts.Add("demo-camp-secured");Session.AwardForFact("demo-camp-secured");}
             Director.Hero.Warp(new Vector3(9,0,-10));CameraRig.SetZoom(11);CameraRig.FocusOn(Director.Hero.transform.position);
-            Session.Say("La patrulla aseguró un campamento. Puedes fundar su centro y construir; ayudar aquí no te obliga a gobernar.");Director.Save(SlotPath);
+            if(Director.Save(SlotPath))Session.Say("La patrulla aseguró el campamento. Funda su centro y activa la producción.");
         }
         private void CombatResolved(bool won)
         {

@@ -1,0 +1,23 @@
+[
+  {
+    "class": "warrior",
+    "summary": "class=warrior; requestedFrameCap=30; RPGseed=42; health=23; chapter=Settlement; active=False; recoverAccepted=1; recoverCooldownRejected=43; strikes=58; rows=184",
+    "heroIncomingDamage": 0,
+    "heroOutgoingDamage": 0,
+    "heroRecovery": 4
+  },
+  {
+    "class": "monk",
+    "summary": "class=monk; requestedFrameCap=30; RPGseed=42; health=19; chapter=Settlement; active=False; recoverAccepted=1; recoverCooldownRejected=45; strikes=57; rows=178",
+    "heroIncomingDamage": 0,
+    "heroOutgoingDamage": 0,
+    "heroRecovery": 4
+  },
+  {
+    "class": "mage",
+    "summary": "class=mage; requestedFrameCap=30; RPGseed=42; health=10; chapter=Settlement; active=False; recoverAccepted=1; recoverCooldownRejected=45; strikes=58; rows=186",
+    "heroIncomingDamage": 0,
+    "heroOutgoingDamage": 0,
+    "heroRecovery": 4
+  }
+]

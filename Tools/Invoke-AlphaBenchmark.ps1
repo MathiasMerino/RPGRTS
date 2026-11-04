@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$Executable)
+param([Parameter(Mandatory=$true)][string]$Executable,[string]$Baseline="")
 $ErrorActionPreference='Stop'
 $taskRoot=Split-Path -Parent $PSScriptRoot
 $taskProject=Join-Path $taskRoot 'ProyectoRPGRTS'
@@ -10,7 +10,7 @@ $taskRun=Join-Path $taskProject ('Logs/E17/Benchmark-'+[DateTime]::UtcNow.ToStri
 New-Item -ItemType Directory -Path $taskRun | Out-Null
 $taskOutput=Join-Path $taskRun 'performance.json'
 $taskLog=Join-Path $taskRun 'player.log'
-$taskBaseline=Join-Path $taskRoot 'Docs/Validacion/E14E15/EntradaE13/warrior.json'
+$taskBaseline=if($Baseline){(Resolve-Path -LiteralPath $Baseline).Path}else{Join-Path $taskRoot 'Docs/Validacion/E14E15/EntradaE13/warrior.json'}
 $taskArgs=@('-batchmode','-aetherniaAlphaBenchmark',('"'+$taskOutput+'"'),'-benchmarkBaseline',('"'+$taskBaseline+'"'),'-screen-width','1280','-screen-height','720','-logFile',('"'+$taskLog+'"'))
 $taskProcess=Start-Process -FilePath $taskExe -ArgumentList $taskArgs -WindowStyle Hidden -PassThru
 Write-Output "Benchmark nativo PID=$($taskProcess.Id). Sin editor, grabacion ni otros players de QA."

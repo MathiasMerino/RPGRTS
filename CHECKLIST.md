@@ -1313,3 +1313,16 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 | E20-QU | P0 · OP | Completado y verificado | Recorrido completo, build x64, capturas, ZIP comprobado, commits y PR borrador sobre PR12, con incidencia Windows separada | `Invoke-UnityValidation.ps1`, `Invoke-ProgressionSmoke.ps1`, `Docs/Validacion/E20` |
 | E20-WIN-HER | P0 · QU | En desarrollo | Repetir desde Nueva partida con Guerrero y desde el ZIP; asegurar el paso de la patrulla heredada | `Validacion/E20/WINDOWS.json`; Guerrero y dos inicios desde ZIP fallaron antes del piloto; Continuar desde ZIP pasó |
 | E20-HUM | P1 · QU | Pendiente | Aceptación humana de claridad, ritmo, dificultad y utilidad de maniobras | `Docs/GUIA_E20.md` |
+
+
+## FASE E20.1 — ESTABILIZACIÓN Y CANDIDATA ALFA
+
+| ID | Prioridad / depende de | Estado | Aceptación y evidencia |
+|---|---|---|---|
+| E201-00 | P1 · E20 | Completado y verificado | Base c89801c, PR #13 sobre #12 y cambios locales de calidad conservados. |
+| E201-RTS | P1 · 00 | Completado y verificado | Reproducir el fallo histórico, corregir objetivos bloqueados y mantener condiciones de victoria. `RtsPatrolCombat.cs`, prueba original a 30 FPS de 0/1 a 1/1. |
+| E201-HUD | P4 · 00 | Completado y verificado | Una superficie contextual de interacción visible y clicable a 720p, 1080p y 1440p. `UxExperienceView.cs`, `ExplorationHud.cs`, `AlphaStabilizationTests.cs`. Clic y tres capturas verificados. |
+| E201-RUTA | P2–P7 · RTS/HUD | Completado y verificado | Tres partidas nuevas y reinicios, conquista, persistencia, balance registrado. 8/8 procesos Windows, incluidos 6/6 desde el ZIP. Margen bajo del Mago en RPG bajo evaluación humana. |
+| E201-REND | P8 · RUTA | Completado y verificado | 18 filas URP, tiempos CPU, GC y SetPass en PERFORMANCE.json. GPU, Draw Calls y FPS presentados quedan pendientes. |
+| E201-ENT | P9–P11 · RUTA | Completado y verificado | Build x64 y ZIP, 223/223 generales, 33 capturas, guía y PR #14 sobre #13. |
+| E201-HUM | P11 · ENT | Pendiente | Revisión humana de balance, cámara, HUD, ritmo y rendimiento. |

@@ -13,7 +13,8 @@ namespace Aethernia
         public PlayerCommands Commands;
         private TMP_Text objective,prompt,marker,notice;
         private string lastNotice;private float noticeUntil;
-        private RectTransform noticeRect,pages,back,interaction;
+        private RectTransform noticeRect,pages,back;
+        private Button interaction;
         private RectTransform objectives,prompts,markerRect;
         private RectTransform header,dock;
         private MedievalHudView hud;
@@ -34,7 +35,11 @@ namespace Aethernia
             objective=ui.Text(objectives,"Objective","",12,8,336,60,17);
             prompts=DemoWidgets.Rect(canvas,"UX Nearby interaction",0,0,440,42);
             prompts.anchorMin=prompts.anchorMax=new Vector2(.5f,0);prompts.pivot=new Vector2(.5f,0);prompts.anchoredPosition=new Vector2(0,18);
-            ui.Surface(prompts,new Color(.03f,.035f,.03f,.9f)).raycastTarget=false;
+            var surface=ui.Surface(prompts,new Color(.03f,.035f,.03f,.9f));
+            surface.raycastTarget=false;
+            interaction=prompts.gameObject.AddComponent<Button>();
+            interaction.targetGraphic=surface;
+            interaction.onClick.AddListener(()=>Commands.Interact());
             prompt=ui.Text(prompts,"Prompt","",12,8,416,28,18);prompt.alignment=TextAlignmentOptions.Center;
             noticeRect=DemoWidgets.Rect(canvas,"UX Notice",0,0,740,34);noticeRect.anchorMin=noticeRect.anchorMax=noticeRect.pivot=new Vector2(.5f,0);noticeRect.anchoredPosition=new Vector2(0,72);
             notice=ui.Text(noticeRect,"Notice","",0,0,740,34,17);notice.alignment=TextAlignmentOptions.Center;
@@ -51,7 +56,6 @@ namespace Aethernia
             if(dock!=null)
             {
                 pages=dock.Find("Exploration Pages") as RectTransform;back=dock.Find("Return to Exploration") as RectTransform;
-                interaction=Flow.ExistingHud.GetComponent<ExplorationHud>().ActionButton.transform as RectTransform;
                 var image=dock.GetComponent<Image>();if(image!=null)image.enabled=false;
                 var caption=dock.Find("Navigation Caption");if(caption!=null)caption.gameObject.SetActive(false);
             }
@@ -86,7 +90,6 @@ namespace Aethernia
             if(dock!=null)Place(dock,new Vector2(0,0),new Vector2(16,10),new Vector2(1248,58));
             if(pages!=null)Place(pages,new Vector2(0,0),Vector2.zero,new Vector2(276,40));
             if(back!=null){Place(back,new Vector2(0,0),Vector2.zero,new Vector2(180,38));back.gameObject.SetActive(mode==PrototypeMode.Construction);}
-            if(interaction!=null)interaction.gameObject.SetActive(false);
             if(session.LastMessage!=lastNotice){lastNotice=session.LastMessage;notice.text=lastNotice;noticeUntil=Time.unscaledTime+4;}
             noticeRect.anchoredPosition=new Vector2(0,mode==PrototypeMode.Rts?(Flow.Director.Rts.TacticalBattle?178:112):72);
             noticeRect.gameObject.SetActive(visible&&Time.unscaledTime<noticeUntil);
@@ -101,7 +104,9 @@ namespace Aethernia
             if(Time.unscaledTime>=nextRefresh)
             {
                 nextRefresh=Time.unscaledTime+.12f;
-                var point=Commands.RefreshNearby();
+                var point=visible&&exploration?Commands.RefreshNearby():null;
+                interaction.interactable=point!=null;
+                interaction.targetGraphic.raycastTarget=point!=null;
                 prompt.text=point==null?"WASD · caminar     Rueda · acercar":"E · "+Verb(point)+" — "+point.DisplayName;
                 SetObjective();
             }

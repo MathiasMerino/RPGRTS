@@ -17,7 +17,7 @@ namespace Aethernia
         public static IEnumerator Wait(float seconds){var end=Time.realtimeSinceStartup+seconds;while(Time.realtimeSinceStartup<end)yield return null;}
         public static IEnumerator Arrive(ExplorationUnit unit)
         {yield return null;var end=Time.realtimeSinceStartup+40;while(unit.IsMoving&&Time.realtimeSinceStartup<end)yield return null;Require(!unit.IsMoving,"real navigation arrival");}
-        public static IEnumerator Run(DemoFlow flow,string slot,string cls,string race,Func<string,IEnumerator> capture,bool nativeInput=true)
+        public static IEnumerator Run(DemoFlow flow,string slot,string cls,string race,Func<string,IEnumerator> capture,bool nativeInput=true,bool allowPatrolRetry=true)
         {
             var d=flow.Director;var session=flow.Session;var hero=d.Hero;var cargo=UnityEngine.Object.FindAnyObjectByType<LostCargoController>();var questView=cargo.GetComponent<LostCargoView>();var ux=flow.GetComponent<UxExperienceView>();var input=UnityEngine.Object.FindAnyObjectByType<PlayerCommands>();
             Require(flow.UxEnabled&&flow.Front.Screen==DemoScreen.Main,"main menu first");yield return capture("01-Menu");
@@ -82,7 +82,8 @@ namespace Aethernia
             File.WriteAllText(slot+".preparation.details",proof.ToString());yield return Wait(.3f);yield return capture("18-Positioned");war.CopyStatus(units);var enemy=units.First(u=>u.Team==1&&u.Role=="Arquero").Unit;
             Require(war.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false)&&!war.Preparing,"explicit player attack starts hostility");yield return Wait(.5f);yield return capture("19-Attack");
             var attempts=new List<string>();
-            for(var attempt=0;attempt<2;attempt++)
+            var maximumAttempts=allowPatrolRetry?2:1;
+            for(var attempt=0;attempt<maximumAttempts;attempt++)
             {
                 var guarded=false;deadline=Time.realtimeSinceStartup+120;while(war.Active&&Time.realtimeSinceStartup<deadline)
             {if(!guarded)guarded=war.HeroAction("guard");if(session.State.Health<=session.HeroProfile.Health-4)war.HeroAction("recover");war.HeroAction("technique");war.HeroAction("attack");
@@ -90,7 +91,7 @@ namespace Aethernia
                 attempts.Add("attempt="+(attempt+1)+" victory="+war.LastResolvedVictory+" hp="+session.State.Health+" allies="+war.Allies+" enemies="+war.Enemies);
                 if(war.LastResolvedVictory==true)break;
                 Require(!war.Active,"battle timed out, no automatic retry");
-                if(attempt==0)
+                if(attempt+1<maximumAttempts)
                 {
                     yield return capture("19B-ActualDefeat");Require(flow.Front.Screen==DemoScreen.Retry&&flow.Front.Controls["retry"].interactable,"explicit defeat retry screen");
                     flow.Front.Controls["retry"].onClick.Invoke();yield return Wait(.4f);Require(war.Preparing&&session.State.Health==session.HeroProfile.Health,"existing paid-resource state retained; retry restores class health by existing rule");

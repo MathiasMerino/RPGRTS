@@ -14,18 +14,28 @@ namespace Aethernia
         {var args=Environment.GetCommandLineArgs();if(Array.IndexOf(args,"-aetherniaUx02Smoke")<0&&Array.IndexOf(args,"-aetherniaE20Smoke")<0)return;var node=new GameObject("Explicit UX02 Windows validation");node.AddComponent<WorldExplorationSmokeProbe>();if(Array.IndexOf(args,"-demoRecord")>=0)node.AddComponent<DemoRecordingProbe>();}
         private IEnumerator Start()
         {
-            Application.runInBackground=true;var args=Environment.GetCommandLineArgs();var tactical=Array.IndexOf(args,"-aetherniaE20Smoke");var slot=args[(tactical>=0?tactical:Array.IndexOf(args,"-aetherniaUx02Smoke"))+1];var cls=args[Array.IndexOf(args,"-demoClass")+1];var race=args[Array.IndexOf(args,"-demoRace")+1];var resume=Array.IndexOf(args,"-demoResume")>=0;Directory.CreateDirectory(Path.GetDirectoryName(slot));
-            yield return null;yield return null;var flow=FindAnyObjectByType<DemoFlow>();var stack=new Stack<IEnumerator>();stack.Push(resume?Resume(flow,slot,cls,race):WorldExplorationRoute.Run(flow,slot,cls,race,name=>Capture(flow,slot,cls,name)));
+            Application.runInBackground=true;var args=Environment.GetCommandLineArgs();var tactical=Array.IndexOf(args,"-aetherniaE20Smoke");var slot=args[(tactical>=0?tactical:Array.IndexOf(args,"-aetherniaUx02Smoke"))+1];var cls=args[Array.IndexOf(args,"-demoClass")+1];var race=args[Array.IndexOf(args,"-demoRace")+1];var resume=Array.IndexOf(args,"-demoResume")>=0;
+            var stabilization=Array.IndexOf(args,"-demoStabilization")>=0;
+            Directory.CreateDirectory(Path.GetDirectoryName(slot));
+            if(stabilization&&!resume)File.WriteAllText(slot+".balance.csv","stage,time_s,class,race,hp,max_hp,attack,guard,level,xp,gold,wood,food\n");
+            yield return null;yield return null;var flow=FindAnyObjectByType<DemoFlow>();var stack=new Stack<IEnumerator>();stack.Push(resume?Resume(flow,slot,cls,race):WorldExplorationRoute.Run(flow,slot,cls,race,name=>Capture(flow,slot,cls,name,stabilization),allowPatrolRetry:!stabilization));
             var start=Time.realtimeSinceStartup;
             while(stack.Count>0)
             {
                 object step;try{var top=stack.Peek();if(!top.MoveNext()){stack.Pop();continue;}step=top.Current;if(step is IEnumerator nested){stack.Push(nested);continue;}}
                 catch(Exception e){File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"FAIL: "+e);Debug.LogError(e);GetComponent<DemoRecordingProbe>()?.Finish();Application.Quit(2);yield break;}yield return step;
             }
-            GetComponent<DemoRecordingProbe>()?.Finish();File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"PASS: "+(tactical>=0?"E20":"UX02")+" "+race+"/"+cls+" "+(resume?"new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints":"menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title")+(tactical>=0?"; despliegue, órdenes, técnica, conquista y producción territorial":"")+"; seconds="+(Time.realtimeSinceStartup-start).ToString("F2"));flow.Front.Controls["quit"].onClick.Invoke();
+            GetComponent<DemoRecordingProbe>()?.Finish();File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"PASS: "+(stabilization?"E20.1":tactical>=0?"E20":"UX02")+" "+race+"/"+cls+" "+(resume?"new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints":"menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title")+(tactical>=0?"; despliegue, órdenes, técnica, conquista y producción territorial":"")+"; seconds="+(Time.realtimeSinceStartup-start).ToString("F2"));flow.Front.Controls["quit"].onClick.Invoke();
         }
-        private static IEnumerator Capture(DemoFlow flow,string slot,string cls,string name)
+        private static IEnumerator Capture(DemoFlow flow,string slot,string cls,string name,bool stabilization)
         {
+            if(stabilization&&BalanceCheckpoint(name))
+            {
+                var game=flow.Session;var s=game.State;var profile=game.HeroProfile;
+                var damage=HeroActionRules.AttackDamage(profile,HeroActionRules.WeaponBonus(s,game.Rules.Progression?.Items));
+                File.AppendAllText(slot+".balance.csv",FormattableString.Invariant(
+                    $"{name},{Time.realtimeSinceStartupAsDouble:F2},{s.ClassId},{s.RaceId},{s.Health},{profile.Health},{damage},{HeroActionRules.GuardReduction(profile)},{s.HeroLevel},{s.Experience},{s.Gold},{s.Wood},{s.Food}\n"));
+            }
             if(name=="T02-Deployment" && SystemInfo.graphicsDeviceType!=GraphicsDeviceType.Null &&
                 Array.IndexOf(Environment.GetCommandLineArgs(),"-demoRecord")<0)
             {
@@ -58,6 +68,11 @@ namespace Aethernia
             }
             yield return DemoPlayerCapture.Save(Path.Combine(Path.GetDirectoryName(slot),"Captures",cls+"-"+name+".png"));
         }
+        private static bool BalanceCheckpoint(string name) =>
+            name=="04-SafeVillage"||name=="11-FirstRpg"||name=="13-ExploreAgain"||
+            name=="18-Positioned"||name=="20-Victory"||name=="22-Camp"||
+            name=="T02-Deployment"||name=="T07-Conquered"||name=="T08-Return";
+
         private static IEnumerator Resume(DemoFlow flow,string slot,string cls,string race)
         {
             UxExperienceRoute.Require(PrototypeSaveStore.Load(slot,flow.Session.Rules,out var before),"read saved native slot");flow.Front.Controls["continue"].onClick.Invoke();flow.Pause();var after=flow.Session.State;
@@ -66,7 +81,10 @@ namespace Aethernia
             {
                 UxExperienceRoute.Require(after.Territories.Single(t=>t.Id=="outpost").Owner==after.FactionId&&
                     after.Facts.Count(f=>f=="umbral-outpost-conquered")==1&&after.Skills.Count==before.Skills.Count&&
-                    after.HeroLevel==before.HeroLevel&&after.Weapon==before.Weapon&&after.ArmySelection.SequenceEqual(before.ArmySelection),
+                    after.HeroLevel==before.HeroLevel&&after.Experience==before.Experience&&after.Weapon==before.Weapon&&
+                    after.Armour==before.Armour&&after.Accessory==before.Accessory&&after.ArmySelection.SequenceEqual(before.ArmySelection)&&
+                    after.Skills.Select(x=>x.Id+"|"+x.Rank).SequenceEqual(before.Skills.Select(x=>x.Id+"|"+x.Rank))&&
+                    after.Items.Select(x=>x.Id+"|"+x.Count).SequenceEqual(before.Items.Select(x=>x.Id+"|"+x.Count)),
                     "conquest, gear, progression and deployed roster persisted");
                 UxExperienceRoute.Require(!flow.Director.Rts.Active&&!flow.Director.Rts.TacticalDeployment,"orders and combat do not leak across processes");
             }

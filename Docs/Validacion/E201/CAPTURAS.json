@@ -1,0 +1,167 @@
+[
+  {
+    "path": "Docs/Images/E201/Portable/warrior-01-Menu.png",
+    "sha256": "1a3f85e81847abb0847c38e651e5ceb1816b9154b72b821ee0754d47f1a87c5e",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-02-Creation.png",
+    "sha256": "8a6e0346f27683d0ed6c5aca1f385928bd2c0788f34bb049fa96220b649afa8e",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-04-SafeVillage.png",
+    "sha256": "fef90aafe028f5042f6715db818b44aa3e3de565ef222d027efc86cb0a661c81",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-07-NpcPrompt.png",
+    "sha256": "5e6c22a7d5725b8e3fe5cc9f5d66a52bab9910c985d57475ceec06edb00cdf77",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-08-Dialogue.png",
+    "sha256": "91f675b66c7e42c074fab7d81bfd724743161630e743a2b6c7a887092f31440b",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-11-FirstRpg.png",
+    "sha256": "fd7a2d1fe063780bd44871aa299e08d7058569f76572f83d84466540c27e910f",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-12-CompactRpg.png",
+    "sha256": "4e7c087319b39109f071d403d07d4c08c0c343fc40bdeb87903532ab35c4a640",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-18-Positioned.png",
+    "sha256": "a895333170fa3e8ab21c2148b6a9fec632c04607f3c6eb357496f940d93777ee",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-20-Victory.png",
+    "sha256": "a00f004c51adf3412a0ecdb4f7139d983ca89ba3e01e9acd68c86507437a6ea6",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-21-Building.png",
+    "sha256": "52f3168b5d16bc1514d5b289f9ea4922de6496f635d368abc63c0b67c7cfbed2",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-22-Camp.png",
+    "sha256": "b8ef885718f5b43380f15c4bfc535859e0c170cfb25a9f261ece2a256c0c75e8",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-23-Continued.png",
+    "sha256": "5dedfb9a2e28c9a844504bd79aa03fc9586cb21c56ec26533963f66ed0c344fe",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-T01-Army.png",
+    "sha256": "1208354d340e6c7180d3c76abcca278edaa9fcc5f0884f28cc749a62ce1e8902",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-T02-Deployment.png",
+    "sha256": "6a7ca4f7780690977fe0ffcaf1b33b964fb6efe7c9bfd05cdbb4c0460f972836",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-T03-LineMove.png",
+    "sha256": "a06a028eb59c5679b25ecdd58cad126c0311984190d60891804c73c835c651d5",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-T04-Compact.png",
+    "sha256": "47e59bd8148d7f027f2c6e7748f39663fc66f9a9d26d7c5627e83bd7d4d7fad4",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-T06-HeroTechnique.png",
+    "sha256": "559c956631347c0367fc6bf4f6021991f36cf670be58a8574b73a7dc44db765e",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-T07-Conquered.png",
+    "sha256": "6f043892b4a70220361eb9ddf783f1ba664e17d3885aac6af47c7b3e1c30f902",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-T08-Return.png",
+    "sha256": "c5e2998d507b5506a33d2b7d185690840d3dae312600dc01d3b7fb3a9e6815c8",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/warrior-W01-ForestFork.png",
+    "sha256": "f54c4d73630f6430acc9c828e4a6cac26c2ea843a80e8a6e61355c15f99a9342",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/monk-02-Creation.png",
+    "sha256": "d802e97aa7f96404ea99d3860c6731cb54c51f78b135386f97dd01d77c633dae",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/monk-20-Victory.png",
+    "sha256": "35e36109c691e6292977211aff7e02c5a41c042f0059394f388ddb7494f30566",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/monk-23-Continued.png",
+    "sha256": "9549ac18d23b1b6f038099a4a44b6b47974650700cb9f48640081a6a0661f268",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/monk-T06-HeroTechnique.png",
+    "sha256": "51477e4db77bbccf2b7f4bf2dba693478bd60f86808e27997d3daa2df9334407",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/monk-T07-Conquered.png",
+    "sha256": "fa7f65f0508623637549af3cff0e89d56436686b8302d47c5492d5b14d57a281",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/mage-02-Creation.png",
+    "sha256": "f1e2b345f3ff7a0de230fd795c03d07dd1e3cc492b97942dcc708c2d1bc97f5a",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/mage-20-Victory.png",
+    "sha256": "f2aa6ec207b01e562b671f08dd10ac5f8396044f3e9cc7decc2e5f021eec337a",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/mage-23-Continued.png",
+    "sha256": "842afc5339d7b80c0a2266df9d246a6ce02c58de66df3011be5e789d80bb0f58",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/mage-T06-HeroTechnique.png",
+    "sha256": "805b06782b7df0c00ec90128a242a4b1b450385136a7e20b29b1ff67276a589b",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Portable/mage-T07-Conquered.png",
+    "sha256": "8a878871ebf9f47cb0e183ae14335c7f2b961d9b3ffc6fce637e3f0f4655ff27",
+    "source": "Windows x64 extracted, actual 1280x720 Game camera; f9da1b3154910bba7c3e76bee732dc1f2a136d3b"
+  },
+  {
+    "path": "Docs/Images/E201/Resoluciones/Interaction-1280.png",
+    "sha256": "9a9bf944b59460485bc80895cc0bde26bb51d3eb1473f875db831139b967cdaf",
+    "source": "Unity Play Mode with the real Canvas and interaction"
+  },
+  {
+    "path": "Docs/Images/E201/Resoluciones/Interaction-1920.png",
+    "sha256": "2b41d6262edf2638bcbc5cf725c7a9066e98fc5285c0865dfe055123ed9ec672",
+    "source": "Unity Play Mode with the real Canvas and interaction"
+  },
+  {
+    "path": "Docs/Images/E201/Resoluciones/Interaction-2560.png",
+    "sha256": "fa6ab7a6aa782aa0f98d06690bcd426432dcef80bee23d91ca7ed575474f632c",
+    "source": "Unity Play Mode with the real Canvas and interaction"
+  }
+]

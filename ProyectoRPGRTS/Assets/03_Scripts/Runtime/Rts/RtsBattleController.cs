@@ -42,6 +42,7 @@ namespace Aethernia
         public int TechniqueFocus=>IncludesHero?techniqueFocus:0;
         private int sequence;
         public bool IncludesHero=>sharedHero!=null;
+        private bool PatrolCombat=>IncludesHero&&ContextId=="patrol";
         public RtsDemoRules DemoRules=>demoRules;
         public GameObject UnitTemplate=>template;
         public string ContextId { get; private set; }="patrol";
@@ -198,7 +199,21 @@ namespace Aethernia
             if(Preparing&&explicitTarget!=null&&!EngagePrepared())return false;
             foreach (var s in soldiers)
                 if (s.Team == 0 && Health(s) > 0 && s.Unit.IsSelected)
-                {s.OrderedTarget=explicitTarget;s.MoveOrder=IncludesHero&&explicitTarget==null; accepted |= s.Unit.TryMoveTo(point + new Vector3((index % 3 - 1) * 0.8f, 0, index++ / 3 * 0.8f)); s.OrderedUntil = Time.time + 3;Trace("command",s,explicitTarget); }
+                {
+                    if (PatrolCombat && explicitTarget != null)
+                    {
+                        OrderPatrolAttack(s, explicitTarget);
+                        accepted = true;
+                    }
+                    else
+                    {
+                        s.OrderedTarget = explicitTarget;
+                        s.MoveOrder = IncludesHero && explicitTarget == null;
+                        accepted |= s.Unit.TryMoveTo(point + new Vector3((index % 3 - 1) * .8f, 0, index++ / 3 * .8f));
+                        s.OrderedUntil = Time.time + 3;
+                    }
+                    Trace("command", s, explicitTarget);
+                }
             return accepted;
         }
         private void Update()
@@ -211,6 +226,11 @@ namespace Aethernia
             foreach (var s in soldiers)
             {
                 if (Health(s) <= 0) continue;
+                if (PatrolCombat)
+                {
+                    TickPatrolSoldier(s);
+                    continue;
+                }
                 if(IncludesHero&&s.MoveOrder&&s.Unit.IsMoving&&(session.Rules.UxExperience||Time.time<s.OrderedUntil))continue;s.MoveOrder=false;
                 Soldier target = s.OrderedTarget!=null&&Health(s.OrderedTarget)>0?s.OrderedTarget:null;var ordered=target!=null;var nearest=target==null?float.MaxValue:Vector3.Distance(s.Unit.transform.position,target.Unit.transform.position);
                 foreach (var other in soldiers)
@@ -240,7 +260,7 @@ namespace Aethernia
         }
         private bool ClearLine(Soldier source,Soldier target)
         {
-            if(TacticalBattle)return TacticalLine(source,target);
+            if(TacticalBattle||PatrolCombat)return TacticalLine(source,target);
             return !Physics.Linecast(source.Unit.transform.position+Vector3.up*.9f,target.Unit.transform.position+Vector3.up*.9f,out var hit,~0,QueryTriggerInteraction.Ignore)||hit.transform.IsChildOf(target.Unit.transform);
         }
         private Soldier Nearest(Soldier source)
