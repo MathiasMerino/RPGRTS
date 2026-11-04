@@ -60,6 +60,8 @@ namespace Aethernia
                 if(label.GetComponentInParent<Canvas>()==null)label.gameObject.SetActive(false);
             foreach(var point in Object.FindObjectsByType<InteractionPoint>(FindObjectsInactive.Include))foreach(var label in point.GetComponentsInChildren<Canvas>(true))if(label.renderMode==RenderMode.WorldSpace)label.gameObject.SetActive(false);
             PlaceMenu("help","Ayuda",-136,88);PlaceMenu("page-session","Menú",-16,108);
+            if(Flow.Session.Rules.WorldExploration)
+            {var all=Flow.ExistingHud.FindControl("select-all");if(all!=null){all.transform.SetParent(canvas,false);Place((RectTransform)all.transform,new Vector2(0,0),new Vector2(16,16),new Vector2(174,38));}}
         }
         private void PlaceMenu(string id,string caption,float x,float width)
         {

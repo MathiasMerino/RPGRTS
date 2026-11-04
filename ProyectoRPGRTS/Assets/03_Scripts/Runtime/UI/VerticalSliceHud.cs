@@ -178,7 +178,7 @@ namespace Aethernia
             {
                 var id=b.Id;var visible=true;var ready=true;
                 if(id.StartsWith("mode-")) {visible=exploring&&compactView.WindowOpen&&ActivePage==ExplorationPage.Session;ready=!director.IsBusy;}
-                else if(id=="back") {visible=!exploring;ready=!director.IsBusy;}
+                else if(id=="back") {visible=!exploring&&(!session.Rules.UxExperience||session.Mode==PrototypeMode.Construction);ready=!director.IsBusy;}
                 else if(id=="help") { }
                 else if(id=="close") visible=exploring&&compactView.WindowOpen;
                 else if(id.StartsWith("page-"))

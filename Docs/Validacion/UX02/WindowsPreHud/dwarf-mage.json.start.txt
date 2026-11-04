@@ -1,0 +1,1 @@
+PASS: UX02 dwarf/mage menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title; seconds=127.38

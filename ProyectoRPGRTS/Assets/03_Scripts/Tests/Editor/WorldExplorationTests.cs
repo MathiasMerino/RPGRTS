@@ -67,7 +67,17 @@ namespace Aethernia.Tests.Editor
             {Assert.That(rts.Command(rts.PreparationTarget,null,false),Is.True);var end=Time.realtimeSinceStartup+25;while(rts.PreparationStep<=step&&Time.realtimeSinceStartup<end)yield return null;Assert.That(rts.PreparationStep,Is.GreaterThan(step));}
             Assert.That(flow.Session.State.Health,Is.EqualTo(health));rts.CopyStatus(units);var enemy=units.First(u=>u.Team==1&&u.Health>0).Unit;
             rts.SelectGroup(new List<ExplorationUnit>(),false);Assert.That(rts.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false),Is.False);Assert.That(rts.Preparing,Is.True,"no selected unit must not activate hostility");
-            rts.SelectAll();yield return Capture("Tactical-Formation");Assert.That(rts.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false),Is.True);Assert.That(rts.Preparing,Is.False);Assert.That(rts.LastOrderText,Does.Contain("Atacar"));flow.Director.Rts.Clear();LogAssert.NoUnexpectedReceived();
+            rts.SelectAll();yield return TacticalLayout();Assert.That(rts.Command(enemy.transform.position,enemy.GetComponentInChildren<Collider>(),false),Is.True);Assert.That(rts.Preparing,Is.False);Assert.That(rts.LastOrderText,Does.Contain("Atacar"));flow.Director.Rts.Clear();LogAssert.NoUnexpectedReceived();
+        }
+        private IEnumerator TacticalLayout()
+        {
+            foreach(var width in new[]{1280,1920,2560})yield return DemoCapture.Save("Logs/UX02/Captures/RtsLayout-"+width+".png",width,width*9/16,null,(camera,w,h)=>
+            {
+                var hud=flow.ExistingHud;Assert.That(hud.CompactView.Feedback.transform.parent.gameObject.activeInHierarchy,Is.False,"single UX notice surface");Assert.That(hud.FindControl("back").gameObject.activeInHierarchy,Is.False,"no unusable exploration action during battle");
+                var button=RectTransformUtility.CalculateRelativeRectTransformBounds(hud.transform,hud.FindControl("select-all").transform);
+                var panel=RectTransformUtility.CalculateRelativeRectTransformBounds(hud.transform,hud.transform.Find("Hero RTS commands"));
+                var a=new Rect(button.min.x,button.min.y,button.size.x,button.size.y);var b=new Rect(panel.min.x,panel.min.y,panel.size.x,panel.size.y);Assert.That(a.Overlaps(b),Is.False,"select all remains outside hero panel at "+w);
+            });
         }
         [UnityTest]public IEnumerator ActualWoodlandOcclusionRestoresVisibilityAndKeepsPhysicsMaterials()
         {

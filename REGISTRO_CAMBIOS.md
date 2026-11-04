@@ -745,3 +745,7 @@ Build53a5704: cero errores de agente; pasan comprobaciones nativas de navegació
 ## 2026-11-03 — UX2-H Windows tercer intento
 
 Build5edd245 verifica WASD/E, guardia móvil, selección simple/Shift/rectángulo, bloqueo UI, movimiento y ataque por InputSystem real, RPG y victoria RTS al primer intento con14PV; también centro/taller/producción/cuartel/recluta militar, puerta y comercio. Falla después una expectativa del arnés: el compañero ya se incorpora activo por regla existente y SetParty(true) rechaza cambios redundantes. Ahora comprueba estado activo, reserva y reactivación con APIs reales. Evidencia parcial preservada WindowsIntento03; aún no es pase completo. Se compactan barras RTS ancladas a cada unidad, sin apilarlas varios metros arriba; sólo presentación UX02.
+
+## 2026-11-03 — UX2-H circuito completo de tres clases
+
+Buildeb79c33:6/6procesosWindows, humano/Guerrero, enano/Mago, elfo/Monje; circuito completo y nuevo proceso/Continuar. Incluye dispositivos sintéticos W/E/ratón simple/Shift/rectángulo/mover/atacar, NPC/patrulla, hallazgos únicos, RPG/RTS auténticos, construcción/producción/ejército, comercio, puerta, compañero/reserva/grupo, ruinas/regreso y persistencia. Recibos preservados WindowsPreHud. Capturas revelan aviso legado duplicado y selección grupal tapada parcialmente; la última corrección centraliza visibilidad del aviso y regreso de construcción, y coloca Seleccionar todo fuera del panel RTS. Prueba de layout a tres resoluciones añadida; todavía falta build final, regresión y portable.

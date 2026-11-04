@@ -24,7 +24,7 @@ def main():
             for slot in folder.glob('*.json'):
                 if not slot.name.endswith('.identity.json') and not slot.name.endswith('.metrics.json'):shutil.copy2(slot,final/slot.name)
     for png in sorted((project/('Logs/'+a.phase+'/Captures')).glob('*.png')):
-        if (a.phase=='UX02' and (png.name.startswith('WorldDialogue-') or png.name.startswith('ActualTree-'))) or (a.phase=='UX01' and png.name.startswith('warrior-') and not png.name.endswith('-1280.png')):shared.copy_image(root,png,images/'Resoluciones'/png.name,'Unity Play Mode '+a.phase+'; actual camera render at stated resolution; automated fixture',captures)
+        if (a.phase=='UX02' and (png.name.startswith('WorldDialogue-') or png.name.startswith('ActualTree-') or png.name.startswith('RtsLayout-'))) or (a.phase=='UX01' and png.name.startswith('warrior-') and not png.name.endswith('-1280.png')):shared.copy_image(root,png,images/'Resoluciones'/png.name,'Unity Play Mode '+a.phase+'; actual camera render at stated resolution; automated fixture',captures)
     for name in (['warrior-04-SafeVillage.png','warrior-11-FirstRpg.png','warrior-18-Positioned.png','warrior-24-WorldOverview.png'] if a.phase=='UX02' else ['human-warrior-Rpg.png','human-warrior-Rts.png','human-warrior-Quest.png']):
         source=root/('Docs/Images/UX01/Windows' if a.phase=='UX02' else 'Docs/Images/E19/Windows')/name
         assert source.is_file(),source

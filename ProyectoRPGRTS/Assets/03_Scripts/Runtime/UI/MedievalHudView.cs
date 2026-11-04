@@ -52,7 +52,7 @@ namespace Aethernia
             Body.gameObject.SetActive(show&&page!=ExplorationPage.Inventory);
             HelpPanel.SetActive(HelpOpen);
             if(lastMessage!=session.LastMessage) {lastMessage=session.LastMessage;feedbackUntil=Time.unscaledTime+8;}
-            Feedback.transform.parent.gameObject.SetActive(Time.unscaledTime<feedbackUntil);
+            Feedback.transform.parent.gameObject.SetActive(!session.Rules.UxExperience&&Time.unscaledTime<feedbackUntil);
             ((RectTransform)Feedback.transform.parent).anchoredPosition=new Vector2(260,show?-84:-550);
             Context.text=session.ModeTitle.ToUpperInvariant();
             Hint.gameObject.SetActive(exploring);
