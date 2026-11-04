@@ -35,3 +35,21 @@ E20.1 está en [PR #14](https://github.com/MathiasMerino/RPGRTS/pull/14), borrad
 
 
 E21 añade el [PR #15](https://github.com/MathiasMerino/RPGRTS/pull/15), borrador desde `feature/e21-first-campaign` sobre `fix/e20-1-alpha-stabilization` (PR #14, 4ab7b4f). La revisión hacia dev continúa en el orden #1→#13→#14→#15, conservando las dependencias de la tabla. Tras aprobar e integrar un antecedente, revisar la historia y el diff del siguiente antes de cambiar su base hacia dev. La aprobación de la campaña y la promoción a main requieren su propia revisión.
+
+## E22 · Verificación de la pila
+
+Consulta de GitHub previa al desarrollo. Los quince PR estaban abiertos en borrador. `dev` apuntaba a `742c04f` y `main` a `5a2e3ce`. E21 (`78695c1`) no era ancestro de `dev`. La cabeza de E22 es `feature/e22-living-world` y su base es `feature/e21-first-campaign`.
+
+| PR | Cabeza | Base | Dependencia |
+|---|---|---|---|
+| #10 | feature/e19-razas-civilizaciones | feature/e18-progresion-balance | #9 |
+| #11 | feature/ux01-onboarding-camera-world | feature/e19-razas-civilizaciones | #10 |
+| #12 | feature/ux02-world-exploration | feature/ux01-onboarding-camera-world | #11 |
+| #13 | feature/e20-tactical-warfare | feature/ux02-world-exploration | #12 |
+| #14 | fix/e20-1-alpha-stabilization | feature/e20-tactical-warfare | #13 |
+| #15 | feature/e21-first-campaign | fix/e20-1-alpha-stabilization | #14 |
+| E22 | feature/e22-living-world | feature/e21-first-campaign | #15 |
+
+Revisar hacia `dev` en orden #1 → #2 → #3 → #4 → #5 → #6 → #7 → #8 → #9 → #10 → #11 → #12 → #13 → #14 → #15 → E22. Después de cada integración aprobada, comprobar historia y diff efectivo del siguiente. Las escenas y GUID compartidos pueden causar conflictos de Unity, y aplanar commits puede volver a incluir cambios de antecedentes. Revisar tamaño, licencias, rutas privadas y build al avanzar por la pila.
+
+Antes de aprobar E22, revisar regresión de escenas anteriores, arranque Windows, guardados de E21, cobro único, inventario y fondos de comercio, los tres cierres, la patrulla histórica y la técnica RTS. La evaluación humana sigue siendo necesaria para interfaz, ritmo y balance.
