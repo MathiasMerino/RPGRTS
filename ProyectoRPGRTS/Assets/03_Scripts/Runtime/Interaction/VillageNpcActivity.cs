@@ -12,7 +12,13 @@ namespace Aethernia
         private float wait;
         private Quaternion restingRotation;
         private bool talking;
-        private void Start() { restingRotation = transform.rotation; Actor.Agent.avoidancePriority = 75; }
+        private void Start()
+        {
+            restingRotation = transform.rotation;
+            Actor.Agent.avoidancePriority = 75;
+            Actor.Agent.speed = 1.4f;
+            Actor.GetComponentInChildren<CharacterVisualModel>()?.BindActor(Actor);
+        }
         private void Update()
         {
             if (!Flow.IsPlaying || Flow.Session.Paused || Flow.Session.Mode != PrototypeMode.Exploration) { Actor.Stop(); return; }

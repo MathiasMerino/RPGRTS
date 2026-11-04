@@ -1290,3 +1290,9 @@ Fallos y diagnóstico anteriores conservados en Docs/Validacion/UX01: arnés tra
 - Archivos: previstos según bloque; todavía sin implementación validada.
 - Pruebas: pendientes; no equivalen a revisión humana.
 
+
+### UX2-ANIM — Enlace de locomoción de NPC al iniciar
+- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: D.
+- Aceptación: el guardia se desplaza y su driver observa velocidad y estado Walk; enlace reconstruido en runtime, no sólo durante autoría.
+- Archivos: VillageNpcActivity.cs y WorldExplorationRoute.cs; cambio pendiente hasta concluir el pase general activo.
+- Pruebas: inspección confirma actor privado no serializado en HumanoidAnimationDriver; falta comprobación dirigida/player del enlace corregido.

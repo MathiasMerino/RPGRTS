@@ -749,3 +749,11 @@ Build5edd245 verifica WASD/E, guardia móvil, selección simple/Shift/rectángul
 ## 2026-11-03 — UX2-H circuito completo de tres clases
 
 Buildeb79c33:6/6procesosWindows, humano/Guerrero, enano/Mago, elfo/Monje; circuito completo y nuevo proceso/Continuar. Incluye dispositivos sintéticos W/E/ratón simple/Shift/rectángulo/mover/atacar, NPC/patrulla, hallazgos únicos, RPG/RTS auténticos, construcción/producción/ejército, comercio, puerta, compañero/reserva/grupo, ruinas/regreso y persistencia. Recibos preservados WindowsPreHud. Capturas revelan aviso legado duplicado y selección grupal tapada parcialmente; la última corrección centraliza visibilidad del aviso y regreso de construcción, y coloca Seleccionar todo fuera del panel RTS. Prueba de layout a tres resoluciones añadida; todavía falta build final, regresión y portable.
+
+## 2026-11-03 — UX2-ANIM detectado antes del cierre
+
+Revisión de HumanoidAnimationDriver confirma que actor no está serializado: la llamada de autoría BindActor no basta en el player para mover la animación del guardia. Se registra corrección de arranque acotada y aserción de ObservedSpeed/IsMoving sobre agente real; se deja terminar el pase general activo antes de tocar scripts para evitar mezclar versiones dentro de una ejecución.
+
+## 2026-11-03 — UX2-H general y corrección localizada UX2-ANIM
+
+General a2b2b69:212/213,0omisiones,7/7UX02; único fallo RTS histórico, Guerrero0PV/FirstRts/recuperación1. Los tres timeouts previos pasan dentro de esta ejecución completa, sin cambiar límites; causa anterior sin confirmar. GENERAL.xml/json y traza conservados. VillageNpcActivity.Start vuelve a enlazar el driver al actor real y fija paso1.4m/s sólo en NPC nuevos. La ruta comprueba movimiento y parámetro Locomotion=Walk con rig válido. Por alcance local exclusivo de la escena nueva, la candidata posterior se verifica con toda su suite dirigida y Windows; la general se atribuye a a2b2b69, no se suman pases.

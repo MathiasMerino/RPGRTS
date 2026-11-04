@@ -33,6 +33,8 @@ namespace Aethernia
             var guard=activities.Single(a=>a.Route.Length>1);var start=guard.Actor.transform.position;var until=Time.time+6;var hardLimit=Time.realtimeSinceStartup+30;
             while(Vector3.Distance(start,guard.Actor.transform.position)<.2f&&Time.time<until&&Time.realtimeSinceStartup<hardLimit)yield return null;
             Check(Vector3.Distance(start,guard.Actor.transform.position)>=.2f,"guard actually patrols existing route");
+            var animation=guard.Actor.GetComponentInChildren<HumanoidAnimationDriver>();
+            Check(animation!=null&&animation.CanAnimate&&animation.IsMoving&&animation.Rig.Animator.GetInteger("Locomotion")==1,"guard uses existing Walk driven by live movement");
             foreach(var waypoint in world.RoutePoints.Take(5))
             {yield return MoveTo(flow,waypoint.position);yield return UxExperienceRoute.Wait(.3f);if(waypoint==world.RoutePoints[1])yield return capture("W01-ForestFork");}
             Check(!flow.Director.IsBusy,"walking does not start encounters");
