@@ -19,7 +19,7 @@
 
 ## E20 — candidata de guerra táctica
 - Rama feature/e20-tactical-warfare, PR13 borrador sobre UX02/PR12 ca95205. Escena Assets/01_Scenes/AetherniaE20Warfare.unity y datos Assets/18_E20. BuildE20 → Builds/E20Windows. Código de build 8989762. Guía Docs/GUIA_E20.md e informe Docs/ENTREGA_E20.md.
-- Piloto activa mando táctico en conquista del puesto, sobre héroe, facciones, ejército y guardado existentes. La patrulla anterior conserva sus reglas y su incidencia abierta. Mago y Monje completaron la ruta Windows y Continuar; Guerrero se detuvo en patrulla heredada. Separar las dirigidas, Windows y general de la revisión humana. Sin E21 ni fusiones.
+- Piloto activa mando táctico en conquista del puesto, sobre héroe, facciones, ejército y guardado existentes. La patrulla anterior conserva sus reglas y su incidencia abierta. Mago y Monje completaron la ruta Windows y Continuar; Guerrero se detuvo en patrulla heredada. General220/221, únicas incidencias de patrulla heredada; 8/8 E20 en general más 1/1 adicional con siete aliados y Guardia de frontera. Portable Continuar PASS, dos inicios fallaron en patrulla. Separar resultados automáticos de la revisión humana. Sin E21 ni fusiones.
 - No repetir AuthorE20 sobre assets ya guardados. Runner Invoke-ProgressionSmoke.ps1 -Phase E20 con raza por clase. La grabación opcional sólo captura el piloto. El player oculto mide iteraciones de Unity, no FPS jugables si no hay render automático.
 
 ## Alcance y método

@@ -150,6 +150,71 @@ namespace Aethernia.Tests.Editor
             Assert.That(hit.collider.name, Does.Contain("StoneWall"));
         }
 
+        [UnityTest]
+        public IEnumerator SixPaidRecruitsAndHeroReachEachFormationWithCulturalProfile()
+        {
+            EditorSceneManager.OpenScene(WorldExplorationBuilder.TacticalScenePath);
+            yield return new EnterPlayMode();
+            yield return null;
+            yield return null;
+            yield return VerifyMaxRoster();
+        }
+
+        private static IEnumerator VerifyMaxRoster()
+        {
+            var flow = LoadLegacy("dwarf-mage");
+            yield return WorldExplorationRoute.MoveTo(flow, new Vector3(9, 0, -10));
+            var state = flow.Session.State;
+            // Presupuesto de fixture. La construcción y cada recluta aplican sus costes reales.
+            state.Gold = 100;
+            state.Wood = 50;
+            state.Food = 25;
+            var panel = Object.FindAnyObjectByType<ExpeditionPanel>();
+            var camp = flow.GetComponent<DemoSettlementPanel>();
+            var territory = Object.FindAnyObjectByType<TerritoryCampaign>();
+            if (state.CultureId != "frontier") Assert.That(panel.SetCulture("frontier"), Is.True);
+            var choices = new[] { new Vector3(6, 0, -6), new Vector3(5, 0, -8), new Vector3(5, 0, -15),
+                new Vector3(15, 0, -3), new Vector3(10, 0, -4) };
+            var plot = choices.First(point => flow.Director.Construction.CanPlace(point));
+            Assert.That(camp.SelectBlueprint("warehouse") && flow.Director.Construction.Place(plot), Is.True);
+            Assert.That(flow.Director.Execute("explore"), Is.True);
+            Assert.That(panel.RecruitCulture("frontier-guard"), Is.True);
+            foreach (var role in new[] { "swordsman", "swordsman", "archer", "brawler" })
+                Assert.That(camp.Recruit(role), Is.True);
+            Assert.That(state.Army.Count, Is.EqualTo(6));
+            Assert.That(camp.Recruit("archer"), Is.False, "respeta el límite del cuartel");
+            foreach (var record in state.Army) Assert.That(territory.SelectSoldier(record.Id, true), Is.True);
+            yield return StartPilot(flow, territory);
+
+            var rts = flow.Director.Rts;
+            var statuses = new List<RtsUnitStatus>();
+            rts.CopyStatus(statuses);
+            var allies = statuses.Where(status => status.Team == 0).ToArray();
+            var cultural = allies.Single(status => status.Role == "Guardia de frontera");
+            var roleProfile = flow.Session.Rules.Civilizations.MilitaryRole("frontier-guard");
+            Assert.That(allies.Length, Is.EqualTo(7));
+            Assert.That(cultural.Maximum, Is.EqualTo(roleProfile.Health));
+            Assert.That(cultural.Unit.Agent.speed, Is.EqualTo(roleProfile.Speed));
+            rts.SelectAll();
+            var points = new[] { new Vector3(-39, 0, 2), new Vector3(-36, 0, 2), new Vector3(-36, 0, 4) };
+            for (var shape = 0; shape < points.Length; shape++)
+            {
+                Assert.That(rts.Command(points[shape], null, false), Is.True, rts.Formation.ToString());
+                yield return null;
+                var destinations = allies.Select(unit => unit.Unit.Agent.destination).ToArray();
+                Assert.That(destinations.Distinct().Count(), Is.EqualTo(allies.Length));
+                foreach (var ally in allies) yield return UxExperienceRoute.Arrive(ally.Unit);
+                for (var i = 0; i < allies.Length; i++)
+                    Assert.That(Vector3.Distance(allies[i].Unit.transform.position, destinations[i]), Is.LessThan(.65f),
+                        rts.Formation + " llegada " + i);
+                yield return Capture("Seven-" + rts.Formation);
+                rts.CycleFormation();
+            }
+            Assert.That(rts.TacticalDeployment && rts.TacticalReady, Is.True);
+            LogAssert.NoUnexpectedReceived();
+        }
+
+
         private static DemoFlow LoadLegacy(string identity)
         {
             var flow = Object.FindAnyObjectByType<DemoFlow>();

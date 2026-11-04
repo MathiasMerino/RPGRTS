@@ -88,5 +88,20 @@
     "path": "Docs/Images/E20/Portable/mage-23-Continued.png",
     "sha256": "9819c9ba20ecdb6284adb86b46d98ddc9ffda6b2f88aad9bf7d0eee212e60608",
     "source": "Extracted Windows x64 player, Continue from validated E20 save, actual 1280x720 Game camera"
+  },
+  {
+    "path": "Docs/Images/E20/Editor/Seven-Line.png",
+    "sha256": "e7dafba52ae4b70f6dc4f29dbb64012b39195e3f1e2403a5936fde1fdeebd9c2",
+    "source": "Unity Editor Play Mode, six paid recruits and the RPG hero at their NavMesh destinations, 1280x720"
+  },
+  {
+    "path": "Docs/Images/E20/Editor/Seven-Column.png",
+    "sha256": "e74047f833c6a0f3188986ab5b0d4cacaec2b6335923f75d1de2562b06a8122d",
+    "source": "Unity Editor Play Mode, six paid recruits and the RPG hero at their NavMesh destinations, 1280x720"
+  },
+  {
+    "path": "Docs/Images/E20/Editor/Seven-Compact.png",
+    "sha256": "56dc1a59bcf55dc7e33d3cd0886567c49c54de95d153d9b10fb07c809a133461",
+    "source": "Unity Editor Play Mode, six paid recruits and the RPG hero at their NavMesh destinations, 1280x720"
   }
 ]

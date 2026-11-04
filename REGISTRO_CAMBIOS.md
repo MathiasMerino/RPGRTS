@@ -768,3 +768,10 @@ La build `c5db7ff` pasó 7/7 dirigidas y 8/8 procesos Windows con gráficos. El 
 Tareas E20-00, AE, FL, OP. Rama `feature/e20-tactical-warfare` desde UX‑02/PR12 en ca95205. La candidata conserva la patrulla previa y activa el mando táctico en la conquista existente. Incorpora despliegue seguro, línea/columna/compacta, tres posturas, órdenes excluyentes, retirada, cámara y HUD contextual. La escena E20 usa cuatro muros de la biblioteca E07 como cobertura y un NavMesh propio. Se conservan la progresión, economía y guardado existentes.
 
 Primera dirigida 3/6 por creación de NavMeshPath antes del ciclo de vida de Unity. Corregida la inicialización; segundo pase 5/6. La retirada pasó y la prueba de victoria se detuvo al reclutar con alimento insuficiente. El recorrido posterior usa granja, pausa del taller y descanso existentes. Se conservan los resultados intermedios como evidencia de diagnóstico.
+
+
+## 2026-11-04 — E20, validación y entrega
+
+Tareas E20-AE, FL, OP y QU verificadas técnicamente dentro del piloto. Regresión general en 8989762 con 220/221 y 8/8 de E20. Única falla histórica de Guerrero en reserva a 30 FPS, reproducida con traza. Prueba adicional 1/1 de seis reclutas y el héroe, incluida Guardia de frontera, con llegada real en línea, columna y compacta. Se conservó el primer fallo de esta prueba, causado por una captura del enumerador a través del recargado de dominio. Se corrigió el ciclo de vida del fixture.
+
+Build Windows x64 y ZIP en `ProyectoRPGRTS/Builds`. Mago y Monje aprobaron inicio y Continuar. El Guerrero y dos inicios del ZIP terminaron en la patrulla previa. Continuar desde el ZIP con el guardado verificado del Mago aprobó. Se guardaron 21 PNG, un MP4 y los resultados con CRC/SHA de la extracción y de los 22 archivos previos. Pendientes evaluación humana, FPS interactivos e incidencia de patrulla. PR #13 en borrador sobre #12. Calidad local y GDD conservados.
