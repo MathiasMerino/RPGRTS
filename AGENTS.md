@@ -40,6 +40,10 @@
 - Rama `feature/e23-integrated-alpha` sobre E22 `df1b719` y PR #16. Escena `Assets/01_Scenes/AetherniaE23IntegratedAlpha.unity`. `BuildE23` → `Builds/E23Windows`. Guía `Docs/GUIA_E23.md` e integración `Docs/INTEGRACION_E23.md`.
 - Reutiliza el guardado de E22. Pruebas de layout del tablón a 720p/1080p/1440p. Runner `Invoke-ProgressionSmoke.ps1 -Phase E23 -Classes warrior,mage,monk -Races human,dwarf,elf -WithGraphics`. Candidata técnica y evaluación humana separadas. Sin E24 ni fusiones.
 
+## ART-ENV-01 — Arte ambiental
+- Rama `feature/art-env-01-world-polish`, PR #18 sobre E23/PR #17. Escena jugable `Assets/01_Scenes/AetherniaArtEnv01.unity`, estudio `AetherniaArtEnv01Study.unity` y biblioteca `Assets/06_Environment/ArtEnv01`. `BuildArtEnv01` → `Builds/ArtEnv01Windows`.
+- Autoría en C# de Editor y mapas en Python. `AuthorArtEnv01` y `DressSettlementArtEnv01` son pasos de autoría únicos sobre una copia. La escena conserva el NavMesh, colisiones e interacciones E23. Revisión humana separada. `Docs/GUIA_ART_ENV_01.md`.
+
 ## Alcance y método
 - Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.
 - Trabajar tareas acotadas, preservar trabajo existente y registrar ID/estado/aceptación/archivos/pruebas en CHECKLIST y REGISTRO después de cada actividad; conservar historial.
