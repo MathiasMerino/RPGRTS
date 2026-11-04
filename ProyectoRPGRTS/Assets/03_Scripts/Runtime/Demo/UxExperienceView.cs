@@ -149,7 +149,9 @@ namespace Aethernia
                 var step=FrontierChapter.Step(state);
                 var inside=Flow.Director.Hero.transform.position.x>65;
                 ObjectivePosition=world.CampaignTarget(step,inside,ObjectivePosition);
-                objective.text=FrontierChapter.Heading(step)+"\n"+FrontierChapter.Objective(state,inside);
+                objective.text=FrontierChapter.Heading(step)+"\n"+(step==FrontierStep.Free&&Flow.Session.Rules.LivingWorld
+                    ?"Tablón de la aldea · "+FrontierContracts.OpenCount(state)+" encargos activos"
+                    :FrontierChapter.Objective(state,inside));
             }
             else if(quest!=CargoQuestStage.Completed&&(state.Demo==null||state.Demo.Chapter<DemoChapter.Settlement))objective.text="EL CARGAMENTO PERDIDO\n"+LostCargoQuest.Objective(state);
             else if(state.Demo!=null&&state.Demo.Chapter<DemoChapter.Settlement)

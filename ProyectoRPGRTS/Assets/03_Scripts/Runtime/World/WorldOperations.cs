@@ -32,7 +32,15 @@ namespace Aethernia
             return true;
         }
         public static bool Trade(PrototypeState state)
-        { if (state.Gold < 5) return false; state.Gold -= 5; state.Wood += 2; return true; }
+        { if (state.Gold < 5 || state.Wood > 999998) return false; state.Gold -= 5; state.Wood += 2; return true; }
+
+        public const int RationPrice = 3;
+        public static bool BuyRation(PrototypeState state)
+        {
+            if (state.Gold < RationPrice || !AddItem(state, "ration", 1)) return false;
+            state.Gold -= RationPrice;
+            return true;
+        }
         public static bool BuildWorkshop(PrototypeState state, Vector3 position)
         {
             if (state.Gold < 10 || state.Wood < 5 || state.Buildings.Count >= 32) return false;

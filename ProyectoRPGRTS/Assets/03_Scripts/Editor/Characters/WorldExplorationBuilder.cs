@@ -196,6 +196,59 @@ namespace Aethernia.Editor.Characters
         {
             BuildCandidate(CampaignScenePath, "E21Windows", "E21");
         }
+        public const string LivingScenePath = "Assets/01_Scenes/AetherniaE22LivingWorld.unity";
+        private const string LivingRoot = "Assets/20_E22";
+        public static void AuthorLiving()
+        {
+            if(File.Exists(LivingScenePath)||AssetDatabase.IsValidFolder(LivingRoot))
+                throw new InvalidOperationException("E22 already authored; edit its scene or assets directly.");
+            var scene=EditorSceneManager.OpenScene(CampaignScenePath);
+            flow=Object.FindAnyObjectByType<DemoFlow>();
+            var exploration=flow.GetComponent<WorldExploration>();
+            var previous=flow.Session.Rules;
+            var rules=Object.Instantiate(previous);
+            rules.LivingWorld=true;
+            var progression=Object.Instantiate(previous.Progression);
+            progression.Rewards=progression.Rewards.Concat(Enumerable.Range(0,FrontierContracts.Count)
+                .Select(FrontierContracts.At).Select(c=>new ExperienceReward(c.Completed,c.Experience))).ToArray();
+            AlphaPipelineBuilder.Folder(LivingRoot);
+            AssetDatabase.CreateAsset(progression,LivingRoot+"/LivingProgression.asset");
+            rules.Progression=progression;
+            AssetDatabase.CreateAsset(rules,LivingRoot+"/LivingRules.asset");
+            foreach(var component in Object.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include))
+            {
+                var serialized=new SerializedObject(component);
+                var property=serialized.GetIterator();
+                var changed=false;
+                while(property.NextVisible(true))
+                    if(property.propertyType==SerializedPropertyType.ObjectReference&&property.objectReferenceValue==previous)
+                    {property.objectReferenceValue=rules;changed=true;}
+                if(!changed)continue;
+                serialized.ApplyModifiedPropertiesWithoutUndo();
+                PrefabUtility.RecordPrefabInstancePropertyModifications(component);
+            }
+
+            world=new GameObject("E22 optional world activities").transform;
+            interactions.Clear();
+            Item(FrontierContracts.Board,"Tablón de encargos",WorldInteractionKind.Sign,new Vector3(-12,0,-.7f),"","Consultar","WayfindingSign_190cm");
+            Item(FrontierContracts.Cairn,"Mojón del bosque",WorldInteractionKind.Sign,new Vector3(-26,0,-9.4f),"","Examinar","Runestone_80cm");
+            Item(FrontierContracts.Materials,"Cajón de la reserva",WorldInteractionKind.Sign,new Vector3(-30,0,-8.4f),"","Examinar","Crate_80cm");
+            Item(FrontierContracts.Watch,"Rastro del centinela",WorldInteractionKind.Sign,new Vector3(77,0,-2),"","Investigar","Runestone_80cm");
+            foreach(var item in interactions)
+                foreach(var collider in item.GetComponentsInChildren<Collider>())
+                    if(!collider.isTrigger){collider.enabled=false;PrefabUtility.RecordPrefabInstancePropertyModifications(collider);}
+            exploration.Interactions=exploration.Interactions.Concat(interactions).ToArray();
+
+            var merchant=exploration.Interactions.Single(i=>i.GetComponent<InteractionPoint>().FactId==FrontierChapter.Merchant);
+            merchant.GetComponent<VillageNpcActivity>().FreeRoute=new[]{merchant.transform.position,new Vector3(1.2f,0,-8.4f)};
+            EditorSceneManager.MarkSceneDirty(scene);
+            if(!EditorSceneManager.SaveScene(scene,LivingScenePath,true))throw new InvalidOperationException("Could not save the E22 scene.");
+            AssetDatabase.SaveAssets();
+        }
+        public static void BuildLiving()
+        {
+            BuildCandidate(LivingScenePath, "E22Windows", "E22");
+        }
         private static void BuildCandidate(string scene, string output, string phase)
         {
             Directory.CreateDirectory("Builds/"+output);
