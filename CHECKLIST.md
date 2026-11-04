@@ -1313,3 +1313,16 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 | E20-QU | P0 · OP | Completado y verificado | Recorrido completo, build x64, capturas, ZIP comprobado, commits y PR borrador sobre PR12, con incidencia Windows separada | `Invoke-UnityValidation.ps1`, `Invoke-ProgressionSmoke.ps1`, `Docs/Validacion/E20` |
 | E20-WIN-HER | P0 · QU | En desarrollo | Repetir desde Nueva partida con Guerrero y desde el ZIP; asegurar el paso de la patrulla heredada | `Validacion/E20/WINDOWS.json`; Guerrero y dos inicios desde ZIP fallaron antes del piloto; Continuar desde ZIP pasó |
 | E20-HUM | P1 · QU | Pendiente | Aceptación humana de claridad, ritmo, dificultad y utilidad de maniobras | `Docs/GUIA_E20.md` |
+
+
+## FASE E20.1 — ESTABILIZACIÓN Y CANDIDATA ALFA
+
+| ID | Prioridad / depende de | Estado | Aceptación y evidencia |
+|---|---|---|---|
+| E201-00 | P1 · E20 | Completado y verificado | Base c89801c, PR #13 sobre #12 y cambios locales de calidad conservados. |
+| E201-RTS | P1 · 00 | En desarrollo | Reproducir el fallo histórico, corregir objetivos bloqueados y mantener condiciones de victoria. `RtsPatrolCombat.cs`, prueba original a 30 FPS. |
+| E201-HUD | P4 · 00 | En desarrollo | Una superficie contextual de interacción visible y clicable a 720p, 1080p y 1440p. `UxExperienceView.cs`, `ExplorationHud.cs`, `AlphaStabilizationTests.cs`. |
+| E201-RUTA | P2–P7 · RTS/HUD | En desarrollo | Tres partidas nuevas y reinicios, conquista, persistencia, balance registrado. Recorridos Windows automatizados. |
+| E201-REND | P8 · RUTA | Pendiente | Perfilado con render URP comprobado. Separar tiempos, GC, llamadas de dibujo y límites de medición. |
+| E201-ENT | P9–P11 · RUTA | En desarrollo | Build x64 y ZIP, regresión, capturas, guía, commits y PR apilado. |
+| E201-HUM | P11 · ENT | Pendiente | Revisión humana de balance, cámara, HUD, ritmo y rendimiento. |

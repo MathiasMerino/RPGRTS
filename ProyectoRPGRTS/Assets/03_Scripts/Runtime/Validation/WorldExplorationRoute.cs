@@ -67,10 +67,10 @@ namespace Aethernia
             Check(flow.ReturnToTitle()&&flow.Continue(),"actual title Continue");flow.Pause();
             Check(facts.SequenceEqual(s.State.Facts.Where(f=>f.StartsWith("ux02-")).OrderBy(f=>f)),"world facts persisted");flow.Resume();
         }
-        public static IEnumerator Run(DemoFlow flow,string slot,string cls,string race,Func<string,IEnumerator> capture,bool nativeInput=true)
+        public static IEnumerator Run(DemoFlow flow,string slot,string cls,string race,Func<string,IEnumerator> capture,bool nativeInput=true,bool allowPatrolRetry=true)
         {
             Check(flow.Session.Rules.WorldExploration,"opt-in world scene");
-            yield return UxExperienceRoute.Run(flow,slot,cls,race,name=>Hook(flow,name,capture,nativeInput),nativeInput);
+            yield return UxExperienceRoute.Run(flow,slot,cls,race,name=>Hook(flow,name,capture,nativeInput),nativeInput,allowPatrolRetry);
         }
         private static IEnumerator Hook(DemoFlow flow,string name,Func<string,IEnumerator> capture,bool nativeInput)
         {

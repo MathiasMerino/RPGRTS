@@ -775,3 +775,8 @@ Primera dirigida 3/6 por creación de NavMeshPath antes del ciclo de vida de Uni
 Tareas E20-AE, FL, OP y QU verificadas técnicamente dentro del piloto. Regresión general en 8989762 con 220/221 y 8/8 de E20. Única falla histórica de Guerrero en reserva a 30 FPS, reproducida con traza. Prueba adicional 1/1 de seis reclutas y el héroe, incluida Guardia de frontera, con llegada real en línea, columna y compacta. Se conservó el primer fallo de esta prueba, causado por una captura del enumerador a través del recargado de dominio. Se corrigió el ciclo de vida del fixture.
 
 Build Windows x64 y ZIP en `ProyectoRPGRTS/Builds`. Mago y Monje aprobaron inicio y Continuar. El Guerrero y dos inicios del ZIP terminaron en la patrulla previa. Continuar desde el ZIP con el guardado verificado del Mago aprobó. Se guardaron 21 PNG, un MP4 y los resultados con CRC/SHA de la extracción y de los 22 archivos previos. Pendientes evaluación humana, FPS interactivos e incidencia de patrulla. PR #13 en borrador sobre #12. Calidad local y GDD conservados.
+
+
+## 2026-11-04 — E20.1, diagnóstico y primera corrección
+
+E201-00, E201-RTS. Rama `fix/e20-1-alpha-stabilization` desde E20/c89801c. Reproducción dirigida histórica con Guerrero a 0 PV. La orden de reserva dejaba al héroe al alcance del arquero. En patrulla se ajustó la elección de objetivos visibles y la búsqueda de posiciones de ataque, conservando perfiles de clase, daño y reglas de victoria. Con la prueba original a 30 FPS, las tres clases llegaron a Settlement con 23, 19 y 10 PV respectivamente. La validación Windows de partidas nuevas sigue separada.

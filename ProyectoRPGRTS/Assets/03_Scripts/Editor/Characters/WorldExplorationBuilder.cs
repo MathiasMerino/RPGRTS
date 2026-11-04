@@ -187,6 +187,10 @@ namespace Aethernia.Editor.Characters
         {
             BuildCandidate(TacticalScenePath, "E20Windows", "E20");
         }
+        public static void BuildStabilization()
+        {
+            BuildCandidate(TacticalScenePath, "E201Windows", "E201");
+        }
         private static void BuildCandidate(string scene, string output, string phase)
         {
             Directory.CreateDirectory("Builds/"+output);
