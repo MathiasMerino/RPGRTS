@@ -1267,10 +1267,10 @@ Fallos y diagnóstico anteriores conservados en Docs/Validacion/UX01: arnés tra
 - Pruebas: pendientes; no equivalen a revisión humana.
 
 ### UX2-F — RTS con selección/formación/órdenes/ataque explícito y feedback
-- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: B,D.
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: B,D.
 - Aceptación: RTS con selección/formación/órdenes/ataque explícito y feedback; detalles en Docs/UX02_MUNDO.md.
-- Archivos: previstos según bloque; todavía sin implementación validada.
-- Pruebas: pendientes; no equivalen a revisión humana.
+- Archivos: RtsBattleController.cs, RtsWorldOrders.cs, DemoRtsInput.cs; preparación heredada conservada.
+- Pruebas: DIRIGIDA_05,7/7: formación con destinos válidos, llegada real, selección múltiple, NaN/destino inaccesible rechazados, cero daño en preparación; orden sin selección no activa hostilidad. Validación del dispositivo de ratón y victoria completa Windows en desarrollo; revisión humana pendiente.
 
 ### UX2-G — HUD tres resoluciones, guardado/Continuar/legado y ruinas/regreso
 - Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: C–F.

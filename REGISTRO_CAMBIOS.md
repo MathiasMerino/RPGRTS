@@ -725,3 +725,7 @@ Inspección de PNG real detectó UV métricos incompatibles con máscara Alpha: 
 ## 2026-11-03 — UX2-C cámara verificada técnicamente
 
 Perfil de exploración5.4m sobre el único rig UX01, límites ampliados sólo para la frontera UX02; RPG/RTS/construcción conservan perfiles. Bloqueo WorldUiOpen y corrección de región80 en carga directa de ruinas. DIRIGIDA_05:7/7, incluido seguimiento, tres resoluciones y recorte/restauración real de árbol sin editar física o materiales. Comodidad/oclusión humana sigue pendiente.
+
+## 2026-11-03 — UX2-F órdenes RTS verificadas por API
+
+El controlador existente valida toda la formación antes de aceptar una orden: sin seleccionados, NaN, aliado como objetivo o destino inaccesible se rechazan sin activar hostilidad. Separación1.2m y posiciones de aproximación según alcance, conservando daño/salud/roles. DemoRtsInput respeta ventanas modales. DIRIGIDA_05 verifica hitos/llegadas/ataque explícito. Entrada de dispositivo y resultado Windows todavía pendientes. Incidencia histórica de reserva sin cambios.

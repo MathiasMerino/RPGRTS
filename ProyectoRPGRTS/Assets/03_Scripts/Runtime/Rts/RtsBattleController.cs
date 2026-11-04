@@ -175,6 +175,7 @@ namespace Aethernia
         public bool Command(Vector3 point, Collider collider, bool primary)
         {
             if (!Active) return false;
+            if(session.Rules.WorldExploration&&!primary)return WorldCommand(point,collider);
             if (primary)
             {
                 return SelectUnit(collider,false);
@@ -207,7 +208,7 @@ namespace Aethernia
                     if(IncludesHero)s.Unit.Stop();
                     if(!s.Guarding&&Time.time>=s.AttackAt)Strike(s,target);
                 }
-                else if ((nearest > s.Range || (IncludesHero&&!ClearLine(s,target))) && Time.time >= s.OrderedUntil) s.Unit.TryMoveTo(target.Unit.transform.position);
+                else if ((nearest > s.Range || (IncludesHero&&!ClearLine(s,target))) && Time.time >= s.OrderedUntil) s.Unit.TryMoveTo(session.Rules.WorldExploration?AttackPosition(s,target):target.Unit.transform.position);
             }
             if (Allies == 0 || Enemies == 0)
             {
