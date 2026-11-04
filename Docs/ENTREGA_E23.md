@@ -18,8 +18,9 @@ Escena `Assets/01_Scenes/AetherniaE23IntegratedAlpha.unity`. Build Windows x64 `
 - 6/6 procesos del ZIP externo. Guerrero humano conquistó, Mago enano pactó y Monje elfo cerró por cuenta propia. Cada uno completó los tres encargos, compró y vendió, mejoró la granja y continuó desde un nuevo proceso. [Recorridos](Validacion/E23/WINDOWS.json)
 - Las dos guardianías originales se ganaron con tres acompañantes. El centinela se ganó con cero, uno y dos, y su panel mostró un solo objetivo. El inicio de la guardianía original con cero a tres está cubierto por la prueba histórica. Queda abierta su victoria con grupos de cero a dos.
 - El Mago volvió a terminar el primer combate con 16/18 PV después de cuatro retiradas con semilla 42. Quedan pendientes más semillas, estrategias y evaluación humana.
-- 224 capturas de los recorridos. La selección incluye inventario, ficha y diario, y el antes y después del centinela. [Capturas Windows](Images/E23/Windows) · [Tablón en tres resoluciones](Images/E23/Layout)
-- Regresión general y grabación de la candidata en curso.
+- 224 capturas de los tres recorridos principales. La selección incluye inventario, ficha y diario, y el antes y después del centinela. [Capturas Windows](Images/E23/Windows) · [Tablón en tres resoluciones](Images/E23/Layout)
+- El recorrido grabado del Guerrero añadió 2/2 procesos Windows. El vídeo conserva 151 fotogramas de la cámara del juego durante la operación RTS y audio DSP. [Vídeo](Videos/E23/Puesto-del-Umbral.mp4) · [Registro](Validacion/E23/GRABACION.txt)
+- Regresión general en curso.
 
 ## Rendimiento medido
 
@@ -32,6 +33,8 @@ Perfilado en un i5‑12450H con RTX 3050 Laptop GPU, desde la extracción extern
 | Preparación RTS en pausa | 7,27 ms | 10,59 ms | 11.044 B |
 
 La medición incluye solicitudes de render. Quedan pendientes GPU frame time, FPS presentados, mazmorra en movimiento, combate activo y construcción. La evaluación humana de balance, oclusión, ritmo, nitidez y fluidez presentada queda pendiente. [Datos](Validacion/E23/PERFORMANCE.json)
+
+La próxima revisión debe empezar con una sesión humana de la candidata. Prioriza el primer RPG del Mago con otras semillas, las guardianías con grupo reducido y el rendimiento en una batalla activa, antes de añadir contenido.
 
 El guardado v1 de E22 se conserva. La compilación usa la configuración local existente de antialiasing de calidad media, que queda fuera de los commits. No se añadieron dependencias de arte.
 
