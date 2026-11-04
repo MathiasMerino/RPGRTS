@@ -1,0 +1,17 @@
+{
+  "source": "f9da1b3154910bba7c3e76bee732dc1f2a136d3b",
+  "unity": "6000.5.8f1",
+  "counts": {
+    "total": 223,
+    "passed": 223,
+    "failed": 0,
+    "inconclusive": 0,
+    "skipped": 0
+  },
+  "historical": {
+    "name": "Aethernia.Tests.Editor.E18RtsScenarioTests.ThreeClassesWithLegalBacklineOrdersAt30",
+    "result": "Passed"
+  },
+  "failures": [],
+  "rawXmlSHA256": "3093cb52681ab21fbf3d321cb230056bf68b35e3a6561914670657665927da8e"
+}

@@ -22,6 +22,11 @@
 - Piloto activa mando táctico en conquista del puesto, sobre héroe, facciones, ejército y guardado existentes. La patrulla anterior conserva sus reglas y su incidencia abierta. Mago y Monje completaron la ruta Windows y Continuar; Guerrero se detuvo en patrulla heredada. General220/221, únicas incidencias de patrulla heredada; 8/8 E20 en general más 1/1 adicional con siete aliados y Guardia de frontera. Portable Continuar PASS, dos inicios fallaron en patrulla. Separar resultados automáticos de la revisión humana. Sin E21 ni fusiones.
 - No repetir AuthorE20 sobre assets ya guardados. Runner Invoke-ProgressionSmoke.ps1 -Phase E20 con raza por clase. La grabación opcional sólo captura el piloto. El player oculto mide iteraciones de Unity, no FPS jugables si no hay render automático.
 
+## E20.1 — candidata alfa de estabilización
+- Rama fix/e20-1-alpha-stabilization y PR14 borrador sobre E20/PR13 c89801c. Misma escena Assets/01_Scenes/AetherniaE20Warfare.unity. BuildE201 → Builds/E201Windows, fuente f9da1b3. ZIP Aethernia-E201-Alfa-Windows.zip y guía Docs/GUIA_E201.md.
+- Histórico a 30 FPS de 0/1 a 1/1 con las mismas aserciones. General223/223, dirigidas17/17, Windows8/8 (2 original y6 desde ZIP). Primera tentativa de patrulla aprobada para las tres clases. Mago 2/18 PV en el primer RPG con Acercarse y semilla de QA; balance humano pendiente. 33 capturas, botón contextual comprobado a 720/1080/1440.
+- Runner Invoke-ProgressionSmoke.ps1 -Phase E201 -WithGraphics con raza por clase. La prueba E20.1 parte del menú, usa un slot nuevo y registra balance por etapa. Conservar reportes Docs/ENTREGA_E201.md y Docs/Validacion/E201. Sin fusiones automáticas ni E21.
+
 ## Alcance y método
 - Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.
 - Trabajar tareas acotadas, preservar trabajo existente y registrar ID/estado/aceptación/archivos/pruebas en CHECKLIST y REGISTRO después de cada actividad; conservar historial.

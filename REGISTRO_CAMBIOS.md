@@ -780,3 +780,12 @@ Build Windows x64 y ZIP en `ProyectoRPGRTS/Builds`. Mago y Monje aprobaron inici
 ## 2026-11-04 — E20.1, diagnóstico y primera corrección
 
 E201-00, E201-RTS. Rama `fix/e20-1-alpha-stabilization` desde E20/c89801c. Reproducción dirigida histórica con Guerrero a 0 PV. La orden de reserva dejaba al héroe al alcance del arquero. En patrulla se ajustó la elección de objetivos visibles y la búsqueda de posiciones de ataque, conservando perfiles de clase, daño y reglas de victoria. Con la prueba original a 30 FPS, las tres clases llegaron a Settlement con 23, 19 y 10 PV respectivamente. La validación Windows de partidas nuevas sigue separada.
+
+
+## 2026-11-04 — E20.1, candidata alfa y verificación
+
+HUD UX con interacción centrada y clicable. El botón anterior queda desactivado en el propio componente que lo mostraba. Se validaron tres resoluciones y se comprobó el resultado de patrulla y conquista después del guardado. Regresión 223/223, dirigidas 17/17 y caso histórico 1/1 sin cambiar aserciones. Windows 8/8, incluidos 6 procesos desde el ZIP con Guerrero, Monje y Mago desde Nueva partida y Continuar. El ZIP y los 23 anteriores conservan su integridad. 33 capturas reales.
+
+Perfilado aislado con 18 filas y render URP confirmado. En Alto 1080p, la aldea en pausa registró 3,33 ms de media, el menú 5,85 ms y el despliegue RTS en pausa 5,19 ms. FPS presentados y evaluación humana pendientes. Se mantuvo el balance numérico. El Mago terminó el primer RPG con 2/18 PV en el recorrido reproducible, pendiente de revisión con más estrategias.
+
+Fuente Windows f9da1b3. PR #14 en borrador sobre #13, con la cadena y el orden de integración documentados. Calidad local y GDD conservados. Entrega y guía en Docs/ENTREGA_E201.md y Docs/GUIA_E201.md.
