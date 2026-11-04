@@ -108,6 +108,56 @@ namespace Aethernia.Tests.Editor
             LogAssert.NoUnexpectedReceived();
         }
 
+        [UnityTest]
+        public IEnumerator GuardianEncounterAcceptsEveryPartySize()
+        {
+            EditorSceneManager.OpenScene(WorldExplorationBuilder.CampaignScenePath);
+            yield return new EnterPlayMode();
+            yield return null;
+            yield return null;
+            yield return VerifyPartySizes();
+        }
+
+        private static IEnumerator VerifyPartySizes()
+        {
+            var flow=Object.FindAnyObjectByType<DemoFlow>();
+            flow.SlotPath="Logs/E21/party-"+Guid.NewGuid().ToString("N")+".json";
+            flow.Director.SavePathOverride=flow.SlotPath;
+            Assert.That(flow.Continue("../Docs/Validacion/UX02/PartidasFinales/human-warrior.json"),Is.True);
+            yield return WorldExplorationRoute.MoveTo(flow,new Vector3(9,0,-10));
+            var party=Object.FindAnyObjectByType<PartyWorld>();
+            var state=flow.Session.State;
+            // Presupuesto de prueba. El reclutador conserva sus costes reales.
+            state.Food=20;
+            Assert.That(party.Recruit("archer")&&party.Recruit("brawler"),Is.True);
+            var campSlot=flow.SlotPath+".camp";
+            Assert.That(flow.Director.Save(campSlot),Is.True);
+            var dungeon=Object.FindAnyObjectByType<DungeonExpedition>();
+            for(var count=0;count<=3;count++)
+            {
+                // Cada muestra parte del mismo campamento. La prueba cubre el inicio
+                // del combate, y la ruta Windows cubre el viaje completo de ida y vuelta.
+                Assert.That(flow.Continue(campSlot),Is.True);
+                state=flow.Session.State;
+                for(var i=0;i<state.Companions.Count;i++)
+                {
+                    var companion=state.Companions[i];
+                    if(companion.InParty!=(i<count))Assert.That(party.SetParty(companion.Id,i<count),Is.True);
+                }
+                Assert.That(dungeon.Travel(true),Is.True,"entrada con acompañantes="+count);
+                yield return WorldExplorationRoute.Use(flow,"umbral-battle-1",NoCapture,"Guardian-"+count);
+                var encounter=flow.Director.Encounter;
+                Assert.That(encounter.GroupActive,Is.True);
+                Assert.That(encounter.Group.Members.Count(member=>!member.Hostile),Is.EqualTo(count+1));
+                Assert.That(FrontierChapter.Step(state),Is.EqualTo(FrontierStep.Ruins));
+                Assert.That(state.Facts,Does.Not.Contain("umbral-reward"));
+                encounter.Clear();
+                Assert.That(flow.Director.Execute("explore"),Is.True);
+            }
+            LogAssert.NoUnexpectedReceived();
+        }
+
+
         private static IEnumerator NoCapture(string _) { yield break; }
 
         [UnityTearDown]

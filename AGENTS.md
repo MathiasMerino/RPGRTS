@@ -27,6 +27,11 @@
 - Histórico a 30 FPS de 0/1 a 1/1 con las mismas aserciones. General223/223, dirigidas17/17, Windows8/8 (2 original y6 desde ZIP). Primera tentativa de patrulla aprobada para las tres clases. Mago 2/18 PV en el primer RPG con Acercarse y semilla de QA; balance humano pendiente. 33 capturas, botón contextual comprobado a 720/1080/1440.
 - Runner Invoke-ProgressionSmoke.ps1 -Phase E201 -WithGraphics con raza por clase. La prueba E20.1 parte del menú, usa un slot nuevo y registra balance por etapa. Conservar reportes Docs/ENTREGA_E201.md y Docs/Validacion/E201. Sin fusiones automáticas ni E21.
 
+## E21 — Las rutas de la frontera
+- Rama feature/e21-first-campaign, PR15 borrador sobre E20.1/PR14 4ab7b4f. Escena Assets/01_Scenes/AetherniaE21Campaign.unity. BuildE21 → Builds/E21Windows, fuente df03c7a. ZIP Aethernia-E21-Campana-Windows.zip. Guía Docs/GUIA_E21.md y capítulo Docs/CAPITULO_E21.md.
+- Las elecciones y el capítulo se guardan como hechos v1. Dossier habilita conquista. El cierre con Tarek permite continuar sin conquistar. General226/226, dirigidas3/3 más inicio de guardianía 1/1 con0–3 acompañantes. Windows8 procesos aprobados, seis desde ZIP, más un intento grabado que ganó el puesto sin ejecutar la técnica. 32PNG, un MP4 y18 filas de perfilado URP. Pacto desde partida nueva, perfilado interactivo y revisión humana pendientes.
+- Runner Invoke-ProgressionSmoke.ps1 -Phase E21 -WithGraphics con raza por clase. El Mago enano terminó el primer RPG con2/18 PV aun sin Acercarse. Conservar estadísticas hasta comparar estrategias y semillas. Sin E22 ni fusiones automáticas.
+
 ## Alcance y método
 - Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.
 - Trabajar tareas acotadas, preservar trabajo existente y registrar ID/estado/aceptación/archivos/pruebas en CHECKLIST y REGISTRO después de cada actividad; conservar historial.

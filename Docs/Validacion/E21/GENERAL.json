@@ -1,0 +1,30 @@
+{
+  "source": "df03c7a3ddbbf1daa34c862a381461c0222bc0db",
+  "unity": "6000.5.8f1",
+  "counts": {
+    "total": 226,
+    "passed": 226,
+    "failed": 0,
+    "inconclusive": 0,
+    "skipped": 0
+  },
+  "historical": {
+    "name": "Aethernia.Tests.Editor.E18RtsScenarioTests.ThreeClassesWithLegalBacklineOrdersAt30",
+    "result": "Passed"
+  },
+  "campaignCases": [
+    {
+      "name": "CandidateReusesTacticalAndCivilizationSystems",
+      "result": "Passed"
+    },
+    {
+      "name": "LegacySlotCanCloseChapterWithoutConquestAndKeepTheWorld",
+      "result": "Passed"
+    },
+    {
+      "name": "RoadTransactionsRequireEvidenceAndApplyOneDifferentResult",
+      "result": "Passed"
+    }
+  ],
+  "rawXmlSHA256": "cd069eb3b8121f3527ef90cf41facd9a464acb908c9f198d859c53d9bf4fb9fd"
+}

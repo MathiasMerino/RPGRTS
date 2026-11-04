@@ -794,3 +794,10 @@ Fuente Windows f9da1b3. PR #14 en borrador sobre #13, con la cadena y el orden d
 ## 2026-11-04 — E21, base del capítulo
 
 Base 4ab7b4f y rama `feature/e21-first-campaign`. La campaña reutiliza escena, navegación, controladores y guardado de E20.1. Dos acuerdos de abastecimiento con costes y recompensas distintos. El hallazgo de las ruinas habilita el puesto. Se puede cerrar el capítulo por cuenta propia y seguir explorando. Guía y diseño provisional en Docs. Primera build Windows x64 compilada. Pruebas del recorrido y evidencia en ejecución.
+
+
+## 2026-11-04 — E21, entrega y verificación
+
+General 226/226, caso histórico de patrulla incluido. Dirigidas 3/3 y 1/1 adicional de arranque de guardianía con 0–3 acompañantes. El fixture final carga el mismo campamento entre muestras. Se conservan dos intentos anteriores de esa prueba, por protección de combate activo y timeout de navegación durante los bucles.
+
+Guerrero, Monje y Mago completaron ambos actos de mazmorra, conquista, cierre y Continuar desde el ZIP. Ocho procesos Windows aprobados, seis desde la extracción. Un proceso de grabación ganó el puesto pero falló el requisito de técnica. El vídeo registra esa batalla real. 32 PNG, un MP4 y 18 filas de perfilado URP. ZIP íntegro con 24 archivos históricos conservados. Fuente df03c7a, PR #15 en borrador sobre #14. Se mantienen pendientes el pacto completo, grupos pequeños de principio a fin, FPS interactivos y revisión humana.
