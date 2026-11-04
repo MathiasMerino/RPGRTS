@@ -1,0 +1,474 @@
+[
+  {
+    "file": "Docs/Images/UX02/Windows/mage-02-Creation.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\mage-02-Creation.png",
+    "sha256": "60fce8cfdd925c9ebe5a371ffccb59baa35eb30d823b9fd05f2dd62c86ec7321",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/mage-23-Continued.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\mage-23-Continued.png",
+    "sha256": "7c1f7a31ee9b5d94bb1abd2db921eb51b4e77b72688eb29a6cb45b25a1153187",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/monk-02-Creation.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\monk-02-Creation.png",
+    "sha256": "3ac218ebc17bbaae101bebc3bb9aa937c758fd74f917c741d4ed32e6a229a026",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/monk-23-Continued.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\monk-23-Continued.png",
+    "sha256": "e303673fef3e10f3bc0475c58abbe565ff2d0ea918b1c621550096dec1d80a8d",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-01-Menu.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-01-Menu.png",
+    "sha256": "70f2c5fba3b087363067e623fbc60e886c569c0eca3e3d0b12776fdea3347735",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-02-Creation.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-02-Creation.png",
+    "sha256": "70cbf87a24557bcec940a4a817fc44af80303690a8c90f946faf9dd3e578c450",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-03-Intro.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-03-Intro.png",
+    "sha256": "41788e2d46108c8a90b10a6462d5cb89a24275d5a481adddc28ae8c21fc16e12",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-04-SafeVillage.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-04-SafeVillage.png",
+    "sha256": "edd679914231e81b17239971c053311e7a22f4d6e15fea00dee53fb33577d63f",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-05-CloserHero.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-05-CloserHero.png",
+    "sha256": "a2b5a046d7a6ac814dd9f76f7a0e1eeff6506981d4664b7af39f26a2ce3250bc",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-06-Wasd.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-06-Wasd.png",
+    "sha256": "8f1e28d19dec3fbeebcd4c7327f52caafbb71abdeca7ccae115c1be31698ae04",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-07-NpcPrompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-07-NpcPrompt.png",
+    "sha256": "150f4af3b8b8fa7219a3c2007be0c70864d8cd66bfc67d1fb773a4d566cf91f9",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-08-Dialogue.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-08-Dialogue.png",
+    "sha256": "0a6dc4409d445f46fb6bef09dae3507de1d4dcc48ff709f9cae00b37688589d9",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-09-Objective.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-09-Objective.png",
+    "sha256": "403231b675f2582a7c2b27c78264067f932dfe0a242fda20e583422b9d0f84fa",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-10-Help.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-10-Help.png",
+    "sha256": "99cf284528a2f09d1f2bc416b97766cf6555acf25d51803c5fe310911c81da7c",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-11-FirstRpg.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-11-FirstRpg.png",
+    "sha256": "f5675d5151575ab1ce699c6309e60845dd9e9d60bcb81c6ffab0edd0042c2b29",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-12-CompactRpg.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-12-CompactRpg.png",
+    "sha256": "dca65f4a2a02ea0faabe914b52bafeb48ea24b8fe495922280df1a548903f88e",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-13-ExploreAgain.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-13-ExploreAgain.png",
+    "sha256": "b4a15280115d7a8b9aa889a39b8cb11c8f56b995f2588a0f7d362b21b40fc1d8",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-14-QuestReward.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-14-QuestReward.png",
+    "sha256": "d65303b9229fc0fb4d8ce1ce8e443abd5393d87178585219ce80e76b993d88df",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-15-FriendlyCamp.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-15-FriendlyCamp.png",
+    "sha256": "e20296e6cd993b28a333ac65cb8dee37f7f533c9f65f24bf4dac8249f58de32b",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-15B-CaptainDialogue.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-15B-CaptainDialogue.png",
+    "sha256": "199f1f83a4e71cdec4b224fed583fe382eafb964b392d67a79d5bcaf5f969ce1",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-16-Selection.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-16-Selection.png",
+    "sha256": "2d6d69e1e75e25e1e51ffeb6d80e7f1da99ab29fc232ad38f70e03aa2e7f38e0",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-17-Move.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-17-Move.png",
+    "sha256": "f0962146fd16a098a7bbf65d9daf1ddcac61bd9e99b545aa9a160f8cec126975",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-18-Positioned.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-18-Positioned.png",
+    "sha256": "a0c0158132631981d3ae5fec678b41ae2067533982d92021859d285f6558a767",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-19-Attack.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-19-Attack.png",
+    "sha256": "3adfd7cdee2260cf902fd410e3c88568dae0b3798553290c937bc166275f361a",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-20-Victory.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-20-Victory.png",
+    "sha256": "44c4d5e9db993c82f1e71c907adbf12a28f32dac5625d243095f66281e417648",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-21-Building.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-21-Building.png",
+    "sha256": "a9866017a7894df8f1214ff33a351eb71a47b66663c3400735c18060a0376dca",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-22-Camp.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-22-Camp.png",
+    "sha256": "4c5065efd03393b085b3492605077bdb1b5b4720daf4290fe477a63b5ba4c104",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-23-Continued.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-23-Continued.png",
+    "sha256": "bc756cefb841aba2aebf59dced425ca209a77798bc2d300b757ebfcf05196fa2",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-24-WorldOverview.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-24-WorldOverview.png",
+    "sha256": "725a4e9d8f6680be27f6c8051c002e43c6689b511619317721d757d80b0a54bf",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W01-ForestFork.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W01-ForestFork.png",
+    "sha256": "feed1769972df8e13ebdf6823f4a583d12a5da162583315bea0b6df16364fce5",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W02-Sign-Prompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W02-Sign-Prompt.png",
+    "sha256": "835a5078536f1ff69c0d98ca1128dd0178c22617b923c8ddeeb2e74a8f9cd9c6",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W03-ReadableSign.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W03-ReadableSign.png",
+    "sha256": "88eaa5452a47a42bcb990e06fc7cbbed2a0d3a2f2fec92799da92f2b30faa42c",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W04-SideCache-Prompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W04-SideCache-Prompt.png",
+    "sha256": "8b2b7e50ce1ece49c56e295867a5c3d5634224870ae13a9e4d9254270a89c4e2",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W05-Materials-Prompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W05-Materials-Prompt.png",
+    "sha256": "505ef708427aecc2eace4ddb070082686af3cfdb9520f8b4ead95c57481c3de8",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W06-RuinsEntrance.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W06-RuinsEntrance.png",
+    "sha256": "39a8990a707f79e5d46fe814f680003f7976f004883c438e9ba6d3c1af1e491e",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W07-StoreDoor-Prompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W07-StoreDoor-Prompt.png",
+    "sha256": "7df03735222f721058ffe86c8adc2cd2cb92badcafb7a2b7c186567b8b9bfb70",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W08-Merchant-Prompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W08-Merchant-Prompt.png",
+    "sha256": "fb93cdbc57715a9069ef18c023f7f08a5bd8e632fdee0ce20d27542744432f21",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W09-TradeDialogue.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W09-TradeDialogue.png",
+    "sha256": "48e881538cc4a9457e7583b537648b609417598b53f62bfb974068367634b756",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W10-SharedStorage-Prompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W10-SharedStorage-Prompt.png",
+    "sha256": "b95474c66a86bfe87551e6ec617085bcee89da810d3fecc19573f871c41d9599",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W11-Recruiter-Prompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W11-Recruiter-Prompt.png",
+    "sha256": "2a2be9309a1c76a938d40208cc6bcfa3004b5e64acee10432329ae28d00bf37f",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W12-CompanionCamp.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W12-CompanionCamp.png",
+    "sha256": "667e8bd7e04282a3efdc4075c166d348c0e4f895aa7203e9a68f681ba3601c32",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W13-RuinsAccess-Prompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W13-RuinsAccess-Prompt.png",
+    "sha256": "ff52a858660b6bc51fedb920b71208324665d267804f756a0594cc1efaa40386",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W14-InsideRuins.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W14-InsideRuins.png",
+    "sha256": "800eab49481d55cc4f03bdadc97fade231184a20622d51c3c539475d42f582d9",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W15-RuinsExit-Prompt.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W15-RuinsExit-Prompt.png",
+    "sha256": "048a36cb564a162f78d4c59a6a00d1b297bbcad14e9a69bdf9c6e55a55a169e8",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W16-ReturnedToTrail.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W16-ReturnedToTrail.png",
+    "sha256": "cbc550b83dc49d372aa58c9eff72acf6c8868945b7cf58481f6fe20f691e3cd1",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W17-MouseMove.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W17-MouseMove.png",
+    "sha256": "93740c3ca2d97516f8ba675534461002fd8310fdf397e7945d4b0ff0adffbab6",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W18-MouseRectangle.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W18-MouseRectangle.png",
+    "sha256": "28c32321cf569bf93ca4c3c887edd283dc6e9b8268a2fcdea700258fc2a5d43c",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Windows/warrior-W19-MouseAttack.png",
+    "source": "ProyectoRPGRTS\\Logs\\Ux02QA\\GPU-20261104-032456\\Captures\\warrior-W19-MouseAttack.png",
+    "sha256": "8ef522284718d7700fa3e0087be9b1289cb5ec6fe147261b237e9ac0252cb0bb",
+    "kind": "Native Windows UX02 c5db7ff583f9f79b8925497e6208bf08843e17d0",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Resoluciones/ActualTree-Cutaway-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\UX02\\Captures\\ActualTree-Cutaway-1280.png",
+    "sha256": "700347975421e1a212763819aaa3eb241ca06e2ce85743d51b242a2130d23eda",
+    "kind": "Unity Play Mode UX02; actual camera render at stated resolution; automated fixture",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Resoluciones/RtsLayout-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\UX02\\Captures\\RtsLayout-1280.png",
+    "sha256": "1bcd4ee7329d50c22ef73af0ee641abe2bcbbfbfe911f0ced0dcfd9de3e3daff",
+    "kind": "Unity Play Mode UX02; actual camera render at stated resolution; automated fixture",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Resoluciones/RtsLayout-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\UX02\\Captures\\RtsLayout-1920.png",
+    "sha256": "fb7e7964dcd3f7eeef2e3a38c6a820c811cd2dc2d8ad3991318d43d29305d9ea",
+    "kind": "Unity Play Mode UX02; actual camera render at stated resolution; automated fixture",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/UX02/Resoluciones/RtsLayout-2560.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\UX02\\Captures\\RtsLayout-2560.png",
+    "sha256": "fbe82eb77959a64fc6903bcb08558828b3bc612eb2f04ff7e1123997682a6e17",
+    "kind": "Unity Play Mode UX02; actual camera render at stated resolution; automated fixture",
+    "width": 2560,
+    "height": 1440
+  },
+  {
+    "file": "Docs/Images/UX02/Resoluciones/WorldDialogue-1280.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\UX02\\Captures\\WorldDialogue-1280.png",
+    "sha256": "f786e35c6c8ff4bd68f1dff2825860d9c7656f199ba0acb9e39c4cd49deadd6c",
+    "kind": "Unity Play Mode UX02; actual camera render at stated resolution; automated fixture",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Resoluciones/WorldDialogue-1920.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\UX02\\Captures\\WorldDialogue-1920.png",
+    "sha256": "d55d26326d6f203d520ed87744c4d015091de5169d05a08222b9e8d69fe34a12",
+    "kind": "Unity Play Mode UX02; actual camera render at stated resolution; automated fixture",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "Docs/Images/UX02/Resoluciones/WorldDialogue-2560.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\ProyectoRPGRTS\\Logs\\UX02\\Captures\\WorldDialogue-2560.png",
+    "sha256": "a590c5b3b72e2632e870940fccdc0dad044a136272e436d1de192ac9308c8089",
+    "kind": "Unity Play Mode UX02; actual camera render at stated resolution; automated fixture",
+    "width": 2560,
+    "height": 1440
+  },
+  {
+    "file": "Docs/Images/UX02/Antes/warrior-04-SafeVillage.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\Docs\\Images\\UX01\\Windows\\warrior-04-SafeVillage.png",
+    "sha256": "2e8031e629ff0af2ff7be5944eb71a8540b9528dd4e478311103ddcf8c2c313a",
+    "kind": "Earlier native Windows UX01, different state/time; preserved original",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Antes/warrior-11-FirstRpg.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\Docs\\Images\\UX01\\Windows\\warrior-11-FirstRpg.png",
+    "sha256": "765a79097ba53394da412924421ed46e8ede8e1f5b493df63d10f816211f58a2",
+    "kind": "Earlier native Windows UX01, different state/time; preserved original",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Antes/warrior-18-Positioned.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\Docs\\Images\\UX01\\Windows\\warrior-18-Positioned.png",
+    "sha256": "6de941f35e8787107436fed51f594457ed191c2c87183fdc21251005bd21cfb0",
+    "kind": "Earlier native Windows UX01, different state/time; preserved original",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "file": "Docs/Images/UX02/Antes/warrior-24-WorldOverview.png",
+    "source": "C:\\Users\\Mathy\\Desktop\\PROYECTO GAME\\Docs\\Images\\UX01\\Windows\\warrior-24-WorldOverview.png",
+    "sha256": "9c91bb6cc8e6034808194556da8115624b1774c14d5efcdcd2873ceb148e84c5",
+    "kind": "Earlier native Windows UX01, different state/time; preserved original",
+    "width": 1280,
+    "height": 720
+  }
+]

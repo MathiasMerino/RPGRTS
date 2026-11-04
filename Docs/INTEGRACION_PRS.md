@@ -24,3 +24,5 @@ No iniciar otra fase o ampliar esta pila automáticamente. Primero revisar este 
 
 
 UX-01 fue autorizada expresamente después de E19: rama feature/ux01-onboarding-camera-world desde3e53508, base del [PR11draft](https://github.com/MathiasMerino/RPGRTS/pull/11) feature/e19-razas-civilizaciones (PR10). Orden: PR1→…→PR10→UX01; no hay fusiones automáticas ni cambios main/dev. Su comprobación independiente no sustituye la revisión pendiente de los antecedentes.
+
+UX-02 autorizada posteriormente: rama feature/ux02-world-exploration desde d56fa59 (UX01), [PR12draft](https://github.com/MathiasMerino/RPGRTS/pull/12) sobre feature/ux01-onboarding-camera-world. Orden de revisión: PR1→…→PR10/E19→PR11/UX01→PR12/UX02. Sin fusiones ni retarget automático; main/dev se mantienen. La nueva candidata conserva los antecedentes y no convierte sus limitaciones o evaluaciones humanas en aprobaciones.

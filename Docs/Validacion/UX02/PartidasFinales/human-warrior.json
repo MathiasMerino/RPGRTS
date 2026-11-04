@@ -1,0 +1,151 @@
+{
+    "Version": 1,
+    "Name": "Viajero warrior",
+    "ClassId": "warrior",
+    "RaceId": "human",
+    "HasDemoProgress": true,
+    "Demo": {
+        "Chapter": 6,
+        "IntroSeen": true,
+        "Produced": 5,
+        "UxRevision": 1,
+        "UxPreparationStep": 3,
+        "UxFormation": [],
+        "UxSelected": []
+    },
+    "ProgressionRevision": 1,
+    "IdentityRevision": 1,
+    "Experience": 28,
+    "HeroLevel": 2,
+    "Skills": [
+        {
+            "Id": "warrior-discipline",
+            "Rank": 1
+        }
+    ],
+    "Accessory": "",
+    "Health": 20,
+    "Gold": 23,
+    "Wood": 9,
+    "Food": 3,
+    "WorldSeconds": 111.33857727050781,
+    "ProductionCycle": 11,
+    "ReputationA": 0,
+    "ReputationB": 0,
+    "Weapon": "training-sword",
+    "Armour": "cloth",
+    "HeroPosition": {
+        "x": -16.0,
+        "y": 0.03749990463256836,
+        "z": -17.600000381469728
+    },
+    "Facts": [
+        "demo-starter-kit",
+        "ux02-discovery-0",
+        "ux02-discovery-1",
+        "ux02-cache",
+        "ux02-branches",
+        "lost-cargo-accepted",
+        "rpg-victory",
+        "xp-e18:rpg-victory",
+        "lost-cargo-recovered",
+        "lost-cargo-completed",
+        "xp-e18:lost-cargo-completed",
+        "ux02-discovery-3",
+        "ux02-discovery-2",
+        "rts-victory",
+        "demo-camp-secured",
+        "xp-e18:demo-camp-secured",
+        "ux02-door"
+    ],
+    "Items": [
+        {
+            "Id": "training-sword",
+            "Count": 1
+        },
+        {
+            "Id": "cloth",
+            "Count": 1
+        }
+    ],
+    "Buildings": [
+        {
+            "Id": "townhall",
+            "Position": {
+                "x": 12.0,
+                "y": 0.0,
+                "z": -8.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "frontier"
+        },
+        {
+            "Id": "workshop",
+            "Position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "frontier"
+        },
+        {
+            "Id": "barracks",
+            "Position": {
+                "x": 15.0,
+                "y": 0.0,
+                "z": -13.0
+            },
+            "Level": 1,
+            "ProductionPaused": false,
+            "CultureId": "frontier"
+        }
+    ],
+    "Army": [
+        {
+            "Id": "cd1897d35bcb4057bc773dd0122350c4",
+            "Role": "archer",
+            "RaceId": "elf",
+            "CultureId": "frontier",
+            "Health": 10,
+            "Level": 1,
+            "Experience": 0,
+            "InParty": false
+        }
+    ],
+    "Companions": [
+        {
+            "Id": "4ae5b9bf5c2746cd8a1cb3e80153bd47",
+            "Role": "swordsman",
+            "RaceId": "human",
+            "CultureId": "frontier",
+            "Health": 12,
+            "Level": 1,
+            "Experience": 0,
+            "InParty": true
+        }
+    ],
+    "ArmySelection": [],
+    "Territories": [
+        {
+            "Id": "camp",
+            "Owner": "player-company",
+            "Secured": true
+        },
+        {
+            "Id": "crossing",
+            "Owner": "",
+            "Secured": false
+        },
+        {
+            "Id": "outpost",
+            "Owner": "faction-b",
+            "Secured": false
+        }
+    ],
+    "CultureId": "frontier",
+    "FactionId": "player-company",
+    "KingdomId": ""
+}

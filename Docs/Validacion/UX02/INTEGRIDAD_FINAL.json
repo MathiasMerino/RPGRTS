@@ -1,0 +1,11 @@
+{
+  "buildRevision": "c5db7ff583f9f79b8925497e6208bf08843e17d0",
+  "trackedBuildInputs": 1826,
+  "changesAfterRestoringGeneratedFontCache": [],
+  "fontCacheRestored": true,
+  "qualityBaselineUnchanged": true,
+  "privateBaselineUnchanged": true,
+  "gddSHA256": "dba82b1c18eb51bd36ee353cd3380af108aea41fe7ec539da644f08ea76bb661",
+  "priorArchivesVerified": 21,
+  "portableExecutableMatchesBuild": true
+}

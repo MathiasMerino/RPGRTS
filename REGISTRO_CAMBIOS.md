@@ -757,3 +757,7 @@ Revisión de HumanoidAnimationDriver confirma que actor no está serializado: la
 ## 2026-11-03 — UX2-H general y corrección localizada UX2-ANIM
 
 General a2b2b69:212/213,0omisiones,7/7UX02; único fallo RTS histórico, Guerrero0PV/FirstRts/recuperación1. Los tres timeouts previos pasan dentro de esta ejecución completa, sin cambiar límites; causa anterior sin confirmar. GENERAL.xml/json y traza conservados. VillageNpcActivity.Start vuelve a enlazar el driver al actor real y fija paso1.4m/s sólo en NPC nuevos. La ruta comprueba movimiento y parámetro Locomotion=Walk con rig válido. Por alcance local exclusivo de la escena nueva, la candidata posterior se verifica con toda su suite dirigida y Windows; la general se atribuye a a2b2b69, no se suman pases.
+
+## 2026-11-03 — Entrega técnica UX‑02
+
+La build `c5db7ff` pasó 7/7 dirigidas y 8/8 procesos Windows con gráficos. El ZIP extraído completó el recorrido y Continuar con Mago enano. Verificados el CRC, SHA por archivo, las 1 826 entradas de build y los 21 ZIP previos. La evidencia reúne 59 PNG y 2 MP4. La general de `a2b2b69` queda en 212/213. Los tres timeouts previos aprobaron en ese pase. Siguen abiertos el fallo histórico RTS y la evaluación humana. Se registra el recorte del HUD en la captura del cruce. El PR #12 se apila sobre UX‑01. Consulta Docs/ENTREGA_UX02.md para la guía y los comprobantes.

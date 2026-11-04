@@ -65,3 +65,7 @@ Archivo de instrucciones raíz resumido; el contexto completo anterior está en 
 - Escena adicional: Assets/01_Scenes/AetherniaUx01Demo.unity. Datos/mallas de autoría en Assets/16_UX01; catálogo, modelos y materiales de E19/E07/E17 compartidos.
 - Informe/guía: Docs/ENTREGA_UX01.md y GUIA_UX01.md. Evidencia: Docs/Validacion/UX01, Images/UX01 y Videos/UX01.
 - Build: Builds/Ux01Windows; ZIP Aethernia-UX01-Experiencia-Windows.zip, independiente de las veinte entregas anteriores. No regenerar escenas previas.
+
+## UX-02 — ampliación autorizada de la candidata
+
+Assets/17_UX02 conserva reglas/contenido optativos, tres cintas de camino continuas, dos fondos localmente ajustados y navegación propia; AetherniaUx02World es la escena para revisar. Se reutilizan los mismos interiores/prefabs/materiales/modelos/clips de UX01/E19. No se eliminan las escenas candidatas ni las bibliotecas anteriores. Build en Builds/Ux02Windows; guía GUIA_UX02.md e informe ENTREGA_UX02.md. Evidencias públicas en Docs/Images/UX02, Videos/UX02 y Validacion/UX02; logs/intermedios nativos en ProyectoRPGRTS/Logs/Ux02QA, ignorados. Meshy/LocalOnly y QualitySettings ajenos se conservan. No repetir WorldExplorationBuilder.Create sobre la escena existente; Refine es autoría dirigida, no arranque.

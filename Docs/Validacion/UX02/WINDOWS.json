@@ -1,0 +1,56 @@
+{
+  "revision": "c5db7ff583f9f79b8925497e6208bf08843e17d0",
+  "passedProcesses": 8,
+  "receipts": [
+    {
+      "file": "Windows/dwarf-mage.json.resume.txt",
+      "result": "PASS: UX02 dwarf/mage new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints; seconds=0.83",
+      "sha256": "010c690c3096dae8c2077a246f11ba10085c4429d512bb3c55160b4e3f701dcf",
+      "revision": "c5db7ff583f9f79b8925497e6208bf08843e17d0"
+    },
+    {
+      "file": "Windows/dwarf-mage.json.start.txt",
+      "result": "PASS: UX02 dwarf/mage menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title; seconds=125.33",
+      "sha256": "b66d549263d68c2195ed838164f71b0e1d4c57d08287ea237f5dcb53c951513b",
+      "revision": "c5db7ff583f9f79b8925497e6208bf08843e17d0"
+    },
+    {
+      "file": "Windows/elf-monk.json.resume.txt",
+      "result": "PASS: UX02 elf/monk new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints; seconds=0.66",
+      "sha256": "00a800c6bdcee3e295192ea45ac77784aa2c4d628526d905dfb998c78d0beca8",
+      "revision": "c5db7ff583f9f79b8925497e6208bf08843e17d0"
+    },
+    {
+      "file": "Windows/elf-monk.json.start.txt",
+      "result": "PASS: UX02 elf/monk menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title; seconds=101.02",
+      "sha256": "e3e8bbbea028f956edcd7813ad3ea679525607e020339cd91b2bd3b188834f3d",
+      "revision": "c5db7ff583f9f79b8925497e6208bf08843e17d0"
+    },
+    {
+      "file": "Windows/human-warrior.json.resume.txt",
+      "result": "PASS: UX02 human/warrior new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints; seconds=0.57",
+      "sha256": "0810ca9b546305f1798da5f44e83cee61af95de98d03f0fa362873629379a44f",
+      "revision": "c5db7ff583f9f79b8925497e6208bf08843e17d0"
+    },
+    {
+      "file": "Windows/human-warrior.json.start.txt",
+      "result": "PASS: UX02 human/warrior menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title; seconds=49.16",
+      "sha256": "8edd6719afefa804a8c46be864b79de1761d93e98f31b3b5a202368046bf1503",
+      "revision": "c5db7ff583f9f79b8925497e6208bf08843e17d0"
+    },
+    {
+      "file": "Portable/dwarf-mage.json.resume.txt",
+      "result": "PASS: UX02 dwarf/mage new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints; seconds=0.51",
+      "sha256": "a608c9453a845e1f81872417ac8cc71499836ed7df816ceb07e99fd17e8a7d0e",
+      "revision": "c5db7ff583f9f79b8925497e6208bf08843e17d0"
+    },
+    {
+      "file": "Portable/dwarf-mage.json.start.txt",
+      "result": "PASS: UX02 dwarf/mage menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title; seconds=123.81",
+      "sha256": "d062f5c5467665e95a1ae504a57fd6d123bad56743a62ad7c9eff817522f0900",
+      "revision": "c5db7ff583f9f79b8925497e6208bf08843e17d0"
+    }
+  ],
+  "fpsMeasured": false,
+  "humanEvaluation": "Pending"
+}

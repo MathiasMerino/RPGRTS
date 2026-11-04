@@ -1,6 +1,6 @@
 # UX-02 — Guía de revisión humana
 
-Candidata técnica provisional; evaluación humana pendiente. Abre `ProyectoRPGRTS/Assets/01_Scenes/AetherniaUx02World.unity` en Unity6000.5.8f1 y pulsa Play, o ejecuta `Builds/Ux02Windows/Aethernia.exe`. Inicia en el menú, con Guerrero/Mago/Monje y las cuatro razas existentes. No uses los generadores de autoría para arrancar el juego.
+Candidata técnica provisional; evaluación humana pendiente. Rama `feature/ux02-world-exploration`, PR12 sobre UX01/PR11; para revisar desde GitHub hay que usar esa rama, sin fusionar la cadena automáticamente. Abre `ProyectoRPGRTS/Assets/01_Scenes/AetherniaUx02World.unity` en Unity6000.5.8f1 y pulsa Play, o ejecuta `Builds/Ux02Windows/Aethernia.exe`. Inicia en el menú, con Guerrero/Mago/Monje y las cuatro razas existentes. No uses los generadores de autoría para arrancar el juego.
 
 ## Controles
 
@@ -24,3 +24,5 @@ En RTS: clic izquierdo selecciona, Shift añade y arrastrar selecciona un área.
 ## Registrar después
 
 Indica clase/raza, paso y resultado observado. Señala si la ruta se entiende sin leer ayudas, si el héroe se mantiene visible, si el RTS responde como esperas y si la dificultad resulta razonable. Las comprobaciones automatizadas y capturas no sustituyen esta revisión. Consulta ENTREGA_UX02.md para resultados, build exacta y problemas conservados.
+
+Durante la revisión visual, comprueba el borde inferior al cambiar de objetivo o modalidad. La captura automática del cruce muestra un control antiguo de interacción parcialmente recortado. Registra si aparece durante el juego manual.
