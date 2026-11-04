@@ -191,6 +191,11 @@ namespace Aethernia.Editor.Characters
         {
             BuildCandidate(TacticalScenePath, "E201Windows", "E201");
         }
+        public const string CampaignScenePath = "Assets/01_Scenes/AetherniaE21Campaign.unity";
+        public static void BuildCampaign()
+        {
+            BuildCandidate(CampaignScenePath, "E21Windows", "E21");
+        }
         private static void BuildCandidate(string scene, string output, string phase)
         {
             Directory.CreateDirectory("Builds/"+output);

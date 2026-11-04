@@ -63,8 +63,8 @@ namespace Aethernia
             yield return HealAtCamp();yield return Wasd();yield return Capture("Following");
             yield return Move(new Vector3(4,0,-12));yield return Capture("Entry");Require(Find("umbral-entry").TryInteract(D.Hero,flow.Session),"dungeon entry");yield return null;yield return Capture("Interior");
             Require(dungeon.Inside&&party.Units.Count==3,"same party transition");
-            yield return Move(new Vector3(76,0,-2));yield return Wait(.6f);Require(Find("umbral-battle-1").TryInteract(D.Hero,flow.Session),"first actual encounter");yield return Capture("GroupCombat");yield return Fight();
-            yield return Move(new Vector3(84,0,-2));yield return Wait(.6f);Require(Find("umbral-battle-2").TryInteract(D.Hero,flow.Session),"second actual encounter");yield return Fight();
+            yield return Move(new Vector3(76,0,-2));yield return Wait(.6f);Require(Find("umbral-battle-1").TryInteract(D.Hero,flow.Session),"first actual encounter");yield return Capture("GroupCombat");yield return FightGroup(flow);
+            yield return Move(new Vector3(84,0,-2));yield return Wait(.6f);Require(Find("umbral-battle-2").TryInteract(D.Hero,flow.Session),"second actual encounter");yield return FightGroup(flow);
             yield return Move(new Vector3(89,0,3));var goldBefore=S.Gold;Require(Find("umbral-objective").TryInteract(D.Hero,flow.Session)&&S.Gold==goldBefore+30,"real objective reward");Require(!Find("umbral-objective").TryInteract(D.Hero,flow.Session),"unique reward");yield return Capture("Reward");
             if(flow.Session.Rules.Progression!=null){Require(S.Companions.All(c=>c.Level==2&&c.Experience==8),"participating companions earn two real guardianies");Require(S.HeroLevel==4&&S.Experience==60,"bounded real progression cap");}
             yield return Move(new Vector3(71,0,-4));Require(Find("umbral-exit").TryInteract(D.Hero,flow.Session),"exit");yield return Move(new Vector3(9,0,-10));yield return HealAtCamp();
@@ -116,9 +116,9 @@ namespace Aethernia
             try{InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;EventSystem.current.SetSelectedGameObject(null);var p=D.Hero.transform.position;InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.W));yield return Wait(.4f);InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return null;Require(Vector3.Distance(p,D.Hero.transform.position)>.25f,"actual WASD");}
             finally{InputSystem.RemoveDevice(keyboard);InputSystem.settings.backgroundBehavior=previous;}
         }
-        private IEnumerator Fight()
+        internal static IEnumerator FightGroup(DemoFlow flow)
         {
-            var e=D.Encounter;var clock=S.WorldSeconds;var until=Time.realtimeSinceStartup+120;
+            var e=flow.Director.Encounter;var state=flow.Session.State;var clock=state.WorldSeconds;var until=Time.realtimeSinceStartup+120;
             while(e.GroupActive&&Time.realtimeSinceStartup<until)
             {
                 var g=e.Group;if(g.Current.Hostile){yield return null;continue;}var u=e.GroupUnit(g.Current.Id);if(u.IsMoving){yield return null;continue;}
@@ -126,7 +126,7 @@ namespace Aethernia
                 if(g.ActionAvailable){if(g.Current.Health<g.Current.Profile.Health*.5f&&!g.Current.Recovered)e.GroupRecover();else{e.GroupApproach();yield return Arrive(u);if((!g.Current.Hero||flow.Session.Rules.Progression==null||!e.Technique())&&!e.GroupAttack()&&g.ActionAvailable)e.GroupGuard();}}
                 if(e.GroupActive)e.GroupEnd();yield return null;
             }
-            Require(!e.GroupActive&&flow.Session.Mode==PrototypeMode.Exploration,"actual group win");Require(Math.Abs(S.WorldSeconds-clock)<.2,"strategic clock paused in combat");
+            Require(!e.GroupActive&&flow.Session.Mode==PrototypeMode.Exploration,"actual group win");Require(Math.Abs(state.WorldSeconds-clock)<.2,"strategic clock paused in combat");
         }
         private IEnumerator Move(Vector3 position){Require(D.Hero.TryMoveTo(position),"path to "+position);yield return Arrive(D.Hero);}
         private static IEnumerator Arrive(ExplorationUnit u){yield return null;var end=Time.realtimeSinceStartup+25;while(u.IsMoving&&Time.realtimeSinceStartup<end)yield return null;Require(!u.IsMoving,"navigation arrival "+u.name+" at "+u.transform.position);}

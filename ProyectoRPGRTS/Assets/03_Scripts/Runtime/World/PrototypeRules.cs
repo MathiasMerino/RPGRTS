@@ -23,6 +23,7 @@ namespace Aethernia
         public bool UxExperience; // Opt-in: las escenas históricas mantienen sus reglas de entrada.
         public bool WorldExploration; // UX02: misma partida, presentación y contenido de mundo optativos.
         public bool TacticalWarfare;
+        public bool FrontierCampaign;
         public ProgressionRules Progression;
         public CivilizationCatalog Civilizations;
         public ClassProfile[] Classes = {

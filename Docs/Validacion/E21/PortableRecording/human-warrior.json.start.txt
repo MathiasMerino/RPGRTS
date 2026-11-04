@@ -1,0 +1,4 @@
+FAIL: System.InvalidOperationException: E20: técnica del héroe ejecutada con foco, alcance y enfriamiento reales
+  at Aethernia.TacticalWarfareRoute.Check (System.Boolean valid, System.String step) [0x00014] in <workspace>\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\TacticalWarfareRoute.cs:14
+  at Aethernia.TacticalWarfareRoute+<Fight>d__4.MoveNext () [0x00aed] in <workspace>\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\TacticalWarfareRoute.cs:163
+  at Aethernia.WorldExplorationSmokeProbe+<Start>d__1.MoveNext () [0x00220] in <workspace>\ProyectoRPGRTS\Assets\03_Scripts\Runtime\Validation\WorldExplorationSmokeProbe.cs:25

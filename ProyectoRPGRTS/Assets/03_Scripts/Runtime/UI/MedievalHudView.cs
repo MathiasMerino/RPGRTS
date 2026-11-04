@@ -70,6 +70,8 @@ namespace Aethernia
                     Equipment.text="EQUIPO ACTUAL\nArma: "+(s.Weapon==""?"sin equipar":WorldOperations.ItemTitle(s.Weapon))+"\nArmadura: "+(s.Armour==""?"sin equipar":WorldOperations.ItemTitle(s.Armour))+"\n\nCambiar clase restaura la salud (ensayo).";
                 }
                 else if(page==ExplorationPage.Session) Body.text="Guardado manual · F5 guardar / F9 cargar\nConserva personaje, equipo, recursos, edificios y hechos.\n\nACTIVIDAD DEL PROTOTIPO\nCambiar actividad no carga una partida nueva.";
+                else if(page==ExplorationPage.Overview&&session.Rules.FrontierCampaign)
+                    Body.text=FrontierChapter.Journal(s,director.Hero.transform.position.x>65);
                 else if(page==ExplorationPage.Overview)
                 {
                     var text=new StringBuilder("REGISTRO · HECHOS PERSISTENTES\n\n");

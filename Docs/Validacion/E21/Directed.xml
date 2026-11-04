@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Passed" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-04 12:57:33Z" end-time="2026-11-04 12:57:44Z" duration="11.5577707">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="226" result="Passed" start-time="2026-11-04 12:57:33Z" end-time="2026-11-04 12:57:44Z" duration="11.557771" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1290" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="226" result="Passed" start-time="2026-11-04 12:57:33Z" end-time="2026-11-04 12:57:44Z" duration="11.031440" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="1396" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1291" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="226" result="Passed" start-time="2026-11-04 12:57:33Z" end-time="2026-11-04 12:57:44Z" duration="11.005646" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1292" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="226" result="Passed" start-time="2026-11-04 12:57:33Z" end-time="2026-11-04 12:57:44Z" duration="10.986883" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1293" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="226" result="Passed" start-time="2026-11-04 12:57:33Z" end-time="2026-11-04 12:57:44Z" duration="10.966714" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1136" name="FrontierCampaignTests" fullname="Aethernia.Tests.Editor.FrontierCampaignTests" classname="Aethernia.Tests.Editor.FrontierCampaignTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-04 12:57:33Z" end-time="2026-11-04 12:57:44Z" duration="10.926953" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1137" name="CandidateReusesTacticalAndCivilizationSystems" fullname="Aethernia.Tests.Editor.FrontierCampaignTests.CandidateReusesTacticalAndCivilizationSystems" methodname="CandidateReusesTacticalAndCivilizationSystems" classname="Aethernia.Tests.Editor.FrontierCampaignTests" runstate="Runnable" seed="911900890" result="Passed" start-time="2026-11-04 12:56:42Z" end-time="2026-11-04 12:56:56Z" duration="13.499547" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1139" name="LegacySlotCanCloseChapterWithoutConquestAndKeepTheWorld" fullname="Aethernia.Tests.Editor.FrontierCampaignTests.LegacySlotCanCloseChapterWithoutConquestAndKeepTheWorld" methodname="LegacySlotCanCloseChapterWithoutConquestAndKeepTheWorld" classname="Aethernia.Tests.Editor.FrontierCampaignTests" runstate="Runnable" seed="454278156" result="Passed" start-time="2026-11-04 12:56:56Z" end-time="2026-11-04 12:57:44Z" duration="48.564352" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1138" name="RoadTransactionsRequireEvidenceAndApplyOneDifferentResult" fullname="Aethernia.Tests.Editor.FrontierCampaignTests.RoadTransactionsRequireEvidenceAndApplyOneDifferentResult" methodname="RoadTransactionsRequireEvidenceAndApplyOneDifferentResult" classname="Aethernia.Tests.Editor.FrontierCampaignTests" runstate="Runnable" seed="28827657" result="Passed" start-time="2026-11-04 12:57:44Z" end-time="2026-11-04 12:57:44Z" duration="0.015128" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,10 @@
+stage,time_s,class,race,hp,max_hp,attack,guard,level,xp,gold,wood,food
+04-SafeVillage,2.39,monk,elf,20,20,6,1,1,0,50,20,10
+11-FirstRpg,34.99,monk,elf,20,20,6,1,1,0,58,23,10
+13-ExploreAgain,45.82,monk,elf,11,22,6,1,2,12,58,23,10
+18-Positioned,79.36,monk,elf,22,24,6,2,2,20,78,23,13
+20-Victory,86.91,monk,elf,22,24,6,2,2,28,78,23,13
+22-Camp,96.77,monk,elf,22,24,6,2,2,28,34,3,10
+T02-Deployment,231.67,monk,elf,28,28,7,2,4,60,20,16,18
+T07-Conquered,242.23,monk,elf,18,28,7,2,4,60,20,16,18
+T08-Return,256.43,monk,elf,18,28,7,2,4,60,20,18,20

@@ -32,3 +32,6 @@ E20 se apila en [PR #13](https://github.com/MathiasMerino/RPGRTS/pull/13), borra
 
 
 E20.1 está en [PR #14](https://github.com/MathiasMerino/RPGRTS/pull/14), borrador con cabeza `fix/e20-1-alpha-stabilization` y base `feature/e20-tactical-warfare` (PR #13, c89801c). El orden hacia `dev` es PR1→PR2→PR3→PR4→PR5→PR6→PR7→PR8→PR9→PR10/E19→PR11/UX‑01→PR12/UX‑02→PR13/E20→PR14/E20.1. Para cada uno, revisar la diferencia contra su base y sus pruebas. Tras aprobación explícita e integración del antecedente, comprobar su historia en `dev`, ajustar la base del siguiente y repetir la verificación del diff. Si el método de integración aplana commits, preparar un plan de historial con el usuario antes de cambiar la pila. La promoción `dev` → `main` requiere revisión y aprobación propias.
+
+
+E21 añade el [PR #15](https://github.com/MathiasMerino/RPGRTS/pull/15), borrador desde `feature/e21-first-campaign` sobre `fix/e20-1-alpha-stabilization` (PR #14, 4ab7b4f). La revisión hacia dev continúa en el orden #1→#13→#14→#15, conservando las dependencias de la tabla. Tras aprobar e integrar un antecedente, revisar la historia y el diff del siguiente antes de cambiar su base hacia dev. La aprobación de la campaña y la promoción a main requieren su propia revisión.

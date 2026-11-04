@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,6 +21,9 @@ namespace Aethernia
         public string DialogueText => body == null ? "" : body.text;
         public Button ConfirmButton { get; private set; }
         public Button CloseButton { get; private set; }
+        public Button AlternativeButton { get; private set; }
+        private readonly Dictionary<string,InteractionPoint> landmarks = new Dictionary<string,InteractionPoint>();
+        private Action alternative;
         private RectTransform dialogue, indicator;
         private TMP_Text body, title, focusLabel;
         private Image portrait;
@@ -46,6 +50,11 @@ namespace Aethernia
             body = ui.Text(dialogue, "Dialogue", "", 120, 62, 510, 152, 18);
             ConfirmButton = ui.Button(dialogue, "World confirm", "Continuar", 120, 230, 300, 40, Confirm);
             CloseButton = ui.Button(dialogue, "World close", "Cerrar · Esc", 440, 230, 190, 40, Close);
+            AlternativeButton = ui.Button(dialogue, "World alternative", "", 288, 230, 166, 40, () => ConfirmChoice(alternative));
+            AlternativeButton.gameObject.SetActive(false);
+            if(Flow.Session.Rules.FrontierCampaign)
+                foreach(var point in FindObjectsByType<InteractionPoint>(FindObjectsInactive.Include))
+                    landmarks.TryAdd(point.FactId,point);
             dialogue.gameObject.SetActive(false);
             indicator = DemoWidgets.Rect(Flow.ExistingHud.transform, "Nearby world focus", 0, 0, 42, 32);
             indicator.anchorMin = indicator.anchorMax = indicator.pivot = new Vector2(.5f, .5f);
@@ -91,18 +100,29 @@ namespace Aethernia
         {
             if (dialogue != null) dialogue.gameObject.SetActive(false);
             if (Flow != null && speaker != null) Flow.Session.WorldUiOpen = false;
-            speaker = null; confirm = null;
+            speaker = null; confirm = null; alternative = null;
         }
-        public void Confirm()
+        public void Confirm() => ConfirmChoice(confirm);
+        private void ConfirmChoice(Action action)
         {
             if (!DialogueOpen || speaker == null) return;
             var s = Flow.Session;
             if (s.Mode != PrototypeMode.Exploration || s.Paused || Vector3.Distance(speaker.transform.position, Flow.Director.Hero.transform.position) > speaker.Reach || !commands.HasInteractionSight(speaker))
             { Close(); s.Say("La conversación terminó: acércate de nuevo."); return; }
-            var action = confirm; Close(); action?.Invoke();
+            Close(); action?.Invoke();
         }
         public bool TalkCaptain()
         {
+            var state=Flow.Session.State;
+            if(Flow.Session.Rules.FrontierCampaign&&state.Demo?.Chapter<DemoChapter.Settlement)
+            {
+                var step=FrontierChapter.Step(state);
+                if(step!=FrontierStep.Patrol)
+                    return Show(Flow.Patrol,"Darien · capitán",FrontierChapter.Objective(state),null,null,"warrior");
+                return Show(Flow.Patrol,"Darien · capitán",
+                    "El cruce vuelve a recibir víveres. Necesito abrir paso al campamento para que alguien pueda investigar las ruinas. Despliega primero la patrulla y decide cuándo atacar.",
+                    "Preparar patrulla",()=>Flow.BeginPatrol(),"warrior");
+            }
             if(Flow.Session.Rules.TacticalWarfare&&Flow.Session.State.Demo?.Chapter>=DemoChapter.FreeExploration)
                 return Show(Flow.Patrol,"Capitán de patrulla",
                     "Defensa del paso fronterizo. Recluta en el cuartel y elige el despliegue en Ejército. Asegura el Paso del bosque y marcha al Puesto del Umbral. Allí podrás reconocer el terreno antes de ordenar la ofensiva.",
@@ -112,12 +132,18 @@ namespace Aethernia
                 : "Primero devuelve las provisiones al habitante. Puedes reconocer el sendero y las ruinas mientras tanto.",
                 DemoFlow.CanVisitPatrol(Flow.Session) ? "Preparar patrulla" : null, () => Flow.BeginPatrol(), "warrior");
         }
-        private bool Show(InteractionPoint point, string name, string message, string action, Action callback, string classId)
+        private bool Show(InteractionPoint point, string name, string message, string action, Action callback, string classId, string alternativeText=null, Action alternativeCallback=null)
         {
             if (DialogueOpen || Flow.Session.WorldUiOpen || dialogue == null) return false;
             Flow.ExistingHud.ClosePanels(); Flow.Director.Hero.Stop(); speaker = point; confirm = callback;
             title.text = name; body.text = message; ConfirmButton.gameObject.SetActive(action != null);
             ConfirmButton.GetComponentInChildren<TMP_Text>().text = action ?? "Continuar";
+            alternative=alternativeCallback;
+            AlternativeButton.gameObject.SetActive(alternative!=null);
+            AlternativeButton.GetComponentInChildren<TMP_Text>().text=alternativeText??"";
+            ((RectTransform)ConfirmButton.transform).sizeDelta=new Vector2(alternative!=null?166:300,40);
+            ((RectTransform)CloseButton.transform).anchoredPosition=new Vector2(alternative!=null?460:440,-230);
+            ((RectTransform)CloseButton.transform).sizeDelta=new Vector2(alternative!=null?170:190,40);
             var entry = Flow.Front.Catalog.Entries.FirstOrDefault(e => e.ClassId == classId);
             portrait.sprite = entry?.PortraitSprite; portrait.enabled = portrait.sprite != null;
             Flow.Session.WorldUiOpen = true; dialogue.gameObject.SetActive(true); dialogue.SetAsLastSibling();
@@ -129,6 +155,7 @@ namespace Aethernia
             if (item == null) return null;
             var s = Flow.Session; var point = item.GetComponent<InteractionPoint>();
             if (DialogueOpen || s.WorldUiOpen || s.Paused || item.Consumed(s)) return false;
+            if(s.Rules.FrontierCampaign&&TryCampaignDialogue(point,out var handled))return handled;
             switch (item.Kind)
             {
                 case WorldInteractionKind.Merchant:
@@ -151,6 +178,93 @@ namespace Aethernia
                     return Show(point, name, "Recursos compartidos con construcción y ejército: " + s.State.Gold + " oro, " + s.State.Wood + " madera, " + s.State.Food + " alimento. El centro y el taller habilitan la producción existente.", null, null, "monk");
                 default: return Show(point, name, item.Description, null, null, "mage");
             }
+        }
+        public Vector3 CampaignTarget(FrontierStep step, bool inside, Vector3 fallback)
+        {
+            var state=Flow.Session.State;
+            string id;
+            switch(step)
+            {
+                case FrontierStep.Trail: id=FrontierChapter.Sign; break;
+                case FrontierStep.Supply: id=FrontierChapter.Merchant; break;
+                case FrontierStep.Patrol: id="demo-patrol"; break;
+                case FrontierStep.Ruins:
+                    id=!inside?"umbral-entry":!state.Facts.Contains("umbral-battle-1")?"umbral-battle-1":
+                        !state.Facts.Contains("umbral-battle-2")?"umbral-battle-2":"umbral-objective";
+                    break;
+                case FrontierStep.Debrief: id=inside?"umbral-exit":FrontierChapter.Liaison; break;
+                case FrontierStep.Return: id=FrontierChapter.Liaison; break;
+                case FrontierStep.Conflict:
+                    id=state.Territories.Exists(t=>t.Id=="crossing"&&t.Owner==state.FactionId)?
+                        "territory-outpost":"territory-crossing";
+                    break;
+                default: return fallback;
+            }
+            return landmarks.TryGetValue(id,out var point)?point.transform.position:fallback;
+        }
+
+        private bool TryCampaignDialogue(InteractionPoint point,out bool handled)
+        {
+            var game=Flow.Session;
+            var state=game.State;
+            handled=false;
+            switch(point.FactId)
+            {
+                case FrontierChapter.Sign:
+                    var read=state.Facts.Contains(FrontierChapter.Clue);
+                    var canRead=!read&&(state.Facts.Contains(LostCargoQuest.Completed)||ExpeditionOperations.Ready(state));
+                    handled=Show(point,"Señal del cruce",
+                        "Oeste: patrulla. Sur: ruinas. Hay rodadas recientes junto a un símbolo tallado. Elia conoce el camino y a quienes lo usan.",
+                        canRead?"Anotar pista":null,
+                        ()=>ApplyCampaign(()=>FrontierChapter.ReadClue(game.State),"Pista anotada. Habla con Elia."),"mage");
+                    return true;
+                case FrontierChapter.Merchant:
+                    var choice=FrontierChapter.Decision(state);
+                    if(state.Facts.Contains(FrontierChapter.Clue)&&choice==RoadChoice.None)
+                    {
+                        handled=Show(point,"Elia · mercader",
+                            "Reconozco el símbolo. Lo usan en los caminos del Umbral. Si llevas el informe a la guardia, te doy 3 víveres. Si financias el arreglo del paso, 5 de oro liberan 6 de madera para tus obras.",
+                            "Entregar informe",()=>ApplyCampaign(()=>FrontierChapter.ChooseRoad(game.State,RoadChoice.Report),"Informe entregado. +3 alimento y +5 reputación con la Liga."),
+                            "monk","Reparar · 5 oro",()=>ApplyCampaign(()=>FrontierChapter.ChooseRoad(game.State,RoadChoice.Repair),"Reparación financiada. −5 oro y +6 madera."));
+                        return true;
+                    }
+                    var memory=choice==RoadChoice.Report?"La guardia agradece tu informe. ":choice==RoadChoice.Repair?"Tus monedas ayudaron a reparar el paso. ":
+                        state.Facts.Contains(LostCargoQuest.Completed)?"Mara ya recibió el cargamento. ":"";
+                    handled=Show(point,"Elia · mercader",memory+"Cambio 2 de madera por 5 de oro.", "Comprar madera · 5 oro",
+                        ()=>game.CompleteInteraction("market","Mercado"),"monk");
+                    return true;
+                case "ux02-guard":
+                    handled=Show(point,"Nilo · guardia",
+                        FrontierChapter.Decision(state)==RoadChoice.Report?"Tu informe nos permitió orientar la patrulla. Mantén los ojos en las laderas.":
+                        FrontierChapter.Decision(state)==RoadChoice.Repair?"El paso reparado nos permite mover suministros de nuevo.":
+                        "Alguien ha movido la carga por el cruce. Lee la señal y pregunta a Elia cuando hayas devuelto el arcón.",
+                        null,null,"warrior");
+                    return true;
+                case FrontierChapter.Liaison:
+                    var party=FindAnyObjectByType<PartyWorld>();
+                    var canDebrief=state.Facts.Contains("umbral-reward")&&!state.Facts.Contains(FrontierChapter.Dossier);
+                    var canFinish=state.Facts.Contains(FrontierChapter.Dossier)&&!state.Facts.Contains(FrontierChapter.Finished);
+                    var briefing=canDebrief?"Ese sello vincula las marcas de la ruta con el puesto. Déjame registrar lo que encontraste.":
+                        canFinish&&FrontierChapter.ConflictResolved(state)?"El resultado del puesto ya consta. Puedes cerrar este capítulo y elegir tu siguiente trabajo.":
+                        canFinish?"Puedes asegurar el Paso y marchar al Puesto, pactar en Culturas o cerrar el capítulo por tu cuenta. Las expediciones seguirán abiertas.":
+                        state.Facts.Contains(FrontierChapter.Finished)?"El camino vuelve a estar abierto. Puedo ayudarte a reunir un grupo.":"Las ruinas guardan pruebas de lo ocurrido. Si quieres compañía, puedo recomendarte a un espadachín.";
+                    var recruit="Reclutar · "+party.Rules.GoldCost("swordsman")+" oro";
+                    if(canDebrief||canFinish)
+                        handled=Show(point,"Tarek · enlace",briefing,canDebrief?"Entregar hallazgo":"Cerrar capítulo",
+                            ()=>ApplyCampaign(()=>canDebrief?FrontierChapter.Debrief(game.State):FrontierChapter.Finish(game.State),
+                                canDebrief?"Hallazgo registrado. Decide qué hacer con el puesto.":"Capítulo cerrado. Nuevos caminos disponibles."),
+                            "warrior",recruit,()=>party.Recruit("swordsman"));
+                    else handled=Show(point,"Tarek · enlace",briefing+" Coste adicional: "+party.Rules.FoodCost("swordsman")+" alimento.",
+                        recruit,()=>party.Recruit("swordsman"),"warrior");
+                    return true;
+                default: return false;
+            }
+        }
+
+        private void ApplyCampaign(Func<bool> transaction,string message)
+        {
+            if(!transaction()){Flow.Session.Say("Comprueba los requisitos y tus recursos. La decisión se conserva.");return;}
+            if(Flow.Director.Save(Flow.SlotPath))Flow.Session.Say(message);
         }
     }
 }

@@ -1326,3 +1326,16 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 | E201-REND | P8 · RUTA | Completado y verificado | 18 filas URP, tiempos CPU, GC y SetPass en PERFORMANCE.json. GPU, Draw Calls y FPS presentados quedan pendientes. |
 | E201-ENT | P9–P11 · RUTA | Completado y verificado | Build x64 y ZIP, 223/223 generales, 33 capturas, guía y PR #14 sobre #13. |
 | E201-HUM | P11 · ENT | Pendiente | Revisión humana de balance, cámara, HUD, ritmo y rendimiento. |
+
+
+## FASE E21 — LAS RUTAS DE LA FRONTERA
+
+| ID | Prioridad y dependencia | Estado | Aceptación y archivos |
+|---|---|---|---|
+| E21-00 | P1 · E20.1 | Completado y verificado | Base 4ab7b4f y PR #14 sobre #13. 14 PR anteriores en borrador. Ajustes locales y GDD identificados por SHA. |
+| E21-MIS | P2–P6 · 00 | Completado y verificado | Cinco actos derivados del estado real, dos decisiones excluyentes, NPC reactivos y guardado v1. `FrontierChapter.cs`, `WorldExploration.cs`, diario UX. |
+| E21-RPG | P7–P8 · MIS | Completado y verificado | Cargamento, investigación, compañeros y dos guardianías reales. Hallazgo y recompensa única. `FrontierCampaignRoute.cs`. |
+| E21-RTS | P9–P10 · RPG | Completado y verificado | Dossier habilita el puesto. Conquista y cierre independiente comprobados. Pacto existente integrado, recorrido E21 pendiente. |
+| E21-QA | P11–P12 · RTS | Completado y verificado | General 226/226, dirigidas 3/3 y 1/1 de inicio con 0–3 acompañantes, seis procesos desde ZIP, dos de la build original. Un intento grabado falló el requisito de técnica. 32 PNG, MP4, 18 filas URP y PR #15 sobre #14. |
+| E21-OPT | P12 · QA | Pendiente | Recorrido completo del pacto y victorias de mazmorra con menos de tres acompañantes. |
+| E21-HUM | P12 · QA | Pendiente | Revisión humana de historia provisional, legibilidad, ritmo, balance y exploración libre. |

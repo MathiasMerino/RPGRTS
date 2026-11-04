@@ -50,6 +50,14 @@ namespace Aethernia
         public static IEnumerator CampAndRuins(DemoFlow flow,Func<string,IEnumerator> capture)
         {
             var s=flow.Session;var world=flow.GetComponent<WorldExploration>();
+            var campaign=s.Rules.FrontierCampaign;
+            if(campaign)
+            {
+                var settlement=flow.GetComponent<DemoSettlementPanel>();
+                var workshop=s.State.Buildings.FindIndex(b=>b.Id=="workshop");
+                if(workshop>=0&&!s.State.Buildings[workshop].ProductionPaused)
+                    Check(settlement.SelectBuilding(workshop)&&settlement.ToggleProduction(),"pause workshop before recruiting");
+            }
             yield return Use(flow,"ux02-door",capture,"W07-StoreDoor");Check(world.DialogueOpen,"door request dialogue");var food=s.State.Food;world.ConfirmButton.onClick.Invoke();Check(s.State.Food==food+2,"store delivery real food");
             yield return Use(flow,"ux02-merchant",capture,"W08-Merchant");yield return capture("W09-TradeDialogue");var gold=s.State.Gold;var wood=s.State.Wood;world.ConfirmButton.onClick.Invoke();
             Check(s.State.Gold==gold-5&&s.State.Wood>=wood+2,"real existing trade cost");
@@ -58,10 +66,14 @@ namespace Aethernia
             world.ConfirmButton.onClick.Invoke();Check(s.State.Companions.Count==1&&s.State.Gold==gold-party.Rules.GoldCost("swordsman"),"real paid companion recruitment");
             var companion=s.State.Companions.Single();Check(companion.InParty&&party.Units.ContainsKey(companion.Id),"recruit joins real formation by existing rule");
             Check(party.SetParty(companion.Id,false)&&!companion.InParty&&party.SetParty(companion.Id,true)&&companion.InParty,"existing companion reserve and formation toggles");yield return capture("W12-CompanionCamp");
-            yield return Use(flow,"umbral-entry",capture,"W13-RuinsAccess");var dungeon=UnityEngine.Object.FindAnyObjectByType<DungeonExpedition>();
+            var dungeon=UnityEngine.Object.FindAnyObjectByType<DungeonExpedition>();
+            if(campaign)yield return FrontierCampaignRoute.PrepareParty(flow,party,dungeon);
+            yield return Use(flow,"umbral-entry",capture,"W13-RuinsAccess");
             Check(dungeon.Inside&&s.Mode==PrototypeMode.Exploration&&!flow.Director.IsBusy,"existing dungeon entrance without auto battle");yield return UxExperienceRoute.Wait(.5f);yield return capture("W14-InsideRuins");
-            var before=s.State.Companions.Single().Health;
-            yield return Use(flow,"umbral-exit",capture,"W15-RuinsExit");Check(!dungeon.Inside&&Vector3.Distance(flow.Director.Hero.transform.position,dungeon.SurfaceReturn)<.5f,"return to actual forest entrance");Check(s.State.Companions.Single().Health==before,"companion state preserved across travel");yield return capture("W16-ReturnedToTrail");
+            if(campaign)yield return FrontierCampaignRoute.ExploreRuins(flow,dungeon,capture);
+            var before=s.State.Companions.Single(c=>c.Id==companion.Id).Health;
+            yield return Use(flow,"umbral-exit",capture,"W15-RuinsExit");Check(!dungeon.Inside&&Vector3.Distance(flow.Director.Hero.transform.position,dungeon.SurfaceReturn)<.5f,"return to actual forest entrance");Check(s.State.Companions.Single(c=>c.Id==companion.Id).Health==before,"companion state preserved across travel");yield return capture("W16-ReturnedToTrail");
+            if(campaign)yield return FrontierCampaignRoute.Debrief(flow,capture);
             Check(flow.Director.Save(flow.SlotPath),"save world discoveries and rewards");
             var facts=s.State.Facts.Where(f=>f.StartsWith("ux02-")).OrderBy(f=>f).ToArray();
             Check(flow.ReturnToTitle()&&flow.Continue(),"actual title Continue");flow.Pause();
@@ -76,12 +88,15 @@ namespace Aethernia
         {
             yield return capture(name);
             if(name=="04-SafeVillage")yield return Explore(flow,capture);
+            if(name=="14-QuestReward"&&flow.Session.Rules.FrontierCampaign)
+                yield return FrontierCampaignRoute.ResolveRoad(flow,capture);
             if(nativeInput&&name=="16-Selection")yield return MouseOrders(flow,capture,false);
             if(nativeInput&&name=="18-Positioned")yield return MouseOrders(flow,capture,true);
             if(name=="22-Camp")
             {
                 yield return CampAndRuins(flow,capture);
                 if(flow.Session.Rules.TacticalWarfare)yield return TacticalWarfareRoute.FromCamp(flow,capture);
+                if(flow.Session.Rules.FrontierCampaign)yield return FrontierCampaignRoute.Finish(flow,capture);
             }
         }
         private static IEnumerator MouseFrame(Mouse mouse,Vector2 point,ushort buttons)
