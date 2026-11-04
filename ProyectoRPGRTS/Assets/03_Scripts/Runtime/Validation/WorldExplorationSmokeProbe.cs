@@ -25,7 +25,7 @@ namespace Aethernia
                 object step;try{var top=stack.Peek();if(!top.MoveNext()){stack.Pop();continue;}step=top.Current;if(step is IEnumerator nested){stack.Push(nested);continue;}}
                 catch(Exception e){File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"FAIL: "+e);Debug.LogError(e);GetComponent<DemoRecordingProbe>()?.Finish();Application.Quit(2);yield break;}yield return step;
             }
-            GetComponent<DemoRecordingProbe>()?.Finish();File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"PASS: "+(stabilization?"E20.1":tactical>=0?"E20":"UX02")+" "+race+"/"+cls+" "+(resume?"new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints":"menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title")+(tactical>=0?"; despliegue, órdenes, técnica, conquista y producción territorial":"")+"; seconds="+(Time.realtimeSinceStartup-start).ToString("F2"));flow.Front.Controls["quit"].onClick.Invoke();
+            GetComponent<DemoRecordingProbe>()?.Finish();File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"PASS: "+(flow.Session.Rules.FrontierCampaign?"E21":stabilization?"E20.1":tactical>=0?"E20":"UX02")+" "+race+"/"+cls+" "+(resume?"new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints":"menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title")+(tactical>=0?"; despliegue, órdenes, técnica, conquista y producción territorial":"")+"; seconds="+(Time.realtimeSinceStartup-start).ToString("F2"));flow.Front.Controls["quit"].onClick.Invoke();
         }
         private static IEnumerator Capture(DemoFlow flow,string slot,string cls,string name,bool stabilization)
         {
@@ -88,6 +88,12 @@ namespace Aethernia
                     "conquest, gear, progression and deployed roster persisted");
                 UxExperienceRoute.Require(!flow.Director.Rts.Active&&!flow.Director.Rts.TacticalDeployment,"orders and combat do not leak across processes");
             }
+            if(flow.Session.Rules.FrontierCampaign)
+                UxExperienceRoute.Require(FrontierChapter.Step(after)==FrontierStep.Free&&
+                    FrontierChapter.Decision(after)==(cls=="mage"?RoadChoice.Repair:RoadChoice.Report)&&
+                    after.Facts.OrderBy(f=>f).SequenceEqual(before.Facts.OrderBy(f=>f))&&
+                    after.Companions.All(c=>before.Companions.Any(b=>b.Id==c.Id&&b.Health==c.Health&&b.Level==c.Level)),
+                    "campaign, exclusive choice, dungeon and companions retained after restart");
             flow.Resume();yield return DemoPlayerCapture.Save(Path.Combine(Path.GetDirectoryName(slot),"Captures",cls+"-23-Continued.png"));UxExperienceRoute.Require(flow.ReturnToTitle(),"return after Continue");
         }
     }

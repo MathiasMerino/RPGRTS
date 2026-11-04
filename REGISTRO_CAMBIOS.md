@@ -789,3 +789,8 @@ HUD UX con interacción centrada y clicable. El botón anterior queda desactivad
 Perfilado aislado con 18 filas y render URP confirmado. En Alto 1080p, la aldea en pausa registró 3,33 ms de media, el menú 5,85 ms y el despliegue RTS en pausa 5,19 ms. FPS presentados y evaluación humana pendientes. Se mantuvo el balance numérico. El Mago terminó el primer RPG con 2/18 PV en el recorrido reproducible, pendiente de revisión con más estrategias.
 
 Fuente Windows f9da1b3. PR #14 en borrador sobre #13, con la cadena y el orden de integración documentados. Calidad local y GDD conservados. Entrega y guía en Docs/ENTREGA_E201.md y Docs/GUIA_E201.md.
+
+
+## 2026-11-04 — E21, base del capítulo
+
+Base 4ab7b4f y rama `feature/e21-first-campaign`. La campaña reutiliza escena, navegación, controladores y guardado de E20.1. Dos acuerdos de abastecimiento con costes y recompensas distintos. El hallazgo de las ruinas habilita el puesto. Se puede cerrar el capítulo por cuenta propia y seguir explorando. Guía y diseño provisional en Docs. Primera build Windows x64 compilada. Pruebas del recorrido y evidencia en ejecución.

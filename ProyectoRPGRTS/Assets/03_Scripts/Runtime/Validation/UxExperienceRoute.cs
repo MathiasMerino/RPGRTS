@@ -48,7 +48,7 @@ namespace Aethernia
             }
             finally{InputSystem.RemoveDevice(keyboard);InputSystem.settings.backgroundBehavior=background;}
             Require(session.Mode==PrototypeMode.TurnCombat&&cargo.CargoEncounter,"quest triggers real RPG");
-            Require(d.Encounter.TrySelect(d.Encounter.Enemy.GetComponentInChildren<Collider>()),"actual target selection");d.Encounter.Approach();yield return Arrive(hero);yield return capture("11-FirstRpg");
+            Require(d.Encounter.TrySelect(d.Encounter.Enemy.GetComponentInChildren<Collider>()),"actual target selection");if(!session.Rules.FrontierCampaign||cls!="mage")d.Encounter.Approach();yield return Arrive(hero);yield return capture("11-FirstRpg");
             for(var turn=0;turn<35&&cargo.CargoEncounter;turn++)
             {
                 var battle=d.Encounter.Battle;Require(battle!=null,"RPG state");
