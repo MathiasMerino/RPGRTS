@@ -26,6 +26,7 @@ namespace Aethernia
             var path=new NavMeshPath();
             for(var i=0;i<selected.Length;i++)
             {
+                if(PatrolCombat&&target!=null)continue;
                 var requested=target!=null?AttackPosition(selected[i],target):point+new Vector3((i%3-1)*1.2f,0,(i/3)*1.2f);
                 if(!NavMesh.SamplePosition(requested,out var hit,.6f,NavMesh.AllAreas)||!NavMesh.CalculatePath(selected[i].Unit.transform.position,hit.position,NavMesh.AllAreas,path)||path.status!=NavMeshPathStatus.PathComplete)
                 {session.Say("Destino de formación inaccesible; orden conservada.");return false;}
@@ -34,8 +35,14 @@ namespace Aethernia
             if(Preparing&&target!=null&&!EngagePrepared())return false;
             for(var i=0;i<selected.Length;i++)
             {
-                var s=selected[i];s.OrderedTarget=target;s.MoveOrder=target==null;s.OrderedUntil=target==null?Time.time+3:Time.time;
-                s.Unit.TryMoveTo(destinations[i]);Trace("command",s,target);
+                var s=selected[i];
+                if(PatrolCombat&&target!=null)OrderPatrolAttack(s,target);
+                else
+                {
+                    s.OrderedTarget=target;s.MoveOrder=target==null;s.OrderedUntil=target==null?Time.time+3:Time.time;
+                    s.Unit.TryMoveTo(destinations[i]);
+                }
+                Trace("command",s,target);
             }
             LastOrderText=(target==null?"Mover formación":"Atacar objetivo")+" · "+selected.Length;
             LastOrderPosition=point;LastOrderAt=Time.unscaledTime;session.Say(LastOrderText);return true;

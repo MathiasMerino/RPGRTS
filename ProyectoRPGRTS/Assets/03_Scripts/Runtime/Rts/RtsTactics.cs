@@ -361,9 +361,12 @@ namespace Aethernia
             return result;
         }
 
-        private bool TacticalLine(Soldier source, Soldier target)
+        private bool TacticalLine(Soldier source, Soldier target) =>
+            TacticalLine(source, target, source.Unit.transform.position);
+
+        private bool TacticalLine(Soldier source, Soldier target, Vector3 origin)
         {
-            var from = source.Unit.transform.position + Vector3.up * .9f;
+            var from = origin + Vector3.up * .9f;
             var delta = target.Unit.transform.position + Vector3.up * .9f - from;
             var length = delta.magnitude;
             if (length < .01f) return true;
@@ -388,8 +391,9 @@ namespace Aethernia
 
         private Soldier HeroTarget(Soldier hero, float range)
         {
-            if (hero.OrderedTarget != null && Health(hero.OrderedTarget) > 0) return hero.OrderedTarget;
-            if (!TacticalBattle) return Nearest(hero);
+            if (IsLive(hero.OrderedTarget) && (!PatrolCombat || InRange(hero, hero.OrderedTarget, range)))
+                return hero.OrderedTarget;
+            if (!TacticalBattle && !PatrolCombat) return Nearest(hero);
             return LocalTarget(hero, range, hero.Unit.transform.position, range);
         }
     }
