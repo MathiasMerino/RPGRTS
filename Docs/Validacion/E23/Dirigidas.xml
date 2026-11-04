@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="5" result="Passed" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-04 20:22:59Z" end-time="2026-11-04 20:23:22Z" duration="23.7244386">
+  <test-suite type="TestSuite" id="1000" name="ProyectoRPGRTS" fullname="ProyectoRPGRTS" runstate="Runnable" testcasecount="232" result="Passed" start-time="2026-11-04 20:22:59Z" end-time="2026-11-04 20:23:22Z" duration="23.724439" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1298" name="Aethernia.Editor.Tests.dll" fullname="C:/Users/Mathy/Desktop/PROYECTO GAME/ProyectoRPGRTS/Library/ScriptAssemblies/Aethernia.Editor.Tests.dll" runstate="Runnable" testcasecount="232" result="Passed" start-time="2026-11-04 20:22:59Z" end-time="2026-11-04 20:23:22Z" duration="23.596811" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="18016" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1299" name="Aethernia" fullname="Aethernia" runstate="Runnable" testcasecount="232" result="Passed" start-time="2026-11-04 20:22:59Z" end-time="2026-11-04 20:23:22Z" duration="23.590057" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1300" name="Tests" fullname="Aethernia.Tests" runstate="Runnable" testcasecount="232" result="Passed" start-time="2026-11-04 20:22:59Z" end-time="2026-11-04 20:23:22Z" duration="23.583888" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1301" name="Editor" fullname="Aethernia.Tests.Editor" runstate="Runnable" testcasecount="232" result="Passed" start-time="2026-11-04 20:22:59Z" end-time="2026-11-04 20:23:22Z" duration="23.577801" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1154" name="IntegratedAlphaTests" fullname="Aethernia.Tests.Editor.IntegratedAlphaTests" classname="Aethernia.Tests.Editor.IntegratedAlphaTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-04 20:22:36Z" end-time="2026-11-04 20:22:49Z" duration="12.833769" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1155" name="CandidateUsesTheLivingWorldWithoutPrivateDependencies" fullname="Aethernia.Tests.Editor.IntegratedAlphaTests.CandidateUsesTheLivingWorldWithoutPrivateDependencies" methodname="CandidateUsesTheLivingWorldWithoutPrivateDependencies" classname="Aethernia.Tests.Editor.IntegratedAlphaTests" runstate="Runnable" seed="208772825" result="Passed" start-time="2026-11-04 20:22:22Z" end-time="2026-11-04 20:22:25Z" duration="3.134919" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1156" name="PromptsAndContractGuidanceUseTheRealWorld" fullname="Aethernia.Tests.Editor.IntegratedAlphaTests.PromptsAndContractGuidanceUseTheRealWorld" methodname="PromptsAndContractGuidanceUseTheRealWorld" classname="Aethernia.Tests.Editor.IntegratedAlphaTests" runstate="Runnable" seed="633375551" result="Passed" start-time="2026-11-04 20:22:25Z" end-time="2026-11-04 20:22:49Z" duration="24.197137" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1157" name="LivingWorldTests" fullname="Aethernia.Tests.Editor.LivingWorldTests" classname="Aethernia.Tests.Editor.LivingWorldTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-04 20:22:59Z" end-time="2026-11-04 20:23:22Z" duration="23.551044" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1160" name="BoardAndMerchantPersistTransactionsThroughLiveScene" fullname="Aethernia.Tests.Editor.LivingWorldTests.BoardAndMerchantPersistTransactionsThroughLiveScene" methodname="BoardAndMerchantPersistTransactionsThroughLiveScene" classname="Aethernia.Tests.Editor.LivingWorldTests" runstate="Runnable" seed="1056918895" result="Passed" start-time="2026-11-04 20:22:49Z" end-time="2026-11-04 20:23:22Z" duration="33.325606" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1158" name="ClaimsRequireAcceptanceAndEvidenceAndCannotPayTwice" fullname="Aethernia.Tests.Editor.LivingWorldTests.ClaimsRequireAcceptanceAndEvidenceAndCannotPayTwice" methodname="ClaimsRequireAcceptanceAndEvidenceAndCannotPayTwice" classname="Aethernia.Tests.Editor.LivingWorldTests" runstate="Runnable" seed="249499079" result="Passed" start-time="2026-11-04 20:23:22Z" end-time="2026-11-04 20:23:22Z" duration="0.002289" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1159" name="TradeRejectsInsufficientGoldFullInventoryAndExcessResources" fullname="Aethernia.Tests.Editor.LivingWorldTests.TradeRejectsInsufficientGoldFullInventoryAndExcessResources" methodname="TradeRejectsInsufficientGoldFullInventoryAndExcessResources" classname="Aethernia.Tests.Editor.LivingWorldTests" runstate="Runnable" seed="140982469" result="Passed" start-time="2026-11-04 20:23:22Z" end-time="2026-11-04 20:23:22Z" duration="0.001134" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Mathy/AppData/LocalLow/DefaultCompany/ProyectoRPGRTS\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

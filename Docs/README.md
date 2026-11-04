@@ -2,6 +2,8 @@
 
 ## Para jugar y evaluar ahora
 
+- [Guía de la alfa E23](GUIA_E23.md), [notas](NOTAS_E23.md) y [plan de integración](INTEGRACION_E23.md).
+
 - [Entrega E22](ENTREGA_E22.md), [guía](GUIA_E22.md), [contratos](CONTRATOS_E22.md) y [comercio](COMERCIO_E22.md).
 
 - [Entrega E21](ENTREGA_E21.md), [capítulo](CAPITULO_E21.md) y [guía](GUIA_E21.md).

@@ -1351,3 +1351,13 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 | E22-PER | P8–P9 · COM | En desarrollo | Ranura separada y guardado v1. La prueba dirigida abrió partida UX02, cobró, compró y volvió a cargar. Falta verificar reinicio real y las tres resoluciones. |
 | E22-QA | P10 · PER | En desarrollo | Build Windows x64, regresión, capturas, ZIP y PR apilado. `Docs/GUIA_E22.md`, `Docs/Validacion/E22`. |
 | E22-HUM | P10 · QA | Pendiente | Revisión humana de orientación, accesibilidad, balance, diálogo y comodidad de la interfaz. |
+
+## FASE E23 — PRIMERA ALFA INTEGRADA
+
+| ID | Prioridad y dependencia | Estado | Aceptación, archivos y pruebas |
+|---|---|---|---|
+| E23-00 | P0/P2 · E22 | Completado y verificado | E22 230/230 recuperada, PR #16 sobre #15, 15 bases previas comprobadas. `Docs/INTEGRACION_E23.md` y `GITHUB_BASE.json`. |
+| E23-INT | P1/P3–P6 · 00 | En desarrollo | Escena propia sobre sistemas E22, cobro principal persistente, un objetivo para el centinela. Dirigidas 5/5. Falta recorrido nativo. |
+| E23-UX | P7/P8 · INT | En desarrollo | Verbos E contextuales, encuadre de mazmorra, guía de encargos y pista del Mago. Tablón verificado a 720p, 1080p y 1440p. `UxExperienceView.cs`, `IsometricCameraRig.cs`, `IntegratedAlphaTests.cs`. |
+| E23-QA | P9–P12 · INT | En desarrollo | Regresión, Windows desde ZIP, perfilado y evidencia. `Docs/Validacion/E23` y `Docs/GUIA_E23.md`. |
+| E23-HUM | P12 · QA | Pendiente | Usabilidad, ritmo, calidad artística y rendimiento presentado requieren revisión humana. |

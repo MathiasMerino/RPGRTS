@@ -36,6 +36,10 @@
 - Rama `feature/e22-living-world` sobre E21/PR #15 `78695c1`. Escena `Assets/01_Scenes/AetherniaE22LivingWorld.unity`, datos `Assets/20_E22`. BuildE22 → Builds/E22Windows. Guía `Docs/GUIA_E22.md`. No ejecutar AuthorE22 sobre la escena existente.
 - Tablón, mojón, cajón y centinela opcional comparten la partida. Elia utiliza la bolsa y reservas existentes. La ranura `demo-e22-v1.json` puede importar `demo-v1.json` cuando aún no existe. Runner `Invoke-ProgressionSmoke.ps1 -Phase E22 -Classes warrior,mage,monk -Races human,dwarf,elf -WithGraphics`. La validación separa resultados automáticos y humanos. Sin E23 ni fusiones.
 
+## E23 — Alfa integrada
+- Rama `feature/e23-integrated-alpha` sobre E22 `df1b719` y PR #16. Escena `Assets/01_Scenes/AetherniaE23IntegratedAlpha.unity`. `BuildE23` → `Builds/E23Windows`. Guía `Docs/GUIA_E23.md` e integración `Docs/INTEGRACION_E23.md`.
+- Reutiliza el guardado de E22. Pruebas de layout del tablón a 720p/1080p/1440p. Runner `Invoke-ProgressionSmoke.ps1 -Phase E23 -Classes warrior,mage,monk -Races human,dwarf,elf -WithGraphics`. Candidata técnica y evaluación humana separadas. Sin E24 ni fusiones.
+
 ## Alcance y método
 - Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.
 - Trabajar tareas acotadas, preservar trabajo existente y registrar ID/estado/aceptación/archivos/pruebas en CHECKLIST y REGISTRO después de cada actividad; conservar historial.
