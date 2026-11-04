@@ -63,7 +63,9 @@ namespace Aethernia
             while(session.State.Health<session.HeroProfile.Health&&session.State.Items.Any(i=>i.Id=="ration"&&i.Count>0))Require(d.Execute("ration"),"consume actual available ration before patrol");
             flow.ExistingHud.SelectPage(ExplorationPage.Character);yield return null;var progression=flow.GetComponent<ProgressionPanelView>();if(progression.Discipline.interactable)progression.Discipline.onClick.Invoke();flow.ExistingHud.ClosePanels();
             Require(hero.TryMoveTo(flow.Patrol.transform.position+Vector3.back*1.1f),"connected path to western camp");yield return Arrive(hero);yield return capture("15-FriendlyCamp");
-            var hp=session.State.Health;Require(input.RefreshNearby()==flow.Patrol&&input.Interact(),"captain E interaction");var war=d.Rts;Require(war.Preparing&&war.IncludesHero&&session.State.Health==hp,"safe RTS preparation same health");
+            var hp=session.State.Health;Require(input.RefreshNearby()==flow.Patrol&&input.Interact(),"captain E interaction");
+            var world=flow.GetComponent<WorldExploration>();if(world!=null&&world.DialogueOpen){yield return capture("15B-CaptainDialogue");world.ConfirmButton.onClick.Invoke();}
+            var war=d.Rts;Require(war.Preparing&&war.IncludesHero&&session.State.Health==hp,"safe RTS preparation same health");
             var units=new List<RtsUnitStatus>();war.CopyStatus(units);Require(units.All(u=>u.Team==0),"hostiles not revealed before orders");var ally=units.First(u=>!u.Hero).Unit;
             Require(war.SelectUnit(ally.GetComponentInChildren<Collider>(),false),"single selection");yield return Wait(.3f);Require(war.PreparationStep==1,"single selection tutorial checkpoint");yield return capture("16-Selection");
             war.SelectAll();Require(war.SelectedAllies==units.Count,"multiple selection");var target=war.PreparationTarget;Require(war.Command(target,null,false),"first move order");yield return Wait(.4f);yield return capture("17-Move");
