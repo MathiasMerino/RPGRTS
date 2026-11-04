@@ -1,0 +1,24 @@
+{
+  "source": "1069136",
+  "unity": "6000.5.8f1",
+  "results": {
+    "total": "237",
+    "passed": "235",
+    "failed": "1",
+    "skipped": "1",
+    "inconclusive": "0",
+    "result": "Failed(Child)"
+  },
+  "nonPassing": [
+    {
+      "name": "Aethernia.Tests.Editor.AlphaArtPipelineTests.LocalMeshyReviewCanRenderWithoutRuntimeBinding",
+      "result": "Skipped",
+      "message": "Experimental art absent; local review only."
+    },
+    {
+      "name": "Aethernia.Tests.Editor.MedievalEnvironmentTests.DressingPreservesOriginalPhysicsAndBakedNavigation",
+      "result": "Failed",
+      "message": "  Expected string length 3994 but was 3961. Strings differ at index 88.\n  Expected: \"...00,5.0000|0.8000,0.8000,0.8000\\r\\nDungeon Exit|BoxCollider|T...\"\n  But was:  \"...00,5.0000|0.8000,0.8000,0.8000\\nDungeon Exit|BoxCollider|Tr...\"\n  ---------------------------------------------^\n"
+    }
+  ]
+}

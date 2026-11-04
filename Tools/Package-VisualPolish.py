@@ -17,17 +17,17 @@ def sha(path):
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument("--phase",choices=["E16","E17","E18","E19","UX01","UX02","E20","E201","E21","E22","E23"],default="E16");phase=parser.parse_args().phase
+    parser=argparse.ArgumentParser();parser.add_argument("--phase",choices=["E16","E17","E18","E19","UX01","UX02","E20","E201","E21","E22","E23","ARTENV01"],default="E16");phase=parser.parse_args().phase
     root = Path(__file__).resolve().parent.parent
     project = root / "ProyectoRPGRTS"
     builds = project / "Builds"
-    source = builds / ("E23Windows" if phase=="E23" else "E22Windows" if phase=="E22" else "E21Windows" if phase=="E21" else "E201Windows" if phase=="E201" else "E20Windows" if phase=="E20" else "Ux02Windows" if phase=="UX02" else "Ux01Windows" if phase=="UX01" else "CivilizationsE19Windows" if phase=="E19" else "ProgressionE18Windows" if phase=="E18" else "AlphaCandidateE17Windows" if phase=="E17" else "VisualPolishWindows")
-    archive = builds / ("AETHERNIA_ALPHA_E23_Windows.zip" if phase=="E23" else "Aethernia-E22-Mundo-Vivo-Windows.zip" if phase=="E22" else "Aethernia-E21-Campana-Windows.zip" if phase=="E21" else "Aethernia-E201-Alfa-Windows.zip" if phase=="E201" else "Aethernia-E20-Guerra-Tactica-Windows.zip" if phase=="E20" else "Aethernia-UX02-Mundo-Windows.zip" if phase=="UX02" else "Aethernia-UX01-Experiencia-Windows.zip" if phase=="UX01" else "Aethernia-E19-Culturas-Windows.zip" if phase=="E19" else "Aethernia-E18-Progresion-Windows.zip" if phase=="E18" else "Aethernia-E17-Alpha-Candidate-Windows.zip" if phase=="E17" else "Aethernia-E16-Pulido-Visual-r3-Windows.zip")
+    source = builds / ("ArtEnv01Windows" if phase=="ARTENV01" else "E23Windows" if phase=="E23" else "E22Windows" if phase=="E22" else "E21Windows" if phase=="E21" else "E201Windows" if phase=="E201" else "E20Windows" if phase=="E20" else "Ux02Windows" if phase=="UX02" else "Ux01Windows" if phase=="UX01" else "CivilizationsE19Windows" if phase=="E19" else "ProgressionE18Windows" if phase=="E18" else "AlphaCandidateE17Windows" if phase=="E17" else "VisualPolishWindows")
+    archive = builds / ("Aethernia-ART-ENV-01-Windows.zip" if phase=="ARTENV01" else "AETHERNIA_ALPHA_E23_Windows.zip" if phase=="E23" else "Aethernia-E22-Mundo-Vivo-Windows.zip" if phase=="E22" else "Aethernia-E21-Campana-Windows.zip" if phase=="E21" else "Aethernia-E201-Alfa-Windows.zip" if phase=="E201" else "Aethernia-E20-Guerra-Tactica-Windows.zip" if phase=="E20" else "Aethernia-UX02-Mundo-Windows.zip" if phase=="UX02" else "Aethernia-UX01-Experiencia-Windows.zip" if phase=="UX01" else "Aethernia-E19-Culturas-Windows.zip" if phase=="E19" else "Aethernia-E18-Progresion-Windows.zip" if phase=="E18" else "Aethernia-E17-Alpha-Candidate-Windows.zip" if phase=="E17" else "Aethernia-E16-Pulido-Visual-r3-Windows.zip")
     assert (source / "Aethernia.exe").is_file()
     assert not archive.exists(), "No sobrescribir un ZIP anterior"
     examples = source / "PartidasEjemplo"
-    if phase not in ["E201","E21","E22","E23"]: examples.mkdir(exist_ok=True)
-    for role in () if phase in ["E201","E21","E22","E23"] else (("human-warrior","dwarf-mage") if phase in ["E19","UX01","UX02","E20"] else ("warrior", "monk", "mage")):
+    if phase not in ["E201","E21","E22","E23","ARTENV01"]: examples.mkdir(exist_ok=True)
+    for role in () if phase in ["E201","E21","E22","E23","ARTENV01"] else (("human-warrior","dwarf-mage") if phase in ["E19","UX01","UX02","E20"] else ("warrior", "monk", "mage")):
         original = root / (("Docs/Validacion/UX02/PartidasFinales/" if phase in ["UX02","E20"] else "Docs/Validacion/UX01/PartidasFinales/" if phase=="UX01" else "Docs/Validacion/E19/PartidasFinales/" if phase=="E19" else "Docs/Validacion/E18/PartidasFinales/" if phase=="E18" else "Docs/Validacion/E14E15/EntradaE13/") + role + ".json")
         target = examples / (role + ".json")
         if target.exists():
@@ -40,13 +40,13 @@ def main():
             assert launcher.read_text(encoding="ascii") == text, "Lanzador distinto, no sobrescribir"
         else:
             launcher.write_text(text, encoding="ascii")
-    guide="GUIA_E23.md" if phase=="E23" else "GUIA_E22.md" if phase=="E22" else "GUIA_E21.md" if phase=="E21" else "GUIA_E201.md" if phase=="E201" else "GUIA_E20.md" if phase=="E20" else "GUIA_UX02.md" if phase=="UX02" else "GUIA_UX01.md" if phase=="UX01" else "GUIA_E19.md" if phase=="E19" else "GUIA_E18.md" if phase=="E18" else "GUIA_ALFA_E17.md" if phase=="E17" else "GUIA_E16.md"
+    guide="GUIA_ART_ENV_01.md" if phase=="ARTENV01" else "GUIA_E23.md" if phase=="E23" else "GUIA_E22.md" if phase=="E22" else "GUIA_E21.md" if phase=="E21" else "GUIA_E201.md" if phase=="E201" else "GUIA_E20.md" if phase=="E20" else "GUIA_UX02.md" if phase=="UX02" else "GUIA_UX01.md" if phase=="UX01" else "GUIA_E19.md" if phase=="E19" else "GUIA_E18.md" if phase=="E18" else "GUIA_ALFA_E17.md" if phase=="E17" else "GUIA_E16.md"
     shutil.copy2(root / ("Docs/"+guide), source / guide)
     if phase == "E23":
         shutil.copy2(root / "Docs/NOTAS_E23.md", source / "NOTAS_E23.md")
     (source / "LEEME.txt").write_text(
         ("CRONICAS DE AETHERNIA - "+phase+" - Windows x64 - candidata de desarrollo provisional\n") +
-        ("Extrae toda la carpeta y abre Aethernia.exe. Elige Nueva partida. Consulta la guia incluida.\n" if phase in ["E201","E21","E22","E23"] else
+        ("Extrae toda la carpeta y abre Aethernia.exe. Elige Nueva partida. Consulta la guia incluida.\n" if phase in ["E201","E21","E22","E23","ARTENV01"] else
          ("Aethernia.exe inicia el menu normal. Revisar-human-warrior/dwarf-mage.cmd usa copias reales aisladas.\n" if phase in ["E19","UX01","UX02","E20"] else "Aethernia.exe inicia el menu normal. Revisar-warrior/monk/mage.cmd utiliza copias reales separadas de tu partida personal.\n") +
          "Respalda PartidasEjemplo para repetir: guardar modifica esas copias. Consulta la guia incluida.\n") +
         "Sin aprobacion humana de arte/balance; sin dependencia de Meshy o plugins nuevos.\n", encoding="utf-8")
