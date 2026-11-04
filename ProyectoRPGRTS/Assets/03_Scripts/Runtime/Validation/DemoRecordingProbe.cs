@@ -14,20 +14,38 @@ namespace Aethernia
     [DefaultExecutionOrder(10000)] public sealed class DemoRecordingProbe : MonoBehaviour
     {
         private string directory;private RenderTexture target;private Texture2D image;private DemoFlow flow;
-        private int oldRate,frames,channels,rate;private bool recording,finished;
+        private int oldRate,frames,channels,rate;private bool recording,finished,tacticalOnly;
         private readonly List<float> audio=new List<float>();private readonly StringBuilder timeline=new StringBuilder();
         private void Start()
         {
-            var args=Environment.GetCommandLineArgs();var index=Array.IndexOf(args,"-aetherniaDemoSmoke");if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");if(index<0)index=Array.IndexOf(args,"-aetherniaProgressionSmoke");if(index<0)index=Array.IndexOf(args,"-aetherniaCivilizationSmoke");if(index<0)index=Array.IndexOf(args,"-aetherniaUx01Smoke");if(index<0)index=Array.IndexOf(args,"-aetherniaUx02Smoke");var slot=args[index+1];
+            var args=Environment.GetCommandLineArgs();var index=Array.IndexOf(args,"-aetherniaDemoSmoke");if(index<0)index=Array.IndexOf(args,"-aetherniaExpeditionSmoke");if(index<0)index=Array.IndexOf(args,"-aetherniaProgressionSmoke");if(index<0)index=Array.IndexOf(args,"-aetherniaCivilizationSmoke");if(index<0)index=Array.IndexOf(args,"-aetherniaUx01Smoke");if(index<0)index=Array.IndexOf(args,"-aetherniaUx02Smoke");
+            if(index<0){index=Array.IndexOf(args,"-aetherniaE20Smoke");tacticalOnly=index>=0;}
+            if(index<0||index+1>=args.Length){enabled=false;return;}
+            var slot=args[index+1];
             directory=Path.Combine(Path.GetDirectoryName(slot),"Recording");Directory.CreateDirectory(directory);
             if(SystemInfo.graphicsDeviceType==GraphicsDeviceType.Null){File.WriteAllText(Path.Combine(directory,"proof.txt"),"UNAVAILABLE: graphics device Null");enabled=false;return;}
-            flow=FindAnyObjectByType<DemoFlow>();oldRate=Time.captureFramerate;Time.captureFramerate=12;
+            flow=FindAnyObjectByType<DemoFlow>();oldRate=Time.captureFramerate;
+            if(!tacticalOnly)BeginCapture();
+        }
+        private void BeginCapture()
+        {
+            Time.captureFramerate=12;
             channels=AudioSettings.speakerMode==AudioSpeakerMode.Mono?1:2;rate=AudioSettings.outputSampleRate;recording=AudioRenderer.Start();
             target=RenderTexture.GetTemporary(1280,720,24);image=new Texture2D(1280,720,TextureFormat.RGB24,false);
         }
         private void LateUpdate()
         {
-            if(finished||target==null||flow==null)return;
+            if(finished||flow==null)return;
+            if(tacticalOnly)
+            {
+                if(!flow.Director.Rts.TacticalBattle)
+                {
+                    if(target!=null)Finish();
+                    return;
+                }
+                if(target==null)BeginCapture();
+            }
+            if(target==null)return;
             var camera=Camera.main;var oldTarget=camera.targetTexture;
             var canvases=FindObjectsByType<Canvas>().Where(c=>c.isRootCanvas&&c.enabled&&c.renderMode!=RenderMode.WorldSpace).ToArray();
             var modes=canvases.Select(c=>c.renderMode).ToArray();var cameras=canvases.Select(c=>c.worldCamera).ToArray();var distances=canvases.Select(c=>c.planeDistance).ToArray();
@@ -52,7 +70,7 @@ namespace Aethernia
         }
         public void Finish()
         {
-            if(finished)return;finished=true;if(recording)AudioRenderer.Stop();Time.captureFramerate=oldRate;
+            if(finished)return;finished=true;if(recording)AudioRenderer.Stop();if(target!=null)Time.captureFramerate=oldRate;
             if(directory!=null)
             {
                 var sum=0d;var peak=0f;foreach(var value in audio){sum+=value*value;peak=Mathf.Max(peak,Mathf.Abs(value));}
