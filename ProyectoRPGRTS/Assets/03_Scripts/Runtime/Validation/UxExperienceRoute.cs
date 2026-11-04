@@ -49,15 +49,31 @@ namespace Aethernia
             finally{InputSystem.RemoveDevice(keyboard);InputSystem.settings.backgroundBehavior=background;}
             Require(session.Mode==PrototypeMode.TurnCombat&&cargo.CargoEncounter,"quest triggers real RPG");
             Require(d.Encounter.TrySelect(d.Encounter.Enemy.GetComponentInChildren<Collider>()),"actual target selection");if(!session.Rules.FrontierCampaign||cls!="mage")d.Encounter.Approach();yield return Arrive(hero);yield return capture("11-FirstRpg");
+            var withdrawals=0;
             for(var turn=0;turn<35&&cargo.CargoEncounter;turn++)
             {
                 var battle=d.Encounter.Battle;Require(battle!=null,"RPG state");
                 if(battle.Phase==TurnPhase.Enemy){yield return Wait(.2f);turn--;continue;}
                 if(battle.HeroHealth<8&&!battle.RecoveryUsed)d.Encounter.Recover();else d.Encounter.Attack();
                 if(turn==0)yield return capture("12-CompactRpg");
+                if(session.Rules.LivingWorld&&cls=="mage"&&cargo.CargoEncounter&&battle.MovementRemaining>.5f)
+                {
+                    var away=hero.transform.position-d.Encounter.Enemy.transform.position;
+                    away.y=0;
+                    var distance=Mathf.Min(3.5f,battle.MovementRemaining-.2f);
+                    foreach(var angle in new[]{0,35,-35,70,-70})
+                    {
+                        if(!d.Encounter.Move(hero.transform.position+Quaternion.Euler(0,angle,0)*away.normalized*distance))continue;
+                        withdrawals++;
+                        yield return Arrive(hero);
+                        break;
+                    }
+                }
                 if(cargo.CargoEncounter&&d.Encounter.Battle!=null&&!d.Encounter.Battle.Finished){Require(d.Execute("end"),"legal end turn");yield return Wait(.3f);}
             }
             Require(LostCargoQuest.Stage(session.State)==CargoQuestStage.Recovered&&session.Mode==PrototypeMode.Exploration,"real RPG victory returns to exploration");yield return capture("13-ExploreAgain");
+            if(session.Rules.LivingWorld&&cls=="mage")
+                File.WriteAllText(slot+".mage-positioning.txt","seed=42 withdrawals="+withdrawals+" hp="+session.State.Health+"/"+session.HeroProfile.Health);
             Require(hero.TryMoveTo(cargo.Npc.transform.position+Vector3.back*1.1f),"return to resident");yield return Arrive(hero);Require(input.Interact(),"resident reward dialogue");questView.ClaimButton.onClick.Invoke();questView.CloseDialogue();
             Require(LostCargoQuest.Stage(session.State)==CargoQuestStage.Completed&&!cargo.Claim(),"unique reward");yield return capture("14-QuestReward");
             while(session.State.Health<session.HeroProfile.Health&&session.State.Items.Any(i=>i.Id=="ration"&&i.Count>0))Require(d.Execute("ration"),"consume actual available ration before patrol");

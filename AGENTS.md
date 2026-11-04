@@ -32,6 +32,10 @@
 - Las elecciones y el capítulo se guardan como hechos v1. Dossier habilita conquista. El cierre con Tarek permite continuar sin conquistar. General226/226, dirigidas3/3 más inicio de guardianía 1/1 con0–3 acompañantes. Windows8 procesos aprobados, seis desde ZIP, más un intento grabado que ganó el puesto sin ejecutar la técnica. 32PNG, un MP4 y18 filas de perfilado URP. Pacto desde partida nueva, perfilado interactivo y revisión humana pendientes.
 - Runner Invoke-ProgressionSmoke.ps1 -Phase E21 -WithGraphics con raza por clase. El Mago enano terminó el primer RPG con2/18 PV aun sin Acercarse. Conservar estadísticas hasta comparar estrategias y semillas. Sin E22 ni fusiones automáticas.
 
+## E22 — Mundo vivo
+- Rama `feature/e22-living-world` sobre E21/PR #15 `78695c1`. Escena `Assets/01_Scenes/AetherniaE22LivingWorld.unity`, datos `Assets/20_E22`. BuildE22 → Builds/E22Windows. Guía `Docs/GUIA_E22.md`. No ejecutar AuthorE22 sobre la escena existente.
+- Tablón, mojón, cajón y centinela opcional comparten la partida. Elia utiliza la bolsa y reservas existentes. La ranura `demo-e22-v1.json` puede importar `demo-v1.json` cuando aún no existe. Runner `Invoke-ProgressionSmoke.ps1 -Phase E22 -Classes warrior,mage,monk -Races human,dwarf,elf -WithGraphics`. La validación separa resultados automáticos y humanos. Sin E23 ni fusiones.
+
 ## Alcance y método
 - Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.
 - Trabajar tareas acotadas, preservar trabajo existente y registrar ID/estado/aceptación/archivos/pruebas en CHECKLIST y REGISTRO después de cada actividad; conservar historial.

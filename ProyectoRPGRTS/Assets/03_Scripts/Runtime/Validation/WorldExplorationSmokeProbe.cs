@@ -25,7 +25,14 @@ namespace Aethernia
                 object step;try{var top=stack.Peek();if(!top.MoveNext()){stack.Pop();continue;}step=top.Current;if(step is IEnumerator nested){stack.Push(nested);continue;}}
                 catch(Exception e){File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"FAIL: "+e);Debug.LogError(e);GetComponent<DemoRecordingProbe>()?.Finish();Application.Quit(2);yield break;}yield return step;
             }
-            GetComponent<DemoRecordingProbe>()?.Finish();File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"PASS: "+(flow.Session.Rules.FrontierCampaign?"E21":stabilization?"E20.1":tactical>=0?"E20":"UX02")+" "+race+"/"+cls+" "+(resume?"new process Continue exact identity, health, resources, buildings, army, quest and tutorial checkpoints":"menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title")+(tactical>=0?"; despliegue, órdenes, técnica, conquista y producción territorial":"")+"; seconds="+(Time.realtimeSinceStartup-start).ToString("F2"));flow.Front.Controls["quit"].onClick.Invoke();
+            GetComponent<DemoRecordingProbe>()?.Finish();
+            var phase=flow.Session.Rules.LivingWorld?"E22":flow.Session.Rules.FrontierCampaign?"E21":stabilization?"E20.1":tactical>=0?"E20":"UX02";
+            var coverage=phase=="E22"?"capítulo "+cls+", contratos, comercio, guardia opcional, asentamiento y guardado":
+                "menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title";
+            File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"PASS: "+phase+" "+race+"/"+cls+" "+
+                (resume?"new process Continue exact identity, health, resources, buildings, army and quests":coverage)+
+                "; seconds="+(Time.realtimeSinceStartup-start).ToString("F2"));
+            flow.Front.Controls["quit"].onClick.Invoke();
         }
         private static IEnumerator Capture(DemoFlow flow,string slot,string cls,string name,bool stabilization)
         {
@@ -79,8 +86,9 @@ namespace Aethernia
             UxExperienceRoute.Require(after.RaceId==race&&after.ClassId==cls&&after.Health==before.Health&&after.Gold==before.Gold&&after.Wood==before.Wood&&after.Food==before.Food,"exact identity, health and resources");
             UxExperienceRoute.Require(after.Demo.Chapter==DemoChapter.FreeExploration&&LostCargoQuest.Stage(after)==CargoQuestStage.Completed&&after.Buildings.Count==before.Buildings.Count&&after.Army.Select(r=>r.Id+"|"+r.Health+"|"+r.CultureId).SequenceEqual(before.Army.Select(r=>r.Id+"|"+r.Health+"|"+r.CultureId)),"quest, buildings and army retained without duplicated rewards");UxExperienceRoute.Require(after.Facts.Where(f=>f.StartsWith("ux02-")).OrderBy(f=>f).SequenceEqual(before.Facts.Where(f=>f.StartsWith("ux02-")).OrderBy(f=>f))&&after.Companions.Select(c=>c.Id).SequenceEqual(before.Companions.Select(c=>c.Id)),"exact world discoveries, unique rewards and companions");if(flow.Session.Rules.TacticalWarfare)
             {
-                UxExperienceRoute.Require(after.Territories.Single(t=>t.Id=="outpost").Owner==after.FactionId&&
-                    after.Facts.Count(f=>f=="umbral-outpost-conquered")==1&&after.Skills.Count==before.Skills.Count&&
+                var conquest=!flow.Session.Rules.LivingWorld||cls=="warrior";
+                UxExperienceRoute.Require(after.Territories.Single(t=>t.Id=="outpost").Owner==(conquest?after.FactionId:"faction-b")&&
+                    after.Facts.Count(f=>f=="umbral-outpost-conquered")== (conquest?1:0)&&after.Skills.Count==before.Skills.Count&&
                     after.HeroLevel==before.HeroLevel&&after.Experience==before.Experience&&after.Weapon==before.Weapon&&
                     after.Armour==before.Armour&&after.Accessory==before.Accessory&&after.ArmySelection.SequenceEqual(before.ArmySelection)&&
                     after.Skills.Select(x=>x.Id+"|"+x.Rank).SequenceEqual(before.Skills.Select(x=>x.Id+"|"+x.Rank))&&
@@ -94,6 +102,16 @@ namespace Aethernia
                     after.Facts.OrderBy(f=>f).SequenceEqual(before.Facts.OrderBy(f=>f))&&
                     after.Companions.All(c=>before.Companions.Any(b=>b.Id==c.Id&&b.Health==c.Health&&b.Level==c.Level)),
                     "campaign, exclusive choice, dungeon and companions retained after restart");
+            if(flow.Session.Rules.LivingWorld)
+            {
+                UxExperienceRoute.Require(Enumerable.Range(0,FrontierContracts.Count).Select(FrontierContracts.At)
+                    .All(c=>FrontierContracts.Status(after,c)==ContractStatus.Completed&&!FrontierContracts.Claim(after,c)),
+                    "E22 contracts and unique rewards persist in a new process");
+                UxExperienceRoute.Require(after.Buildings.Any(b=>b.Id=="farm"&&b.Level==2)&&
+                    after.Facts.Contains(CivilizationOperations.Pact)==(cls=="mage")&&
+                    after.Facts.Contains(FrontierChapter.Independent)==(cls=="monk"),
+                    "paid upgrade and distinct E21 ending persisted");
+            }
             flow.Resume();yield return DemoPlayerCapture.Save(Path.Combine(Path.GetDirectoryName(slot),"Captures",cls+"-23-Continued.png"));UxExperienceRoute.Require(flow.ReturnToTitle(),"return after Continue");
         }
     }

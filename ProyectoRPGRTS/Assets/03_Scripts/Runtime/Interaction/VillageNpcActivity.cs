@@ -8,6 +8,7 @@ namespace Aethernia
         public DemoFlow Flow;
         public ExplorationUnit Actor;
         public Vector3[] Route = System.Array.Empty<Vector3>();
+        public Vector3[] FreeRoute = System.Array.Empty<Vector3>();
         private int next;
         private float wait;
         private Quaternion restingRotation;
@@ -31,8 +32,9 @@ namespace Aethernia
                 return;
             }
             if (talking) { transform.rotation = restingRotation; talking = false; wait = Time.time + 1; }
-            if (Route.Length == 0 || Actor.IsMoving || Time.time < wait) return;
-            Actor.TryMoveTo(Route[next++ % Route.Length]); wait = Time.time + 3;
+            var route = FreeRoute.Length > 0 && Flow.Session.Rules.LivingWorld && Flow.Session.HasFact(FrontierChapter.Finished) ? FreeRoute : Route;
+            if (route.Length == 0 || Actor.IsMoving || Time.time < wait) return;
+            Actor.TryMoveTo(route[next++ % route.Length]); wait = Time.time + 3;
         }
     }
 }

@@ -1339,3 +1339,15 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 | E21-QA | P11–P12 · RTS | Completado y verificado | General 226/226, dirigidas 3/3 y 1/1 de inicio con 0–3 acompañantes, seis procesos desde ZIP, dos de la build original. Un intento grabado falló el requisito de técnica. 32 PNG, MP4, 18 filas URP y PR #15 sobre #14. |
 | E21-OPT | P12 · QA | Pendiente | Recorrido completo del pacto y victorias de mazmorra con menos de tres acompañantes. |
 | E21-HUM | P12 · QA | Pendiente | Revisión humana de historia provisional, legibilidad, ritmo, balance y exploración libre. |
+
+## FASE E22 — MUNDO VIVO Y ACTIVIDADES LIBRES
+
+| ID | Prioridad y dependencia | Estado | Aceptación, archivos y pruebas |
+|---|---|---|---|
+| E22-00 | P1 · E21 | Completado y verificado | Base `78695c1` y PR #15 apilado sobre #14. Verificados los 15 PR en borrador, las ramas estables y el SHA del GDD. `Docs/INTEGRACION_PRS.md`. |
+| E22-RTS | P1 · 00 | En desarrollo | Técnica con su propio enfriamiento y elección de rival al alcance en E22. `RtsBattleController.cs`, `RtsTactics.cs`. Pendiente resultado de combate nativo. |
+| E22-COM | P2–P5 · 00 | En desarrollo | Tres encargos, objetivos en escena y entrega única, comercio con inventario y XP E18. `FrontierContracts.cs`, `WorldExploration.Living.cs`, `LivingProgression.asset`. Dirigidas 7/7 incluyendo E21. Falta recorrido Windows completo. |
+| E22-MUN | P4–P7 · COM | En desarrollo | Tablón, mojón, cajón, centinela, ruta de Elia, reacción de Nilo y granja mejorable. `AetherniaE22LivingWorld.unity`, `VillageNpcActivity.cs`, `DungeonExpedition.cs`. |
+| E22-PER | P8–P9 · COM | En desarrollo | Ranura separada y guardado v1. La prueba dirigida abrió partida UX02, cobró, compró y volvió a cargar. Falta verificar reinicio real y las tres resoluciones. |
+| E22-QA | P10 · PER | En desarrollo | Build Windows x64, regresión, capturas, ZIP y PR apilado. `Docs/GUIA_E22.md`, `Docs/Validacion/E22`. |
+| E22-HUM | P10 · QA | Pendiente | Revisión humana de orientación, accesibilidad, balance, diálogo y comodidad de la interfaz. |

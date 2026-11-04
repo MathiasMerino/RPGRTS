@@ -31,11 +31,11 @@ namespace Aethernia
             if(hero!=null){hero.Agent.avoidancePriority=50;var p=hero.GetComponent<CharacterCombatAnimationPresenter>();if(p!=null)p.ExternallyControlled=false;}
         }
         public ExplorationUnit GroupUnit(string id)=>id!=null&&groupUnits.TryGetValue(id,out var u)?u:null;
-        public bool BeginGroup(Vector3 centre,int seed=0)
+        public bool BeginGroup(Vector3 centre,int seed=0,bool loneSentry=false)
         {
             if(partyWorld==null||session.State.Health<=0||(Battle!=null&&!Battle.Finished)||GroupActive||session.Mode!=PrototypeMode.Exploration)return false;
             var places=new List<Vector3>();
-            for(var i=0;i<2;i++)
+            for(var i=0;i<(loneSentry?1:2);i++)
             {
                 var desired=centre+new Vector3(i*2-1,0,1.5f);
                 if(!NavMesh.SamplePosition(desired,out var at,.6f,NavMesh.AllAreas)||Physics.OverlapCapsule(at.position+Vector3.up*.35f,at.position+Vector3.up*1.45f,.29f,~0,QueryTriggerInteraction.Ignore).Any(c=>c.GetComponentInParent<ExplorationUnit>()==null))return false;places.Add(at.position);
@@ -47,9 +47,10 @@ namespace Aethernia
                 if(!partyWorld.Units.TryGetValue(c.Id,out var unit)||Vector3.Distance(unit.transform.position,hero.transform.position)>12)continue;
                 unit.Stop();groupUnits.Add(c.Id,unit);members.Add(new TacticalCombatant{Id=c.Id,Title=partyWorld.Roles.Find(c.Role).Title,Profile=TroopProgression.Profile(c,partyWorld.Roles.Find(c.Role)),ReadHealth=()=>c.Health,WriteHealth=value=>c.Health=value});
             }
-            for(var i=0;i<2;i++)
+            for(var i=0;i<places.Count;i++)
             {
                 var role=partyWorld.Roles.Find(i==0?"swordsman":"archer");var enemyProfile=ExpeditionRules.RoleProfile(role);if(session.Rules.Progression!=null){enemyProfile.Health+=session.Rules.Progression.DungeonHealthBonus;enemyProfile.Damage+=session.Rules.Progression.DungeonDamageBonus;}var record=new RecruitRecord{Health=enemyProfile.Health};var unit=Instantiate(enemyPrefab,places[i],Quaternion.identity).GetComponent<ExplorationUnit>();unit.name="Guardián del Umbral "+(i+1);
+                if(loneSentry)unit.name="Centinela rezagado";
                 unit.Agent.speed=role.Speed;SupportVisualFactory.Attach(unit,role,partyWorld.Flow.Front.Catalog,groupFeedback.SharedEffectMaterial);groupEnemies.Add(unit);var id="enemy-"+i;groupUnits.Add(id,unit);
                 members.Add(new TacticalCombatant{Id=id,Title=unit.name,Hostile=true,Profile=enemyProfile,ReadHealth=()=>record.Health,WriteHealth=value=>record.Health=value});
             }

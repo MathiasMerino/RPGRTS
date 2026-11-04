@@ -10,7 +10,7 @@ namespace Aethernia
 {
     // Contenido del mundo conectado a los controladores existentes; Facts pertenece a la partida.
     [DefaultExecutionOrder(550)]
-    public sealed class WorldExploration : MonoBehaviour
+    public sealed partial class WorldExploration : MonoBehaviour
     {
         public DemoFlow Flow;
         public WorldInteractable[] Interactions = Array.Empty<WorldInteractable>();
@@ -155,6 +155,7 @@ namespace Aethernia
             if (item == null) return null;
             var s = Flow.Session; var point = item.GetComponent<InteractionPoint>();
             if (DialogueOpen || s.WorldUiOpen || s.Paused || item.Consumed(s)) return false;
+            if (s.Rules.LivingWorld && TryLivingDialogue(point, out var activity)) return activity;
             if(s.Rules.FrontierCampaign&&TryCampaignDialogue(point,out var handled))return handled;
             switch (item.Kind)
             {
@@ -230,11 +231,18 @@ namespace Aethernia
                     }
                     var memory=choice==RoadChoice.Report?"La guardia agradece tu informe. ":choice==RoadChoice.Repair?"Tus monedas ayudaron a reparar el paso. ":
                         state.Facts.Contains(LostCargoQuest.Completed)?"Mara ya recibió el cargamento. ":"";
+                    if (game.Rules.LivingWorld)
+                    {
+                        handled = ShowMarket(point, 0, memory);
+                        return true;
+                    }
                     handled=Show(point,"Elia · mercader",memory+"Cambio 2 de madera por 5 de oro.", "Comprar madera · 5 oro",
                         ()=>game.CompleteInteraction("market","Mercado"),"monk");
                     return true;
                 case "ux02-guard":
                     handled=Show(point,"Nilo · guardia",
+                        game.Rules.LivingWorld&&state.Facts.Contains(FrontierContracts.At(2).Completed)?"El último centinela ha caído. Ahora podemos vigilar el camino desde fuera.":
+                        game.Rules.LivingWorld&&FrontierContracts.WatchAvailable(state)?"El último centinela sigue dentro de las ruinas. Tú decides si bajas con compañía.":
                         FrontierChapter.Decision(state)==RoadChoice.Report?"Tu informe nos permitió orientar la patrulla. Mantén los ojos en las laderas.":
                         FrontierChapter.Decision(state)==RoadChoice.Repair?"El paso reparado nos permite mover suministros de nuevo.":
                         "Alguien ha movido la carga por el cruce. Lee la señal y pregunta a Elia cuando hayas devuelto el arcón.",

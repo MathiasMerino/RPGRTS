@@ -22,12 +22,18 @@ namespace Aethernia
         public int EncounterSeed { get; set; }
         public event Action Started;
         private float entryVolume;
+        private string legacyDemoPath;
         private DemoChapter patrolReturn;
         private void Awake()
         {
             entryVolume=AudioListener.volume;
             if(CameraRig!=null){CameraRig.InputSession=Session;if(UxEnabled)CameraRig.FollowTarget=Director.Hero;}
-            if(string.IsNullOrEmpty(SlotPath))SlotPath=Path.Combine(Application.persistentDataPath,"AetherniaPrototype","demo-v1.json");
+            if(string.IsNullOrEmpty(SlotPath))
+            {
+                var directory=Path.Combine(Application.persistentDataPath,"AetherniaPrototype");
+                SlotPath=Path.Combine(directory,Session.Rules.LivingWorld?"demo-e22-v1.json":"demo-v1.json");
+                if(Session.Rules.LivingWorld)legacyDemoPath=Path.Combine(directory,"demo-v1.json");
+            }
         }
         private void OnEnable(){if(Director!=null){Director.Encounter.Resolved+=CombatResolved;Director.Rts.Resolved+=RtsResolved;Session.AdditionalInteraction+=Interact;}}
         private void OnDisable()
@@ -47,7 +53,7 @@ namespace Aethernia
             if(index<0)index=Array.IndexOf(args,"-aetherniaUx02Smoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaE20Smoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaSave");
-            if(index>=0&&index+1<args.Length)SlotPath=args[index+1];
+            if(index>=0&&index+1<args.Length){SlotPath=args[index+1];legacyDemoPath=null;}
             Director.SavePathOverride=SlotPath;ShowMain();
         }
         private void Update()
@@ -59,7 +65,14 @@ namespace Aethernia
             if(IsPlaying&&Keyboard.current!=null&&Keyboard.current.pKey.wasPressedThisFrame&&!UiInputGuard.BlocksWorldInput)
             {if(Session.Paused)Resume();else{Pause();Front.ShowOptions();}}
         }
-        public bool HasSave()=>PrototypeSaveStore.Load(SlotPath,Session.Rules,out _)||PrototypeSaveStore.Load(Director.SavePath,Session.Rules,out _);
+        private string ContinuePath()
+        {
+            if(PrototypeSaveStore.Load(SlotPath,Session.Rules,out _))return SlotPath;
+            if(legacyDemoPath!=null&&!File.Exists(SlotPath)&&PrototypeSaveStore.Load(legacyDemoPath,Session.Rules,out _))return legacyDemoPath;
+            if(!Session.Rules.LivingWorld&&PrototypeSaveStore.Load(Director.SavePath,Session.Rules,out _))return Director.SavePath;
+            return null;
+        }
+        public bool HasSave()=>ContinuePath()!=null;
         public void ShowMain()
         {
             Time.timeScale=1;IsPlaying=false;Session.Paused=true;ExistingHud.gameObject.SetActive(false);
@@ -89,8 +102,8 @@ namespace Aethernia
         }
         public bool Continue(string path=null)
         {
-            var chosen=path??(PrototypeSaveStore.Load(SlotPath,Session.Rules,out _)?SlotPath:Director.SavePath);
-            if(!Director.Load(chosen)){Front.Notify("No hay una partida válida y compatible en esa ubicación.");return false;}
+            var chosen=path??ContinuePath();
+            if(chosen==null||!Director.Load(chosen)){Front.Notify("No hay una partida válida y compatible en esa ubicación.");return false;}
             Director.SavePathOverride=SlotPath;
             if(Session.State.Demo!=null&&Session.State.Demo.Chapter==DemoChapter.Intro)
             {Session.Paused=true;ExistingHud.gameObject.SetActive(false);Session.SetMode(PrototypeMode.Intro);Front.ShowIntro(0);return true;}

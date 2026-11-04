@@ -801,3 +801,7 @@ Base 4ab7b4f y rama `feature/e21-first-campaign`. La campaña reutiliza escena, 
 General 226/226, caso histórico de patrulla incluido. Dirigidas 3/3 y 1/1 adicional de arranque de guardianía con 0–3 acompañantes. El fixture final carga el mismo campamento entre muestras. Se conservan dos intentos anteriores de esa prueba, por protección de combate activo y timeout de navegación durante los bucles.
 
 Guerrero, Monje y Mago completaron ambos actos de mazmorra, conquista, cierre y Continuar desde el ZIP. Ocho procesos Windows aprobados, seis desde la extracción. Un proceso de grabación ganó el puesto pero falló el requisito de técnica. El vídeo registra esa batalla real. 32 PNG, un MP4 y 18 filas de perfilado URP. ZIP íntegro con 24 archivos históricos conservados. Fuente df03c7a, PR #15 en borrador sobre #14. Se mantienen pendientes el pacto completo, grupos pequeños de principio a fin, FPS interactivos y revisión humana.
+
+## 2026-11-04 — E22, mundo vivo y actividades libres
+
+Rama `feature/e22-living-world` desde E21 `78695c1`. Escena E22 con tablón, dos objetivos en el sendero, centinela opcional, catálogo de Elia, recursos para el asentamiento y contratos persistentes sobre la partida principal. Se separó el enfriamiento de la técnica RTS del intervalo de ataque básico en E22. La ranura E22 puede importar una partida previa sin escribir sobre el archivo E21. Los precios y los encargos son provisionales. Dirigidas iniciales 7/7.

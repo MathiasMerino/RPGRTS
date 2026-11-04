@@ -19,6 +19,12 @@ namespace Aethernia
         private void Loaded(){if(Inside){Flow.CameraRig.SetRegion(new Vector3(80,0,0));Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);}Party.Reconcile();}
         private bool? Interact(string id,string title)
         {
+            if(id==FrontierContracts.Watch)
+            {
+                var session=Flow.Session;
+                if(!session.Rules.LivingWorld||!Inside||!FrontierContracts.WatchAvailable(session.State)||Flow.Director.IsBusy)return false;
+                return BeginEncounter(id,new Vector3(78,0,0),true);
+            }
             if(!id.StartsWith("umbral-"))return null;
             if(!ExpeditionOperations.Ready(Flow.Session.State)){Flow.Session.Say("Asegura primero el campamento de la demo.");return false;}
             if(id=="umbral-entry")return Travel(true);
@@ -31,9 +37,17 @@ namespace Aethernia
             {
                 if(!Inside||Flow.Session.HasFact(id)||Flow.Director.IsBusy)return false;
                 var centre=id.EndsWith("1")?new Vector3(78,0,0):new Vector3(86,0,0);
-                if(!Flow.Director.Encounter.BeginGroup(centre,TestSeed))return false;encounterFact=id;Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);Flow.ExistingHud.ClosePanels();return true;
+                return BeginEncounter(id,centre,false);
             }
             return false;
+        }
+        private bool BeginEncounter(string id,Vector3 centre,bool loneSentry)
+        {
+            if(!Flow.Director.Encounter.BeginGroup(centre,TestSeed,loneSentry))return false;
+            encounterFact=id;
+            Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);
+            Flow.ExistingHud.ClosePanels();
+            return true;
         }
         public bool Travel(bool enter)
         {

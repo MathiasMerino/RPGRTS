@@ -61,6 +61,7 @@ namespace Aethernia
             yield return Use(flow,"ux02-door",capture,"W07-StoreDoor");Check(world.DialogueOpen,"door request dialogue");var food=s.State.Food;world.ConfirmButton.onClick.Invoke();Check(s.State.Food==food+2,"store delivery real food");
             yield return Use(flow,"ux02-merchant",capture,"W08-Merchant");yield return capture("W09-TradeDialogue");var gold=s.State.Gold;var wood=s.State.Wood;world.ConfirmButton.onClick.Invoke();
             Check(s.State.Gold==gold-5&&s.State.Wood>=wood+2,"real existing trade cost");
+            if(s.Rules.LivingWorld)world.Close();
             yield return Use(flow,"ux02-store",capture,"W10-SharedStorage");Check(world.DialogueOpen,"storage reports actual world resources");world.Close();
             yield return Use(flow,"ux02-recruiter",capture,"W11-Recruiter");var party=UnityEngine.Object.FindAnyObjectByType<PartyWorld>();gold=s.State.Gold;
             world.ConfirmButton.onClick.Invoke();Check(s.State.Companions.Count==1&&s.State.Gold==gold-party.Rules.GoldCost("swordsman"),"real paid companion recruitment");
@@ -95,6 +96,11 @@ namespace Aethernia
             if(name=="22-Camp")
             {
                 yield return CampAndRuins(flow,capture);
+                if(flow.Session.Rules.LivingWorld)
+                {
+                    yield return LivingWorldRoute.Resolve(flow,capture);
+                    yield break;
+                }
                 if(flow.Session.Rules.TacticalWarfare)yield return TacticalWarfareRoute.FromCamp(flow,capture);
                 if(flow.Session.Rules.FrontierCampaign)yield return FrontierCampaignRoute.Finish(flow,capture);
             }

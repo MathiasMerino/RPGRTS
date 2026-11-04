@@ -2,6 +2,8 @@
 
 ## Para jugar y evaluar ahora
 
+- [Entrega E22](ENTREGA_E22.md), [guía](GUIA_E22.md), [contratos](CONTRATOS_E22.md) y [comercio](COMERCIO_E22.md).
+
 - [Entrega E21](ENTREGA_E21.md), [capítulo](CAPITULO_E21.md) y [guía](GUIA_E21.md).
 
 - [Entrega E20.1](ENTREGA_E201.md) y [guía de la candidata alfa](GUIA_E201.md).

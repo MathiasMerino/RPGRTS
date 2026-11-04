@@ -24,6 +24,7 @@ namespace Aethernia
         public bool WorldExploration; // UX02: misma partida, presentación y contenido de mundo optativos.
         public bool TacticalWarfare;
         public bool FrontierCampaign;
+        public bool LivingWorld;
         public ProgressionRules Progression;
         public CivilizationCatalog Civilizations;
         public ClassProfile[] Classes = {

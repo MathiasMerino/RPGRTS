@@ -1,0 +1,272 @@
+{
+  "source": "69da1b0",
+  "evidence": "Extracted Windows x64, automated hidden player with graphics, 1280x720",
+  "cases": [
+    {
+      "identity": "human-warrior",
+      "ending": "conquista",
+      "optionalSentryCompanions": 0,
+      "processes": {
+        "start": {
+          "result": "PASS: E22 human/warrior capítulo warrior, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=364.26",
+          "metrics": {
+            "resume": false,
+            "measuredFps": false,
+            "measuredGc": false,
+            "race": "human",
+            "class": "warrior",
+            "elapsedSeconds": 368.4898687,
+            "phase": "E22",
+            "sampledPeakWorkingSetBytes": 814743552
+          }
+        },
+        "resume": {
+          "result": "PASS: E22 human/warrior new process Continue exact identity, health, resources, buildings, army and quests; seconds=1.29",
+          "metrics": {
+            "resume": true,
+            "measuredFps": false,
+            "measuredGc": false,
+            "race": "human",
+            "class": "warrior",
+            "elapsedSeconds": 4.4594135,
+            "phase": "E22",
+            "sampledPeakWorkingSetBytes": 837304320
+          }
+        }
+      },
+      "hero": {
+        "RaceId": "human",
+        "ClassId": "warrior",
+        "Health": 34,
+        "Experience": 60,
+        "HeroLevel": 4
+      },
+      "resources": {
+        "Gold": 30,
+        "Wood": 36,
+        "Food": 46
+      },
+      "contractFacts": [
+        "e22-boundary-stone",
+        "e22-contract-accepted:recovery",
+        "e22-contract-accepted:survey",
+        "e22-contract-accepted:watch",
+        "e22-contract-completed:recovery",
+        "e22-contract-completed:survey",
+        "e22-contract-completed:watch",
+        "e22-recovery-crate",
+        "e22-ruins-watch"
+      ],
+      "buildings": [
+        {
+          "Id": "townhall",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "workshop",
+          "Level": 1,
+          "ProductionPaused": true
+        },
+        {
+          "Id": "barracks",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "farm",
+          "Level": 2,
+          "ProductionPaused": false
+        }
+      ],
+      "militaryCount": 2,
+      "outpostOwner": "player-company",
+      "magePositioning": null,
+      "patrolAttempts": [
+        "attempt=1 victory=True hp=29 allies=0 enemies=0"
+      ]
+    },
+    {
+      "identity": "dwarf-mage",
+      "ending": "pacto",
+      "optionalSentryCompanions": 1,
+      "processes": {
+        "start": {
+          "result": "PASS: E22 dwarf/mage capítulo mage, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=284.00",
+          "metrics": {
+            "resume": false,
+            "measuredFps": false,
+            "measuredGc": false,
+            "race": "dwarf",
+            "class": "mage",
+            "elapsedSeconds": 286.4757567,
+            "phase": "E22",
+            "sampledPeakWorkingSetBytes": 816603136
+          }
+        },
+        "resume": {
+          "result": "PASS: E22 dwarf/mage new process Continue exact identity, health, resources, buildings, army and quests; seconds=1.07",
+          "metrics": {
+            "resume": true,
+            "measuredFps": false,
+            "measuredGc": false,
+            "race": "dwarf",
+            "class": "mage",
+            "elapsedSeconds": 3.89232,
+            "phase": "E22",
+            "sampledPeakWorkingSetBytes": 824475648
+          }
+        }
+      },
+      "hero": {
+        "RaceId": "dwarf",
+        "ClassId": "mage",
+        "Health": 24,
+        "Experience": 60,
+        "HeroLevel": 4
+      },
+      "resources": {
+        "Gold": 17,
+        "Wood": 21,
+        "Food": 28
+      },
+      "contractFacts": [
+        "e22-boundary-stone",
+        "e22-contract-accepted:recovery",
+        "e22-contract-accepted:survey",
+        "e22-contract-accepted:watch",
+        "e22-contract-completed:recovery",
+        "e22-contract-completed:survey",
+        "e22-contract-completed:watch",
+        "e22-recovery-crate",
+        "e22-ruins-watch"
+      ],
+      "buildings": [
+        {
+          "Id": "townhall",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "workshop",
+          "Level": 1,
+          "ProductionPaused": true
+        },
+        {
+          "Id": "barracks",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "farm",
+          "Level": 2,
+          "ProductionPaused": false
+        }
+      ],
+      "militaryCount": 3,
+      "outpostOwner": "faction-b",
+      "magePositioning": "seed=42 withdrawals=4 hp=16/18",
+      "patrolAttempts": [
+        "attempt=1 victory=True hp=18 allies=0 enemies=0"
+      ]
+    },
+    {
+      "identity": "elf-monk",
+      "ending": "independiente",
+      "optionalSentryCompanions": 2,
+      "processes": {
+        "start": {
+          "result": "PASS: E22 elf/monk capítulo monk, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=305.18",
+          "metrics": {
+            "resume": false,
+            "measuredFps": false,
+            "measuredGc": false,
+            "race": "elf",
+            "class": "monk",
+            "elapsedSeconds": 307.6567412,
+            "phase": "E22",
+            "sampledPeakWorkingSetBytes": 821452800
+          }
+        },
+        "resume": {
+          "result": "PASS: E22 elf/monk new process Continue exact identity, health, resources, buildings, army and quests; seconds=1.24",
+          "metrics": {
+            "resume": true,
+            "measuredFps": false,
+            "measuredGc": false,
+            "race": "elf",
+            "class": "monk",
+            "elapsedSeconds": 4.095567,
+            "phase": "E22",
+            "sampledPeakWorkingSetBytes": 852168704
+          }
+        }
+      },
+      "hero": {
+        "RaceId": "elf",
+        "ClassId": "monk",
+        "Health": 28,
+        "Experience": 60,
+        "HeroLevel": 4
+      },
+      "resources": {
+        "Gold": 30,
+        "Wood": 15,
+        "Food": 34
+      },
+      "contractFacts": [
+        "e22-boundary-stone",
+        "e22-contract-accepted:recovery",
+        "e22-contract-accepted:survey",
+        "e22-contract-accepted:watch",
+        "e22-contract-completed:recovery",
+        "e22-contract-completed:survey",
+        "e22-contract-completed:watch",
+        "e22-recovery-crate",
+        "e22-ruins-watch"
+      ],
+      "buildings": [
+        {
+          "Id": "townhall",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "workshop",
+          "Level": 1,
+          "ProductionPaused": true
+        },
+        {
+          "Id": "barracks",
+          "Level": 1,
+          "ProductionPaused": false
+        },
+        {
+          "Id": "farm",
+          "Level": 2,
+          "ProductionPaused": false
+        }
+      ],
+      "militaryCount": 3,
+      "outpostOwner": "faction-b",
+      "magePositioning": null,
+      "patrolAttempts": [
+        "attempt=1 victory=True hp=11 allies=0 enemies=0"
+      ]
+    }
+  ],
+  "actualCaptureCount": 218,
+  "curatedCaptures": [
+    "Tablon.png",
+    "Mojon.png",
+    "Cajon.png",
+    "Compra.png",
+    "Venta.png",
+    "Granja.png",
+    "Tecnica-RTS.png",
+    "Pacto.png",
+    "Cierre-independiente.png",
+    "Continuar.png"
+  ],
+  "humanReview": "pending"
+}

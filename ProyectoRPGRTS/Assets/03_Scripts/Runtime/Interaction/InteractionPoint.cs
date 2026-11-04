@@ -11,6 +11,7 @@ namespace Aethernia
         public bool Available(GameSession game)
         {
             if(!game.Rules.UxExperience)return true;
+            if(factId==FrontierContracts.Watch)return game.Rules.LivingWorld&&FrontierContracts.WatchAvailable(game.State);
             var world=GetComponent<WorldInteractable>();if(world!=null&&world.Consumed(game))return false;
             if(factId==LostCargoQuest.CargoId)return LostCargoQuest.Stage(game.State)==CargoQuestStage.Accepted;
             if(factId=="demo-patrol")return DemoFlow.CanVisitPatrol(game);

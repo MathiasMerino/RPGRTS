@@ -389,9 +389,9 @@ namespace Aethernia
             return false;
         }
 
-        private Soldier HeroTarget(Soldier hero, float range)
+        private Soldier HeroTarget(Soldier hero, float range, bool requireReachableOrder = false)
         {
-            if (IsLive(hero.OrderedTarget) && (!PatrolCombat || InRange(hero, hero.OrderedTarget, range)))
+            if (IsLive(hero.OrderedTarget) && (!(PatrolCombat || requireReachableOrder) || InRange(hero, hero.OrderedTarget, range)))
                 return hero.OrderedTarget;
             if (!TacticalBattle && !PatrolCombat) return Nearest(hero);
             return LocalTarget(hero, range, hero.Unit.transform.position, range);
