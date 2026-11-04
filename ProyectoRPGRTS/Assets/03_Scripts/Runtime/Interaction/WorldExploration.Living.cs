@@ -67,6 +67,7 @@ namespace Aethernia
                         ShowContract(point, index, "No se entregó la recompensa. Comprueba tus reservas.");
                         return;
                     }
+                    if(game.Rules.IntegratedAlpha)Flow.Front.Audio?.Play(FeedbackSound.Quest,UnityEngine.Vector3.zero,true);
                     ReportAndSave(message);
                     ShowContract(point, index, message);
                 }, "warrior", "Siguiente", () => ShowContract(point, (index + 1) % FrontierContracts.Count));
@@ -104,7 +105,11 @@ namespace Aethernia
                 button, () =>
                 {
                     var message = trade() ? "Intercambio realizado." : "Sin intercambio. Revisa precio, requisitos y espacio.";
-                    if (message == "Intercambio realizado.") ReportAndSave(message);
+                    if (message == "Intercambio realizado.")
+                    {
+                        if(game.Rules.IntegratedAlpha)Flow.Front.Audio?.Play(FeedbackSound.Confirm,UnityEngine.Vector3.zero,true);
+                        ReportAndSave(message);
+                    }
                     ShowMarket(point, page, message);
                 }, "monk", "Siguiente", () => ShowMarket(point, (page + 1) % 4));
         }
@@ -114,5 +119,28 @@ namespace Aethernia
             var saved = Flow.Director.Save(Flow.SlotPath);
             Flow.Session.Say(saved ? message : message + " Guardado pendiente.");
         }
+
+        public bool TryContractGuidance(bool inside,out string objective,out UnityEngine.Vector3 position)
+        {
+            var state=Flow.Session.State;
+            foreach(var priority in guidancePriority)
+                for(var i=0;i<FrontierContracts.Count;i++)
+                {
+                    var contract=FrontierContracts.At(i);
+                    if(FrontierContracts.Status(state,contract)!=priority)continue;
+                    var ready=priority==ContractStatus.Ready;
+                    var id=ready?(inside?"umbral-exit":FrontierContracts.Board):
+                        contract.Requirement==FrontierContracts.Watch&&!inside?"umbral-entry":
+                        inside&&contract.Requirement!=FrontierContracts.Watch?"umbral-exit":contract.Requirement;
+                    if(!landmarks.TryGetValue(id,out var point))continue;
+                    position=point.transform.position;
+                    objective=contract.Title+"\n"+(id=="umbral-exit"?"Sal de las ruinas.":ready?"Entrega el encargo en el tablón.":point.DisplayName);
+                    return true;
+                }
+            position=default;
+            objective=null;
+            return false;
+        }
+        private static readonly ContractStatus[] guidancePriority={ContractStatus.Ready,ContractStatus.Accepted};
     }
 }

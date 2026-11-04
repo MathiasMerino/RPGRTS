@@ -45,7 +45,10 @@ namespace Aethernia
         {
             if(!Flow.Director.Encounter.BeginGroup(centre,TestSeed,loneSentry))return false;
             encounterFact=id;
-            Flow.CameraRig.FocusOn(Flow.Director.Hero.transform.position);
+            var hero=Flow.Director.Hero.transform.position;
+            var enemy=Flow.Director.Encounter.GroupUnit("enemy-0");
+            if(Flow.Session.Rules.IntegratedAlpha&&enemy!=null)Flow.CameraRig.FrameDungeonFight(hero,enemy.transform.position);
+            else Flow.CameraRig.FocusOn(hero);
             Flow.ExistingHud.ClosePanels();
             return true;
         }

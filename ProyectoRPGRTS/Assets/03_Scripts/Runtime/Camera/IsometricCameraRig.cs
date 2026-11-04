@@ -56,6 +56,11 @@ namespace Aethernia
         private void Awake() { view = GetComponent<Camera>(); Refresh(); }
         public void Configure(Vector3 centre) { focus = centre; view = GetComponent<Camera>(); Refresh(); }
         public void FocusOn(Vector3 point) { focus = new Vector3(point.x, 0, point.z); Refresh(); }
+        public void FrameDungeonFight(Vector3 hero,Vector3 enemy)
+        {
+            // Keep the first opponent and hero clear of the combat panel on the right.
+            FocusOn(Vector3.Lerp(hero,enemy,.4f)+transform.right*1.8f);
+        }
         public void SetRegion(Vector3 centre)
         { horizontalLimits = new Vector2(centre.x - 18, centre.x + 18); verticalLimits = new Vector2(centre.z - 18, centre.z + 18); if(Ux&&centre==Vector3.zero){horizontalLimits=new Vector2(-54,18);verticalLimits=new Vector2(-18,18);if(InputSession.Rules.WorldExploration){horizontalLimits=new Vector2(-56,22);verticalLimits=new Vector2(-23,22);}} FocusOn(centre); }
 

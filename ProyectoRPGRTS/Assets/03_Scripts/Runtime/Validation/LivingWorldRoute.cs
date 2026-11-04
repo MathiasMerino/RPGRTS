@@ -87,6 +87,12 @@ namespace Aethernia
             var group = flow.Director.Encounter.Group;
             Check(group != null && group.Members.Count(m => !m.Hostile) == companions + 1 &&
                 group.Members.Count(m => m.Hostile) == 1, "centinela y participantes reales");
+            if(game.Rules.IntegratedAlpha)
+            {
+                var controls=UnityEngine.Object.FindAnyObjectByType<ExpeditionPanel>().Controls;
+                Check(!controls["target-1"].gameObject.activeSelf&&controls["target-0"].GetComponentInChildren<TMPro.TMP_Text>().text=="Centinela",
+                    "panel de centinela muestra un solo rival real");
+            }
             yield return capture("L08-Sentry");
             yield return ExpeditionSmokeProbe.FightGroup(flow);
             Check(state.Facts.Contains(FrontierContracts.Watch), "victoria registrada por el combate");
@@ -121,6 +127,16 @@ namespace Aethernia
                 (state.Items.Find(i => i.Id == "ration")?.Count ?? 0) == rations, "venta retira objeto y paga oro");
             yield return capture("L14-SellRation");
             world.Close();
+            if(game.Rules.IntegratedAlpha)
+            {
+                flow.ExistingHud.SelectPage(ExplorationPage.Inventory);
+                yield return null;
+                yield return capture("A01-Inventory");
+                flow.ExistingHud.SelectPage(ExplorationPage.Character);
+                yield return null;
+                yield return capture("A02-Progression");
+                flow.ExistingHud.ClosePanels();
+            }
 
             yield return WorldExplorationRoute.MoveTo(flow, new Vector3(9, 0, -10));
             var camp = flow.GetComponent<DemoSettlementPanel>();

@@ -249,6 +249,11 @@ namespace Aethernia.Editor.Characters
         {
             BuildCandidate(LivingScenePath, "E22Windows", "E22");
         }
+        public const string IntegratedAlphaScenePath = "Assets/01_Scenes/AetherniaE23IntegratedAlpha.unity";
+        public static void BuildIntegratedAlpha()
+        {
+            BuildCandidate(IntegratedAlphaScenePath, "E23Windows", "E23");
+        }
         private static void BuildCandidate(string scene, string output, string phase)
         {
             Directory.CreateDirectory("Builds/"+output);

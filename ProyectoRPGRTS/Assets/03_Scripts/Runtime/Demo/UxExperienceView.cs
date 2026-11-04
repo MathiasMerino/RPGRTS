@@ -20,6 +20,7 @@ namespace Aethernia
         private MedievalHudView hud;
         private WorldExploration world;
         private bool guidance=true;
+        private bool contractMarker;
         private float nextRefresh;
         private DemoHeroMotor motor;private LostCargoView dialogue;
         public string ObjectiveText=>objective==null?"":objective.text;
@@ -100,19 +101,21 @@ namespace Aethernia
             if(!hud.WindowOpen)
             {Place(hud.ActionGrid,new Vector2(.5f,0),new Vector2(0,14),new Vector2(810,40));hud.ActionLayout.cellSize=new Vector2(126,38);}
             hud.Feedback.transform.parent.gameObject.SetActive(false); // Objective/help owns one bounded notice surface.
-            prompts.gameObject.SetActive(visible&&exploration);
-            objectives.gameObject.SetActive(visible&&guidance);
-            markerRect.gameObject.SetActive(visible&&guidance&&((exploration&&(session.Rules.FrontierCampaign?FrontierChapter.Step(session.State)!=FrontierStep.Free:
-                session.State.Demo==null||session.State.Demo.Chapter<DemoChapter.FreeExploration))||(mode==PrototypeMode.Rts&&Flow.Director.Rts.Preparing&&Flow.Director.Rts.PreparationStep<3)));
+            var alpha=session.Rules.IntegratedAlpha;
+            objectives.gameObject.SetActive(visible&&guidance&&!(alpha&&mode==PrototypeMode.TurnCombat&&Flow.Director.Encounter.InGroup));
             if(Time.unscaledTime>=nextRefresh)
             {
                 nextRefresh=Time.unscaledTime+.12f;
-                var point=visible&&exploration?Commands.RefreshNearby():null;
+                var point=visible&&exploration?(alpha?Commands.CurrentInteraction:Commands.RefreshNearby()):null;
                 interaction.interactable=point!=null;
                 interaction.targetGraphic.raycastTarget=point!=null;
-                prompt.text=point==null?"WASD · caminar     Rueda · acercar":"E · "+Verb(point)+" — "+point.DisplayName;
+                prompt.text=point==null?"WASD · caminar     Rueda · acercar":
+                    (alpha?"E — "+AlphaVerb(point)+" · ":"E · "+Verb(point)+" — ")+point.DisplayName;
                 SetObjective();
             }
+            prompts.gameObject.SetActive(visible&&exploration&&(!alpha||Commands.CurrentInteraction!=null));
+            markerRect.gameObject.SetActive(visible&&guidance&&((exploration&&(session.Rules.FrontierCampaign?contractMarker||FrontierChapter.Step(session.State)!=FrontierStep.Free:
+                session.State.Demo==null||session.State.Demo.Chapter<DemoChapter.FreeExploration))||(mode==PrototypeMode.Rts&&Flow.Director.Rts.Preparing&&Flow.Director.Rts.PreparationStep<3)));
             if(markerRect.gameObject.activeSelf)
             {
                 var camera=Flow.CameraRig.GetComponent<Camera>();var screen=camera.WorldToScreenPoint(ObjectivePosition+Vector3.up*2.1f);
@@ -126,12 +129,16 @@ namespace Aethernia
         private static string Verb(InteractionPoint point)=>point.TryGetComponent<WorldInteractable>(out var world)?world.Action:point.FactId==LostCargoQuest.NpcId?"Hablar":point.FactId==LostCargoQuest.CargoId?"Recuperar":point.FactId=="demo-patrol"?"Hablar":point.FactId=="umbral-entry"?"Entrar":point.FactId=="umbral-exit"?"Regresar":point.FactId.StartsWith("portal-")?"Viajar":"Examinar";
         private void SetObjective()
         {
+            contractMarker=false;
             var state=Flow.Session.State;var mode=Flow.Session.Mode;var quest=LostCargoQuest.Stage(state);
             ObjectivePosition=quest==CargoQuestStage.Accepted?Cargo.Cargo.transform.position:Cargo.Npc.transform.position;
             if(mode==PrototypeMode.TurnCombat)
             {
                 var battle=Flow.Director.Encounter.Battle;
-                objective.text=battle==null?"Selecciona tu objetivo.":battle.Phase==TurnPhase.Enemy?"El rival actúa. Observa el resultado.":!battle.ActionAvailable?"Acción realizada · Fin de turno.":!Flow.Director.Encounter.TargetSelected?"Selecciona al rival con clic izquierdo.":"Acércate si hace falta; Atacar o Guardia.\nUna acción por turno.";
+                objective.text=battle==null?"Selecciona tu objetivo.":battle.Phase==TurnPhase.Enemy?"El rival actúa. Observa el resultado.":
+                    Flow.Session.Rules.IntegratedAlpha&&state.ClassId=="mage"?
+                        (!battle.ActionAvailable?"Tras actuar puedes retroceder.\nClic derecho para moverte · Fin de turno.":"Ataca desde lejos y conserva distancia.\nClic izquierdo para seleccionar al rival."):
+                    !battle.ActionAvailable?"Acción realizada · Fin de turno.":!Flow.Director.Encounter.TargetSelected?"Selecciona al rival con clic izquierdo.":"Acércate si hace falta; Atacar o Guardia.\nUna acción por turno.";
             }
             else if(mode==PrototypeMode.Rts)
             {
@@ -148,6 +155,13 @@ namespace Aethernia
             {
                 var step=FrontierChapter.Step(state);
                 var inside=Flow.Director.Hero.transform.position.x>65;
+                if(step==FrontierStep.Free&&Flow.Session.Rules.IntegratedAlpha&&world.TryContractGuidance(inside,out var contractText,out var contractPosition))
+                {
+                    objective.text=contractText;
+                    ObjectivePosition=contractPosition;
+                    contractMarker=true;
+                    return;
+                }
                 ObjectivePosition=world.CampaignTarget(step,inside,ObjectivePosition);
                 objective.text=FrontierChapter.Heading(step)+"\n"+(step==FrontierStep.Free&&Flow.Session.Rules.LivingWorld
                     ?"Tablón de la aldea · "+FrontierContracts.OpenCount(state)+" encargos activos"
@@ -158,6 +172,17 @@ namespace Aethernia
             {ObjectivePosition=Flow.Patrol.transform.position;objective.text="LA PATRULLA\nRevisa salud y raciones en Inventario.\nDespués, habla con el capitán.";}
             else
             {ObjectivePosition=new Vector3(9,0,-10);objective.text="CAMPAMENTO\nMenú → Construir: centro, taller y producción.\nDespués: compañeros, mazmorra y culturas.";if(state.Demo!=null&&state.Demo.Chapter==DemoChapter.FreeExploration){markerRect.gameObject.SetActive(false);if(Flow.Session.Rules.WorldExploration)objective.text="EXPLORACIÓN LIBRE\nSendero y ruinas al sur del cruce.\nGrupo, comercio y culturas disponibles.";}}
+        }
+        private static string AlphaVerb(InteractionPoint point)
+        {
+            if(point.FactId=="demo-patrol")return "Hablar";
+            if(point.FactId=="umbral-cache"||point.FactId==FrontierContracts.Materials)return "Abrir";
+            if(point.TryGetComponent<WorldInteractable>(out var item))
+            {
+                if(item.Kind==WorldInteractionKind.Merchant)return "Comerciar";
+                if(item.Kind==WorldInteractionKind.Recruiter)return "Reclutar";
+            }
+            return Verb(point);
         }
     }
 }
