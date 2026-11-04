@@ -34,7 +34,7 @@ namespace Aethernia
             if (log != null) log.text = session.LastMessage;
             if (interact != null)
             {
-                var exploring = session.Mode == PrototypeMode.Exploration;
+                var exploring = session.Mode == PrototypeMode.Exploration && !session.Rules.UxExperience;
                 interact.gameObject.SetActive(exploring); interact.interactable = exploring;
             }
         }
