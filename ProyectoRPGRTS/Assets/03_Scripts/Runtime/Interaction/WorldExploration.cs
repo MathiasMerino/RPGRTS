@@ -8,6 +8,7 @@ using UnityEngine.UI;
 namespace Aethernia
 {
     // Contenido del mundo conectado a los controladores existentes; Facts pertenece a la partida.
+    [DefaultExecutionOrder(550)]
     public sealed class WorldExploration : MonoBehaviour
     {
         public DemoFlow Flow;

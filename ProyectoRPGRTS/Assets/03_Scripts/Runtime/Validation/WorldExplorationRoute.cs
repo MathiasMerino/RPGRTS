@@ -29,6 +29,10 @@ namespace Aethernia
         public static IEnumerator Explore(DemoFlow flow,Func<string,IEnumerator> capture)
         {
             var s=flow.Session;var world=flow.GetComponent<WorldExploration>();var beforeGold=s.State.Gold;
+            var activities=UnityEngine.Object.FindObjectsByType<VillageNpcActivity>();Check(activities.All(a=>a.Actor.Agent.isOnNavMesh),"all village agents start on real navigation");
+            var guard=activities.Single(a=>a.Route.Length>1);var start=guard.Actor.transform.position;var until=Time.time+6;var hardLimit=Time.realtimeSinceStartup+30;
+            while(Vector3.Distance(start,guard.Actor.transform.position)<.2f&&Time.time<until&&Time.realtimeSinceStartup<hardLimit)yield return null;
+            Check(Vector3.Distance(start,guard.Actor.transform.position)>=.2f,"guard actually patrols existing route");
             foreach(var waypoint in world.RoutePoints.Take(5))
             {yield return MoveTo(flow,waypoint.position);yield return UxExperienceRoute.Wait(.3f);if(waypoint==world.RoutePoints[1])yield return capture("W01-ForestFork");}
             Check(!flow.Director.IsBusy,"walking does not start encounters");
@@ -78,12 +82,15 @@ namespace Aethernia
         // Eventos de dispositivo sintético recorren Update/raycast/arrastre reales; no son prueba humana.
         private static IEnumerator MouseOrders(DemoFlow flow,Func<string,IEnumerator> capture,bool attack)
         {
+            var camera=flow.CameraRig.GetComponent<Camera>();var last=camera.transform.position;var stable=0;var end=Time.realtimeSinceStartup+6;
+            while(stable<3&&Time.realtimeSinceStartup<end){yield return null;stable=Vector3.Distance(camera.transform.position,last)<.015f?stable+1:0;last=camera.transform.position;}
+            Check(stable>=3,"camera settled before projecting synthetic pointer");
             var mouse=InputSystem.AddDevice<Mouse>();var keyboard=InputSystem.AddDevice<Keyboard>();var old=InputSystem.settings.backgroundBehavior;
             try
             {
                 InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;
                 var war=flow.Director.Rts;var units=new System.Collections.Generic.List<RtsUnitStatus>();war.CopyStatus(units);
-                var camera=flow.CameraRig.GetComponent<Camera>();var allies=units.Where(u=>u.Team==0&&u.Health>0).ToArray();
+                var allies=units.Where(u=>u.Team==0&&u.Health>0).ToArray();
                 var a=(Vector2)camera.WorldToScreenPoint(allies[0].Unit.transform.position+Vector3.up*.9f);
                 yield return MouseFrame(mouse,a,1);yield return MouseFrame(mouse,a,0);Check(war.SelectedAllies==1,"native mouse single selection");
                 InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.LeftShift));yield return null;
@@ -93,8 +100,10 @@ namespace Aethernia
                 if(!attack)
                 {
                     var before=allies[0].Unit.transform.position;var target=war.PreparationTarget+Vector3.back*3.5f;var at=(Vector2)camera.WorldToScreenPoint(target);
-                    yield return MouseFrame(mouse,at,2);yield return MouseFrame(mouse,at,0);yield return UxExperienceRoute.Wait(.4f);
-                    Check(Vector3.Distance(allies[0].Unit.transform.position,before)>.15f&&war.Preparing,"native right mouse actual movement without hostility");yield return capture("W17-MouseMove");
+                    yield return MouseFrame(mouse,at,2);yield return MouseFrame(mouse,at,0);end=Time.realtimeSinceStartup+4;
+                    while(Vector3.Distance(allies[0].Unit.transform.position,before)<=.15f&&Time.realtimeSinceStartup<end)yield return null;
+                    var hit=Physics.Raycast(camera.ScreenPointToRay(at),out var pointerHit,150)?pointerHit.collider.name+" "+pointerHit.point:"none";
+                    Check(Vector3.Distance(allies[0].Unit.transform.position,before)>.15f&&war.Preparing,"native right mouse actual movement without hostility; moved="+Vector3.Distance(allies[0].Unit.transform.position,before)+" lastOrder="+war.LastOrderText+" selected="+war.SelectedAllies+" pointer="+at+" hit="+hit+" ui="+UiInputGuard.HasUiAt(at));yield return capture("W17-MouseMove");
                 }
                 else
                 {

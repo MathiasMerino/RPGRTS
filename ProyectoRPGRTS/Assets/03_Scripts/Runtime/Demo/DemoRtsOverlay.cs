@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 namespace Aethernia
 {
+    [DefaultExecutionOrder(600)]
     public sealed class DemoRtsOverlay : MonoBehaviour
     {
         public DemoFlow Flow;

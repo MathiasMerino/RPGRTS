@@ -31,6 +31,7 @@ namespace Aethernia.Tests.Editor
             var old=AssetDatabase.LoadAssetAtPath<PrototypeRules>(UxExperienceBuilder.Root+"/PrototypeRules.asset");Assert.That(old.WorldExploration,Is.False);Assert.That(f.Session.Rules.Civilizations,Is.SameAs(old.Civilizations));
             Assert.That(AssetDatabase.GetDependencies(WorldExplorationBuilder.ScenePath,true).Any(p=>p.Contains("LocalOnly")||p.Contains("Meshy")),Is.False);
             Assert.That(Object.FindObjectsByType<IsometricCameraRig>().Length,Is.EqualTo(1));Assert.That(Object.FindObjectsByType<VillageNpcActivity>().Length,Is.EqualTo(3));
+            Assert.That(Object.FindObjectsByType<VillageNpcActivity>().All(n=>!n.Actor.Agent.enabled),Is.True,"scene agents enable in Start after surface Awake");
         }
         [UnityTest]public IEnumerator ForestLoopDiscoveriesRewardsAndModalControls()
         {

@@ -733,3 +733,7 @@ El controlador existente valida toda la formación antes de aceptar una orden: s
 ## 2026-11-03 — UX2-B/HUD refinamiento visual
 
 Cintas continuas Catmull-Rom eliminan huecos triangulares en curvas, UV en metros y Earth Lit compartido; árboles/props nuevos reutilizan Alpha/ShaderGraph y viento0.035 existentes con bounds conservadores. Sin materiales/dependencias nuevos. HUD de exploración libre deja de pedir edificios ya terminados y RTS confirma órdenes aceptadas. DIRIGIDA_05 aprobó7/7 antes del ajuste puramente visual; regresión general y Windows finales comprobarán la candidata completa.
+
+## 2026-11-03 — UX2-H primer Windows y corrección de arranque
+
+Primera build0e96f06: Windows detecta tres agentes de NPC activos antes de registrar NavMesh y una comprobación de desplazamiento con ratón que falla. Recibo, errores y huella preservados en WindowsIntento01; no se declara aprobado. Las tres instancias UX02 se serializan deshabilitadas y se habilitan por ExplorationUnit.Start tras Awake de superficies, igual que el héroe. UI proyectada se calcula después de la cámara mediante órdenes100/550/600 para evitar barras desplazadas en transiciones. La prueba de ratón espera estabilización del encuadre y desplazamiento observado con límite, registra hit/UI/orden si falla; sin cambiar reglas ni simular victoria. Guardia se verifica por movimiento real, no sólo existencia. Se oculta la cinta visual UX01 superpuesta al sendero nuevo; física original conservada.

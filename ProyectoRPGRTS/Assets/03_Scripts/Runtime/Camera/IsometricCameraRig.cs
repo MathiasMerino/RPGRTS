@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 namespace Aethernia
 {
     [RequireComponent(typeof(Camera))]
+    [DefaultExecutionOrder(100)]
     public sealed class IsometricCameraRig : MonoBehaviour
     {
         [SerializeField] private Vector3 focus;

@@ -163,6 +163,8 @@ namespace Aethernia.Editor.Characters
             foreach(var item in flow.GetComponent<WorldExploration>().Interactions)
             {var point=item.GetComponent<InteractionPoint>();point.Configure(point.FactId,RepairText(point.DisplayName));item.name=RepairText(item.name);item.Description=RepairText(item.Description);EditorUtility.SetDirty(point);EditorUtility.SetDirty(item);}
             var worldRoot=GameObject.Find("UX02 connected frontier world").transform;
+            foreach(var npc in worldRoot.GetComponentsInChildren<VillageNpcActivity>())
+            {npc.Actor.Agent.enabled=false;PrefabUtility.RecordPrefabInstancePropertyModifications(npc.Actor.Agent);}
             foreach(var renderer in worldRoot.GetComponentsInChildren<MeshRenderer>())
             {
                 var materials=renderer.sharedMaterials;
@@ -179,6 +181,8 @@ namespace Aethernia.Editor.Characters
             // Estas cintas tienen UV en metros. El shader Alpha exige UV normalizados para su máscara;
             // reutilizar Earth Lit evita convertir la mayor parte del camino en hierba o estirar el albedo.
             foreach(var name in new[]{"Forest main road","Ruins branch","Village return loop"})worldRoot.Find(name).GetComponent<Renderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Earth.mat");
+            GameObject.Find("Village to camp path 4m").GetComponent<Renderer>().enabled=false;
+            GameObject.Find("Staging path 4m").GetComponent<Renderer>().sharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/06_Environment/VillageE07/Materials/Earth.mat");
             RepairRoad(worldRoot,"Forest main road",new[]{new Vector3(-12,0,1.5f),new Vector3(-19,0,1),new Vector3(-25,0,-2),new Vector3(-33,0,-3),new Vector3(-41,0,-2),new Vector3(-47,0,-.5f)},1.9f);
             RepairRoad(worldRoot,"Ruins branch",new[]{new Vector3(-25,0,-2),new Vector3(-26,0,-8),new Vector3(-22,0,-13),new Vector3(-16,0,-16)},1.75f);
             RepairRoad(worldRoot,"Village return loop",new[]{new Vector3(-16,0,-16),new Vector3(-10,0,-17),new Vector3(-9,0,-11)},1.75f);
