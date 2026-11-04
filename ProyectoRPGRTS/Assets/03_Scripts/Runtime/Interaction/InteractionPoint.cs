@@ -11,6 +11,7 @@ namespace Aethernia
         public bool Available(GameSession game)
         {
             if(!game.Rules.UxExperience)return true;
+            var world=GetComponent<WorldInteractable>();if(world!=null&&world.Consumed(game))return false;
             if(factId==LostCargoQuest.CargoId)return LostCargoQuest.Stage(game.State)==CargoQuestStage.Accepted;
             if(factId=="demo-patrol")return DemoFlow.CanVisitPatrol(game);
             if(factId==LostCargoQuest.NpcId)return true;
@@ -25,6 +26,8 @@ namespace Aethernia
             if (!isActiveAndEnabled || actor == null || session == null) return false;
             if (Vector3.Distance(actor.transform.position, transform.position) > reach)
             { session.Say("Acércate al objeto para interactuar."); return false; }
+            if(session.Rules.WorldExploration)
+            {var commands=FindAnyObjectByType<PlayerCommands>();if(session.Paused||session.WorldUiOpen||!Available(session)||commands==null||(commands.ModalOpen?.Invoke()??false)||!commands.HasInteractionSight(this))return false;}
             return session.CompleteInteraction(factId, displayName);
         }
     }

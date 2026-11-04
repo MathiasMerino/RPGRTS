@@ -33,7 +33,7 @@ namespace Aethernia
         }
         public bool ApplyInput(Vector2 input,float seconds,bool blocked)
         {
-            if(!CanControl||blocked||(ModalOpen?.Invoke()??false)||input.sqrMagnitude<.001f||seconds<=0||float.IsNaN(input.sqrMagnitude)||float.IsInfinity(input.sqrMagnitude)||float.IsNaN(seconds)||float.IsInfinity(seconds))
+            if(!CanControl||blocked||Flow.Session.WorldUiOpen||(ModalOpen?.Invoke()??false)||input.sqrMagnitude<.001f||seconds<=0||float.IsNaN(input.sqrMagnitude)||float.IsInfinity(input.sqrMagnitude)||float.IsNaN(seconds)||float.IsInfinity(seconds))
             {Hero.EndDirectControl();return false;}
             var direction=CameraRelative(input,Flow.CameraRig.transform);var speed=Flow.Session.HeroProfile.Speed;
             var displacement=direction*speed*Mathf.Min(seconds,.1f);var start=Hero.Agent.nextPosition;

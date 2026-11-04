@@ -1,0 +1,38 @@
+{
+  "historicalRTS": {
+    "source": "ProyectoRPGRTS\\Logs\\E17\\RTS\\20261103-201525368-warrior-30-811e841e994d4d64a92f78be6dcf7cd8.csv",
+    "terminal": {
+      "kind": "defeat",
+      "frame": "875",
+      "time": "28.92869",
+      "delta": "0.03332",
+      "actor": "12",
+      "hero": "True",
+      "hp": "0",
+      "attackAt": "27.69539",
+      "selected": "True",
+      "recoveryUsed": "True",
+      "target": "-1",
+      "targetHp": "0",
+      "value": "0",
+      "x": "-15.0000",
+      "z": "9.5000",
+      "allies": "0",
+      "enemies": "2"
+    },
+    "recoveryAccepted": 1,
+    "classification": "Real gameplay defeat under historical reserve strategy; no proof of invalid damage or failed recovery. Assertion still open and unchanged.",
+    "changedRulesForPass": false
+  },
+  "timeouts": {
+    "priorGeneral": "202/206 UX01",
+    "cases": [
+      "HumanoidPipelineTests.MissingAssetsLeaveMovementAndMonkFallbackFunctional",
+      "UxExperienceTests.MageFullRoute",
+      "UxExperienceTests.ModalWindowsBlockMotorCameraAndInteractor"
+    ],
+    "isolatedPriorPasses": "3/3",
+    "classification": "Long-run timeouts, cause unconfirmed; isolated pass does not resolve. New full regression pending."
+  },
+  "humanEvaluation": "Pending"
+}

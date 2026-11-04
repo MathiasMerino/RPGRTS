@@ -1237,49 +1237,49 @@ Fallos y diagnóstico anteriores conservados en Docs/Validacion/UX01: arnés tra
 ## FASE UX-02 — MUNDO EXPLORABLE E INTEGRACIÓN
 
 ### UX2-A — Auditoría de fallos, PR y protección del trabajo
-- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: UX01.
+- Estado: [x] Completado y verificado. Prioridad: P0. Dependencias: UX01.
 - Aceptación: Auditoría de fallos, PR y protección del trabajo; detalles en Docs/UX02_MUNDO.md.
-- Archivos: previstos según bloque; todavía sin implementación validada.
-- Pruebas: pendientes; no equivalen a revisión humana.
+- Archivos: Docs/UX02_MUNDO.md, Docs/Validacion/UX02/BASE.json, INCIDENCIAS_INICIALES.json y RTS_HEREDADO.csv.
+- Pruebas:11PR y heads main/dev comprobados por API;21ZIP y hashes calidad/GDD; privados conservados. Traza histórica demuestra derrota real, no victoria garantizada. Timeouts y evaluación humana siguen pendientes.
 
 ### UX2-B — Aldea/sendero/bifurcación/ruinas/campamento/puesto conectados y transitables
-- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: A.
+- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: A.
 - Aceptación: Aldea/sendero/bifurcación/ruinas/campamento/puesto conectados y transitables; detalles en Docs/UX02_MUNDO.md.
 - Archivos: previstos según bloque; todavía sin implementación validada.
 - Pruebas: pendientes; no equivalen a revisión humana.
 
 ### UX2-C — Cámara cercana única y oclusión reversible
-- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: B.
+- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: B.
 - Aceptación: Cámara cercana única y oclusión reversible; detalles en Docs/UX02_MUNDO.md.
 - Archivos: previstos según bloque; todavía sin implementación validada.
 - Pruebas: pendientes; no equivalen a revisión humana.
 
 ### UX2-D — Interacciones E con línea de visión, NPC/diálogo/funciones reales
-- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: B,C.
+- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: B,C.
 - Aceptación: Interacciones E con línea de visión, NPC/diálogo/funciones reales; detalles en Docs/UX02_MUNDO.md.
 - Archivos: previstos según bloque; todavía sin implementación validada.
 - Pruebas: pendientes; no equivalen a revisión humana.
 
 ### UX2-E — Descubrimientos y recompensas únicos persistentes, guía real
-- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: D.
+- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: D.
 - Aceptación: Descubrimientos y recompensas únicos persistentes, guía real; detalles en Docs/UX02_MUNDO.md.
 - Archivos: previstos según bloque; todavía sin implementación validada.
 - Pruebas: pendientes; no equivalen a revisión humana.
 
 ### UX2-F — RTS con selección/formación/órdenes/ataque explícito y feedback
-- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: B,D.
+- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: B,D.
 - Aceptación: RTS con selección/formación/órdenes/ataque explícito y feedback; detalles en Docs/UX02_MUNDO.md.
 - Archivos: previstos según bloque; todavía sin implementación validada.
 - Pruebas: pendientes; no equivalen a revisión humana.
 
 ### UX2-G — HUD tres resoluciones, guardado/Continuar/legado y ruinas/regreso
-- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: C–F.
+- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: C–F.
 - Aceptación: HUD tres resoluciones, guardado/Continuar/legado y ruinas/regreso; detalles en Docs/UX02_MUNDO.md.
 - Archivos: previstos según bloque; todavía sin implementación validada.
 - Pruebas: pendientes; no equivalen a revisión humana.
 
 ### UX2-H — Pruebas dirigidas/general, Windows/build/ZIP/capturas/vídeos/PR
-- Estado: [ ] Pendiente. Prioridad: P0. Dependencias: B–G.
+- Estado: [ ] En desarrollo. Prioridad: P0. Dependencias: B–G.
 - Aceptación: Pruebas dirigidas/general, Windows/build/ZIP/capturas/vídeos/PR; detalles en Docs/UX02_MUNDO.md.
 - Archivos: previstos según bloque; todavía sin implementación validada.
 - Pruebas: pendientes; no equivalen a revisión humana.

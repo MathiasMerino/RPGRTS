@@ -713,3 +713,11 @@ Pushnormal de feature/e18-progresion-balance y PR#9draft https://github.com/Math
 ## 2026-11-03 — UX2-A inicio
 
 Rama UX02 desde d56fa59;11PR abiertos, main/dev intactas. Snapshot Docs/Validacion/UX02/BASE.json:21ZIP y hashes GDD/calidad previa. Plan secuencial Docs/UX02_MUNDO.md. Calidad local ajena conservada sin stage; evaluación humana e incidencias UX01 abiertas. Sin cambios de jugabilidad en este checkpoint.
+
+## 2026-11-03 — UX2-B/C/D/E integración del mundo
+
+Escena AetherniaUx02World sobre UX01 y datos propios Assets/17_UX02, originales conservados. Sendero principal, bifurcación a ruinas, bucle y campamento; mismos interiores y economía. Tres NPC de servicio con rig compartido, guardia en ruta corta y presentación única del habitante/capitán. Interacciones de señal/alijo/madera/puerta/almacén, hechos únicos persistentes y diálogos modales. Cámara y RTS se validan en bloques siguientes.
+
+QA en desarrollo: DIRIGIDA_01(1/6) reveló EnterPlayMode anidado en arnés, corregido; DIRIGIDA_02(2/6) reveló árbol bloqueando camino y glifos inexistentes, corregidos sin ignorar logs; DIRIGIDA_03(5/7) y04(6/7) detectaron conflicto de propiedad WorldUiOpen, corregido en ExpeditionPanel/Motor. La interfaz de expediciones no libera diálogos ajenos. Carga directa distingue región80 de mazmorra. El caso de resolución/closures de pruebas se separa del gameplay. Todos los XML se conservan.
+
+Inspección de PNG real detectó UV métricos incompatibles con máscara Alpha: nuevas cintas reutilizan Earth Lit, otros recursos nuevos reutilizan materiales Alpha/viento existentes. Corrección de codificación en cuatro fuentes tocadas y datos UX02 mediante autoría dirigida. No se declara aprobación humana ni toda la regresión verde.

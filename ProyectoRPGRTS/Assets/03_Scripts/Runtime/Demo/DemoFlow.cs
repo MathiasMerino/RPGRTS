@@ -44,6 +44,7 @@ namespace Aethernia
             if(index<0)index=Array.IndexOf(args,"-aetherniaProgressionSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaCivilizationSmoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaUx01Smoke");
+            if(index<0)index=Array.IndexOf(args,"-aetherniaUx02Smoke");
             if(index<0)index=Array.IndexOf(args,"-aetherniaSave");
             if(index>=0&&index+1<args.Length)SlotPath=args[index+1];
             Director.SavePathOverride=SlotPath;ShowMain();
@@ -129,6 +130,7 @@ namespace Aethernia
         private bool? Interact(string id,string title)
         {
             if(id!="demo-patrol")return null;
+            if(Session.Rules.WorldExploration)return GetComponent<WorldExploration>().TalkCaptain();
             if(Session.State.Demo==null||Session.State.Demo.Chapter<DemoChapter.RoadToRts){Session.Say("Abre primero el sendero del prólogo.");return false;}
             if(UxEnabled&&Session.State.Demo.UxRevision==1&&Session.State.Demo.Chapter<DemoChapter.Settlement&&LostCargoQuest.Stage(Session.State)!=CargoQuestStage.Completed){Session.Say("Remite primero el cargamento al habitante.");return false;}
             return BeginPatrol();
