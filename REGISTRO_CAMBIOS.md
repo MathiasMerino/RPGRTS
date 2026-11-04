@@ -761,3 +761,10 @@ General a2b2b69:212/213,0omisiones,7/7UX02; único fallo RTS histórico, Guerrer
 ## 2026-11-03 — Entrega técnica UX‑02
 
 La build `c5db7ff` pasó 7/7 dirigidas y 8/8 procesos Windows con gráficos. El ZIP extraído completó el recorrido y Continuar con Mago enano. Verificados el CRC, SHA por archivo, las 1 826 entradas de build y los 21 ZIP previos. La evidencia reúne 59 PNG y 2 MP4. La general de `a2b2b69` queda en 212/213. Los tres timeouts previos aprobaron en ese pase. Siguen abiertos el fallo histórico RTS y la evaluación humana. Se registra el recorte del HUD en la captura del cruce. El PR #12 se apila sobre UX‑01. Consulta Docs/ENTREGA_UX02.md para la guía y los comprobantes.
+
+
+## 2026-11-04 — E20, base táctica y primer pase de pruebas
+
+Tareas E20-00, AE, FL, OP. Rama `feature/e20-tactical-warfare` desde UX‑02/PR12 en ca95205. La candidata conserva la patrulla previa y activa el mando táctico en la conquista existente. Incorpora despliegue seguro, línea/columna/compacta, tres posturas, órdenes excluyentes, retirada, cámara y HUD contextual. La escena E20 usa cuatro muros de la biblioteca E07 como cobertura y un NavMesh propio. Se conservan la progresión, economía y guardado existentes.
+
+Primera dirigida 3/6 por creación de NavMeshPath antes del ciclo de vida de Unity. Corregida la inicialización; segundo pase 5/6. La retirada pasó y la prueba de victoria se detuvo al reclutar con alimento insuficiente. El recorrido posterior usa granja, pausa del taller y descanso existentes. Se conservan los resultados intermedios como evidencia de diagnóstico.
