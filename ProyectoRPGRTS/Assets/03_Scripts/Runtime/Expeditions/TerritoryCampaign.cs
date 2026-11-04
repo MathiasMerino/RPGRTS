@@ -57,7 +57,12 @@ namespace Aethernia
             if(s.ArmySelection.Count==0){Flow.Session.Say("Prepara al menos un recluta militar en la pestaña Ejército.");return false;}
             returnPoint=Flow.Director.Hero.transform.position;Flow.Director.Encounter.Clear();
             if(!Flow.Director.Rts.BeginExpedition(Flow.Director.Hero,s.ArmySelection,Rules.OutpostDefenders))return false;
-            pending="outpost";LastResult="Batalla en curso. El propietario aún no cambia.";Flow.CameraRig.SetRegion(Vector3.zero);Flow.CameraRig.SetZoom(8);Flow.CameraRig.FocusOn(Flow.Director.Rts.ArenaOffset+new Vector3(Flow.UxEnabled?-2:-9,0,13));return true;
+            pending="outpost";LastResult=Flow.Director.Rts.TacticalDeployment
+                ?"Defensa del paso fronterizo · despliegue seguro. El propietario aún no cambia."
+                :"Batalla en curso. El propietario aún no cambia.";
+            var focus=Flow.Director.Rts.ArenaOffset+new Vector3(Flow.UxEnabled?-2:-9,0,13);
+            Flow.CameraRig.SetRegion(Flow.Director.Rts.TacticalBattle?focus:Vector3.zero);
+            Flow.CameraRig.SetZoom(8);Flow.CameraRig.FocusOn(focus);return true;
         }
         private void Resolved(bool won)
         {

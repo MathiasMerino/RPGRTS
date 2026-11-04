@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef9e31286f2e7743a5a9703922d83e7, type: 3}
+  m_Name: TacticalWarfareRules
+  m_EditorClassIdentifier: Aethernia.Runtime::Aethernia.PrototypeRules
+  UxExperience: 1
+  WorldExploration: 1
+  TacticalWarfare: 1
+  Progression: {fileID: 11400000, guid: a3310431e1fe3cd4da790bffb4a10cec, type: 2}
+  Civilizations: {fileID: 11400000, guid: daf8efabc0f71ed4582266c24d14643c, type: 2}
+  Classes:
+  - Id: warrior
+    Title: Guerrero
+    Health: 24
+    Damage: 6
+    Range: 1.8
+    Speed: 3.2
+  - Id: mage
+    Title: Mago
+    Health: 16
+    Damage: 8
+    Range: 6
+    Speed: 3.2
+  - Id: monk
+    Title: Monje
+    Health: 20
+    Damage: 5
+    Range: 1.8
+    Speed: 4

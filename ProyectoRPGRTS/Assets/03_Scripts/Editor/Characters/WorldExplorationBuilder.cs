@@ -151,10 +151,49 @@ namespace Aethernia.Editor.Characters
         }
         public static void Build()
         {
-            Directory.CreateDirectory("Builds/Ux02Windows");Directory.CreateDirectory("Logs/UX02");
-            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{ScenePath},locationPathName="Builds/Ux02Windows/Aethernia.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});
-            if(report.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)throw new InvalidOperationException("UX02 build failed");
-            File.WriteAllText("Logs/UX02/build.txt","PASS Unity "+Application.unityVersion+" bytes="+report.summary.totalSize+" seconds="+report.summary.totalTime.TotalSeconds);
+            BuildCandidate(ScenePath, "Ux02Windows", "UX02");
+        }
+        public const string TacticalScenePath = "Assets/01_Scenes/AetherniaE20Warfare.unity";
+        public static void AuthorTacticalGround()
+        {
+            const string assets = "Assets/18_E20";
+            const string navigation = assets + "/BorderPassNavigation.asset";
+            if (File.Exists(navigation)) throw new InvalidOperationException("El paso fronterizo ya está creado.");
+            var scene = EditorSceneManager.OpenScene(TacticalScenePath);
+            if (!AssetDatabase.IsValidFolder(assets)) AssetDatabase.CreateFolder("Assets", "18_E20");
+            var cover = new GameObject("E20 · Cortes del paso fronterizo").transform;
+            var wall = V.Load("Modules", "StoneWall_2m");
+            foreach (var z in new[] { -4.5f, -2.5f, 7.5f, 9.5f })
+            {
+                var instance = (GameObject)PrefabUtility.InstantiatePrefab(wall, cover);
+                instance.transform.SetPositionAndRotation(new Vector3(-31.5f, 0, z), Quaternion.Euler(0, 90, 0));
+                var block = instance.AddComponent<BoxCollider>();
+                block.center = new Vector3(0, .52f, 0);
+                block.size = new Vector3(2, 1.04f, .44f);
+                PrefabUtility.RecordPrefabInstancePropertyModifications(instance.transform);
+            }
+            var surface = GameObject.Find("Baked Navigation").GetComponent<NavMeshSurface>();
+            surface.RemoveData();
+            surface.navMeshData = null;
+            surface.BuildNavMesh();
+            if (surface.navMeshData == null) throw new InvalidOperationException("NavMesh del paso no generado.");
+            AssetDatabase.CreateAsset(surface.navMeshData, navigation);
+            PrefabUtility.RecordPrefabInstancePropertyModifications(surface);
+            EditorSceneManager.SaveScene(scene);
+            AssetDatabase.SaveAssets();
+            Debug.Log("E20: cobertura física y rutas de flanqueo creadas sobre recursos compartidos.");
+        }
+        public static void BuildTactical()
+        {
+            BuildCandidate(TacticalScenePath, "E20Windows", "E20");
+        }
+        private static void BuildCandidate(string scene, string output, string phase)
+        {
+            Directory.CreateDirectory("Builds/"+output);
+            Directory.CreateDirectory("Logs/"+phase);
+            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{scene},locationPathName="Builds/"+output+"/Aethernia.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});
+            if(report.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)throw new InvalidOperationException(phase+" build failed");
+            File.WriteAllText("Logs/"+phase+"/build.txt","PASS Unity "+Application.unityVersion+" bytes="+report.summary.totalSize+" seconds="+report.summary.totalTime.TotalSeconds);
         }
         public static void Refine()
         {

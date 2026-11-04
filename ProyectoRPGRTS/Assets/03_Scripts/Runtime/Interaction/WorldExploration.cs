@@ -103,6 +103,10 @@ namespace Aethernia
         }
         public bool TalkCaptain()
         {
+            if(Flow.Session.Rules.TacticalWarfare&&Flow.Session.State.Demo?.Chapter>=DemoChapter.FreeExploration)
+                return Show(Flow.Patrol,"Capitán de patrulla",
+                    "Defensa del paso fronterizo. Recluta en el cuartel y elige el despliegue en Ejército. Asegura el Paso del bosque y marcha al Puesto del Umbral. Allí podrás reconocer el terreno antes de ordenar la ofensiva.",
+                    "Practicar patrulla",()=>Flow.BeginPatrol(),"warrior");
             return Show(Flow.Patrol, "Capitán de patrulla", DemoFlow.CanVisitPatrol(Flow.Session)
                 ? "El puesto oriental tiene arqueros e infantería. Antes del ataque, selecciona y mueve nuestra patrulla. El enemigo sólo reaccionará cuando confirmes una orden de ataque."
                 : "Primero devuelve las provisiones al habitante. Puedes reconocer el sendero y las ruinas mientras tanto.",
