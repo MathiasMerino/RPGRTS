@@ -84,6 +84,7 @@ namespace Aethernia.Tests.Editor
             var encounter=director.Encounter;
             yield return UxExperienceRoute.Wait(.2f);
             Assert.That(hud.Visible&&hud.VisibleActors==2,Is.True);
+            Assert.That(flow.ExistingHud.transform.Find("Title Bar").gameObject.activeInHierarchy,Is.False);
             Assert.That(flow.ExistingHud.FindControl("attack").gameObject.activeInHierarchy,Is.False);
             Assert.That(Object.FindAnyObjectByType<CombatHudPanel>().Panel.activeInHierarchy,Is.False);
             Assert.That(Object.FindAnyObjectByType<ExpeditionPanel>().Controls["group-attack"].gameObject.activeInHierarchy,Is.False);
@@ -128,6 +129,13 @@ namespace Aethernia.Tests.Editor
             flow.Front.Controls["retry"].onClick.Invoke();
             Assert.That(flow.Session.Mode,Is.EqualTo(PrototypeMode.Exploration));
             Assert.That(flow.Session.State.Health,Is.GreaterThan(1));
+            flow.Session.State.Demo.Chapter=DemoChapter.Settlement;
+            flow.ExistingHud.FindControl("page-session").onClick.Invoke();
+            flow.ExistingHud.FindControl("mode-construct").onClick.Invoke();
+            yield return UxExperienceRoute.Wait(.2f);
+            Assert.That(flow.Session.Mode,Is.EqualTo(PrototypeMode.Construction));
+            Assert.That(flow.ExistingHud.FindControl("page-session").gameObject.activeInHierarchy,Is.False);
+            Assert.That(flow.ExistingHud.CompactView.Resources.transform.parent.gameObject.activeInHierarchy,Is.False);
         }
 
         private static void ValidateDialogue(LostCargoView view,Camera camera)

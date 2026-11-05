@@ -216,6 +216,7 @@ namespace Aethernia
                 if(session.Rules.CoreRefine)
                 {
                     if(session.Mode==PrototypeMode.TurnCombat&&id!="help")visible=false;
+                    if(!exploring&&id=="page-session")visible=false;
                     if(session.WorldUiOpen)visible=false;
                 }
                 if(session.Rules.UxExperience&&(id=="mode-combat"||id=="mode-rts"||id=="escalate"||id=="charge"))visible=false;

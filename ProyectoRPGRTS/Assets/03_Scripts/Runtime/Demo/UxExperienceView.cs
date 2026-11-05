@@ -87,11 +87,15 @@ namespace Aethernia
             var mode=session.Mode;var exploration=mode==PrototypeMode.Exploration;
             if(session.Rules.CoreRefine)guidanceToggle.gameObject.SetActive(visible&&exploration);
             // Existing renderers refresh these rectangles; this is the single opt-in final layout.
-            if(header!=null){Place(header,new Vector2(0,1),new Vector2(16,-12),new Vector2(1248,64));}
+            if(header!=null)
+            {
+                Place(header,new Vector2(0,1),new Vector2(16,-12),new Vector2(1248,64));
+                if(session.Rules.CoreRefine)header.gameObject.SetActive(mode!=PrototypeMode.TurnCombat);
+            }
             Place(hud.HeroName.rectTransform,new Vector2(0,1),new Vector2(0,-4),new Vector2(350,26));
             var track=(RectTransform)hud.HealthFill.transform.parent;Place(track,new Vector2(0,1),new Vector2(0,-36),new Vector2(184,10));
             Place(hud.HealthLabel.rectTransform,new Vector2(0,1),new Vector2(194,-28),new Vector2(112,26));
-            hud.Resources.transform.parent.gameObject.SetActive(mode==PrototypeMode.Construction||(exploration&&session.State.Demo!=null&&session.State.Demo.Chapter>=DemoChapter.Settlement));
+            hud.Resources.transform.parent.gameObject.SetActive((mode==PrototypeMode.Construction&&!session.Rules.CoreRefine)||(exploration&&session.State.Demo!=null&&session.State.Demo.Chapter>=DemoChapter.Settlement));
             if(dock!=null)Place(dock,new Vector2(0,0),new Vector2(16,10),new Vector2(1248,58));
             if(pages!=null)Place(pages,new Vector2(0,0),Vector2.zero,new Vector2(276,40));
             if(back!=null){Place(back,new Vector2(0,0),Vector2.zero,new Vector2(180,38));back.gameObject.SetActive(mode==PrototypeMode.Construction&&!session.Rules.CoreRefine);}

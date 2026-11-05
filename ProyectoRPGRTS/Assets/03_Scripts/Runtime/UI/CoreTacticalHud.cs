@@ -215,7 +215,8 @@ namespace Aethernia
                 for(var i=0;i<group.Members.Count;i++)
                 {
                     var actor=group.Members[i];
-                    Row(i,actor.Title,actor.Initiative,actor.Health,actor.Hostile,actor==group.Current,actor.Id==encounter.GroupTarget,actor.Id);
+                    var title=actor.Hostile?actor.Title.Replace(" del Umbral",""):actor.Title;
+                    Row(i,title,actor.Initiative,actor.Health,actor.Hostile,actor==group.Current,actor.Id==encounter.GroupTarget,actor.Id);
                 }
                 VisibleActors=group.Members.Count;
             }
