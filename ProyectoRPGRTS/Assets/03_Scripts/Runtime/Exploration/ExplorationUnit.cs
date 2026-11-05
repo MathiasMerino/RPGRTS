@@ -45,10 +45,10 @@ namespace Aethernia
             for (var i = 1; i < corners.Length; i++) LastPathLength += Vector3.Distance(corners[i - 1], corners[i]);
             return true;
         }
-        public bool TryStepTowards(Vector3 point, float maximumDistance, float stoppingDistance)
+        public bool TryStepTowards(Vector3 point, float maximumDistance, float stoppingDistance, bool animated = false)
         {
             if (!CalculatePath(point)) return false;
-            // Enemy turns remain instantaneous, but travel follows the baked path in metres.
+            // Both presentations use a destination along the baked path in metres.
             var remaining = Mathf.Min(maximumDistance, Mathf.Max(0, LastPathLength - stoppingDistance));
             if (remaining <= 0) return false;
             var corners = path.corners;
@@ -58,6 +58,7 @@ namespace Aethernia
                 if (remaining <= length)
                 {
                     var destination = Vector3.MoveTowards(corners[i - 1], corners[i], remaining);
+                    if(animated)return TryMoveTo(destination,maximumDistance);
                     Stop(); return Agent.Warp(destination);
                 }
                 remaining -= length;

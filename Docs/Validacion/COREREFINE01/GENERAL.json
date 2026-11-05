@@ -1,0 +1,22 @@
+{
+  "source": "b64b12a",
+  "revision": "R1",
+  "unity": "6000.5.8f1",
+  "results": {
+    "total": 243,
+    "passed": 242,
+    "failed": 0,
+    "skipped": 1,
+    "inconclusive": 0,
+    "result": "Skipped:Ignored"
+  },
+  "nonPassing": [
+    {
+      "name": "Aethernia.Tests.Editor.AlphaArtPipelineTests.LocalMeshyReviewCanRenderWithoutRuntimeBinding",
+      "result": "Skipped",
+      "message": "Experimental art absent; local review only."
+    }
+  ],
+  "baseline": "Se usaron los bytes de PhysicsBaseline.txt en HEAD para evitar el CRLF del checkout.",
+  "runner": "Invoke-UnityValidation -Mode Vertical devuelve estado no verde si el resultado global es Skipped:Ignored."
+}

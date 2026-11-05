@@ -42,6 +42,7 @@ namespace Aethernia
         {var b=ui.Button(parent,name,caption,x,y,width,38,()=>{Flow.Front.Audio?.Play(FeedbackSound.Select,Vector3.zero,true);action();});return b;}
         public void Open()
         {
+            if(Flow.Session.Rules.CoreRefine&&Flow.Session.WorldUiOpen)return;
             if(Flow.Session.State.Demo==null||Flow.Session.State.Demo.Chapter<DemoChapter.Settlement)return;
             Flow.ExistingHud.ClosePanels();Flow.Director.Execute("construct");
             if(!SettlementOperations.Has(Flow.Session.State,"townhall"))Flow.Director.Construction.SelectBlueprint("townhall");
@@ -62,8 +63,8 @@ namespace Aethernia
         private void LateUpdate()
         {
             if(panel==null)return;var state=Flow.Session.State;var available=Flow.IsPlaying&&state.Demo!=null&&state.Demo.Chapter>=DemoChapter.Settlement&&!Flow.Session.Paused;
-            var modal=Flow.Front.Presentation!=null&&(Flow.ExistingHud.CompactView.WindowOpen||Flow.ExistingHud.CompactView.HelpOpen);
-            manage.gameObject.SetActive(available&&!modal&&Flow.Session.Mode==PrototypeMode.Exploration);panel.gameObject.SetActive(available&&!modal&&Flow.Session.Mode==PrototypeMode.Construction);if(!panel.gameObject.activeSelf)return;
+            var modal=Flow.Session.Rules.CoreRefine&&Flow.Session.WorldUiOpen||Flow.Front.Presentation!=null&&(Flow.ExistingHud.CompactView.WindowOpen||Flow.ExistingHud.CompactView.HelpOpen);
+            manage.gameObject.SetActive(!Flow.Session.Rules.CoreRefine&&available&&!modal&&Flow.Session.Mode==PrototypeMode.Exploration);panel.gameObject.SetActive(available&&!modal&&Flow.Session.Mode==PrototypeMode.Construction);if(!panel.gameObject.activeSelf)return;
             if(lastCount!=state.Buildings.Count){lastCount=state.Buildings.Count;selected=lastCount-1;}
             resources.text="Oro "+state.Gold+" · Madera "+state.Wood+" · Alimento "+state.Food+" · Cap. "+SettlementOperations.Capacity(state,Rules)+" · Ejército "+state.Army.Count+"/6"+(Rules.Civilizations!=null?" · "+Rules.Civilizations.Culture(state.CultureId)?.Title:"");
             var b=Selected;selectedLabel.text=b==null?"Ningún edificio seleccionado.":Rules.Find(b.Id).Title+" · "+(Rules.Civilizations?.Culture(b.CultureId)?.Title??"común")+" · nivel "+b.Level+(b.ProductionPaused?" · producción pausada":" · activo");

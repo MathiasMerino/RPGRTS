@@ -75,9 +75,11 @@ namespace Aethernia
                 }
                 else{visual.transform.position=unit.transform.position;path=null;}
                 var delta=encounter.EnemyPosition-visual.transform.position;
-                if(!moving&&hero!=null)delta=hero.position-visual.transform.position;
+                var navigating=unit.IsMoving;
+                if(!moving&&navigating)delta=unit.Agent.desiredVelocity;
+                else if(!moving&&hero!=null)delta=hero.position-visual.transform.position;
                 delta.y=0;if(delta.sqrMagnitude>.001f)visual.transform.rotation=Quaternion.LookRotation(delta);
-                animator.SetInteger("Locomotion",moving?1:0);if(profile.UseGaitRate)animator.SetFloat("GaitRate",1);
+                animator.SetInteger("Locomotion",moving||navigating?1:0);if(profile.UseGaitRate)animator.SetFloat("GaitRate",1);
                 if(ring!=null)ring.enabled=encounter.TargetSelected;
             }
             else{if(inactiveSince<=0)inactiveSince=Time.time;if(Time.time-inactiveSince>3.2f)Clear();}

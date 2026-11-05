@@ -1,0 +1,100 @@
+[
+  {
+    "total": 3,
+    "passed": 2,
+    "failed": 1,
+    "skipped": 0,
+    "name": "Directed-First",
+    "result": "Failed(Child)",
+    "detail": "Detectó recorte en el botón Técnica y la captura mostró el texto de Mara desplazado."
+  },
+  {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0,
+    "name": "Directed-Core",
+    "result": "Passed",
+    "detail": "Corrigió el texto del botón y la alineación del diálogo. Verificación inicial a tres resoluciones."
+  },
+  {
+    "total": 6,
+    "passed": 5,
+    "failed": 1,
+    "skipped": 0,
+    "name": "Directed-Defeat-First",
+    "result": "Failed(Child)",
+    "detail": "El ensayo esperaba la retirada genérica. El flujo real mostró su pantalla de reintento."
+  },
+  {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "name": "Directed-Combined",
+    "result": "Passed",
+    "detail": "Última pasada de UI, duelo, presupuesto, derrota/reintento, firmas de escena y capturas de arte.",
+    "cases": [
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreRefineTests.FlankingRequiresOppositeNearbySameLevelPositions",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreRefineTests.OpeningEnemyTurnAndBudgetRespectInitiative",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreRefineTests.RealDialogueAndCargoUseOneContextualHud",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreVillageArtTests.ArtBaselineFromSameCamera",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreVillageArtTests.CoreEntranceFromSameCamera",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreVillageArtTests.CoreKeepsNavigationPhysicsAndOneBootstrap",
+        "result": "Passed"
+      }
+    ]
+  },
+  {
+    "name": "Directed-R2",
+    "source": "f805fcc",
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "result": "Passed",
+    "detail": "Versión final con cabecera RPG única y recursos de construcción en su propio panel.",
+    "cases": [
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreRefineTests.FlankingRequiresOppositeNearbySameLevelPositions",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreRefineTests.OpeningEnemyTurnAndBudgetRespectInitiative",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreRefineTests.RealDialogueAndCargoUseOneContextualHud",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreVillageArtTests.ArtBaselineFromSameCamera",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreVillageArtTests.CoreEntranceFromSameCamera",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreVillageArtTests.CoreKeepsNavigationPhysicsAndOneBootstrap",
+        "result": "Passed"
+      }
+    ]
+  }
+]

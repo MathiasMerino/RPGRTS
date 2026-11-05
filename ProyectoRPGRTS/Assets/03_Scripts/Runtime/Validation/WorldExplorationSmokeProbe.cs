@@ -26,7 +26,7 @@ namespace Aethernia
                 catch(Exception e){File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"FAIL: "+e);Debug.LogError(e);GetComponent<DemoRecordingProbe>()?.Finish();Application.Quit(2);yield break;}yield return step;
             }
             GetComponent<DemoRecordingProbe>()?.Finish();
-            var phase=flow.Session.Rules.IntegratedAlpha?"E23":flow.Session.Rules.LivingWorld?"E22":flow.Session.Rules.FrontierCampaign?"E21":stabilization?"E20.1":tactical>=0?"E20":"UX02";
+            var phase=flow.Session.Rules.CoreRefine?"CORE-REFINE-01":flow.Session.Rules.IntegratedAlpha?"E23":flow.Session.Rules.LivingWorld?"E22":flow.Session.Rules.FrontierCampaign?"E21":stabilization?"E20.1":tactical>=0?"E20":"UX02";
             var coverage=flow.Session.Rules.LivingWorld?"capítulo "+cls+", contratos, comercio, guardia opcional, asentamiento y guardado":
                 "menu/creation/intro/safe exploration/WASD/E resident/quest/story RPG/unique reward/real walk to military camp/single and multi selection/two actual formation arrivals/explicit attack/real victory/paid construction/production/recruitment/save/title";
             File.WriteAllText(slot+(resume?".resume.txt":".start.txt"),"PASS: "+phase+" "+race+"/"+cls+" "+

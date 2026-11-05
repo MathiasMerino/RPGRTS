@@ -2,6 +2,8 @@
 
 ## Para jugar y evaluar ahora
 
+- [Candidata CORE-REFINE-01](ENTREGA_CORE_REFINE_01.md), [guía](GUIA_CORE_REFINE_01.md) y [capturas](Images/COREREFINE01).
+
 - [Entrega de arte ambiental ART-ENV-01](ENTREGA_ART_ENV_01.md), [guía](GUIA_ART_ENV_01.md) y [comparativas](Images/ARTENV01).
 
 - [Entrega de la alfa E23](ENTREGA_E23.md), [guía](GUIA_E23.md), [notas](NOTAS_E23.md) y [plan de integración](INTEGRACION_E23.md).

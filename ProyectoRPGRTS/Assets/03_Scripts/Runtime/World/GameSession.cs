@@ -50,7 +50,17 @@ namespace Aethernia
         public Func<string, string, bool?> AdditionalInteraction;
         public PrototypeMode Mode { get; private set; }
         public bool Paused { get; set; }
-        public bool WorldUiOpen { get; set; }
+        private bool worldUiOpen;
+        public bool WorldUiOpen
+        {
+            get=>worldUiOpen;
+            set
+            {
+                if(worldUiOpen==value)return;
+                worldUiOpen=value;
+                if(rules!=null&&rules.CoreRefine)Changed?.Invoke();
+            }
+        }
         public string ModeTitle => Mode == PrototypeMode.Exploration ? "Exploración" : Mode == PrototypeMode.TurnCombat ? "Combate por turnos" : Mode == PrototypeMode.Construction ? "Construcción" : Mode==PrototypeMode.Rts?"Guerra RTS":Mode==PrototypeMode.MainMenu?"Menú principal":Mode==PrototypeMode.CharacterCreation?"Crear personaje":"Prólogo";
         public string LastMessage { get; private set; } = "Selecciona el personaje. Clic derecho: caminar. WASD: cámara. Rueda: zoom.";
         private void Awake()

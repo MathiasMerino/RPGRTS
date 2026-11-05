@@ -50,10 +50,25 @@ namespace Aethernia
             Require(session.Mode==PrototypeMode.TurnCombat&&cargo.CargoEncounter,"quest triggers real RPG");
             Require(d.Encounter.TrySelect(d.Encounter.Enemy.GetComponentInChildren<Collider>()),"actual target selection");if(!session.Rules.FrontierCampaign||cls!="mage")d.Encounter.Approach();yield return Arrive(hero);yield return capture("11-FirstRpg");
             var withdrawals=0;
+            var duelDeadline=Time.realtimeSinceStartup+110;
             for(var turn=0;turn<35&&cargo.CargoEncounter;turn++)
             {
                 var battle=d.Encounter.Battle;Require(battle!=null,"RPG state");
-                if(battle.Phase==TurnPhase.Enemy){yield return Wait(.2f);turn--;continue;}
+                if(battle.Phase==TurnPhase.Enemy)
+                {
+                    if(session.Rules.CoreRefine)Require(Time.realtimeSinceStartup<duelDeadline,"CORE enemy turn settles");
+                    yield return Wait(.2f);turn--;continue;
+                }
+                if(session.Rules.CoreRefine)
+                {
+                    var tactical=flow.GetComponent<CoreTacticalHud>();
+                    Require(tactical.Visible&&tactical.VisibleActors==2&&!flow.ExistingHud.FindControl("attack").gameObject.activeInHierarchy,"CORE solo uses one combat HUD");
+                    if(cls!="mage"&&d.Encounter.CoreTargetStatus(false)!=null)
+                    {
+                        d.Encounter.Approach();
+                        yield return Arrive(hero);
+                    }
+                }
                 if(battle.HeroHealth<8&&!battle.RecoveryUsed)d.Encounter.Recover();else d.Encounter.Attack();
                 if(turn==0)yield return capture("12-CompactRpg");
                 if(session.Rules.LivingWorld&&cls=="mage"&&cargo.CargoEncounter&&battle.MovementRemaining>.5f)
@@ -85,6 +100,8 @@ namespace Aethernia
             var units=new List<RtsUnitStatus>();war.CopyStatus(units);Require(units.All(u=>u.Team==0),"hostiles not revealed before orders");var ally=units.First(u=>!u.Hero).Unit;
             Require(war.SelectUnit(ally.GetComponentInChildren<Collider>(),false),"single selection");yield return Wait(.3f);Require(war.PreparationStep==1,"single selection tutorial checkpoint");yield return capture("16-Selection");
             war.SelectAll();Require(war.SelectedAllies==units.Count,"multiple selection");var target=war.PreparationTarget;Require(war.Command(target,null,false),"first move order");yield return Wait(.4f);yield return capture("17-Move");
+            if(session.Rules.CoreRefine)
+                Require(!flow.GetComponent<CoreTacticalHud>().Visible&&flow.ExistingHud.FindControl("select-all").gameObject.activeInHierarchy,"CORE RTS keeps separate controls");
             var deadline=Time.realtimeSinceStartup+35;while(war.PreparationStep<2&&Time.realtimeSinceStartup<deadline)yield return null;Require(war.PreparationStep==2,"actual first waypoint arrival");
             Require(session.State.Health==hp&&war.Preparing,"no damage while preparing");
             Require(d.Save(slot),"preparation checkpoint saved");Require(PrototypeSaveStore.Load(slot,session.Rules,out var checkpoint)&&checkpoint.Demo.UxFormation.Length==units.Count,"actual troop positions persisted");
@@ -116,6 +133,14 @@ namespace Aethernia
             }
             File.WriteAllText(slot+".rts-attempts.details",string.Join("\n",attempts));
             Require(war.LastResolvedVictory==true&&session.State.Demo.Chapter==DemoChapter.Settlement,"real RTS victory; active="+war.Active+" outcome="+war.LastResolvedVictory+" hp="+session.State.Health+" allies="+war.Allies+" enemies="+war.Enemies);Require(hero.GetComponent<CharacterVisualPresenter>().Model==model,"same hero model across modes");yield return capture("20-Victory");
+            if(session.Rules.CoreRefine)
+            {
+                flow.ExistingHud.FindControl("page-session").onClick.Invoke();
+                var construct=flow.ExistingHud.FindControl("mode-construct");
+                Require(construct.gameObject.activeInHierarchy&&construct.interactable,"CORE Construir is available in Menú");
+                construct.onClick.Invoke();
+                Require(session.Mode==PrototypeMode.Construction,"CORE construction via actual menu");
+            }
             var camp=flow.GetComponent<DemoSettlementPanel>();Require(camp.SelectBlueprint("townhall")&&d.Construction.Place(new Vector3(12,0,-8)),"paid camp center");
             Require(camp.SelectBlueprint("workshop")&&d.Construction.Place(new Vector3(8,0,-13)),"paid workshop");yield return null;Require(camp.SelectBuilding(1)&&camp.ToggleProduction(),"real workshop production");yield return capture("21-Building");
             deadline=Time.realtimeSinceStartup+16;while(session.State.Demo.Chapter!=DemoChapter.FreeExploration&&Time.realtimeSinceStartup<deadline)yield return null;Require(session.State.Demo.Produced>0,"actual production");

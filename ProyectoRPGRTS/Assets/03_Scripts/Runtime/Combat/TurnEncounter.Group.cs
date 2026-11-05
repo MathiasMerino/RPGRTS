@@ -21,6 +21,7 @@ namespace Aethernia
         public GroupTurnSequence Group=>groupBattle?.Group;
         public string GroupTarget=>groupTarget;
         public event Action<bool> GroupResolved;
+        public event Action<CombatFeedback> GroupActionResolved;
         public void ConfigureGroup(PartyWorld party,CombatFeedbackPresenter feedback){partyWorld=party;groupFeedback=feedback;}
         private void ClearGroup()
         {
@@ -54,7 +55,7 @@ namespace Aethernia
                 unit.Agent.speed=role.Speed;SupportVisualFactory.Attach(unit,role,partyWorld.Flow.Front.Catalog,groupFeedback.SharedEffectMaterial);groupEnemies.Add(unit);var id="enemy-"+i;groupUnits.Add(id,unit);
                 members.Add(new TacticalCombatant{Id=id,Title=unit.name,Hostile=true,Profile=enemyProfile,ReadHealth=()=>record.Health,WriteHealth=value=>record.Health=value});
             }
-            groupTarget="enemy-0";groupReported=false;groupBattle=TurnBattle.CreateGroup(members,seed==0?Environment.TickCount:seed);hero.GetComponent<CharacterCombatAnimationPresenter>().ExternallyControlled=true;
+            groupTarget=session.Rules.CoreRefine?null:"enemy-0";groupReported=false;groupBattle=TurnBattle.CreateGroup(members,seed==0?Environment.TickCount:seed);hero.GetComponent<CharacterCombatAnimationPresenter>().ExternallyControlled=true;
             session.SetMode(PrototypeMode.TurnCombat);GroupRefresh();return true;
         }
         private bool GroupReady()=>GroupActive&&!Group.Current.Hostile&&!session.Paused&&!GroupUnit(Group.Current.Id).IsMoving;
@@ -65,7 +66,7 @@ namespace Aethernia
         {
             if(!GroupReady())return false;var source=GroupUnit(Group.Current.Id);var target=Group.Members.FirstOrDefault(x=>x.Id==groupTarget&&x.Health>0);
             if(target==null)return false;var victim=GroupUnit(target.Id);
-            if(!Group.Attack(target,Vector3.Distance(source.transform.position,victim.transform.position),HasClearAttackLine(source,victim)))return false;
+            if(!Group.Attack(target,Vector3.Distance(source.transform.position,victim.transform.position),HasClearAttackLine(source,victim),FlankBonus(Group.Current,target)))return false;
             GroupPresent(Group.Current,target);GroupRefresh();return true;
         }
         public bool GroupGuard(){if(!GroupReady()||!Group.Guard())return false;GroupPresent(Group.Current,Group.Current);GroupRefresh();return true;}
@@ -73,7 +74,7 @@ namespace Aethernia
         public bool GroupMove(Vector3 at)
         {
             if(!GroupReady()||Group.MovementRemaining<.05f)return false;
-            var u=GroupUnit(Group.Current.Id);if(!u.TryMoveTo(at,Group.MovementRemaining))return false;
+            var u=GroupUnit(Group.Current.Id);if(!u.TryMoveTo(at,Group.MovementRemaining)){if(session.Rules.CoreRefine)session.Say("Destino inaccesible o fuera del movimiento disponible.");return false;}
             if(!Group.Move(u.LastPathLength)){u.Stop();return false;}
             groupMovement=StartCoroutine(WatchGroupMovement(u));return true;
         }
@@ -106,7 +107,9 @@ namespace Aethernia
             var a=GroupUnit(source.Id);var b=GroupUnit(target.Id);var driver=a.GetComponentInChildren<HumanoidAnimationDriver>();var victim=b.GetComponentInChildren<HumanoidAnimationDriver>();var result=Group.LastResolution;
             if(result.Kind==CombatActionKind.Attack){driver?.TryPlay(CharacterMotion.Attack);if(result.Hit)victim?.TryPlay(target.Health<=0?CharacterMotion.Defeat:CharacterMotion.Hit);}
             if(result.Kind==CombatActionKind.Guard)driver?.SetGuarding(true);
-            groupFeedback.PresentRealtime(new CombatFeedback(-20,result,source.Profile.Id,a.transform.position,b.transform.position));
+            var feedback=new CombatFeedback(-20,result,source.Profile.Id,a.transform.position,b.transform.position);
+            groupFeedback.PresentRealtime(feedback);
+            if(session.Rules.CoreRefine)GroupActionResolved?.Invoke(feedback);
         }
         private void GroupRefresh()
         {
@@ -122,20 +125,29 @@ namespace Aethernia
             session.Say("Ronda "+Group.Round+" · turno de "+Group.Current.Title);
             if(Group.Current.Hostile&&groupRoutine==null)groupRoutine=StartCoroutine(GroupEnemyTurn());
         }
+        private static bool CanAttackFrom(ExplorationUnit source,ExplorationUnit target,float range)
+        {
+            return Vector3.Distance(source.transform.position,target.transform.position)<=range&&HasClearAttackLine(source,target);
+        }
+
         private IEnumerator GroupEnemyTurn()
         {
             yield return new WaitForSeconds(.55f);
             if(!GroupActive){groupRoutine=null;yield break;}
             var source=Group.Current;var u=GroupUnit(source.Id);
             if(Group.TryEnemyRecovery(session.Rules.Progression!=null)){GroupPresent(source,source);yield return new WaitForSeconds(.45f);groupRoutine=null;if(GroupActive)Group.EndTurn();GroupRefresh();yield break;}
-            var target=Group.Members.Where(a=>a.Hostile!=source.Hostile&&a.Health>0).OrderBy(a=>Vector3.Distance(u.transform.position,GroupUnit(a.Id).transform.position)).First();var v=GroupUnit(target.Id);
+            var targets=Group.Members.Where(a=>a.Hostile!=source.Hostile&&a.Health>0)
+                .OrderBy(a=>Vector3.Distance(u.transform.position,GroupUnit(a.Id).transform.position));
+            var target=session.Rules.CoreRefine?targets.FirstOrDefault(a=>CanAttackFrom(u,GroupUnit(a.Id),source.Profile.Range)):null;
+            target??=targets.First();
+            var v=GroupUnit(target.Id);
             if(Vector3.Distance(u.transform.position,v.transform.position)>source.Profile.Range||!HasClearAttackLine(u,v))
             {
                 var delta=v.transform.position-u.transform.position;delta.y=0;
                 var desired=u.transform.position+delta.normalized*Mathf.Min(2.8f,Mathf.Max(0,delta.magnitude-source.Profile.Range*.8f));
                 if(u.TryMoveTo(desired,3)){var until=Time.time+4;while(u.IsMoving&&Time.time<until)yield return null;u.Stop();}
             }
-            if(Group.Attack(target,Vector3.Distance(u.transform.position,v.transform.position),HasClearAttackLine(u,v)))GroupPresent(source,target);
+            if(Group.Attack(target,Vector3.Distance(u.transform.position,v.transform.position),HasClearAttackLine(u,v),FlankBonus(source,target)))GroupPresent(source,target);
             else if(session.Rules.Progression!=null&&Group.Guard())GroupPresent(source,source);
             yield return new WaitForSeconds(.45f);groupRoutine=null;
             if(GroupActive)Group.EndTurn();GroupRefresh();

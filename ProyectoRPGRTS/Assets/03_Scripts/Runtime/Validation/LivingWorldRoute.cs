@@ -87,7 +87,12 @@ namespace Aethernia
             var group = flow.Director.Encounter.Group;
             Check(group != null && group.Members.Count(m => !m.Hostile) == companions + 1 &&
                 group.Members.Count(m => m.Hostile) == 1, "centinela y participantes reales");
-            if(game.Rules.IntegratedAlpha)
+            if(game.Rules.CoreRefine)
+            {
+                var hud=flow.GetComponent<CoreTacticalHud>();
+                Check(hud.Visible&&hud.VisibleActors==companions+2,"una barra con el grupo y el único centinela");
+            }
+            else if(game.Rules.IntegratedAlpha)
             {
                 var controls=UnityEngine.Object.FindAnyObjectByType<ExpeditionPanel>().Controls;
                 Check(!controls["target-1"].gameObject.activeSelf&&controls["target-0"].GetComponentInChildren<TMPro.TMP_Text>().text=="Centinela",

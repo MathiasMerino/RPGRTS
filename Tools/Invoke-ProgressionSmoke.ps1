@@ -1,19 +1,19 @@
-param([ValidateSet('E18','E19','UX01','UX02','E20','E201','E21','E22','E23')][string]$Phase='E18',[string[]]$Races=@(),[switch]$WithGraphics,[switch]$Record,[ValidateSet('warrior','monk','mage')][string[]]$Classes=@('warrior','monk','mage'),[string]$Executable='')
+param([ValidateSet('E18','E19','UX01','UX02','E20','E201','E21','E22','E23','COREREFINE01')][string]$Phase='E18',[string[]]$Races=@(),[switch]$WithGraphics,[switch]$Record,[ValidateSet('warrior','monk','mage')][string[]]$Classes=@('warrior','monk','mage'),[string]$Executable='')
 $ErrorActionPreference='Stop'
 $taskRoot=Split-Path -Parent $PSScriptRoot
 $taskProject=Join-Path $taskRoot 'ProyectoRPGRTS'
-$taskBuild=if($Phase -eq 'E23'){'Builds/E23Windows/Aethernia.exe'}elseif($Phase -eq 'E22'){'Builds/E22Windows/Aethernia.exe'}elseif($Phase -eq 'E21'){'Builds/E21Windows/Aethernia.exe'}elseif($Phase -eq 'E201'){'Builds/E201Windows/Aethernia.exe'}elseif($Phase -eq 'E20'){'Builds/E20Windows/Aethernia.exe'}elseif($Phase -eq 'UX02'){'Builds/Ux02Windows/Aethernia.exe'}elseif($Phase -eq 'UX01'){'Builds/Ux01Windows/Aethernia.exe'}elseif($Phase -eq 'E19'){'Builds/CivilizationsE19Windows/Aethernia.exe'}else{'Builds/ProgressionE18Windows/Aethernia.exe'}
-$taskFlag=if($Phase -in @('E20','E201','E21','E22','E23')){'-aetherniaE20Smoke'}elseif($Phase -eq 'UX02'){'-aetherniaUx02Smoke'}elseif($Phase -eq 'UX01'){'-aetherniaUx01Smoke'}elseif($Phase -eq 'E19'){'-aetherniaCivilizationSmoke'}else{'-aetherniaProgressionSmoke'}
-if($Phase -in @('E19','UX01','UX02','E20','E201','E21','E22','E23') -and $Races.Count -ne $Classes.Count){throw 'La fase requiere una raza por clase, en el mismo orden.'}
+$taskBuild=if($Phase -eq 'COREREFINE01'){'Builds/CoreRefine01Windows/Aethernia.exe'}elseif($Phase -eq 'E23'){'Builds/E23Windows/Aethernia.exe'}elseif($Phase -eq 'E22'){'Builds/E22Windows/Aethernia.exe'}elseif($Phase -eq 'E21'){'Builds/E21Windows/Aethernia.exe'}elseif($Phase -eq 'E201'){'Builds/E201Windows/Aethernia.exe'}elseif($Phase -eq 'E20'){'Builds/E20Windows/Aethernia.exe'}elseif($Phase -eq 'UX02'){'Builds/Ux02Windows/Aethernia.exe'}elseif($Phase -eq 'UX01'){'Builds/Ux01Windows/Aethernia.exe'}elseif($Phase -eq 'E19'){'Builds/CivilizationsE19Windows/Aethernia.exe'}else{'Builds/ProgressionE18Windows/Aethernia.exe'}
+$taskFlag=if($Phase -in @('E20','E201','E21','E22','E23','COREREFINE01')){'-aetherniaE20Smoke'}elseif($Phase -eq 'UX02'){'-aetherniaUx02Smoke'}elseif($Phase -eq 'UX01'){'-aetherniaUx01Smoke'}elseif($Phase -eq 'E19'){'-aetherniaCivilizationSmoke'}else{'-aetherniaProgressionSmoke'}
+if($Phase -in @('E19','UX01','UX02','E20','E201','E21','E22','E23','COREREFINE01') -and $Races.Count -ne $Classes.Count){throw 'La fase requiere una raza por clase, en el mismo orden.'}
 $taskExe=Join-Path $taskProject $taskBuild
 if($Executable){$taskExe=[IO.Path]::GetFullPath($Executable)}
 if(-not(Test-Path -LiteralPath $taskExe)){throw "Falta la build de $Phase en $taskExe."}
 $taskLabel=if($WithGraphics){'GPU'}else{'Headless'}
-$taskRun=Join-Path $taskProject ('Logs/'+$(if($Phase -eq 'E23'){'E23QA'}elseif($Phase -eq 'E22'){'E22QA'}elseif($Phase -eq 'E21'){'E21QA'}elseif($Phase -eq 'E201'){'E201QA'}elseif($Phase -eq 'E20'){'E20QA'}elseif($Phase -eq 'UX02'){'Ux02QA'}elseif($Phase -eq 'UX01'){'Ux01QA'}elseif($Phase -eq 'E19'){'CivilizationQA'}else{'ProgressionQA'})+'/'+$taskLabel+'-'+[DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss'))
+$taskRun=Join-Path $taskProject ('Logs/'+$(if($Phase -eq 'COREREFINE01'){'CoreRefine01QA'}elseif($Phase -eq 'E23'){'E23QA'}elseif($Phase -eq 'E22'){'E22QA'}elseif($Phase -eq 'E21'){'E21QA'}elseif($Phase -eq 'E201'){'E201QA'}elseif($Phase -eq 'E20'){'E20QA'}elseif($Phase -eq 'UX02'){'Ux02QA'}elseif($Phase -eq 'UX01'){'Ux01QA'}elseif($Phase -eq 'E19'){'CivilizationQA'}else{'ProgressionQA'})+'/'+$taskLabel+'-'+[DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss'))
 New-Item -ItemType Directory -Path $taskRun -Force | Out-Null
 for($taskIndex=0;$taskIndex -lt $Classes.Count;$taskIndex++){
     $taskClass=$Classes[$taskIndex]
-    $taskRace=if($Phase -in @('E19','UX01','UX02','E20','E201','E21','E22','E23')){$Races[$taskIndex]}else{''}
+    $taskRace=if($Phase -in @('E19','UX01','UX02','E20','E201','E21','E22','E23','COREREFINE01')){$Races[$taskIndex]}else{''}
     $taskName=if($taskRace){$taskRace+'-'+$taskClass}else{$taskClass}
     $taskSlot=Join-Path $taskRun ($taskName+'.json')
     foreach($taskResume in @($false,$true)){
@@ -21,8 +21,8 @@ for($taskIndex=0;$taskIndex -lt $Classes.Count;$taskIndex++){
         $taskReceipt=$taskSlot+'.'+$taskSuffix+'.txt'
         $taskLog=Join-Path $taskRun ($taskName+'-'+$taskSuffix+'.log')
         $taskArgs=@('-batchmode',$taskFlag,('"'+$taskSlot+'"'),'-demoClass',$taskClass,'-screen-width','1280','-screen-height','720','-logFile',('"'+$taskLog+'"'))
-        if($Phase -in @('E19','UX01','UX02','E20','E201','E21','E22','E23')){$taskArgs+=@('-demoRace',$taskRace,'-demoCulture','stonehall')}
-        if($Phase -in @('E201','E21','E22','E23')){$taskArgs+='-demoStabilization'}
+        if($Phase -in @('E19','UX01','UX02','E20','E201','E21','E22','E23','COREREFINE01')){$taskArgs+=@('-demoRace',$taskRace,'-demoCulture','stonehall')}
+        if($Phase -in @('E201','E21','E22','E23','COREREFINE01')){$taskArgs+='-demoStabilization'}
         if(-not $WithGraphics){$taskArgs+='-nographics'}
         if($taskResume){$taskArgs+='-demoResume'}
         if($Record -and $WithGraphics -and -not $taskResume -and $taskClass -eq $Classes[0]){$taskArgs+='-demoRecord'}

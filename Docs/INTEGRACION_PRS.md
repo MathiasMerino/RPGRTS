@@ -53,3 +53,7 @@ Consulta de GitHub previa al desarrollo. Los quince PR estaban abiertos en borra
 Revisar hacia `dev` en orden #1 → #2 → #3 → #4 → #5 → #6 → #7 → #8 → #9 → #10 → #11 → #12 → #13 → #14 → #15 → E22. Después de cada integración aprobada, comprobar historia y diff efectivo del siguiente. Las escenas y GUID compartidos pueden causar conflictos de Unity, y aplanar commits puede volver a incluir cambios de antecedentes. Revisar tamaño, licencias, rutas privadas y build al avanzar por la pila.
 
 Antes de aprobar E22, revisar regresión de escenas anteriores, arranque Windows, guardados de E21, cobro único, inventario y fondos de comercio, los tres cierres, la patrulla histórica y la técnica RTS. La evaluación humana sigue siendo necesaria para interfaz, ritmo y balance.
+
+## CORE-REFINE-01 · Dependencias
+
+El [PR #19](https://github.com/MathiasMerino/RPGRTS/pull/19) es un borrador de `feature/core-refine-01-rpg-rts-ux` sobre `feature/art-env-01-world-polish`, cabeza `3d21012` del [PR #18](https://github.com/MathiasMerino/RPGRTS/pull/18). La revisión continúa por los antecedentes de E22 #16 y E23 #17, luego ART-ENV-01 #18 y CORE-REFINE-01 #19. La base protegida de cada integración se verifica después de aprobar el antecedente.

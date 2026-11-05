@@ -19,6 +19,7 @@ namespace Aethernia
         private bool recovered;
         private int sequence;
         private bool enemyActionAvailable;
+        private bool enemyFirst;
         public TurnPhase Phase { get; private set; } = TurnPhase.Player;
         public int Round { get; private set; } = 1;
         public CombatResolution LastHeroResolution { get; private set; }
@@ -47,10 +48,11 @@ namespace Aethernia
         {
             if (Phase != TurnPhase.Player || Finished || !ActionAvailable || distance > profile.Range || distance < 0 || float.IsNaN(distance) || float.IsInfinity(distance)) { Message = "Sin acción o fuera de alcance."; return false; }
             var roll = random.Next(1, 21);
-            var hit = roll + HeroActionRules.Accuracy(profile) >= 12;
+            var modifier=HeroActionRules.Accuracy(profile);
+            var hit = roll + modifier >= 12;
             var before = EnemyHealth;
             if (hit) EnemyHealth = Math.Max(0, EnemyHealth - HeroActionRules.AttackDamage(profile,weaponBonus));
-            LastHeroResolution = new CombatResolution(++sequence, CombatSide.Player, CombatActionKind.Attack, roll, hit, before-EnemyHealth, 0, before, EnemyHealth);
+            LastHeroResolution = new CombatResolution(++sequence, CombatSide.Player, CombatActionKind.Attack, roll, hit, before-EnemyHealth, 0, before, EnemyHealth,modifier:modifier,defense:12);
             if (Finished) Phase = TurnPhase.Finished;
             ActionAvailable = false;
             Message = "d20=" + roll + (hit ? "; impacto. Enemigo: " + EnemyHealth : "; fallo.");
@@ -73,9 +75,15 @@ namespace Aethernia
         }
         public bool Move(float distance)
         { if (Phase != TurnPhase.Player || Finished || float.IsNaN(distance) || float.IsInfinity(distance) || distance < 0 || distance > MovementRemaining + 0.01f) return false; MovementRemaining -= distance; LastHeroResolution = new CombatResolution(++sequence, CombatSide.Player, CombatActionKind.Move); return true; }
+        public bool BeginOpeningEnemyTurn()
+        {
+            if(Finished||Phase!=TurnPhase.Player||Round!=1||sequence!=0||EnemyInitiative<=HeroInitiative)return false;
+            enemyFirst=true;Phase=TurnPhase.Enemy;enemyActionAvailable=true;Message="El rival gana la iniciativa.";return true;
+        }
         public bool BeginEnemyTurn()
         {
             if (Phase != TurnPhase.Player || Finished) return false;
+            if(enemyFirst)Round++;
             Phase = TurnPhase.Enemy; enemyActionAvailable = true; Message = "Turno del enemigo."; return true;
         }
         public bool ResolveEnemyAction(bool inReach)
@@ -86,16 +94,17 @@ namespace Aethernia
         private void ResolveEnemyAttack(bool inReach)
         {
             var before = HeroHealth; var roll = inReach ? random.Next(1, 21) : 0;
-            var hit = inReach && roll + 2 >= HeroActionRules.Defense(profile) + armourBonus;
+            var defense=HeroActionRules.Defense(profile)+armourBonus;
+            var hit = inReach && roll + 2 >= defense;
             if (hit) HeroHealth = Math.Max(0, HeroHealth - HeroActionRules.GuardedDamage(3,guarding,HeroActionRules.GuardReduction(profile)));
             LastEnemyResolution = new CombatResolution(++sequence, CombatSide.Enemy,
-                inReach ? CombatActionKind.Attack : CombatActionKind.Wait, roll, hit, before-HeroHealth, 0, before, HeroHealth, guarding && hit);
+                inReach ? CombatActionKind.Attack : CombatActionKind.Wait, roll, hit, before-HeroHealth, 0, before, HeroHealth, guarding && hit,modifier:2,defense:defense);
         }
         public bool FinishEnemyTurn()
         {
             if (Phase != TurnPhase.Enemy || enemyActionAvailable) return false;
             guarding = false; ActionAvailable = true; MovementRemaining = 4;
-            Phase = Finished ? TurnPhase.Finished : TurnPhase.Player; Round++;
+            Phase = Finished ? TurnPhase.Finished : TurnPhase.Player; if(!enemyFirst)Round++;
             Message = Finished ? "Has sido derrotado. Reinicia el encuentro para probar de nuevo." : "Tu turno. Salud: " + HeroHealth;
             return true;
         }

@@ -254,6 +254,11 @@ namespace Aethernia.Editor.Characters
         {
             BuildCandidate(IntegratedAlphaScenePath, "E23Windows", "E23");
         }
+        public const string CoreRefineScenePath = Aethernia.Editor.Environment.CoreVillageArt.ScenePath;
+        public static void BuildCoreRefine()
+        {
+            BuildCandidate(CoreRefineScenePath, "CoreRefine01Windows", "COREREFINE01");
+        }
         private static void BuildCandidate(string scene, string output, string phase)
         {
             Directory.CreateDirectory("Builds/"+output);

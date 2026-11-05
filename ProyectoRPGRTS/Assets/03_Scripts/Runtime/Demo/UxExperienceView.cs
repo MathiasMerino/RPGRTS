@@ -14,7 +14,7 @@ namespace Aethernia
         private TMP_Text objective,prompt,marker,notice;
         private string lastNotice;private float noticeUntil;
         private RectTransform noticeRect,pages,back;
-        private Button interaction;
+        private Button interaction,guidanceToggle;
         private RectTransform objectives,prompts,markerRect;
         private RectTransform header,dock;
         private MedievalHudView hud;
@@ -48,8 +48,9 @@ namespace Aethernia
             notice=ui.Text(noticeRect,"Notice","",0,0,740,34,17);notice.alignment=TextAlignmentOptions.Center;
             markerRect=DemoWidgets.Rect(canvas,"UX Objective marker",0,0,100,44);markerRect.anchorMin=markerRect.anchorMax=new Vector2(.5f,.5f);markerRect.pivot=new Vector2(.5f,.5f);
             marker=ui.Text(markerRect,"Destination","◆",0,0,100,44,21);marker.alignment=TextAlignmentOptions.Center;marker.color=ui.Gold;
-            var toggle=ui.Button(canvas,"UX Toggle guidance","Guía",0,0,76,32,()=>guidance=!guidance);
-            var tr=(RectTransform)toggle.transform;tr.anchorMin=tr.anchorMax=tr.pivot=new Vector2(1,1);tr.anchoredPosition=new Vector2(-236,-20);
+            if(Flow.Session.Rules.CoreRefine)Flow.gameObject.AddComponent<CoreTacticalHud>().Configure(Flow,ui);
+            guidanceToggle=ui.Button(canvas,"UX Toggle guidance","Guía",0,0,76,32,()=>guidance=!guidance);
+            var tr=(RectTransform)guidanceToggle.transform;tr.anchorMin=tr.anchorMax=tr.pivot=new Vector2(1,1);tr.anchoredPosition=new Vector2(-236,-20);
             header=canvas.Find("Title Bar") as RectTransform;dock=canvas.Find("C02 Action Dock") as RectTransform;
             if(header!=null)
             {
@@ -84,25 +85,30 @@ namespace Aethernia
             if(hud==null)return;
             var session=Flow.Session;var visible=Flow.IsPlaying&&!session.Paused&&!hud.WindowOpen&&!hud.HelpOpen&&!session.WorldUiOpen&&!dialogue.DialogueOpen;
             var mode=session.Mode;var exploration=mode==PrototypeMode.Exploration;
+            if(session.Rules.CoreRefine)guidanceToggle.gameObject.SetActive(visible&&exploration);
             // Existing renderers refresh these rectangles; this is the single opt-in final layout.
-            if(header!=null){Place(header,new Vector2(0,1),new Vector2(16,-12),new Vector2(1248,64));}
+            if(header!=null)
+            {
+                Place(header,new Vector2(0,1),new Vector2(16,-12),new Vector2(1248,64));
+                if(session.Rules.CoreRefine)header.gameObject.SetActive(mode!=PrototypeMode.TurnCombat);
+            }
             Place(hud.HeroName.rectTransform,new Vector2(0,1),new Vector2(0,-4),new Vector2(350,26));
             var track=(RectTransform)hud.HealthFill.transform.parent;Place(track,new Vector2(0,1),new Vector2(0,-36),new Vector2(184,10));
             Place(hud.HealthLabel.rectTransform,new Vector2(0,1),new Vector2(194,-28),new Vector2(112,26));
-            hud.Resources.transform.parent.gameObject.SetActive(mode==PrototypeMode.Construction||(exploration&&session.State.Demo!=null&&session.State.Demo.Chapter>=DemoChapter.Settlement));
+            hud.Resources.transform.parent.gameObject.SetActive((mode==PrototypeMode.Construction&&!session.Rules.CoreRefine)||(exploration&&session.State.Demo!=null&&session.State.Demo.Chapter>=DemoChapter.Settlement));
             if(dock!=null)Place(dock,new Vector2(0,0),new Vector2(16,10),new Vector2(1248,58));
             if(pages!=null)Place(pages,new Vector2(0,0),Vector2.zero,new Vector2(276,40));
-            if(back!=null){Place(back,new Vector2(0,0),Vector2.zero,new Vector2(180,38));back.gameObject.SetActive(mode==PrototypeMode.Construction);}
+            if(back!=null){Place(back,new Vector2(0,0),Vector2.zero,new Vector2(180,38));back.gameObject.SetActive(mode==PrototypeMode.Construction&&!session.Rules.CoreRefine);}
             if(session.LastMessage!=lastNotice){lastNotice=session.LastMessage;notice.text=lastNotice;noticeUntil=Time.unscaledTime+4;}
             noticeRect.anchoredPosition=new Vector2(0,mode==PrototypeMode.Rts?(Flow.Director.Rts.TacticalBattle?178:112):72);
-            noticeRect.gameObject.SetActive(visible&&Time.unscaledTime<noticeUntil);
-            hud.Context.gameObject.SetActive(mode==PrototypeMode.Construction);
+            noticeRect.gameObject.SetActive(visible&&Time.unscaledTime<noticeUntil&&(!session.Rules.CoreRefine||mode==PrototypeMode.Exploration));
+            hud.Context.gameObject.SetActive(mode==PrototypeMode.Construction&&!session.Rules.CoreRefine);
             hud.Hint.gameObject.SetActive(false);
             if(!hud.WindowOpen)
             {Place(hud.ActionGrid,new Vector2(.5f,0),new Vector2(0,14),new Vector2(810,40));hud.ActionLayout.cellSize=new Vector2(126,38);}
             hud.Feedback.transform.parent.gameObject.SetActive(false); // Objective/help owns one bounded notice surface.
             var alpha=session.Rules.IntegratedAlpha;
-            objectives.gameObject.SetActive(visible&&guidance&&!(alpha&&mode==PrototypeMode.TurnCombat&&Flow.Director.Encounter.InGroup));
+            objectives.gameObject.SetActive(visible&&guidance&&!(session.Rules.CoreRefine&&mode!=PrototypeMode.Exploration)&&!(alpha&&mode==PrototypeMode.TurnCombat&&Flow.Director.Encounter.InGroup));
             if(Time.unscaledTime>=nextRefresh)
             {
                 nextRefresh=Time.unscaledTime+.12f;

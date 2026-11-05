@@ -9,10 +9,10 @@ namespace Aethernia
         {
             var skill=profile.Combat;
             if(skill==null||!skill.TechniqueUnlocked||Phase!=TurnPhase.Player||Finished||!ActionAvailable||TechniqueFocus<skill.TechniqueCost||float.IsNaN(distance)||float.IsInfinity(distance)||distance<0||distance>skill.TechniqueRange)return false;
-            var roll=random.Next(1,21);var hit=roll+skill.Accuracy+skill.TechniqueAccuracy>=12;var before=EnemyHealth;
+            var roll=random.Next(1,21);var modifier=skill.Accuracy+skill.TechniqueAccuracy;var hit=roll+modifier>=12;var before=EnemyHealth;
             if(hit)EnemyHealth=Math.Max(0,before-HeroActionRules.AttackDamage(profile,weaponBonus)-skill.TechniqueDamage);
             TechniqueFocus-=skill.TechniqueCost;ActionAvailable=false;LastAbilityId=skill.TechniqueId;
-            LastHeroResolution=new CombatResolution(++sequence,CombatSide.Player,CombatActionKind.Attack,roll,hit,before-EnemyHealth,0,before,EnemyHealth);
+            LastHeroResolution=new CombatResolution(++sequence,CombatSide.Player,CombatActionKind.Attack,roll,hit,before-EnemyHealth,0,before,EnemyHealth,modifier:modifier,defense:12);
             if(Finished)Phase=TurnPhase.Finished;Message=skill.TechniqueTitle+" · foco "+TechniqueFocus+" · "+(hit?"Impacto: "+(before-EnemyHealth):"Fallo");return true;
         }
     }
@@ -24,10 +24,10 @@ namespace Aethernia
         {
             var skill=Current.Profile.Combat;
             if(Finished||!Current.Hero||skill==null||!skill.TechniqueUnlocked||!ActionAvailable||TechniqueFocus<skill.TechniqueCost||target==null||!Contains(target)||!target.Hostile||target.Health<=0||!clear||float.IsNaN(distance)||float.IsInfinity(distance)||distance<0||distance>skill.TechniqueRange)return false;
-            var roll=random.Next(1,21);var hit=roll+skill.Accuracy+skill.TechniqueAccuracy>=HeroActionRules.Defense(target.Profile)+target.Armour;var before=target.Health;
+            var roll=random.Next(1,21);var modifier=skill.Accuracy+skill.TechniqueAccuracy;var defense=HeroActionRules.Defense(target.Profile)+target.Armour;var hit=roll+modifier>=defense;var before=target.Health;
             if(hit)target.Health=Math.Max(0,before-HeroActionRules.GuardedDamage(HeroActionRules.AttackDamage(Current.Profile,Current.Weapon)+skill.TechniqueDamage,target.Guarding,HeroActionRules.GuardReduction(target.Profile)));
             TechniqueFocus-=skill.TechniqueCost;ActionAvailable=false;LastAbilityId=skill.TechniqueId;target.Guarding=false;
-            LastResolution=new CombatResolution(++sequence,CombatSide.Player,CombatActionKind.Attack,roll,hit,before-target.Health,0,before,target.Health);return true;
+            LastResolution=new CombatResolution(++sequence,CombatSide.Player,CombatActionKind.Attack,roll,hit,before-target.Health,0,before,target.Health,modifier:modifier,defense:defense);return true;
         }
         private bool Contains(TacticalCombatant actor){foreach(var m in Members)if(m==actor)return true;return false;}
     }

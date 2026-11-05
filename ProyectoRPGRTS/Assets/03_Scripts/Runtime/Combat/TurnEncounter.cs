@@ -71,8 +71,9 @@ namespace Aethernia
             TargetSelected=!session.Rules.UxExperience;EnemySpawned?.Invoke(enemy,enemyVisualPrefab);
             Battle = new TurnBattle(session.HeroProfile, session.State.Health,
                 HeroActionRules.WeaponBonus(session.State,session.Rules.Progression?.Items), EquipmentOperations.ArmourBonus(session.State,session.Rules.Progression?.Items), seed == 0 ? Environment.TickCount : seed,
-                Vector3.Distance(hero.transform.position, EnemyPosition) <= 1.9f && HasClearAttackLine(enemy, hero));
+                !session.Rules.CoreRefine&&Vector3.Distance(hero.transform.position, EnemyPosition) <= 1.9f && HasClearAttackLine(enemy, hero));
             session.SetMode(PrototypeMode.TurnCombat);
+            if(session.Rules.CoreRefine&&Battle.BeginOpeningEnemyTurn())enemyRoutine=StartCoroutine(EnemyTurnSequence());
             Publish(Battle.LastEnemyResolution);
             if (Battle.HeroHealth < session.State.Health) Show(Battle.HeroHealth <= 0 ? EncounterCue.Defeat : EncounterCue.Hit,Battle.LastEnemyResolution);
             Sync(); return true;
@@ -110,18 +111,26 @@ namespace Aethernia
         public bool Move(Vector3 point)
         {
             if(InGroup)return GroupMove(point);
-            if (!Ready() || !hero.TryMoveTo(point, Battle.MovementRemaining)) return false;
+            if (!Ready()) return false;
+            if (!hero.TryMoveTo(point,Battle.MovementRemaining)){if(session.Rules.CoreRefine)session.Say("Destino inaccesible o fuera del movimiento disponible.");return false;}
             var accepted = Battle.Move(hero.LastPathLength); Sync(); return accepted;
         }
         public void Approach()
         {
             if(InGroup){GroupApproach();return;}
             var delta = EnemyPosition - hero.transform.position; delta.y = 0;
-            Move(hero.transform.position + delta.normalized * Mathf.Min(Mathf.Max(0, delta.magnitude - 1.2f), 3.8f));
+            if(session.Rules.CoreRefine)
+            {
+                if(!HasCoreTarget||delta.magnitude<=session.HeroProfile.Range&&HasClearAttackLine(hero,enemy))return;
+                var advance=Mathf.Min(Mathf.Max(0,delta.magnitude-session.HeroProfile.Range*.8f),Battle.MovementRemaining);
+                if(advance>.05f)Move(hero.transform.position+delta.normalized*advance);
+            }
+            else Move(hero.transform.position + delta.normalized * Mathf.Min(Mathf.Max(0, delta.magnitude - 1.2f), 3.8f));
             Sync();
         }
         public void EndTurn()
         {
+            if(session.Rules.CoreRefine){RequestEndTurn();return;}
             if (!Ready()) return;
             if(!Battle.BeginEnemyTurn())return;
             DecideAndMoveEnemy();ResolveEnemy();
@@ -129,7 +138,7 @@ namespace Aethernia
         public bool RequestEndTurn()
         {
             if(InGroup)return GroupEnd();
-            if(!stagedCommands){var ready=Ready();if(ready)EndTurn();return ready;}
+            if(!stagedCommands&&!session.Rules.CoreRefine){var ready=Ready();if(ready)EndTurn();return ready;}
             if(!Ready()||!Battle.BeginEnemyTurn())return false;
             session.Say("Turno del enemigo: evalúa posición y alcance.");enemyRoutine=StartCoroutine(EnemyTurnSequence());return true;
         }
@@ -139,6 +148,13 @@ namespace Aethernia
             yield return new WaitForSeconds(.65f);
             if(Battle!=current||current==null)yield break;
             DecideAndMoveEnemy();session.Say(LastEnemyIntent==EnemyIntent.Approach?"El enemigo se aproxima por un camino accesible.":LastEnemyIntent==EnemyIntent.Attack?"El enemigo prepara su ataque.":"El enemigo no dispone de un ataque legal; espera.");
+            if(session.Rules.CoreRefine)
+            {
+                var limit=Time.time+4;
+                while(Battle==current&&enemy.IsMoving&&Time.time<limit)yield return null;
+                if(Battle!=current)yield break;
+                enemy.Stop();
+            }
             yield return new WaitForSeconds(.35f);
             if(Battle!=current)yield break;
             if(Vector3.Distance(hero.transform.position,EnemyPosition)<=1.9f&&HasClearAttackLine(enemy,hero))EnemyPreparingAttack?.Invoke();
@@ -151,7 +167,11 @@ namespace Aethernia
             var path=new NavMeshPath();var canApproach=(distance>1.8f||!line)&&enemy.Agent.CalculatePath(hero.transform.position,path)&&path.status==NavMeshPathStatus.PathComplete;
             LastEnemyIntent=MeleeEnemyPolicy.Decide(new EnemySituation(Battle.Phase==TurnPhase.Enemy,Battle.EnemyHealth>0,Battle.HeroHealth>0,distance<=1.8f,line,canApproach));
             if(LastEnemyIntent==EnemyIntent.Approach)
-            {var before=EnemyPosition;if(enemy.TryStepTowards(hero.transform.position,3,1.3f))EnemyMoved?.Invoke(before,EnemyPosition);else LastEnemyIntent=EnemyIntent.Wait;}
+            {
+                var before=EnemyPosition;
+                if(!enemy.TryStepTowards(hero.transform.position,3,1.3f,session.Rules.CoreRefine))LastEnemyIntent=EnemyIntent.Wait;
+                else if(!session.Rules.CoreRefine)EnemyMoved?.Invoke(before,EnemyPosition);
+            }
         }
         private void ResolveEnemy()
         {
@@ -168,7 +188,7 @@ namespace Aethernia
             // Interrumpir una presentación no puede dejar una fase enemiga esperando un clip.
             if(Battle!=null&&Battle.Phase==TurnPhase.Enemy)
             {
-                if(session!=null&&hero!=null&&enemy!=null&&enemy.Agent.enabled&&enemy.Agent.isOnNavMesh){DecideAndMoveEnemy();ResolveEnemy();}
+                if(session!=null&&hero!=null&&enemy!=null&&enemy.Agent.enabled&&enemy.Agent.isOnNavMesh){if(session.Rules.CoreRefine)enemy.Stop();else DecideAndMoveEnemy();ResolveEnemy();}
                 else{Battle.ResolveEnemyAction(false);Battle.FinishEnemyTurn();}
             }
         }

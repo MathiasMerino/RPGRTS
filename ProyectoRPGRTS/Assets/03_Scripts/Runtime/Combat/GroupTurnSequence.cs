@@ -31,12 +31,12 @@ namespace Aethernia
             Members=list.OrderByDescending(x=>x.Initiative).ThenBy(x=>x.Id,StringComparer.Ordinal).ToArray();TechniqueFocus=Members.First(m=>m.Hero).Profile.Combat?.FocusCapacity??0;
             while(index<Members.Count-1&&Current.Health<=0)index++;
         }
-        public bool Attack(TacticalCombatant target,float distance,bool clear)
+        public bool Attack(TacticalCombatant target,float distance,bool clear,int positionalBonus=0)
         {
             if(Finished||!ActionAvailable||target==null||!Members.Contains(target)||target.Hostile==Current.Hostile||target.Health<=0||!clear||float.IsNaN(distance)||float.IsInfinity(distance)||distance<0||distance>Current.Profile.Range)return false;
-            var roll=random.Next(1,21);var hit=roll+HeroActionRules.Accuracy(Current.Profile)>=HeroActionRules.Defense(target.Profile)+target.Armour;var before=target.Health;
+            var roll=random.Next(1,21);var modifier=HeroActionRules.Accuracy(Current.Profile)+positionalBonus;var defense=HeroActionRules.Defense(target.Profile)+target.Armour;var hit=roll+modifier>=defense;var before=target.Health;
             if(hit)target.Health=Math.Max(0,before-HeroActionRules.GuardedDamage(HeroActionRules.AttackDamage(Current.Profile,Current.Weapon),target.Guarding,HeroActionRules.GuardReduction(target.Profile)));
-            LastResolution=new CombatResolution(++sequence,Current.Hostile?CombatSide.Enemy:CombatSide.Player,CombatActionKind.Attack,roll,hit,before-target.Health,0,before,target.Health,target.Guarding&&hit);target.Guarding=false;ActionAvailable=false;return true;
+            LastResolution=new CombatResolution(++sequence,Current.Hostile?CombatSide.Enemy:CombatSide.Player,CombatActionKind.Attack,roll,hit,before-target.Health,0,before,target.Health,target.Guarding&&hit,modifier,defense);target.Guarding=false;ActionAvailable=false;return true;
         }
         public bool Guard()
         {if(Finished||!ActionAvailable)return false;Current.Guarding=true;ActionAvailable=false;LastResolution=new CombatResolution(++sequence,Current.Hostile?CombatSide.Enemy:CombatSide.Player,CombatActionKind.Guard);return true;}
