@@ -23,10 +23,11 @@ El foco de CORE es la entrada de la posada y su continuidad con la plaza. Las ma
 - Unity 6000.5.8f1. **6/6 pruebas dirigidas**. Mara, los botones del duelo y los textos de iniciativa pasan a 1280×720, 1920×1080 y 2560×1440. Se probó una derrota real y la pantalla existente de reintento. Quedaron registrados los intentos anteriores de layout y del ensayo de derrota. [Resultados](Validacion/COREREFINE01/DIRIGIDAS.json)
 - Windows x64 compilado desde `b64b12a`. El ZIP contiene la guía y los archivos del juego. Verificados CRC y SHA-256 de cada archivo extraído. [Integridad del ZIP](Validacion/COREREFINE01/PORTABLE.json)
 - **18 combinaciones URP** ejecutadas con render verificado. La mediana de las seis muestras P95 por escenario fue 12,89 ms en aldea, 21,75 ms en menú y 20,62 ms en RTS. En la corrida ART de referencia fueron 11,23, 20,95 y 20,00 ms, respectivamente. Los tiempos incluyen el envío de render desde CPU en un player oculto, en escenas preparadas. Las corridas se hicieron por separado. El benchmark no mide FPS presentados, GPU ni RPG activo. [Medición](Validacion/COREREFINE01/RENDIMIENTO.json) · [Comparación](Validacion/COREREFINE01/COMPARATIVA_RENDIMIENTO.json)
+- **6/6 procesos Windows en R1**, desde el ZIP extraído. Guerrero humano, Mago enano y Monje elfo completaron su ruta y cargaron la partida en un proceso nuevo. El Guerrero conquistó, el Mago cerró por pacto y el Monje continuó sin conquistar. La ruta llevó tres acompañantes a la guardianía y reutilizó el estado para construir y guardar. [Evidencia Windows R1](Validacion/COREREFINE01/WINDOWS-R1.json)
 - Capturas reales desde Unity. [Exploración](Images/COREREFINE01/Exploracion.png) · [Diálogo](Images/COREREFINE01/Dialogo-1280.png) · [Combate](Images/COREREFINE01/RPG-1280.png) · [Posada ART](Images/COREREFINE01/ART-Posada.png) · [Posada CORE](Images/COREREFINE01/CORE-Posada.png)
 
 ## Pendientes de alcance
 
 La presentación de técnica marca los objetivos legales en la barra de iniciativa. Quedan para una iteración posterior la previsualización de ruta, los puntos de acción variables, los críticos y un sistema de cobertura. La mejora visual se limita al umbral de la posada, la plaza y el tramo que los conecta. La aprobación humana de balance, usabilidad y arte permanece abierta.
 
-[Guía para jugar](GUIA_CORE_REFINE_01.md)
+[Guía para jugar](GUIA_CORE_REFINE_01.md) · [PR #19, borrador sobre ART-ENV-01](https://github.com/MathiasMerino/RPGRTS/pull/19)

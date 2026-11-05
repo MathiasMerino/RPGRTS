@@ -1,0 +1,105 @@
+{
+  "source": "b64b12a",
+  "archiveSHA256": "181f5508bbe28780967abbd6eb0fdb32125a6d8e7cb1940aa7198d1db1e71a20",
+  "nativeProcessesPassed": 6,
+  "screenshotCount": 224,
+  "cases": [
+    {
+      "identity": "human-warrior",
+      "ending": "conquista",
+      "processes": {
+        "start": {
+          "receipt": "PASS: CORE-REFINE-01 human/warrior capítulo warrior, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=398.08",
+          "metrics": {
+            "measuredGc": false,
+            "sampledPeakWorkingSetBytes": 822394880,
+            "phase": "COREREFINE01",
+            "measuredFps": false,
+            "resume": false,
+            "race": "human",
+            "class": "warrior",
+            "elapsedSeconds": 401.2662215
+          }
+        },
+        "resume": {
+          "receipt": "PASS: CORE-REFINE-01 human/warrior new process Continue exact identity, health, resources, buildings, army and quests; seconds=2.00",
+          "metrics": {
+            "measuredGc": false,
+            "sampledPeakWorkingSetBytes": 852549632,
+            "phase": "COREREFINE01",
+            "measuredFps": false,
+            "resume": true,
+            "race": "human",
+            "class": "warrior",
+            "elapsedSeconds": 5.2222491
+          }
+        }
+      }
+    },
+    {
+      "identity": "dwarf-mage",
+      "ending": "pacto",
+      "processes": {
+        "start": {
+          "receipt": "PASS: CORE-REFINE-01 dwarf/mage capítulo mage, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=291.56",
+          "metrics": {
+            "measuredGc": false,
+            "sampledPeakWorkingSetBytes": 820396032,
+            "phase": "COREREFINE01",
+            "measuredFps": false,
+            "resume": false,
+            "race": "dwarf",
+            "class": "mage",
+            "elapsedSeconds": 294.0193419
+          }
+        },
+        "resume": {
+          "receipt": "PASS: CORE-REFINE-01 dwarf/mage new process Continue exact identity, health, resources, buildings, army and quests; seconds=0.87",
+          "metrics": {
+            "measuredGc": false,
+            "sampledPeakWorkingSetBytes": 839897088,
+            "phase": "COREREFINE01",
+            "measuredFps": false,
+            "resume": true,
+            "race": "dwarf",
+            "class": "mage",
+            "elapsedSeconds": 3.6165621
+          }
+        }
+      }
+    },
+    {
+      "identity": "elf-monk",
+      "ending": "cierre sin conquista",
+      "processes": {
+        "start": {
+          "receipt": "PASS: CORE-REFINE-01 elf/monk capítulo monk, contratos, comercio, guardia opcional, asentamiento y guardado; seconds=302.79",
+          "metrics": {
+            "measuredGc": false,
+            "sampledPeakWorkingSetBytes": 821358592,
+            "phase": "COREREFINE01",
+            "measuredFps": false,
+            "resume": false,
+            "race": "elf",
+            "class": "monk",
+            "elapsedSeconds": 305.3400377
+          }
+        },
+        "resume": {
+          "receipt": "PASS: CORE-REFINE-01 elf/monk new process Continue exact identity, health, resources, buildings, army and quests; seconds=0.84",
+          "metrics": {
+            "measuredGc": false,
+            "sampledPeakWorkingSetBytes": 829943808,
+            "phase": "COREREFINE01",
+            "measuredFps": false,
+            "resume": true,
+            "race": "elf",
+            "class": "monk",
+            "elapsedSeconds": 3.4395436
+          }
+        }
+      }
+    }
+  ],
+  "mageFirstCombat": "seed=42 withdrawals=4 hp=16/18"
+}
