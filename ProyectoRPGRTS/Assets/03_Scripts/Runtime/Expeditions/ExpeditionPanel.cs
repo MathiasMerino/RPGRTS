@@ -24,7 +24,8 @@ namespace Aethernia
             Flow.ExistingHud.GetComponent<CanvasScaler>().screenMatchMode=CanvasScaler.ScreenMatchMode.Expand;
             var root=new GameObject("Expedition interface",typeof(RectTransform));root.transform.SetParent(Flow.ExistingHud.transform,false);
             layer=(RectTransform)root.transform;layer.anchorMin=layer.anchorMax=layer.pivot=Vector2.one;layer.anchoredPosition=Vector2.zero;layer.sizeDelta=new Vector2(1280,720);
-            Add(root.transform,"open","Grupo y expediciones",1000,286,264,Open);
+            if(Flow.Session.Rules.CoreRefine)Add(root.transform,"open","Grupo",1132,666,132,Open);
+            else Add(root.transform,"open","Grupo y expediciones",1000,286,264,Open);
             var panel=DemoWidgets.Rect(root.transform,"Expedition window",384,92,880,500);window=panel.gameObject;ui.Surface(panel,new Color(.04f,.045f,.045f,1));
             ui.Text(panel,"Title","EXPEDICIONES · COMPAÑÍA DEL CAMPAMENTO",16,10,785,36,24).color=ui.Gold;
             Add(panel,"close","×",816,6,48,Close);
@@ -58,7 +59,7 @@ namespace Aethernia
             if(window==null)return;var s=Flow.Session.State;var e=Flow.Director.Encounter;var available=Flow.IsPlaying&&ExpeditionOperations.Ready(s)&&Flow.Session.Mode==PrototypeMode.Exploration&&!Flow.Session.Paused;
             var existing=Flow.ExistingHud.CompactView;if(window.activeSelf&&(existing.WindowOpen||existing.HelpOpen))Close();
             var bounds=((RectTransform)layer.parent).rect;layer.localScale=Vector3.one*Mathf.Min(1,bounds.width/1280,bounds.height/720);
-            controls["open"].gameObject.SetActive(available&&!window.activeSelf&&(Flow.Front.Presentation==null||(!existing.WindowOpen&&!existing.HelpOpen)));if(!available)Close();
+            controls["open"].gameObject.SetActive(available&&!window.activeSelf&&(!Flow.Session.Rules.CoreRefine||!Flow.Session.WorldUiOpen)&&(Flow.Front.Presentation==null||(!existing.WindowOpen&&!existing.HelpOpen)));if(!available)Close();
             if(window.activeSelf)
             {
                 var text=new StringBuilder();text.AppendLine("Oro "+s.Gold+" · Madera "+s.Wood+" · Alimento "+s.Food+" · Héroe "+s.Health+"PV");
@@ -76,7 +77,7 @@ namespace Aethernia
                 controls["rest"].interactable=Party.AtCamp&&!Dungeon.Resting;
                 controls["all-army"].interactable=s.Army.Count>0;
             }
-            groupCombat.SetActive(Flow.IsPlaying&&e.InGroup&&!Flow.Session.Paused&&!existing.WindowOpen&&!existing.HelpOpen);
+            groupCombat.SetActive(!Flow.Session.Rules.CoreRefine&&Flow.IsPlaying&&e.InGroup&&!Flow.Session.Paused&&!existing.WindowOpen&&!existing.HelpOpen);
             if(groupCombat.activeSelf)
             {
                 var g=e.Group;var t=new StringBuilder("RUINAS · RONDA "+g.Round+"\n"+(g.Finished?(g.Won?"VICTORIA":"DERROTA · retirada disponible"):(g.Current.Hostile?"ENEMIGO ACTUANDO":"TURNO: "+g.Current.Title))+"\n");

@@ -25,7 +25,7 @@ namespace Aethernia
         private readonly Dictionary<string,InteractionPoint> landmarks = new Dictionary<string,InteractionPoint>();
         private Action alternative;
         private RectTransform dialogue, indicator;
-        private TMP_Text body, title, focusLabel;
+        private TMP_Text body, title, focusLabel, neutralPortrait;
         private Image portrait;
         private Action confirm;
         private InteractionPoint speaker;
@@ -46,6 +46,9 @@ namespace Aethernia
             dialogue.anchoredPosition = Vector2.zero; ui.Surface(dialogue, new Color(.06f, .06f, .045f, .98f));
             portrait = DemoWidgets.Fill(DemoWidgets.Rect(dialogue, "Provisional portrait", 18, 18, 82, 110), Color.white);
             portrait.preserveAspect = true;
+            if(Flow.Session.Rules.CoreRefine)
+                neutralPortrait=ui.Text(dialogue,"Neutral identity","",18,18,82,110,28);
+            if(neutralPortrait!=null)neutralPortrait.alignment=TextAlignmentOptions.Center;
             title = ui.Text(dialogue, "Speaker", "", 120, 18, 510, 36, 23);
             body = ui.Text(dialogue, "Dialogue", "", 120, 62, 510, 152, 18);
             ConfirmButton = ui.Button(dialogue, "World confirm", "Continuar", 120, 230, 300, 40, Confirm);
@@ -64,9 +67,24 @@ namespace Aethernia
             var quest=FindAnyObjectByType<LostCargoView>();
             var qr=(RectTransform)quest.Dialogue.transform;qr.anchorMin=qr.anchorMax=qr.pivot=new Vector2(.5f,.5f);qr.anchoredPosition=Vector2.zero;qr.sizeDelta=new Vector2(650,300);
             var picture=DemoWidgets.Fill(DemoWidgets.Rect(qr,"Resident provisional portrait",24,76,88,120),Color.white);picture.preserveAspect=true;picture.raycastTarget=false;picture.sprite=Flow.Front.Catalog.FindEntry("monk")?.PortraitSprite;
+            if(Flow.Session.Rules.CoreRefine){picture.enabled=false;ui.Text(qr,"Mara identity","M",24,76,88,120,28).alignment=TextAlignmentOptions.Center;}
             var source=quest.DialogueText.rectTransform;source.anchoredPosition=new Vector2(132,-76);source.sizeDelta=new Vector2(490,136);
             var bridge=quest.Dialogue.GetComponentsInChildren<LegacySdfPresenter>(true).FirstOrDefault(b=>b.Source==quest.DialogueText);
-            if(bridge!=null){var rect=bridge.Target.rectTransform;rect.anchorMin=source.anchorMin;rect.anchorMax=source.anchorMax;rect.pivot=source.pivot;rect.anchoredPosition=source.anchoredPosition;rect.sizeDelta=source.sizeDelta;}
+            if(bridge!=null)
+            {
+                var rect=bridge.Target.rectTransform;
+                if(Flow.Session.Rules.CoreRefine&&rect.parent==source)
+                {
+                    rect.anchorMin=Vector2.zero;
+                    rect.anchorMax=Vector2.one;
+                    rect.offsetMin=rect.offsetMax=Vector2.zero;
+                }
+                else
+                {
+                    rect.anchorMin=source.anchorMin;rect.anchorMax=source.anchorMax;rect.pivot=source.pivot;
+                    rect.anchoredPosition=source.anchoredPosition;rect.sizeDelta=source.sizeDelta;
+                }
+            }
         }
         private void Update()
         {
@@ -145,7 +163,8 @@ namespace Aethernia
             ((RectTransform)CloseButton.transform).anchoredPosition=new Vector2(alternative!=null?460:440,-230);
             ((RectTransform)CloseButton.transform).sizeDelta=new Vector2(alternative!=null?170:190,40);
             var entry = Flow.Front.Catalog.Entries.FirstOrDefault(e => e.ClassId == classId);
-            portrait.sprite = entry?.PortraitSprite; portrait.enabled = portrait.sprite != null;
+            portrait.sprite = entry?.PortraitSprite; portrait.enabled = portrait.sprite != null&&!Flow.Session.Rules.CoreRefine;
+            if(neutralPortrait!=null)neutralPortrait.text=name.Substring(0,1);
             Flow.Session.WorldUiOpen = true; dialogue.gameObject.SetActive(true); dialogue.SetAsLastSibling();
             return true;
         }

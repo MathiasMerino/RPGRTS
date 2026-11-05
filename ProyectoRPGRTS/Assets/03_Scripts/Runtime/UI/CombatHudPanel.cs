@@ -27,7 +27,7 @@ namespace Aethernia
         }
         private void LateUpdate()
         {
-            if(Session==null||Encounter==null)return;var b=Encounter.Battle;var show=Session.Mode==PrototypeMode.TurnCombat&&b!=null;Panel.SetActive(show);if(!show){last=default;return;}
+            if(Session==null||Encounter==null)return;var b=Encounter.Battle;var show=!Session.Rules.CoreRefine&&Session.Mode==PrototypeMode.TurnCombat&&b!=null;Panel.SetActive(show);if(!show){last=default;return;}
             TargetName.text="MERODEADOR · "+(Encounter.TargetSelected?"seleccionado":"seleccionar");Health.text=b.EnemyHealth+" / 18 PV";HealthFill.fillAmount=b.EnemyHealth/18f;
             Turn.text=(b.Finished?(b.Won?"VICTORIA":"DERROTA"):b.Phase==TurnPhase.Enemy?"ENEMIGO ACTUANDO":"TU TURNO")+" · Ronda "+b.Round+" · Acción "+(b.ActionAvailable?"1":"0")+" · "+b.MovementRemaining.ToString("0.#")+" m";
             Result.text=last.Accepted?Describe(last):"Iniciativa: tú "+b.HeroInitiative+" / rival "+b.EnemyInitiative;

@@ -213,6 +213,11 @@ namespace Aethernia
                     var skill=session.HeroProfile.Combat;if(director.Encounter.InGroup){var g=director.Encounter.Group;ready=!g.Finished&&g.Current.Hero&&g.ActionAvailable&&!director.Hero.IsMoving;}ready=ready&&skill!=null&&skill.TechniqueUnlocked&&director.Encounter.TechniqueFocus>=skill.TechniqueCost;
                     if(b.Label!=null)b.Label.text=skill==null||!skill.TechniqueUnlocked?"Técnica · Nv2":"Técnica · "+director.Encounter.TechniqueFocus;
                 }
+                if(session.Rules.CoreRefine)
+                {
+                    if(session.Mode==PrototypeMode.TurnCombat&&id!="help")visible=false;
+                    if(session.WorldUiOpen)visible=false;
+                }
                 if(session.Rules.UxExperience&&(id=="mode-combat"||id=="mode-rts"||id=="escalate"||id=="charge"))visible=false;
                 if(session.Rules.UxExperience&&id=="mode-construct"&&session.State.Demo!=null&&session.State.Demo.UxRevision==1&&session.State.Demo.Chapter<DemoChapter.Settlement)visible=false;
                 b.Button.gameObject.SetActive(visible);b.Button.interactable=ready;

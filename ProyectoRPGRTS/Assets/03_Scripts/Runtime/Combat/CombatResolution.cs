@@ -10,10 +10,11 @@ namespace Aethernia
         public readonly CombatActionKind Kind;
         public readonly bool Hit, Guarded;
         public readonly int Roll, Damage, Healing, TargetHealthBefore, TargetHealthAfter;
+        public readonly int Modifier,Defense;
         public bool Accepted => Sequence > 0;
         public CombatResolution(int sequence, CombatSide actor, CombatActionKind kind, int roll=0, bool hit=false,
-            int damage=0, int healing=0, int before=0, int after=0, bool guarded=false)
-        { Sequence=sequence;Actor=actor;Kind=kind;Roll=roll;Hit=hit;Damage=damage;Healing=healing;TargetHealthBefore=before;TargetHealthAfter=after;Guarded=guarded; }
+            int damage=0, int healing=0, int before=0, int after=0, bool guarded=false,int modifier=0,int defense=0)
+        { Sequence=sequence;Actor=actor;Kind=kind;Roll=roll;Hit=hit;Damage=damage;Healing=healing;TargetHealthBefore=before;TargetHealthAfter=after;Guarded=guarded;Modifier=modifier;Defense=defense; }
     }
     public enum EnemyIntent { Attack, Approach, Wait }
     public readonly struct EnemySituation
