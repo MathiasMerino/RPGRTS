@@ -1,0 +1,164 @@
+[
+  {
+    "scene": "Paused village / real E13 state",
+    "quality": "Bajo",
+    "width": 1280,
+    "height": 720,
+    "artP95Ms": 10.16,
+    "coreP95Ms": 11.89,
+    "deltaMs": 1.74
+  },
+  {
+    "scene": "Paused village / real E13 state",
+    "quality": "Medio",
+    "width": 1280,
+    "height": 720,
+    "artP95Ms": 13.69,
+    "coreP95Ms": 13.96,
+    "deltaMs": 0.27
+  },
+  {
+    "scene": "Paused village / real E13 state",
+    "quality": "Alto",
+    "width": 1280,
+    "height": 720,
+    "artP95Ms": 11.95,
+    "coreP95Ms": 10.63,
+    "deltaMs": -1.32
+  },
+  {
+    "scene": "Paused village / real E13 state",
+    "quality": "Bajo",
+    "width": 1920,
+    "height": 1080,
+    "artP95Ms": 8.33,
+    "coreP95Ms": 9.6,
+    "deltaMs": 1.26
+  },
+  {
+    "scene": "Paused village / real E13 state",
+    "quality": "Medio",
+    "width": 1920,
+    "height": 1080,
+    "artP95Ms": 10.51,
+    "coreP95Ms": 13.9,
+    "deltaMs": 3.38
+  },
+  {
+    "scene": "Paused village / real E13 state",
+    "quality": "Alto",
+    "width": 1920,
+    "height": 1080,
+    "artP95Ms": 12.34,
+    "coreP95Ms": 14.05,
+    "deltaMs": 1.71
+  },
+  {
+    "scene": "Main menu / animated 3D preview",
+    "quality": "Bajo",
+    "width": 1280,
+    "height": 720,
+    "artP95Ms": 18.22,
+    "coreP95Ms": 18.96,
+    "deltaMs": 0.75
+  },
+  {
+    "scene": "Main menu / animated 3D preview",
+    "quality": "Medio",
+    "width": 1280,
+    "height": 720,
+    "artP95Ms": 22.14,
+    "coreP95Ms": 21.76,
+    "deltaMs": -0.38
+  },
+  {
+    "scene": "Main menu / animated 3D preview",
+    "quality": "Alto",
+    "width": 1280,
+    "height": 720,
+    "artP95Ms": 21.07,
+    "coreP95Ms": 26.11,
+    "deltaMs": 5.04
+  },
+  {
+    "scene": "Main menu / animated 3D preview",
+    "quality": "Bajo",
+    "width": 1920,
+    "height": 1080,
+    "artP95Ms": 15.36,
+    "coreP95Ms": 19.1,
+    "deltaMs": 3.74
+  },
+  {
+    "scene": "Main menu / animated 3D preview",
+    "quality": "Medio",
+    "width": 1920,
+    "height": 1080,
+    "artP95Ms": 20.84,
+    "coreP95Ms": 23.63,
+    "deltaMs": 2.79
+  },
+  {
+    "scene": "Main menu / animated 3D preview",
+    "quality": "Alto",
+    "width": 1920,
+    "height": 1080,
+    "artP95Ms": 23.53,
+    "coreP95Ms": 21.73,
+    "deltaMs": -1.8
+  },
+  {
+    "scene": "Paused RTS / real deployment and selection UI",
+    "quality": "Bajo",
+    "width": 1280,
+    "height": 720,
+    "artP95Ms": 19.69,
+    "coreP95Ms": 16.11,
+    "deltaMs": -3.57
+  },
+  {
+    "scene": "Paused RTS / real deployment and selection UI",
+    "quality": "Medio",
+    "width": 1280,
+    "height": 720,
+    "artP95Ms": 21.71,
+    "coreP95Ms": 26.17,
+    "deltaMs": 4.46
+  },
+  {
+    "scene": "Paused RTS / real deployment and selection UI",
+    "quality": "Alto",
+    "width": 1280,
+    "height": 720,
+    "artP95Ms": 20.3,
+    "coreP95Ms": 22.16,
+    "deltaMs": 1.86
+  },
+  {
+    "scene": "Paused RTS / real deployment and selection UI",
+    "quality": "Bajo",
+    "width": 1920,
+    "height": 1080,
+    "artP95Ms": 15.53,
+    "coreP95Ms": 17.1,
+    "deltaMs": 1.57
+  },
+  {
+    "scene": "Paused RTS / real deployment and selection UI",
+    "quality": "Medio",
+    "width": 1920,
+    "height": 1080,
+    "artP95Ms": 18.34,
+    "coreP95Ms": 19.58,
+    "deltaMs": 1.24
+  },
+  {
+    "scene": "Paused RTS / real deployment and selection UI",
+    "quality": "Alto",
+    "width": 1920,
+    "height": 1080,
+    "artP95Ms": 21.28,
+    "coreP95Ms": 21.67,
+    "deltaMs": 0.39
+  }
+]

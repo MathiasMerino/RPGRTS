@@ -817,3 +817,9 @@ Build Windows `79b0504`, CRC y SHA por archivo, 26 ZIP anteriores conservados y 
 Se trabajó desde E23 `eff3fdb` con respaldo de los cambios locales y una copia independiente de Unity. La candidata agrega cubiertas, fachadas, mercado, vegetación, portada, empalizada y variantes visuales de asentamiento. La biblioteca incluye módulos culturales de estudio y mapas originales. La verificación distingue comparativas de Unity, recorridos Windows y aprobación humana.
 
 Build `1069136`, 21 prefabs y 18 mallas originales. ZIP con CRC/SHA y 27 previos conservados. Windows 8/8, vídeo de 142 fotogramas y dirigidas 4/4. General 235 aprobadas, 1 fallo de fin de línea LF/CRLF y 1 omitida de Meshy. El caso de física pasó al repetirlo con los bytes exactos del repositorio. PR #18 en borrador sobre #17.
+
+## 2026-11-04 — CORE-REFINE-01, refinamiento táctico
+
+Rama `feature/core-refine-01-rpg-rts-ux` desde ART-ENV-01 `3d21012`. Se añadió una escena candidata con diálogo de Mara corregido, una barra compartida por el duelo y el grupo, orden de iniciativa, control de alcance, registro de tiradas, técnica con confirmación y flanqueo de ataques básicos de cuerpo a cuerpo. El agente rival del duelo usa el NavMesh. La escena conserva el estado de campaña, la ranura v1 y los paneles específicos de RTS y construcción.
+
+Se añadieron la marquesina y el pavimento modular de la posada con materiales URP existentes. La firma física, NavMesh y puntos de interacción coinciden con ART. Dirigidas 6/6, layout de Mara y duelo comprobado a tres resoluciones. Build Windows `b64b12a` con ZIP íntegro. El informe distingue el perfilado URP, los recorridos Windows, la regresión general y la aprobación humana.

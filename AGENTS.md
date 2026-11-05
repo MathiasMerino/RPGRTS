@@ -44,6 +44,11 @@
 - Rama `feature/art-env-01-world-polish`, PR #18 sobre E23/PR #17. Escena jugable `Assets/01_Scenes/AetherniaArtEnv01.unity`, estudio `AetherniaArtEnv01Study.unity` y biblioteca `Assets/06_Environment/ArtEnv01`. `BuildArtEnv01` → `Builds/ArtEnv01Windows`.
 - Autoría en C# de Editor y mapas en Python. `AuthorArtEnv01` y `DressSettlementArtEnv01` son pasos de autoría únicos sobre una copia. La escena conserva el NavMesh, colisiones e interacciones E23. Revisión humana separada. `Docs/GUIA_ART_ENV_01.md`.
 
+## CORE-REFINE-01 — refinamiento táctico
+- Rama `feature/core-refine-01-rpg-rts-ux` apilada sobre ART-ENV-01/PR #18 `3d21012`. Escena `Assets/01_Scenes/AetherniaCoreRefine01.unity`. `BuildCoreRefine01` → `Builds/CoreRefine01Windows`. Guía `Docs/GUIA_CORE_REFINE_01.md` e informe `Docs/ENTREGA_CORE_REFINE_01.md`.
+- La regla de escena CoreRefine activa el HUD táctico compartido. Conserva la ranura E22/E23. La autoría `AuthorCoreVillage` crea el kit una vez y no forma parte del arranque ni debe ejecutarse sobre los recursos guardados.
+- Runner `Invoke-ProgressionSmoke.ps1 -Phase COREREFINE01 -Classes warrior,mage,monk -Races human,dwarf,elf -WithGraphics`. Separar validación técnica y aprobación humana. Sin macrofase siguiente ni fusiones automáticas.
+
 ## Alcance y método
 - Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.
 - Trabajar tareas acotadas, preservar trabajo existente y registrar ID/estado/aceptación/archivos/pruebas en CHECKLIST y REGISTRO después de cada actividad; conservar historial.
