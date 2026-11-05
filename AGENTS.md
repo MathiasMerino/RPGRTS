@@ -45,9 +45,9 @@
 - Autoría en C# de Editor y mapas en Python. `AuthorArtEnv01` y `DressSettlementArtEnv01` son pasos de autoría únicos sobre una copia. La escena conserva el NavMesh, colisiones e interacciones E23. Revisión humana separada. `Docs/GUIA_ART_ENV_01.md`.
 
 ## CORE-REFINE-01 — refinamiento táctico
-- Rama `feature/core-refine-01-rpg-rts-ux` apilada sobre ART-ENV-01/PR #18 `3d21012`. Escena `Assets/01_Scenes/AetherniaCoreRefine01.unity`. `BuildCoreRefine01` → `Builds/CoreRefine01Windows`. Guía `Docs/GUIA_CORE_REFINE_01.md` e informe `Docs/ENTREGA_CORE_REFINE_01.md`.
+- Rama `feature/core-refine-01-rpg-rts-ux` y PR #19 borrador, apilada sobre ART-ENV-01/PR #18 `3d21012`. Escena `Assets/01_Scenes/AetherniaCoreRefine01.unity`. `BuildCoreRefine01` → `Builds/CoreRefine01Windows`. Guía `Docs/GUIA_CORE_REFINE_01.md` e informe `Docs/ENTREGA_CORE_REFINE_01.md`.
 - La regla de escena CoreRefine activa el HUD táctico compartido. Conserva la ranura E22/E23. La autoría `AuthorCoreVillage` crea el kit una vez y no forma parte del arranque ni debe ejecutarse sobre los recursos guardados.
-- Runner `Invoke-ProgressionSmoke.ps1 -Phase COREREFINE01 -Classes warrior,mage,monk -Races human,dwarf,elf -WithGraphics`. Separar validación técnica y aprobación humana. Sin macrofase siguiente ni fusiones automáticas.
+- Runner `Invoke-ProgressionSmoke.ps1 -Phase COREREFINE01 -Classes warrior,mage,monk -Races human,dwarf,elf -WithGraphics`. R2 `f805fcc`: 6/6 dirigidas y 6/6 Windows desde el ZIP. General R1: 242 aprobadas, 0 fallos, 1 omitida privada. Revisión humana pendiente. Sin macrofase siguiente ni fusiones automáticas.
 
 ## Alcance y método
 - Diagnosticar y planificar antes de implementar. Un encargo explícito de implementación autoriza su alcance; no inventar fases, reglas completas o historia sin aprobación.

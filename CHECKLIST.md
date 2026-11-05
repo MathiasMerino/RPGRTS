@@ -1380,8 +1380,8 @@ Candidata UX‑02 `c5db7ff`. Escena `AetherniaUx02World` y [PR #12](https://gith
 |---|---|---|---|
 | CORE-00 | P0 · ART-ENV-01 | Completado y verificado | Base `3d21012`, PR #18 sobre E23 #17. Rama de trabajo en worktree aislado. Se verificaron referencias y cambios locales antes de editar. |
 | CORE-UI | P1–P3 · 00 | Completado y verificado | Barra RPG compartida, diálogo modal e iniciales neutrales de NPC. `CoreTacticalHud.cs`, `LostCargoView.cs`, `UxExperienceView.cs`, `VerticalSliceHud.cs`. Mara y botones del duelo verificados a 720p, 1080p y 1440p. |
-| CORE-RPG | P4–P7 · UI | En desarrollo | Orden real de iniciativa, presupuesto de movimiento y acción, alcance, registro de d20, flanqueo e IA de grupo. `TurnEncounter.Core.cs`, `TurnBattle.cs`, `GroupTurnSequence.cs`. Validación dirigida en `CoreRefineTests.cs`. |
-| CORE-INT | P8–P9 · RPG | En desarrollo | La escena `AetherniaCoreRefine01.unity` deriva de ART y reutiliza las transiciones de campaña y guardado. Recorrido Windows desde menú con las tres clases y Continuar pendiente. |
+| CORE-RPG | P4–P7 · UI | Completado y verificado | Iniciativa, acción, movimiento, alcance, tiradas, técnica, flanqueo e IA. `TurnEncounter.Core.cs`, `TurnBattle.cs`, `CoreRefineTests.cs`. Duelo, derrota/reintento y grupo de hasta tres acompañantes probados. |
+| CORE-INT | P8–P9 · RPG | Completado y verificado | `AetherniaCoreRefine01.unity`. Menú, patrulla, mazmorra, construcción, los tres cierres de campaña y Continuar. Windows R2 6/6. `Docs/Validacion/COREREFINE01/WINDOWS.json`. |
 | CORE-ART | P10 · UI | Completado y verificado | Marquesina, farol y losa modular en `Assets/06_Environment/CoreVillage`. Comparativa desde la misma cámara y pruebas de física, NavMesh e interacciones. La valoración humana del alcance artístico sigue abierta. |
-| CORE-QA | P11–P12 · INT | En desarrollo | Build, capturas, regresión y revisión de rendimiento. `Invoke-UnityValidation.ps1`, `Invoke-ProgressionSmoke.ps1`, `Docs/GUIA_CORE_REFINE_01.md`. |
-| CORE-HUM | P12 · QA | Pendiente | Evaluación humana de legibilidad, controles, balance, ritmo y calidad visual. |
+| CORE-QA | P11–P12 · INT | Completado y verificado | R2 `f805fcc` con ZIP verificado, 6/6 dirigidas, 6/6 Windows y 18 combinaciones URP. General R1 242 aprobadas, cero fallos, una omitida privada. `Docs/ENTREGA_CORE_REFINE_01.md`. |
+| CORE-HUM | P12 · QA | Pendiente | Evaluación humana de legibilidad, controles, balance, ritmo y arte. Queda abierta la comprobación geométrica multirresolución del RTS, el inventario y otros diálogos. |

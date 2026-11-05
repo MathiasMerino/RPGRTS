@@ -1,11 +1,11 @@
 {
   "archive": "Aethernia-CORE-REFINE-01-Windows.zip",
-  "archiveSHA256": "181f5508bbe28780967abbd6eb0fdb32125a6d8e7cb1940aa7198d1db1e71a20",
-  "archiveBytes": 91109050,
-  "portableExe": "PortableCOREREFINE01-20261105-023059/Aethernia.exe",
+  "archiveSHA256": "036a9770811709592f270cd2418b66d98144fff241a6028616acf7df66f408fe",
+  "archiveBytes": 91109114,
+  "portableExe": "PortableCOREREFINE01-20261105-031900/Aethernia.exe",
   "CRC": "PASS",
   "perFileSHA": "PASS",
-  "previousArchivesUnchanged": 0,
+  "previousArchivesUnchanged": 1,
   "DoNotShipExcluded": true,
   "files": {
     "Aethernia.exe": {
@@ -17,11 +17,11 @@
       "bytes": 29
     },
     "Aethernia_Data/boot.config": {
-      "sha256": "53544e2dec285678b6cf60e80c92f221bf46194a881fe6f36a9db5c1ea292def",
-      "bytes": 327
+      "sha256": "d035744c5c8b7be3a6b0d8dd780beb2366e2aec458aa0656917fd5346c9bbaf3",
+      "bytes": 328
     },
     "Aethernia_Data/globalgamemanagers": {
-      "sha256": "edc82211fc757e6ecf15f83953f59f9006546be16277894b75b3e08c82913d09",
+      "sha256": "d1755ee74e99bb2b00cc5ef883f333fe29a0d2477712b77dd26268ec0e6b85e8",
       "bytes": 124996
     },
     "Aethernia_Data/globalgamemanagers.assets": {
@@ -41,12 +41,12 @@
       "bytes": 7900416
     },
     "Aethernia_Data/Managed/Aethernia.Runtime.dll": {
-      "sha256": "94486c0096680515d01c3f6cef721b942cd7c94120db74a3c306c8c7a82baa4e",
+      "sha256": "e830535a28358f1fc5cb2efd6ee255a159b4b4e97a8767d00e7ce86f99d50359",
       "bytes": 554496
     },
     "Aethernia_Data/Managed/Aethernia.Runtime.pdb": {
-      "sha256": "168a8fd0a286de44aa7f5ebad807450707c9babeede0d00d44f1536ca09d1d1d",
-      "bytes": 159584
+      "sha256": "e04e45d498577d43d4a33dcc939fbf2837a71d9218174bd98a8a2dbee2b2919e",
+      "bytes": 159620
     },
     "Aethernia_Data/Managed/Mono.Security.dll": {
       "sha256": "1849437c1d2fe7698c0fde2a9a6aad9a864372a373b7c1d887da902a36965b36",
@@ -1101,7 +1101,7 @@
       "bytes": 405400
     },
     "Aethernia_Data/resources.assets": {
-      "sha256": "93a8bfabf946233c27bbcf655ff38a183692e5541ddd2f0060d91a9c6b5cef09",
+      "sha256": "d91b6bed5a0c5773f154a828801554f3384e861ec6fdbcfe85e2d0c178898e9c",
       "bytes": 43468
     },
     "Aethernia_Data/resources.assets.resS": {
@@ -1245,5 +1245,6 @@
       "bytes": 58368
     }
   },
-  "source": "b64b12a"
+  "source": "f805fcc",
+  "revision": "R2"
 }

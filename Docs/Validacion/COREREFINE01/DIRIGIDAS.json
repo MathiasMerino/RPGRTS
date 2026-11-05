@@ -60,5 +60,41 @@
         "result": "Passed"
       }
     ]
+  },
+  {
+    "name": "Directed-R2",
+    "source": "f805fcc",
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "result": "Passed",
+    "detail": "Versión final con cabecera RPG única y recursos de construcción en su propio panel.",
+    "cases": [
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreRefineTests.FlankingRequiresOppositeNearbySameLevelPositions",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreRefineTests.OpeningEnemyTurnAndBudgetRespectInitiative",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreRefineTests.RealDialogueAndCargoUseOneContextualHud",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreVillageArtTests.ArtBaselineFromSameCamera",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreVillageArtTests.CoreEntranceFromSameCamera",
+        "result": "Passed"
+      },
+      {
+        "fullname": "Aethernia.Tests.Editor.CoreVillageArtTests.CoreKeepsNavigationPhysicsAndOneBootstrap",
+        "result": "Passed"
+      }
+    ]
   }
 ]
